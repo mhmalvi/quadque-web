@@ -1,69 +1,59 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
+import Icons from "../../../Shared/Icons";
+import ShadowLogo from "../../../../asstes/Images/logo-shadow.png"
 
 const Navbar = () => {
-    const [open, setOpen] = useState(false);
-    const genericHamburgerLine = `h-1 w-7 my-1 rounded-full bg-white transition ease transform duration-500 lg:hidden m-4`;
+  const [open, setOpen] = useState(false);
+  const genericHamburgerLine = `h-1 my-1 rounded-full bg-white transition ease transform duration-500 lg:hidden m-4`;
 
   return (
-    <nav className="flex justify-between bg-black text-white fixed">
-        <div className="z-50 p-5 lg:w-auto w-full">
-            <Link to="/">
-              <img src={Logo} width={83} alt="QIT" className="cursor-pointer"/>
-            </Link>
-          </div>
-          <div onClick={() => setOpen(!open)}>
-            {/* Hamburger Animation */}
-            <div
-              className={`${genericHamburgerLine} ${
-                open
-                  ? "rotate-45 translate-y-2 group-hover:opacity-100"
-                  : "opacity-100 group-hover:opacity-100"
-              }`}
-            />
-            <div
-              className={`${genericHamburgerLine} ${
-                open ? "translate-x-10 opacity-0" : "group-hover:opacity-100"
-              }`}
-            />
-            <div
-              className={`${genericHamburgerLine} ${
-                open
-                  ? "-rotate-45 -translate-y-2  group-hover:opacity-100"
-                  : "opacity-100 group-hover:opacity-100"
-              }`}
-            />
-          </div>
-          {/* Hamburger Animation end*/}
-          <ul className="hidden lg:visible lg:flex items-center gap-8">
-            <NavLinks />
-          </ul>
-          {/* Mobile View */}
-          <ul
-            className={`lg:hidden absolute w-full h-full top-20 duration-500 ${
-              open
-                ? "top-0 scale-100 opacity-100"
-                : "-top-[100%] opacity-0 scale-0"
-            }`}
-          >
-            <li>
-              {/* <NavLinks /> */}
-              Work
-            </li>
-            <li>
-              About
-            </li>
-            <li>
-              Service
-            </li>
-            <li>
-              Blog
-            </li>
-            <li>
-              Contact
-            </li>
-          </ul>
+    <nav className="w-full flex justify-between text-white fixed">
+      <div className="p-5">
+        <Icons.BrandLogoMob />
+      </div>
+      <div onClick={() => setOpen(!open)} className="relative my-auto">
+        {/* Hamburger Animation */}
+        <div
+          className={`${genericHamburgerLine} ${
+            open
+              ? "w-7 absolute -rotate-45 translate-y-1 group-hover:opacity-100 z-[110] duration-500"
+              : "w-4 opacity-100 group-hover:opacity-100 duration-500"
+          }`}
+        />
+        <div
+          className={`${genericHamburgerLine} ${
+            open ? "w-7 -translate-x-10 opacity-0 duration-500" : "w-7 group-hover:opacity-100 duration-500"
+          }`}
+        />
+        <div
+          className={`duration-500 ${genericHamburgerLine} ${
+            open
+              ? "w-7 absolute rotate-45 -translate-y-2   group-hover:opacity-100 z-[110] duration-500"
+              : "w-4 absolute right-0 top-4 opacity-100 group-hover:opacity-100 duration-500"
+          }`}
+        />
+      </div>
+      {/* Hamburger Animation end*/}
+      {/* Mobile View */}
+        <div className={`${
+            open ? "absolute h-screen w-full z-[100] bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm border border-white border-opacity-30 shadow-2xl shadow-[#ffffff20] text-center text-xl font-semibold rounded-md":"hidden"}`}>
+                <div className="w-full h-auto my-7 px-5 z-[110]"><Icons.BrandLogoMob/></div>
+                {/* <Icons.BrandLogoMob width={109} className="opacity-20 absolute left-[60%] top-[15%]"/> */}
+                <img src={ShadowLogo} alt="" className="absolute left-[46%] top-[14%]"/>
+                <ul
+                className={`w-full h-full duration-500${
+                    open ? "top-0 scale-100 opacity-100" : "-top-[100%] opacity-0 scale-0"
+                }`}
+                >
+                <li className="py-10">Work</li>
+                <li className="py-10">About</li>
+                <li className="py-10">Service</li>
+                <li className="py-10">Blog</li>
+                <li className="py-10">Contact</li>
+                </ul>
+        </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
