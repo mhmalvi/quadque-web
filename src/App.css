@@ -1,8 +1,8 @@
 /* Layout Styles */
 .main_container {
+  height: calc(100vh - 80px);
   filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.25))
     drop-shadow(0px 0px 25px rgba(255, 255, 255, 0.25));
-  background-color: aqua;
 }
 
 @keyframes App-logo-spin {
