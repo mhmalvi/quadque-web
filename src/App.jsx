@@ -1,5 +1,5 @@
 import "./App.css";
-import Layout from "./Components/Pages/DesktopVersion/layout";
+import Layout from "./Components/Pages/MobileVersion/layout";
 
 function App() {
   return (
