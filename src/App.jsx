@@ -1,6 +1,7 @@
 import "./App.css";
-import Layout from "./Components/Pages/DesktopVersion/layout";
 // import welcomeAvatar from "./asstes/Images/welcome_avatar.gif";
+import DesktopLayout from "./Components/Pages/DesktopVersion/layout";
+import MobileLayout from "./Components/Pages/MobileVersion/layout";
 
 function App() {
   // const [showWelcome, setShowWelcome] = useState(false);
@@ -13,7 +14,8 @@ function App() {
 
   return (
     <div className="App">
-      <Layout />
+      <DesktopLayout />
+      <MobileLayout />
 
       {/* <div
         className={`${
