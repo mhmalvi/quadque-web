@@ -2,6 +2,7 @@ import "./App.css";
 // import welcomeAvatar from "./asstes/Images/welcome_avatar.gif";
 import DesktopLayout from "./Components/Pages/DesktopVersion/layout";
 import MobileLayout from "./Components/Pages/MobileVersion/layout";
+import { Breakpoint, BreakpointProvider } from "react-socks";
 
 function App() {
   // const [showWelcome, setShowWelcome] = useState(false);
@@ -13,9 +14,13 @@ function App() {
   // }, []);
 
   return (
-    <div className="App">
-      <DesktopLayout />
-      <MobileLayout />
+    <BreakpointProvider>
+      <Breakpoint large up>
+        <DesktopLayout />
+      </Breakpoint>
+      <Breakpoint large down>
+        <MobileLayout />
+      </Breakpoint>
 
       {/* <div
         className={`${
@@ -45,7 +50,7 @@ function App() {
         </div>
         <img className="w-36" src={welcomeAvatar} alt="" />
       </div> */}
-    </div>
+    </BreakpointProvider>
   );
 }
 

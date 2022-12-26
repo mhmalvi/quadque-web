@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import UI_UX from "../../../../../asstes/Lotties/ux.json"
+import UI_UX from "../../../../../asstes/Lotties/ux.json";
 
 const UIUX = () => {
   return (
@@ -16,7 +16,7 @@ const UIUX = () => {
             <div class="category-bg"></div>
 
             <div class="category-image">
-              <Lottie animationData={UI_UX} loop={true} />
+              <Lottie width={"40%"} animationData={UI_UX} loop={true} />
             </div>
 
             <h1 class="category-heading">ui/ux</h1>

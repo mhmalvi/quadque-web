@@ -20,9 +20,9 @@ const Layout = () => {
       {/* <div className="absolute top-0 z-50 w-full h-9 bg-white"></div> */}
       <div className="w-full h-10 bg-white"></div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center bg-white">
         {/* Left bar */}
-        <div className="w-[100px] flex flex-col justify-between left_bar">
+        <div className="w-[100px] flex flex-col justify-between left_bar bg-white">
           <a href="/">
             <Icons.BrandLogo className="mx-auto" />
           </a>
@@ -104,7 +104,7 @@ const Layout = () => {
         </div>
 
         {/* Right bar */}
-        <div>
+        <div className="bg-white">
           <div className="w-[100px] flex flex-col justify-between left_bar">
             <div>&nbsp;</div>
             <div>&nbsp;</div>
