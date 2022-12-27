@@ -6,8 +6,8 @@ const Header = () => {
     <div className="w-full mt-30">
       <div className="w-2/3 text-white text-3xl font-semibold px-6">We <br /> Build <br /> Awesome <br /> Creation</div>
       <div className="text-white px-6 pt-3">Contact <span className="bg-white rounded-full text-black px-1 mx-1"> ^ </span></div>
-      <div className="-opacity-90 pt-10">
-        <video autoPlay muted loop>
+      <div className="video-opacity-90 pt-10">
+        <video /* autoPlay */ muted >
             <source src={Astro} type="video/mp4"/>
         </video>
       </div>
