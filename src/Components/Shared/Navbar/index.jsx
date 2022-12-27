@@ -1,0 +1,140 @@
+import React, { useState } from "react";
+import bgShadowLogo from "../../../asstes/Images/bg-logo-shadow.png";
+import brandLogo from "../../../asstes/Images/brand_logo.png";
+
+const Navbar = () => {
+  const [showBgShadow, setShowBgShadow] = useState("");
+
+  return (
+    <div className="custom_modal_container bg-black bg-opacity-100 backdrop-blur-sm py-10 px-16">
+      <div className="mb-[5%]">
+        <img className="lg:w-[12%] 2xl:w-auto" src={brandLogo} alt="" />
+      </div>
+
+      <div className="flex flex-col justify-center items-center">
+        <div className="flex items-center">
+          <div
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex"
+            onMouseOver={() => {
+              setShowBgShadow("SERVICES");
+            }}
+            onMouseOut={() => {
+              setShowBgShadow("");
+            }}
+          >
+            <span className="p-0 m-0 uppercase">SERVICES</span>
+            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              #01
+            </span>
+            <img
+              className={`absolute ${
+                showBgShadow === "SERVICES" ? "opacity-100" : "opacity-0"
+              } transition-opacity delay-200 top-0 right-0 lg:w-[50%] xl:w-[70%] 2xl:w-auto`}
+              src={bgShadowLogo}
+              alt=""
+            />
+          </div>
+
+          <div
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex mx-20"
+            onMouseOver={() => {
+              setShowBgShadow("ABOUT");
+            }}
+            onMouseOut={() => {
+              setShowBgShadow("");
+            }}
+          >
+            <span className="p-0 m-0 uppercase">ABOUT</span>
+            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              #02
+            </span>
+            <img
+              className={`absolute ${
+                showBgShadow === "ABOUT" ? "opacity-100" : "opacity-0"
+              } transition-opacity delay-200 top-0 right-0 lg:w-[60%] xl:w-[70%] 2xl:w-auto`}
+              src={bgShadowLogo}
+              alt=""
+            />
+          </div>
+          <div
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex"
+            onMouseOver={() => {
+              setShowBgShadow("PORTFOLIO");
+            }}
+            onMouseOut={() => {
+              setShowBgShadow("");
+            }}
+          >
+            <span className="p-0 m-0 uppercase">PORTFOLIO</span>
+            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              #03
+            </span>
+            <img
+              className={`absolute ${
+                showBgShadow === "PORTFOLIO" ? "opacity-100" : "opacity-0"
+              } transition-opacity delay-200 top-0 right-0 lg:w-[40%] xl:w-[70%] 2xl:w-auto`}
+              src={bgShadowLogo}
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div className="flex mt-20">
+          <div
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex mr-20"
+            onMouseOver={() => {
+              setShowBgShadow("BLOGS");
+            }}
+            onMouseOut={() => {
+              setShowBgShadow("");
+            }}
+          >
+            <span className="p-0 m-0 uppercase">BLOGS</span>
+            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              #03
+            </span>
+            <img
+              className={`absolute ${
+                showBgShadow === "BLOGS" ? "opacity-100" : "opacity-0"
+              } transition-opacity delay-200 top-0 right-0 lg:w-[65%] xl:w-[70%] 2xl:w-auto`}
+              src={bgShadowLogo}
+              alt=""
+            />
+          </div>
+
+          <div
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex"
+            onMouseOver={() => {
+              setShowBgShadow("CONTACT");
+            }}
+            onMouseOut={() => {
+              setShowBgShadow("");
+            }}
+          >
+            <span className="p-0 m-0 uppercase">CONTACT</span>
+            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              #05
+            </span>
+            <img
+              className={`absolute ${
+                showBgShadow === "CONTACT" ? "opacity-100" : "opacity-0"
+              } transition-opacity delay-200 top-0 right-0 lg:w-[45%] xl:w-[70%] 2xl:w-auto`}
+              src={bgShadowLogo}
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="relative lg:mt-28 2xl:mt-36 flex justify-center items-center">
+        <div className="ticker_service">
+          <p className="lg:text-6xl xl:text-7xl 2xl:text-8xl italic">
+            {showBgShadow}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
