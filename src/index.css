@@ -58,12 +58,12 @@ html {
 }
 
 #stars3 {
-  width: 3px;
-  height: 3px;
+  width: 1.5px;
+  height: 1.5px;
   background: transparent;
   opacity: 0.5;
   box-shadow: 1679px 1356px #FFF, 295px 33px #FFF, 516px 72px #FFF, 1532px 1254px #FFF, 1140px 1411px #FFF, 285px 1031px #FFF, 118px 571px #FFF, 1501px 339px #FFF, 888px 513px #FFF, 1865px 936px #FFF, 471px 968px #FFF, 1235px 838px #FFF, 161px 1766px #FFF, 1925px 1314px #FFF, 320px 1224px #FFF, 771px 233px #FFF, 185px 1141px #FFF, 13px 610px #FFF, 379px 1875px #FFF, 510px 25px #FFF, 1368px 715px #FFF, 244px 1098px #FFF, 219px 1972px #FFF, 1029px 1762px #FFF, 838px 1345px #FFF, 1923px 1755px #FFF, 11px 1249px #FFF, 1598px 1173px #FFF, 841px 173px #FFF, 982px 1338px #FFF, 1027px 927px #FFF, 973px 1096px #FFF, 655px 1890px #FFF, 762px 218px #FFF, 1826px 975px #FFF, 1701px 1019px #FFF, 1112px 1883px #FFF, 1075px 1630px #FFF, 1687px 732px #FFF, 523px 705px #FFF, 636px 1912px #FFF, 403px 98px #FFF, 797px 1476px #FFF, 79px 133px #FFF, 927px 129px #FFF, 599px 1016px #FFF, 446px 420px #FFF, 468px 1274px #FFF, 876px 894px #FFF, 1175px 1093px #FFF, 1784px 1574px #FFF, 210px 1758px #FFF, 122px 945px #FFF, 532px 1675px #FFF, 657px 1636px #FFF, 845px 878px #FFF, 1725px 836px #FFF, 1334px 1076px #FFF, 280px 134px #FFF, 1575px 1454px #FFF, 360px 1629px #FFF, 1265px 717px #FFF, 1235px 1066px #FFF, 1339px 947px #FFF, 1841px 1418px #FFF, 990px 1501px #FFF, 1340px 264px #FFF, 1324px 1354px #FFF, 1369px 720px #FFF, 1281px 1433px #FFF, 1249px 1009px #FFF, 355px 373px #FFF, 1812px 315px #FFF, 1495px 1711px #FFF, 329px 1551px #FFF, 270px 726px #FFF, 1583px 283px #FFF, 105px 1660px #FFF, 1209px 1549px #FFF, 1107px 661px #FFF, 176px 383px #FFF, 179px 752px #FFF, 650px 728px #FFF, 1368px 1458px #FFF, 138px 959px #FFF, 156px 1280px #FFF, 628px 317px #FFF, 772px 409px #FFF, 420px 1011px #FFF, 412px 1340px #FFF, 1033px 821px #FFF, 38px 1608px #FFF, 1123px 1183px #FFF, 609px 1828px #FFF, 1001px 1396px #FFF, 1816px 263px #FFF, 1761px 955px #FFF, 1792px 575px #FFF, 1360px 25px #FFF, 457px 1183px #FFF;
-  animation: animStar 200s linear infinite;
+  animation: animStar 500s linear infinite;
 }
 
 #stars3:after {
