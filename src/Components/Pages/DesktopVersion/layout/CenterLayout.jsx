@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
+import React from "react";
 import Header from "../Header";
 import Services from "../Services";
 
 class MySection extends React.Component {
   render() {
     return (
-      <div className="section">
+      <div className="section bg-green-300 text-white">
         <h3>{this.props.content}</h3>
       </div>
     );
@@ -27,6 +27,8 @@ const CenterLayout = () => {
               <Header />
               <Services />
               <MySection content={"Slide up!"} />
+              <MySection content={"Slide Dow!"} />
+              <MySection content={"Slide up!"} />
             </div>
           );
         }}
@@ -36,10 +38,3 @@ const CenterLayout = () => {
 };
 
 export default CenterLayout;
-
-{
-  /* <p>Section 1 (welcome to fullpage.js)</p>
-                  <button onClick={() => fullpageApi.moveSectionDown()}>
-                    Click me to move down
-                  </button> */
-}
