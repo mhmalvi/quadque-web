@@ -1,10 +1,12 @@
-import { Tooltip } from "antd";
+import { Modal, Tooltip } from "antd";
 import React, { useEffect, useState } from "react";
 import Icons from "../../../Shared/Icons";
+import Navbar from "../../../Shared/Navbar";
 import CenterLayout from "./CenterLayout";
 
 const Layout = () => {
   const [mouseHover, setMouseHover] = useState(false);
+  const [openMenus, setOpenMenus] = useState(false);
 
   useEffect(() => {
     document.getElementById("main_container").style.height =
@@ -14,6 +16,21 @@ const Layout = () => {
 
   return (
     <div className="w-full h-full">
+      <Modal
+        style={{
+          backgroundColor: "black !important",
+          borderRadius: "0",
+          scrollbarWidth: "none",
+        }}
+        open={openMenus}
+        onOk={() => setOpenMenus(false)}
+        onCancel={() => setOpenMenus(false)}
+        footer={false}
+        width={"100%"}
+      >
+        <Navbar />
+      </Modal>
+
       {/* Outer Layer */}
 
       {/* Top bar */}
@@ -26,6 +43,7 @@ const Layout = () => {
           <a href="/">
             <Icons.BrandLogo className="mx-auto" />
           </a>
+
           <div
             className="-rotate-90 relative cursor-pointer flex justify-center items-center hover:text-brand-color transition-colors delay-150"
             onMouseOver={() => {
@@ -34,6 +52,7 @@ const Layout = () => {
             onMouseOut={() => {
               setMouseHover(false);
             }}
+            onClick={() => setOpenMenus(true)}
           >
             <span className="uppercase mr-auto font-semibold text-xl leading-[175%] font_poppins pr-4">
               menu
