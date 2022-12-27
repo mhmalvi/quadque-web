@@ -1,9 +1,13 @@
 import React from "react";
 import Faq from "../../../../asstes/Images/faq.png";
-import Chairman from "../../../../asstes/Images/chairman.png";
-import Ceo from "../../../../asstes/Images/ceo.png";
-import Director from "../../../../asstes/Images/director.png";
-import OM from "../../../../asstes/Images/om.png";
+import { Collapse } from 'antd';
+const { Panel } = Collapse;
+
+const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
 
 const FAQ = () => {
   return (
@@ -15,28 +19,18 @@ const FAQ = () => {
       <div className="text-2xl px-10 pb-8 leading-6 text-center">
         Most Popular Questions
       </div>
-      <div className="flex flex-wrap justify-evenly text-xs text-center pb-4">
-        <div className="py-4">
-          <img src={Chairman} alt="" className="w-36 m-auto" />
-          <div className="font-semibold leading-7">Mohammad AB Bijoy</div>
-          <div className="font-thin">CHAIRMAN</div>
-        </div>
-        <div className="py-4">
-          <img src={Ceo} alt="" className="w-36 m-auto" />
-          <div className="font-semibold leading-7">Muhammad H.M. Alvi</div>
-          <div className="font-thin">MANAGING DIRECTOR & CEO</div>
-        </div>
-
-        <div className="py-4">
-          <img src={Director} alt="" className="w-36 m-auto" />
-          <div className="font-semibold leading-7">Nahian Eram</div>
-          <div className="font-thin">DIRECTOR</div>
-        </div>
-        <div className="py-4">
-          <img src={OM} alt="" className="w-36 m-auto" />
-          <div className="font-semibold leading-7">Mohammad Nishat</div>
-          <div className="font-thin">MANAGER, OPERATIONS</div>
-        </div>
+      <div className="text-xs text-center pb-4">
+  <Collapse defaultActiveKey={['1']} ghost>
+    <Panel header="This is panel header 1" key="1">
+      <p>{text}</p>
+    </Panel>
+    <Panel header="This is panel header 2" key="2">
+      <p>{text}</p>
+    </Panel>
+    <Panel header="This is panel header 3" key="3">
+      <p>{text}</p>
+    </Panel>
+  </Collapse>
       </div>
     </div>
   );
