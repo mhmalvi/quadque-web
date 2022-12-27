@@ -1,11 +1,97 @@
+/* Global Fonts */
+.font_poppins {
+  font-family: "Poppins", sans-serif;
+}
+
 /* Layout Styles */
 
 .main_container {
   height: calc(100vh - 80px);
-  filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.25))
-    drop-shadow(0px 0px 25px rgba(255, 255, 255, 0.25));
+  border: 0.25px solid #ffffff;
+  background: #d9d9d9;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25), 0px 0px 25px rgba(0, 0, 0, 0.25);
 }
 
+/* Left bar */
+
+.left_bar {
+  height: calc(100vh - 80px);
+}
+
+/* For Center Layout */
+
+.center_layout_container {
+  width: calc(100vw - 220px);
+  margin: auto;
+  height: calc(100vh - 80px);
+  /* padding: 20px; */
+  overflow-y: scroll;
+}
+
+.center_layout_container::-webkit-scrollbar {
+  display: none;
+}
+
+.fp-watermark {
+  display: none;
+}
+
+/* For Background header video */
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* For Full page Scrolling */
+.section {
+  background-color: black !important;
+  min-height: 100vh !important;
+}
+
+#fp-nav ul li:hover a.active span,
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span {
+  background-color: #8f00ff;
+}
+/* 
+#fp-nav ul li:hover a.active span,
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span ::after {
+  content: "1";
+  position: absolute;
+  top: 40%;
+  font-size: 16px;
+  color: black;
+} */
+
+/* For Full Texts in Header Section  */
+
+.video-text h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 4.5rem;
+  text-transform: capitalize;
+  color: #ffffff;
+  width: 10rem;
+}
+
+.video-text a {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Animations */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

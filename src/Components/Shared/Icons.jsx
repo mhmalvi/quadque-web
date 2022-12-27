@@ -1,4 +1,5 @@
 import { ReactComponent as BrandLogo } from "../../asstes/Icons/brandlogo.svg";
+import { ReactComponent as RightArrow } from "../../asstes/Icons/right_arrow.svg";
 import { ReactComponent as BrandLogoMob } from "../../asstes/Icons/logo-mobile.svg";
 import { ReactComponent as BrandLogoMobWithTagline } from "../../asstes/Icons/logo-mobile-tagline.svg";
 import { ReactComponent as FooterFacebook } from "../../asstes/Icons/fb.svg";
@@ -14,6 +15,7 @@ const Icons = {
   FooterInstagram,
   FooterTwitter,
   FooterYoutube,
+  RightArrow,
 };
 
 export default Icons;
