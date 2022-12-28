@@ -45,14 +45,13 @@
 }
 
 /* For Background header video */
-video {
+/* video {
   object-fit: cover;
   width: 100vw;
-  height: 100vh;
-  position: fixed;
+  height: 100%;
   top: 0;
   left: 0;
-}
+} */
 
 /* For Full page Scrolling */
 .section {
@@ -257,11 +256,24 @@ video {
   padding-bottom: 70px;
 }
 
+.CaseStudy .slick-slider .caseText {
+  opacity: 10%;
+  scale: 100%;
+}
+
+
 .CaseStudy .slick-slider .slick-active img {
   opacity: 100%;
   scale: 150%;
   transition-duration: 1s;
   z-index: 1%;
+}
+
+.CaseStudy .slick-slider .slick-active .caseText {
+  opacity: 100%;
+  scale: 150%;
+    transition-duration: 1s;
+      z-index: 1%;
 }
 
 .ant-collapse-header-text {

@@ -2,8 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { handleFetchServices } from "../../../Shared/services";
+
 
 const Services = () => {
+  const [servicesData, setServicesData] = useState();
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const slider1 = useRef(null);
@@ -12,6 +15,14 @@ const Services = () => {
   useEffect(() => {
     setNav1(slider1.current);
     setNav2(slider2.current);
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const fetchServices = await handleFetchServices();
+        setServicesData(fetchServices);
+        //console.log("services data", servicesData);
+    })();
   }, []);
 
   const PrimarySettings = {
@@ -41,71 +52,16 @@ const Services = () => {
         <div>
           <Slider asNavFor={nav2} ref={slider1} arrows={false}>
             {/* 1 */}
+            {servicesData?.map((details) =>
             <div>
               <div className="w-2/3 m-auto text-center text-2xl font-bold pb-4 services-shadow">
-                UI/UX
+                {details.service_name}
               </div>
               <div className="w-2/3 m-auto text-center text-sm font-light pb-5 leading-6">
-                We create premium web design, thoughtful and user-friendly that
-                solve business problems. We create premium web design,
-                thoughtful and user-friendly that solve business problems
+                {details.description}
               </div>
             </div>
-            {/* 2 */}
-            <div>
-              <div className="w-2/3 m-auto text-center text-2xl font-bold pb-4 services-shadow">
-                DIGITAL MARKETING
-              </div>
-              <div className="w-2/3 m-auto text-center text-sm font-light pb-5 leading-6">
-                We create premium web design, thoughtful and user-friendly that
-                solve business problems. We create premium web design,
-                thoughtful and user-friendly that solve business problems
-              </div>
-            </div>
-            {/* 3 */}
-            <div>
-              <div className="w-2/3 m-auto text-center text-2xl font-bold pb-4 services-shadow">
-                MOBILE APP DEVELOPMENT
-              </div>
-              <div className="w-2/3 m-auto text-center text-sm font-light pb-5 leading-6">
-                We create premium web design, thoughtful and user-friendly that
-                solve business problems. We create premium web design,
-                thoughtful and user-friendly that solve business problems
-              </div>
-            </div>
-            {/* 4 */}
-            <div>
-              <div className="w-2/3 m-auto text-center text-2xl font-bold pb-4 services-shadow">
-                WEB DEVELOPMENT
-              </div>
-              <div className="w-2/3 m-auto text-center text-sm font-light pb-5 leading-6">
-                We create premium web design, thoughtful and user-friendly that
-                solve business problems. We create premium web design,
-                thoughtful and user-friendly that solve business problems
-              </div>
-            </div>
-            {/* 5 */}
-            <div>
-              <div className="w-2/3 m-auto text-center text-2xl font-bold pb-4 services-shadow">
-                SOFTWARE DEVELOPMENT
-              </div>
-              <div className="w-2/3 m-auto text-center text-sm font-light pb-5 leading-6">
-                We create premium web design, thoughtful and user-friendly that
-                solve business problems. We create premium web design,
-                thoughtful and user-friendly that solve business problems
-              </div>
-            </div>
-            {/* 6 */}
-            <div>
-              <div className="w-2/3 m-auto text-center text-2xl font-bold pb-4 services-shadow">
-                AI & IOT SOLUTIONS
-              </div>
-              <div className="w-2/3 m-auto text-center text-sm font-light pb-5 leading-6">
-                We create premium web design, thoughtful and user-friendly that
-                solve business problems. We create premium web design,
-                thoughtful and user-friendly that solve business problems
-              </div>
-            </div>
+            )}
           </Slider>
 
           <div className="w-3/4 m-auto flex justify-between pb-5">
@@ -125,10 +81,12 @@ const Services = () => {
             {...SecondarySettings}
             className="text-base text-white text-opacity-25 text-center"
           >
-            <div>
-              <span>UI/UX</span>
-            </div>
-            <div>
+            {servicesData?.map((details) =>
+              <div>
+                <span>{details.service_name}</span>
+              </div>
+            )}
+            {/* <div>
               <span>DIGITAL MARKETING</span>
             </div>
             <div>
@@ -142,7 +100,7 @@ const Services = () => {
             </div>
             <div>
               <span>AI & IOT SOLUTIONS</span>
-            </div>
+            </div> */}
           </Slider>
         </div>
       </div>

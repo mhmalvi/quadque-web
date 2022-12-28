@@ -31,7 +31,7 @@ const FAQ = () => {
           </Panel>
           <Panel
             header="What type of support do you provide my business on your products or services?"
-            key="3"
+            key="4"
           >
             <p className="text-white text-justify">{text}</p>
           </Panel>
