@@ -23,23 +23,26 @@ const Layout = () => {
           scrollbarWidth: "none",
         }}
         open={openMenus}
-        onOk={() => setOpenMenus(false)}
         onCancel={() => setOpenMenus(false)}
         footer={false}
         width={"100%"}
       >
-        <Navbar />
+        <div
+          className="absolute top-0 left-0 right-0 h-full w-full"
+          onClick={() => setOpenMenus(false)}
+        ></div>
+        <Navbar setOpenMenus={setOpenMenus} />
       </Modal>
 
       {/* Outer Layer */}
 
       {/* Top bar */}
-      {/* <div className="absolute top-0 z-50 w-full h-9 bg-white"></div> */}
-      <div className="w-full h-10 bg-white"></div>
+      <div className="absolute top-0 z-50 w-full h-10 bg-white"></div>
+      {/* <div className="w-full h-10 bg-white"></div> */}
 
-      <div className="flex justify-center bg-white">
+      <div className="relative flex justify-center bg-white">
         {/* Left bar */}
-        <div className="w-[100px] flex flex-col justify-between left_bar bg-white">
+        <div className="w-[100px] min-h-full py-10 z-50 absolute left-0 flex flex-col justify-between left_bar bg-white">
           <a href="/">
             <Icons.BrandLogo className="mx-auto" />
           </a>
@@ -118,12 +121,15 @@ const Layout = () => {
         </div>
 
         {/* Middle Main container */}
-        <div id="main_container" className="bg-green-100 main_container w-full">
+        <div
+          id="main_container"
+          className="bg-green-100 main_container w-full h-screen my-auto shadow-md"
+        >
           <CenterLayout />
         </div>
 
         {/* Right bar */}
-        <div className="bg-white">
+        <div className="bg-white absolute right-0 h-full">
           <div className="w-[100px] flex flex-col justify-between left_bar">
             <div>&nbsp;</div>
             <div>&nbsp;</div>
@@ -136,9 +142,8 @@ const Layout = () => {
         </div>
       </div>
 
-      {/* Top bar */}
-
-      <div className="absolute top-0 z-50 w-full h-10 bg-white"></div>
+      {/* Bottom bar */}
+      <div className="absolute bottom-0 z-50 w-full h-10 bg-white"></div>
     </div>
   );
 };

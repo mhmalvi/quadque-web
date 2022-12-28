@@ -1,5 +1,7 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import React from "react";
+import { useEffect } from "react";
+import Cleints from "../Clients";
 import Header from "../Header";
 import Services from "../Services";
 
@@ -13,20 +15,22 @@ class MySection extends React.Component {
   }
 }
 
-// const anchors = ["firstPage", "secondPage", "thirdPage"];
+const anchors = ["landing", "services", "clients"];
 
 const CenterLayout = () => {
   return (
     <div className="center_layout_container">
       <ReactFullpage
+        anchors={anchors}
         navigation
+        navigationTooltips={anchors}
         // sectionsColor={["#282c34", "#ff5f45", "#0798ec"]}
         render={({ state, fullpageApi }) => {
           return (
             <div>
               <Header />
               <Services />
-              <MySection content={"Slide up!"} />
+              <Cleints />
               <MySection content={"Slide Dow!"} />
               <MySection content={"Slide up!"} />
             </div>

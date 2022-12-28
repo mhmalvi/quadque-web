@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import useServices from "../../../../Shared/Hooks/useServices";
+import useServices from "../../../Shared/Hooks/useServices";
 // import Lottie from "lottie-react";
 // import UI_UX from "../../../../../asstes/Lotties/ux.json";
 import { Tooltip } from "antd";
 import Flip from "react-reveal/Flip";
 
-const UIUX = () => {
+const Services = () => {
   const [activeService, setActiveService] = useState();
   const [activeServiceDetails, setActiveDetails] = useState({});
   // const [openServiceDetails, setOpenServiceDetails] = useState(false);
@@ -49,7 +49,7 @@ const UIUX = () => {
                 {activeServiceDetails?.service_name}
               </h1>
             </div>
-            <div className="pt-18 mt-0.5">
+            <div className="pt-18 mt-0.5 text-justify">
               <p>{activeServiceDetails?.description}</p>
               <p
                 className="text-white font-semibold mt-4 text-lg hover:text-opacity-90 cursor-pointer"
@@ -60,7 +60,7 @@ const UIUX = () => {
                   // title={`Case Studies of ${activeService}`}
                   title={
                     <span className="text-brand-color font-semibold">
-                      Case Studies of {activeService}
+                      Details On {activeService}
                     </span>
                   }
                   color={"rgba(255, 255, 255)"}
@@ -93,7 +93,11 @@ const UIUX = () => {
         >
           <lottie-player
             // src="https://lottie.host/4425546d-45a4-4fd9-ae87-19f0ddaae1c1/Vh6fazyi8d.json"
-            src={activeServiceDetails?.file}
+            src={
+              activeServiceDetails?.file
+                ? activeServiceDetails?.file
+                : "https://lottie.host/4425546d-45a4-4fd9-ae87-19f0ddaae1c1/Vh6fazyi8d.json"
+            }
             background="transparent"
             speed="1"
             // style={{ maxWidth: "70%" }}
@@ -126,4 +130,4 @@ const UIUX = () => {
   );
 };
 
-export default UIUX;
+export default Services;
