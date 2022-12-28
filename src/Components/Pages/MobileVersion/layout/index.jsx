@@ -8,6 +8,7 @@ import Testimony from "./Testimony";
 import OurTeam from "./OurTeam";
 import Aboutus from "./Aboutus";
 import FAQ from "./FAQ";
+import StartProject from "./StartProject";
 import Footer from "./Footer";
 
 const Layout = () => {
@@ -26,6 +27,7 @@ const Layout = () => {
         <OurTeam/>
         <Aboutus/>
         <FAQ/>
+        <StartProject/>
         <Footer/>
       </div>
     </>
