@@ -8,7 +8,6 @@ const useServices = () => {
     (async () => {
       const response = await handleFetchServices();
       if (response) {
-        console.log(response);
         setServices(response);
       }
     })();
