@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import bgShadowLogo from "../../../asstes/Images/bg-logo-shadow.png";
 import brandLogo from "../../../asstes/Images/brand_logo.png";
 
-const Navbar = () => {
+const Navbar = ({ setOpenMenus }) => {
   const [showBgShadow, setShowBgShadow] = useState("");
+
+  const handleNavigate = () => {
+    setOpenMenus(false);
+  };
 
   return (
     <div className="custom_modal_container bg-black bg-opacity-100 backdrop-blur-sm py-10 px-16">
@@ -13,14 +17,16 @@ const Navbar = () => {
 
       <div className="flex flex-col justify-center items-center">
         <div className="flex items-center">
-          <div
-            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex"
+          <a
+            href="#services"
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex hover:text-white"
             onMouseOver={() => {
               setShowBgShadow("SERVICES");
             }}
             onMouseOut={() => {
               setShowBgShadow("");
             }}
+            onClick={handleNavigate}
           >
             <span className="p-0 m-0 uppercase">SERVICES</span>
             <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
@@ -33,7 +39,7 @@ const Navbar = () => {
               src={bgShadowLogo}
               alt=""
             />
-          </div>
+          </a>
 
           <div
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex mx-20"
