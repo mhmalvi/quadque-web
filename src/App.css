@@ -260,3 +260,16 @@ video {
   transition-duration: 1s;
   z-index: 1%;
 }
+
+.ant-collapse-header-text {
+  color: #ffffff;
+  z-index: -1;
+}
+
+.ant-collapse-expand-icon{
+  color: transparent;
+  z-index: -1;
+  background-image: url("./asstes/Images/faq-icon.png");
+  background-repeat: no-repeat;
+  margin-top: 4px;
+}
