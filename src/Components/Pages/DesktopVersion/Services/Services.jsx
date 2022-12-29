@@ -4,13 +4,22 @@ import useServices from "../../../Shared/Hooks/useServices";
 // import UI_UX from "../../../../../asstes/Lotties/ux.json";
 import { Tooltip } from "antd";
 import Flip from "react-reveal/Flip";
+import { useLocation } from "react-router-dom";
 
 const Services = () => {
+  const location = useLocation();
   const [activeService, setActiveService] = useState();
   const [activeServiceDetails, setActiveDetails] = useState({});
-  // const [openServiceDetails, setOpenServiceDetails] = useState(false);
-
+  const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [services] = useServices();
+
+  useEffect(() => {
+    if (location.hash === "#services") {
+      setTimeout(() => {
+        setTriggerAnimation(!triggerAnimation);
+      }, 800);
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     setActiveService("UI/UX");
@@ -40,7 +49,7 @@ const Services = () => {
         </Modal> */}
 
         <div>
-          <Flip left cascade spy={activeService}>
+          <Flip left cascade spy={triggerAnimation}>
             <div>
               <h1
                 id="service_name"
@@ -86,7 +95,7 @@ const Services = () => {
         </Flip>
       </div>
 
-      <Flip left cascade spy={activeService}>
+      <Flip left cascade spy={triggerAnimation}>
         <div
           className="min-h-full flex justify-center items-center"
           style={{ maxWidth: "45%" }}
@@ -108,7 +117,7 @@ const Services = () => {
       </Flip>
 
       <div className="w-58 text-xl font-medium leading-8 capitalize">
-        <Flip right cascade spy={activeService}>
+        <Flip right cascade spy={triggerAnimation}>
           <div className="pt-18 mt-0.5">
             {services?.map((service, i) => (
               <p

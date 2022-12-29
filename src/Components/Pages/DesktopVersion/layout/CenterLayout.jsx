@@ -1,6 +1,6 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import React from "react";
-import { useEffect } from "react";
+import CaseStudy from "../CaseStudy";
 import Cleints from "../Clients";
 import Header from "../Header";
 import Services from "../Services";
@@ -15,7 +15,7 @@ class MySection extends React.Component {
   }
 }
 
-const anchors = ["landing", "services", "clients"];
+const anchors = ["landing", "services", "clients", "case-study"];
 
 const CenterLayout = () => {
   return (
@@ -31,7 +31,7 @@ const CenterLayout = () => {
               <Header />
               <Services />
               <Cleints />
-              <MySection content={"Slide Dow!"} />
+              <CaseStudy />
               <MySection content={"Slide up!"} />
             </div>
           );

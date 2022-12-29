@@ -1,7 +1,7 @@
 import { Modal, Tooltip } from "antd";
 import React, { useEffect, useState } from "react";
 import Icons from "../../../Shared/Icons";
-import Navbar from "../../../Shared/Navbar";
+import Navbar from "../Navbar";
 import CenterLayout from "./CenterLayout";
 
 const Layout = () => {
