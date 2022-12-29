@@ -13,7 +13,7 @@ body {
 
 html {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #000000 0%, #090a0f 100%);
+  background: #000000;
   overflow-y: scroll;
 }
 
