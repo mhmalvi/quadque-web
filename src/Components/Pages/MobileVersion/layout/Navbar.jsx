@@ -36,7 +36,7 @@ const Navbar = () => {
       {/* Hamburger Animation end*/}
       {/* Mobile View */}
         <div className={`${
-            open ? "absolute h-screen w-full z-[998] -mt-1 bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm border border-white border-opacity-30 shadow-2xl shadow-[#ffffff20] text-center text-xl font-semibold rounded-md":"hidden"}`}>
+            open ? "absolute h-screen w-full z-[998] -mt-1 bg-black bg-opacity-40 backdrop-filter backdrop-blur-sm border border-white border-opacity-30 shadow-2xl shadow-[#ffffff20] text-center text-xl font-semibold rounded-md":"hidden"}`}>
                 <div className="w-full h-auto my-7 px-6 z-[998]"><Icons.BrandLogoMob/></div>
                 {/* <Icons.BrandLogoMob width={109} className="opacity-20 absolute left-[60%] top-[15%]"/> */}
                 <img src={ShadowLogo} alt="" className="absolute left-[46%] top-[14%]"/>
