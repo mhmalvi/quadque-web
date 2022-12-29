@@ -11,3 +11,15 @@ export const handleFetchServices = async () => {
     return [];
   }
 };
+
+export const handleFetchCaseStudies = async () => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies`
+    );
+    return result?.data;
+  } catch (error) {
+    console.log(error.response?.data);
+    return [];
+  }
+};

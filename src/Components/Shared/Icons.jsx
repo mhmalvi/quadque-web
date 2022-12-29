@@ -6,6 +6,7 @@ import { ReactComponent as FooterFacebook } from "../../asstes/Icons/fb.svg";
 import { ReactComponent as FooterInstagram } from "../../asstes/Icons/insta.svg";
 import { ReactComponent as FooterTwitter } from "../../asstes/Icons/twit.svg";
 import { ReactComponent as FooterYoutube } from "../../asstes/Icons/yt.svg";
+// import { ReactComponent as RightArrow } from "../../asstes/Icons/yt.svg";
 
 const Icons = {
   BrandLogo,

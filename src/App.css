@@ -1,3 +1,7 @@
+body {
+  cursor: url(asstes/Images/cursor.svg), auto;
+}
+
 /* Global Fonts */
 .font_poppins {
   font-family: "Poppins", sans-serif;
@@ -45,14 +49,14 @@
 }
 
 /* For Background header video */
-video {
+/* video {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-}
+} */
 
 /* For Full page Scrolling */
 .section {
@@ -157,17 +161,6 @@ video {
   text-shadow: 0.5px 0.5px 2px rgba(255, 255, 255, 0.423);
 }
 
-/* .ticker_service {
-  position: absolute;
-  left: 10%;
-  width: 50%;
-  margin-left: 0;
-  margin-right: 0;
-  text-align: left;
-  transform: translateX(0%);
-  animation: ticker_animation 10s linear infinite;
-  scrollbar-width: none;
-} */
 .ticker_service {
   position: absolute;
   width: 120%;
@@ -179,16 +172,99 @@ video {
   scrollbar-width: none;
 }
 
-/* .ticker_service {
-  position: absolute;
-  left: 0;
-  right: 0;
-  transform: translateX(-1720px);
-  animation: ticker_animation 10s infinite linear;
+/* .wrapper {
+  width: 100%;
+  overflow: hidden;
 } */
 
-/* Animations */
+/* .marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
 
+.marquee p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 17.5px;
+  margin: auto auto 1rem auto;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+} */
+
+/* For Client Section Clients Ticker Animation  */
+.marquee {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.marquee span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 1vh; */
+  gap: 17.5px;
+  padding-top: 100%;
+  animation: marquee 14s linear infinite;
+}
+
+.marquee2 span {
+  animation-delay: 7s;
+}
+
+.marquee-reverse {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.marquee-reverse span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 17.5px;
+  padding-top: 100%;
+  animation: marquee-reverse 14s linear infinite;
+}
+
+.marquee-reverse-2 span {
+  animation-delay: 7s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* ============================================ */
+/* Animations */
 @keyframes ticker_animation {
   0% {
     transform: translateX(0%);
@@ -262,4 +338,37 @@ video {
   scale: 150%;
   transition-duration: 1s;
   z-index: 1%;
+}
+
+#app {
+  overflow: hidden;
+  touch-action: pan-up;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+}
+
+#app h1 {
+  --fontSize: 60px;
+  --lineHeight: 80px;
+  width: auto;
+  height: calc(2 * var(--lineHeight));
+  line-height: var(--lineHeight);
+  margin: calc(50vh - var(--lineHeight)) auto 0;
+  font-size: var(--fontSize);
+}
+
+#app a {
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+#app canvas {
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 0;
 }
