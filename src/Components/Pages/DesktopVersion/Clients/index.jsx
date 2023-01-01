@@ -19,6 +19,7 @@ const Cleints = () => {
         setTriggerAnimation(!triggerAnimation);
       }, 800);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location?.hash]);
 
   console.log(location?.hash);
