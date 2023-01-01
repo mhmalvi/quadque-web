@@ -21,13 +21,13 @@ const CaseStudy = () => {
         setTriggerTitleAnimation(!triggerTitleAnimation);
       }, 800);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
 
   useEffect(() => {
     (async () => {
       const response = await handleFetchCaseStudies();
       if (response) {
-        console.log(response);
         setCaseStudies(response);
       }
     })();
@@ -37,12 +37,9 @@ const CaseStudy = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = caseStudies.slice(indexOfFirstPost, indexOfLastPost);
 
-  console.log("Total", Math.ceil(caseStudies?.length / 6));
-  console.log("currentPage", currentPage);
-
   return (
     <div
-      id="services"
+      id="case_study"
       className="section relative w-full min-h-full lg:pb-10 2xl:pb-12 font-poppins"
     >
       <Flip left cascade spy={triggerTitleAnimation}>
@@ -68,10 +65,10 @@ const CaseStudy = () => {
           <div className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px]">
             &nbsp;
           </div>
-
           {currentPosts?.map((post) => (
             <Flip left spy={triggerAnimation}>
               <Tooltip
+                key={post?.id}
                 title={`Learn More ${post?.com_name}`}
                 placement="top"
                 color={"#8F00FF"}
@@ -99,7 +96,6 @@ const CaseStudy = () => {
                 className="w-16 rotate-180 cursor-pointer text-gray-600 hover:text-gray-500"
                 onClick={() => {
                   setCurrentPage(currentPage - 1);
-                  // setTriggerAnimation(!triggerAnimation);
                 }}
               />
             ) : null}
