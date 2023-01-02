@@ -61,7 +61,7 @@ const CaseStudy = () => {
       </Flip>
 
       <div className="w-full min-h-[80vh] flex justify-end items-end pr-16">
-        <div className="lg:w-[650px] 2xl:w-9/12 grid lg:gap-4 2xl:gap-6 ml-auto mt-auto lg:grid-cols-4 2xl:grid-cols-4">
+        <div className="lg:w-[650px] xl:w-9/12 grid lg:gap-4 2xl:gap-6 ml-auto mt-auto lg:grid-cols-4 2xl:grid-cols-4">
           <div className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px]">
             &nbsp;
           </div>
