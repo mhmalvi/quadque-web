@@ -7,6 +7,7 @@ import Header from "../Header";
 import Services from "../Services";
 import "../../../../index.css";
 import About from "../About";
+import Blogs from "../Blogs";
 
 class MySection extends React.Component {
   render() {
@@ -25,6 +26,7 @@ const anchors = [
   "case-study",
   "client-speak",
   "about",
+  "blogs",
   "abouts",
 ];
 
@@ -47,6 +49,7 @@ const CenterLayout = () => {
               <CaseStudy />
               <ClientSpeak />
               <About />
+              <Blogs />
               <CaseStudy />
             </div>
           );
