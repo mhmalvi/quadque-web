@@ -33,7 +33,7 @@ const ClientSpeak = () => {
   }, [index, clientSpeaks]);
 
   return (
-    <div className="section relative w-full min-h-full  2xl:pb-12  font-poppins text-white">
+    <div className="section relative w-full min-h-full 2xl:pb-12 font-poppins text-white">
       <Flip left cascade spy={triggerTitleAnimation}>
         <div className="ml-6 relative 2xl:left-14 2xl:top-8 lg:pt-7 lg:mt-9 pl-[68px] pr-[22px] text-white">
           <img className="absolute top-0 -left-4 z-0" src={titleBg} alt="" />
