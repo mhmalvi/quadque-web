@@ -218,73 +218,51 @@
   }
 }
 
-.services-shadow {
-  text-shadow: 7px 7px 5px rgba(168, 85, 247, 0.2);
+/* Overriding antd modal */
+.Navigation {
+  display: block;
+  width: 100%;
 }
 
-.slick-slider {
-  z-index: 1;
-}
-
-.Service .slick-active span {
-  font-size: 24px;
-  color: white;
-  opacity: 1;
-  transition-duration: 2s;
-}
-
-.Service .slick-dots li button:before {
-  color: white !important;
-}
-
-.Service .slick-dots li.slick-active button:before {
-  color: #8f00ff !important;
-}
-
-.CaseStudy .slick-slider {
+.Navigation .ant-modal,
+.ant-modal-content {
   height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  margin: 0;
+  padding: 0;
+  top: 0;
 }
 
-.CaseStudy .slick-slider .slick-track {
-  height: 100%;
+.Navigation .ant-btn {
+  box-shadow: none;
+  background: transparent;
+  height: 100px;
 }
 
-.CaseStudy .slick-slider img {
-  opacity: 10%;
-  scale: 100%;
-  padding-top: 70px;
-  padding-bottom: 70px;
+.Navigation .ant-modal-body {
+  height: calc(100vh - 110px);
 }
 
-.CaseStudy .slick-slider .caseText {
-  opacity: 10%;
-  scale: 100%;
+.Navigation .ant-modal-content {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
 }
 
-
-.CaseStudy .slick-slider .slick-active img {
-  opacity: 100%;
-  scale: 150%;
-  transition-duration: 1s;
-  z-index: 1%;
+.Navigation .ant-modal-title {
+  background-color: white !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
 }
 
-.CaseStudy .slick-slider .slick-active .caseText {
-  opacity: 100%;
-  scale: 150%;
-    transition-duration: 1s;
-      z-index: 1%;
-}
-
-.ant-collapse-header-text {
-  color: #ffffff;
-  z-index: -1;
-}
-
-.ant-collapse-expand-icon{
-  color: transparent;
-  z-index: -1;
-  background-image: url("./asstes/Images/faq-icon.png");
-  background-repeat: no-repeat;
-  margin-top: 4px;
+.Navigation .ant-modal-close-x {
+  display: block;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: rgb(255, 255, 255) !important;
+  line-height: 22px;
+  text-align: center;
+  text-transform: none;
+  text-rendering: auto;
 }
