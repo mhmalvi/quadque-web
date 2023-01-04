@@ -1,9 +1,13 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import React from "react";
-import { useEffect } from "react";
+import CaseStudy from "../CaseStudy";
 import Cleints from "../Clients";
+import ClientSpeak from "../ClientSpeak";
 import Header from "../Header";
 import Services from "../Services";
+import "../../../../index.css";
+import About from "../About";
+import Blogs from "../Blogs";
 
 class MySection extends React.Component {
   render() {
@@ -15,7 +19,16 @@ class MySection extends React.Component {
   }
 }
 
-const anchors = ["landing", "services", "clients"];
+const anchors = [
+  "landing",
+  "services",
+  "clients",
+  "case-study",
+  "client-speak",
+  "about",
+  "blogs",
+  "abouts",
+];
 
 const CenterLayout = () => {
   return (
@@ -28,11 +41,16 @@ const CenterLayout = () => {
         render={({ state, fullpageApi }) => {
           return (
             <div>
+              <div id="stars"></div>
+              <div id="stars2"></div>
               <Header />
               <Services />
               <Cleints />
-              <MySection content={"Slide Dow!"} />
-              <MySection content={"Slide up!"} />
+              <CaseStudy />
+              <ClientSpeak />
+              <About />
+              <Blogs />
+              <CaseStudy />
             </div>
           );
         }}

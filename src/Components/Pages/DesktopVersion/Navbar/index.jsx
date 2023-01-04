@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import bgShadowLogo from "../../../asstes/Images/bg-logo-shadow.png";
-import brandLogo from "../../../asstes/Images/brand_logo.png";
+import bgShadowLogo from "../../../../asstes/Images/bg-logo-shadow.png";
+import brandLogo from "../../../../asstes/Images/brand_logo.png";
 
 const Navbar = ({ setOpenMenus }) => {
   const [showBgShadow, setShowBgShadow] = useState("");
