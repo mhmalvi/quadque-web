@@ -8,6 +8,7 @@ import { ReactComponent as FooterTwitter } from "../../asstes/Icons/twit.svg";
 import { ReactComponent as FooterYoutube } from "../../asstes/Icons/yt.svg";
 import { ReactComponent as ServiceMatter } from "../../asstes/Icons/service-icon.svg";
 import { ReactComponent as GoBackArrow } from "../../asstes/Icons/go-back-arrow.svg";
+// import { ReactComponent as RightArrow } from "../../asstes/Icons/yt.svg";
 
 const Icons = {
   BrandLogo,
