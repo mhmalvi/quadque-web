@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Interface from "../../../../asstes/Images/interface.png";
 
 const Aboutus = () => {
 
+  useEffect(() => {
+    document.getElementById("bar").style.width="0%"
+  }, [])
+  
+
   const myFunction = () => {
     const element = document.getElementById("scroll");
     let y = element.scrollTop;
-    var percent = parseInt(0.28571428 * y);
-    document.getElementById("bar").style.width = percent + "%";
+    
+    document.getElementById("bar").style.width = (element.scrollTop) / (element.scrollHeight - element.clientHeight ) * 100 + "%";
+
   };
 
   return (
-    <div className="w-full text-white my-5">
+    <div id="About" className="w-full text-white my-5">
       <div className="text-3xl font-thin px-6 pb-4">About us</div>
       <div className="group pb-3">
         <div className="flex-wrap overflow-hidden">
@@ -35,6 +41,7 @@ const Aboutus = () => {
           </div>
           <div>
             Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
+            ultricies tristique Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
             ultricies tristique...
           </div>
         </div>
@@ -53,6 +60,7 @@ const Aboutus = () => {
           </div>
           <div>
             Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
+            ultricies tristique Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
             ultricies tristique...
           </div>
         </div>
@@ -80,6 +88,7 @@ const Aboutus = () => {
           </div>
           <div>
             Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
+            ultricies tristique Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
             ultricies tristique...
           </div>
         </div>

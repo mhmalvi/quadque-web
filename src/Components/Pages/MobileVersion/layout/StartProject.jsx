@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Input, message } from "antd";
+import { message } from "antd";
+import "../../MobileVersion/MobileView.css"
 
 const StartProject = () => {
   const [toogleSubService, setToogleSubService] = useState();
@@ -79,7 +80,7 @@ const StartProject = () => {
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-between capitalize pb-8 px-6 gap-3">
+      <div className="flex flex-wrap justify-between capitalize pb-8 px-10 gap-3">
         <div onClick={() => {
             handleToogleSubService(1);
           }} className={`border rounded-full px-5 py-1 text-semibold duration-300 ${toogleSubService === 1 ?  "bg-white text-black" : ""}`}>
@@ -102,7 +103,7 @@ const StartProject = () => {
 
       <form className="mx-6" onSubmit={handleLoginReq}>
         <div className="">
-          <Input
+          <input
             size="large"
             type="text"
             name="name"
@@ -110,10 +111,10 @@ const StartProject = () => {
             value={data.name}
             onChange={userData}
             placeholder="Name"
-            className="w-full bg-transparent placeholder-white text-white px-3 py-2 my-2 border-t-0 border-x-0 rounded-none focus:outline-none focus:border-brand-color"
+            className="w-full bg-transparent placeholder-white text-white px-3 py-2 my-2 border-t-0 border-x-0 border-b rounded-none focus:outline-none focus:border-brand-color"
             required
           />
-          <Input
+          <input
             size="large"
             type="number"
             name="phone"
@@ -121,28 +122,28 @@ const StartProject = () => {
             value={data.phone}
             onChange={userData}
             placeholder="Phone"
-            className="w-full bg-transparent placeholder-white text-white px-3 py-2 my-2 border-t-0 border-x-0 rounded-none focus:outline-none focus:border-brand-color"
+            className="w-full bg-transparent placeholder-white text-white px-3 py-2 my-2 border-t-0 border-x-0 border-b rounded-none focus:outline-none focus:border-brand-color"
             required
           />
-          <Input
+          <input
             type="email"
             size="large"
             name="email"
             id="email"
             value={data.email}
             placeholder="E-mail"
-            className="w-full bg-transparent placeholder-white text-whitepy-2 my-2 border-t-0 border-x-0 rounded-none border-gray-300 focus:outline-none focus:border-brand-color"
+            className="w-full bg-transparent placeholder-white text-white px-3 py-2 my-2 border-t-0 border-x-0 border-b rounded-none focus:outline-none focus:border-brand-color"
             onChange={userData}
             required
           />
-          <Input
+          <input
             size="large"
             name="query"
             id="query"
             type="text"
             placeholder="How can we help you ?"
             value={data.query}
-            className="w-full bg-transparent placeholder-white text-white py-2 my-2 border-t-0 border-x-0 rounded-none border-gray-300 focus:outline-none focus:border-brand-color"
+            className="w-full bg-transparent placeholder-white text-white px-3 py-2 my-2 border-t-0 border-x-0 border-b rounded-none border-gray-300 focus:outline-none focus:border-brand-color"
             onChange={userData}
             required
           />

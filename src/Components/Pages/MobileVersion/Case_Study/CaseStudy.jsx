@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { handleFetchCaseStudies } from "../../../Shared/services";
+import "../../MobileVersion/MobileView.css"
 
 const CaseStudy = () => {
   const [caseStudyData, setCaseStudyData] = useState();
@@ -12,7 +13,7 @@ const CaseStudy = () => {
     (async () => {
       const fetchCaseStudy = await handleFetchCaseStudies();
       setCaseStudyData(fetchCaseStudy);
-      //console.log("Case study data", caseStudyData);
+      console.log("Case study data", caseStudyData);
     })();
   }, []);
 
@@ -24,7 +25,7 @@ const CaseStudy = () => {
     slidesToShow: 1,
     speed: 100,
   };
-  
+
   return (
     <div className="CaseStudy w-full text-white mb-30">
       <div className="text-3xl font-thin px-6 pb-2">Case Study</div>
@@ -32,12 +33,12 @@ const CaseStudy = () => {
         We create premium web design, though and user
       </div>
       <div className="font-thin px-6 pb-5">See more</div>
-      <div className="w-[400px] m-auto text-white pb-4">
+      <div className="w-[400px] m-auto text-white">
         <Slider ref={CaseSlider} arrows={false} {...settings}>
-          {caseStudyData?.map((details) =>
-          <div>
-            <img src={details.com_image} alt="" />
-            <div className="caseText w-full relative -top-14 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-center text-white py-2">
+          {caseStudyData?.map((details, index) =>
+          <div key={index}>
+            <img src={details.com_image} alt="" className="w-full"/>
+            <div className="caseText w-full bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-center text-white py-2">
               {details.com_name}
             </div>
           </div>

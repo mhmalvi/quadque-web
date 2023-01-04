@@ -1,6 +1,8 @@
 import React from "react";
 import Faq from "../../../../asstes/Images/faq.png";
 import { Collapse } from "antd";
+import "../../MobileVersion/MobileView.css";
+
 const { Panel } = Collapse;
 
 const text = `

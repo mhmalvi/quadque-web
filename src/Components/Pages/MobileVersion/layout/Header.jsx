@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Astro from "../../../../asstes/Videos/astro.mp4";
 import { handleFetchHomeVideo } from "../../../Shared/services";
+import "../../MobileVersion/MobileView.css"
 
 const Header = () => {
   const [video, setVideo] = useState();
@@ -15,7 +16,7 @@ const Header = () => {
   }, [video]); */
 
   return (
-    <div className="w-full mt-30">
+    <div className="w-full mt-30 home-header">
       <div className="w-2/3 text-white text-3xl font-semibold px-6">
         We <br /> Build <br /> Awesome <br /> Creation
       </div>
