@@ -107,33 +107,35 @@ const StartProject = () => {
               </div>
             ))}
           </div>
-          <div>
-            {subServices?.map((subService) => (
-              <div
-                className={`mb-5 text-base font-medium leading-6 capitalize cursor-pointer 2xl:py-1.5
+          {services.length ? (
+            <div>
+              {subServices?.map((subService) => (
+                <div
+                  className={`mb-5 text-base font-medium leading-6 capitalize cursor-pointer 2xl:py-1.5
                 ${
                   activeSubServices.includes(subService)
                     ? "text-brand-color"
                     : "text-white"
                 }
                 `}
-                onClick={() => handleActiveSubServices(subService)}
-              >
-                <span
-                  className={`max-w-[14px] max-h-[14px] border px-[7px] mr-2.5 ${
-                    activeSubServices.includes(subService)
-                      ? "border-brand-color"
-                      : "border-white"
-                  }`}
+                  onClick={() => handleActiveSubServices(subService)}
                 >
-                  &nbsp;
-                </span>
-                <span className="text-base font-normal leading-5 capitalize">
-                  {subService}
-                </span>
-              </div>
-            ))}
-          </div>
+                  <span
+                    className={`max-w-[14px] max-h-[14px] border px-[7px] mr-2.5 ${
+                      activeSubServices.includes(subService)
+                        ? "border-brand-color"
+                        : "border-white"
+                    }`}
+                  >
+                    &nbsp;
+                  </span>
+                  <span className="text-base font-normal leading-5 capitalize">
+                    {subService}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : null}
           <div className="w-84">
             <div className="border-b border-white mb-5">
               <input
