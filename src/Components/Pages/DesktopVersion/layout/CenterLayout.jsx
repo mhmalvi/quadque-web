@@ -8,16 +8,7 @@ import Services from "../Services";
 import "../../../../index.css";
 import About from "../About";
 import Blogs from "../Blogs";
-
-class MySection extends React.Component {
-  render() {
-    return (
-      <div className="section bg-green-300 text-white">
-        <h3>{this.props.content}</h3>
-      </div>
-    );
-  }
-}
+import StartProject from "../StartProject";
 
 const anchors = [
   "landing",
@@ -27,7 +18,7 @@ const anchors = [
   "client-speak",
   "about",
   "blogs",
-  "abouts",
+  "start-project",
 ];
 
 const CenterLayout = () => {
@@ -37,7 +28,6 @@ const CenterLayout = () => {
         anchors={anchors}
         navigation
         navigationTooltips={anchors}
-        // sectionsColor={["#282c34", "#ff5f45", "#0798ec"]}
         render={({ state, fullpageApi }) => {
           return (
             <div>
@@ -50,7 +40,7 @@ const CenterLayout = () => {
               <ClientSpeak />
               <About />
               <Blogs />
-              <CaseStudy />
+              <StartProject />
             </div>
           );
         }}

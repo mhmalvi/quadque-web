@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route
           path="/"
           element={
@@ -32,7 +32,15 @@ function App() {
             </BreakpointProvider>
           }
         ></Route>
-      </Routes>
+      </Routes> */}
+      <BreakpointProvider>
+        <Breakpoint large up>
+          <DesktopLayout />
+        </Breakpoint>
+        <Breakpoint large down>
+          <MobileLayout />
+        </Breakpoint>
+      </BreakpointProvider>
       {/* <div
         className={`${
           showWelcome

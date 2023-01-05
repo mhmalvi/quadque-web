@@ -111,6 +111,12 @@ const CaseStudy = () => {
           </div>
         </div>
       </div>
+      <a href="#start-project" class="absolute top-8 right-8">
+        <span className="relative  flex justify-center items-center h-4 w-4 cursor-pointer">
+          <span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-white opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
+        </span>
+      </a>
     </div>
   );
 };
