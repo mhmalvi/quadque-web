@@ -1,5 +1,7 @@
 import React from "react";
 import Icons from "../../../Shared/Icons";
+import "../../MobileVersion/MobileView.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,7 +17,9 @@ const Footer = () => {
           <p className="font-bold">Product</p>
           <p>Team</p>
           <p>Pricing</p>
-          <p>FAQ</p>
+          <Link to={`/faq`}>
+            <p>FAQ</p>
+          </Link>
           <p>Affiliate</p>
         </div>
         <div className="w-1/2 flex-col font-thin leading-10">

@@ -4,6 +4,7 @@ import Chairman from "../../../../asstes/Images/chairman.png";
 import Ceo from "../../../../asstes/Images/ceo.png";
 import Director from "../../../../asstes/Images/director.png";
 import OM from "../../../../asstes/Images/om.png";
+import "../../MobileVersion/MobileView.css"
 
 const OurTeam = () => {
   return (

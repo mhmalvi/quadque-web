@@ -1,6 +1,7 @@
 import React from "react";
 import Atr from "../../../../asstes/Images/atr.png";
 import Otobi from "../../../../asstes/Images/otobi.png";
+import "../../MobileVersion/MobileView.css"
 
 const OurCustomer = () => {
   return (
