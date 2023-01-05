@@ -19,7 +19,7 @@ const Navbar = ({ setOpenMenus }) => {
         <div className="flex items-center">
           <a
             href="#services"
-            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex hover:text-white"
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
             onMouseOver={() => {
               setShowBgShadow("SERVICES");
             }}
@@ -50,17 +50,29 @@ const Navbar = ({ setOpenMenus }) => {
               setShowBgShadow("");
             }}
           >
-            <span className="p-0 m-0 uppercase">ABOUT</span>
-            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
-              #02
-            </span>
-            <img
-              className={`absolute ${
-                showBgShadow === "ABOUT" ? "opacity-100" : "opacity-0"
-              } transition-opacity delay-200 top-0 right-0 lg:w-[60%] xl:w-[70%] 2xl:w-auto`}
-              src={bgShadowLogo}
-              alt=""
-            />
+            <a
+              href="#services"
+              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
+              onMouseOver={() => {
+                setShowBgShadow("SERVICES");
+              }}
+              onMouseOut={() => {
+                setShowBgShadow("");
+              }}
+              onClick={handleNavigate}
+            >
+              <span className="p-0 m-0 uppercase">ABOUT</span>
+              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+                #02
+              </span>
+              <img
+                className={`absolute ${
+                  showBgShadow === "ABOUT" ? "opacity-100" : "opacity-0"
+                } transition-opacity delay-200 top-0 right-0 lg:w-[60%] xl:w-[70%] 2xl:w-auto`}
+                src={bgShadowLogo}
+                alt=""
+              />
+            </a>
           </div>
           <div
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex"
@@ -71,17 +83,29 @@ const Navbar = ({ setOpenMenus }) => {
               setShowBgShadow("");
             }}
           >
-            <span className="p-0 m-0 uppercase">PORTFOLIO</span>
-            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
-              #03
-            </span>
-            <img
-              className={`absolute ${
-                showBgShadow === "PORTFOLIO" ? "opacity-100" : "opacity-0"
-              } transition-opacity delay-200 top-0 right-0 lg:w-[40%] xl:w-[70%] 2xl:w-auto`}
-              src={bgShadowLogo}
-              alt=""
-            />
+            <a
+              href="#services"
+              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
+              onMouseOver={() => {
+                setShowBgShadow("SERVICES");
+              }}
+              onMouseOut={() => {
+                setShowBgShadow("");
+              }}
+              onClick={handleNavigate}
+            >
+              <span className="p-0 m-0 uppercase">PORTFOLIO</span>
+              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+                #03
+              </span>
+              <img
+                className={`absolute ${
+                  showBgShadow === "PORTFOLIO" ? "opacity-100" : "opacity-0"
+                } transition-opacity delay-200 top-0 right-0 lg:w-[40%] xl:w-[70%] 2xl:w-auto`}
+                src={bgShadowLogo}
+                alt=""
+              />
+            </a>
           </div>
         </div>
 
@@ -95,17 +119,29 @@ const Navbar = ({ setOpenMenus }) => {
               setShowBgShadow("");
             }}
           >
-            <span className="p-0 m-0 uppercase">BLOGS</span>
-            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
-              #03
-            </span>
-            <img
-              className={`absolute ${
-                showBgShadow === "BLOGS" ? "opacity-100" : "opacity-0"
-              } transition-opacity delay-200 top-0 right-0 lg:w-[65%] xl:w-[70%] 2xl:w-auto`}
-              src={bgShadowLogo}
-              alt=""
-            />
+            <a
+              href="#services"
+              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
+              onMouseOver={() => {
+                setShowBgShadow("SERVICES");
+              }}
+              onMouseOut={() => {
+                setShowBgShadow("");
+              }}
+              onClick={handleNavigate}
+            >
+              <span className="p-0 m-0 uppercase">BLOGS</span>
+              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+                #03
+              </span>
+              <img
+                className={`absolute ${
+                  showBgShadow === "BLOGS" ? "opacity-100" : "opacity-0"
+                } transition-opacity delay-200 top-0 right-0 lg:w-[65%] xl:w-[70%] 2xl:w-auto`}
+                src={bgShadowLogo}
+                alt=""
+              />
+            </a>
           </div>
 
           <div
@@ -117,24 +153,41 @@ const Navbar = ({ setOpenMenus }) => {
               setShowBgShadow("");
             }}
           >
-            <span className="p-0 m-0 uppercase">CONTACT</span>
-            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
-              #05
-            </span>
-            <img
-              className={`absolute ${
-                showBgShadow === "CONTACT" ? "opacity-100" : "opacity-0"
-              } transition-opacity delay-200 top-0 right-0 lg:w-[45%] xl:w-[70%] 2xl:w-auto`}
-              src={bgShadowLogo}
-              alt=""
-            />
+            <a
+              href="#services"
+              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
+              onMouseOver={() => {
+                setShowBgShadow("SERVICES");
+              }}
+              onMouseOut={() => {
+                setShowBgShadow("");
+              }}
+              onClick={handleNavigate}
+            >
+              <span className="p-0 m-0 uppercase">CONTACT</span>
+              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+                #05
+              </span>
+              <img
+                className={`absolute ${
+                  showBgShadow === "CONTACT" ? "opacity-100" : "opacity-0"
+                } transition-opacity delay-200 top-0 right-0 lg:w-[45%] xl:w-[70%] 2xl:w-auto`}
+                src={bgShadowLogo}
+                alt=""
+              />
+            </a>
           </div>
         </div>
       </div>
 
       <div className="relative lg:mt-28 2xl:mt-36 flex justify-center items-center">
         <div className="ticker_service">
-          <p className="lg:text-6xl xl:text-7xl 2xl:text-8xl italic">
+          <p
+            className="lg:text-8xl xl:text-9xl 2xl:text-[11rem] italic"
+            style={{
+              textShadow: "0.5px 0.5px 5px #f5f5f5",
+            }}
+          >
             {showBgShadow}
           </p>
         </div>
