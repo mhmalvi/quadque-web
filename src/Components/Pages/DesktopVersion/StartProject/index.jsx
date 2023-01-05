@@ -58,12 +58,12 @@ const StartProject = () => {
     }
   };
   const handleActiveSubServices = (sub_service_name) => {
-    if (!activeSubServices.includes(sub_service_name)) {
-      setActiveSubServices([...activeSubServices, sub_service_name]);
+    if (activeSubServices.includes(sub_service_name)) {
+      setActiveSubServices(
+        activeSubServices?.filter((sub) => sub !== sub_service_name)
+      );
     } else {
-      const updatedSubServices = [...activeSubServices];
-      updatedSubServices.pop(sub_service_name);
-      setActiveSubServices(updatedSubServices);
+      setActiveSubServices([...activeSubServices, sub_service_name]);
     }
   };
 
