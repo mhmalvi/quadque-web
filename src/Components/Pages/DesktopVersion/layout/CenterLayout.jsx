@@ -9,6 +9,7 @@ import "../../../../index.css";
 import About from "../About";
 import Blogs from "../Blogs";
 import StartProject from "../StartProject";
+import Footer from "../Footer";
 
 const anchors = [
   "landing",
@@ -19,11 +20,12 @@ const anchors = [
   "about",
   "blogs",
   "start-project",
+  "footer",
 ];
 
 const CenterLayout = () => {
   return (
-    <div className="center_layout_container">
+    <div className='center_layout_container'>
       <ReactFullpage
         anchors={anchors}
         navigation
@@ -31,8 +33,8 @@ const CenterLayout = () => {
         render={({ state, fullpageApi }) => {
           return (
             <div>
-              <div id="stars"></div>
-              <div id="stars2"></div>
+              <div id='stars'></div>
+              <div id='stars2'></div>
               <Header />
               <Services />
               <Cleints />
@@ -41,6 +43,7 @@ const CenterLayout = () => {
               <About />
               <Blogs />
               <StartProject />
+              <Footer />
             </div>
           );
         }}

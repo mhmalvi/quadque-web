@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import useServices from "../../../Shared/Hooks/useServices";
+import Flip from "react-reveal/Flip";
+import { useLocation } from "react-router-dom";
 
 const StartProject = () => {
+  const location = useLocation();
   const [services] = useServices();
+  const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
+  const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [activeServices, setActiveServices] = useState("UI/UX");
   const [activeSubServices, setActiveSubServices] = useState("");
   const [subServices, setSubServices] = useState([
@@ -12,6 +17,15 @@ const StartProject = () => {
     "User Experience Consulting",
     "Design Thinking",
   ]);
+
+  useEffect(() => {
+    if (location.hash === "#start-project") {
+      setTimeout(() => {
+        setTriggerAnimation(!triggerAnimation);
+        setTriggerTitleAnimation(!triggerTitleAnimation);
+      }, 800);
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     setActiveSubServices("");
@@ -57,6 +71,7 @@ const StartProject = () => {
       ]);
     }
   };
+
   const handleActiveSubServices = (sub_service_name) => {
     if (activeSubServices.includes(sub_service_name)) {
       setActiveSubServices(
@@ -71,21 +86,25 @@ const StartProject = () => {
 
   return (
     <div
-      id="start_project"
-      className="section w-full lg:pt-6 2xl:py-8 font-poppins bg-black text-white"
+      id='start_project'
+      className='section w-full lg:pt-6 2xl:py-8 font-poppins bg-black text-white'
     >
-      <div className="ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8">
-        <div className="flex items-center justify-between">
-          <div className="text-5xl font-bold leading-10 capitalize">
-            <div>START</div>
-            <div className="ml-[26px]">PROJECT</div>
+      <div className='ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8'>
+        <div className='flex items-center justify-between'>
+          <div className='text-5xl font-bold leading-10 capitalize'>
+            <Flip left cascade spy={triggerTitleAnimation}>
+              <div>START</div>
+              <div className='ml-[26px]'>PROJECT</div>
+            </Flip>
           </div>
           <div>
-            <span>Call us +61405899496</span>
+            <Flip right cascade spy={triggerTitleAnimation}>
+              <span>Call us +61405899496</span>
+            </Flip>
           </div>
         </div>
 
-        <div className="mt-15.5 flex justify-between">
+        <div className='mt-15.5 flex justify-between'>
           <div>
             {services?.map((service) => (
               <div
@@ -129,54 +148,54 @@ const StartProject = () => {
                   >
                     &nbsp;
                   </span>
-                  <span className="text-base font-normal leading-5 capitalize">
+                  <span className='text-base font-normal leading-5 capitalize'>
                     {subService}
                   </span>
                 </div>
               ))}
             </div>
           ) : null}
-          <div className="w-84">
-            <div className="border-b border-white mb-5">
+          <div className='w-84'>
+            <div className='border-b border-white mb-5'>
               <input
-                className="outline-none border-none bg-transparent px-2 py-1"
-                type="text"
-                name="Name"
-                placeholder="Name"
-                id="Name"
+                className='outline-none border-none bg-transparent px-2 py-1'
+                type='text'
+                name='Name'
+                placeholder='Name'
+                id='Name'
               />
             </div>
-            <div className="border-b border-white mb-5">
+            <div className='border-b border-white mb-5'>
               <input
-                className="outline-none border-none bg-transparent px-2 py-1"
-                type="text"
-                name="Phone"
-                placeholder="Phone"
-                id="Phone"
+                className='outline-none border-none bg-transparent px-2 py-1'
+                type='text'
+                name='Phone'
+                placeholder='Phone'
+                id='Phone'
               />
             </div>
-            <div className="border-b border-white mb-5">
+            <div className='border-b border-white mb-5'>
               <input
-                className="outline-none border-none bg-transparent px-2 py-1"
-                type="text"
-                name="E-mail"
-                placeholder="E-mail"
-                id="E-mail"
+                className='outline-none border-none bg-transparent px-2 py-1'
+                type='text'
+                name='E-mail'
+                placeholder='E-mail'
+                id='E-mail'
               />
             </div>
-            <div className="border-b border-white mt-11">
+            <div className='border-b border-white mt-11'>
               <input
-                className="outline-none border-none bg-transparent px-2 py-1"
-                type="text"
-                name="help"
-                placeholder="How can we help you"
-                id="help"
+                className='outline-none border-none bg-transparent px-2 py-1'
+                type='text'
+                name='help'
+                placeholder='How can we help you'
+                id='help'
               />
             </div>
 
-            <div className="flex justify-center items-center">
+            <div className='flex justify-center items-center'>
               <button
-                className="px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4"
+                className='px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4'
                 style={{
                   letterSpacing: "0.04em",
                   boxShadow:
