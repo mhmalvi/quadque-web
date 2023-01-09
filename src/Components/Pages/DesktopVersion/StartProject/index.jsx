@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useServices from "../../../Shared/Hooks/useServices";
 import Flip from "react-reveal/Flip";
 import { useLocation } from "react-router-dom";
+import { Fade } from "react-reveal";
 
 const StartProject = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const StartProject = () => {
         setTriggerTitleAnimation(!triggerTitleAnimation);
       }, 800);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
 
   useEffect(() => {
@@ -86,15 +88,15 @@ const StartProject = () => {
 
   return (
     <div
-      id='start_project'
-      className='section w-full lg:pt-6 2xl:py-8 font-poppins bg-black text-white'
+      id="start_project"
+      className="section w-full lg:pt-6 2xl:py-8 font-poppins bg-black text-white"
     >
-      <div className='ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8'>
-        <div className='flex items-center justify-between'>
-          <div className='text-5xl font-bold leading-10 capitalize'>
+      <div className="ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8">
+        <div className="flex items-center justify-between">
+          <div className="text-5xl font-bold leading-10 capitalize">
             <Flip left cascade spy={triggerTitleAnimation}>
               <div>START</div>
-              <div className='ml-[26px]'>PROJECT</div>
+              <div className="ml-[26px]">PROJECT</div>
             </Flip>
           </div>
           <div>
@@ -104,7 +106,7 @@ const StartProject = () => {
           </div>
         </div>
 
-        <div className='mt-15.5 flex justify-between'>
+        <div className="mt-15.5 flex justify-between">
           <div>
             {services?.map((service) => (
               <div
@@ -115,14 +117,16 @@ const StartProject = () => {
                 }`}
                 onClick={() => handleActiveServices(service?.service_name)}
               >
-                <p
-                  className={`${
-                    activeServices === service?.service_name ? "pr-4" : null
-                  }
+                <Fade left cascade spy={triggerAnimation}>
+                  <p
+                    className={`${
+                      activeServices === service?.service_name ? "pr-4" : null
+                    }
                   }`}
-                >
-                  {service?.service_name}
-                </p>
+                  >
+                    {service?.service_name}
+                  </p>
+                </Fade>
               </div>
             ))}
           </div>
@@ -139,73 +143,78 @@ const StartProject = () => {
                 `}
                   onClick={() => handleActiveSubServices(subService)}
                 >
-                  <span
-                    className={`max-w-[14px] max-h-[14px] border px-[7px] mr-2.5 ${
-                      activeSubServices.includes(subService)
-                        ? "border-brand-color"
-                        : "border-white"
-                    }`}
-                  >
-                    &nbsp;
-                  </span>
-                  <span className='text-base font-normal leading-5 capitalize'>
-                    {subService}
-                  </span>
+                  <Fade left cascade spy={triggerAnimation}>
+                    <span
+                      className={`max-w-[14px] max-h-[14px] border px-[7px] mr-2.5 ${
+                        activeSubServices.includes(subService)
+                          ? "border-brand-color"
+                          : "border-white"
+                      }`}
+                    >
+                      &nbsp;
+                    </span>
+                    <span className="text-base font-normal leading-5 capitalize">
+                      {subService}
+                    </span>
+                  </Fade>
                 </div>
               ))}
             </div>
           ) : null}
-          <div className='w-84'>
-            <div className='border-b border-white mb-5'>
-              <input
-                className='outline-none border-none bg-transparent px-2 py-1'
-                type='text'
-                name='Name'
-                placeholder='Name'
-                id='Name'
-              />
-            </div>
-            <div className='border-b border-white mb-5'>
-              <input
-                className='outline-none border-none bg-transparent px-2 py-1'
-                type='text'
-                name='Phone'
-                placeholder='Phone'
-                id='Phone'
-              />
-            </div>
-            <div className='border-b border-white mb-5'>
-              <input
-                className='outline-none border-none bg-transparent px-2 py-1'
-                type='text'
-                name='E-mail'
-                placeholder='E-mail'
-                id='E-mail'
-              />
-            </div>
-            <div className='border-b border-white mt-11'>
-              <input
-                className='outline-none border-none bg-transparent px-2 py-1'
-                type='text'
-                name='help'
-                placeholder='How can we help you'
-                id='help'
-              />
-            </div>
 
-            <div className='flex justify-center items-center'>
-              <button
-                className='px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4'
-                style={{
-                  letterSpacing: "0.04em",
-                  boxShadow:
-                    "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
-                }}
-              >
-                START PROJECT
-              </button>
+          <Fade right cascade spy={triggerAnimation}>
+            <div className="w-84">
+              <div className="border-b border-white mb-5">
+                <input
+                  className="outline-none border-none bg-transparent px-2 py-1"
+                  type="text"
+                  name="Name"
+                  placeholder="Name"
+                  id="Name"
+                />
+              </div>
+              <div className="border-b border-white mb-5">
+                <input
+                  className="outline-none border-none bg-transparent px-2 py-1"
+                  type="text"
+                  name="Phone"
+                  placeholder="Phone"
+                  id="Phone"
+                />
+              </div>
+              <div className="border-b border-white mb-5">
+                <input
+                  className="outline-none border-none bg-transparent px-2 py-1"
+                  type="text"
+                  name="E-mail"
+                  placeholder="E-mail"
+                  id="E-mail"
+                />
+              </div>
+              <div className="border-b border-white mt-11">
+                <input
+                  className="outline-none border-none bg-transparent px-2 py-1"
+                  type="text"
+                  name="help"
+                  placeholder="How can we help you"
+                  id="help"
+                />
+              </div>
+
+              <div className="flex justify-center items-center">
+                <button
+                  className="px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4"
+                  style={{
+                    letterSpacing: "0.04em",
+                    boxShadow:
+                      "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
+                  }}
+                >
+                  START PROJECT
+                </button>
+              </div>
             </div>
-          </div>
+          </Fade>
         </div>
       </div>
     </div>

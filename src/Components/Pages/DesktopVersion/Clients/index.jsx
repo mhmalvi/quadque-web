@@ -28,21 +28,23 @@ const Cleints = () => {
     <div className="section h-full font-poppins overflow-hidden">
       <div className="px-21 mr-36 2xl:mr-44 text-white flex justify-between items-start">
         <div className="absolute top-1/4 flex justify-center items-center">
-          <Flip left cascade spy={triggerAnimation}>
-            <div className="w-67 items-center text-justify mr-30">
-              <div className="text-4xl 2xl:text-5xl font-semibold mb-5">
+          <div className="w-67 items-center text-justify mr-30">
+            <div className="text-4xl 2xl:text-5xl font-semibold mb-5">
+              <Flip left cascade spy={triggerAnimation}>
                 <h1 className="whitespace-nowrap">More then valuable</h1>
                 <span className="mr-2 text-brand-color">
                   {count ? <CountUp start={0} end={53} duration={6} /> : 0}+
                 </span>
-                coustomers
-              </div>
+                <span>coustomers</span>
+              </Flip>
+            </div>
+            <Flip left cascade spy={triggerAnimation}>
               <p className="w-67 text-justify">
                 We create premium web design, though and user-friendly that
                 solve business problems We create premium web design.
               </p>
-            </div>
-          </Flip>
+            </Flip>
+          </div>
         </div>
 
         <div className="ml-auto hidden lg:hidden xl:hidden 2xl:block">

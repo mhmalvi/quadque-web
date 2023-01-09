@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Flip from "react-reveal/Flip";
+import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 
 const About = () => {
@@ -28,17 +29,17 @@ const About = () => {
   return (
     <div id="about" className="section min-h-full font-poppins">
       <div className="w-full pr-[22px] text-white flex justify-center items-end">
-        <img className="w-[40%] mr-16" src={sideBanner} alt="" />
+        <img className="w-[44%] mr-16" src={sideBanner} alt="" />
 
         <div className="w-[60%] min-h-full ml-1 ">
           <div className="mb-8">
-            <Flip left cascade spy={triggerTitleAnimation}>
-              <div>
+            <div>
+              <Flip left cascade spy={triggerTitleAnimation}>
                 <h1 className="text-[32px] font-medium leading-[48px] font-poppins">
                   About us
                 </h1>
-              </div>
-            </Flip>
+              </Flip>
+            </div>
           </div>
           <div className="h-full">
             <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mt-auto overflow-y-scroll py-1">
@@ -47,7 +48,7 @@ const About = () => {
                   className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                   onMouseOver={() => handleChangeBanner(i)}
                 >
-                  <Flip left cascade spy={triggerTitleAnimation}>
+                  <Fade right cascade spy={triggerTitleAnimation}>
                     <h2 className="text-2xl font-bold leading-[100%] pl-4">
                       This is the first feature
                     </h2>
@@ -57,7 +58,7 @@ const About = () => {
                       id aliquet lectus proin nibh nisl condimentum Interdum
                       varius.
                     </p>
-                  </Flip>
+                  </Fade>
                   <hr className="text-white my-12 py-0.5" />
                 </div>
               ))}
