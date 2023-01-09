@@ -311,6 +311,16 @@ body {
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-slow-spin {
+  animation: spin 7s linear infinite;
+}
+
 /* Overriding antd modal */
 .Navigation {
   display: block;
