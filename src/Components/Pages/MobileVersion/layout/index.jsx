@@ -15,6 +15,7 @@ import BlogGallery from "../Blog/BlogGallery";
 import BlogDetail from "../Blog/BlogDetail";
 import ServiceDetails from "../Service/ServiceDetails";
 import CaseStudyDetail from "../Case_Study/CaseStudyDetail";
+import Gallery from "../Gallery"
 
 const Layout = () => {
   return (
@@ -24,26 +25,25 @@ const Layout = () => {
       <div id="stars3"></div>
       <div id="main">
         <NavigationBar />
-      <Routes>
-        <Route path="/" element={
-        <>
-        <Header />
-        <Services />
-        <OurCustomer/>
-        <CaseStudy/>
-        <ClientSpeaks/>
-        <OurTeam/>
-        <Aboutus/>
-        <StartProject/>
-        </>
-        }/>
-        <Route path={"blogs/blog-detail/:id"} element={<BlogDetail/>}/>
-        <Route path="blogs" element={<BlogGallery/>}/>
-        {/* <Route path={"blogs/:id"} element={<BlogDetail/>}/> */}
-        {/* <Route path={"blog-detail/:id"} element={<BlogDetail/>}/> */}
-        <Route path={"service/service-detail"} element={<ServiceDetails/>}/>
-        <Route path={"case-study"} element={<CaseStudyDetail/>}/>
-        <Route path={"faq"} element={<FAQ/>}/>
+        <Routes>
+          <Route path="/" element={
+          <>
+            <Header />
+            <Services />
+            <OurCustomer/>
+            <CaseStudy/>
+            <ClientSpeaks/>
+            <OurTeam/>
+            <Aboutus/>
+            <StartProject/>
+          </>
+          }/>
+          <Route path="/blogs" element={<BlogGallery/>}/>
+          <Route path={"blogs/blog-detail/:slug"} element={<BlogDetail/>}/>
+          <Route path={"service-detail/:id"} element={<ServiceDetails/>}/>
+          <Route path={"case-study/:id"} element={<CaseStudyDetail/>}/>
+          <Route path={"gallery"} element={<Gallery/>}/>
+          <Route path={"faq"} element={<FAQ/>}/>
         </Routes>
         <Footer/>
       </div>

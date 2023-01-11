@@ -6,19 +6,11 @@ import Client from "../../../../asstes/Images/client.png";
 import Case2 from "../../../../asstes/Images/case-study-2.png";
 import "../../MobileVersion/MobileView.css";
 
-import { handleFetchClientSpeak } from "../../../Shared/services";
+import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
 
 const ClientSpeaks = () => {
+  const [ClientSpeak] = useClientSpeak();
   const ClientSpeakSlider = useRef(null);
-  const [clientSpeak, setClientSpeak] = useState();
-
-  useEffect(() => {
-    (async () => {
-      const fetchClientSpeak = await handleFetchClientSpeak();
-      setClientSpeak(fetchClientSpeak);
-      console.log("Client Speaks", clientSpeak);
-    })();
-  }, []);
 
   const settings = {
     dots: false,
@@ -27,18 +19,17 @@ const ClientSpeaks = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrow: false,
-    infinite: true,
   };
   return (
     <div className="w-full text-white mb-30">
       <div className="text-3xl font-thin px-6 pb-5">
         Our clients <br /> speak
       </div>
-      <div className="w-[400px] m-auto text-white pb-4">
+      <div className="max-w-[370px] m-auto text-white pb-4">
         <Slider ref={ClientSpeakSlider} arrows={false} {...settings}>
-          {clientSpeak?.map((details)=> 
+          {ClientSpeak?.map((details)=> 
           <div key={details?.id}>
-            <div className="px-6">
+            <div className="px-3">
               <div className="flex justify-between">
                 <div className="font-semibold">{details?.name}</div>
                 <div className="text-slate-400">{details?.designation}</div>

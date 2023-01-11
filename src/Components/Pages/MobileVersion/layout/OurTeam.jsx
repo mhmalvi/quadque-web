@@ -21,27 +21,27 @@ const OurTeam = () => {
         achieve the business goals. We love to solve complex problems and always
         excited to turn ideas from whiteboard to reality.
       </div>
-      <div className="flex flex-wrap justify-evenly text-xs text-center pb-4">
-        <div className="py-4">
-          <img src={Chairman} alt="" className="w-36 m-auto" />
+      <div className="flex flex-wrap justify-center text-xs text-center pb-13 px-6">
+        <div className="w-36 pb-4">
+          <img src={Chairman} alt="" className="m-auto" />
           <div className="font-semibold leading-7">Mohammad AB Bijoy</div>
-          <div className="font-thin">CHAIRMAN</div>
+          <div className="uppercase font-thin">CHAIRMAN</div>
         </div>
-        <div className="py-4">
-          <img src={Ceo} alt="" className="w-36 m-auto" />
+        <div className="w-36 pb-4">
+          <img src={Ceo} alt="" className="m-auto" />
           <div className="font-semibold leading-7">Muhammad H.M. Alvi</div>
-          <div className="font-thin">MANAGING DIRECTOR & CEO</div>
+          <div className="uppercase font-thin">MANAGING DIRECTOR & CEO</div>
         </div>
 
-        <div className="py-4">
-          <img src={Director} alt="" className="w-36 m-auto" />
+        <div className="w-36 pb-4">
+          <img src={Director} alt="" className="m-auto" />
           <div className="font-semibold leading-7">Nahian Eram</div>
-          <div className="font-thin">DIRECTOR</div>
+          <div className="uppercase font-thin">DIRECTOR</div>
         </div>
-        <div className="py-4">
-          <img src={OM} alt="" className="w-36 m-auto" />
+        <div className="w-36 pb-4">
+          <img src={OM} alt="" className="m-auto" />
           <div className="font-semibold leading-7">Mohammad Nishat</div>
-          <div className="font-thin">MANAGER, OPERATIONS</div>
+          <div className="uppercase font-thin">MANAGER, OPERATIONS</div>
         </div>
       </div>
     </div>
