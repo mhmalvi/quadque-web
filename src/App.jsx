@@ -18,6 +18,21 @@ function App() {
 
   return (
     <>
+      {/* <Routes>
+        <Route
+          path="/"
+          element={
+            <BreakpointProvider>
+              <Breakpoint large up>
+                <DesktopLayout />
+              </Breakpoint>
+              <Breakpoint large down>
+                <MobileLayout />
+              </Breakpoint>
+            </BreakpointProvider>
+          }
+        ></Route>
+      </Routes> */}
       <BreakpointProvider>
         <Breakpoint large up>
           <DesktopLayout />
@@ -26,9 +41,6 @@ function App() {
           <MobileLayout />
         </Breakpoint>
       </BreakpointProvider>
-
-
-
       {/* <div
         className={`${
           showWelcome

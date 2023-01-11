@@ -42,23 +42,24 @@ const CaseStudy = () => {
       id="case_study"
       className="section relative w-full min-h-full lg:pb-10 2xl:pb-12 font-poppins"
     >
-      <Flip left cascade spy={triggerTitleAnimation}>
-        <div className="absolute top-0 lg:pt-7 2xl:py-[100px] pl-[68px] pr-[22px] text-white">
+      <div className="absolute top-0 lg:pt-7 2xl:py-[100px] pl-[68px] pr-[22px] text-white">
+        <Flip left cascade spy={triggerTitleAnimation}>
           <h1 className="lg:text-3xl 2xl:text-[32px] font-semibold leading-10 text-white mb-5">
             Case Study
           </h1>
-          <p
-            className="lg:text-sm 2xl:text-base leading-5 text-white ml-4 font-light"
-            style={{
-              letterSpacing: "0.04em",
-            }}
-          >
-            We create premium web
-            <br />
-            design, though and user
-          </p>
+        </Flip>
+        <div
+          className="lg:text-sm 2xl:text-base leading-5 text-white ml-4 font-light"
+          style={{
+            letterSpacing: "0.04em",
+          }}
+        >
+          <Flip left cascade spy={triggerTitleAnimation}>
+            <div>We create premium web</div>
+            <div>design, though and user</div>
+          </Flip>
         </div>
-      </Flip>
+      </div>
 
       <div className="w-full min-h-[80vh] flex justify-end items-end pr-16">
         <div className="lg:w-[650px] xl:w-9/12 grid lg:gap-4 2xl:gap-6 ml-auto mt-auto lg:grid-cols-4 2xl:grid-cols-4">
@@ -111,6 +112,12 @@ const CaseStudy = () => {
           </div>
         </div>
       </div>
+      <a href="#start-project" class="absolute top-8 right-8">
+        <span className="relative  flex justify-center items-center h-4 w-4 cursor-pointer">
+          <span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-white opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
+        </span>
+      </a>
     </div>
   );
 };

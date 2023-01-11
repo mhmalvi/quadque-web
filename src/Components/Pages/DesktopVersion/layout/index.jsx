@@ -3,19 +3,42 @@ import React, { useEffect, useState } from "react";
 import Icons from "../../../Shared/Icons";
 import Navbar from "../Navbar";
 import CenterLayout from "./CenterLayout";
+import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
+import muteImg from "../../../../asstes/Images/mute.png";
+import unmuteImg from "../../../../asstes/Images/unmute.png";
 
 const Layout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
+  const [muted, setMuted] = useState(false);
 
   useEffect(() => {
     document.getElementById("main_container").style.height =
       "calc(100vh - 80px)";
     document.getElementById("main_container").style.backgroundColor = "#000000";
+
+    console.log(document.getElementById("iframeAudio"));
   }, []);
+
+  useEffect(() => {
+    if (muted) {
+      document.getElementById("iframeAudio").src = "";
+    } else {
+      document.getElementById("iframeAudio").src = siteAudio;
+    }
+  }, [muted]);
 
   return (
     <div className="w-full h-full">
+      {/* For website background Audio */}
+      <iframe
+        id="iframeAudio"
+        title="audio"
+        src={siteAudio}
+        allow="autoplay loop"
+        style={{ display: "none" }}
+      />
+
       <Modal
         style={{
           backgroundColor: "black !important",
@@ -129,14 +152,47 @@ const Layout = () => {
         </div>
 
         {/* Right bar */}
-        <div className="bg-white absolute right-0 h-full">
-          <div className="w-[100px] flex flex-col justify-between left_bar">
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div className="mb-18 -rotate-90 flex justify-center items-center">
-              <span className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4">
-                start project
-              </span>
+
+        <div className="relative">
+          <div class="absolute top-3 right-10 text-lg font-bold text-black z-50">
+            {muted ? (
+              <div className="w-8">
+                <Tooltip title="Unmute Sound" placement="left" color="#8F00FF">
+                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <img
+                    className="z-50 cursor-pointer"
+                    src={unmuteImg}
+                    onClick={() => setMuted(false)}
+                    alt=""
+                  />
+                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                </Tooltip>
+              </div>
+            ) : (
+              <div className="w-8">
+                <Tooltip title="Mute Sound" placement="left" color="#8F00FF">
+                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <img
+                    className="z-50 cursor-pointer"
+                    src={muteImg}
+                    onClick={() => setMuted(true)}
+                    alt=""
+                  />
+                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                </Tooltip>
+              </div>
+            )}
+          </div>
+
+          <div className="bg-white absolute right-0 h-full">
+            <div className="w-[100px] flex flex-col justify-between left_bar">
+              <div>&nbsp;</div>
+              <div>&nbsp;</div>
+              <div className="mb-9 -rotate-90 flex justify-center items-center">
+                <span className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4">
+                  start project
+                </span>
+              </div>
             </div>
           </div>
         </div>

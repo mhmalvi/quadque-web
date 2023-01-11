@@ -8,16 +8,8 @@ import Services from "../Services";
 import "../../../../index.css";
 import About from "../About";
 import Blogs from "../Blogs";
-
-class MySection extends React.Component {
-  render() {
-    return (
-      <div className="section bg-green-300 text-white">
-        <h3>{this.props.content}</h3>
-      </div>
-    );
-  }
-}
+import StartProject from "../StartProject";
+import Footer from "../Footer";
 
 const anchors = [
   "landing",
@@ -27,22 +19,22 @@ const anchors = [
   "client-speak",
   "about",
   "blogs",
-  "abouts",
+  "start-project",
+  "footer",
 ];
 
 const CenterLayout = () => {
   return (
-    <div className="center_layout_container">
+    <div className='center_layout_container'>
       <ReactFullpage
         anchors={anchors}
         navigation
         navigationTooltips={anchors}
-        // sectionsColor={["#282c34", "#ff5f45", "#0798ec"]}
         render={({ state, fullpageApi }) => {
           return (
             <div>
-              <div id="stars"></div>
-              <div id="stars2"></div>
+              <div id='stars'></div>
+              <div id='stars2'></div>
               <Header />
               <Services />
               <Cleints />
@@ -50,7 +42,8 @@ const CenterLayout = () => {
               <ClientSpeak />
               <About />
               <Blogs />
-              <CaseStudy />
+              <StartProject />
+              <Footer />
             </div>
           );
         }}
