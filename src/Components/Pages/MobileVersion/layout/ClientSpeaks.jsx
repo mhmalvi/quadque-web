@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Client from "../../../../asstes/Images/client.png";
-import Case2 from "../../../../asstes/Images/case-study-2.png";
+// import Client from "../../../../asstes/Images/client.png";
+// import Case2 from "../../../../asstes/Images/case-study-2.png";
 import "../../MobileVersion/MobileView.css";
 
 import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
