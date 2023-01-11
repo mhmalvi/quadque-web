@@ -5,7 +5,7 @@ import DesktopLayout from "./Components/Pages/DesktopVersion/layout";
 import MobileLayout from "./Components/Pages/MobileVersion/layout";
 import { Breakpoint, BreakpointProvider } from "react-socks";
 import { Route, Routes } from "react-router-dom";
-// import { useEffect, useState } from "react";
+import BlogGallery from "./Components/Pages/MobileVersion/Blog/BlogGallery";
 
 function App() {
   // const [showWelcome, setShowWelcome] = useState(true);
@@ -18,21 +18,17 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <BreakpointProvider>
-              <Breakpoint large up>
-                <DesktopLayout />
-              </Breakpoint>
-              <Breakpoint large down>
-                <MobileLayout />
-              </Breakpoint>
-            </BreakpointProvider>
-          }
-        ></Route>
-      </Routes>
+      <BreakpointProvider>
+        <Breakpoint large up>
+          <DesktopLayout />
+        </Breakpoint>
+        <Breakpoint large down>
+          <MobileLayout />
+        </Breakpoint>
+      </BreakpointProvider>
+
+
+
       {/* <div
         className={`${
           showWelcome
