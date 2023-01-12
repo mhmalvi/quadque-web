@@ -40,15 +40,17 @@ const App = () => {
           <Link to="/">
             <li className="py-10" onClick={() => setOpen(false)}>Home</li>
           </Link>
-          <li className="py-10" onClick={() => setOpen(false)}>Work</li>
-          <a href="#About">
-          <li className="py-10" onClick={() => setOpen(false)}>About</li>
-          </a>
-          <a href="#Service" >
+          <a href="/#Service" >
             <li className="py-10" onClick={() => setOpen(false)}>Service</li>
+          </a>
+          <a href="/#About">
+          <li className="py-10" onClick={() => setOpen(false)}>About</li>
           </a>
           <Link to="/blogs">
             <li className="py-10" onClick={() => setOpen(false)}>Blog</li>
+          </Link>
+          <Link to="/gallery">
+            <li className="py-10" onClick={() => setOpen(false)}>Gallery</li>
           </Link>
           <li className="py-10" onClick={() => setOpen(false)}>Contact</li>
         </ul>

@@ -5,7 +5,7 @@ export const handleFetchHomeVideo = async () => {
     const result = await axios.get(
       `${process.env?.REACT_APP_SERVICE_URL}/api/home-videos/1`
     );
-    return result?.data;
+    return result?.data?.data;
   } catch (error) {
     console.log(error.response?.data);
     return [];
@@ -28,65 +28,10 @@ export const handleFetchServices = async () => {
     const result = await axios.get(
       `${process.env?.REACT_APP_SERVICE_URL}/api/services`
     );
-    return result?.data;
+    if (result?.status === 200) {
+      return result?.data?.data;
+    }
   } catch (error) {
-    return [];
-  }
-};
-
-export const handleFetchCaseStudies = async () => {
-  try {
-    const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies`
-    );
-    return result?.data;
-  } catch (error) {
-    return [];
-  }
-};
-
-export const handleFetchCaseStudiesDesktop = async () => {
-  try {
-    const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies-desktop`
-    );
-    return result?.data;
-  } catch (error) {
-    return [];
-  }
-};
-
-export const handleFetchClientSpeaks = async () => {
-  try {
-    const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/client-speaks`
-    );
-    return result?.data;
-  } catch (error) {
-    return [];
-  }
-};
-
-export const handleFetchBlogs = async () => {
-  try {
-    const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/manage-blogs`
-    );
-    return result?.data;
-  } catch (error) {
-    console.log(error.response?.data);
-    return [];
-  }
-};
-
-export const handleFetchBlogBySlug = async (slug) => {
-  try {
-    const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/manage-blogs/${slug}`
-    );
-    return result?.data;
-  } catch (error) {
-    console.log(error.response?.data);
     return [];
   }
 };
@@ -101,6 +46,84 @@ export const handleFetchServiceById = async (slug) => {
     }
   } catch (error) {
     console.log(error.response?.message);
+    return [];
+  }
+};
+
+export const handleFetchCaseStudies = async () => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies`
+    );
+    if (result?.status === 200) {
+      return result?.data?.data;
+    }
+  } catch (error) {
+    return [];
+  }
+};
+
+export const handleFetchCaseStudiesDesktop = async () => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies-desktop`
+    );
+    return result?.data;
+  } catch (error) {
+    console.log(error.response?.data);
+    return [];
+  }
+};
+
+export const handleFetchCaseStudyById = async (id) => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies/${id}`
+    );
+    if (result?.status === 200) {
+      return result?.data?.data;
+    }
+  } catch (error) {
+    console.log(error.response?.data);
+    return [];
+  }
+};
+
+export const handleFetchClientSpeaks = async () => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/client-speaks`
+    );
+    if (result?.status === 200) {
+      return result?.data?.data;
+    }
+  } catch (error) {
+    return [];
+  }
+};
+
+export const handleFetchBlogs = async () => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/manage-blogs`
+    );
+    if (result?.status === 200) {
+      return result?.data?.data;
+    }
+  } catch (error) {
+    console.log(error.response?.data);
+    return [];
+  }
+};
+
+export const handleFetchBlogBySlug = async (slug) => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/manage-blogs/${slug}`
+    );
+    return result?.data;
+  } catch (error) {
+    console.log(error.response?.data);
     return [];
   }
 };
@@ -136,10 +159,10 @@ export const handleFetchServiceBySlugInDesk = async (slug) => {
   }
 };
 
-export const handleFetchBlogById = async (id) => {
+export const handleFetchBlogById = async (slug) => {
   try {
     const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/manage-blogs/${id}`
+      `${process.env?.REACT_APP_SERVICE_URL}/api/manage-blogs/${slug}`
     );
     return result?.data;
   } catch (error) {
@@ -148,12 +171,29 @@ export const handleFetchBlogById = async (id) => {
   }
 };
 
-export const handleFetchClientSpeak = async () => {
+export const handleFetchCompanyGoals = async (id) => {
   try {
     const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/client-speaks`
+      `${process.env?.REACT_APP_SERVICE_URL}/api/about-us/${id}`
     );
-    return result?.data;
+    if (result?.status === 200) {
+      return result?.data?.data;
+    }
+  } catch (error) {
+    console.log(error.response?.data);
+    return [];
+  }
+};
+
+export const handleFetchClients = async () => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/clients`
+    );
+    //console.log("network client", result?.data);
+    if (result?.status === 200) {
+      return result?.data?.data;
+    }
   } catch (error) {
     console.log(error.response?.data);
     return [];

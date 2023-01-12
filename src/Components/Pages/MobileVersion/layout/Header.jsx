@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Astro from "../../../../asstes/Videos/astro.mp4";
+import Astro from "../../../../asstes/Video/headerVideo.mp4";
 import { handleFetchHomeVideo } from "../../../Shared/services";
 import "../../MobileVersion/MobileView.css"
 
