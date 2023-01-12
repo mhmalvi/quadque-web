@@ -35,7 +35,7 @@ function App() {
         <Breakpoint large up>
           <DesktopLayout />
         </Breakpoint>
-        <Breakpoint large down small only>
+        <Breakpoint large down>
           <MobileLayout />
         </Breakpoint>
       </BreakpointProvider>
