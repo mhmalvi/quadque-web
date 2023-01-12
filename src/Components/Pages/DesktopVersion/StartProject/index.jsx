@@ -3,6 +3,7 @@ import useServices from "../../../Shared/Hooks/useServices";
 import Flip from "react-reveal/Flip";
 import { useLocation } from "react-router-dom";
 import { Fade } from "react-reveal";
+import { handleSendMail } from "../../../Shared/services";
 
 const StartProject = () => {
   const location = useLocation();
@@ -84,7 +85,22 @@ const StartProject = () => {
     }
   };
 
-  console.log(activeSubServices);
+  console.log("activeServices", activeServices);
+  console.log("activeSubServices", activeSubServices);
+
+  const handleSendMailReq = async () => {
+    const data = {
+      "name": document.getElementById("Name").value,
+      "phone": document.getElementById("Phone").value,
+      "help": document.getElementById("help").value,
+      "email": document.getElementById("E-mail").value,
+      "category": activeServices,
+      "sub_category": activeSubServices.toString(),
+    };
+
+    const sendMail = await handleSendMail(data);
+    console.log("sendMail", sendMail);
+  };
 
   return (
     <div
@@ -93,7 +109,7 @@ const StartProject = () => {
     >
       <div className="ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8">
         <div className="flex items-center justify-between">
-          <div className="text-5xl font-bold leading-10 capitalize">
+          <div className="text-5xl font-bold leading-10 capitalize font_title">
             <Flip left cascade spy={triggerTitleAnimation}>
               <div>START</div>
               <div className="ml-[26px]">PROJECT</div>
@@ -108,8 +124,9 @@ const StartProject = () => {
 
         <div className="mt-15.5 flex justify-between">
           <div>
-            {services?.map((service) => (
+            {services?.map((service, i) => (
               <div
+                key={i}
                 className={`mb-5 text-base font-medium leading-6 capitalize cursor-pointer transition-colors delay-200 ${
                   activeServices === service?.service_name
                     ? "text-brand-color border-b-2 border-brand-color pb-2"
@@ -166,7 +183,7 @@ const StartProject = () => {
             <div className="w-84">
               <div className="border-b border-white mb-5">
                 <input
-                  className="outline-none border-none bg-transparent px-2 py-1"
+                  className="outline-none border-none bg-transparent px-2 py-1 w-79"
                   type="text"
                   name="Name"
                   placeholder="Name"
@@ -175,7 +192,7 @@ const StartProject = () => {
               </div>
               <div className="border-b border-white mb-5">
                 <input
-                  className="outline-none border-none bg-transparent px-2 py-1"
+                  className="outline-none border-none bg-transparent px-2 py-1 w-79"
                   type="text"
                   name="Phone"
                   placeholder="Phone"
@@ -184,7 +201,7 @@ const StartProject = () => {
               </div>
               <div className="border-b border-white mb-5">
                 <input
-                  className="outline-none border-none bg-transparent px-2 py-1"
+                  className="outline-none border-none bg-transparent px-2 py-1 w-79"
                   type="text"
                   name="E-mail"
                   placeholder="E-mail"
@@ -193,7 +210,7 @@ const StartProject = () => {
               </div>
               <div className="border-b border-white mt-11">
                 <input
-                  className="outline-none border-none bg-transparent px-2 py-1"
+                  className="outline-none border-none bg-transparent px-2 py-1 w-79"
                   type="text"
                   name="help"
                   placeholder="How can we help you"
@@ -209,6 +226,7 @@ const StartProject = () => {
                     boxShadow:
                       "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
                   }}
+                  onClick={handleSendMailReq}
                 >
                   START PROJECT
                 </button>

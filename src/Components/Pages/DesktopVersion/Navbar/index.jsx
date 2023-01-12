@@ -1,13 +1,25 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import bgShadowLogo from "../../../../asstes/Images/bg-logo-shadow.png";
 import brandLogo from "../../../../asstes/Images/brand_logo.png";
 
 const Navbar = ({ setOpenMenus }) => {
+  const navigate = useNavigate();
   const [showBgShadow, setShowBgShadow] = useState("");
 
-  const handleNavigate = () => {
-    setOpenMenus(false);
+  const handleNavigate = (menu) => {
+    if (!window.location.hash.includes("#")) {
+      navigate(`../${menu}`, { replace: true });
+      setOpenMenus(false);
+    } else {
+      setOpenMenus(false);
+      return;
+    }
   };
+
+  // console.log(window.location);
+  // console.log(window.location.hash);
+  // console.log(window.location.host + "/#contact");
 
   return (
     <div className="custom_modal_container bg-black bg-opacity-100 backdrop-blur-sm py-10 px-16">
@@ -19,14 +31,14 @@ const Navbar = ({ setOpenMenus }) => {
         <div className="flex items-center">
           <a
             href="#services"
-            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
             onMouseOver={() => {
               setShowBgShadow("SERVICES");
             }}
             onMouseOut={() => {
               setShowBgShadow("");
             }}
-            onClick={handleNavigate}
+            onClick={() => handleNavigate("#services")}
           >
             <span className="p-0 m-0 uppercase">SERVICES</span>
             <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
@@ -41,7 +53,8 @@ const Navbar = ({ setOpenMenus }) => {
             />
           </a>
 
-          <div
+          <a
+            href="#about"
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex mx-20"
             onMouseOver={() => {
               setShowBgShadow("ABOUT");
@@ -50,16 +63,9 @@ const Navbar = ({ setOpenMenus }) => {
               setShowBgShadow("");
             }}
           >
-            <a
-              href="#services"
-              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
-              onMouseOver={() => {
-                setShowBgShadow("SERVICES");
-              }}
-              onMouseOut={() => {
-                setShowBgShadow("");
-              }}
-              onClick={handleNavigate}
+            <div
+              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+              onClick={() => handleNavigate("#about")}
             >
               <span className="p-0 m-0 uppercase">ABOUT</span>
               <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
@@ -72,8 +78,8 @@ const Navbar = ({ setOpenMenus }) => {
                 src={bgShadowLogo}
                 alt=""
               />
-            </a>
-          </div>
+            </div>
+          </a>
           <div
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex"
             onMouseOver={() => {
@@ -84,15 +90,9 @@ const Navbar = ({ setOpenMenus }) => {
             }}
           >
             <a
-              href="#services"
-              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
-              onMouseOver={() => {
-                setShowBgShadow("SERVICES");
-              }}
-              onMouseOut={() => {
-                setShowBgShadow("");
-              }}
-              onClick={handleNavigate}
+              href="#case-study"
+              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+              onClick={() => handleNavigate("#case-study")}
             >
               <span className="p-0 m-0 uppercase">PORTFOLIO</span>
               <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
@@ -110,7 +110,8 @@ const Navbar = ({ setOpenMenus }) => {
         </div>
 
         <div className="flex mt-20">
-          <div
+          <a
+            href="#blogs"
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex mr-20"
             onMouseOver={() => {
               setShowBgShadow("BLOGS");
@@ -119,16 +120,9 @@ const Navbar = ({ setOpenMenus }) => {
               setShowBgShadow("");
             }}
           >
-            <a
-              href="#services"
-              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
-              onMouseOver={() => {
-                setShowBgShadow("SERVICES");
-              }}
-              onMouseOut={() => {
-                setShowBgShadow("");
-              }}
-              onClick={handleNavigate}
+            <div
+              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+              onClick={() => setOpenMenus(false)}
             >
               <span className="p-0 m-0 uppercase">BLOGS</span>
               <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
@@ -141,10 +135,11 @@ const Navbar = ({ setOpenMenus }) => {
                 src={bgShadowLogo}
                 alt=""
               />
-            </a>
-          </div>
+            </div>
+          </a>
 
-          <div
+          <a
+            href="#contacts"
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex"
             onMouseOver={() => {
               setShowBgShadow("CONTACT");
@@ -153,16 +148,9 @@ const Navbar = ({ setOpenMenus }) => {
               setShowBgShadow("");
             }}
           >
-            <a
-              href="#services"
-              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200"
-              onMouseOver={() => {
-                setShowBgShadow("SERVICES");
-              }}
-              onMouseOut={() => {
-                setShowBgShadow("");
-              }}
-              onClick={handleNavigate}
+            <div
+              className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+              onClick={() => setOpenMenus(false)}
             >
               <span className="p-0 m-0 uppercase">CONTACT</span>
               <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
@@ -175,8 +163,8 @@ const Navbar = ({ setOpenMenus }) => {
                 src={bgShadowLogo}
                 alt=""
               />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
 
