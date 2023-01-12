@@ -17,7 +17,6 @@ import { handleFetchCaseStudyById } from "../../../../Shared/services";
 const CaseStudyDetails = () => {
   //   const navigate = useNavigate();
   const { slug } = useParams();
-  //   const ClientsSlider = useRef(null);
   const [caseStudyDetails, setCaseStudyDetails] = useState();
   
 
