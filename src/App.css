@@ -7,6 +7,30 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+@font-face {
+  font-family: Anurati;
+  src: url(asstes/Fonts/Anurati-Regular.otf);
+}
+
+@font-face {
+  font-family: Dune;
+  src: url(asstes/Fonts/Dune_Rise.otf);
+}
+
+@font-face {
+  font-family: Aquire;
+  src: url(asstes/Fonts/AquireBold-8Ma60.otf);
+}
+
+@font-face {
+  font-family: AstroSpace;
+  src: url(asstes/Fonts/AstroSpace-0Wl3o.otf);
+}
+
+.font_title {
+  font-family: "Aquire";
+}
+
 /* Layout Styles */
 
 .main_container {
@@ -38,6 +62,10 @@ body {
 /* Overriding Full Page scroll section design */
 .fp-table {
   justify-content: start !important;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .center_layout_container::-webkit-scrollbar {
@@ -145,7 +173,7 @@ body {
 .custom_modal_container {
   height: calc(100vh - 80px);
   width: calc(100vw - 200px);
-  margin: 1.2rem auto auto auto;
+  margin: 1.2rem auto auto 4.7rem;
   scrollbar-width: none !important;
   overflow-x: hidden;
 }
@@ -380,4 +408,35 @@ body {
   background-image: url("./asstes/Images/faq-icon.png");
   background-repeat: no-repeat;
   margin-top: 4px;
+}
+
+.blog_details_section {
+  padding: 1rem 2rem 6rem 2rem;
+}
+
+.blog_details_section img {
+  /* width: 90% !important; */
+  /* height: 100% !important; */
+  margin: auto;
+}
+
+.blog_details_section blockquote {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.889);
+  padding: 2rem 3rem;
+}
+
+.service_details table > tr {
+  width: 100%;
+  display: flex;
+  background-color: rebeccapurple;
+  justify-content: space-between;
+}
+
+.serviceDetails_content h5 {
+  opacity: 75%;
 }

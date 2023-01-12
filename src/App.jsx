@@ -1,10 +1,9 @@
 import "./App.css";
 import "./index.css";
 // import welcomeAvatar from "./asstes/Images/welcome_avatar.gif";
+import { Breakpoint, BreakpointProvider } from "react-socks";
 import DesktopLayout from "./Components/Pages/DesktopVersion/layout";
 import MobileLayout from "./Components/Pages/MobileVersion/layout";
-import { Breakpoint, BreakpointProvider } from "react-socks";
-import { Route, Routes } from "react-router-dom";
 // import { useEffect, useState } from "react";
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
         <Breakpoint large up>
           <DesktopLayout />
         </Breakpoint>
-        <Breakpoint large down>
+        <Breakpoint large down small only>
           <MobileLayout />
         </Breakpoint>
       </BreakpointProvider>

@@ -29,7 +29,7 @@ const Cleints = () => {
       <div className="px-21 mr-36 2xl:mr-44 text-white flex justify-between items-start">
         <div className="absolute top-1/4 flex justify-center items-center">
           <div className="w-67 items-center text-justify mr-30">
-            <div className="text-4xl 2xl:text-5xl font-semibold mb-5">
+            <div className="text-4xl 2xl:text-5xl font-semibold mb-5 font_title">
               <Flip left cascade spy={triggerAnimation}>
                 <h1 className="whitespace-nowrap">More then valuable</h1>
                 <span className="mr-2 text-brand-color">
@@ -50,10 +50,13 @@ const Cleints = () => {
         <div className="ml-auto hidden lg:hidden xl:hidden 2xl:block">
           <div className="flex items-center mb-4">
             <div>
-              <p class="marquee">
+              <p className="marquee">
                 <span>
                   {colum12xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -62,10 +65,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee marquee2">
+              <p className="marquee marquee2">
                 <span>
                   {colum12xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -76,10 +82,13 @@ const Cleints = () => {
               </p>
             </div>
             <div className="ml-40 pl-[24px] middle_column">
-              <p class="marquee-reverse">
+              <p className="marquee-reverse">
                 <span>
                   {colum12xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -88,10 +97,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee-reverse marquee-reverse-2">
+              <p className="marquee-reverse marquee-reverse-2">
                 <span>
                   {colum12xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -102,10 +114,13 @@ const Cleints = () => {
               </p>
             </div>
             <div className="ml-40 pl-[24px]">
-              <p class="marquee">
+              <p className="marquee">
                 <span>
                   {colum12xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -114,10 +129,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee marquee2">
+              <p className="marquee marquee2">
                 <span>
                   {colum12xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -133,10 +151,13 @@ const Cleints = () => {
         <div className="ml-auto hidden lg:hidden xl:block 2xl:hidden">
           <div className="flex items-center mb-4">
             <div>
-              <p class="marquee">
+              <p className="marquee">
                 <span>
                   {colum1xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -145,10 +166,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee marquee2">
+              <p className="marquee marquee2">
                 <span>
                   {colum1xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -159,10 +183,13 @@ const Cleints = () => {
               </p>
             </div>
             <div className="ml-40 pl-[24px] middle_column">
-              <p class="marquee-reverse">
+              <p className="marquee-reverse">
                 <span>
                   {colum1xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -171,10 +198,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee-reverse marquee-reverse-2">
+              <p className="marquee-reverse marquee-reverse-2">
                 <span>
                   {colum1xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -185,10 +215,13 @@ const Cleints = () => {
               </p>
             </div>
             <div className="ml-40 pl-[24px]">
-              <p class="marquee">
+              <p className="marquee">
                 <span>
                   {colum1xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -197,10 +230,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee marquee2">
+              <p className="marquee marquee2">
                 <span>
                   {colum1xl?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -216,10 +252,13 @@ const Cleints = () => {
         <div className="ml-auto hidden lg:block xl:hidden 2xl:hidden">
           <div className="flex items-center mb-4">
             <div>
-              <p class="marquee">
+              <p className="marquee">
                 <span>
                   {colum1lg?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -228,10 +267,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee marquee2">
+              <p className="marquee marquee2">
                 <span>
                   {colum1lg?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -242,10 +284,13 @@ const Cleints = () => {
               </p>
             </div>
             <div className="ml-40 pl-[24px] middle_column">
-              <p class="marquee-reverse">
+              <p className="marquee-reverse">
                 <span>
                   {colum1lg?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -254,10 +299,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee-reverse marquee-reverse-2">
+              <p className="marquee-reverse marquee-reverse-2">
                 <span>
                   {colum1lg?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -268,10 +316,13 @@ const Cleints = () => {
               </p>
             </div>
             <div className="ml-40 pl-[24px]">
-              <p class="marquee">
+              <p className="marquee">
                 <span>
                   {colum1lg?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -280,10 +331,13 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p class="marquee marquee2">
+              <p className="marquee marquee2">
                 <span>
                   {colum1lg?.map((client, i) => (
-                    <div className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20">
+                    <div
+                      key={i}
+                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                    >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
                       </div>
@@ -297,10 +351,10 @@ const Cleints = () => {
         </div>
       </div>
 
-      <a href="#start-project" class="absolute top-8 right-8">
+      <a href="#start-project" className="absolute top-8 right-8">
         <span className="relative  flex justify-center items-center h-4 w-4 cursor-pointer">
-          <span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-white opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
+          <span className="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-white opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
         </span>
       </a>
     </div>
@@ -309,7 +363,7 @@ const Cleints = () => {
 
 export default Cleints;
 
-const colum12xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp];
+const colum12xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp, ms];
 const colum1xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts];
 const colum1lg = [ms, ts, sp, ms, ts, sp, ms, ts, sp];
 // const colum2 = [ts, sp, ms, ts, sp, ms, ts, sp, ms];
