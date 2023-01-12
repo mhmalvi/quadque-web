@@ -108,8 +108,9 @@ const StartProject = () => {
 
         <div className="mt-15.5 flex justify-between">
           <div>
-            {services?.map((service) => (
+            {services?.map((service,i) => (
               <div
+                key={i}
                 className={`mb-5 text-base font-medium leading-6 capitalize cursor-pointer transition-colors delay-200 ${
                   activeServices === service?.service_name
                     ? "text-brand-color border-b-2 border-brand-color pb-2"

@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from "react";
-import useServices from "../../../Shared/Hooks/useServices";
 import { Tooltip } from "antd";
-import Flip from "react-reveal/Flip";
-import { useLocation } from "react-router-dom";
 import Lottie from "lottie-react";
+import React, { useEffect, useState } from "react";
+import Flip from "react-reveal/Flip";
+import { Link, useLocation } from "react-router-dom";
 
-import UI_UX from "../../../../asstes/Lotties/ux.json";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
 import softDev from "../../../../asstes/Lotties/softwware_development.json";
+import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
+import useServicesDesktop from "../../../Shared/Hooks/useServicesDesktop";
 
 const Services = () => {
   const location = useLocation();
   const [activeService, setActiveService] = useState();
   const [activeServiceDetails, setActiveDetails] = useState({});
   const [triggerAnimation, setTriggerAnimation] = useState(false);
-  const [services] = useServices();
+  const [servicesDesktop] = useServicesDesktop();
+
+  // console.log("services", services);
 
   useEffect(() => {
     if (location.hash === "#services") {
@@ -28,7 +30,7 @@ const Services = () => {
   }, [location.hash]);
 
   useEffect(() => {
-    setActiveService("UI/UX");
+    setActiveService(servicesDesktop[0]?.service_name);
 
     let i = 1;
     setInterval(() => {
@@ -36,20 +38,22 @@ const Services = () => {
       // console.log(document.getElementById("lottie_file"));
       // document.getElementById("lottie_file").src = services[i]?.file;
 
-      setActiveService(services[i]?.service_name);
-      setActiveDetails(services[i]);
+      setActiveService(servicesDesktop[i]?.service_name);
+      setActiveDetails(servicesDesktop[i]);
       i++;
       if (i > 4) {
         i = 0;
       }
     }, 10000);
-  }, [services]);
+  }, [servicesDesktop]);
+
+  console.log("services", servicesDesktop);
 
   useEffect(() => {
     setActiveDetails(
-      services?.find((service) => service.service_name === activeService)
+      servicesDesktop?.find((service) => service.service_name === activeService)
     );
-  }, [activeService, services]);
+  }, [activeService, servicesDesktop]);
 
   return (
     <div className="w-full lg:h-[80vh] 2xl:h-[90vh] relative text-white flex justify-between font-poppins lg:pt-[20px] 2xl:pb-[75px]">
@@ -78,7 +82,9 @@ const Services = () => {
                     }
                     color={"rgba(255, 255, 255)"}
                   >
-                    Learn More
+                    <Link to={`services/${activeServiceDetails?.slug}`}>
+                      Learn More
+                    </Link>
                   </Tooltip>
                 </p>
               ) : null}
@@ -127,7 +133,7 @@ const Services = () => {
       <div className="w-58 text-xl font-medium leading-8 capitalize">
         <Flip right cascade spy={triggerAnimation}>
           <div className="pt-18 mt-0.5">
-            {services?.map((service, i) => (
+            {servicesDesktop?.map((service, i) => (
               <p
                 key={i}
                 className={`${

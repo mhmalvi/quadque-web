@@ -7,8 +7,10 @@ const useBlogs = () => {
   useEffect(() => {
     (async () => {
       const response = await handleFetchBlogs();
-      if (response) {
-        setBlogs(response);
+      if (response?.status === 200) {
+        setBlogs(response?.data);
+      } else {
+        console.log("Something went wrong in Blogs.");
       }
     })();
   }, []);

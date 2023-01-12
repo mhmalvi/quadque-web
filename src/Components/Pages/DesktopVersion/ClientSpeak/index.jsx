@@ -22,7 +22,7 @@ const ClientSpeak = () => {
 
     (async () => {
       const clientSpeaks = await handleFetchClientSpeaks();
-      setClientSpeaks(clientSpeaks);
+      if (clientSpeaks?.status === 200) setClientSpeaks(clientSpeaks.data);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
@@ -38,7 +38,7 @@ const ClientSpeak = () => {
       <div className="ml-6 relative 2xl:left-14 2xl:top-8 lg:pt-7 lg:mt-9 pl-[68px] pr-[22px] text-white">
         <Flip left cascade spy={triggerTitleAnimation}>
           <img className="absolute top-0 -left-4 z-0" src={titleBg} alt="" />
-          <h1 className="z-50 lg:text-3xl 2xl:text-[32px] font-semibold leading-10 text-white mb-7 -mt-4">
+          <h1 className="z-50 lg:text-3xl 2xl:text-[32px] font-semibold leading-10 text-white mb-7 -mt-4 font_title">
             Our clients speak
           </h1>
         </Flip>

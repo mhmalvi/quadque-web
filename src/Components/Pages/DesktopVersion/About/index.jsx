@@ -35,7 +35,7 @@ const About = () => {
           <div className="mb-8">
             <div>
               <Flip left cascade spy={triggerTitleAnimation}>
-                <h1 className="text-[32px] font-medium leading-[48px] font-poppins">
+                <h1 className="text-[32px] font-medium leading-[48px] font-poppins font_title">
                   About us
                 </h1>
               </Flip>
@@ -45,6 +45,7 @@ const About = () => {
             <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mt-auto overflow-y-scroll py-1">
               {arrayy.map((_, i) => (
                 <div
+                  key={i}
                   className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                   onMouseOver={() => handleChangeBanner(i)}
                 >

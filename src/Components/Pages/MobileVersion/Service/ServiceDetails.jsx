@@ -16,7 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const ServiceDetails = () => {
   const ClientsSlider = useRef(null);
-    const ReviewsSlider = useRef(null);
+  const ReviewsSlider = useRef(null);
 
   const settings = {
     centerMode: false,
@@ -112,7 +112,9 @@ const ServiceDetails = () => {
       {/* BEST FOR YOU SECTION */}
 
       <div className="text-sm text-center uppercase pb-1">BEST FOR YOU</div>
-      <div className="text-2xl text-center pb-13">We serve the best service</div>
+      <div className="text-2xl text-center pb-13">
+        We serve the best service
+      </div>
       <div className="pb-13">
         <div className="flex-col pb-8">
           <div className="flex gap-4">
@@ -130,7 +132,9 @@ const ServiceDetails = () => {
         <div className="flex-col pb-8">
           <div className="flex gap-4">
             <img src={Best2} alt="" className="w-20" />
-            <div className="w-2/3 text-2xl flex items-end">Builds the Foundation</div>
+            <div className="w-2/3 text-2xl flex items-end">
+              Builds the Foundation
+            </div>
           </div>
           <div className="text-sm text-justify text-[#D0D4EA] pt-5">
             Branding is about influencing customers' emotions. It's all about

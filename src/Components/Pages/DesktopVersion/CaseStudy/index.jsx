@@ -1,15 +1,18 @@
+import { Tooltip } from "antd";
 import React, { useEffect, useState } from "react";
-import Icons from "../../../Shared/Icons";
 import Flip from "react-reveal/Flip";
 import { useLocation } from "react-router-dom";
-import { Tooltip } from "antd";
-import { handleFetchCaseStudies } from "../../../Shared/services";
+import useCaseStudiesDesktop from "../../../Shared/Hooks/useCaseStudiesDesktop";
+import Icons from "../../../Shared/Icons";
 
 const CaseStudy = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
-  const [caseStudies, setCaseStudies] = useState([]);
+  // const [caseStudies, setCaseStudies] = useState([]);
+  const [caseStudies] = useCaseStudiesDesktop();
+
+  console.log(caseStudies);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
@@ -24,18 +27,18 @@ const CaseStudy = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
 
-  useEffect(() => {
-    (async () => {
-      const response = await handleFetchCaseStudies();
-      if (response) {
-        setCaseStudies(response);
-      }
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const response = await handleFetchCaseStudiesDesktop();
+  //     if (response?.status === 200) {
+  //       setCaseStudies(response?.data);
+  //     }
+  //   })();
+  // }, []);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = caseStudies.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = caseStudies?.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
     <div
@@ -44,7 +47,12 @@ const CaseStudy = () => {
     >
       <div className="absolute top-0 lg:pt-7 2xl:py-[100px] pl-[68px] pr-[22px] text-white">
         <Flip left cascade spy={triggerTitleAnimation}>
-          <h1 className="lg:text-3xl 2xl:text-[32px] font-semibold leading-10 text-white mb-5">
+          <h1
+            className="lg:text-3xl 2xl:text-[32px] font-extrabold leading-10 text-white mb-5 font_title"
+            style={{
+              letterSpacing: "0.2em",
+            }}
+          >
             Case Study
           </h1>
         </Flip>
@@ -66,7 +74,7 @@ const CaseStudy = () => {
           <div className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px]">
             &nbsp;
           </div>
-          {currentPosts?.map((post) => (
+          {currentPosts?.map((post, i) => (
             <Flip left spy={triggerAnimation}>
               <Tooltip
                 key={post?.id}
@@ -74,7 +82,10 @@ const CaseStudy = () => {
                 placement="top"
                 color={"#8F00FF"}
               >
-                <div className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px] cursor-pointer">
+                <div
+                  key={i}
+                  className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px] cursor-pointer"
+                >
                   <img
                     className="w-full h-full rounded-[20px]"
                     src={post?.com_image}
@@ -112,10 +123,10 @@ const CaseStudy = () => {
           </div>
         </div>
       </div>
-      <a href="#start-project" class="absolute top-8 right-8">
+      <a href="#start-project" className="absolute top-8 right-8">
         <span className="relative  flex justify-center items-center h-4 w-4 cursor-pointer">
-          <span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-white opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
+          <span className="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-white opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
         </span>
       </a>
     </div>
