@@ -10,6 +10,7 @@ import About from "../About";
 import Blogs from "../Blogs";
 import StartProject from "../StartProject";
 import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 const anchors = [
   "landing",
@@ -20,21 +21,26 @@ const anchors = [
   "about",
   "blogs",
   "start-project",
-  "footer",
+  "contacts",
 ];
 
 const CenterLayout = () => {
   return (
-    <div className='center_layout_container'>
+    <div className="center_layout_container">
       <ReactFullpage
         anchors={anchors}
+        scrollingSpeed={800}
+        easing={"ease-out"}
         navigation
         navigationTooltips={anchors}
         render={({ state, fullpageApi }) => {
           return (
             <div>
-              <div id='stars'></div>
-              <div id='stars2'></div>
+              <div id="stars"></div>
+              <div id="stars2"></div>
+              <div className="hidden">
+                <Navbar fullpageApi={fullpageApi} />
+              </div>
               <Header />
               <Services />
               <Cleints />

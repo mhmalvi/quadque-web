@@ -22,7 +22,7 @@ const ClientSpeak = () => {
 
     (async () => {
       const clientSpeaks = await handleFetchClientSpeaks();
-      setClientSpeaks(clientSpeaks);
+      if (clientSpeaks) setClientSpeaks(clientSpeaks);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
@@ -38,7 +38,7 @@ const ClientSpeak = () => {
       <div className="ml-6 relative 2xl:left-14 2xl:top-8 lg:pt-7 lg:mt-9 pl-[68px] pr-[22px] text-white">
         <Flip left cascade spy={triggerTitleAnimation}>
           <img className="absolute top-0 -left-4 z-0" src={titleBg} alt="" />
-          <h1 className="z-50 lg:text-3xl 2xl:text-[32px] font-semibold leading-10 text-white mb-7 -mt-4">
+          <h1 className="z-50 lg:text-3xl 2xl:text-[32px] font-semibold leading-10 text-white mb-7 -mt-4 font_title">
             Our clients speak
           </h1>
         </Flip>
@@ -49,7 +49,7 @@ const ClientSpeak = () => {
           <Fade left spy={triggerAnimation}>
             <div>
               <img
-                className="lg:w-[330px] lg:h-[320px] 2xl:w-98 2xl:h-98 lg:mr-12 2xl:mr-16 pr-0.05"
+                className="lg:w-[250px] lg:h-[260px] 2xl:w-98 2xl:h-98 lg:mr-12 2xl:mr-16 pr-0.05"
                 src={clientSpeaks?.[index]?.image}
                 alt=""
               />
@@ -59,7 +59,7 @@ const ClientSpeak = () => {
           <div className="lg:w-[423px] 2xl:w-98 mr-9 relative">
             <Fade right spy={triggerAnimation}>
               <h3
-                className="lg:text-base 2xl:text-lg font-normal capitalize"
+                className="lg:text-sm 2xl:text-lg font-normal capitalize"
                 style={{
                   letterSpacing: "0.04em",
                 }}

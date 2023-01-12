@@ -10,7 +10,7 @@ const Footer = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
 
   useEffect(() => {
-    if (location.hash === "#footer") {
+    if (location.hash === "#contacts") {
       document.getElementById("footer_icon").classList.remove("hidden");
       setTimeout(() => {
         setTriggerAnimation(!triggerAnimation);
@@ -24,7 +24,7 @@ const Footer = () => {
 
   return (
     <div
-      id="footer"
+      id="contacts"
       className="section w-full lg:pt-6 2xl:pt-8 font-poppins bg-black text-white"
     >
       <div className="ml-21 lg:mt-10 2xl:mt-16 mr-25 pb-8">

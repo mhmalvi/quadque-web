@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import useServices from "../../../Shared/Hooks/useServices";
 import { Tooltip } from "antd";
-import Flip from "react-reveal/Flip";
-import { useLocation } from "react-router-dom";
 import Lottie from "lottie-react";
-
-import UI_UX from "../../../../asstes/Lotties/ux.json";
+import React, { useEffect, useState } from "react";
+import Flip from "react-reveal/Flip";
+import { Link, useLocation } from "react-router-dom";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
 import softDev from "../../../../asstes/Lotties/softwware_development.json";
+import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
+import useServices from "../../../Shared/Hooks/useServices";
 
 const Services = () => {
   const location = useLocation();
@@ -17,6 +16,7 @@ const Services = () => {
   const [activeServiceDetails, setActiveDetails] = useState({});
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [services] = useServices();
+
 
   useEffect(() => {
     if (location.hash === "#services") {
@@ -28,7 +28,7 @@ const Services = () => {
   }, [location.hash]);
 
   useEffect(() => {
-    setActiveService("UI/UX");
+    setActiveService(services[0]?.service_name);
 
     let i = 1;
     setInterval(() => {
@@ -44,6 +44,8 @@ const Services = () => {
       }
     }, 10000);
   }, [services]);
+
+  console.log("services", services);
 
   useEffect(() => {
     setActiveDetails(
@@ -78,7 +80,9 @@ const Services = () => {
                     }
                     color={"rgba(255, 255, 255)"}
                   >
-                    Learn More
+                    <Link to={`services/${activeServiceDetails?.slug}`}>
+                      Learn More
+                    </Link>
                   </Tooltip>
                 </p>
               ) : null}
@@ -88,14 +92,16 @@ const Services = () => {
 
         <Flip left cascade>
           <div>
-            <button
-              className="w-[252px] h-[46px] bg-brand-color text-[15px] font-semibold leading-4 capitalize text-white"
-              style={{
-                letterSpacing: "0.04em",
-              }}
-            >
-              START PROJECT
-            </button>
+            <a href="#start-project">
+              <button
+                className="w-[252px] h-[46px] bg-brand-color text-[15px] font-semibold leading-4 capitalize text-white"
+                style={{
+                  letterSpacing: "0.04em",
+                }}
+              >
+                START PROJECT
+              </button>
+            </a>
           </div>
         </Flip>
       </div>
