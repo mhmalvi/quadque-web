@@ -33,7 +33,7 @@ const StartProject = () => {
   };
 
   return (
-    <div className="w-full text-white mt-20 mb-5">
+    <div id="start-project" className="w-full text-white mt-20 mb-5">
       <div className="text-3xl px-6 font-bold uppercase pb-8">
         START <br /> &nbsp; PROJECT
       </div>

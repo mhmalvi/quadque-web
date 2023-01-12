@@ -39,10 +39,10 @@
 }
 
 .CaseStudy .slick-slider img {
-  height: 400px;
+  height: 300px;
   scale: 100%;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 .CaseStudy .slick-slider .caseText {
@@ -60,7 +60,7 @@
 
 .CaseStudy .slick-slider .slick-active .caseText {
   position: relative;
-  top: -88px;
+  top: -84px;
   opacity: 1;
   scale: 120%;
   transition-duration: 1s;
@@ -196,7 +196,7 @@
 
 .bestforyou h3 img {
   width: 300px !important;
-  margin: auto;
+  /* margin: auto; */
 }
 
 .Service_Identity h1 span {

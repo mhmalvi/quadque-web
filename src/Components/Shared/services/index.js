@@ -25,12 +25,12 @@ export const handleFetchServices = async () => {
   }
 };
 
-export const handleFetchServiceById = async (slug) => {
+export const handleFetchServiceBySlug = async (slug) => {
   try {
     const result = await axios.get(
       `${process.env?.REACT_APP_SERVICE_URL}/api/services/${slug}`
     );
-    if(result?.status === 200){
+    if(result?.data?.status === 200){
     return result?.data?.data;
     }
   } catch (error) {
@@ -52,10 +52,10 @@ export const handleFetchCaseStudies = async () => {
   }
 };
 
-export const handleFetchCaseStudyById = async (id) => {
+export const handleFetchCaseStudyBySlug = async (slug) => {
   try {
     const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies/${id}`
+      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies/${slug}`
     );
     if(result?.status === 200){
       return result?.data?.data;

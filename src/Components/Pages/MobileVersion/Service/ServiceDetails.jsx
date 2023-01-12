@@ -15,15 +15,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { handleFetchServiceById } from "../../../Shared/services";
+import { handleFetchServiceBySlug } from "../../../Shared/services";
 import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 
 import point from "../../../../asstes/Icons/service-icon.svg";
 
 const ServiceDetails = () => {
-  const { id } = useParams();
-  const PhoneSlider = useRef(null);
+  const navigate = useNavigate();
+  const { slug } = useParams();
   const ClientsSlider = useRef(null);
   const ReviewsSlider = useRef(null);
   const [ClientSpeak] = useClientSpeak();
@@ -34,11 +34,11 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     (async () => {
-      const fetchServicedata = await handleFetchServiceById(id);
+      const fetchServicedata = await handleFetchServiceBySlug(slug);
       setService(fetchServicedata);
-      //console.log("service data", Service);
+      console.log("service data", Service);
     })();
-  }, [id]);
+  }, [slug]);
 
   useEffect(() => {
       const cap_array = Service?.services_capabilities_menu.split(",");
@@ -59,10 +59,10 @@ const ServiceDetails = () => {
     <div className="w-full mt-30 text-white px-6">
       <div className="text-3xl font-bold pb-5">{Service?.service_name}</div>
       <div className="font-semibold pb-2">
-        Create Your Business with Digital Design
+        {Service?.service_title}
       </div>
       <div className="text-sm text-justify pb-2">{Service?.description}</div>
-      <div className="text-brand-color font-bold">START PROJECT</div>
+      <div onClick={() => navigate(`../#start-project`, { replace: true })} className="text-brand-color font-bold">START PROJECT</div>
 
       <div className="py-13">
           <div>
@@ -70,21 +70,17 @@ const ServiceDetails = () => {
           </div>
       </div>
 
-      <div
-        className="Service_Identity text-white text-center"
-        dangerouslySetInnerHTML={{ __html: Service?.identity_design_des }}
-      ></div>
 
       {/* IDENTITY DESIGN SERVICES SECTION */}
-      {/*       <div className="text-sm text-center uppercase pb-1">
+            <div className="text-sm text-center uppercase pb-1">
         IDENTITY DESIGN SERVICES
       </div>
       <div className="text-2xl text-center pb-3">How We Can Help?</div>
-      <div className="text-center text-sm pb-6">
-        We’ll help you finding a solution and solve your problems. We use
-        process design to create digital products. Besides that also helps their
-        business.
-      </div>
+      <div
+        className="Service_Identity text-white text-center pb-4"
+        dangerouslySetInnerHTML={{ __html: Service?.identity_design_des }}
+      ></div>
+
     <div className="flex flex-wrap justify-between gap-5">
       {Objects.map((obj, index) =>   
         <div className="text-sm font-semibold">
@@ -94,7 +90,7 @@ const ServiceDetails = () => {
           </span>
         </div>
       )}
-    </div> */}
+    </div>
 
       {/*       <div className="flex justify-between  pb-13">
         <div className="text-sm font-semibold">
@@ -137,7 +133,7 @@ const ServiceDetails = () => {
 
       <div className="flex py-13">
         <div className="w-1/2 text-brand-color text-5xl font-semibold text-center">
-          {<CountUp start={0} end={Service?.project_count} duration={2} />}+{" "}
+          {<CountUp start={0} end={Service?.project_count} duration={2} />}+
           <br />
           <span className="text-white text-base font-thin">
             Projects Completed
@@ -145,7 +141,7 @@ const ServiceDetails = () => {
         </div>
         <div className="bg-white w-[1px] h-14"></div>
         <div className="w-1/2 text-brand-color text-5xl font-semibold text-center">
-          {<CountUp start={0} end={Service?.happy_clients} duration={3} />}+{" "}
+          {<CountUp start={0} end={Service?.happy_clients} duration={3} />}+
           <br />
           <span className="text-white text-base font-thin">
             Happy Clients
@@ -296,7 +292,7 @@ const ServiceDetails = () => {
         <Slider ref={ClientsSlider} arrows={false} {...settings}>
           {CaseStudy?.map((details) =>
             <div>
-              <img src={details?.com_image} alt="" className="w-full px-4" />
+              <img src={details?.com_image} alt="" className="w-full rounded-2xl" />
               <div className="text-center text-white py-2">
                 {details?.com_name}
               </div>
