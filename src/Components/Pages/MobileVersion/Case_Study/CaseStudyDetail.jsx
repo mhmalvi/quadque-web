@@ -1,36 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import PhoneOuterBody from "../../../../asstes/Images/PhoneBody.svg";
 import Marble from "../../../../asstes/Images/marble.png";
 
+import { handleFetchCaseStudyById } from "../../../Shared/services";
+
 const CaseStudyDetail = () => {
+  const { id } = useParams();
+  const [caseData, setCaseData ] = useState(); 
+  
+    useEffect(() => {
+    (async () => {
+      const fetchCaseStudy = await handleFetchCaseStudyById(id);
+      setCaseData(fetchCaseStudy);
+    })();
+  }, []);
+  /* console.log("case data", caseData); */
   return (
     <div className="w-full text-white pt-30 px-6">
       {/* TOP SECTION  */}
-      <div>
-        <div className="text-2xl text-center pb-3">
-          Creative Digital Marketing Agency
-        </div>
-        <div className="text-sm text-center">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing
-          elitr
+        <div>
+          <div className="text-2xl text-center pb-3">
+            {caseData?.com_name}
+          </div>
+          <div className="text-sm text-center">
+            {caseData?.summary1}
+          </div>
+
+          <img src={caseData?.group_images} alt="" className="m-auto py-13" />
+
+          <div className="text-sm text-center pb-5">
+            {caseData?.summary2}
+          </div>
+          <div className="w-32 flex justify-center mx-auto bg-[#0793FF] rounded-full text-black text-sm font-semibold px-3 py-2">
+            Contact Us
+          </div>
+
+          <div className="py-13" dangerouslySetInnerHTML={{ __html: caseData?.content}}></div>
         </div>
 
-        <img src={PhoneOuterBody} alt="" className="m-auto py-13" />
-
-        <div className="text-sm text-center pb-5">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing
-          elitr
-        </div>
-        <div className="w-32 flex justify-center mx-auto bg-[#0793FF] rounded-full text-black text-sm font-semibold px-3 py-2">
-          Contact Us
-        </div>
-      </div>
-
-      {/* SECTION 2 */}
+{/*       SECTION 2
       <div className="pb-13">
-        {/* sub-section 1 */}
+        sub-section 1
         <div className="text-2xl pt-13 pb-3">
           Creative Digital Marketing Agency
         </div>
@@ -39,7 +50,7 @@ const CaseStudyDetail = () => {
           nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing
           elitr
         </div>
-        {/* sub-section 2 */}
+        sub-section 2
         <div className="text-2xl pt-13 pb-3">
           Creative Digital Marketing Agency
         </div>
@@ -48,7 +59,7 @@ const CaseStudyDetail = () => {
           nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing
           elitr
         </div>
-        {/* sub-section 3 */}
+        sub-section 3
         <div className="text-2xl pt-13 pb-3">
           Creative Digital Marketing Agency
         </div>
@@ -57,7 +68,7 @@ const CaseStudyDetail = () => {
           nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing
           elitr
         </div>
-        {/* sub-section 4 */}
+        sub-section 4
         <div className="text-2xl pt-13 pb-3">
           Creative Digital Marketing Agency
         </div>
@@ -68,13 +79,13 @@ const CaseStudyDetail = () => {
         </div>
       </div>
 
-      {/* SECTION 3 */}
+      SECTION 3
       <div>
         <div className="text-2xl text-center pb-13">
           Our Content: Creative Digital Marketing Agency Creative Digital
           Marketing
         </div>
-        {/* sub-section 1 */}
+        sub-section 1
         <div className="flex-col pb-13">
           <img src={Marble} alt="" />
           <div className="text-base py-3">
@@ -83,7 +94,7 @@ const CaseStudyDetail = () => {
             sadipscing elitr
           </div>
         </div>
-        {/* sub-section 2 */}
+        sub-section 2
         <div className="flex-col pb-13">
           <img src={Marble} alt="" />
           <div className="text-base py-3">
@@ -92,7 +103,7 @@ const CaseStudyDetail = () => {
             sadipscing elitr
           </div>
         </div>
-        {/* sub-section 3 */}
+        sub-section 3
         <div className="flex-col pb-13">
           <img src={Marble} alt="" />
           <div className="text-base py-3">
@@ -103,7 +114,7 @@ const CaseStudyDetail = () => {
         </div>
       </div>
 
-      {/* SECTION 4 */}
+      SECTION 4
       <div className="pb-13">
         <div className="text-2xl text-center pb-13">
           Creative Digital Marketing Agency
@@ -121,7 +132,7 @@ const CaseStudyDetail = () => {
         </div>     
       </div>
 
-      {/* BOTTOM SECTION  */}
+      BOTTOM SECTION 
       <div>
 
         <img src={Marble} alt="" className="m-auto pb-13" />
@@ -140,7 +151,7 @@ const CaseStudyDetail = () => {
           +61405899496
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

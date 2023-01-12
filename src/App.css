@@ -359,7 +359,9 @@ body::-webkit-scrollbar {
 .ant-modal-content {
   height: 100%;
   width: 100%;
+  background: white;
   backdrop-filter: blur(5px);
+  opacity: 1;
   margin: 0;
   padding: 0;
   top: 0;
@@ -368,7 +370,7 @@ body::-webkit-scrollbar {
 .Navigation .ant-btn {
   box-shadow: none;
   background: transparent;
-  height: 100px;
+  height: 90px;
 }
 
 .Navigation .ant-modal-body {
@@ -397,6 +399,7 @@ body::-webkit-scrollbar {
   text-transform: none;
   text-rendering: auto;
 }
+
 .ant-collapse-header-text {
   color: #ffffff;
   z-index: -1;

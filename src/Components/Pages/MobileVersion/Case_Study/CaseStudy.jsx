@@ -1,26 +1,20 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { handleFetchCaseStudies } from "../../../Shared/services";
+import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import "../../MobileVersion/MobileView.css"
 
 const CaseStudy = () => {
-  const [caseStudyData, setCaseStudyData] = useState();
+  const [CaseStudies] = useCaseStudy();
+  //console.log("case studies", CaseStudies);
   const CaseSlider = useRef(null);
-
-  useEffect(() => {
-    (async () => {
-      const fetchCaseStudy = await handleFetchCaseStudies();
-      setCaseStudyData(fetchCaseStudy);
-      console.log("Case study data", caseStudyData);
-    })();
-  }, []);
 
   const settings = {
     className: "center",
     centerMode: true,
-    infinite: true,
+    infinite: false,
     centerPadding: "100px",
     slidesToShow: 1,
     speed: 100,
@@ -32,16 +26,17 @@ const CaseStudy = () => {
       <div className="text-sm px-6 pb-1">
         We create premium web design, though and user
       </div>
-      <div className="font-thin px-6 pb-5">See more</div>
-      <div className="w-[400px] m-auto text-white">
+      <div className="max-w-[400px] m-auto text-white">
         <Slider ref={CaseSlider} arrows={false} {...settings}>
-          {caseStudyData?.map((details, index) =>
+          {CaseStudies?.map((details, index) =>
+          <Link to={`/case-study/${details?.id}`}>
           <div key={index}>
-            <img src={details.com_image} alt="" className="w-full"/>
-            <div className="caseText w-full bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-center text-white py-2">
-              {details.com_name}
+            <img src={details?.com_image} alt="" className="w-full"/>
+            <div className="caseText w-full h-10 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-center text-white py-2 overflow-hidden">
+              {details?.com_name}
             </div>
           </div>
+          </Link>
           )}
         </Slider>
       </div>

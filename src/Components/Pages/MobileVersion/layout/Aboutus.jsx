@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Interface from "../../../../asstes/Images/interface.png";
+import { handleFetchCompanyGoals } from "../../../Shared/services";
 
 const Aboutus = () => {
+  const [goals, setGoals] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const fetchGoals = await handleFetchCompanyGoals('1');
+      setGoals(fetchGoals);
+      //console.log("goals data", goals);
+    })();
+  }, []);
+  
 
   useEffect(() => {
     document.getElementById("bar").style.width="0%"
@@ -37,59 +48,50 @@ const Aboutus = () => {
       >
         <div className="py-5">
           <div className="text-2xl text-brand-color">
-            This is the first feature
+            Our Vision
           </div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique...
+            {goals?.our_goal}
           </div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">
-            This is the second feature
+            Our Mission
           </div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique...
+            {goals?.our_mission}
           </div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">
-            This is the third feature
+            Our Objective
           </div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique...
+            {goals?.our_objective}
           </div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">
-            This is the fourth feature
+            Our Vision
           </div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique...
+            {goals?.our_vision}
           </div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">
-            This is the fifth feature
+            Who We Are
           </div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique...
+            {goals?.who_we_are}
           </div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">
-            This is the sixth feature
+            Why Choose Us
           </div>
           <div>
-            Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique Lorem ipsum dolor sit amet consectetur adipiscing tempor. Risus
-            ultricies tristique...
+            {goals?.why_choose_us}
           </div>
         </div>
       </div>
