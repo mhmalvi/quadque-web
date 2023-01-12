@@ -12,16 +12,17 @@ export const handleFetchHomeVideo = async () => {
   }
 };
 
-export const handleFetchServicesForDes = async () => {
-  try {
-    const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/services-desktop`
-    );
-    return result?.data;
-  } catch (error) {
-    return [];
-  }
-};
+// export const handleFetchServicesForDes = async () => {
+//   try {
+//     const result = await axios.get(
+//       `${process.env?.REACT_APP_SERVICE_URL}/api/services-desktop`
+//     );
+//     console.log(result);
+//     return result?.data;
+//   } catch (error) {
+//     return [];
+//   }
+// };
 
 export const handleFetchServices = async () => {
   try {
@@ -75,10 +76,10 @@ export const handleFetchCaseStudiesDesktop = async () => {
   }
 };
 
-export const handleFetchCaseStudyById = async (id) => {
+export const handleFetchCaseStudyById = async (slug) => {
   try {
     const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies/${id}`
+      `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies/${slug}`
     );
     if (result?.status === 200) {
       return result?.data?.data;
@@ -128,22 +129,22 @@ export const handleFetchBlogBySlug = async (slug) => {
   }
 };
 
-export const handleFetchServiceForDesktopById = async (slug) => {
-  try {
-    const result = await axios.get(
-      `${process.env?.REACT_APP_SERVICE_URL}/api/services-desktop/${slug}`
-    );
+// export const handleFetchServiceForDesktopById = async (slug) => {
+//   try {
+//     const result = await axios.get(
+//       `${process.env?.REACT_APP_SERVICE_URL}/api/services-desktop/${slug}`
+//     );
 
-    console.log("resss", result.data);
+//     console.log("resss", result.data);
 
-    if (result.data?.status === 200) {
-      return result?.data?.data;
-    }
-  } catch (error) {
-    console.log(error.response?.message);
-    return [];
-  }
-};
+//     if (result.data?.status === 200) {
+//       return result?.data?.data;
+//     }
+//   } catch (error) {
+//     console.log(error.response?.message);
+//     return [];
+//   }
+// };
 
 export const handleFetchServiceBySlugInDesk = async (slug) => {
   try {
@@ -191,6 +192,30 @@ export const handleFetchClients = async () => {
       `${process.env?.REACT_APP_SERVICE_URL}/api/clients`
     );
     //console.log("network client", result?.data);
+    if (result?.status === 200) {
+      return result?.data?.data;
+    }
+  } catch (error) {
+    console.log(error.response?.data);
+    return [];
+  }
+};
+
+export const handleSendMail = async (data) => {
+  console.log(data);
+  try {
+    const result = await axios.post(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/send-mail`,
+      {
+        category: "UI/UX",
+        email: "loucchristensen78@gmail.com",
+        help: "asdasdasd asd ad as asd asd as",
+        name: "Sourav",
+        phone: "01756414858",
+        sub_category:
+          "UX Design,User Research & Analysis,Customer Journey Mapping",
+      }
+    );
     if (result?.status === 200) {
       return result?.data?.data;
     }

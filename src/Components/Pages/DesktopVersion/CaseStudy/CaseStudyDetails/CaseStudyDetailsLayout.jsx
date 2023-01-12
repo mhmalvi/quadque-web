@@ -6,9 +6,9 @@ import muteImg from "../../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../../asstes/Images/unmute.png";
 import Icons from "../../../../Shared/Icons";
 import Navbar from "../../Navbar";
-import ServiceDetails from "./ServiceDetails";
+import CaseStudyDetails from "./CaseStudyDetails";
 
-const ServiceDetailsLayout = () => {
+const CaseStudyDetailsLayout = () => {
   const navigate = useNavigate();
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
@@ -147,7 +147,7 @@ const ServiceDetailsLayout = () => {
           id="main_container"
           className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
-          <ServiceDetails />
+          <CaseStudyDetails />
         </div>
 
         {/* Right bar */}
@@ -188,12 +188,12 @@ const ServiceDetailsLayout = () => {
               <div>&nbsp;</div>
               <div>&nbsp;</div>
               <div className="mb-9 -rotate-90 flex justify-center items-center">
-                <div
+                <span
                   onClick={handleNavigate}
                   className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4 cursor-pointer"
                 >
                   start project
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -206,4 +206,4 @@ const ServiceDetailsLayout = () => {
   );
 };
 
-export default ServiceDetailsLayout;
+export default CaseStudyDetailsLayout;

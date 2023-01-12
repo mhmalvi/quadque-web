@@ -7,8 +7,8 @@ const useServices = () => {
   useEffect(() => {
     (async () => {
       const response = await handleFetchServices();
-      if (response?.status === 200) {
-        setServices(response?.data);
+      if (response.length) {
+        setServices(response);
       }
     })();
   }, []);

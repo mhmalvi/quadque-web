@@ -26,10 +26,10 @@ const Cleints = () => {
 
   return (
     <div className="section h-full font-poppins overflow-hidden">
-      <div className="px-21 mr-36 2xl:mr-44 text-white flex justify-between items-start">
+      <div className="pl-10 pr-21 2xl:px-21 mr-36 2xl:mr-44 text-white flex justify-between items-start">
         <div className="absolute top-1/4 flex justify-center items-center">
-          <div className="w-67 items-center text-justify mr-30">
-            <div className="text-4xl 2xl:text-5xl font-semibold mb-5 font_title">
+          <div className="max-w-xl items-center text-justify mr-30">
+            <div className="text-2xl 2xl:text-5xl font-semibold mb-5 font_title">
               <Flip left cascade spy={triggerAnimation}>
                 <h1 className="whitespace-nowrap">More then valuable</h1>
                 <span className="mr-2 text-brand-color">
@@ -55,7 +55,7 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-36 h-[100px] bg-brand-color bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
@@ -70,7 +70,7 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-36 h-[100px] bg-brand-color bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
@@ -81,13 +81,13 @@ const Cleints = () => {
                 </span>
               </p>
             </div>
-            <div className="ml-40 pl-[24px] middle_column">
+            <div className="ml-40 pl-5 middle_column">
               <p className="marquee-reverse">
                 <span>
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-36 h-[100px] bg-brand-color bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img src={client} alt="" />
@@ -363,8 +363,8 @@ const Cleints = () => {
 
 export default Cleints;
 
-const colum12xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp, ms];
-const colum1xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts];
+const colum12xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp];
+const colum1xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp];
 const colum1lg = [ms, ts, sp, ms, ts, sp, ms, ts, sp];
 // const colum2 = [ts, sp, ms, ts, sp, ms, ts, sp, ms];
 // const colum3 = [sp, ts, ms, sp, ts, ms, sp, ts, ms];
