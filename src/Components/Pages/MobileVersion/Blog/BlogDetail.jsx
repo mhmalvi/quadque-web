@@ -6,7 +6,7 @@ import Icons from "../../../Shared/Icons";
 import { message } from "antd";
 
 const BlogDetail = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [allBlogs] = useBlogs();
   const { slug } = useParams();
   const [blogData, setBlogData] = useState();

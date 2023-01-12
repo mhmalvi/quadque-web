@@ -32,7 +32,6 @@ const Services = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrow: false,
-    infinite: true,
   };
 
   const SecondarySettings = {
@@ -43,7 +42,6 @@ const Services = () => {
     arrow: false,
     className: "center",
     centerMode: true,
-    infinite: true,
   };
 
   return (
@@ -52,7 +50,7 @@ const Services = () => {
         <div>
           <Slider asNavFor={nav2} ref={slider1} arrows={false}>
             {Services?.map((details, index) => (
-              <Link to={`service-detail/${details.id}`}>
+              <Link to={`service-detail/${details.slug}`}>
                 <div key={index}>
                   <div className="w-full h-100">
                     {/* <lottie-player

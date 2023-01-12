@@ -29,9 +29,9 @@ const CaseStudy = () => {
       <div className="max-w-[400px] m-auto text-white">
         <Slider ref={CaseSlider} arrows={false} {...settings}>
           {CaseStudies?.map((details, index) =>
-          <Link to={`/case-study/${details?.id}`}>
+          <Link to={`/case-study/${details?.slug}`}>
           <div key={index}>
-            <img src={details?.com_image} alt="" className="w-full"/>
+            <img src={details?.com_image} alt="" className="w-full rounded-2xl"/>
             <div className="caseText w-full h-10 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-center text-white py-2 overflow-hidden">
               {details?.com_name}
             </div>
