@@ -1,18 +1,18 @@
 import { Tooltip } from "antd";
 import React, { useEffect, useState } from "react";
 import Flip from "react-reveal/Flip";
-import { useLocation } from "react-router-dom";
-import useCaseStudiesDesktop from "../../../Shared/Hooks/useCaseStudiesDesktop";
+import { Link, useLocation } from "react-router-dom";
+import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import Icons from "../../../Shared/Icons";
 
 const CaseStudy = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
-  // const [caseStudies, setCaseStudies] = useState([]);
-  const [caseStudies] = useCaseStudiesDesktop();
+  // const [caseStudy, setCaseStudies] = useState([]);
+  const [caseStudy] = useCaseStudy();
 
-  console.log(caseStudies);
+  console.log(caseStudy);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
@@ -38,7 +38,7 @@ const CaseStudy = () => {
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = caseStudies?.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = caseStudy?.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
     <div
@@ -82,7 +82,8 @@ const CaseStudy = () => {
                 placement="top"
                 color={"#8F00FF"}
               >
-                <div
+                <Link
+                  to={`case-studies/${post?.slug}`}
                   key={i}
                   className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px] cursor-pointer"
                 >
@@ -94,7 +95,7 @@ const CaseStudy = () => {
                   <p className="absolute h-10 w-full bottom-0 text-center font-normal rounded-br-[20px] rounded-bl-[20px] text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
                     {post?.com_name}
                   </p>
-                </div>
+                </Link>
               </Tooltip>
             </Flip>
           ))}
@@ -111,7 +112,7 @@ const CaseStudy = () => {
                 }}
               />
             ) : null}
-            {currentPage < Math.ceil(caseStudies?.length / 6) ? (
+            {currentPage < Math.ceil(caseStudy?.length / 6) ? (
               <Icons.RightArrow
                 className="w-16 cursor-pointer mt-4 ml-4 text-gray-600 hover:text-gray-500"
                 onClick={() => {

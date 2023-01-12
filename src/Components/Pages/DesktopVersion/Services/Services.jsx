@@ -3,22 +3,20 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import Flip from "react-reveal/Flip";
 import { Link, useLocation } from "react-router-dom";
-
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
 import softDev from "../../../../asstes/Lotties/softwware_development.json";
 import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
-import useServicesDesktop from "../../../Shared/Hooks/useServicesDesktop";
+import useServices from "../../../Shared/Hooks/useServices";
 
 const Services = () => {
   const location = useLocation();
   const [activeService, setActiveService] = useState();
   const [activeServiceDetails, setActiveDetails] = useState({});
   const [triggerAnimation, setTriggerAnimation] = useState(false);
-  const [servicesDesktop] = useServicesDesktop();
+  const [services] = useServices();
 
-  // console.log("services", services);
 
   useEffect(() => {
     if (location.hash === "#services") {
@@ -30,7 +28,7 @@ const Services = () => {
   }, [location.hash]);
 
   useEffect(() => {
-    setActiveService(servicesDesktop[0]?.service_name);
+    setActiveService(services[0]?.service_name);
 
     let i = 1;
     setInterval(() => {
@@ -38,22 +36,22 @@ const Services = () => {
       // console.log(document.getElementById("lottie_file"));
       // document.getElementById("lottie_file").src = services[i]?.file;
 
-      setActiveService(servicesDesktop[i]?.service_name);
-      setActiveDetails(servicesDesktop[i]);
+      setActiveService(services[i]?.service_name);
+      setActiveDetails(services[i]);
       i++;
       if (i > 4) {
         i = 0;
       }
     }, 10000);
-  }, [servicesDesktop]);
+  }, [services]);
 
-  console.log("services", servicesDesktop);
+  console.log("services", services);
 
   useEffect(() => {
     setActiveDetails(
-      servicesDesktop?.find((service) => service.service_name === activeService)
+      services?.find((service) => service.service_name === activeService)
     );
-  }, [activeService, servicesDesktop]);
+  }, [activeService, services]);
 
   return (
     <div className="w-full lg:h-[80vh] 2xl:h-[90vh] relative text-white flex justify-between font-poppins lg:pt-[20px] 2xl:pb-[75px]">
@@ -94,14 +92,16 @@ const Services = () => {
 
         <Flip left cascade>
           <div>
-            <button
-              className="w-[252px] h-[46px] bg-brand-color text-[15px] font-semibold leading-4 capitalize text-white"
-              style={{
-                letterSpacing: "0.04em",
-              }}
-            >
-              START PROJECT
-            </button>
+            <a href="#start-project">
+              <button
+                className="w-[252px] h-[46px] bg-brand-color text-[15px] font-semibold leading-4 capitalize text-white"
+                style={{
+                  letterSpacing: "0.04em",
+                }}
+              >
+                START PROJECT
+              </button>
+            </a>
           </div>
         </Flip>
       </div>
@@ -133,7 +133,7 @@ const Services = () => {
       <div className="w-58 text-xl font-medium leading-8 capitalize">
         <Flip right cascade spy={triggerAnimation}>
           <div className="pt-18 mt-0.5">
-            {servicesDesktop?.map((service, i) => (
+            {services?.map((service, i) => (
               <p
                 key={i}
                 className={`${

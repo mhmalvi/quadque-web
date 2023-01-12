@@ -286,6 +286,7 @@ body::-webkit-scrollbar {
 .about_details::-webkit-scrollbar-thumb {
   background-color: #8f00ff;
   color: rgb(82, 82, 82);
+  cursor: pointer !important;
   /* outline: 1px solid slategrey; */
 }
 
@@ -440,6 +441,8 @@ body::-webkit-scrollbar {
   justify-content: space-between;
 }
 
-.serviceDetails_content h5 {
-  opacity: 75%;
-}
+/* .serviceDetails_content > h5,
+h6,
+span {
+  opacity: 75% !important;
+} */

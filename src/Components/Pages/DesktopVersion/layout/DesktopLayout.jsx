@@ -1,11 +1,11 @@
 import { Modal, Tooltip } from "antd";
 import React, { useEffect, useState } from "react";
-import Icons from "../../../Shared/Icons";
-import Navbar from "../Navbar";
-import CenterLayout from "./CenterLayout";
 import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
+import Icons from "../../../Shared/Icons";
+import Navbar from "../Navbar";
+import CenterLayout from "./CenterLayout";
 
 const DesktopLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
@@ -161,8 +161,8 @@ const DesktopLayout = () => {
                   <img
                     className="z-50 cursor-pointer"
                     src={muteImg}
-                    onClick={() => setMuted(true)}
                     alt=""
+                    onClick={() => setMuted(false)}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>
@@ -174,7 +174,7 @@ const DesktopLayout = () => {
                   <img
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
-                    onClick={() => setMuted(false)}
+                    onClick={() => setMuted(true)}
                     alt=""
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
@@ -188,9 +188,12 @@ const DesktopLayout = () => {
               <div>&nbsp;</div>
               <div>&nbsp;</div>
               <div className="mb-9 -rotate-90 flex justify-center items-center">
-                <span className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4">
+                <a
+                  href="#start-project"
+                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4"
+                >
                   start project
-                </span>
+                </a>
               </div>
             </div>
           </div>

@@ -16,11 +16,14 @@ import usability from "../../../../../asstes/Images/useability.png";
 import visual from "../../../../../asstes/Images/visual.png";
 import WebApp from "../../../../../asstes/Images/WebApp.png";
 import useCaseStudiesDesktop from "../../../../Shared/Hooks/useCaseStudiesDesktop";
-import { handleFetchServiceForDesktopById } from "../../../../Shared/services";
+import { handleFetchServiceById } from "../../../../Shared/services";
+import { useSpeechSynthesis } from "react-speech-kit";
 
 const ServiceDetails = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
+  const { speak } = useSpeechSynthesis();
+
   const ClientsSlider = useRef(null);
   const [serviceDetails, setServiceDetails] = useState();
   const [capabilityMenus, setCapabilityMenus] = useState([]);
@@ -28,7 +31,7 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     (async () => {
-      const fetchServicedata = await handleFetchServiceForDesktopById(slug);
+      const fetchServicedata = await handleFetchServiceById(slug);
       setServiceDetails(fetchServicedata);
     })();
   }, [slug]);
@@ -89,26 +92,22 @@ const ServiceDetails = () => {
           <h3 className="text-2xl leading-6 font-medium text-center mt-8 mb-6">
             How We Can Help?
           </h3>
+          <button
+            onClick={() =>
+              speak({
+                text: serviceDetails?.identity_design_des,
+              })
+            }
+          >
+            Speak
+          </button>
           <p
-            className="text-base leading-6 font-normal text-white text-opacity-75"
+            className="text-base leading-6 font-normal text-white"
             style={{
               letterSpacing: "0.07em",
             }}
           >
-            We’ll help you finding a solution and solve your problems. We use
-            process design to create digital products. Besides that also helps
-            their business. We’ll help you finding a solution and solve your
-            problems. We use process design to create digital products. Besides
-            that also helps their business. We’ll help you finding a solution
-            and solve your problems. We use process design to create digital
-            products. Besides that also helps their business. We’ll help you
-            finding a solution and solve your problems. We use process design to
-            create digital products. Besides that also helps their business.
-            We’ll help you finding a solution and solve your problems. We use
-            process design to create digital products. Besides that also helps
-            their business. We’ll help you finding a solution and solve your
-            problems. We use process design to create digital products. Besides
-            that also helps their business.
+            {serviceDetails?.identity_design_des}
           </p>
 
           {/* <div
@@ -193,7 +192,7 @@ const ServiceDetails = () => {
                   </h3>
                 </div>
                 <p
-                  className="text-base leading-6 font-normal text-white text-opacity-75 text-justify mt-2.5"
+                  className="text-base leading-6 font-normal text-white text-justify mt-2.5"
                   style={{
                     letterSpacing: "0.07em",
                   }}
@@ -290,7 +289,7 @@ const ServiceDetails = () => {
             </h2>
 
             <p
-              className="text-base leading-6 font-normal text-white text-opacity-75"
+              className="text-base leading-6 font-normal text-white"
               style={{
                 letterSpacing: "0.07em",
               }}
@@ -471,7 +470,7 @@ const clientSpeakSettings = {
 };
 
 const serviceDetailsContent = {
-  uiux: {
+  "ui-ux": {
     helpContent: [
       {
         title: "Usability Analyst",
@@ -523,7 +522,163 @@ const serviceDetailsContent = {
     ],
   },
 
-  web: {
+  "web-development": {
+    helpContent: [
+      {
+        title: "Usability Analyst",
+        icon: usability,
+      },
+      {
+        title: "User Research",
+        icon: research,
+      },
+      {
+        title: "Product Design",
+        icon: product,
+      },
+      {
+        title: "Web/App Design",
+        icon: WebApp,
+      },
+      {
+        title: "Visual Design",
+        icon: visual,
+      },
+      {
+        title: "Interaction Design",
+        icon: Interaction,
+      },
+    ],
+
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Create A Strong Impression",
+        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+      },
+      {
+        service_image: help2,
+        service_name: "Builds the Foundation",
+        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+      },
+      {
+        service_image: help3,
+        service_name: "It Fosters Brand Loyalty",
+        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+      },
+      {
+        service_image: help4,
+        service_name: "Rememberable",
+        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+      },
+    ],
+  },
+
+  "mobile-app-development": {
+    helpContent: [
+      {
+        title: "Usability Analyst",
+        icon: usability,
+      },
+      {
+        title: "User Research",
+        icon: research,
+      },
+      {
+        title: "Product Design",
+        icon: product,
+      },
+      {
+        title: "Web/App Design",
+        icon: WebApp,
+      },
+      {
+        title: "Visual Design",
+        icon: visual,
+      },
+      {
+        title: "Interaction Design",
+        icon: Interaction,
+      },
+    ],
+
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Create A Strong Impression",
+        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+      },
+      {
+        service_image: help2,
+        service_name: "Builds the Foundation",
+        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+      },
+      {
+        service_image: help3,
+        service_name: "It Fosters Brand Loyalty",
+        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+      },
+      {
+        service_image: help4,
+        service_name: "Rememberable",
+        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+      },
+    ],
+  },
+
+  "software-development": {
+    helpContent: [
+      {
+        title: "Usability Analyst",
+        icon: usability,
+      },
+      {
+        title: "User Research",
+        icon: research,
+      },
+      {
+        title: "Product Design",
+        icon: product,
+      },
+      {
+        title: "Web/App Design",
+        icon: WebApp,
+      },
+      {
+        title: "Visual Design",
+        icon: visual,
+      },
+      {
+        title: "Interaction Design",
+        icon: Interaction,
+      },
+    ],
+
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Create A Strong Impression",
+        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+      },
+      {
+        service_image: help2,
+        service_name: "Builds the Foundation",
+        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+      },
+      {
+        service_image: help3,
+        service_name: "It Fosters Brand Loyalty",
+        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+      },
+      {
+        service_image: help4,
+        service_name: "Rememberable",
+        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+      },
+    ],
+  },
+
+  "ai-iot-solutions": {
     helpContent: [
       {
         title: "Usability Analyst",
