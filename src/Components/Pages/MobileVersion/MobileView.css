@@ -117,6 +117,38 @@
   margin: auto !important;
 }
 
+.BlogDetail h1 {
+  font-size: 30px !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.BlogDetail h2 {
+  font-size: 25px !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.BlogDetail h3 {
+  font-size: 20px !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.BlogDetail h4 {
+  font-size: 18px !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.BlogDetail h5 {
+  font-size: 16px !important;
+}
+
+.BlogDetail p {
+  font-size: 14px !important;
+}
+
 .service-capbility .box {
   position: relative;
   width: 100%;
@@ -185,11 +217,40 @@
   z-index: -200;
 }
 
-.bestforyou h4 span {
+.bestforyou h1 {
   font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bestforyou h2 {
+  font-size: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.bestforyou h3 {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.bestforyou h4 {
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.bestforyou h5 {
+  font-size: 16px;
+}
+
+.bestforyou p {
+  font-size: 14px;
 }
 
 .bestforyou img {
+  margin: auto;
   width: 100px !important;
   padding-right: 20px;
 }
@@ -199,30 +260,70 @@
   /* margin: auto; */
 }
 
-.Service_Identity h1 span {
-  font-size: 30px;
-}
-
 .Service_Identity h1 {
   font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.Service_Identity p {
+.Service_Identity h2 {
+  font-size: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.Service_Identity h3 {
+  font-size: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.Service_Identity h4 {
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .Service_Identity h5 {
   font-size: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.Service_Identity h5 img{
-  display: absolute;
-  margin-top: 5px;
-  width: 18px;
-  height: 12px;
-  padding-left: 2px;
-  padding-right: 2px;
+.Service_Identity p {
+  font-size: 14px;
+}
+
+.Service_Identity img {
+  margin: auto;
+}
+
+.case_editor h1 {
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.case_editor h2 {
+  font-size: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.case_editor h3 {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.case_editor h4 {
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.case_editor h5 {
+  font-size: 16px;
+}
+
+.case_editor p {
+  font-size: 14px;
 }

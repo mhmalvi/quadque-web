@@ -43,7 +43,7 @@ const CaseStudyDetail = () => {
       <div className="">
         <img src={caseData?.short_banner} alt="" className="m-auto pt-13" />
         <div className="text-2xl pt-13 pb-3">
-          <div dangerouslySetInnerHTML={{ __html: caseData?.content }}></div>
+          <div className="case_editor" dangerouslySetInnerHTML={{ __html: caseData?.content }}></div>
         </div>
         {/* sub-section 1 */}
         {/* <div className="text-2xl pt-13 pb-3">

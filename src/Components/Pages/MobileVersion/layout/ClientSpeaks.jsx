@@ -14,7 +14,7 @@ const ClientSpeaks = () => {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -35,8 +35,7 @@ const ClientSpeaks = () => {
                 <div className="text-slate-400">{details?.designation}</div>
               </div>
               <img src={details?.image} alt="" className="w-full py-4" />
-              <div className="font-thin text-sm text-justify leading-8" dangerouslySetInnerHTML={{ __html: details?.description }}>
-              </div>
+              <div className="text-justify">{details?.description}</div>
             </div>
           </div>
           )}

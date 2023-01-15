@@ -49,7 +49,11 @@ const BlogDetail = () => {
   return (
     <div className="w-full pt-30">
       <img src={blogData?.thumbnail} alt="" className="absolute top-0 z-[-10] w-full h-81"/>
-      <div className="flex items-end h-56 bg-gradient-to-b from-transparent to-black text-2xl text-white px-6 pb-10">{blogData?.title}</div>
+      <div className="flex items-end h-56 bg-gradient-to-b from-transparent to-black px-6 pb-10">
+        <div className="text-2xl text-white">{blogData?.title}
+          <div className="text-white text-sm">By {blogData?.author}</div>
+        </div>
+      </div>
         <div className="px-6">
           {/* <div className="bestforyou text-white pt-2" dangerouslySetInnerHTML={{ __html: blogData?.text }}></div> */}
           <div className="BlogDetail text-white pt-2" dangerouslySetInnerHTML={{ __html: blogData?.text }}></div>
