@@ -13,6 +13,7 @@ import { ReactComponent as FacebookDesktop } from "../../asstes/Icons/facebook-d
 import { ReactComponent as YoutubeDesktop } from "../../asstes/Icons/youtube-desktop.svg";
 import { ReactComponent as InstaDesktop } from "../../asstes/Icons/insta-desktop.svg";
 import { ReactComponent as TwiterDesktop } from "../../asstes/Icons/twiter-desktop.svg";
+import { ReactComponent as BluePhone } from "../../asstes/Icons/blue_phone.svg";
 
 const Icons = {
   BrandLogo,
@@ -30,6 +31,7 @@ const Icons = {
   YoutubeDesktop,
   InstaDesktop,
   TwiterDesktop,
+  BluePhone,
 };
 
 export default Icons;
