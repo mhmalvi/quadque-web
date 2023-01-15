@@ -24,7 +24,7 @@ import point from "../../../../asstes/Icons/service-icon.svg";
 const ServiceDetails = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
-  const ClientsSlider = useRef(null);
+  const CaseSlider = useRef(null);
   const ReviewsSlider = useRef(null);
   const [ClientSpeak] = useClientSpeak();
   const [CaseStudy] = useCaseStudy();
@@ -151,7 +151,7 @@ const ServiceDetails = () => {
 
       {/* BEST FOR YOU SECTION */}
       <div
-        className="bestforyou text-white py-13"
+        className="bestforyou text-white pt-13"
         dangerouslySetInnerHTML={{ __html: Service?.content }}
       ></div>
       {/* <div>
@@ -289,9 +289,9 @@ const ServiceDetails = () => {
       {/* OUR LATEST WORK SLIDER SECTION */}
       <div className="text-2xl pb-5">Our Latest Work</div>
       <div className="max-w-[350px] m-auto text-white pb-13">
-        <Slider ref={ClientsSlider} arrows={false} {...settings}>
+        <Slider ref={CaseSlider} arrows={false} {...settings}>
           {CaseStudy?.map((details) =>
-            <div>
+            <div onClick={() => navigate(`../case-study/${details.slug}`, { replace: true })}>
               <img src={details?.com_image} alt="" className="w-full rounded-2xl" />
               <div className="text-center text-white py-2">
                 {details?.com_name}
@@ -317,7 +317,7 @@ const ServiceDetails = () => {
                 <img
                   src={details?.image}
                   alt=""
-                  className="w-10 h-10 relative -top-8 left-4 rounded-full"
+                  className="bg-white w-10 h-10 relative -top-8 left-4 rounded-full"
                 />
                   <div
                     className=""

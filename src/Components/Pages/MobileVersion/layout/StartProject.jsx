@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { message } from "antd";
 import "../../MobileVersion/MobileView.css"
+import useServices from "../../../Shared/Hooks/useServices";
 
 const StartProject = () => {
-  const [toogleSubService, setToogleSubService] = useState();
+  const [Services] = useServices();
+  const [activeSubServices, setActiveSubServices] = useState("");
+  const [toogleSubService, setToogleSubService] = useState([
+    "UX Design",
+    "User Research & Analysis",
+    "Customer Journey Mapping",
+    "User Experience Consulting",
+    "Design Thinking",
+  ]);
   const [toogleService, setToogleService] = useState();
   const [data, setData] = useState({
     name: "",
@@ -11,6 +20,8 @@ const StartProject = () => {
     email: "",
     query: "",
   });
+  
+  console.log(Services);
 
   const userData = (e) => {
     const userdata = { ...data };
@@ -24,12 +35,67 @@ const StartProject = () => {
     alert("Your form is submitted.");
   };
 
-  const handleToogleService = (index) => {
+/*   const handleToogleService = (index) => {
     setToogleService(index);
+  }; */
+
+/*     const handleToogleSubService = (index) => {
+    setToogleSubService(index);
+  }; */
+/*   useEffect(() => {
+    setActiveSubServices("");
+  }, [Services]); */
+
+
+  const handleActiveServices = (service_name) => {
+    setToogleService(service_name);
+
+    if (service_name === "UI/UX") {
+      setToogleSubService([
+        "UX Design",
+        "User Research & Analysis",
+        "Customer Journey Mapping",
+        "User Experience Consulting",
+        "Design Thinking",
+      ]);
+    } else if (service_name === "Web Development") {
+      setToogleSubService([
+        "E-Commerce Web Development",
+        "Java Web Development",
+        "Magento Web Development",
+        "Drupal Web Development",
+      ]);
+    } else if (service_name === "App Development") {
+      setToogleSubService([
+        "Native Mobile App Development",
+        "Hybrid Mobile App Development",
+        "Progressive Web App Development",
+      ]);
+    } else if (service_name === "Software Development") {
+      setToogleSubService([
+        "Custom Software Development",
+        "CRM Software Development",
+        "Marketplace Software Development",
+      ]);
+    } else if (service_name === "AI & IoT Solutions") {
+      setToogleSubService([
+        "Smart Voice Assistant",
+        "AI Chatbot",
+        "IoT Based Alarm System",
+        "Smart Home Controlling System",
+        "AI Office Assistant",
+      ]);
+    }
   };
 
-    const handleToogleSubService = (index) => {
-    setToogleSubService(index);
+    const handleActiveSubServices = (sub_service_name) => {
+    if (activeSubServices.includes(sub_service_name)) {
+      setActiveSubServices(
+        activeSubServices?.filter((sub) => sub !== sub_service_name)
+      );
+    } else {
+      setActiveSubServices([...activeSubServices, sub_service_name]);
+    }
   };
 
   return (
@@ -38,68 +104,29 @@ const StartProject = () => {
         START <br /> &nbsp; PROJECT
       </div>
       <div className="flex flex-wrap justify-between capitalize pb-8 px-6">
-        <p
-          onClick={() => {
-            handleToogleService(1);
-          }}
-          className={`px-5 duration-300 ${toogleService === 1 ? "text-brand-color": ""}`}
-        >
-          UI & UX
-        </p>
-        <p
-          onClick={() => {
-            handleToogleService(2);
-          }}
-          className={`px-5 duration-300 ${toogleService === 2 ? "text-brand-color": ""}`}
-        >
-          AI & IoT Solutions
-        </p>
-        <p
-          onClick={() => {
-            handleToogleService(3);
-          }}
-          className={`px-5 duration-300 ${toogleService === 3 ? "text-brand-color": ""}`}
-        >
-          Digital Marketing
-        </p>
-        <p
-          onClick={() => {
-            handleToogleService(4);
-          }}
-          className={`px-5 duration-300 ${toogleService === 4 ? "text-brand-color": ""}`}
-        >
-          App Development
-        </p>
-        <p
-          onClick={() => {
-            handleToogleService(5);
-          }}
-          className={`px-5 duration-300 ${toogleService === 5 ? "text-brand-color": ""}`}
-        >
-          Web Development
-        </p>
+        {Services?.map((service, i) => 
+          <p
+            key={i}
+            onClick={() => {
+              handleActiveServices(service?.service_name);
+            }}
+            className={`px-5 duration-300 ${toogleService === service?.service_name ? "text-brand-color": ""}`}
+          >
+            {service.service_name}
+          </p>
+        )}
       </div>
-
-      <div className="flex flex-wrap justify-between capitalize pb-8 px-10 gap-3">
-        <div onClick={() => {
-            handleToogleSubService(1);
-          }} className={`border rounded-full px-5 py-1 text-semibold duration-300 ${toogleSubService === 1 ?  "bg-white text-black" : ""}`}>
-          <p>Digital Marketing</p>
+      {Services.length ? (
+        <div className="flex flex-wrap justify-between capitalize pb-8 px-10 gap-3">
+          {toogleSubService?.map((subService)=> 
+            <div onClick={() => {
+              handleActiveSubServices(subService);
+            }} className={`border rounded-full px-5 py-1 text-semibold duration-300 ${toogleSubService === 1 ?  "bg-white text-black" : ""}`}>
+              {subService}
+            </div>
+          )}
         </div>
-        <div onClick={() => {
-            handleToogleSubService(2);
-          }} className={`border rounded-full px-5 py-1 text-semibold duration-300 ${toogleSubService === 2 ?  "bg-white text-black" : ""}`}>Google ADs</div>
-        <div onClick={() => {
-            handleToogleSubService(3);
-          }} className={`border rounded-full px-5 py-1 text-semibold duration-300 ${toogleSubService === 3 ?  "bg-white text-black" : ""}`}>
-          social media Marketing
-        </div>
-        <div onClick={() => {
-            handleToogleSubService(4);
-          }} className={`border rounded-full px-5 py-1 text-semibold duration-300 ${toogleSubService === 4 ?  "bg-white text-black" : ""}`}>
-          Specific Apps marketing
-        </div>
-      </div>
+      ): null }
 
       <form className="mx-6" onSubmit={handleLoginReq}>
         <div className="">
@@ -161,7 +188,7 @@ const StartProject = () => {
 
       <div className="flex justify-end text-sm mx-6">
         <p>
-          +61405899496 <br />
+          01765-276560 <br />
           info@quadque.tech
         </p>
       </div>

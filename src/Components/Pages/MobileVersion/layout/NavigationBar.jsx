@@ -47,7 +47,7 @@ const App = () => {
           <li className="py-10" onClick={() => setOpen(false)}>About</li>
           </a>
           <Link to="/blogs">
-            <li className="py-10" onClick={() => setOpen(false)}>Blog</li>
+            <li className="py-10" onClick={() => setOpen(false)}>blogs</li>
           </Link>
           <Link to="/gallery">
             <li className="py-10" onClick={() => setOpen(false)}>Gallery</li>

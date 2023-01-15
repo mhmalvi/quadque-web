@@ -8,7 +8,7 @@ import "../../MobileVersion/MobileView.css"
 
 const OurTeam = () => {
   return (
-    <div className="w-full text-white mt-18 mb-5">
+    <div id="Team" className="w-full text-white mt-18 mb-5">
       <div className="uppercase px-6 pb-2 text-center">EXPERIENCE</div>
       <div className="text-3xl px-6 text-center">
         Skilled Team <br /> of Creators

@@ -32,7 +32,10 @@ const BlogGallery = () => {
               <div className="flex items-end h-10 relative -top-10 bg-gradient-to-b from-transparent to-black z-10 pb-2 px-2">
                 <div className="text-xl text-white">
                   {details.title}
-                  <div className=" text-white text-sm">
+                  <div className="text-white text-sm">
+                    By {details.author}
+                  </div>
+                  <div className="text-white text-sm">
                     {details.created_at.split("T", 1)}
                   </div>
                 </div>

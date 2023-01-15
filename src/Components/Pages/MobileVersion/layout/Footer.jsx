@@ -9,25 +9,32 @@ const Footer = () => {
       <div className="text-3xl font-thin mx-6 mb-4">
         Have a Good Web Designe Today
       </div>
+      <div className="text-sm font-thin px-6 pb-4">Our philosophy is to ensure the highest product quality and satisfaction for every client. We offer the best quality/price ratio in the industry along with timely delivery of solutions. </div>
       <div className="w-28 border border-white rounded-full text-center px-4 py-2 mx-6">
-        Let's Talk
+        <a href="tel:+8801765-276560">Let's Talk</a>
       </div>
       <div className="flex text-lg mt-10 px-6">
         <div className="w-1/2 flex-col font-thin leading-10">
-          <p className="font-bold">Product</p>
-          <p>Team</p>
-          <p>Pricing</p>
+          <a href="#Team">
+            Team
+          </a>
           <Link to={`/faq`}>
             <p>FAQ</p>
           </Link>
-          <p>Affiliate</p>
+          <a href="#Service">
+            Service
+          </a>
         </div>
         <div className="w-1/2 flex-col font-thin leading-10">
-          <p className="font-bold">Company</p>
-          <p>Blog</p>
-          <p>About Us</p>
-          <p>Help</p>
-          <p>Career</p>
+          <a href="#Case_Study">
+            Case Study
+          </a>
+          <Link to={`/blogs`}>
+            <p>Blog</p>
+          </Link>
+          <a href="#About">
+          About Us
+          </a>
         </div>
       </div>
 
@@ -36,7 +43,7 @@ const Footer = () => {
           <p>Level 1, 7 Greenfield Parade Bankstown, NSW 2200</p>
         </div>
         <div className="w-1/2 flex-col font-thin">
-          <p>+61405899496</p>
+          <p>+01765-276560</p>
           <p>info@quadque.tech</p>
         </div>
       </div>
@@ -56,10 +63,10 @@ const Footer = () => {
       </div>
 
       <div className="w-full flex justify-center py-5 gap-2">
-        <Icons.FooterFacebook />
-        <Icons.FooterInstagram />
-        <Icons.FooterTwitter />
-        <Icons.FooterYoutube />
+        <a href="https://www.facebook.com/quadquetech/"><Icons.FooterFacebook /></a>
+        <a href="https://www.instagram.com/quadquetech/"><Icons.FooterInstagram /></a>
+        <a href="https://twitter.com/QuadqueT"><Icons.FooterTwitter /></a>
+        <a href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"><Icons.FooterYoutube /></a>
       </div>
 
       <div className="flex justify-center text-xs pb-2">Quadque©2022, All rights reserved</div>

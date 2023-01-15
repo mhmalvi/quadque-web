@@ -33,8 +33,8 @@ const Layout = () => {
             <OurCustomer/>
             <CaseStudy/>
             <ClientSpeaks/>
-            <OurTeam/>
             <Aboutus/>
+            <OurTeam/>
             <StartProject/>
           </>
           }/>
