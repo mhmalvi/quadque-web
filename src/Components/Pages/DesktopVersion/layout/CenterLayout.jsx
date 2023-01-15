@@ -32,7 +32,7 @@ const CenterLayout = () => {
         scrollingSpeed={800}
         easing={"ease-out"}
         navigation
-        navigationTooltips={anchors}
+        // navigationTooltips={anchors}
         render={({ state, fullpageApi }) => {
           return (
             <div>

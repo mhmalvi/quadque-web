@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import rightImage from "../../../../../asstes/Images/caseStudyrightImg.jpg";
+import Icons from "../../../../Shared/Icons";
 // import help1 from "../../../../../asstes/Images/help1.png";
 // import help2 from "../../../../../asstes/Images/help2.png";
 // import help3 from "../../../../../asstes/Images/help3.png";
@@ -15,28 +16,17 @@ import rightImage from "../../../../../asstes/Images/caseStudyrightImg.jpg";
 import { handleFetchCaseStudyById } from "../../../../Shared/services";
 
 const CaseStudyDetails = () => {
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
   const { slug } = useParams();
   const [caseStudyDetails, setCaseStudyDetails] = useState();
-  
 
   useEffect(() => {
     (async () => {
       const fetchServicedata = await handleFetchCaseStudyById(slug);
-      console.log(fetchServicedata);
+      console.log("fetchServicedata", fetchServicedata);
       setCaseStudyDetails(fetchServicedata);
     })();
   }, [slug]);
-
-  //   const handleNavigate = (menu) => {
-  //     if (!window.location.hash.includes("#")) {
-  //       navigate(`../${menu}`, { replace: true });
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     setCapabilityMenus(caseStudyDetails?.services_capabilities_menu.split(","));
-  //   }, [caseStudyDetails]);
 
   return (
     <>
@@ -45,9 +35,9 @@ const CaseStudyDetails = () => {
         <title>{`Services`}</title>
         {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
       </Helmet>
-      <div className="blog_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
+      <div className="case_study_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
         <h1 className="max-w-4xl mx-auto text-4xl font-bold leading-10 my-10 text-center">
-          Creative Digital Marketing Creative Digital Marketing Agency
+          {caseStudyDetails?.our_content_header}
         </h1>
         <div>
           <p
@@ -56,14 +46,12 @@ const CaseStudyDetails = () => {
               letterSpacing: "0.07em",
             }}
           >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur
-            sadipscing elitr
+            {caseStudyDetails?.summary1}
           </p>
         </div>
 
         <div className="mt-16 w-9/12 mx-auto flex justify-center items-center">
-          <img width={"70%"} src={caseStudyDetails?.file} alt="" />
+          <img width={"70%"} src={caseStudyDetails?.group_images} alt="" />
         </div>
 
         <div className="my-12">
@@ -73,9 +61,7 @@ const CaseStudyDetails = () => {
               letterSpacing: "0.07em",
             }}
           >
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur
-            sadipscing elitr
+            {caseStudyDetails?.summary2}
           </p>
 
           <div className="flex justify-center items-center pt-6">
@@ -83,6 +69,9 @@ const CaseStudyDetails = () => {
               className="px-7 py-3.5 text-base  font-medium leading-4 rounded-full bg-[#0793FF] text-black text-center"
               style={{
                 letterSpacing: "0.48px",
+              }}
+              onClick={() => {
+                navigate(`../contacts`, { replace: true });
               }}
             >
               Contact us
@@ -92,11 +81,10 @@ const CaseStudyDetails = () => {
 
         <div className="flex justify-between items-stretch mt-52">
           <div className="w-1/2 mt-24 pb-16">
-            <h2 className="text-2xl leading-6 font-medium mb-10 mt-2">
+            {/* <h2 className="text-2xl leading-6 font-medium mb-10 mt-2">
               {caseStudyDetails?.service_deliver_title}
               Creative Digital Marketing Creative Digital Marketing Agency
             </h2>
-
             <p
               className="text-base leading-6 font-normal text-white text-opacity-75"
               style={{
@@ -109,11 +97,174 @@ const CaseStudyDetails = () => {
               sadipscing elitr Lorem ipsum dolor sit amet, consetetur sadipscing
               elitr, sed diam nonumy eirmod tempor Lorem ipsum dolor sit amet
               consetetur sadipscing elitr
-            </p>
+            </p> */}
+
+            <div
+              dangerouslySetInnerHTML={{ __html: caseStudyDetails?.content }}
+            ></div>
           </div>
 
-          <div className="w-1/2">
-            <img className="ml-auto" src={rightImage} alt="" />
+          <div
+            className="w-1/2"
+            style={{
+              backgroundImage: `url(${rightImage})`,
+              backgroundSize: "cover",
+            }}
+          >
+            {/* <img className="ml-auto" src={rightImage} alt="" /> */}
+          </div>
+        </div>
+
+        <div className="mt-72">
+          <div className="max-w-xl mx-auto">
+            <h1 className="text-center text-[40px] leading-12 font-normal">
+              Our Content:
+            </h1>
+            <h1 className="text-center text-[40px] leading-12 font-normal">
+              {caseStudyDetails?.our_content_header}
+            </h1>
+          </div>
+
+          <div className="mt-40 flex items-center justify-between">
+            <img className="mr-28" src={caseStudyDetails?.image_1} alt="" />
+            <div>
+              <h1>{caseStudyDetails?.title_1}</h1>
+              <h4 className="mt-8 ml-10">{caseStudyDetails?.description_1}</h4>
+            </div>
+          </div>
+
+          <div className="mt-40 flex items-center justify-between">
+            <div>
+              <h1>{caseStudyDetails?.title_2}</h1>
+              <h4 className="mt-8 ml-10">{caseStudyDetails?.description_2}</h4>
+            </div>
+            <img className="ml-28" src={caseStudyDetails?.image_2} alt="" />
+          </div>
+
+          <div className="mt-40 flex items-center justify-between">
+            <img className="mr-28" src={caseStudyDetails?.image_3} alt="" />
+            <div>
+              <h1>{caseStudyDetails?.title_3}</h1>
+              <h4 className="mt-8 ml-10">{caseStudyDetails?.description_3}</h4>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-44">
+          <h1 className="text-3xl font-normal my-18">
+            Creative Digital Marketing Agency
+          </h1>
+          <div className="grid grid-cols-5 gap-5">
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+            <img
+              className="w-58 h-25"
+              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              alt=""
+            />
+          </div>
+
+          <div className="mt-40 flex items-center justify-between">
+            <img className="mr-28" src={caseStudyDetails?.image_1} alt="" />
+            <div>
+              <h1>{caseStudyDetails?.title_1}</h1>
+              <h4 className="mt-8">{caseStudyDetails?.description_1}</h4>
+              <div className="flex items-center pt-8">
+                <button
+                  className="px-7 py-3.5 text-base  font-medium leading-4 rounded-full bg-[#0793FF] text-black text-center"
+                  style={{
+                    letterSpacing: "0.48px",
+                  }}
+                  onClick={() => {
+                    navigate(`../contacts`, { replace: true });
+                  }}
+                >
+                  Contact us
+                </button>
+                <div className="flex items-center">
+                  <span className="mx-11">or </span>
+                  <span>
+                    <Icons.BluePhone className="mr-3.5" />
+                  </span>
+                  <a
+                    href="tel:+0123456789"
+                    className="text-lg font-medium leading-6"
+                  >
+                    +0 123 456-789
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
