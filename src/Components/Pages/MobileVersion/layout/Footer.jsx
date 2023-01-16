@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div id="Footer" className="w-full text-white relative mt-20">
       <img src={Logo} alt="" className="absolute -top-12 right-2" />
-      <div className="text-3xl font-thin mx-6 mb-4">
+      <div className="font_title text-3xl font-thin mx-6 mb-4">
         Have a Good Web Designe Today
       </div>
       <div className="text-sm font-thin px-6 pb-4">

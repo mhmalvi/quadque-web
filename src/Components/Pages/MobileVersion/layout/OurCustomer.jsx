@@ -21,8 +21,13 @@ const OurCustomer = () => {
   }, []);
 
   return (
-    <div className="w-full text-white mt-18 mb-5">
-      <div className="text-3xl px-6 pb-5">
+    <div className="w-full text-white py-18">
+      <div className="flex flex-wrap justify-evenly pb-4 px-10">
+        {clientsImg?.map((client) => (
+          <img src={client.client_images} alt="" className="w-32" />
+        ))}
+      </div>
+      <div className="font_title text-3xl px-6 pb-5">
         <span className="font-bold text-brand-color">100+</span> clients
         served
       </div>
@@ -36,7 +41,7 @@ const OurCustomer = () => {
       </ul>
 
 
-      <div className="text-3xl px-6 pb-5">
+      <div className="font_title text-3xl px-6 pb-5">
         <span className="font-bold text-brand-color">150+</span> Projects
         completed
       </div>
@@ -51,11 +56,6 @@ const OurCustomer = () => {
           <p className="w-2 h-2 bg-white mr-2 my-auto rounded-full"></p>Practical and easily implementable solutions 
         </li>
       </ul>
-      <div className="flex flex-wrap justify-evenly pb-4 px-10">
-        {clientsImg?.map((client) => (
-          <img src={client.client_images} alt="" className="w-32" />
-        ))}
-      </div>
     </div>
   );
 };

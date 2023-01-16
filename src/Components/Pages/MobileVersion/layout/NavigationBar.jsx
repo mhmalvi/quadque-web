@@ -9,7 +9,7 @@ const App = () => {
   const genericHamburgerLine = `h-1 my-1 rounded-full bg-white transition ease transform duration-500 lg:hidden m-4`;
 
   return (
-    <div className="Navigation fixed z-50">
+    <div className="Navigation fixed top-0 z-50">
       <div className="flex justify-between">
         <Link to="/">
           <div className="p-6">
@@ -34,7 +34,7 @@ const App = () => {
         footer={false}
         width="100%"
       >
-        <img src={Logo} alt="" className="absolute top-30 right-20" />
+        <img src={Logo} alt="" className="absolute top-30 right-20 z-[-1]" />
         <ul
           className="text-center text-xl"
         >

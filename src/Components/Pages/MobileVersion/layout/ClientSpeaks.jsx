@@ -22,7 +22,7 @@ const ClientSpeaks = () => {
   };
   return (
     <div className="w-full text-white mb-30">
-      <div className="text-3xl font-thin px-6 pb-5">
+      <div className="font_title text-3xl font-thin px-6 pb-5">
         Our clients <br /> speak
       </div>
       <div className="max-w-[370px] m-auto text-white pb-4">

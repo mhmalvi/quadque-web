@@ -22,13 +22,13 @@ const CaseStudy = () => {
 
   return (
     <div id="Case_Study" className="CaseStudy w-full text-white mb-30">
-      <div className="text-3xl font-thin px-6 pb-2">Case Study</div>
+      <div className="font_title text-3xl font-thin px-6 pb-2">Case Study</div>
       <div className="text-sm text-justify px-6 pb-1">
         Let’s have a look at some of our interesting case study examples. These
         case studies will let you better understand how we tackle critical
         challenges to help companies grow.
       </div>
-      <div className="max-w-[380px] m-auto text-white">
+      <div className="max-w-[100%] m-auto text-white">
         <Slider ref={CaseSlider} arrows={false} {...settings}>
           {CaseStudies?.map((details, index) => (
             <Link to={`/case-study/${details?.slug}`}>
