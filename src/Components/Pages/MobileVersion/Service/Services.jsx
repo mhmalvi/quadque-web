@@ -67,9 +67,7 @@ const Services = () => {
                       autoplay
                     ></lottie-player> */}
                     <Lottie
-                      animationData={
-                        littieFiles[details?.service_name]
-                      }
+                      animationData={littieFiles[details?.service_name]}
                       loop={true}
                     />
                   </div>
@@ -129,9 +127,9 @@ const Services = () => {
 export default Services;
 
 const littieFiles = {
-  "UI & UX Design": UI_UX,
+  "UI/UX": UI_UX,
   "AI & IoT Solutions": aIIot,
-  "Mobile App Development": AppDev,
+  "Application Development": AppDev,
   "Software Development": softDev,
   "Web Development": webDev,
 };

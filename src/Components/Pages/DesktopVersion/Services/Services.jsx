@@ -17,7 +17,6 @@ const Services = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [services] = useServices();
 
-
   useEffect(() => {
     if (location.hash === "#services") {
       setTimeout(() => {
@@ -61,14 +60,14 @@ const Services = () => {
             <div>
               <h1
                 id="service_name"
-                className={`uppercase font-bold lg:text-[40px] 2xl:text-[64px]`}
+                className={`uppercase font-bold lg:text-[40px] 2xl:text-[64px] font_title`}
               >
                 {activeServiceDetails?.service_name}
               </h1>
             </div>
 
             <div className="pt-18 mt-0.5 text-justify">
-              <p>{activeServiceDetails?.description}</p>
+              <p>{activeServiceDetails?.short_description}</p>
               {activeServiceDetails?.description ? (
                 <p className="text-white font-semibold mt-4 text-lg hover:text-opacity-90 cursor-pointer">
                   <Tooltip
@@ -158,7 +157,7 @@ export default Services;
 const littieFiles = {
   "UI/UX": UI_UX,
   "AI & IoT Solutions": aIIot,
-  "App Development": AppDev,
+  "Mobile App Development": AppDev,
   "Software Development": softDev,
   "Web Development": webDev,
 };
