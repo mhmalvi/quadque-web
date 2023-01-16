@@ -579,10 +579,6 @@ html {
     1360px 25px #fff, 457px 1183px #fff;
 }
 
-#main {
-  position: absolute;
-}
-
 @keyframes animStar {
   from {
     transform: translateY(0px);

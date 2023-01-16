@@ -46,7 +46,7 @@ const Services = () => {
 
   return (
     <div id="Service" className="Service w-full text-white">
-      <div style={{ maxWidth: "360px", margin: "auto" }} {...PrimarySettings}>
+      <div style={{ maxWidth: "90%", margin: "auto" }} {...PrimarySettings}>
         <div>
           <Slider asNavFor={nav2} ref={slider1} arrows={false}>
             {Services?.map((details, index) => (
@@ -73,7 +73,7 @@ const Services = () => {
                       loop={true}
                     />
                   </div>
-                  <div className="m-auto text-center text-2xl font-bold pb-4 services-shadow">
+                  <div className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow">
                     {details.service_name}
                   </div>
                   {/* <div className="m-auto text-center text-sm font-light pb-5 leading-6">
@@ -112,7 +112,7 @@ const Services = () => {
             focusOnSelect={true}
             arrows={false}
             {...SecondarySettings}
-            className="text-base text-white text-opacity-25 text-center"
+            className="font_title text-base text-white text-opacity-25 text-center"
           >
             {Services?.map((details) => (
               <div>

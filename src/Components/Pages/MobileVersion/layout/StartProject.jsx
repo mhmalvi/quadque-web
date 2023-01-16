@@ -176,7 +176,7 @@ const StartProject = () => {
         </div>
       </Modal>
 
-      <div className="text-3xl px-6 font-bold uppercase pb-8">
+      <div className="font_title text-3xl px-6 font-bold uppercase pb-8">
         START <br /> &nbsp; PROJECT
       </div>
       <div className="flex flex-wrap justify-between capitalize pb-8 px-6">
