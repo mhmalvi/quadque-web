@@ -22,6 +22,8 @@ const Header = () => {
         <Typical
           className="w-44 h-44 text-white lg:text-4.5xl xl:text-[60px] 2xl:text-[80px] font-bold leading-10 xl:leading-12 2xl:leading-[70px] font-poppins capitalize"
           steps={[
+            "",
+            1000,
             "We",
             1000,
             "We Build",
@@ -35,17 +37,17 @@ const Header = () => {
           wrapper="h1"
         />
       </div>
-      <div className="text-white px-6 pt-3">
+      <a href="#Footer" className="text-white px-6 pt-3">
         Contact{" "}
         <span className="bg-white rounded-full text-black px-1 mx-1"> ^ </span>
-      </div>
+      </a>
       <div className="video-opacity-10 pt-10">
         <video autoPlay loop muted>
           <source src={Astro} type="video/mp4" />
         </video>
       </div>
       <div className="flex justify-start bg-black text-white pt-10 pb-20 px-6">
-        <div className="font-semibold">START PROJECT</div>
+        <a href="#start-project" className="font-semibold">START PROJECT</a>
       </div>
     </div>
   );

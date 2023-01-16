@@ -146,7 +146,7 @@ export const handleSendMail = async (data) => {
       return result?.data?.message;
     }
   } catch (error) {
-    console.log(error.response?.data);
+    console.log("error", error.response?.data);
     return [];
   }
 };

@@ -8,7 +8,7 @@ import "../../MobileVersion/MobileView.css";
 
 const CaseStudy = () => {
   const [CaseStudies] = useCaseStudy();
-  //console.log("case studies", CaseStudies);
+  console.log("case studies", CaseStudies);
   const CaseSlider = useRef(null);
 
   const settings = {
@@ -17,7 +17,7 @@ const CaseStudy = () => {
     infinite: false,
     centerPadding: "100px",
     slidesToShow: 1,
-    speed: 100,
+    speed: 300,
   };
 
   return (
@@ -28,7 +28,7 @@ const CaseStudy = () => {
         case studies will let you better understand how we tackle critical
         challenges to help companies grow.
       </div>
-      <div className="max-w-[400px] m-auto text-white">
+      <div className="max-w-[380px] m-auto text-white">
         <Slider ref={CaseSlider} arrows={false} {...settings}>
           {CaseStudies?.map((details, index) => (
             <Link to={`/case-study/${details?.slug}`}>
@@ -36,7 +36,7 @@ const CaseStudy = () => {
                 <img
                   src={details?.com_image}
                   alt=""
-                  className="w-full rounded-2xl"
+                  className="w-full rounded-2xl bg-black"
                 />
                 <div className="caseText w-full h-10 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-center text-white py-2 overflow-hidden">
                   {details?.com_name}

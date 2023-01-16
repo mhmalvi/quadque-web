@@ -34,7 +34,7 @@ const Aboutus = () => {
         We work with the technological challenges of the world's leading
         enterprises and SMEs.
       </div>
-      <div className="px-6 py-3 text-justify">
+      <div className="px-6 py-3 text-justify font-thin">
         Quadque Technology Pty. Limited is a leading IT solution provider
         company in Australia. Established in 2020, the Quadque team has built a
         longstanding reputation as being a highly rated Australian IT services
@@ -43,7 +43,7 @@ const Aboutus = () => {
         domestic and overseas areas. Over time, Quadque has also moved into more
         advanced technologies.{" "}
       </div>
-      <div className="flex flex-wrap justify-between px-6 py-5">
+      <div className="flex flex-wrap justify-between px-6 py-10">
         <div className="text-3xl">23+
           <p className="text-lg font-thin">Active Clients</p>
         </div>
@@ -58,7 +58,7 @@ const Aboutus = () => {
         <div className="flex-wrap overflow-hidden">
           <img src={Interface} alt="" className="w-full duration-700" />
         </div>
-        <div className="max-w-[500px] overflow-hidden">
+        <div className="max-w-[440px] overflow-hidden">
           <div id="bar" className="h-2 bg-brand-color"></div>
           <div className="relative -top-2 w-[100%] h-2 bg-brand-color bg-opacity-25"></div>
         </div>
@@ -72,29 +72,29 @@ const Aboutus = () => {
       >
         <div className="py-5">
           <div className="text-2xl text-brand-color">Our Vision</div>
-          <div>{goals?.our_goal}</div>
+          <div className="font-thin">{goals?.our_goal}</div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">Our Mission</div>
-          <div>{goals?.our_mission}</div>
+          <div className="font-thin">{goals?.our_mission}</div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">Our Objective</div>
-          <div>{goals?.our_objective}</div>
+          <div className="font-thin">{goals?.our_objective}</div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">Our Vision</div>
-          <div>{goals?.our_vision}</div>
+          <div className="font-thin">{goals?.our_vision}</div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">Who We Are</div>
-          <div>{goals?.who_we_are}</div>
+          <div className="font-thin">{goals?.who_we_are}</div>
         </div>
         <div className="py-5">
           <div className="text-2xl text-brand-color">Why Choose Us</div>
           {/* <div>{goals?.why_choose_us}</div> */}
-          <div className="case_editor" dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}></div>
-        </div>
+          <div className="case_editor font-thin" dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}></div>
+        </div> 
       </div>
       <div className="w-[80%] h-[1px] bg-white mt-4"></div>
     </div>
