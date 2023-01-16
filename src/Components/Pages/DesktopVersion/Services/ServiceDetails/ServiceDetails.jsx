@@ -3,8 +3,6 @@ import CountUp from "react-countup";
 import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
-import Work2 from "../../../../../asstes/Images/case-study-2.png";
-import Work1 from "../../../../../asstes/Images/case-study.png";
 import help1 from "../../../../../asstes/Images/help1.png";
 import help2 from "../../../../../asstes/Images/help2.png";
 import help3 from "../../../../../asstes/Images/help3.png";
@@ -15,9 +13,10 @@ import research from "../../../../../asstes/Images/Research.png";
 import usability from "../../../../../asstes/Images/useability.png";
 import visual from "../../../../../asstes/Images/visual.png";
 import WebApp from "../../../../../asstes/Images/WebApp.png";
-import useCaseStudiesDesktop from "../../../../Shared/Hooks/useCaseStudiesDesktop";
-import { handleFetchServiceById } from "../../../../Shared/services";
+// import useCaseStudiesDesktop from "../../../../Shared/Hooks/useCaseStudiesDesktop";
 import { useSpeechSynthesis } from "react-speech-kit";
+import useCaseStudy from "../../../../Shared/Hooks/useCaseStudy";
+import { handleFetchServiceById } from "../../../../Shared/services";
 
 const ServiceDetails = () => {
   const navigate = useNavigate();
@@ -27,7 +26,9 @@ const ServiceDetails = () => {
   const ClientsSlider = useRef(null);
   const [serviceDetails, setServiceDetails] = useState();
   const [capabilityMenus, setCapabilityMenus] = useState([]);
-  const [caseStudies] = useCaseStudiesDesktop();
+  const [caseStudies] = useCaseStudy();
+
+  console.log("caseStudies", caseStudies);
 
   useEffect(() => {
     (async () => {
@@ -42,8 +43,10 @@ const ServiceDetails = () => {
     }
   };
 
+  console.log(slug);
+
   useEffect(() => {
-    setCapabilityMenus(serviceDetails?.services_capabilities_menu.split(","));
+    setCapabilityMenus(serviceDetails?.services_capabilities_menu?.split(","));
   }, [serviceDetails]);
 
   return (
@@ -54,7 +57,7 @@ const ServiceDetails = () => {
         {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
       </Helmet>
       <div className="blog_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
-        <h1 className="text-4xl font-bold leading-10 mb-10">
+        <h1 className="text-4xl font-bold leading-10 mb-10 font_title">
           {serviceDetails?.service_name}
         </h1>
         <div>
@@ -102,7 +105,7 @@ const ServiceDetails = () => {
             Speak
           </button>
           <p
-            className="text-base leading-6 font-normal text-white"
+            className="text-base leading-6 text-white font-medium text-opacity-60"
             style={{
               letterSpacing: "0.07em",
             }}
@@ -110,22 +113,12 @@ const ServiceDetails = () => {
             {serviceDetails?.identity_design_des}
           </p>
 
-          {/* <div
-            className="serviceDetails_identity leading-7 text-white text-opacity-75 text-base"
-            style={{
-              letterSpacing: "0.09em",
-            }}
-            dangerouslySetInnerHTML={{
-              __html: serviceDetails?.identity_design_des,
-            }}
-          ></div> */}
-
           <div className="2xl:w-8/12 mx-auto mt-12 grid grid-cols-3 gap-8">
             {(serviceDetailsContent[`${slug}`]?.helpContent).map(
               (content, i) => (
                 <div className="flex items-center" key={i}>
                   <img className="w-5" src={content?.icon} alt="" />
-                  <span className="text-base font-normal leading-5 ml-2">
+                  <span className="text-base leading-5 ml-2 text-white font-medium text-opacity-90">
                     {content?.title}
                   </span>
                 </div>
@@ -145,7 +138,7 @@ const ServiceDetails = () => {
                   />
                 }
                 + <br />
-                <span className="text-[#D2D3D3] text-base font-thin">
+                <span className="text-base leading-5 ml-2 text-white font-medium text-opacity-60">
                   Projects Completed
                 </span>{" "}
               </div>
@@ -159,7 +152,7 @@ const ServiceDetails = () => {
                   />
                 }
                 + <br />
-                <span className="text-[#D2D3D3] text-base font-thin">
+                <span className="text-base leading-5 ml-2 text-white font-medium text-opacity-60">
                   Happy Clients
                 </span>{" "}
               </div>
@@ -187,12 +180,12 @@ const ServiceDetails = () => {
                     src={service?.service_image}
                     alt=""
                   />
-                  <h3 className="text-lg font-semibold leading-6">
+                  <h3 className="text-lg font-semibold leading-6 text-white text-opacity-80">
                     {service?.service_name}
                   </h3>
                 </div>
                 <p
-                  className="text-base leading-6 font-normal text-white text-justify mt-2.5"
+                  className="text-base leading-6 font-normal text-white text-opacity-60 text-justify mt-2.5"
                   style={{
                     letterSpacing: "0.07em",
                   }}
@@ -261,7 +254,7 @@ const ServiceDetails = () => {
           </div>
 
           <div
-            className="serviceDetails_content flex justify-center items-center flex-col my-16 leading-7 text-white text-base"
+            className="serviceDetails_content flex justify-center items-center flex-col my-16 text-white"
             style={{
               letterSpacing: "0.09em",
             }}
@@ -289,7 +282,7 @@ const ServiceDetails = () => {
             </h2>
 
             <p
-              className="text-base leading-6 font-normal text-white"
+              className="text-base leading-6 font-normal text-white text-opacity-60"
               style={{
                 letterSpacing: "0.07em",
               }}
@@ -322,57 +315,6 @@ const ServiceDetails = () => {
                     </div>
                   </div>
                 ))}
-
-                <div className="rounded-xl">
-                  <img
-                    src={Work2}
-                    alt=""
-                    className="w-68 h-72 px-4 rounded-xl"
-                  />
-                  <div className="ml-4 text-white py-2">
-                    OTOBI Bd lagest furniture Shop
-                  </div>
-                </div>
-                <div className="rounded-xl">
-                  <img
-                    src={Work1}
-                    alt=""
-                    className="w-68 h-72 px-4 rounded-xl"
-                  />
-                  <div className="ml-4 text-white py-2">
-                    OTOBI Bd lagest furniture Shop
-                  </div>
-                </div>
-                <div className="rounded-xl">
-                  <img
-                    src={Work2}
-                    alt=""
-                    className="w-68 h-72 px-4 rounded-xl"
-                  />
-                  <div className="ml-4 text-white py-2">
-                    OTOBI Bd lagest furniture Shop
-                  </div>
-                </div>
-                <div className="rounded-xl">
-                  <img
-                    src={Work1}
-                    alt=""
-                    className="w-68 h-72 px-4 rounded-xl"
-                  />
-                  <div className="ml-4 text-white py-2">
-                    OTOBI Bd lagest furniture Shop
-                  </div>
-                </div>
-                <div className="rounded-xl">
-                  <img
-                    src={Work2}
-                    alt=""
-                    className="w-68 h-72 px-4 rounded-xl"
-                  />
-                  <div className="ml-4 text-white py-2">
-                    OTOBI Bd lagest furniture Shop
-                  </div>
-                </div>
               </Slider>
             </div>
           </div>
@@ -406,39 +348,6 @@ const ServiceDetails = () => {
                     </div>
                   </div>
                 ))}
-
-                <div className="p-6">
-                  <div className="border rounded-2xl p-4 hover:bg-white hover:bg-opacity-10 hover:delay-200">
-                    <img
-                      src={Work2}
-                      alt=""
-                      className="relative w-10 h-10 -top-8 left-4 rounded-full"
-                    />
-                    <div className="text-center text-white py-2">
-                      A software development company in Dhaka. They also work
-                      related to AI, IOT, Digital Marketing services.
-                    </div>
-                    <div className="text-end text-white py-2">
-                      Md Antor Ahmed
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="border rounded-2xl p-4 hover:bg-white hover:bg-opacity-10 hover:delay-200">
-                    <img
-                      src={Work1}
-                      alt=""
-                      className="relative w-10 h-10 -top-8 left-4 rounded-full"
-                    />
-                    <div className="text-center text-white py-2">
-                      A software development company in Dhaka. They also work
-                      related to AI, IOT, Digital Marketing services.
-                    </div>
-                    <div className="text-end text-white py-2">
-                      Md Antor Ahmed
-                    </div>
-                  </div>
-                </div>
               </Slider>
             </div>
           </div>
@@ -525,27 +434,27 @@ const serviceDetailsContent = {
   "web-development": {
     helpContent: [
       {
-        title: "Usability Analyst",
+        title: "E-commerce Websites",
         icon: usability,
       },
       {
-        title: "User Research",
+        title: "Magento Web Development",
         icon: research,
       },
       {
-        title: "Product Design",
+        title: "Custom Website Services for Enterprises",
         icon: product,
       },
       {
-        title: "Web/App Design",
+        title: "Webpage Design",
         icon: WebApp,
       },
       {
-        title: "Visual Design",
+        title: "Drupal Web Development",
         icon: visual,
       },
       {
-        title: "Interaction Design",
+        title: "Java Web Development",
         icon: Interaction,
       },
     ],
@@ -577,27 +486,27 @@ const serviceDetailsContent = {
   "mobile-app-development": {
     helpContent: [
       {
-        title: "Usability Analyst",
+        title: "Construction",
         icon: usability,
       },
       {
-        title: "User Research",
+        title: "Mhealth",
         icon: research,
       },
       {
-        title: "Product Design",
+        title: "Retail & Ecommerce",
         icon: product,
       },
       {
-        title: "Web/App Design",
+        title: "Fintech",
         icon: WebApp,
       },
       {
-        title: "Visual Design",
+        title: "Travel & Hospitality",
         icon: visual,
       },
       {
-        title: "Interaction Design",
+        title: "Insurance",
         icon: Interaction,
       },
     ],
@@ -605,23 +514,23 @@ const serviceDetailsContent = {
     bestService: [
       {
         service_image: help1,
-        service_name: "Create A Strong Impression",
-        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+        service_name: "Boost Customer Engagement",
+        des: "Mobile applications help companies in establishing a direct marketing channel with their customers, allowing for more direct and effective connection.",
       },
       {
         service_image: help2,
-        service_name: "Builds the Foundation",
-        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+        service_name: "Improves Efficiency",
+        des: "Mobile apps are custom-built with your business requirements, it works capable of performing a variety of duties, obviating the need for several applications.",
       },
       {
         service_image: help3,
-        service_name: "It Fosters Brand Loyalty",
-        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+        service_name: "Integrates With Existing Software",
+        des: "Mobile applications can easily integrate with your existing software. It converts your valuable information very smoothly.",
       },
       {
         service_image: help4,
-        service_name: "Rememberable",
-        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+        service_name: "Ease in Project Management",
+        des: "Custom applications can be added to keep track of the progress of your project and the deadlines that you have set.",
       },
     ],
   },
@@ -629,27 +538,27 @@ const serviceDetailsContent = {
   "software-development": {
     helpContent: [
       {
-        title: "Usability Analyst",
+        title: "Healthcare",
         icon: usability,
       },
       {
-        title: "User Research",
+        title: "Insurance",
         icon: research,
       },
       {
-        title: "Product Design",
+        title: "Hospitality",
         icon: product,
       },
       {
-        title: "Web/App Design",
+        title: "Construction Engineering",
         icon: WebApp,
       },
       {
-        title: "Visual Design",
+        title: "Legal Tech",
         icon: visual,
       },
       {
-        title: "Interaction Design",
+        title: "Sports",
         icon: Interaction,
       },
     ],
@@ -657,23 +566,23 @@ const serviceDetailsContent = {
     bestService: [
       {
         service_image: help1,
-        service_name: "Create A Strong Impression",
-        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+        service_name: "Optimized Business Process",
+        des: "Custom software development contributes to the optimization of your business operations.",
       },
       {
         service_image: help2,
-        service_name: "Builds the Foundation",
-        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+        service_name: "Invention",
+        des: "With a customized software you can choose the own development and technological process you want to utilize.",
       },
       {
         service_image: help3,
-        service_name: "It Fosters Brand Loyalty",
-        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+        service_name: "Reliability",
+        des: "Success is defined by reliability. Proper software testing guarantees you have a trustworthy IT tool to expand your organization.",
       },
       {
         service_image: help4,
-        service_name: "Rememberable",
-        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+        service_name: "Adaptability",
+        des: "Custom software can keep up with changing marketing trends by integrating new procedures and technology into your existing software.",
       },
     ],
   },

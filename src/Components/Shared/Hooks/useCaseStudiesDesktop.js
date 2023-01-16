@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { handleFetchCaseStudiesDesktop } from "../services";
+import { handleFetchCaseStudies } from "../services";
 
 const useCaseStudiesDesktop = () => {
   const [caseStudies, setCaseStudies] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const response = await handleFetchCaseStudiesDesktop();
+      const response = await handleFetchCaseStudies();
       console.log("response", response);
-      if (response?.status === 200) {
-        setCaseStudies(response?.data);
+      if (response?.length) {
+        setCaseStudies(response);
       }
     })();
   }, []);

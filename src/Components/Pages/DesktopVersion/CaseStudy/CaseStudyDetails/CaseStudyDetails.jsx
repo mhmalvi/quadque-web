@@ -36,7 +36,7 @@ const CaseStudyDetails = () => {
         {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
       </Helmet>
       <div className="case_study_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
-        <h1 className="max-w-4xl mx-auto text-4xl font-bold leading-10 my-10 text-center">
+        <h1 className="max-w-4xl mx-auto text-4xl font-bold leading-10 my-10 text-center font_title">
           {caseStudyDetails?.our_content_header}
         </h1>
         <div>
@@ -100,12 +100,13 @@ const CaseStudyDetails = () => {
             </p> */}
 
             <div
+              className="mr-10"
               dangerouslySetInnerHTML={{ __html: caseStudyDetails?.content }}
             ></div>
           </div>
 
           <div
-            className="w-1/2"
+            className="w-1/2 ml-10"
             style={{
               backgroundImage: `url(${rightImage})`,
               backgroundSize: "cover",
@@ -126,119 +127,77 @@ const CaseStudyDetails = () => {
           </div>
 
           <div className="mt-40 flex items-center justify-between">
-            <img className="mr-28" src={caseStudyDetails?.image_1} alt="" />
-            <div>
-              <h1>{caseStudyDetails?.title_1}</h1>
-              <h4 className="mt-8 ml-10">{caseStudyDetails?.description_1}</h4>
+            <div className="w-1/2 mr-24">
+              <img className="w-full" src={caseStudyDetails?.image_1} alt="" />
+            </div>
+
+            <div className="w-1/2">
+              <h1 className="text-3xl leading-12 font-semibold">
+                {caseStudyDetails?.title_1}
+              </h1>
+              <h4 className="mt-8 ml-10 text-justify">
+                {caseStudyDetails?.description_1}
+              </h4>
             </div>
           </div>
 
           <div className="mt-40 flex items-center justify-between">
-            <div>
-              <h1>{caseStudyDetails?.title_2}</h1>
-              <h4 className="mt-8 ml-10">{caseStudyDetails?.description_2}</h4>
+            <div className="w-1/2 mr-24">
+              <h1 className="text-3xl leading-12 font-semibold">
+                {caseStudyDetails?.title_2}
+              </h1>
+              <h4 className="mt-8 ml-10 text-justify">
+                {caseStudyDetails?.description_2}
+              </h4>
             </div>
-            <img className="ml-28" src={caseStudyDetails?.image_2} alt="" />
+            <div className="w-1/2">
+              <img className="w-full" src={caseStudyDetails?.image_2} alt="" />
+            </div>
           </div>
 
-          <div className="mt-40 flex items-center justify-between">
-            <img className="mr-28" src={caseStudyDetails?.image_3} alt="" />
-            <div>
-              <h1>{caseStudyDetails?.title_3}</h1>
-              <h4 className="mt-8 ml-10">{caseStudyDetails?.description_3}</h4>
+          <div className="w-full mt-40 flex items-center justify-between">
+            <div className="w-1/2 mr-24">
+              <img className="w-full" src={caseStudyDetails?.image_3} alt="" />
+            </div>
+            <div className="w-1/2">
+              <h1 className="text-3xl leading-12 font-semibold">
+                {caseStudyDetails?.title_3}
+              </h1>
+              <h4 className="mt-8 ml-10 text-justify">
+                {caseStudyDetails?.description_3}
+              </h4>
             </div>
           </div>
         </div>
 
-        <div className="mt-44">
+        <div className="mt-44 pb-20">
           <h1 className="text-3xl font-normal my-18">
             Creative Digital Marketing Agency
           </h1>
           <div className="grid grid-cols-5 gap-5">
             <img
               className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
-              alt=""
-            />
-            <img
-              className="w-58 h-25"
-              src="http://localhost:8000/assets/img/case_study/1673412970.png"
+              src={`${
+                caseStudyDetails?.agency
+                  ? caseStudyDetails?.agency
+                  : `${process.env.REACT_APP_SERVICE_URL}/assets/img/case_study/companies.png`
+              }`}
               alt=""
             />
           </div>
 
           <div className="mt-40 flex items-center justify-between">
-            <img className="mr-28" src={caseStudyDetails?.image_1} alt="" />
-            <div>
-              <h1>{caseStudyDetails?.title_1}</h1>
-              <h4 className="mt-8">{caseStudyDetails?.description_1}</h4>
+            <div className="w-1/2 mr-24">
+              <img className="w-full" src={caseStudyDetails?.image_1} alt="" />
+            </div>
+
+            <div className="w-1/2">
+              <h1 className="text-3xl leading-12 font-semibold">
+                {caseStudyDetails?.title_1}
+              </h1>
+              <h4 className="mt-8 text-justify">
+                {caseStudyDetails?.description_1}
+              </h4>
               <div className="flex items-center pt-8">
                 <button
                   className="px-7 py-3.5 text-base  font-medium leading-4 rounded-full bg-[#0793FF] text-black text-center"
@@ -246,7 +205,7 @@ const CaseStudyDetails = () => {
                     letterSpacing: "0.48px",
                   }}
                   onClick={() => {
-                    navigate(`../contacts`, { replace: true });
+                    navigate(`../#contacts`, { replace: true });
                   }}
                 >
                   Contact us
