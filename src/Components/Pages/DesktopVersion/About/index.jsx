@@ -35,7 +35,7 @@ const About = () => {
           <div className="mb-8">
             <div>
               <Flip left cascade spy={triggerTitleAnimation}>
-                <h1 className="text-[32px] font-medium leading-[48px] font-poppins font_title">
+                <h1 className="text-[32px] font-medium leading-[48px] font_title">
                   About us
                 </h1>
               </Flip>

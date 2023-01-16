@@ -444,8 +444,12 @@ body::-webkit-scrollbar {
   opacity: 75%;
 }
 
-.case_study_details h1 {
-  font-size: 32px;
+.case_study_details {
+  color: white !important;
+}
+
+.case_study_details > h1 {
+  font-size: 32px !important;
 }
 
 .mail_confirm {
