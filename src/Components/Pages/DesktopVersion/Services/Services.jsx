@@ -157,7 +157,7 @@ export default Services;
 const littieFiles = {
   "UI/UX": UI_UX,
   "AI & IoT Solutions": aIIot,
-  "Mobile App Development": AppDev,
+  "Application Development": AppDev,
   "Software Development": softDev,
   "Web Development": webDev,
 };
