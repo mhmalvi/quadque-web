@@ -46,7 +46,7 @@ const Services = () => {
 
   return (
     <div id="Service" className="Service w-full text-white">
-      <div style={{ maxWidth: "380px", margin: "auto" }} {...PrimarySettings}>
+      <div style={{ maxWidth: "360px", margin: "auto" }} {...PrimarySettings}>
         <div>
           <Slider asNavFor={nav2} ref={slider1} arrows={false}>
             {Services?.map((details, index) => (
@@ -129,9 +129,9 @@ const Services = () => {
 export default Services;
 
 const littieFiles = {
-  "UI/UX": UI_UX,
+  "UI & UX Design": UI_UX,
   "AI & IoT Solutions": aIIot,
-  "App Development": AppDev,
+  "Mobile App Development": AppDev,
   "Software Development": softDev,
   "Web Development": webDev,
 };

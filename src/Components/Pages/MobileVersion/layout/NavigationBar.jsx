@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import Icons from "../../../Shared/Icons";
 import { Link } from "react-router-dom";
+import Logo from "../../../../asstes/Images/bg-logo-shadow.png";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -33,6 +34,7 @@ const App = () => {
         footer={false}
         width="100%"
       >
+        <img src={Logo} alt="" className="absolute top-30 right-20" />
         <ul
           className="text-center text-xl"
         >
