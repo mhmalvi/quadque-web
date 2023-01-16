@@ -70,7 +70,10 @@ const ServiceDetails = () => {
         <div className="text-3xl font-bold pb-5">{Service?.service_name}</div>
         <div className="font-semibold pb-2">{Service?.service_title}</div>
         {/* <div className="text-sm text-justify pb-2">{Service?.description}</div> */}
-        <div className="text-justify font-thin pb-4" dangerouslySetInnerHTML={{ __html: Service?.description }}></div>
+        <div
+          className="text-justify font-thin pb-4"
+          dangerouslySetInnerHTML={{ __html: Service?.description }}
+        ></div>
         <div
           onClick={() => navigate(`../#start-project`, { replace: true })}
           className="text-brand-color font-bold"
@@ -341,7 +344,7 @@ const ServiceDetails = () => {
 export default ServiceDetails;
 
 const serviceDetailsContent = {
-  "ui-&-ux-design": {
+  "ui-ux": {
     helpContent: [
       {
         title: "Usability Analyst",
