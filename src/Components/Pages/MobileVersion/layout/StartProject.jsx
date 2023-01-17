@@ -9,7 +9,7 @@ import sucess from "../../../../asstes/Images/success.json";
 
 const StartProject = () => {
   const [Services] = useServices();
-  const [activeServices, setActiveServices] = useState("UI & UX Design");
+  const [activeServices, setActiveServices] = useState("UI/UX");
   const [activeSubServices, setActiveSubServices] = useState("");
   const [toogleSubService, setToogleSubService] = useState([
     "UX Design",
@@ -141,12 +141,13 @@ const StartProject = () => {
           scrollbarWidth: "none",
         }}
         open={open}
-        onCancel={() => setOpen(false)}
+        // onCancel={() => setOpen(false)}
+        closable={false}
         footer={false}
         width={"100%"}
       >
         <div
-          className="absolute left-0 right-0 bottom-0 top-2 h-4/6 w-9/12 m-auto border border-white border-opacity-20 flex justify-center items-center bg-black"
+          className="absolute left-0 right-0 bottom-0 top-2 h-3/6 w-11/12 p-6 m-auto border border-white border-opacity-20 flex justify-center items-center bg-black"
           onClick={() => setOpen(false)}
         >
           <div className="flex flex-col justify-center items-center">
