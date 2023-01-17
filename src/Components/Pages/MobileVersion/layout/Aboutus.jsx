@@ -58,7 +58,7 @@ const Aboutus = () => {
         <div className="flex-wrap overflow-hidden">
           <img src={Interface} alt="" className="w-full duration-700" />
         </div>
-        <div className="max-w-[440px] overflow-hidden">
+        <div className="max-w-[100%] overflow-hidden">
           <div id="bar" className="h-2 bg-brand-color"></div>
           <div className="relative -top-2 w-[100%] h-2 bg-brand-color bg-opacity-25"></div>
         </div>
@@ -68,7 +68,7 @@ const Aboutus = () => {
       <div
         id="scroll"
         onScroll={myFunction}
-        className="w-[400px] h-[350px] overflow-y-scroll text-justify m-auto px-6"
+        className="w-[100%] h-[350px] overflow-y-scroll text-justify m-auto px-6"
       >
         <div className="py-5">
           <div className="text-2xl text-brand-color">Our Vision</div>

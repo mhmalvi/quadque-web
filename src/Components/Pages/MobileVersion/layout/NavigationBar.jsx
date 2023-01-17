@@ -26,6 +26,7 @@ const App = () => {
         </Button>
       </div>
       <Modal
+      className="cross_btn"
         title={false}
         centered
         open={open}
@@ -34,11 +35,10 @@ const App = () => {
         footer={false}
         width="100%"
       >
-        <img src={Logo} alt="" className="absolute top-30 right-20 z-[-1]" />
         <ul
-          className="text-center text-xl"
+          className="text-center text-xl pt-16"
         >
-          <li className="absolute top-5" onClick={() => setOpen(false)}><Icons.BrandLogo/></li>
+          <li className="absolute top-14" onClick={() => setOpen(false)}><Icons.BrandLogo/></li>
           <Link to="/">
             <li className="py-10" onClick={() => setOpen(false)}>Home</li>
           </Link>
