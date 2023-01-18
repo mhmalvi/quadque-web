@@ -29,8 +29,8 @@ const StartProject = () => {
 
   useEffect(() => {
     if (location.hash === "#start-project") {
-      setLoader(false);
       setTimeout(() => {
+        setLoader(false);
         setTriggerAnimation(!triggerAnimation);
         setTriggerTitleAnimation(!triggerTitleAnimation);
       }, 800);
@@ -97,6 +97,7 @@ const StartProject = () => {
   console.log("activeSubServices", activeSubServices);
 
   const handleSendMailReq = async () => {
+    setLoader(true);
     const data = {
       name: document.getElementById("Name").value,
       phone: document.getElementById("Phone").value,
@@ -111,6 +112,7 @@ const StartProject = () => {
     console.log(sendMail);
 
     if (sendMail === "Mail sent") {
+      setLoader(false);
       setOpen(true);
 
       document.getElementById("Name").value = "";
@@ -150,7 +152,7 @@ const StartProject = () => {
             </p>
             <p className="text-base font_title mt-2 italic">Have a Good Day.</p>
             <button
-              className="px-7 py-3.5 text-base  font-medium leading-4 rounded-full bg-white text-black text-center mt-10"
+              className="px-7 py-3.5 text-base cursor-pointer font-medium leading-4 rounded-full bg-white text-black text-center mt-10"
               style={{
                 letterSpacing: "0.48px",
               }}
@@ -311,12 +313,15 @@ const StartProject = () => {
 
       <div>
         {loader ? (
-          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+          <div className="min-w-full z-50 min-h-screen flex flex-col justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
             <Lottie
               className="w-1/6 mx-auto"
               animationData={loaderFile}
               loop={true}
             />
+            <h1 className="font_title text-3xl font-semibold text-white">
+              Loading...
+            </h1>
           </div>
         ) : null}
       </div>
