@@ -5,12 +5,15 @@ import "slick-carousel/slick/slick-theme.css";
 // import Client from "../../../../asstes/Images/client.png";
 // import Case2 from "../../../../asstes/Images/case-study-2.png";
 import "../../MobileVersion/MobileView.css";
+import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
 
 const ClientSpeaks = () => {
   const [ClientSpeak] = useClientSpeak();
   const ClientSpeakSlider = useRef(null);
+  const [loader, setLoader] = useState(true);
 
   const settings = {
     dots: false,
@@ -20,12 +23,32 @@ const ClientSpeaks = () => {
     slidesToScroll: 1,
     arrow: false,
   };
+
+  useEffect(() => {
+    if (ClientSpeak !== "") {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
+    }
+  }, []);
+
   return (
     <div className="w-full text-white mb-30">
       <div className="font_title text-3xl font-thin px-6 pb-5">
         Our clients <br /> speak
       </div>
-      <div className="max-w-[370px] m-auto text-white pb-4">
+      <div className="w-[calc(100%_-_30px)] h-auto m-auto text-white pb-4">
+        {loader ? (
+          <div className="w-[calc(100%_-_20px)] h-[70%] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+            <Lottie
+              className="w-1/2 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+
+            <div className="font_title text-white animate-pulse">Loading...</div>
+          </div>
+        ) : null}
         <Slider ref={ClientSpeakSlider} arrows={false} {...settings}>
           {ClientSpeak?.map((details)=> 
           <div key={details?.id}>
