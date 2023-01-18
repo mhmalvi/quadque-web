@@ -18,7 +18,7 @@ const OurCustomer = () => {
       const fetchClientImages = await handleFetchClients();
       if (fetchClientImages) {
         setTimeout(() => {
-          setLoader(true);
+          setLoader(false);
           setClientsImg(fetchClientImages);
         }, 3000);
       }
@@ -28,15 +28,15 @@ const OurCustomer = () => {
 
   return (
     <div className="w-full text-white py-18">
-      <div className="flex flex-wrap justify-evenly pb-4 px-10">
         {loader ? (
-          <div className="absolute w-[90%] h-full z-40 flex justify-center items-center m-auto bg-black backdrop-blur-md">
+          <div className="absolute w-[100%] z-40 flex justify-center items-center m-auto bg-black backdrop-blur-md">
             <div className="flex lds-dual-ring animate-pulse"> </div>
             <div className="font_title text-white text-sm font-thin px-2">
               Loading...
             </div>
           </div>
         ) : null}
+      <div className="flex flex-wrap justify-evenly pb-4 px-10">
         {clientsImg?.map((client) => (
           <img src={client.client_images} alt="" className="w-32" />
         ))}

@@ -41,7 +41,7 @@ const CaseStudy = () => {
       </div>
       <div className="max-w-[100%] m-auto text-white">
         {loader ? (
-          <div className="w-[calc(100%_-_20px)] h-[70%] z-40 flex flex-col justify-center items-center absolute bg-black">
+          <div className="w-full h-[70%] z-40 flex flex-col justify-center items-center absolute bg-black">
             <Lottie
               className="w-1/2 mx-auto"
               animationData={loaderFile}
