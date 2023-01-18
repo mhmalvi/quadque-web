@@ -46,8 +46,14 @@ const Blogs = () => {
             className="cursor-pointer relative w-[72%] 2xl:w-[70%] max-h-[95vh] mr-1"
           >
             <img
-              className="min-w-full max-h-[95vh] my-auto"
-              src={blog1}
+              className="min-w-full h-[95vh] my-auto"
+              src={
+                blogs?.[0]?.thumbnail
+                  ? process.env.REACT_APP_ASSETS_URL +
+                    "/" +
+                    blogs?.[0]?.thumbnail
+                  : blog1
+              }
               alt=""
             />
             <div
@@ -74,7 +80,7 @@ const Blogs = () => {
                 />
                 <div className="ml-8">
                   <div className="text-[22px] font-normal leading-8">
-                    By <span>Manish Yadav</span>{" "}
+                    By <span>{blogs?.[0]?.author}</span>{" "}
                     <span className="text-brand-color font-bold">in</span>{" "}
                     Random Category
                   </div>
@@ -95,7 +101,17 @@ const Blogs = () => {
                 onClick={() => handleBlogNavigate(blogs?.[1]?.slug)}
                 className="relative cursor-pointer"
               >
-                <img className="w-full" src={blog2} alt="" />
+                <img
+                  className="w-full"
+                  src={
+                    blogs?.[1]?.thumbnail
+                      ? process.env.REACT_APP_ASSETS_URL +
+                        "/" +
+                        blogs?.[1]?.thumbnail
+                      : blog2
+                  }
+                  alt=""
+                />
                 <div
                   className="absolute h-full w-full top-0 flex items-end"
                   style={{
@@ -112,7 +128,17 @@ const Blogs = () => {
                 onClick={() => handleBlogNavigate(blogs?.[2]?.slug)}
                 className="relative cursor-pointer 2xl:my-2.5"
               >
-                <img className=" w-full" src={blog3} alt="" />
+                <img
+                  className=" w-full"
+                  src={
+                    blogs?.[2]?.thumbnail
+                      ? process.env.REACT_APP_ASSETS_URL +
+                        "/" +
+                        blogs?.[2]?.thumbnail
+                      : blog3
+                  }
+                  alt=""
+                />
                 <div
                   className="absolute h-full w-full top-0 flex items-end"
                   style={{
@@ -160,12 +186,15 @@ const Blogs = () => {
       </div>
       <div>
         {loader ? (
-          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+          <div className="min-w-full z-50 min-h-screen flex flex-col justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
             <Lottie
               className="w-1/6 mx-auto"
               animationData={loaderFile}
               loop={true}
             />
+            <h1 className="font_title text-3xl font-semibold text-white">
+              Loading...
+            </h1>
           </div>
         ) : null}
       </div>

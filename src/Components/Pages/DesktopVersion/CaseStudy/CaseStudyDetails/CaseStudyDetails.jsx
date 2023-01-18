@@ -15,7 +15,7 @@ import Icons from "../../../../Shared/Icons";
 // import WebApp from "../../../../../asstes/Images/WebApp.png";
 import { handleFetchCaseStudyById } from "../../../../Shared/services";
 
-const CaseStudyDetails = () => {
+const CaseStudyDetails = ({ setLoader }) => {
   const navigate = useNavigate();
   const { slug } = useParams();
   const [caseStudyDetails, setCaseStudyDetails] = useState();
@@ -23,10 +23,12 @@ const CaseStudyDetails = () => {
   useEffect(() => {
     (async () => {
       const fetchServicedata = await handleFetchCaseStudyById(slug);
-      console.log("fetchServicedata", fetchServicedata);
+      if (fetchServicedata) {
+        setLoader(false);
+      }
       setCaseStudyDetails(fetchServicedata);
     })();
-  }, [slug]);
+  }, [setLoader, slug]);
 
   return (
     <>

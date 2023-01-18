@@ -13,14 +13,11 @@ import research from "../../../../../asstes/Images/Research.png";
 import usability from "../../../../../asstes/Images/useability.png";
 import visual from "../../../../../asstes/Images/visual.png";
 import WebApp from "../../../../../asstes/Images/WebApp.png";
-// import useCaseStudiesDesktop from "../../../../Shared/Hooks/useCaseStudiesDesktop";
-import Lottie from "lottie-react";
 import { useSpeechSynthesis } from "react-speech-kit";
-import loaderFile from "../../../../../asstes/Lotties/loader.json";
 import useCaseStudy from "../../../../Shared/Hooks/useCaseStudy";
 import { handleFetchServiceById } from "../../../../Shared/services";
 
-const ServiceDetails = () => {
+const ServiceDetails = ({ setLoader }) => {
   const navigate = useNavigate();
   const { slug } = useParams();
   const { speak } = useSpeechSynthesis();
@@ -29,9 +26,6 @@ const ServiceDetails = () => {
   const [serviceDetails, setServiceDetails] = useState();
   const [capabilityMenus, setCapabilityMenus] = useState([]);
   const [caseStudies] = useCaseStudy();
-  const [loader, setLoader] = useState(true);
-
-  console.log("caseStudies", caseStudies);
 
   useEffect(() => {
     (async () => {
@@ -43,7 +37,7 @@ const ServiceDetails = () => {
       }
       setServiceDetails(fetchServicedata);
     })();
-  }, [slug]);
+  }, [setLoader, slug]);
 
   const handleNavigate = (menu) => {
     if (!window.location.hash.includes("#")) {
@@ -366,18 +360,6 @@ const ServiceDetails = () => {
                 ))}
               </Slider>
             </div>
-          </div>
-
-          <div>
-            {loader ? (
-              <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
-                <Lottie
-                  className="w-1/6 mx-auto"
-                  animationData={loaderFile}
-                  loop={true}
-                />
-              </div>
-            ) : null}
           </div>
         </div>
       </div>

@@ -22,12 +22,19 @@ const Services = () => {
   useEffect(() => {
     if (location.hash === "#services") {
       setTimeout(() => {
-        setLoader(false);
+        if (services?.length) {
+          setLoader(false);
+        }
         setTriggerAnimation(!triggerAnimation);
       }, 800);
     }
+
+    if (services?.length) {
+      setLoader(false);
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.hash]);
+  }, [location.hash, services]);
 
   useEffect(() => {
     setActiveService(services[0]?.service_name);
@@ -40,8 +47,15 @@ const Services = () => {
       if (i > 4) {
         i = 0;
       }
-    }, 10000);
+      setLoader(true);
+    }, 15000);
   }, [services]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 500);
+  }, [activeServiceDetails]);
 
   // console.log("services", services);
 
@@ -150,12 +164,15 @@ const Services = () => {
 
       <div>
         {loader ? (
-          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+          <div className="min-w-full z-50 min-h-screen flex flex-col justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
             <Lottie
               className="w-1/6 mx-auto"
               animationData={loaderFile}
               loop={true}
             />
+            <h1 className="font_title text-3xl font-semibold text-white">
+              Loading...
+            </h1>
           </div>
         ) : null}
       </div>
