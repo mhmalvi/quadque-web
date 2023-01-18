@@ -6,11 +6,22 @@ import unmuteImg from "../../../../asstes/Images/unmute.png";
 import Icons from "../../../Shared/Icons";
 import Navbar from "../Navbar";
 import CenterLayout from "./CenterLayout";
+import welcomeAvatar from "../../../../asstes/Images/welcome_avatar.json";
+import Lottie from "lottie-react";
 
 const DesktopLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
   const [muted, setMuted] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(false);
+
+  useEffect(() => {
+    if (!localStorage.getItem("welcome")) {
+      setTimeout(() => {
+        setShowWelcome(true);
+      }, 3000);
+    }
+  }, []);
 
   useEffect(() => {
     document.getElementById("iframeAudio").src = siteAudio;
@@ -210,6 +221,44 @@ const DesktopLayout = () => {
 
       {/* Bottom bar */}
       <div className="absolute bottom-0 z-50 w-full h-10 bg-white"></div>
+
+      {/* Welcome Message */}
+      <div
+        className={`${
+          showWelcome
+            ? "w-86 transition-all delay-700 ease-in-out"
+            : "w-0 transition-all delay-700 ease-in-out"
+        } transition-all delay-700 ease-in-out absolute top-0 right-0 z-50 flex items-center`}
+      >
+        <div className="flex items-center relative">
+          <span className="bg-white px-4 py-2.5 font-semibold font_title rounded-md shadow-md">
+            Hi There, Welcome
+          </span>
+          <div className="bg-white w-4 h-4 -ml-2.5 rotate-45 rounded-sm">
+            &nbsp;
+          </div>
+
+          <div
+            className={`${
+              showWelcome
+                ? "w-6 h-6 transition-all delay-700 ease-in-out"
+                : "w-0 h-0 transition-all delay-700 ease-in-out"
+            } absolute -top-2 -left-3 rounded-full flex justify-center items-center bg-gray-700 text-white cursor-pointer`}
+            onClick={() => {
+              setShowWelcome(false);
+              localStorage.setItem("welcome", false);
+            }}
+          >
+            <span className="-mt-1">x</span>
+          </div>
+        </div>
+
+        <Lottie
+          className="w-36 mx-auto"
+          animationData={welcomeAvatar}
+          loop={true}
+        />
+      </div>
     </div>
   );
 };
