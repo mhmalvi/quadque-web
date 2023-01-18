@@ -1,16 +1,16 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import React from "react";
-import CaseStudy from "../CaseStudy";
-import Cleints from "../Clients";
-import ClientSpeak from "../ClientSpeak";
-import Header from "../Header";
-import Services from "../Services";
 import "../../../../index.css";
 import About from "../About";
 import Blogs from "../Blogs";
-import StartProject from "../StartProject";
+import CaseStudy from "../CaseStudy";
+import Cleints from "../Clients";
+import ClientSpeak from "../ClientSpeak";
 import Footer from "../Footer";
+import Header from "../Header";
 import Navbar from "../Navbar";
+import Services from "../Services";
+import StartProject from "../StartProject";
 
 const anchors = [
   "landing",
@@ -29,7 +29,7 @@ const CenterLayout = () => {
     <div className="center_layout_container">
       <ReactFullpage
         anchors={anchors}
-        scrollingSpeed={800}
+        scrollingSpeed={1000}
         easing={"ease-out"}
         navigation
         // navigationTooltips={anchors}

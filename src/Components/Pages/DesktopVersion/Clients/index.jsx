@@ -5,16 +5,20 @@ import { useLocation } from "react-router-dom";
 import ms from "../../../../asstes/Images/ms.png";
 import sp from "../../../../asstes/Images/sp.png";
 import ts from "../../../../asstes/Images/TESLA.png";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
+import Lottie from "lottie-react";
 
 const Cleints = () => {
   const [count, setCount] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   const location = useLocation();
 
   useEffect(() => {
     if (location?.hash === "#clients") {
       setTimeout(() => {
+        setLoader(false);
         setCount(true);
         setTriggerAnimation(!triggerAnimation);
       }, 800);
@@ -361,6 +365,18 @@ const Cleints = () => {
           <span className="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
         </span>
       </a>
+
+      <div>
+        {loader ? (
+          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 bg-black backdrop-blur-md bg-opacity-80">
+            <Lottie
+              className="w-1/6 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };

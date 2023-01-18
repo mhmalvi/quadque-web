@@ -1,11 +1,11 @@
 import React from "react";
 import AllService from "./Services";
 
-const Services = () => {
+const Services = ({ loader, setLoader }) => {
   return (
     <div id="services" className="section h-full">
       <div className="2xl:py-3 pl-14 pr-[22px] text-white">
-        <AllService />
+        <AllService loader={loader} setLoader={setLoader} />
 
         <a href="#start-project" className="absolute top-12 right-10">
           <span className="relative  flex justify-center items-center h-4 w-4 cursor-pointer">

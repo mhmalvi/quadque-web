@@ -39,19 +39,21 @@ const Footer = () => {
               </div>
             </Flip>
             <Fade left spy={triggerTitleAnimation}>
-              <button
-                className="text-white px-18 py-3.5 text-base leading-6 font-normal mt-8 2xl:mt-14"
-                style={{
-                  border: "2px solid #FFFFFF",
-                  borderRadius: "30px",
-                }}
-              >
-                Let's Talk
-              </button>
+              <a href="tel:+01765276560">
+                <button
+                  className="text-white px-18 py-3.5 text-base leading-6 font-normal mt-8 2xl:mt-14"
+                  style={{
+                    border: "2px solid #FFFFFF",
+                    borderRadius: "30px",
+                  }}
+                >
+                  Let's Talk
+                </button>
+              </a>
             </Fade>
             <Icons.FooterIcon
               id="footer_icon"
-              className="hidden absolute lg:-top-16 2xl:-top-24 lg:-right-16 2xl:-right-24 text-white lg:w-79 lg:h-72 2xl:w-96 2xl:h-92 bg-transparent animate-slow-spin"
+              className="hidden absolute lg:-top-16 2xl:-top-24 lg:-right-16 2xl:-right-24 lg:w-79 lg:h-72 2xl:w-96 2xl:h-92 bg-transparent animate-slow-spin"
             />
           </div>
 
@@ -63,37 +65,44 @@ const Footer = () => {
                     High level experience in web design and development
                     knowledge, producing quality work.
                   </h1>
-                  <div className="flex items-center">
-                    <a
-                      className="pl-1"
-                      href="https://www.facebook.com/quadquetech"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Icons.FacebookDesktop />
-                    </a>
-                    <a
-                      href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Icons.YoutubeDesktop className="mx-4" />
-                    </a>
+                  <div>
+                    <div className="mb-2 ml-1.5">
+                      <h4>
+                        <a href="mailto:info@quadque.tech">info@quadque.tech</a>
+                      </h4>
+                    </div>
+                    <div className="flex items-center">
+                      <a
+                        className="pl-1"
+                        href="https://www.facebook.com/quadquetech"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icons.FacebookDesktop />
+                      </a>
+                      <a
+                        href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icons.YoutubeDesktop className="mx-4" />
+                      </a>
 
-                    <a
-                      href="https://www.instagram.com/quadquetech/?hl=en"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Icons.InstaDesktop className="mr-4" />
-                    </a>
-                    <a
-                      href="https://twitter.com/QuadqueT"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Icons.TwiterDesktop />
-                    </a>
+                      <a
+                        href="https://www.instagram.com/quadquetech/?hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icons.InstaDesktop className="mr-4" />
+                      </a>
+                      <a
+                        href="https://twitter.com/QuadqueT"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icons.TwiterDesktop />
+                      </a>
+                    </div>
                   </div>
                 </Fade>
               </div>

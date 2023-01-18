@@ -9,6 +9,7 @@ import softDev from "../../../../asstes/Lotties/softwware_development.json";
 import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
 import useServices from "../../../Shared/Hooks/useServices";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const Services = () => {
   const location = useLocation();
@@ -16,10 +17,12 @@ const Services = () => {
   const [activeServiceDetails, setActiveDetails] = useState({});
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [services] = useServices();
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     if (location.hash === "#services") {
       setTimeout(() => {
+        setLoader(false);
         setTriggerAnimation(!triggerAnimation);
       }, 800);
     }
@@ -31,10 +34,6 @@ const Services = () => {
 
     let i = 1;
     setInterval(() => {
-      // console.log(services[i]);
-      // console.log(document.getElementById("lottie_file"));
-      // document.getElementById("lottie_file").src = services[i]?.file;
-
       setActiveService(services[i]?.service_name);
       setActiveDetails(services[i]);
       i++;
@@ -44,7 +43,7 @@ const Services = () => {
     }, 10000);
   }, [services]);
 
-  console.log("services", services);
+  // console.log("services", services);
 
   useEffect(() => {
     setActiveDetails(
@@ -147,6 +146,18 @@ const Services = () => {
             ))}
           </div>
         </Flip>
+      </div>
+
+      <div>
+        {loader ? (
+          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+            <Lottie
+              className="w-1/6 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

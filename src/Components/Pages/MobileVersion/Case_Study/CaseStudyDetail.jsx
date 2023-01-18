@@ -161,7 +161,7 @@ const CaseStudyDetail = () => {
           </div>
           or
           <div className="pt-1">
-          +61405899496
+          +01765276560
           </div>
         </div>
       </div> */}

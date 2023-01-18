@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
 import useBlogs from "../../../../Shared/Hooks/useBlog";
 import { handleFetchBlogBySlug } from "../../../../Shared/services";
+import loaderFile from "../../../../../asstes/Lotties/loader.json";
+import Lottie from "lottie-react";
 
 const BlogDetails = () => {
   const navigate = useNavigate();
@@ -12,6 +14,7 @@ const BlogDetails = () => {
   const [blogs] = useBlogs();
   const { id } = useParams();
   const [randomBlogData, setRandomBlogData] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -19,6 +22,7 @@ const BlogDetails = () => {
       // console.log("blogDetails", blogDetails);
       if (blogDetails?.status === 200) {
         setBlogDetails(blogDetails?.data);
+        setLoader(false);
       }
     })();
   }, [slug]);
@@ -73,7 +77,6 @@ const BlogDetails = () => {
           className="text-white blog_details_section"
           dangerouslySetInnerHTML={{ __html: blogDetails?.text }}
         ></div>
-
         <div>
           <hr />
           <div className="py-11 mb-8">
@@ -108,6 +111,18 @@ const BlogDetails = () => {
               <div className="h-0.5 w-full bg-gray-500 bg-opacity-10" />
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center items-center">
+          {!loader ? (
+            <div className="w-10/12 z-50 min-h-screen flex justify-center items-center absolute top-20 left-0 bg-black backdrop-blur-md bg-opacity-80">
+              <Lottie
+                className="w-1/6 mx-auto"
+                animationData={loaderFile}
+                loop={true}
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     </>

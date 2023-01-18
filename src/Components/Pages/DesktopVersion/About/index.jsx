@@ -2,19 +2,32 @@ import React, { useEffect, useState } from "react";
 import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
+import { handleFetchCompanyGoals } from "../../../Shared/services";
+import { Helmet } from "react-helmet";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
+import Lottie from "lottie-react";
 
 const About = () => {
-  const arrayy = [1, 2, 3, 4, 5, 6];
   const location = useLocation();
   const [sideBanner, setSideBanner] = useState(
     "https://i.ibb.co/QK246nC/Image-Box.png"
   );
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
+  const [goals, setGoals] = useState();
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const fetchAbout = await handleFetchCompanyGoals("1");
+      setGoals(fetchAbout);
+    })();
+  }, []);
 
   useEffect(() => {
     if (location.hash === "#about") {
       setTimeout(() => {
+        setLoader(false);
         setTriggerAnimation(!triggerAnimation);
         setTriggerTitleAnimation(!triggerTitleAnimation);
       }, 800);
@@ -28,6 +41,17 @@ const About = () => {
 
   return (
     <div id="about" className="section min-h-full font-poppins">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content={
+            "We are a leading IT company in Australia providing various digital solutions. Our services range from website and app development to software development."
+          }
+        />
+        <meta name="keywords" content={goals?.meta_keyword} />
+      </Helmet>
+
       <div className="w-full pr-[22px] text-white flex justify-center items-end">
         <img className="w-[44%] mr-16" src={sideBanner} alt="" />
 
@@ -43,29 +67,101 @@ const About = () => {
           </div>
           <div className="h-full">
             <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mt-auto overflow-y-scroll py-1">
-              {arrayy.map((_, i) => (
-                <div
-                  key={i}
-                  className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                  onMouseOver={() => handleChangeBanner(i)}
-                >
-                  <Fade right cascade spy={triggerTitleAnimation}>
-                    <h2 className="text-2xl font-bold leading-[100%] pl-4">
-                      This is the first feature
-                    </h2>
-                    <p className="mt-2.5 text-white pl-4">
-                      Lorem ipsum dolor sit amet consectetur adipiscing tempor.
-                      Risus ultricies tristique nulla enim tortor. Nibh tortor
-                      id aliquet lectus proin nibh nisl condimentum Interdum
-                      varius.
-                    </p>
-                  </Fade>
-                  <hr className="text-white my-12 py-0.5" />
-                </div>
-              ))}
+              <div
+                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                onMouseOver={() => handleChangeBanner(0)}
+              >
+                <Fade right cascade spy={triggerTitleAnimation}>
+                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
+                    Our Vision
+                  </h2>
+                  <p className="mt-2.5 text-white pl-4">{goals?.our_vision}</p>
+                </Fade>
+                <hr className="text-white my-12 py-0.5" />
+              </div>
+              <div
+                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                onMouseOver={() => handleChangeBanner(1)}
+              >
+                <Fade right cascade spy={triggerTitleAnimation}>
+                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
+                    Our Mission
+                  </h2>
+                  <p className="mt-2.5 text-white pl-4">{goals?.our_mission}</p>
+                </Fade>
+                <hr className="text-white my-12 py-0.5" />
+              </div>
+              <div
+                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                onMouseOver={() => handleChangeBanner(2)}
+              >
+                <Fade right cascade spy={triggerTitleAnimation}>
+                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
+                    Our Goal
+                  </h2>
+                  <p className="mt-2.5 text-white pl-4">{goals?.our_goal}</p>
+                </Fade>
+                <hr className="text-white my-12 py-0.5" />
+              </div>
+
+              <div
+                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                onMouseOver={() => handleChangeBanner(3)}
+              >
+                <Fade right cascade spy={triggerTitleAnimation}>
+                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
+                    Our Objective
+                  </h2>
+                  <p className="mt-2.5 text-white pl-4">
+                    {goals?.our_objective}
+                  </p>
+                </Fade>
+                <hr className="text-white my-12 py-0.5" />
+              </div>
+
+              <div
+                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                onMouseOver={() => handleChangeBanner(4)}
+              >
+                <Fade right cascade spy={triggerTitleAnimation}>
+                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
+                    Who We Are
+                  </h2>
+                  <p className="mt-2.5 text-white pl-4">{goals?.who_we_are}</p>
+                </Fade>
+                <hr className="text-white my-12 py-0.5" />
+              </div>
+
+              <div
+                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                onMouseOver={() => handleChangeBanner(5)}
+              >
+                <Fade right cascade spy={triggerTitleAnimation}>
+                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
+                    Why Choose Us
+                  </h2>
+                  <p
+                    className="text-white pl-4 mt-2.5"
+                    dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}
+                  ></p>
+                </Fade>
+                <hr className="text-white my-12 py-0.5" />
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+        {loader ? (
+          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+            <Lottie
+              className="w-1/6 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

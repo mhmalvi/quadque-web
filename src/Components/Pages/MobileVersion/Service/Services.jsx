@@ -50,7 +50,7 @@ const Services = () => {
         <div>
           <Slider asNavFor={nav2} ref={slider1} arrows={false}>
             {Services?.map((details, index) => (
-              <Link to={`service-detail/${details.slug}`}>
+              <Link to={`services/${details.slug}`}>
                 <div key={index}>
                   <div className="w-full h-100">
                     {/* <lottie-player
