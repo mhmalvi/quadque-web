@@ -41,7 +41,7 @@ const Header = () => {
         Contact{" "}
         <span className="bg-white rounded-full text-black px-1 mx-1"> ^ </span>
       </a>
-      <div className="video-opacity-10 pt-10">
+      <div className="pt-10">
         <video autoPlay loop muted>
           <source src={Astro} type="video/mp4" />
         </video>
