@@ -30,9 +30,8 @@ export const handleFetchServiceBySlug = async (slug) => {
     const result = await axios.get(
       `${process.env?.REACT_APP_SERVICE_URL}/api/services/${slug}`
     );
-    if (result?.data?.status === 200) {
-      return result?.data?.data;
-    }
+    /* console.log("netwooooork", result?.data); */
+      return result?.data;
   } catch (error) {
     console.log(error.response?.message);
     return [];
@@ -57,9 +56,8 @@ export const handleFetchCaseStudyBySlug = async (slug) => {
     const result = await axios.get(
       `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies/${slug}`
     );
-    if (result?.status === 200) {
-      return result?.data?.data;
-    }
+    console.log("netwooork", result?.data);
+      return result?.data;
   } catch (error) {
     console.log(error.response?.data);
     return [];

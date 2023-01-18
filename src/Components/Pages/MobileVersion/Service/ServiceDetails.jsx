@@ -23,8 +23,9 @@ import WebApp from "../../../../asstes/Images/WebApp.png";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
 import { handleFetchServiceBySlug } from "../../../Shared/services";
+import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
-// import point from "../../../../asstes/Icons/service-icon.svg";
 
 const ServiceDetails = () => {
   const navigate = useNavigate();
@@ -35,12 +36,21 @@ const ServiceDetails = () => {
   const [CaseStudy] = useCaseStudy();
   const [Service, setService] = useState();
   const [capabilities, setCapabilities] = useState();
+  const [loader, setLoader] = useState(true);
   //console.log(Service);
 
   useEffect(() => {
     (async () => {
       const fetchServicedata = await handleFetchServiceBySlug(slug);
-      setService(fetchServicedata);
+      console.log("local", fetchServicedata);
+      if(fetchServicedata.status === 200){
+        setTimeout(() => {
+          setLoader(false);
+          setService(fetchServicedata.data);
+        }, 5000);
+      }else{
+        setLoader(true);
+      }
       console.log("service data", Service);
     })();
   }, [slug]);
@@ -49,6 +59,14 @@ const ServiceDetails = () => {
     const cap_array = Service?.services_capabilities_menu.split(",");
     setCapabilities(cap_array);
   }, [Service]);
+
+/*     useEffect(() => {
+    if (Service !== "") {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
+    }
+  }, []); */
 
   const settings = {
     centerMode: false,
@@ -66,8 +84,19 @@ const ServiceDetails = () => {
         <title>{`Services`}</title>
         {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
       </Helmet>
-      <div className="w-full mt-30 text-white px-6">
-        <div className="text-3xl font-bold pb-5">{Service?.service_name}</div>
+        {loader ? (
+          <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+            <Lottie
+              className="w-1/2 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+
+            <div className="font_title text-white animate-pulse">Loading...</div>
+          </div>
+        ) : null}
+      <div className={`w-full h-auto mt-30 text-white px-6 ${!Service ? "scale-0" : ""}`}>
+        <div className="font_title text-3xl font-bold pb-5">{Service?.service_name}</div>
         <div className="font-semibold pb-2">{Service?.service_title}</div>
         {/* <div className="text-sm text-justify pb-2">{Service?.description}</div> */}
         <div

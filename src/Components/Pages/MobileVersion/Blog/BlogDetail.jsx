@@ -5,6 +5,8 @@ import { handleFetchBlogBySlug } from "../../../Shared/services";
 import useBlogs from "../../../Shared/Hooks/useBlog";
 import Icons from "../../../Shared/Icons";
 import { message } from "antd";
+import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const BlogDetail = () => {
   const navigate = useNavigate();
@@ -12,12 +14,17 @@ const BlogDetail = () => {
   const { slug } = useParams();
   const [blogData, setBlogData] = useState();
   const [randomBlogData, setRandomBlogData] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     (async () => {
       const fetchBlog = await handleFetchBlogBySlug(slug);
+      console.log("fetch", fetchBlog)
       if (fetchBlog.status === 200) {
-        setBlogData(fetchBlog?.data);
+        setTimeout(() => {
+          setLoader(false);
+          setBlogData(fetchBlog?.data);
+        }, 3000);
       } else {
         message.error(fetchBlog.message);
       }
@@ -54,14 +61,26 @@ const BlogDetail = () => {
         <title>{`Blog - ${blogData?.title}`}</title>
         <meta name="keywords" content={blogData?.meta_keyword} />
       </Helmet>
-      <div className="w-full pt-30">
+      {loader ? (
+        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+          <Lottie
+            className="w-1/2 mx-auto"
+            animationData={loaderFile}
+            loop={true}
+          />
+
+          <div className="font_title text-white animate-pulse">Loading...</div>
+        </div>
+      ) : null}
+      
+      <div className={`w-full pt-30 ${!blogData ? "scale-0" : ""} `}>
         <img
           src={blogData?.thumbnail}
           alt=""
           className="absolute top-0 z-[-10] w-full h-81"
         />
         <div className="flex items-end h-56 bg-gradient-to-b from-transparent to-black px-6 pb-10">
-          <div className="text-2xl text-white">
+          <div className="font_title text-2xl text-white">
             {blogData?.title}
             <div className="text-white text-sm">By {blogData?.author}</div>
           </div>

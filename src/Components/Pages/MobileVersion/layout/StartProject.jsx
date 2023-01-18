@@ -18,16 +18,10 @@ const StartProject = () => {
     "User Experience Consulting",
     "Design Thinking",
   ]);
-  const [data, setData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    Help: "",
-  });
   const [msgBox, setMsgBox] = useState(false);
   const [open, setOpen] = useState(false);
   
-  console.log(Services);
+  /* console.log(Services); */
 
    useEffect(() => {
     setActiveSubServices("");
@@ -35,7 +29,7 @@ const StartProject = () => {
 
   const handleLoginReq = async (e) => {
     e.preventDefault();
-    console.log("handle data", data);
+    /* console.log("handle data", data); */
     //alert("Your form is submitted.");
   };
 

@@ -4,11 +4,17 @@ import { handleFetchCompanyGoals } from "../../../Shared/services";
 
 const Aboutus = () => {
   const [goals, setGoals] = useState();
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     (async () => {
       const fetchGoals = await handleFetchCompanyGoals("1");
-      setGoals(fetchGoals);
+      if (fetchGoals) {
+        setTimeout(() => {
+          setLoader(false);
+          setGoals(fetchGoals);
+        }, 5000);
+      }
       //console.log("goals data", goals);
     })();
   }, []);
@@ -73,6 +79,14 @@ const Aboutus = () => {
         onScroll={myFunction}
         className="w-full h-[350px] overflow-y-scroll text-justify m-auto px-6"
       >
+        {loader ? (
+          <div className="absolute w-[90%] h-[350px] z-40 flex justify-center items-center m-auto bg-black backdrop-blur-md">
+            <div className="flex lds-dual-ring animate-pulse"> </div>
+            <div className="font_title text-white text-sm font-thin px-2">
+              Loading...
+            </div>
+          </div>
+        ) : null}
         <div className="py-5">
           <div className="text-2xl text-brand-color">Our Vision</div>
           <div className="font-thin">{goals?.our_goal}</div>

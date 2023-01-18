@@ -5,9 +5,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import "../../MobileVersion/MobileView.css";
+import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const CaseStudy = () => {
   const [CaseStudies] = useCaseStudy();
+  const [loader, setLoader] = useState(true);
   console.log("case studies", CaseStudies);
   const CaseSlider = useRef(null);
 
@@ -19,6 +22,14 @@ const CaseStudy = () => {
     slidesToShow: 1,
     speed: 300,
   };
+  
+  useEffect(() => {
+    if (CaseStudies !== "") {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
+    }
+  }, []);
 
   return (
     <div id="Case_Study" className="CaseStudy w-full text-white mb-30">
@@ -29,6 +40,17 @@ const CaseStudy = () => {
         challenges to help companies grow.
       </div>
       <div className="max-w-[100%] m-auto text-white">
+        {loader ? (
+          <div className="w-[calc(100%_-_20px)] h-[70%] z-40 flex flex-col justify-center items-center absolute bg-black">
+            <Lottie
+              className="w-1/2 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+
+            <div className="text-white font_title flex animate-pulse">Loading...</div>
+          </div>
+        ) : null}
         <Slider ref={CaseSlider} arrows={false} {...settings}>
           {CaseStudies?.map((details, index) => (
             <Link to={`/case-study/${details?.slug}`}>

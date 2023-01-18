@@ -9,18 +9,27 @@ import Brand2 from "../../../../asstes/Images/brand22.png";
 import Brand3 from "../../../../asstes/Images/brand33.png";
 import Brand4 from "../../../../asstes/Images/brand44.png";
 import { handleFetchCaseStudyBySlug } from "../../../Shared/services";
+import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const CaseStudyDetail = () => {
   const { slug } = useParams();
   const [caseData, setCaseData] = useState();
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     (async () => {
       const fetchCaseStudy = await handleFetchCaseStudyBySlug(slug);
-      setCaseData(fetchCaseStudy);
+      console.log("fetch", fetchCaseStudy);
+      if (fetchCaseStudy.status === 200) {
+        setTimeout(() => {
+          setLoader(false);
+          setCaseData(fetchCaseStudy.data);
+        }, 5000);
+      }
     })();
   }, [slug]);
-  console.log("case data", caseData);
+  //console.log("case data", caseData);
   return (
     <>
       <Helmet>
@@ -28,10 +37,22 @@ const CaseStudyDetail = () => {
         <title>{`Services`}</title>
         {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
       </Helmet>
-      <div className="w-full text-white pt-30 px-6">
+      {loader ? (
+        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+          <Lottie
+            className="w-1/2 mx-auto"
+            animationData={loaderFile}
+            loop={true}
+          />
+
+          <div className="font_title text-white animate-pulse">Loading...</div>
+        </div>
+      ) : null}
+
+      <div className={`w-full text-white pt-30 px-6 ${!caseData ? "scale-0" : "" }`}>
         {/* TOP SECTION  */}
         <div>
-          <div className="text-2xl text-center pb-3">{caseData?.com_name}</div>
+          <div className="font_title text-2xl text-center pb-3">{caseData?.com_name}</div>
           <div className="text-sm text-center">{caseData?.summary1}</div>
 
           <img src={caseData?.group_images} alt="" className="m-auto py-13" />
