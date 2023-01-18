@@ -103,7 +103,14 @@ const BlogDetails = ({ setLoader }) => {
                   </div>
                 </div>
                 <div className="lg:w-[276px] 2xl:w-96 lg:h-[200px] 2xl:h-56">
-                  <img className="w-full h-full" src={blog?.thumbnail} alt="" />
+                  {/* <img className="w-full h-full" src={blog?.thumbnail} alt="" /> */}
+                  <img
+                    className="w-full h-full"
+                    src={
+                      process.env.REACT_APP_ASSETS_URL + "/" + blog?.thumbnail
+                    }
+                    alt=""
+                  />
                 </div>
               </div>
               <div className="h-0.5 w-full bg-gray-500 bg-opacity-10" />
