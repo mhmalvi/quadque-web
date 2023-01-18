@@ -6,6 +6,7 @@ import useServices from "../../../Shared/Hooks/useServices";
 import "../../MobileVersion/MobileView.css";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 import UI_UX from "../../../../asstes/Lotties/ux.json";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
@@ -19,6 +20,15 @@ const Services = () => {
   const [nav2, setNav2] = useState(null);
   const slider1 = useRef(null);
   const slider2 = useRef(null);
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    if (Services !== "") {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
+    }
+  }, []);
 
   useEffect(() => {
     setNav1(slider1.current);
@@ -46,6 +56,17 @@ const Services = () => {
 
   return (
     <div id="Service" className="Service w-full text-white">
+          {loader ? (
+            <div className=" absolute w-full h-[90%] z-40 flex flex-col justify-center items-center bg-black">
+              <Lottie
+                className="w-1/2 mx-auto"
+                animationData={loaderFile}
+                loop={true}
+              />
+
+              <div className="text-white font_title flex animate-pulse">Loading...</div>
+            </div>
+          ) : null}
       <div style={{ maxWidth: "90%", margin: "auto" }} {...PrimarySettings}>
         <div>
           <Slider asNavFor={nav2} ref={slider1} arrows={false}>

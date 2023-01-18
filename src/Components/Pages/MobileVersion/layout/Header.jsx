@@ -39,7 +39,7 @@ const Header = () => {
       </div>
       <a href="#Footer" className="text-white px-6 pt-3">
         Contact{" "}
-        <span className="bg-white rounded-full text-black px-1 mx-1"> ^ </span>
+        <span className="bg-white rounded-full text-black items-center px-1 mx-1"> ^ </span>
       </a>
       <div className="pt-10">
         <video autoPlay loop muted>
