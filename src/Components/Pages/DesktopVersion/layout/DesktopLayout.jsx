@@ -7,19 +7,22 @@ import Icons from "../../../Shared/Icons";
 import Navbar from "../Navbar";
 import CenterLayout from "./CenterLayout";
 
-
 const DesktopLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
   const [muted, setMuted] = useState(false);
 
   useEffect(() => {
+    document.getElementById("iframeAudio").src = siteAudio;
+
     document.getElementById("main_container").style.height =
       "calc(100vh - 80px)";
     document.getElementById("main_container").style.backgroundColor = "#000000";
   }, []);
 
   useEffect(() => {
+    console.log(window.Permissions);
+
     if (muted) {
       document.getElementById("iframeAudio").src = "";
     } else {
@@ -37,6 +40,10 @@ const DesktopLayout = () => {
         allow="autoplay loop"
         style={{ display: "none" }}
       />
+
+      {/* <audio id="iframeAudio" src={siteAudio} loop autoPlay hidden>
+        <source src={siteAudio} type="audio/ogg" />
+      </audio> */}
 
       <Modal
         style={{

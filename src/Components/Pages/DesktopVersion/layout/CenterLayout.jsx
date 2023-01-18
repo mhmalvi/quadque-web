@@ -29,7 +29,7 @@ const CenterLayout = () => {
     <div className="center_layout_container">
       <ReactFullpage
         anchors={anchors}
-        scrollingSpeed={1000}
+        scrollingSpeed={1200}
         easing={"ease-out"}
         navigation
         // navigationTooltips={anchors}

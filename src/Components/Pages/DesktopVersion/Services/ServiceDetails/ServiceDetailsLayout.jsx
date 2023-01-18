@@ -7,12 +7,15 @@ import unmuteImg from "../../../../../asstes/Images/unmute.png";
 import Icons from "../../../../Shared/Icons";
 import Navbar from "../../Navbar";
 import ServiceDetails from "./ServiceDetails";
+import loaderFile from "../../../../../asstes/Lotties/loader.json";
+import Lottie from "lottie-react";
 
 const ServiceDetailsLayout = () => {
   const navigate = useNavigate();
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
   const [muted, setMuted] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     if (muted) {
@@ -147,7 +150,7 @@ const ServiceDetailsLayout = () => {
           id="main_container"
           className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
-          <ServiceDetails />
+          <ServiceDetails setLoader={setLoader} />
         </div>
 
         {/* Right bar */}
@@ -202,6 +205,20 @@ const ServiceDetailsLayout = () => {
 
       {/* Bottom bar */}
       <div className="absolute bottom-0 z-50 w-full h-10 bg-white"></div>
+
+      {/* Loader */}
+      {loader ? (
+        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 2xl:left-10 bg-black backdrop-blur-md bg-opacity-80">
+          <Lottie
+            className="w-1/6 mx-auto"
+            animationData={loaderFile}
+            loop={true}
+          />
+          <h1 className="font_title text-3xl font-semibold text-white">
+            Loading...
+          </h1>
+        </div>
+      ) : null}
     </div>
   );
 };
