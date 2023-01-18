@@ -55,7 +55,7 @@ const CaseStudyDetail = () => {
           <div className="font_title text-2xl text-center pb-3">{caseData?.com_name}</div>
           <div className="text-sm text-center">{caseData?.summary1}</div>
 
-          <img src={caseData?.group_images} alt="" className="m-auto py-13" />
+          <img src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.group_images} alt="" className="m-auto py-13" />
 
           <div className="text-sm text-center pb-5">{caseData?.summary2}</div>
           <div className="w-32 flex justify-center mx-auto bg-[#0793FF] rounded-full text-black text-sm font-semibold px-3 py-2">
@@ -65,7 +65,7 @@ const CaseStudyDetail = () => {
 
         {/* SECTION 2 */}
         <div className="">
-          <img src={caseData?.short_banner} alt="" className="m-auto pt-13" />
+          <img src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.short_banner} alt="" className="m-auto pt-13" />
           <div className="text-2xl pt-13 pb-3">
             <div
               className="case_editor"
@@ -119,7 +119,7 @@ const CaseStudyDetail = () => {
           {/* sub-section 1 */}
           <div className="flex-col pb-13">
             <img
-              src={caseData?.image_1}
+              src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_1}
               alt=""
               className="w-2/3 m-auto pb-13"
             />
@@ -129,7 +129,7 @@ const CaseStudyDetail = () => {
           {/* sub-section 2 */}
           <div className="flex-col pb-13">
             <img
-              src={caseData?.image_2}
+              src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_2}
               alt=""
               className="w-2/3 m-auto pb-13"
             />
@@ -139,7 +139,7 @@ const CaseStudyDetail = () => {
           {/* sub-section 3 */}
           <div className="flex-col pb-13">
             <img
-              src={caseData?.image_3}
+              src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_3}
               alt=""
               className="w-2/3 m-auto pb-13"
             />

@@ -57,7 +57,7 @@ const ClientSpeaks = () => {
                 <div className="font-semibold">{details?.name}</div>
                 <div className="text-slate-400">{details?.designation}</div>
               </div>
-              <img src={details?.image} alt="" className="w-full py-4" />
+              <img src={process.env.REACT_APP_ASSETS_URL + "/" + details?.image} alt="" className="w-full py-4" />
               <div className="text-justify">{details?.description}</div>
             </div>
           </div>

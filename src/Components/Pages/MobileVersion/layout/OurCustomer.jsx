@@ -38,7 +38,7 @@ const OurCustomer = () => {
         ) : null}
       <div className="flex flex-wrap justify-evenly pb-4 px-10">
         {clientsImg?.map((client) => (
-          <img src={client.client_images} alt="" className="w-32" />
+          <img src={process.env.REACT_APP_ASSETS_URL + "/" + client.client_images} alt="" className="w-32" />
         ))}
       </div>
       <div className="font_title text-3xl px-6 pb-5">
