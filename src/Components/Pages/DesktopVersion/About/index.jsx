@@ -154,12 +154,15 @@ const About = () => {
 
       <div>
         {loader ? (
-          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+          <div className="min-w-full z-50 min-h-screen flex flex-col justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
             <Lottie
               className="w-1/6 mx-auto"
               animationData={loaderFile}
               loop={true}
             />
+            <h1 className="font_title text-3xl font-semibold text-white">
+              Loading...
+            </h1>
           </div>
         ) : null}
       </div>
