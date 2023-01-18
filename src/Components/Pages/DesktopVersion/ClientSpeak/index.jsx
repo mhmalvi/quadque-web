@@ -54,7 +54,11 @@ const ClientSpeak = () => {
             <div>
               <img
                 className="lg:w-[250px] lg:h-[260px] 2xl:w-98 2xl:h-98 lg:mr-12 2xl:mr-16 pr-0.05"
-                src={clientSpeaks?.[index]?.image}
+                src={
+                  process.env.REACT_APP_ASSETS_URL +
+                  "/" +
+                  clientSpeaks?.[index]?.image
+                }
                 alt=""
               />
             </div>
