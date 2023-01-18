@@ -4,15 +4,15 @@ import Flip from "react-reveal/Flip";
 import { Link, useLocation } from "react-router-dom";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import Icons from "../../../Shared/Icons";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
+import Lottie from "lottie-react";
 
 const CaseStudy = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
-  // const [caseStudy, setCaseStudies] = useState([]);
   const [caseStudy] = useCaseStudy();
-
-  console.log(caseStudy);
+  const [loader, setLoader] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
@@ -23,6 +23,10 @@ const CaseStudy = () => {
         setTriggerAnimation(!triggerAnimation);
         setTriggerTitleAnimation(!triggerTitleAnimation);
       }, 800);
+
+      setTimeout(() => {
+        setLoader(false);
+      }, 1000);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
@@ -130,6 +134,18 @@ const CaseStudy = () => {
           <span className="relative inline-flex rounded-full h-4 w-4 bg-white"></span>
         </span>
       </a>
+
+      <div>
+        {loader ? (
+          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+            <Lottie
+              className="w-1/6 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };

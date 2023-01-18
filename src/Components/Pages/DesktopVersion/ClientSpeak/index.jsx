@@ -4,6 +4,8 @@ import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 import titleBg from "../../../../asstes/Images/client_speak.png";
 import { handleFetchClientSpeaks } from "../../../Shared/services";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
+import Lottie from "lottie-react";
 
 const ClientSpeak = () => {
   const location = useLocation();
@@ -11,10 +13,12 @@ const ClientSpeak = () => {
   const [clientSpeaks, setClientSpeaks] = useState([]);
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     if (location.hash === "#client-speak") {
       setTimeout(() => {
+        setLoader(false);
         setTriggerAnimation(!triggerAnimation);
         setTriggerTitleAnimation(!triggerTitleAnimation);
       }, 800);
@@ -111,6 +115,18 @@ const ClientSpeak = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div>
+        {loader ? (
+          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 bg-black backdrop-blur-md bg-opacity-80">
+            <Lottie
+              className="w-1/6 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

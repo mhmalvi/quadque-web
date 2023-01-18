@@ -6,6 +6,8 @@ import blog2 from "../../../../asstes/Images/blog2.jpg";
 import blog3 from "../../../../asstes/Images/blog3.jpg";
 import moreBlogs from "../../../../asstes/Images/moreblogs.jpg";
 import useBlogs from "../../../Shared/Hooks/useBlog";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
+import Lottie from "lottie-react";
 
 const Blogs = () => {
   const [blogs] = useBlogs();
@@ -13,12 +15,14 @@ const Blogs = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   console.log(blogs);
 
   useEffect(() => {
     if (location.hash === "#blogs") {
       setTimeout(() => {
+        setLoader(false);
         setTriggerAnimation(!triggerAnimation);
         setTriggerTitleAnimation(!triggerTitleAnimation);
       }, 800);
@@ -153,6 +157,17 @@ const Blogs = () => {
             </div>
           </div>
         </Fade>
+      </div>
+      <div>
+        {loader ? (
+          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+            <Lottie
+              className="w-1/6 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );

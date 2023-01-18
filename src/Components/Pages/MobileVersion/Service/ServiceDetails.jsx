@@ -1,11 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
+import { useNavigate, useParams } from "react-router-dom";
 import Mobile from "../../../../asstes/Images/mobile.png";
-import Icons from "../../../Shared/Icons";
+// import Icons from "../../../Shared/Icons";
 import CountUp from "react-countup";
-import Work2 from "../../../../asstes/Images/case-study-2.png";
-import Work1 from "../../../../asstes/Images/case-study.png";
+// import Work2 from "../../../../asstes/Images/case-study-2.png";
+// import Work1 from "../../../../asstes/Images/case-study.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import help1 from "../../../../asstes/Images/help1.png";
 import help2 from "../../../../asstes/Images/help2.png";
 import help3 from "../../../../asstes/Images/help3.png";
@@ -16,15 +19,12 @@ import research from "../../../../asstes/Images/Research.png";
 import usability from "../../../../asstes/Images/useability.png";
 import visual from "../../../../asstes/Images/visual.png";
 import WebApp from "../../../../asstes/Images/WebApp.png";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
-import { handleFetchServiceBySlug } from "../../../Shared/services";
-import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
+import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
+import { handleFetchServiceBySlug } from "../../../Shared/services";
 
-import point from "../../../../asstes/Icons/service-icon.svg";
+// import point from "../../../../asstes/Icons/service-icon.svg";
 
 const ServiceDetails = () => {
   const navigate = useNavigate();

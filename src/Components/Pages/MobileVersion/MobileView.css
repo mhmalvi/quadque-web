@@ -161,7 +161,7 @@
   top: -80px;
   width: 600px;
   height: 600px;
-  background: linear-gradient(#00ccff, #8f00ff);
+  background: linear-gradient(#0066ff, #8f00ff);
   transform: rotate(120deg);
   /* animation: animate 4s linear infinite; */
   z-index: -20;
@@ -176,16 +176,14 @@
   z-index: -10;
 }
 
-/* @keyframes animate 
-{
-  0%
-  {
+@keyframes animate {
+  0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-} */
+}
 
 .go-back-arrow {
   animation: shake 10s linear infinite;
@@ -249,15 +247,16 @@
   font-size: 14px;
 }
 
-.bestforyou img {
+/* .bestforyou img {
   margin: auto;
   width: 100px !important;
   padding-right: 20px;
-}
+} */
 
-.bestforyou h3 img {
-  width: 300px !important;
-  /* margin: auto; */
+.bestforyou img {
+  height: auto !important;
+  width: 90% !important;
+  margin: auto;
 }
 
 .Service_Identity h1 {

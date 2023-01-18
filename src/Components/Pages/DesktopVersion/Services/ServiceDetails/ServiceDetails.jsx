@@ -14,7 +14,9 @@ import usability from "../../../../../asstes/Images/useability.png";
 import visual from "../../../../../asstes/Images/visual.png";
 import WebApp from "../../../../../asstes/Images/WebApp.png";
 // import useCaseStudiesDesktop from "../../../../Shared/Hooks/useCaseStudiesDesktop";
+import Lottie from "lottie-react";
 import { useSpeechSynthesis } from "react-speech-kit";
+import loaderFile from "../../../../../asstes/Lotties/loader.json";
 import useCaseStudy from "../../../../Shared/Hooks/useCaseStudy";
 import { handleFetchServiceById } from "../../../../Shared/services";
 
@@ -27,12 +29,18 @@ const ServiceDetails = () => {
   const [serviceDetails, setServiceDetails] = useState();
   const [capabilityMenus, setCapabilityMenus] = useState([]);
   const [caseStudies] = useCaseStudy();
+  const [loader, setLoader] = useState(true);
 
   console.log("caseStudies", caseStudies);
 
   useEffect(() => {
     (async () => {
       const fetchServicedata = await handleFetchServiceById(slug);
+      if (fetchServicedata) {
+        setTimeout(() => {
+          setLoader(false);
+        }, 1500);
+      }
       setServiceDetails(fetchServicedata);
     })();
   }, [slug]);
@@ -304,7 +312,15 @@ const ServiceDetails = () => {
                 {...settings}
               >
                 {caseStudies?.map((casestudy, i) => (
-                  <div key={i} className="rounded-xl">
+                  <div
+                    onClick={() => {
+                      navigate(`../case-studies/${casestudy?.slug}`, {
+                        replace: true,
+                      });
+                    }}
+                    key={i}
+                    className="rounded-xl"
+                  >
                     <img
                       src={casestudy?.com_image}
                       alt=""
@@ -350,6 +366,18 @@ const ServiceDetails = () => {
                 ))}
               </Slider>
             </div>
+          </div>
+
+          <div>
+            {loader ? (
+              <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+                <Lottie
+                  className="w-1/6 mx-auto"
+                  animationData={loaderFile}
+                  loop={true}
+                />
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

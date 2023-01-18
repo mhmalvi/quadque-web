@@ -19,7 +19,7 @@ const Aboutus = () => {
 
   const myFunction = () => {
     const element = document.getElementById("scroll");
-    let y = element.scrollTop;
+    // let y = element.scrollTop;
 
     document.getElementById("bar").style.width =
       (element.scrollTop / (element.scrollHeight - element.clientHeight)) *
@@ -44,13 +44,16 @@ const Aboutus = () => {
         advanced technologies.{" "}
       </div>
       <div className="flex flex-wrap justify-between px-6 py-10">
-        <div className="text-3xl">23+
+        <div className="text-3xl">
+          23+
           <p className="text-lg font-thin">Active Clients</p>
         </div>
-        <div className="text-3xl">150+
+        <div className="text-3xl">
+          150+
           <p className="text-lg font-thin">Projects Done</p>
         </div>
-        <div className="text-3xl">10+
+        <div className="text-3xl">
+          10+
           <p className="text-lg font-thin">Team Advisors</p>
         </div>
       </div>
@@ -58,7 +61,7 @@ const Aboutus = () => {
         <div className="flex-wrap overflow-hidden">
           <img src={Interface} alt="" className="w-full duration-700" />
         </div>
-        <div className="max-w-[440px] overflow-hidden">
+        <div className="max-w-[100%] overflow-hidden">
           <div id="bar" className="h-2 bg-brand-color"></div>
           <div className="relative -top-2 w-[100%] h-2 bg-brand-color bg-opacity-25"></div>
         </div>
@@ -68,7 +71,7 @@ const Aboutus = () => {
       <div
         id="scroll"
         onScroll={myFunction}
-        className="w-[400px] h-[350px] overflow-y-scroll text-justify m-auto px-6"
+        className="w-full h-[350px] overflow-y-scroll text-justify m-auto px-6"
       >
         <div className="py-5">
           <div className="text-2xl text-brand-color">Our Vision</div>
@@ -93,8 +96,11 @@ const Aboutus = () => {
         <div className="py-5">
           <div className="text-2xl text-brand-color">Why Choose Us</div>
           {/* <div>{goals?.why_choose_us}</div> */}
-          <div className="case_editor font-thin" dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}></div>
-        </div> 
+          <div
+            className="case_editor font-thin"
+            dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}
+          ></div>
+        </div>
       </div>
       <div className="w-[80%] h-[1px] bg-white mt-4"></div>
     </div>

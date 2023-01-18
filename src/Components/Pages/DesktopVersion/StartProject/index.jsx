@@ -7,6 +7,7 @@ import { handleSendMail } from "../../../Shared/services";
 import { Modal } from "antd";
 import Lottie from "lottie-react";
 import sucess from "../../../../asstes/Images/success.json";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const StartProject = () => {
   const location = useLocation();
@@ -24,11 +25,11 @@ const StartProject = () => {
   ]);
 
   const [open, setOpen] = useState(false);
-  // const [confirmLoading, setConfirmLoading] = useState(false);
-  // const [modalText, setModalText] = useState("Content of the modal");
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     if (location.hash === "#start-project") {
+      setLoader(false);
       setTimeout(() => {
         setTriggerAnimation(!triggerAnimation);
         setTriggerTitleAnimation(!triggerTitleAnimation);
@@ -189,7 +190,7 @@ const StartProject = () => {
           </div>
           <div>
             <Flip right cascade spy={triggerTitleAnimation}>
-              <span>Call us +61405899496</span>
+              <span>Call us +01765276560</span>
             </Flip>
           </div>
         </div>
@@ -306,6 +307,18 @@ const StartProject = () => {
             </div>
           </Fade>
         </div>
+      </div>
+
+      <div>
+        {loader ? (
+          <div className="min-w-full z-50 min-h-screen flex justify-center items-center absolute top-0 left-0 bg-black backdrop-blur-md bg-opacity-80">
+            <Lottie
+              className="w-1/6 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );
