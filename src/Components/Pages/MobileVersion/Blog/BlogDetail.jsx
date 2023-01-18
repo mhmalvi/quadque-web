@@ -75,7 +75,7 @@ const BlogDetail = () => {
       
       <div className={`w-full pt-30 ${!blogData ? "scale-0" : ""} `}>
         <img
-          src={blogData?.thumbnail}
+          src={process.env.REACT_APP_ASSETS_URL + "/" + blogData?.thumbnail}
           alt=""
           className="absolute top-0 z-[-10] w-full h-81"
         />
@@ -119,7 +119,7 @@ const BlogDetail = () => {
                   className="w-32"
                 >
                   <img
-                    src={post?.thumbnail}
+                    src={process.env.REACT_APP_ASSETS_URL + "/" + post?.thumbnail}
                     alt=""
                     className="w-36 h-36 rounded-lg mb-2"
                   />

@@ -56,7 +56,7 @@ const CaseStudy = () => {
             <Link to={`/case-study/${details?.slug}`}>
               <div key={index}>
                 <img
-                  src={details?.com_image}
+                  src={process.env.REACT_APP_ASSETS_URL + "/" + details?.com_image}
                   alt=""
                   className="w-full rounded-2xl bg-black"
                 />

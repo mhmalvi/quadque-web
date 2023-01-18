@@ -47,7 +47,7 @@ const BlogGallery = () => {
           <Link to={`blog-detail/${details.slug}`}>
             <div key={details.id} className="rounded-xl mx-auto">
               <img
-                src={details.thumbnail}
+                src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
                 alt=""
                 className="w-[100%] h-[185px] m-auto"
               />
