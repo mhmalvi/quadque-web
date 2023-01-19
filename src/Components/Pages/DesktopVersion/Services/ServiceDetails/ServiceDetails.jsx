@@ -87,7 +87,11 @@ const ServiceDetails = ({ setLoader }) => {
         </div>
 
         <div className="mt-16 w-9/12 mx-auto flex justify-center items-center">
-          <img width={"70%"} src={serviceDetails?.file} alt="" />
+          <img
+            width={"70%"}
+            src={process.env.REACT_APP_ASSETS_URL + "/" + serviceDetails?.file}
+            alt=""
+          />
         </div>
 
         <div className="mt-24">
@@ -316,7 +320,11 @@ const ServiceDetails = ({ setLoader }) => {
                     className="rounded-xl"
                   >
                     <img
-                      src={casestudy?.com_image}
+                      src={
+                        process.env.REACT_APP_ASSETS_URL +
+                        "/" +
+                        casestudy?.com_image
+                      }
                       alt=""
                       className="w-68 h-72 px-4 rounded-xl"
                     />
@@ -344,7 +352,11 @@ const ServiceDetails = ({ setLoader }) => {
                   <div className="p-6">
                     <div className="border rounded-2xl p-4 hover:bg-white hover:bg-opacity-10 hover:delay-200">
                       <img
-                        src={casestudy?.com_image}
+                        src={
+                          process.env.REACT_APP_ASSETS_URL +
+                          "/" +
+                          casestudy?.com_image
+                        }
                         alt=""
                         className="relative w-10 h-10 -top-8 left-4 rounded-full"
                       />
