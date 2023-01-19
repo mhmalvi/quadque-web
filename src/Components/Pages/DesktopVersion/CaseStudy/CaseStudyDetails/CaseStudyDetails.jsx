@@ -53,7 +53,15 @@ const CaseStudyDetails = ({ setLoader }) => {
         </div>
 
         <div className="mt-16 w-9/12 mx-auto flex justify-center items-center">
-          <img width={"70%"} src={caseStudyDetails?.group_images} alt="" />
+          <img
+            width={"70%"}
+            src={
+              process.env.REACT_APP_ASSETS_URL +
+              "/" +
+              caseStudyDetails?.group_images
+            }
+            alt=""
+          />
         </div>
 
         <div className="my-12">
@@ -130,7 +138,15 @@ const CaseStudyDetails = ({ setLoader }) => {
 
           <div className="mt-40 flex items-center justify-between">
             <div className="w-1/2 mr-24">
-              <img className="w-full" src={caseStudyDetails?.image_1} alt="" />
+              <img
+                className="w-full"
+                src={
+                  process.env.REACT_APP_ASSETS_URL +
+                  "/" +
+                  caseStudyDetails?.image_1
+                }
+                alt=""
+              />
             </div>
 
             <div className="w-1/2">
@@ -153,13 +169,29 @@ const CaseStudyDetails = ({ setLoader }) => {
               </h4>
             </div>
             <div className="w-1/2">
-              <img className="w-full" src={caseStudyDetails?.image_2} alt="" />
+              <img
+                className="w-full"
+                src={
+                  process.env.REACT_APP_ASSETS_URL +
+                  "/" +
+                  caseStudyDetails?.image_2
+                }
+                alt=""
+              />
             </div>
           </div>
 
           <div className="w-full mt-40 flex items-center justify-between">
             <div className="w-1/2 mr-24">
-              <img className="w-full" src={caseStudyDetails?.image_3} alt="" />
+              <img
+                className="w-full"
+                src={
+                  process.env.REACT_APP_ASSETS_URL +
+                  "/" +
+                  caseStudyDetails?.image_3
+                }
+                alt=""
+              />
             </div>
             <div className="w-1/2">
               <h1 className="text-3xl leading-12 font-semibold">
@@ -179,18 +211,22 @@ const CaseStudyDetails = ({ setLoader }) => {
           <div className="grid grid-cols-5 gap-5">
             <img
               className="w-58 h-25"
-              src={`${
-                caseStudyDetails?.agency
-                  ? caseStudyDetails?.agency
-                  : `${process.env.REACT_APP_SERVICE_URL}/assets/img/case_study/companies.png`
-              }`}
+              src={`https://i.ibb.co/wBX0y3z/1673518502.png`}
               alt=""
             />
           </div>
 
           <div className="mt-40 flex items-center justify-between">
             <div className="w-1/2 mr-24">
-              <img className="w-full" src={caseStudyDetails?.image_1} alt="" />
+              <img
+                className="w-full"
+                src={
+                  process.env.REACT_APP_ASSETS_URL +
+                  "/" +
+                  caseStudyDetails?.image_1
+                }
+                alt=""
+              />
             </div>
 
             <div className="w-1/2">

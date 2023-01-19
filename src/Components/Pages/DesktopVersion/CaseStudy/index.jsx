@@ -93,7 +93,9 @@ const CaseStudy = () => {
                 >
                   <img
                     className="w-full h-full rounded-[20px]"
-                    src={post?.com_image}
+                    src={
+                      process.env.REACT_APP_ASSETS_URL + "/" + post?.com_image
+                    }
                     alt=""
                   />
                   <p className="absolute h-10 w-full bottom-0 text-center font-normal rounded-br-[20px] rounded-bl-[20px] text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
