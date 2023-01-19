@@ -7,6 +7,7 @@ import Icons from "../../../Shared/Icons";
 import { message } from "antd";
 import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
+import "../MobileView.css"
 
 const BlogDetail = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ const BlogDetail = () => {
     let currentBlogid = slug;
     let i;
 
-    let currentBlogIndex = allBlogs?.findIndex((x) => x.id == currentBlogid);
+    let currentBlogIndex = allBlogs?.findIndex((x) => x.id === currentBlogid);
     let nextBlogIndex = currentBlogIndex;
     //console.log("index", currentBlogIndex);
     for (i = 0; i < 4; i++) {
@@ -80,8 +81,8 @@ const BlogDetail = () => {
           className="absolute top-0 z-[-10] w-full h-81"
         />
         <div className="flex items-end h-56 bg-gradient-to-b from-transparent to-black px-6 pb-10">
-          <div className="font_title text-2xl text-white">
-            {blogData?.title}
+          <div className="text-2xl text-white">
+            <h1 className="font_title">{blogData?.title}</h1>
             <div className="text-white text-sm">By {blogData?.author}</div>
           </div>
         </div>

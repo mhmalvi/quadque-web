@@ -52,7 +52,7 @@ const CaseStudyDetail = () => {
       <div className={`w-full text-white pt-30 px-6 ${!caseData ? "scale-0" : "" }`}>
         {/* TOP SECTION  */}
         <div>
-          <div className="font_title text-2xl text-center pb-3">{caseData?.com_name}</div>
+          <h1 className="font_title text-2xl text-center pb-3">{caseData?.com_name}</h1>
           <div className="text-sm text-center">{caseData?.summary1}</div>
 
           <img src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.group_images} alt="" className="m-auto py-13" />

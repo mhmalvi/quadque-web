@@ -22,9 +22,13 @@ const CaseStudy = () => {
     slidesToShow: 1,
     speed: 300,
   };
-  
+
   useEffect(() => {
     if (CaseStudies !== "") {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
+    } else {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
@@ -33,7 +37,7 @@ const CaseStudy = () => {
 
   return (
     <div id="Case_Study" className="CaseStudy w-full text-white mb-30">
-      <div className="font_title text-3xl font-thin px-6 pb-2">Case Study</div>
+      <h1 className="font_title text-3xl font-thin px-6 pb-2">Case Study</h1>
       <div className="text-sm text-justify px-6 pb-1">
         Let’s have a look at some of our interesting case study examples. These
         case studies will let you better understand how we tackle critical
@@ -48,7 +52,9 @@ const CaseStudy = () => {
               loop={true}
             />
 
-            <div className="text-white font_title flex animate-pulse">Loading...</div>
+            <div className="text-white font_title flex animate-pulse">
+              Loading...
+            </div>
           </div>
         ) : null}
         <Slider ref={CaseSlider} arrows={false} {...settings}>
@@ -56,7 +62,9 @@ const CaseStudy = () => {
             <Link to={`/case-study/${details?.slug}`}>
               <div key={index}>
                 <img
-                  src={process.env.REACT_APP_ASSETS_URL + "/" + details?.com_image}
+                  src={
+                    process.env.REACT_APP_ASSETS_URL + "/" + details?.com_image
+                  }
                   alt=""
                   className="w-full rounded-2xl bg-black"
                 />
