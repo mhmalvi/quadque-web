@@ -22,6 +22,10 @@ const BlogGallery = () => {
       setTimeout(() => {
         setLoader(false);
       }, 3000);
+    } else {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
     }
   }, []);
 
@@ -31,17 +35,17 @@ const BlogGallery = () => {
 
   return (
     <>
-        {loader ? (
-          <div className="w-full h-[100vh] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
-            <Lottie
-              className="w-1/2 mx-auto"
-              animationData={loaderFile}
-              loop={true}
-            />
+      {loader ? (
+        <div className="w-full h-[100vh] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+          <Lottie
+            className="w-1/2 mx-auto"
+            animationData={loaderFile}
+            loop={true}
+          />
 
-            <div className="font_title text-white animate-pulse">Loading...</div>
-          </div>
-        ) : null}
+          <div className="font_title text-white animate-pulse">Loading...</div>
+        </div>
+      ) : null}
       <div className="Blog w-full h-[100vh] mt-30 px-6">
         {currentPosts?.map((details) => (
           <Link to={`blog-detail/${details.slug}`}>
@@ -52,8 +56,8 @@ const BlogGallery = () => {
                 className="w-[100%] h-[185px] m-auto"
               />
               <div className="flex items-end h-10 relative -top-10 bg-gradient-to-b from-transparent to-black z-10 pb-2 px-2">
-                <div className="text-xl text-white">
-                  {details.title}
+                <div>
+                  <h1 className="text-xl text-white">{details.title}</h1>
                   <div className="text-white text-sm">By {details.author}</div>
                   <div className="text-white text-sm">
                     {details.created_at.split("T", 1)}
