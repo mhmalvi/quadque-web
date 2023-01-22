@@ -21,6 +21,10 @@ const OurCustomer = () => {
           setLoader(false);
           setClientsImg(fetchClientImages);
         }, 3000);
+      } else {
+        setTimeout(() => {
+          setLoader(false);
+        }, 4000);
       }
       //console.log("client data", clientsImg);
     })();
@@ -28,17 +32,21 @@ const OurCustomer = () => {
 
   return (
     <div className="w-full text-white py-18">
-        {loader ? (
-          <div className="absolute w-[100%] z-40 flex justify-center items-center m-auto bg-black backdrop-blur-md">
-            <div className="flex lds-dual-ring animate-pulse"> </div>
-            <div className="font_title text-white text-sm font-thin px-2">
-              Loading...
-            </div>
+      {loader ? (
+        <div className="absolute w-[100%] z-40 flex justify-center items-center m-auto bg-black backdrop-blur-md">
+          <div className="flex lds-dual-ring animate-pulse"> </div>
+          <div className="font_title text-white text-sm font-thin px-2">
+            Loading...
           </div>
-        ) : null}
+        </div>
+      ) : null}
       <div className="flex flex-wrap justify-evenly pb-4 px-10">
         {clientsImg?.map((client) => (
-          <img src={process.env.REACT_APP_ASSETS_URL + "/" + client.client_images} alt="" className="w-32" />
+          <img
+            src={process.env.REACT_APP_ASSETS_URL + "/" + client.client_images}
+            alt=""
+            className="w-32"
+          />
         ))}
       </div>
       <div className="font_title text-3xl px-6 pb-5">

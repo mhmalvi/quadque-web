@@ -12,7 +12,7 @@ const App = () => {
     <div className="Navigation fixed top-0 z-50">
       <div className="flex justify-between">
         <Link to="/">
-          <div className="p-6">
+          <div className="shrink-0 p-6">
             <Icons.BrandLogoMob />
           </div>
         </Link>
@@ -34,28 +34,25 @@ const App = () => {
         onCancel={() => setOpen(false)}
         footer={false}
         width="100%"
+
       >
-        <ul
-          className="text-center text-xl pt-16"
+        <div
+          className="w-full h-full flex flex-col justify-between text-center text-xl pt-24"
         >
-          <li className="absolute top-14" onClick={() => setOpen(false)}><Icons.BrandLogo/></li>
-          <Link to="/">
-            <li className="py-10" onClick={() => setOpen(false)}>Home</li>
-          </Link>
-          <a href="/#Service" >
-            <li className="py-10" onClick={() => setOpen(false)}>Service</li>
-          </a>
-          <a href="/#About">
-          <li className="py-10" onClick={() => setOpen(false)}>About</li>
-          </a>
-          <Link to="/blogs">
-            <li className="py-10" onClick={() => setOpen(false)}>blogs</li>
-          </Link>
-          <Link to="/gallery">
-            <li className="py-10" onClick={() => setOpen(false)}>Gallery</li>
-          </Link>
-          <li className="py-10" onClick={() => setOpen(false)}>Contact</li>
-        </ul>
+          <div className="absolute top-14 shrink-0" onClick={() => setOpen(false)}><Icons.BrandLogo/></div>
+
+          <div onClick={() => setOpen(false)}><Link to="/">Home</Link></div>
+
+          <div onClick={() => setOpen(false)}><a href="/#Service" >Service</a></div>
+
+          <div onClick={() => setOpen(false)}><a href="/#About">About </a></div>
+
+          <div onClick={() => setOpen(false)}><Link to="/blogs">blogs</Link></div>
+
+          <div onClick={() => setOpen(false)}><Link to="/gallery">Gallery</Link></div>
+
+          <div onClick={() => setOpen(false)}>Contact</div>
+        </div>
       </Modal>
     </div>
   );

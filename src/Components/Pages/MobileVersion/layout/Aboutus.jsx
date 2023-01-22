@@ -35,7 +35,7 @@ const Aboutus = () => {
 
   return (
     <div id="About" className="w-full text-white my-5">
-      <div className="font_title text-3xl font-thin px-6 pb-4">About us</div>
+      <h1 className="font_title text-3xl font-thin px-6 pb-4">About us</h1>
       <div className="text-lg font-semibold text-justify px-6">
         We work with the technological challenges of the world's leading
         enterprises and SMEs.
