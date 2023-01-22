@@ -111,8 +111,13 @@
   transition-duration: 0.5s;
 }
 
-.BlogDetail img {
-  width: 90% !important;
+.BlogDetail span {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.BlogDetail span img {
+  width: 100% !important;
   height: auto !important;
   margin: auto !important;
 }
@@ -147,6 +152,15 @@
 
 .BlogDetail p {
   font-size: 14px !important;
+}
+
+.BlogDetail blockquote {
+  width: 100% !important;
+  height: auto !important;
+  background-color: white !important;
+  color: black !important;
+  padding: 1rem !important;
+  border-radius: 4px !important;
 }
 
 .service-capbility .box {

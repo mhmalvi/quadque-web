@@ -96,7 +96,7 @@ const ServiceDetails = () => {
           </div>
         ) : null}
       <div className={`w-full h-auto mt-30 text-white px-6 ${!Service ? "scale-0" : ""}`}>
-        <div className="font_title text-3xl font-bold pb-5">{Service?.service_name}</div>
+        <h1 className="font_title text-3xl font-bold pb-5">{Service?.service_name}</h1>
         <div className="font-semibold pb-2">{Service?.service_title}</div>
         {/* <div className="text-sm text-justify pb-2">{Service?.description}</div> */}
         <div

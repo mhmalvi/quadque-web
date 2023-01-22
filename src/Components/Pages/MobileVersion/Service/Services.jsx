@@ -27,6 +27,10 @@ const Services = () => {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
+    } else {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
     }
   }, []);
 
@@ -56,17 +60,19 @@ const Services = () => {
 
   return (
     <div id="Service" className="Service w-full text-white">
-          {loader ? (
-            <div className=" absolute w-full h-[90%] z-40 flex flex-col justify-center items-center bg-black">
-              <Lottie
-                className="w-1/2 mx-auto"
-                animationData={loaderFile}
-                loop={true}
-              />
+      {loader ? (
+        <div className=" absolute w-full h-[90%] z-40 flex flex-col justify-center items-center bg-black">
+          <Lottie
+            className="w-1/2 mx-auto"
+            animationData={loaderFile}
+            loop={true}
+          />
 
-              <div className="text-white font_title flex animate-pulse">Loading...</div>
-            </div>
-          ) : null}
+          <div className="text-white font_title flex animate-pulse">
+            Loading...
+          </div>
+        </div>
+      ) : null}
       <div style={{ maxWidth: "90%", margin: "auto" }} {...PrimarySettings}>
         <div>
           <Slider asNavFor={nav2} ref={slider1} arrows={false}>
@@ -92,9 +98,9 @@ const Services = () => {
                       loop={true}
                     />
                   </div>
-                  <div className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow">
+                  <h1 className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow">
                     {details.service_name}
-                  </div>
+                  </h1>
                   {/* <div className="m-auto text-center text-sm font-light pb-5 leading-6">
                     {details.description}
                   </div> */}

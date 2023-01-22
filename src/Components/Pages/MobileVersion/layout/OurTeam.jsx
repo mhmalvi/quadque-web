@@ -10,9 +10,9 @@ const OurTeam = () => {
   return (
     <div id="Team" className="w-full text-white mt-18 mb-5">
       <div className="uppercase px-6 pb-2 text-center">EXPERIENCE</div>
-      <div className="font_title text-3xl px-6 text-center">
+      <h1 className="font_title text-3xl px-6 text-center">
         Skilled Team <br /> of Creators
-      </div>
+      </h1>
       <img src={Team} alt="" className="m-auto py-4" />
       <div className="text-sm px-10 pb-8 leading-6 text-center">
         We are an experienced and diverse team of software engineers, mobile
