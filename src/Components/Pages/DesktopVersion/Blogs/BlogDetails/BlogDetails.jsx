@@ -1,18 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useBlogs from "../../../../Shared/Hooks/useBlog";
 import { handleFetchBlogBySlug } from "../../../../Shared/services";
-
+import Lottie from "lottie-react";
+import speakLogo from "../../../../../asstes/Lotties/speak.json";
+import { useSpeechSynthesis } from "react-speech-kit";
+import { Tooltip } from "antd";
 
 const BlogDetails = ({ setLoader }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { slug } = useParams();
+  const { speak } = useSpeechSynthesis();
   const blogdetailsRef = useRef();
   const [blogDetails, setBlogDetails] = useState();
   const [blogs] = useBlogs();
   const { id } = useParams();
   const [randomBlogData, setRandomBlogData] = useState([]);
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
     (async () => {
@@ -23,7 +29,7 @@ const BlogDetails = ({ setLoader }) => {
         setLoader(false);
       }
     })();
-  }, [setLoader, slug]);
+  }, [location, setLoader, slug, synth]);
 
   useEffect(() => {
     const NextBlogs = [];
@@ -57,24 +63,49 @@ const BlogDetails = ({ setLoader }) => {
 
   return (
     <>
+      {/* For SEO purpose */}
+      {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
         <title>{`Blog - ${blogDetails?.title}`}</title>
         <meta name="keywords" content={blogDetails?.meta_keyword} />
       </Helmet>
+
       <div
-        className="blog_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins"
+        className="blog_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font-poppins"
         ref={blogdetailsRef}
       >
         <div>
-          <h4 className="text-sm font-normal leading-4 mb-3">
+          <h4 className="text-lg font-normal leading-4 mb-3">
             {new Date(blogDetails?.created_at).toString().slice(0, 15)}
           </h4>
         </div>
-        <div
-          className="text-white blog_details_section"
-          dangerouslySetInnerHTML={{ __html: blogDetails?.text }}
-        ></div>
+
+        <div className="relative">
+          <div
+            className="text-white blog_details_section"
+            dangerouslySetInnerHTML={{ __html: blogDetails?.text }}
+          ></div>
+
+          <Tooltip
+            placement="top"
+            title={`Click to "Read". Double Click to "Stop"`}
+            color={"#8F00FF"}
+          >
+            <button
+              className="absolute top-0 right-10"
+              onClick={() =>
+                speak({
+                  text: blogDetails?.text,
+                })
+              }
+              onDoubleClick={() => synth.cancel()}
+            >
+              <Lottie className="w-14" animationData={speakLogo} loop={true} />
+            </button>
+          </Tooltip>
+        </div>
+
         <div>
           <hr />
           <div className="py-11 mb-8">

@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
+import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
-import Flip from "react-reveal/Flip";
-import Fade from "react-reveal/Fade";
 
 const Footer = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
-  const [triggerAnimation, setTriggerAnimation] = useState(false);
+  // const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
     if (location.hash === "#contacts") {
       document.getElementById("footer_icon").classList.remove("hidden");
       setTimeout(() => {
-        setTriggerAnimation(!triggerAnimation);
-        setTriggerTitleAnimation(!triggerTitleAnimation);
+        // setTriggerAnimation(true);
+        setTriggerTitleAnimation(true);
       }, 800);
+      synth.cancel();
     } else {
       document.getElementById("footer_icon").classList.add("hidden");
     }
@@ -25,23 +26,23 @@ const Footer = () => {
   return (
     <div
       id="contacts"
-      className="section w-full lg:pt-6 2xl:pt-8 font-poppins bg-black text-white"
+      className="section w-full min-h-full lg:py-6 2xl:py-8 font-poppins bg-black text-white"
     >
       <div className="ml-21 lg:mt-10 2xl:mt-16 mr-25 pb-8">
         <div className="2xl:pt-6 2xl:pl-10">
           <div>
-            <Flip left cascade spy={triggerTitleAnimation}>
-              <div className="text-4xl 2xl:text-[50px] leading-10 2xl:leading-[55px] font-semibold">
+            <Fade left cascade spy={triggerTitleAnimation}>
+              <div className="text-4xl 2xl:text-[50px] leading-10 2xl:leading-[55px] font-semibold font_title">
                 Have a Good Web
               </div>
-              <div className="text-4xl 2xl:text-[50px] leading-10 2xl:leading-[55px] font-semibold">
-                Designe Today
+              <div className="text-4xl 2xl:text-[50px] leading-10 2xl:leading-[55px] font-semibold font_title">
+                Design Today
               </div>
-            </Flip>
+            </Fade>
             <Fade left spy={triggerTitleAnimation}>
               <a href="tel:+01765276560">
                 <button
-                  className="text-white px-18 py-3.5 text-base leading-6 font-normal mt-8 2xl:mt-14"
+                  className="text-white px-18 py-3.5 text-base leading-6 font-normal mt-8 2xl:mt-14 font_title"
                   style={{
                     border: "2px solid #FFFFFF",
                     borderRadius: "30px",
@@ -141,7 +142,7 @@ const Footer = () => {
                 </Fade>
               </div>
               <div className="ml-9">
-                <Fade right cascade spy={triggerTitleAnimation}>
+                <Fade left cascade spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Resources</h3>
                   <div>
                     <h4 className="text-sm font-normal mb-2.5">Academy</h4>
@@ -156,7 +157,7 @@ const Footer = () => {
                 </Fade>
               </div>
               <div className="ml-9">
-                <Fade right cascade spy={triggerTitleAnimation}>
+                <Fade left cascade spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Company</h3>
                   <div>
                     <h4 className="text-sm font-normal mb-2.5">About Us</h4>

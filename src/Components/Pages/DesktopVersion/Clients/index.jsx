@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
-import { Flip } from "react-reveal";
+import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
 import ms from "../../../../asstes/Images/ms.png";
 import sp from "../../../../asstes/Images/sp.png";
@@ -12,15 +12,18 @@ const Cleints = () => {
   const [count, setCount] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [loader, setLoader] = useState(true);
+  const synth = window.speechSynthesis;
 
   const location = useLocation();
 
   useEffect(() => {
     if (location?.hash === "#clients") {
+      synth.cancel();
+
       setTimeout(() => {
         setLoader(false);
         setCount(true);
-        setTriggerAnimation(!triggerAnimation);
+        setTriggerAnimation(true);
       }, 800);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,24 +37,27 @@ const Cleints = () => {
         <div className="absolute top-1/4 flex justify-center items-center">
           <div className="max-w-xl items-center text-justify mr-30">
             <div className="text-2xl 2xl:text-5xl font-semibold mb-5 font_title">
-              <Flip left cascade spy={triggerAnimation}>
+              <Fade left cascade spy={triggerAnimation}>
                 <div className="flex items-center">
                   <h1 className="whitespace-nowrap">More then</h1>
                   <span className="mr-2 text-brand-color ml-6">
                     {count ? <CountUp start={0} end={53} duration={6} /> : 0}+
                   </span>
                 </div>
-                <span>
-                  valuable <br /> customers
-                </span>
-              </Flip>
+                <div>
+                  <h1>valuable</h1>
+                </div>
+                <div>
+                  <h1>customers</h1>
+                </div>
+              </Fade>
             </div>
-            <Flip left cascade spy={triggerAnimation}>
-              <p className="w-67 text-justify">
+            <div className="w-67 text-justify">
+              <Fade left cascade spy={triggerAnimation}>
                 We create premium web design, though and user-friendly that
                 solve business problems We create premium web design.
-              </p>
-            </Flip>
+              </Fade>
+            </div>
           </div>
         </div>
 

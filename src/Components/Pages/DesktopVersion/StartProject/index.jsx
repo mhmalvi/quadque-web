@@ -14,25 +14,26 @@ const StartProject = () => {
   const [services] = useServices();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
-  const [activeServices, setActiveServices] = useState("UI/UX");
+  const [activeServices, setActiveServices] = useState("Software Development");
   const [activeSubServices, setActiveSubServices] = useState("");
   const [subServices, setSubServices] = useState([
-    "UX Design",
-    "User Research & Analysis",
-    "Customer Journey Mapping",
-    "User Experience Consulting",
-    "Design Thinking",
+    "Custom Software Development",
+    "CRM Software Development",
+    "Marketplace Software Development",
   ]);
 
   const [open, setOpen] = useState(false);
   const [loader, setLoader] = useState(true);
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
     if (location.hash === "#start-project") {
+      synth.cancel();
+      
       setTimeout(() => {
         setLoader(false);
-        setTriggerAnimation(!triggerAnimation);
-        setTriggerTitleAnimation(!triggerTitleAnimation);
+        setTriggerAnimation(true);
+        setTriggerTitleAnimation(true);
       }, 800);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -60,7 +61,7 @@ const StartProject = () => {
         "Magento Web Development",
         "Drupal Web Development",
       ]);
-    } else if (service_name === "App Development") {
+    } else if (service_name === "Application Development") {
       setSubServices([
         "Native Mobile App Development",
         "Hybrid Mobile App Development",
@@ -81,6 +82,8 @@ const StartProject = () => {
         "AI Office Assistant",
       ]);
     }
+
+    setTriggerAnimation(!triggerAnimation);
   };
 
   const handleActiveSubServices = (sub_service_name) => {
@@ -112,14 +115,13 @@ const StartProject = () => {
     console.log(sendMail);
 
     if (sendMail === "Mail sent") {
-      setLoader(false);
       setOpen(true);
-
       document.getElementById("Name").value = "";
       document.getElementById("Phone").value = "";
       document.getElementById("help").value = "";
       document.getElementById("E-mail").value = "";
       setActiveSubServices("");
+      setLoader(false);
     }
   };
 
@@ -170,30 +172,23 @@ const StartProject = () => {
         </div>
       </Modal>
 
-      {/* <Modal
-        className="mail_confirm"
-        title={false}
-        open={open}
-        onOk={() => setOpen(false)}
-        footer={false}
-      >
-        <div>
-          <p>Thank You for Relly on Us</p>
-        </div>
-      </Modal> */}
-
       <div className="ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8">
         <div className="flex items-center justify-between">
-          <div className="text-5xl font-bold leading-10 capitalize font_title">
-            <Flip left cascade spy={triggerTitleAnimation}>
-              <div>START</div>
-              <div className="ml-[26px]">PROJECT</div>
-            </Flip>
+          <div
+            className="text-5xl font-bold leading-10 capitalize font_title"
+            style={{
+              letterSpacing: "0.06em",
+            }}
+          >
+            <Fade left spy={triggerTitleAnimation}>
+              <div className="leading-10">START</div>
+              <div className="ml-8 leading-10">PROJECT</div>
+            </Fade>
           </div>
           <div>
-            <Flip right cascade spy={triggerTitleAnimation}>
-              <span>Call us +01765276560</span>
-            </Flip>
+            <Fade left spy={triggerTitleAnimation}>
+              <div>Call us +01765276560</div>
+            </Fade>
           </div>
         </div>
 
@@ -202,7 +197,7 @@ const StartProject = () => {
             {services?.map((service, i) => (
               <div
                 key={i}
-                className={`mb-5 text-base font-medium leading-6 capitalize cursor-pointer transition-colors delay-200 ${
+                className={`mb-5 text-sm 2xl:text-base font-medium leading-6 capitalize cursor-pointer transition-colors delay-200 ${
                   activeServices === service?.service_name
                     ? "text-brand-color border-b-2 border-brand-color pb-2"
                     : "text-white"
@@ -210,23 +205,23 @@ const StartProject = () => {
                 onClick={() => handleActiveServices(service?.service_name)}
               >
                 <Fade left cascade spy={triggerAnimation}>
-                  <p
+                  <div
                     className={`${
                       activeServices === service?.service_name ? "pr-4" : null
                     }
                   }`}
                   >
                     {service?.service_name}
-                  </p>
+                  </div>
                 </Fade>
               </div>
             ))}
           </div>
           {services.length ? (
-            <div>
+            <div className="mx-6">
               {subServices?.map((subService) => (
                 <div
-                  className={`mb-5 text-base font-medium leading-6 capitalize cursor-pointer 2xl:py-1.5
+                  className={`mb-5 font-medium leading-6 capitalize cursor-pointer 2xl:py-1.5
                 ${
                   activeSubServices.includes(subService)
                     ? "text-brand-color"
@@ -239,13 +234,13 @@ const StartProject = () => {
                     <span
                       className={`max-w-[14px] max-h-[14px] border px-[7px] mr-2.5 ${
                         activeSubServices.includes(subService)
-                          ? "border-brand-color"
+                          ? "bg-brand-color border-gray-500"
                           : "border-white"
                       }`}
                     >
                       &nbsp;
                     </span>
-                    <span className="text-base font-normal leading-5 capitalize">
+                    <span className="text-sm 2xl:text-base font-normal leading-5 capitalize">
                       {subService}
                     </span>
                   </Fade>
