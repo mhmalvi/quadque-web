@@ -1,6 +1,6 @@
 import { Tooltip } from "antd";
 import React, { useEffect, useState } from "react";
-import Flip from "react-reveal/Flip";
+import { Fade, Flip } from "react-reveal";
 import { Link, useLocation } from "react-router-dom";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import Icons from "../../../Shared/Icons";
@@ -13,15 +13,17 @@ const CaseStudy = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [caseStudy] = useCaseStudy();
   const [loader, setLoader] = useState(true);
-
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
     if (location.hash === "#case-study") {
+      synth.cancel();
+
       setTimeout(() => {
-        setTriggerAnimation(!triggerAnimation);
-        setTriggerTitleAnimation(!triggerTitleAnimation);
+        setTriggerAnimation(true);
+        setTriggerTitleAnimation(true);
       }, 800);
 
       setTimeout(() => {
@@ -50,7 +52,7 @@ const CaseStudy = () => {
       className="section relative w-full min-h-full lg:pb-10 2xl:pb-12 font-poppins"
     >
       <div className="absolute top-0 lg:pt-7 2xl:py-[100px] pl-[68px] pr-[22px] text-white">
-        <Flip left cascade spy={triggerTitleAnimation}>
+        <Fade left cascade spy={triggerTitleAnimation}>
           <h1
             className="lg:text-3xl 2xl:text-[32px] font-extrabold leading-10 text-white mb-5 font_title"
             style={{
@@ -59,17 +61,17 @@ const CaseStudy = () => {
           >
             Case Study
           </h1>
-        </Flip>
+        </Fade>
         <div
           className="lg:text-sm 2xl:text-base leading-5 text-white ml-4 font-light"
           style={{
             letterSpacing: "0.04em",
           }}
         >
-          <Flip left cascade spy={triggerTitleAnimation}>
+          <Fade left cascade spy={triggerTitleAnimation}>
             <div>We create premium web</div>
             <div>design, though and user</div>
-          </Flip>
+          </Fade>
         </div>
       </div>
 
@@ -92,13 +94,13 @@ const CaseStudy = () => {
                   className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px] cursor-pointer"
                 >
                   <img
-                    className="w-full h-full rounded-[20px]"
+                    className="w-full h-full rounded-[20px] border"
                     src={
                       process.env.REACT_APP_ASSETS_URL + "/" + post?.com_image
                     }
                     alt=""
                   />
-                  <p className="absolute h-10 w-full bottom-0 text-center font-normal rounded-br-[20px] rounded-bl-[20px] text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
+                  <p className="absolute h-10 w-full bottom-0 border text-center font-normal rounded-br-[20px] rounded-bl-[20px] lg:text-xs 2xl:text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
                     {post?.com_name}
                   </p>
                 </Link>
@@ -130,6 +132,7 @@ const CaseStudy = () => {
           </div>
         </div>
       </div>
+
       <a href="#start-project" className="absolute top-8 right-8">
         <span className="relative  flex justify-center items-center h-4 w-4 cursor-pointer">
           <span className="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-white opacity-75"></span>

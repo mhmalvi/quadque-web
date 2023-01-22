@@ -83,7 +83,7 @@ const DesktopLayout = () => {
       <div className="relative flex justify-center bg-white">
         {/* Left bar */}
         <div className="w-[100px] min-h-full py-10 z-50 absolute left-0 flex flex-col justify-between left_bar bg-white">
-          <a href="/">
+          <a href="/" alt="Quadque Technologies Limited Logo">
             <Icons.BrandLogo className="mx-auto" />
           </a>
 
@@ -120,7 +120,7 @@ const DesktopLayout = () => {
                 href="https://www.facebook.com/quadquetech"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-brand-color transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-[blue] transition-colors delay-150 "
               >
                 fb
               </a>
@@ -131,18 +131,18 @@ const DesktopLayout = () => {
                 href="https://www.instagram.com/quadquetech/"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-brand-color transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-[#F701A2] transition-colors delay-150 "
               >
                 in
               </a>
             </Tooltip>
 
-            <Tooltip placement="right" title="Youtube" color={"red"}>
+            <Tooltip placement="right" title="Youtube" color={"#FF0000"}>
               <a
                 href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-brand-color transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-[#FF0000] transition-colors delay-150 "
               >
                 yt
               </a>
@@ -152,7 +152,7 @@ const DesktopLayout = () => {
               <a
                 href="https://bd.linkedin.com/company/quadque-technologies-ltd"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-brand-color transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-[#0072b1] transition-colors delay-150 "
                 rel="noreferrer"
               >
                 ln

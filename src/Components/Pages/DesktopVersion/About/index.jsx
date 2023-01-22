@@ -1,11 +1,11 @@
+import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
-import Flip from "react-reveal/Flip";
+import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
-import { handleFetchCompanyGoals } from "../../../Shared/services";
-import { Helmet } from "react-helmet";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
-import Lottie from "lottie-react";
+import Icons from "../../../Shared/Icons";
+import { handleFetchCompanyGoals } from "../../../Shared/services";
 
 const About = () => {
   const location = useLocation();
@@ -16,6 +16,8 @@ const About = () => {
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [goals, setGoals] = useState();
   const [loader, setLoader] = useState(true);
+  const [scrollingIndex, setScrollingIndex] = useState(0);
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
     (async () => {
@@ -26,10 +28,11 @@ const About = () => {
 
   useEffect(() => {
     if (location.hash === "#about") {
+      synth.cancel();
       setTimeout(() => {
         setLoader(false);
-        setTriggerAnimation(!triggerAnimation);
-        setTriggerTitleAnimation(!triggerTitleAnimation);
+        setTriggerAnimation(true);
+        setTriggerTitleAnimation(true);
       }, 800);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,6 +40,17 @@ const About = () => {
 
   const handleChangeBanner = (section) => {
     setSideBanner(banners[section]);
+  };
+
+  const handleScrollAbout = () => {
+    // setTriggerTitleAnimation(!triggerTitleAnimation);
+    setTriggerAnimation(!triggerAnimation);
+
+    if (scrollingIndex > 1) {
+      setScrollingIndex(0);
+    } else {
+      setScrollingIndex(scrollingIndex + 1);
+    }
   };
 
   return (
@@ -52,101 +66,122 @@ const About = () => {
         <meta name="keywords" content={goals?.meta_keyword} />
       </Helmet>
 
-      <div className="w-full pr-[22px] text-white flex justify-center items-end">
+      <div className="w-full pr-[22px] text-white flex justify-center">
         <img className="w-[44%] mr-16" src={sideBanner} alt="" />
 
-        <div className="w-[60%] min-h-full ml-1 ">
-          <div className="mb-8">
+        <div className="w-[60%] min-h-full ml-1 mt-21 2xl:mt-32">
+          <div className="mb-4 xl:mb-8">
             <div>
-              <Flip left cascade spy={triggerTitleAnimation}>
+              <Fade right cascade spy={triggerTitleAnimation}>
                 <h1 className="text-[32px] font-medium leading-[48px] font_title">
                   About us
                 </h1>
-              </Flip>
+              </Fade>
             </div>
           </div>
-          <div className="h-full">
-            <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mt-auto overflow-y-scroll py-1">
-              <div
-                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                onMouseOver={() => handleChangeBanner(0)}
-              >
-                <Fade right cascade spy={triggerTitleAnimation}>
-                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
-                    Our Vision
-                  </h2>
-                  <p className="mt-2.5 text-white pl-4">{goals?.our_vision}</p>
-                </Fade>
-                <hr className="text-white my-12 py-0.5" />
-              </div>
-              <div
-                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                onMouseOver={() => handleChangeBanner(1)}
-              >
-                <Fade right cascade spy={triggerTitleAnimation}>
-                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
-                    Our Mission
-                  </h2>
-                  <p className="mt-2.5 text-white pl-4">{goals?.our_mission}</p>
-                </Fade>
-                <hr className="text-white my-12 py-0.5" />
-              </div>
-              <div
-                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                onMouseOver={() => handleChangeBanner(2)}
-              >
-                <Fade right cascade spy={triggerTitleAnimation}>
-                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
-                    Our Goal
-                  </h2>
-                  <p className="mt-2.5 text-white pl-4">{goals?.our_goal}</p>
-                </Fade>
-                <hr className="text-white my-12 py-0.5" />
-              </div>
+          <div>
+            {/* <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mb-auto overflow-y-scroll py-1"> */}
+            <div className="about_details border-gray-700 pr-12 xl:h-[40vh] 2xl:h-[50vh] w-[90%] py-1">
+              <Fade right cascade spy={triggerAnimation}>
+                <div>
+                  {scrollingIndex === 0 ? (
+                    <>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(0)}
+                      >
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Vision
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
+                          {goals?.our_vision}
+                        </p>
+                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                      </div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(1)}
+                      >
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Mission
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
+                          {goals?.our_mission}
+                        </p>
+                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                      </div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(2)}
+                      >
+                        <div className="text-2xl font-bold leading-[100%] pl-4">
+                          Our Goal
+                        </div>
+                        <div className="mt-2.5 text-white pl-4">
+                          {goals?.our_goal}
+                        </div>
+                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                      </div>
+                    </>
+                  ) : null}
 
-              <div
-                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                onMouseOver={() => handleChangeBanner(3)}
-              >
-                <Fade right cascade spy={triggerTitleAnimation}>
-                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
-                    Our Objective
-                  </h2>
-                  <p className="mt-2.5 text-white pl-4">
-                    {goals?.our_objective}
-                  </p>
-                </Fade>
-                <hr className="text-white my-12 py-0.5" />
-              </div>
-
-              <div
-                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                onMouseOver={() => handleChangeBanner(4)}
-              >
-                <Fade right cascade spy={triggerTitleAnimation}>
-                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
-                    Who We Are
-                  </h2>
-                  <p className="mt-2.5 text-white pl-4">{goals?.who_we_are}</p>
-                </Fade>
-                <hr className="text-white my-12 py-0.5" />
-              </div>
-
-              <div
-                className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                onMouseOver={() => handleChangeBanner(5)}
-              >
-                <Fade right cascade spy={triggerTitleAnimation}>
-                  <h2 className="text-2xl font-bold leading-[100%] pl-4">
-                    Why Choose Us
-                  </h2>
-                  <p
-                    className="text-white pl-4 mt-2.5"
-                    dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}
-                  ></p>
-                </Fade>
-                <hr className="text-white my-12 py-0.5" />
-              </div>
+                  {scrollingIndex === 1 ? (
+                    <div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(3)}
+                      >
+                        {/* <Fade right cascade spy={triggerTitleAnimation}> */}
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Objective
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
+                          {goals?.our_objective}
+                        </p>
+                        {/* </Fade> */}
+                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                      </div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(4)}
+                      >
+                        {/* <Fade right cascade spy={triggerTitleAnimation}> */}
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Who We Are
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
+                          {goals?.who_we_are}
+                        </p>
+                        {/* </Fade> */}
+                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                      </div>
+                    </div>
+                  ) : null}
+                  {scrollingIndex === 2 ? (
+                    <div
+                      className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                      onMouseOver={() => handleChangeBanner(5)}
+                    >
+                      <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                        Why Choose Us
+                      </h1>
+                      <p
+                        className="text-white text-sm 2xl:text-base pl-4 mt-2.5"
+                        dangerouslySetInnerHTML={{
+                          __html: goals?.why_choose_us,
+                        }}
+                      ></p>
+                      <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                    </div>
+                  ) : null}
+                </div>
+              </Fade>
+            </div>
+            <div className="w-10 mx-auto animate-bounce hover:animate-pulse hover:delay-300 hover:transition-all">
+              <Icons.RightArrow
+                className="w-10 rotate-90 hover:text-brand-color hover:delay-300 hover:transition-all cursor-pointer"
+                onClick={handleScrollAbout}
+              />
             </div>
           </div>
         </div>
