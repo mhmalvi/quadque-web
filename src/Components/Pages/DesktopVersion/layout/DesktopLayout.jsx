@@ -1,33 +1,32 @@
-import { Alert, Button, Modal, Space, Tooltip } from "antd";
+import { Alert, Modal, Space, Tooltip } from "antd";
+import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
-import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
+import welcomeAvatar from "../../../../asstes/Images/welcome_avatar.json";
+import useAudio from "../../../Shared/Hooks/useAudio";
 import Icons from "../../../Shared/Icons";
 import Navbar from "../Navbar";
 import CenterLayout from "./CenterLayout";
-import welcomeAvatar from "../../../../asstes/Images/welcome_avatar.json";
-import Lottie from "lottie-react";
-import useAudio from "../../../Shared/Hooks/useAudio";
-import $ from "jquery";
-window.$ = $;
 
 const DesktopLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
   const [showSoundAlert, setShowSoundAlert] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
-  // const [audioFile, setAudioFile] = useState(false);
-
   const [playing, setPlaying, toggle] = useAudio();
+  // const [audioFile, setAudioFile] = useState(false);
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
+    synth.cancel();
+
     if (!localStorage.getItem("welcome")) {
       setTimeout(() => {
         setShowWelcome(true);
       }, 3000);
     }
-  }, []);
+  }, [setPlaying, synth]);
 
   useEffect(() => {
     setTimeout(() => {
