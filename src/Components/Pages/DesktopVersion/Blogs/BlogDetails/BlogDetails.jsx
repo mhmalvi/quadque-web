@@ -67,7 +67,7 @@ const BlogDetails = ({ setLoader }) => {
       {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Blog - ${blogDetails?.title}`}</title>
+        <title>{`Blog - ${blogDetails?.title} – Quadque Tech`}</title>
         <meta name="keywords" content={blogDetails?.meta_keyword} />
       </Helmet>
 
