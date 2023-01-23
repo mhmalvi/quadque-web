@@ -1,34 +1,27 @@
 import { Modal, Tooltip } from "antd";
 import Lottie from "lottie-react";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import siteAudio from "../../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../../asstes/Images/unmute.png";
 import loaderFile from "../../../../../asstes/Lotties/loader.json";
-import useAudio from "../../../../Shared/Hooks/useAudio";
 import Icons from "../../../../Shared/Icons";
 import Navbar from "../../Navbar";
-import ServiceDetails from "./ServiceDetails";
+import Blogs from "./BlogsGalary";
 
-const ServiceDetailsLayout = () => {
-  const navigate = useNavigate();
+const BlogsLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
+  const [muted, setMuted] = useState(false);
   const [loader, setLoader] = useState(true);
-  const [playing, toggle] = useAudio();
 
-  // useEffect(() => {
-  //   if (muted) {
-  //     document.getElementById("iframeAudio").src = "";
-  //   } else {
-  //     document.getElementById("iframeAudio").src = siteAudio;
-  //   }
-  // }, [muted]);
-
-  const handleNavigate = () => {
-    navigate(`../#start-project`, { replace: true });
-  };
+  useEffect(() => {
+    if (muted) {
+      document.getElementById("iframeAudio").src = "";
+    } else {
+      document.getElementById("iframeAudio").src = siteAudio;
+    }
+  }, [muted]);
 
   return (
     <div className="blog_details w-full h-full">
@@ -151,25 +144,22 @@ const ServiceDetailsLayout = () => {
           id="main_container"
           className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
-          <ServiceDetails setLoader={setLoader} />
+          <Blogs setLoader={setLoader} />
         </div>
 
         {/* Right bar */}
 
         <div className="relative">
           <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
-            {playing ? (
+            {muted ? (
               <div className="w-8">
                 <Tooltip title="Unmute Sound" placement="left" color="#8F00FF">
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
-                    src={muteImg}
+                    src={unmuteImg}
+                    onClick={() => setMuted(false)}
                     alt=""
-                    onClick={() => {
-                      toggle();
-                      // setShowSoundAlert(false);
-                    }}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>
@@ -180,11 +170,8 @@ const ServiceDetailsLayout = () => {
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
-                    src={unmuteImg}
-                    onClick={() => {
-                      toggle();
-                      // setShowSoundAlert(false);
-                    }}
+                    src={muteImg}
+                    onClick={() => setMuted(true)}
                     alt=""
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
@@ -198,12 +185,9 @@ const ServiceDetailsLayout = () => {
               <div>&nbsp;</div>
               <div>&nbsp;</div>
               <div className="mb-9 -rotate-90 flex justify-center items-center">
-                <div
-                  onClick={handleNavigate}
-                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4 cursor-pointer"
-                >
+                <span className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4">
                   start project
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -213,9 +197,8 @@ const ServiceDetailsLayout = () => {
       {/* Bottom bar */}
       <div className="absolute bottom-0 z-50 w-full h-10 bg-white"></div>
 
-      {/* Loader */}
       {loader ? (
-        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 2xl:left-10 bg-black backdrop-blur-md bg-opacity-80">
+        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 left-10 bg-black backdrop-blur-md bg-opacity-80">
           <Lottie
             className="w-1/6 mx-auto"
             animationData={loaderFile}
@@ -230,4 +213,4 @@ const ServiceDetailsLayout = () => {
   );
 };
 
-export default ServiceDetailsLayout;
+export default BlogsLayout;
