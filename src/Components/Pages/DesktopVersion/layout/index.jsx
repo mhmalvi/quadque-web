@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
 import BlogDetailsLayout from "../Blogs/BlogDetails/BlogDetailsLayout";
 import CaseStudyDetailsLayout from "../CaseStudy/CaseStudyDetails/CaseStudyDetailsLayout";
 import ServiceDetailsLayout from "../Services/ServiceDetails/ServiceDetailsLayout";
@@ -14,6 +15,14 @@ const Layout = () => {
           element={
             <>
               <DesktopLayout />
+            </>
+          }
+        />
+        <Route
+          path="blogs"
+          element={
+            <>
+              <BlogsLayout />
             </>
           }
         />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import blog1 from "../../../../asstes/Images/blog1.jpg";
 import blog2 from "../../../../asstes/Images/blog2.jpg";
 import blog3 from "../../../../asstes/Images/blog3.jpg";
@@ -177,20 +177,18 @@ const Blogs = () => {
                       This title doesn’t make any sense but still, i’ve to write
                       something.
                     </h1>
-                    <button
-                      className="px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4"
-                      style={{
-                        letterSpacing: "0.04em",
-                        boxShadow:
-                          "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
-                      }}
-                      // className="py-3.5 px-6 bg-brand-color mt-5 text-base leading-4.5 font-semibold"
-                      // style={{
-                      //   letterSpacing: "0.04em",
-                      // }}
-                    >
-                      Read More
-                    </button>
+                    <Link to={"/blogs"}>
+                      <button
+                        className="px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4"
+                        style={{
+                          letterSpacing: "0.04em",
+                          boxShadow:
+                            "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
+                        }}
+                      >
+                        Read More
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

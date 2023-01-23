@@ -40,7 +40,9 @@ const CaseStudyDetails = ({ setLoader }) => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{caseStudyDetails?.our_content_header}</title>
+        <title>
+          {caseStudyDetails?.our_content_header + ` – Quadque Tech`}
+        </title>
         <meta name="keywords" content={caseStudyDetails?.meta_keyword} />
       </Helmet>
 
@@ -237,12 +239,16 @@ const CaseStudyDetails = ({ setLoader }) => {
 
         <div className="mt-44 pb-20">
           <h1 className="text-3xl font-normal my-18">
-            Creative Digital Marketing Agency
+            Creative Digital Marketing Agencies
           </h1>
-          <div className="grid grid-cols-5 gap-5">
+          <div className="">
             <img
-              className="w-58 h-25"
-              src={`https://i.ibb.co/wBX0y3z/1673518502.png`}
+              className="w-10/12 mx-auto"
+              src={
+                process.env.REACT_APP_ASSETS_URL +
+                "/" +
+                caseStudyDetails?.agency
+              }
               alt=""
             />
           </div>
@@ -262,10 +268,10 @@ const CaseStudyDetails = ({ setLoader }) => {
 
             <div className="w-1/2">
               <h1 className="text-3xl leading-12 font-semibold">
-                {caseStudyDetails?.title_1}
+                {caseStudyDetails?.title_3}
               </h1>
               <h4 className="mt-8 text-justify">
-                {caseStudyDetails?.description_1}
+                {caseStudyDetails?.description_3}
               </h4>
               <div className="flex items-center pt-8">
                 <button

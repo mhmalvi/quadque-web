@@ -454,7 +454,7 @@ const serviceDetailsContent = {
         icon: visual,
       },
       {
-        title: "App Development ",
+        title: "App Development",
         icon: Interaction,
       },
     ],

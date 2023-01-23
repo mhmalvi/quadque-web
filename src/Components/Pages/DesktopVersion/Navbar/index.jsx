@@ -127,7 +127,7 @@ const Navbar = ({ setOpenMenus }) => {
             >
               <span className="p-0 m-0 uppercase">BLOGS</span>
               <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
-                #03
+                #04
               </span>
               <img
                 className={`absolute ${
