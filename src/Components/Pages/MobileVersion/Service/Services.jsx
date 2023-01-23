@@ -96,6 +96,7 @@ const Services = () => {
                     <Lottie
                       animationData={littieFiles[details?.service_name]}
                       loop={true}
+                      alt={littieFilesAltTags[details?.service_name]}
                     />
                   </div>
                   <h1 className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow">
@@ -159,4 +160,12 @@ const littieFiles = {
   "Application Development": AppDev,
   "Software Development": softDev,
   "Web Development": webDev,
+};
+
+const littieFilesAltTags = {
+  "UI/UX": "Ui & Ux Layout",
+  "AI & IoT Solutions": "AI & IoT Solutions Layout",
+  "Application Development": "Application Development Layout",
+  "Software Development": "Software Development Layout",
+  "Web Development": "Web Development Layout",
 };

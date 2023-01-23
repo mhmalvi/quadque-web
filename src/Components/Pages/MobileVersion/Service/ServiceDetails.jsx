@@ -197,10 +197,14 @@ const ServiceDetails = () => {
         {/* BEST FOR YOU SECTION */}
 
         <div>
-          <div className="text-sm text-center uppercase pb-1">BEST FOR YOU</div>
-          <div className="text-2xl text-center pb-13">
-            We serve the best service
-          </div>
+          {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map((content, i) => 
+            <>
+              <div className="text-sm text-center uppercase pb-1">{content?.title}</div>
+              <div className="text-2xl text-center pb-13">
+                {content?.tagline}
+              </div>
+            </>
+          )}
           {serviceDetailsContent[`${slug}`].bestService?.map((service, i) => (
             <div className="pb-10">
               <div className="flex-col pb-8">
@@ -400,27 +404,32 @@ const serviceDetailsContent = {
         icon: Interaction,
       },
     ],
-
+    bestServiceTitle: [
+      {
+        title: "THE BEST SOLUTIONS SUITED TO YOUR NEEDS ",
+        tagline: "Our services are client-centered", 
+      }
+    ],
     bestService: [
       {
         service_image: help1,
         service_name: "Create A Strong Impression",
-        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+        des: "Let us help you build a strong impression by designing your logo, which is the brand’s first touchpoint with customers. The right strategy will grab the attention of more customers and increase engagement with the brand.",
       },
       {
         service_image: help2,
-        service_name: "Builds the Foundation",
-        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+        service_name: "Build the Foundation of Your Brand",
+        des: "Tell the story of your brand and influence your customers’ emotions proper identity design. We build a foundation of your overall brand strategy that will impact your customers and encourage them to take action.",
       },
       {
         service_image: help3,
-        service_name: "It Fosters Brand Loyalty",
-        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+        service_name: "Foster Brand Loyalty",
+        des: "Build a loyal base of customers by reaching a larger audience with your identity. Our goal is to make your brand trustworthy and approachable to your target audience. These factors are crucial for developing brand loyalty.",
       },
       {
         service_image: help4,
-        service_name: "Rememberable",
-        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+        service_name: "Be Rememberable",
+        des: "Win the hearts of your customers with an attractive identity design that will be rememberable in the long term. We understand that the right designs can help with your brand positioning and increase your brand’s popularity.",
       },
     ],
   },
@@ -432,47 +441,52 @@ const serviceDetailsContent = {
         icon: usability,
       },
       {
-        title: "User Research",
+        title: "Services for Enterprise",
         icon: research,
       },
       {
-        title: "Product Design",
+        title: "E-commerce App",
         icon: product,
       },
       {
-        title: "Web/App Design",
+        title: "Website Development",
         icon: WebApp,
       },
       {
-        title: "Visual Design",
+        title: "Web Portals",
         icon: visual,
       },
       {
-        title: "Interaction Design",
+        title: "App Development ",
         icon: Interaction,
       },
     ],
-
+    bestServiceTitle: [
+      {
+        title: "USER-FRIENDLY SOLUTIONS TO DEVELOP SUPERB WEBSITES",
+        tagline: "Our web development features are intuitive and reliable", 
+      }
+    ],
     bestService: [
       {
         service_image: help1,
-        service_name: "Create A Strong Impression",
-        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+        service_name: "Increase Your Online Exposure",
+        des: "A good website is essential for increasing your online exposure. Whether you are a start-up or a non-profit organisation, having a well-maintained website can have a very positive impact on your identity. We can help you to achieve this goal.",
       },
       {
         service_image: help2,
-        service_name: "Builds the Foundation",
-        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+        service_name: "Make Your Brand Discoverable",
+        des: "We will develop a highly navigable and user-friendly website that will make your brand more discoverable to your audience. This is a crucial step in any branding strategy that you should not overlook.",
       },
       {
         service_image: help3,
-        service_name: "It Fosters Brand Loyalty",
-        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+        service_name: "Increase Your Trustworthiness",
+        des: "A website is a reliable source of information related to your business or organisation. It’s also a representation of your services and activities. So we specialise in developing very professional websites for our clients.",
       },
       {
         service_image: help4,
-        service_name: "Rememberable",
-        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+        service_name: "Acquire New Customers",
+        des: "You can acquire new customers from all over the globe using a well-built website. We can provide you with excellent web development services that can play a huge role in your marketing strategy.",
       },
     ],
   },
@@ -480,51 +494,56 @@ const serviceDetailsContent = {
   "mobile-app-development": {
     helpContent: [
       {
-        title: "Usability Analyst",
+        title: "Native and Hybrid Mobile App Development",
         icon: usability,
       },
       {
-        title: "User Research",
+        title: "Progressive Web App Development",
         icon: research,
       },
       {
-        title: "Product Design",
+        title: "HR Apps",
         icon: product,
       },
       {
-        title: "Web/App Design",
+        title: "Retail and E-commerce Apps",
         icon: WebApp,
       },
       {
-        title: "Visual Design",
+        title: "Fintech Apps",
         icon: visual,
       },
       {
-        title: "Interaction Design",
+        title: "mHealth and Educational Apps",
         icon: Interaction,
       },
     ],
-
+    bestServiceTitle: [
+      {
+        title: "RELIABLE AND USER-FRIENDLY MOBILE APPLICATIONS",
+        tagline: "Combining Innovative and Intuitive Features", 
+      }
+    ],
     bestService: [
       {
         service_image: help1,
-        service_name: "Create A Strong Impression",
-        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+        service_name: "Get the Best UI Features",
+        des: "Having a well-designed UI with user-friendly features is one of the prerequisites for developing any mobile application. Our expert team of developers collaborate with our experienced UI and UX designers to deliver a stable with amazing UI features.",
       },
       {
         service_image: help2,
-        service_name: "Builds the Foundation",
-        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+        service_name: "Say Goodbye to App Issues",
+        des: "We all know how frustrating it is to have an app that suffers from issues like slow loading times and crashes. These issues can be a big problem for the users. Therefore, our team focuses on mitigating these issues during and after development.",
       },
       {
         service_image: help3,
-        service_name: "It Fosters Brand Loyalty",
-        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+        service_name: "Protect Your Data",
+        des: "Protecting personal information and important data is a crucial step in developing a safe and trustworthy app for your users. We use the latest technologies and security measures to ensure the overall safety of the data in your app.",
       },
       {
         service_image: help4,
-        service_name: "Rememberable",
-        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+        service_name: "Incorporate Amazing User Support",
+        des: "A mobile application should be a source of convenience for the users. We prioritise this step by implementing chatbots and other user support features that can help you interact with your users and get their feedbacks.",
       },
     ],
   },
@@ -532,51 +551,56 @@ const serviceDetailsContent = {
   "software-development": {
     helpContent: [
       {
-        title: "Usability Analyst",
+        title: "ERP Packages",
         icon: usability,
       },
       {
-        title: "User Research",
+        title: "CRM Software",
         icon: research,
       },
       {
-        title: "Product Design",
+        title: "SAP",
         icon: product,
       },
       {
-        title: "Web/App Design",
+        title: "HR Solutions",
         icon: WebApp,
       },
       {
-        title: "Visual Design",
+        title: "Legal Tech",
         icon: visual,
       },
       {
-        title: "Interaction Design",
+        title: "Software for Healthcare and Education",
         icon: Interaction,
       },
     ],
-
+    bestServiceTitle: [
+      {
+        title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
+        tagline: "Advanced Software Development Technologies and Services", 
+      }
+    ],
     bestService: [
       {
         service_image: help1,
-        service_name: "Create A Strong Impression",
-        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+        service_name: "Highly Operational Performance",
+        des: "Core operational features like usability, functionality and security form the foundation of a good software. Our experienced team of developers focus on these features throughout the development process.",
       },
       {
         service_image: help2,
-        service_name: "Builds the Foundation",
-        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+        service_name: "Adaptable Features",
+        des: "We develop user-friendly software packages that have high levels of interoperability and portability. We have an in-dept knowledge of several platforms. So we know how to make a stable and cross-functional software.",
       },
       {
         service_image: help3,
-        service_name: "It Fosters Brand Loyalty",
-        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+        service_name: "Post-development Maintenance",
+        des: "Our services do not end upon the completion of the development of the software. We make sure that the software does not suffer from bugs or crashes in the post-development stage.",
       },
       {
         service_image: help4,
-        service_name: "Rememberable",
-        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+        service_name: "Your Security is Our First Priority",
+        des: "We understand that one of the biggest issues today is the threat to data security. We take strict measures to ensure that our software has every capability and feature to protect the data from all threats.",
       },
     ],
   },
@@ -584,51 +608,56 @@ const serviceDetailsContent = {
   "ai-&-iot-solutions": {
     helpContent: [
       {
-        title: "Usability Analyst",
+        title: "AI Chatbot",
         icon: usability,
       },
       {
-        title: "User Research",
+        title: "AI Office Assistant",
         icon: research,
       },
       {
-        title: "Product Design",
+        title: "Smart Voice Assistant",
         icon: product,
       },
       {
-        title: "Web/App Design",
+        title: "IoT Based Alarm System",
         icon: WebApp,
       },
       {
-        title: "Visual Design",
+        title: "Social Media Monitoring App",
         icon: visual,
       },
       {
-        title: "Interaction Design",
+        title: "Smart Home Controlling System",
         icon: Interaction,
       },
     ],
-
+    bestServiceTitle: [
+      {
+        title: "SMART AI AND IOT SOLUTIONS DESIGNED FOR YOUR NEEDS ",
+        tagline: "Powerful AI Technologies and Innovative IoT Services", 
+      }
+    ],
     bestService: [
       {
         service_image: help1,
-        service_name: "Create A Strong Impression",
-        des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
+        service_name: "Advanced Technology",
+        des: "AI has come a long way thanks to the hard work of scientists and researchers in the field. We incorporate the latest technological features to deliver smart and innovative AI solutions to our clients.",
       },
       {
         service_image: help2,
-        service_name: "Builds the Foundation",
-        des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
+        service_name: "Reliable Security Measures",
+        des: "One of the most important aspects of any IoT service is data security. We rely on the most advanced and updated security measures to make sure that our clients are free from all kinds of cyber security threats.",
       },
       {
         service_image: help3,
-        service_name: "It Fosters Brand Loyalty",
-        des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
+        service_name: "From Planning to Implementation",
+        des: "Every organisation has different needs. We identify the specific requirements of every client and plan the best strategy for implementing the perfect AI and IoT solutions for that organisation.",
       },
       {
         service_image: help4,
-        service_name: "Rememberable",
-        des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
+        service_name: "Improve Your Organisational Performance",
+        des: "One of the biggest advantages of AI and IoT solutions is that they improve the overall performance of an organisation and allow a better service. You can rely on our solutions to improve your organisational performance.",
       },
     ],
   },
