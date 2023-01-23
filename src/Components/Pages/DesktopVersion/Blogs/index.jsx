@@ -14,17 +14,16 @@ const Blogs = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
-  const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [loader, setLoader] = useState(true);
-
-  console.log(blogs);
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
     if (location.hash === "#blogs") {
+      synth.cancel();
       setTimeout(() => {
         setLoader(false);
-        setTriggerAnimation(!triggerAnimation);
-        setTriggerTitleAnimation(!triggerTitleAnimation);
+        // setTriggerAnimation(true);
+        setTriggerTitleAnimation(true);
       }, 800);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -97,90 +96,105 @@ const Blogs = () => {
         <Fade right spy={triggerTitleAnimation}>
           <div className="w-[30%] max-h-[95vh]">
             <div className="h-1/2 w-full flex flex-col justify-end">
-              <div
-                onClick={() => handleBlogNavigate(blogs?.[1]?.slug)}
-                className="relative cursor-pointer"
-              >
-                <img
-                  className="w-full"
-                  src={
-                    blogs?.[1]?.thumbnail
-                      ? process.env.REACT_APP_ASSETS_URL +
-                        "/" +
-                        blogs?.[1]?.thumbnail
-                      : blog2
-                  }
-                  alt=""
-                />
-                <div
-                  className="absolute h-full w-full top-0 flex items-end"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(255, 255, 255, 0) -81.76%, rgba(0, 0, 0, 0.5) 18.24%)",
-                  }}
-                >
-                  <h1 className=" text-base font-semibold leading-6 mb-5 ml-6 mr-18">
-                    {blogs?.[1]?.title}
-                  </h1>
-                </div>
-              </div>
-              <div
-                onClick={() => handleBlogNavigate(blogs?.[2]?.slug)}
-                className="relative cursor-pointer 2xl:my-2.5"
-              >
-                <img
-                  className=" w-full"
-                  src={
-                    blogs?.[2]?.thumbnail
-                      ? process.env.REACT_APP_ASSETS_URL +
-                        "/" +
-                        blogs?.[2]?.thumbnail
-                      : blog3
-                  }
-                  alt=""
-                />
-                <div
-                  className="absolute h-full w-full top-0 flex items-end"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(255, 255, 255, 0) -51.55%, rgba(0, 0, 0, 0.5) 48.45%)",
-                  }}
-                >
-                  <h1 className=" text-base font-semibold leading-6 mb-5 ml-6 mr-18">
-                    {blogs?.[2]?.title}
-                  </h1>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                className="lg:max-h-[90%] 2xl:h-full w-full"
-                src={moreBlogs}
-                alt=""
-              />
-              <div
-                className="absolute h-full w-full top-0 flex justify-center items-center"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%)",
-                }}
-              >
-                <div className="flex flex-col justify-center items-center">
-                  <h1 className=" text-base font-semibold leading-6 mx-12 text-center">
-                    This title doesn’t make any sense but still, i’ve to write
-                    something.
-                  </h1>
-                  <button
-                    className="py-3.5 px-6 bg-brand-color mt-5 text-base leading-4.5 font-semibold"
-                    style={{
-                      letterSpacing: "0.04em",
-                    }}
+              <Fade top cascade spy={triggerTitleAnimation}>
+                <div>
+                  <div
+                    onClick={() => handleBlogNavigate(blogs?.[1]?.slug)}
+                    className="relative cursor-pointer"
                   >
-                    Read More
-                  </button>
+                    <img
+                      className="min-w-full max-h-[28vh]"
+                      src={
+                        blogs?.[1]?.thumbnail
+                          ? process.env.REACT_APP_ASSETS_URL +
+                            "/" +
+                            blogs?.[1]?.thumbnail
+                          : blog2
+                      }
+                      alt=""
+                    />
+                    <div
+                      className="absolute h-full w-full top-0 flex items-end"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(255, 255, 255, 0) -81.76%, rgba(0, 0, 0, 0.5) 18.24%)",
+                      }}
+                    >
+                      <h1 className=" text-base font-semibold leading-6 mb-5 ml-6 mr-18">
+                        {blogs?.[1]?.title}
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    onClick={() => handleBlogNavigate(blogs?.[2]?.slug)}
+                    className="relative cursor-pointer 2xl:my-2.5 "
+                  >
+                    <img
+                      className="min-w-full max-h-[25vh]"
+                      src={
+                        blogs?.[2]?.thumbnail
+                          ? process.env.REACT_APP_ASSETS_URL +
+                            "/" +
+                            blogs?.[2]?.thumbnail
+                          : blog3
+                      }
+                      alt=""
+                    />
+                    <div
+                      className="absolute h-full w-full top-0 flex items-end"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(255, 255, 255, 0) -51.55%, rgba(0, 0, 0, 0.5) 48.45%)",
+                      }}
+                    >
+                      <h1 className=" text-base font-semibold leading-6 mb-5 ml-6 mr-18">
+                        {blogs?.[2]?.title}
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </Fade>
+            </div>
+            <Fade bottom cascade spy={triggerTitleAnimation}>
+              <div className="relative">
+                <img
+                  className="max-h-[40vh] min-w-full"
+                  src={moreBlogs}
+                  alt=""
+                />
+                <div
+                  className="absolute h-full w-full top-0 flex justify-center items-center"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%)",
+                  }}
+                >
+                  <div className="flex flex-col justify-center items-center">
+                    <h1 className=" text-base font-semibold leading-6 mx-12 text-center">
+                      This title doesn’t make any sense but still, i’ve to write
+                      something.
+                    </h1>
+                    <button
+                      className="px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4"
+                      style={{
+                        letterSpacing: "0.04em",
+                        boxShadow:
+                          "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
+                      }}
+                      // className="py-3.5 px-6 bg-brand-color mt-5 text-base leading-4.5 font-semibold"
+                      // style={{
+                      //   letterSpacing: "0.04em",
+                      // }}
+                    >
+                      Read More
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Fade>
           </div>
         </Fade>
       </div>

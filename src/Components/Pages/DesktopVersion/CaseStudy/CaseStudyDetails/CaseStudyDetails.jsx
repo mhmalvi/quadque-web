@@ -14,11 +14,17 @@ import Icons from "../../../../Shared/Icons";
 // import visual from "../../../../../asstes/Images/visual.png";
 // import WebApp from "../../../../../asstes/Images/WebApp.png";
 import { handleFetchCaseStudyById } from "../../../../Shared/services";
+import Lottie from "lottie-react";
+import speakLogo from "../../../../../asstes/Lotties/speak.json";
+import { useSpeechSynthesis } from "react-speech-kit";
+import { Tooltip } from "antd";
 
 const CaseStudyDetails = ({ setLoader }) => {
   const navigate = useNavigate();
   const { slug } = useParams();
+  const { speak } = useSpeechSynthesis();
   const [caseStudyDetails, setCaseStudyDetails] = useState();
+  const synth = window.speechSynthesis;
 
   useEffect(() => {
     (async () => {
@@ -34,9 +40,10 @@ const CaseStudyDetails = ({ setLoader }) => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Services`}</title>
-        {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
+        <title>{caseStudyDetails?.our_content_header}</title>
+        <meta name="keywords" content={caseStudyDetails?.meta_keyword} />
       </Helmet>
+
       <div className="case_study_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
         <h1 className="max-w-4xl mx-auto text-4xl font-bold leading-10 my-10 text-center font_title">
           {caseStudyDetails?.our_content_header}
@@ -81,7 +88,7 @@ const CaseStudyDetails = ({ setLoader }) => {
                 letterSpacing: "0.48px",
               }}
               onClick={() => {
-                navigate(`../contacts`, { replace: true });
+                navigate(`../#contacts`, { replace: true });
               }}
             >
               Contact us
@@ -109,10 +116,34 @@ const CaseStudyDetails = ({ setLoader }) => {
               consetetur sadipscing elitr
             </p> */}
 
-            <div
-              className="mr-10"
-              dangerouslySetInnerHTML={{ __html: caseStudyDetails?.content }}
-            ></div>
+            <div className="relative">
+              <div
+                className="mr-10"
+                dangerouslySetInnerHTML={{ __html: caseStudyDetails?.content }}
+              ></div>
+
+              <Tooltip
+                placement="top"
+                title={`Click to "Read". Double Click to "Stop"`}
+                color={"#8F00FF"}
+              >
+                <button
+                  className="absolute top-0 right-10"
+                  onClick={() =>
+                    speak({
+                      text: caseStudyDetails?.content,
+                    })
+                  }
+                  onDoubleClick={() => synth.cancel()}
+                >
+                  <Lottie
+                    className="w-14"
+                    animationData={speakLogo}
+                    loop={true}
+                  />
+                </button>
+              </Tooltip>
+            </div>
           </div>
 
           <div
