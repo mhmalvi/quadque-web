@@ -98,11 +98,8 @@ const ServiceDetails = () => {
       <div className={`w-full h-auto mt-30 text-white px-6 ${!Service ? "scale-0" : ""}`}>
         <h1 className="font_title text-3xl font-bold pb-5">{Service?.service_name}</h1>
         <div className="font-semibold pb-2">{Service?.service_title}</div>
-        {/* <div className="text-sm text-justify pb-2">{Service?.description}</div> */}
-        <div
-          className="text-justify font-thin pb-4"
-          dangerouslySetInnerHTML={{ __html: Service?.description }}
-        ></div>
+        <div className="text-sm text-justify pb-2">{Service?.description}</div>
+
         <div
           onClick={() => navigate(`../#start-project`, { replace: true })}
           className="text-brand-color font-bold"
