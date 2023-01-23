@@ -16,11 +16,15 @@ import WebApp from "../../../../../asstes/Images/WebApp.png";
 import { useSpeechSynthesis } from "react-speech-kit";
 import useCaseStudy from "../../../../Shared/Hooks/useCaseStudy";
 import { handleFetchServiceById } from "../../../../Shared/services";
+import Lottie from "lottie-react";
+import speakLogo from "../../../../../asstes/Lotties/speak.json";
+import { Tooltip } from "antd";
 
 const ServiceDetails = ({ setLoader }) => {
   const navigate = useNavigate();
   const { slug } = useParams();
   const { speak } = useSpeechSynthesis();
+  const synth = window.speechSynthesis;
 
   const ClientsSlider = useRef(null);
   const [serviceDetails, setServiceDetails] = useState();
@@ -28,6 +32,7 @@ const ServiceDetails = ({ setLoader }) => {
   const [caseStudies] = useCaseStudy();
 
   useEffect(() => {
+    synth.cancel();
     (async () => {
       const fetchServicedata = await handleFetchServiceById(slug);
       if (fetchServicedata) {
@@ -37,7 +42,9 @@ const ServiceDetails = ({ setLoader }) => {
       }
       setServiceDetails(fetchServicedata);
     })();
-  }, [setLoader, slug]);
+
+    console.log(document.getElementById("serviceDetails_content").innerText);
+  }, [setLoader, slug, synth]);
 
   const handleNavigate = (menu) => {
     if (!window.location.hash.includes("#")) {
@@ -63,9 +70,33 @@ const ServiceDetails = ({ setLoader }) => {
           {serviceDetails?.service_name}
         </h1>
         <div>
-          <h2 className="text-2xl leading-5 font-medium mb-6">
-            {serviceDetails?.service_title}
-          </h2>
+          <div className="relative">
+            <h2 className="text-2xl leading-5 font-medium mb-6">
+              {serviceDetails?.service_title}
+            </h2>
+
+            <Tooltip
+              placement="top"
+              title={`Click to "Read". Double Click to "Stop"`}
+              color={"#8F00FF"}
+            >
+              <button
+                className="absolute top-0 right-10"
+                onClick={() =>
+                  speak({
+                    text: serviceDetails?.description,
+                  })
+                }
+                onDoubleClick={() => synth.cancel()}
+              >
+                <Lottie
+                  className="w-14"
+                  animationData={speakLogo}
+                  loop={true}
+                />
+              </button>
+            </Tooltip>
+          </div>
           <p
             className="text-base font-light leading-6 text-[#D0D4EA] mb-5"
             style={{
@@ -95,21 +126,37 @@ const ServiceDetails = ({ setLoader }) => {
         </div>
 
         <div className="mt-24">
-          <h5 className="uppercase text-base font-normal leading-4 text-center">
-            IDENTITY DESIGN SERVICES
-          </h5>
-          <h3 className="text-2xl leading-6 font-medium text-center mt-8 mb-6">
-            How We Can Help?
-          </h3>
-          <button
-            onClick={() =>
-              speak({
-                text: serviceDetails?.identity_design_des,
-              })
-            }
-          >
-            Speak
-          </button>
+          <div className="relative">
+            <h5 className="uppercase text-base font-normal leading-4 text-center">
+              IDENTITY DESIGN SERVICES
+            </h5>
+            <h3 className="text-2xl leading-6 font-medium text-center mt-8 mb-6">
+              <span>How We Can Help?</span>
+            </h3>
+
+            <Tooltip
+              placement="top"
+              title={`Click to "Read". Double Click to "Stop"`}
+              color={"#8F00FF"}
+            >
+              <button
+                className="absolute top-0 right-10"
+                onClick={() =>
+                  speak({
+                    text: serviceDetails?.identity_design_des,
+                  })
+                }
+                onDoubleClick={() => synth.cancel()}
+              >
+                <Lottie
+                  className="w-14"
+                  animationData={speakLogo}
+                  loop={true}
+                />
+              </button>
+            </Tooltip>
+          </div>
+
           <p
             className="text-base leading-6 text-white font-medium text-opacity-60"
             style={{
@@ -259,15 +306,41 @@ const ServiceDetails = ({ setLoader }) => {
             </div> */}
           </div>
 
-          <div
-            className="serviceDetails_content flex justify-center items-center flex-col my-16 text-white"
-            style={{
-              letterSpacing: "0.09em",
-            }}
-            dangerouslySetInnerHTML={{
-              __html: serviceDetails?.content,
-            }}
-          ></div>
+          <div className="relative">
+            <div
+              id="serviceDetails_content"
+              className="serviceDetails_content flex justify-center items-center flex-col my-16 text-white"
+              style={{
+                letterSpacing: "0.09em",
+              }}
+              dangerouslySetInnerHTML={{
+                __html: serviceDetails?.content,
+              }}
+            ></div>
+
+            <Tooltip
+              placement="top"
+              title={`Click to "Read". Double Click to "Stop"`}
+              color={"#8F00FF"}
+            >
+              <button
+                className="absolute top-0 right-10"
+                onClick={() =>
+                  speak({
+                    text: document.getElementById("serviceDetails_content")
+                      .innerText,
+                  })
+                }
+                onDoubleClick={() => synth.cancel()}
+              >
+                <Lottie
+                  className="w-14"
+                  animationData={speakLogo}
+                  loop={true}
+                />
+              </button>
+            </Tooltip>
+          </div>
 
           <div>
             <div className="flex flex-wrap gap-3">
@@ -283,9 +356,33 @@ const ServiceDetails = ({ setLoader }) => {
           </div>
 
           <div className="mt-24 pb-16">
-            <h2 className="text-2xl leading-6 font-medium text-center mb-10 mt-2">
-              {serviceDetails?.service_deliver_title}
-            </h2>
+            <div className="relative">
+              <h2 className="text-2xl leading-6 font-medium text-center mb-10 mt-2">
+                {serviceDetails?.service_deliver_title}
+              </h2>
+
+              <Tooltip
+                placement="top"
+                title={`Click to "Read". Double Click to "Stop"`}
+                color={"#8F00FF"}
+              >
+                <button
+                  className="absolute top-0 right-10"
+                  onClick={() =>
+                    speak({
+                      text: serviceDetails?.service_deliver_des,
+                    })
+                  }
+                  onDoubleClick={() => synth.cancel()}
+                >
+                  <Lottie
+                    className="w-14"
+                    animationData={speakLogo}
+                    loop={true}
+                  />
+                </button>
+              </Tooltip>
+            </div>
 
             <p
               className="text-base leading-6 font-normal text-white text-opacity-60"
