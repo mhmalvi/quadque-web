@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react";
-import useServices from "../../../Shared/Hooks/useServices";
-import Flip from "react-reveal/Flip";
-import { useLocation } from "react-router-dom";
-import { Fade } from "react-reveal";
-import { handleSendMail } from "../../../Shared/services";
 import { Modal } from "antd";
 import Lottie from "lottie-react";
+import React, { useEffect, useState } from "react";
+import { Fade } from "react-reveal";
+import { useLocation } from "react-router-dom";
 import sucess from "../../../../asstes/Images/success.json";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
+import useServices from "../../../Shared/Hooks/useServices";
+import { handleSendMail } from "../../../Shared/services";
 
 const StartProject = () => {
   const location = useLocation();

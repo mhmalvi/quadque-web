@@ -1,4 +1,4 @@
-import { Modal, Tooltip } from "antd";
+import { Alert, Button, Modal, Space, Tooltip } from "antd";
 import React, { useEffect, useState } from "react";
 import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../asstes/Images/mute.png";
@@ -8,12 +8,18 @@ import Navbar from "../Navbar";
 import CenterLayout from "./CenterLayout";
 import welcomeAvatar from "../../../../asstes/Images/welcome_avatar.json";
 import Lottie from "lottie-react";
+import useAudio from "../../../Shared/Hooks/useAudio";
+import $ from "jquery";
+window.$ = $;
 
 const DesktopLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
-  const [muted, setMuted] = useState(false);
+  const [showSoundAlert, setShowSoundAlert] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
+  // const [audioFile, setAudioFile] = useState(false);
+
+  const [playing, setPlaying, toggle] = useAudio();
 
   useEffect(() => {
     if (!localStorage.getItem("welcome")) {
@@ -24,36 +30,36 @@ const DesktopLayout = () => {
   }, []);
 
   useEffect(() => {
-    document.getElementById("iframeAudio").src = siteAudio;
+    setTimeout(() => {
+      setShowSoundAlert(true);
+    }, 3000);
 
     document.getElementById("main_container").style.height =
       "calc(100vh - 80px)";
     document.getElementById("main_container").style.backgroundColor = "#000000";
   }, []);
 
-  useEffect(() => {
-    console.log(window.Permissions);
-
-    if (muted) {
-      document.getElementById("iframeAudio").src = "";
-    } else {
-      document.getElementById("iframeAudio").src = siteAudio;
-    }
-  }, [muted]);
-
   return (
     <div className="w-full h-full">
       {/* For website background Audio */}
-      <iframe
+      {/* <iframe
         id="iframeAudio"
+        title="audio"
+        src={audioFile}
+        allow="autoplay loop"
+        style={{ display: "none" }}
+      /> */}
+
+      {/* <iframe
         title="audio"
         src={siteAudio}
         allow="autoplay loop"
         style={{ display: "none" }}
+        id="iframeAudio"
       />
 
-      {/* <audio id="iframeAudio" src={siteAudio} loop autoPlay hidden>
-        <source src={siteAudio} type="audio/ogg" />
+      <audio autoplay loop id="playAudio">
+        <source src={siteAudio} />
       </audio> */}
 
       <Modal
@@ -173,7 +179,7 @@ const DesktopLayout = () => {
 
         <div className="relative">
           <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
-            {muted ? (
+            {playing ? (
               <div className="w-8">
                 <Tooltip title="Unmute Sound" placement="left" color="#8F00FF">
                   <h1 className="text-xl font-bold">&nbsp;</h1>
@@ -181,7 +187,10 @@ const DesktopLayout = () => {
                     className="z-50 cursor-pointer"
                     src={muteImg}
                     alt=""
-                    onClick={() => setMuted(false)}
+                    onClick={() => {
+                      toggle();
+                      setShowSoundAlert(false);
+                    }}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>
@@ -193,7 +202,10 @@ const DesktopLayout = () => {
                   <img
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
-                    onClick={() => setMuted(true)}
+                    onClick={() => {
+                      toggle();
+                      setShowSoundAlert(false);
+                    }}
                     alt=""
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
@@ -227,38 +239,80 @@ const DesktopLayout = () => {
         className={`${
           showWelcome
             ? "w-86 transition-all delay-700 ease-in-out"
-            : "w-0 transition-all delay-700 ease-in-out"
-        } transition-all delay-700 ease-in-out absolute top-0 right-0 z-50 flex items-center`}
+            : "hidden w-0 transition-all delay-700 ease-in-out"
+        } transition-all delay-700 ease-in-out absolute top-0 left-0 z-50 flex items-center`}
       >
         <div className="flex items-center relative">
-          <span className="bg-white px-4 py-2.5 font-semibold font_title rounded-md shadow-md">
-            Hi There, Welcome
-          </span>
-          <div className="bg-white w-4 h-4 -ml-2.5 rotate-45 rounded-sm">
-            &nbsp;
-          </div>
+          <Lottie
+            className="w-36 mx-auto"
+            animationData={welcomeAvatar}
+            loop={true}
+          />
 
-          <div
-            className={`${
-              showWelcome
-                ? "w-6 h-6 transition-all delay-700 ease-in-out"
-                : "w-0 h-0 transition-all delay-700 ease-in-out"
-            } absolute -top-2 -left-3 rounded-full flex justify-center items-center bg-gray-700 text-white cursor-pointer`}
-            onClick={() => {
-              setShowWelcome(false);
-              localStorage.setItem("welcome", false);
-            }}
-          >
-            <span className="-mt-1">x</span>
+          <div className="relative">
+            <div className="flex items-center">
+              <div className="bg-white w-4 h-4 rotate-45 rounded-sm">
+                &nbsp;
+              </div>
+              <span className="bg-white px-4 py-2.5 -ml-2.5 font-semibold font_title rounded-md shadow-md">
+                Hi There, Welcome
+              </span>
+            </div>
+
+            <div
+              className={`${
+                showWelcome
+                  ? "w-6 h-6 transition-all delay-700 ease-in-out"
+                  : "w-0 h-0 transition-all delay-700 ease-in-out"
+              } absolute -top-3.5 -right-4 rounded-full flex justify-center items-center bg-gray-700 text-white cursor-pointer`}
+              onClick={() => {
+                setShowWelcome(false);
+                localStorage.setItem("welcome", false);
+              }}
+            >
+              <span className="-mt-1">x</span>
+            </div>
           </div>
         </div>
-
-        <Lottie
-          className="w-36 mx-auto"
-          animationData={welcomeAvatar}
-          loop={true}
-        />
       </div>
+
+      {/* Sound Permisson */}
+      {showSoundAlert ? (
+        <div className="absolute top-16 right-32">
+          <Alert
+            className={`${
+              showSoundAlert
+                ? "w-86 transition-all delay-700 ease-in-out"
+                : "w-0 transition-all delay-700 ease-in-out"
+            } transition-all delay-700 ease-in-out absolute top-0 right-0 z-50 flex items-center font_title`}
+            // message="Alert"
+            description="Are you willing to explore far?"
+            type="warning"
+            action={
+              <Space direction="vertical" className="ml-4 flex items-center">
+                <button
+                  className="w-20 px-3 py-0.5 rounded-md bg-brand-color text-white"
+                  onClick={() => {
+                    setPlaying(true);
+                    setShowSoundAlert(false);
+                  }}
+                >
+                  Let's Go
+                </button>
+                <button
+                  className="w-20 px-3 py-0.5 rounded-md bg-black text-white"
+                  onClick={() => {
+                    setPlaying(false);
+                    setShowSoundAlert(false);
+                  }}
+                >
+                  No
+                </button>
+              </Space>
+            }
+          />
+        </div>
+      ) : null}
     </div>
   );
 };
