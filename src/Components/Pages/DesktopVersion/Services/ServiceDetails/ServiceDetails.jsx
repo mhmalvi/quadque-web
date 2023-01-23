@@ -81,7 +81,7 @@ const ServiceDetails = ({ setLoader }) => {
               color={"#8F00FF"}
             >
               <button
-                className="absolute top-0 right-10"
+                className="absolute -top-4 right-10"
                 onClick={() =>
                   speak({
                     text: serviceDetails?.description,
