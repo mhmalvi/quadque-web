@@ -29,6 +29,10 @@ const ClientSpeaks = () => {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
+    } else {
+      setTimeout(() => {
+        setLoader(false);
+      }, 5000);
     }
   }, []);
 

@@ -115,7 +115,9 @@ const Services = () => {
           </Slider>
 
           <div className="w-3/4 m-auto flex justify-between pb-5">
-            <div className="font-semibold text-brand-color">START PROJECT</div>
+            <div className="font-semibold text-brand-color">
+              <a href="#start-project">START PROJECT</a>
+            </div>
             <div
               onClick={() => slider1.current.slickPrev()}
               className="font-semibold"
