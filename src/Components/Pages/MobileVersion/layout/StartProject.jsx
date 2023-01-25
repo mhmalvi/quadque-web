@@ -52,7 +52,7 @@ const StartProject = () => {
         "Magento Web Development",
         "Drupal Web Development",
       ]);
-    } else if (service_name === "App Development") {
+    } else if (service_name === "Application Development") {
       setToogleSubService([
         "Native Mobile App Development",
         "Hybrid Mobile App Development",
@@ -72,7 +72,8 @@ const StartProject = () => {
         "Smart Home Controlling System",
         "AI Office Assistant",
       ]);
-    } else if (service_name === "Mobile App Development") {
+    } 
+    /* else if (service_name === "App Development") {
       setToogleSubService([
         "AI Chatbot",
         "Smart Voice Assistant",
@@ -80,7 +81,7 @@ const StartProject = () => {
         "IoT Based Alarm System",
         "AI Office Assistant",
       ]);
-    }
+    } */
   };
 
     const handleActiveSubServices = (sub_service_name) => {
