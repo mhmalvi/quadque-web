@@ -29,7 +29,7 @@ const CaseStudyDetail = () => {
       }
     })();
   }, [slug]);
-  //console.log("case data", caseData);
+  console.log("case data", caseData);
   return (
     <>
       <Helmet>
@@ -49,13 +49,23 @@ const CaseStudyDetail = () => {
         </div>
       ) : null}
 
-      <div className={`w-full text-white pt-30 px-6 ${!caseData ? "scale-0" : "" }`}>
+      <div
+        className={`w-full text-white pt-30 px-6 ${!caseData ? "scale-0" : ""}`}
+      >
         {/* TOP SECTION  */}
         <div>
-          <h1 className="font_title text-2xl text-center pb-3">{caseData?.com_name}</h1>
+          <h1 className="font_title text-2xl text-center pb-3">
+            {caseData?.com_name}
+          </h1>
           <div className="text-sm text-center">{caseData?.summary1}</div>
 
-          <img src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.group_images} alt="" className="m-auto py-13" />
+          <img
+            src={
+              process.env.REACT_APP_ASSETS_URL + "/" + caseData?.group_images
+            }
+            alt=""
+            className="m-auto py-13"
+          />
 
           <div className="text-sm text-center pb-5">{caseData?.summary2}</div>
           <div className="w-32 flex justify-center mx-auto bg-[#0793FF] rounded-full text-black text-sm font-semibold px-3 py-2">
@@ -65,7 +75,13 @@ const CaseStudyDetail = () => {
 
         {/* SECTION 2 */}
         <div className="">
-          <img src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.short_banner} alt="" className="m-auto pt-13" />
+          <img
+            src={
+              process.env.REACT_APP_ASSETS_URL + "/" + caseData?.short_banner
+            }
+            alt=""
+            className="m-auto pt-13"
+          />
           <div className="text-2xl pt-13 pb-3">
             <div
               className="case_editor"
@@ -149,20 +165,20 @@ const CaseStudyDetail = () => {
         </div>
 
         {/* SECTION 4 */}
-        <div className="pb-13">
+        <div className={`pb-13 ${!caseData?.agency ? "hidden" : "block" }`}>
           <div className="text-2xl text-center pb-13">
             Creative Digital Marketing Agency
           </div>
           <div className="flex flex-wrap justify-center gap-1">
-            <img src={Brand1} alt="" className="w-1/4" />
-            <img src={Brand2} alt="" className="w-1/4" />
+            <img src={caseData?.agency} alt="" className="w-[90%]" />
+            {/* <img src={Brand2} alt="" className="w-1/4" />
             <img src={Brand3} alt="" className="w-1/4" />
             <img src={Brand4} alt="" className="w-1/4" />
             <img src={Brand1} alt="" className="w-1/4" />
             <img src={Brand2} alt="" className="w-1/4" />
             <img src={Brand3} alt="" className="w-1/4" />
             <img src={Brand4} alt="" className="w-1/4" />
-            <img src={Brand1} alt="" className="w-1/4" />
+            <img src={Brand1} alt="" className="w-1/4" /> */}
           </div>
         </div>
 

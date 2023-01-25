@@ -13,43 +13,68 @@ const App = () => {
       <div className="flex justify-between">
         <Link to="/">
           <div className="shrink-0 p-6">
-            <Icons.BrandLogoMob />
+            <Icons.BrandLogoMob className="w-12 rotate-[250deg] text-white" />
           </div>
         </Link>
-        <Button type="button" onClick={() => setOpen(true)}>
+        <Button
+          className={`${open ? "hidden" : ""}`}
+          type="button"
+          onClick={() => setOpen(true)}
+        >
           {/* Hamburger Animation */}
-          <div className={`w-4 ${genericHamburgerLine} ${open ? "translate-x-3 opacity-0 duration-300":""}`} />
-          <div className={`${genericHamburgerLine} w-8 ${open ? "translate-x-5 opacity-0 duration-300":""} `} />
           <div
-            className={`${genericHamburgerLine} w-4 opacity-100 float-right relative -top-1 ${open ? "translate-x-9 opacity-0 duration-300":""}`}
+            className={`w-4 ${genericHamburgerLine} ${
+              open ? "translate-x-3 opacity-0 duration-300" : ""
+            }`}
+          />
+          <div
+            className={`${genericHamburgerLine} w-8 ${
+              open ? "translate-x-5 opacity-0 duration-300" : ""
+            } `}
+          />
+          <div
+            className={`${genericHamburgerLine} w-4 opacity-100 float-right relative -top-1 ${
+              open ? "translate-x-9 opacity-0 duration-300" : ""
+            }`}
           />
         </Button>
       </div>
       <Modal
-      className="cross_btn"
+        className="cross_btn"
         title={false}
         centered
         open={open}
-        onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
         footer={false}
         width="100%"
-
       >
-        <div
-          className="w-full h-full flex flex-col justify-between text-center text-xl pt-24"
-        >
-          <div className="absolute top-14 shrink-0" onClick={() => setOpen(false)}><Icons.BrandLogo/></div>
+        <div className="w-full h-full flex flex-col justify-between text-center text-xl pt-24">
+          <div
+            className="absolute top-14 shrink-0"
+            onClick={() => setOpen(false)}
+          >
+            <Icons.BrandLogoMob className="w-12 rotate-[250deg] text-white" />
+          </div>
 
-          <div onClick={() => setOpen(false)}><Link to="/">Home</Link></div>
+          <div onClick={() => setOpen(false)}>
+            <Link to="/">Home</Link>
+          </div>
 
-          <div onClick={() => setOpen(false)}><a href="/#Service" >Service</a></div>
+          <div onClick={() => setOpen(false)}>
+            <a href="/#Service">Service</a>
+          </div>
 
-          <div onClick={() => setOpen(false)}><a href="/#About">About </a></div>
+          <div onClick={() => setOpen(false)}>
+            <a href="/#About">About </a>
+          </div>
 
-          <div onClick={() => setOpen(false)}><Link to="/blogs">blogs</Link></div>
+          <div onClick={() => setOpen(false)}>
+            <Link to="/blogs">blogs</Link>
+          </div>
 
-          <div onClick={() => setOpen(false)}><Link to="/gallery">Gallery</Link></div>
+          <div onClick={() => setOpen(false)}>
+            <Link to="/gallery">Gallery</Link>
+          </div>
 
           <div onClick={() => setOpen(false)}>Contact</div>
         </div>
