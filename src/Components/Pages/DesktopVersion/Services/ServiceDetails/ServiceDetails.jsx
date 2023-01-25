@@ -18,6 +18,8 @@ import visual from "../../../../../asstes/Images/visual.png";
 import WebApp from "../../../../../asstes/Images/WebApp.png";
 import speakLogo from "../../../../../asstes/Lotties/speak.json";
 import useCaseStudy from "../../../../Shared/Hooks/useCaseStudy";
+import useClientSpeak from "../../../../Shared/Hooks/useClientSpeak";
+import Icons from "../../../../Shared/Icons";
 import { handleFetchServiceById } from "../../../../Shared/services";
 
 const ServiceDetails = ({ setLoader }) => {
@@ -30,6 +32,7 @@ const ServiceDetails = ({ setLoader }) => {
   const [serviceDetails, setServiceDetails] = useState();
   const [capabilityMenus, setCapabilityMenus] = useState([]);
   const [caseStudies] = useCaseStudy();
+  const [clientSpeak] = useClientSpeak();
 
   useEffect(() => {
     synth.cancel();
@@ -52,7 +55,7 @@ const ServiceDetails = ({ setLoader }) => {
     }
   };
 
-  console.log(slug);
+  console.log(clientSpeak);
 
   useEffect(() => {
     setCapabilityMenus(serviceDetails?.services_capabilities_menu?.split(","));
@@ -60,7 +63,7 @@ const ServiceDetails = ({ setLoader }) => {
 
   return (
     <>
-    {/* For SEO */}
+      {/* For SEO */}
       <Helmet>
         <meta charSet="utf-8" />
         <title>{serviceDetailsContent[`${slug}`]?.metaTitle}</title>
@@ -74,8 +77,16 @@ const ServiceDetails = ({ setLoader }) => {
         />
       </Helmet>
 
-
       <div className="blog_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
+        <div className="mb-10">
+          <Icons.GoBackArrow
+            className="w-6 font-semibold cursor-pointer"
+            onClick={() => {
+              navigate(`../#services`, { replace: true });
+            }}
+          />
+        </div>
+
         <h1 className="text-4xl font-bold leading-10 mb-10 font_title">
           {serviceDetails?.service_name}
         </h1>
@@ -87,7 +98,7 @@ const ServiceDetails = ({ setLoader }) => {
 
             <Tooltip
               placement="top"
-              title={`Click to "Read". Double Click to "Stop"`}
+              title={`Click to "Listen". Double Click to "Stop"`}
               color={"#8F00FF"}
             >
               <button
@@ -146,7 +157,7 @@ const ServiceDetails = ({ setLoader }) => {
 
             <Tooltip
               placement="top"
-              title={`Click to "Read". Double Click to "Stop"`}
+              title={`Click to "Listen". Double Click to "Stop"`}
               color={"#8F00FF"}
             >
               <button
@@ -336,7 +347,7 @@ const ServiceDetails = ({ setLoader }) => {
 
             <Tooltip
               placement="top"
-              title={`Click to "Read". Double Click to "Stop"`}
+              title={`Click to "Listen". Double Click to "Stop"`}
               color={"#8F00FF"}
             >
               <button
@@ -379,7 +390,7 @@ const ServiceDetails = ({ setLoader }) => {
 
               <Tooltip
                 placement="top"
-                title={`Click to "Read". Double Click to "Stop"`}
+                title={`Click to "Listen". Double Click to "Stop"`}
                 color={"#8F00FF"}
               >
                 <button
@@ -461,24 +472,21 @@ const ServiceDetails = ({ setLoader }) => {
                 arrows={false}
                 {...clientSpeakSettings}
               >
-                {caseStudies?.map((casestudy, i) => (
+                {clientSpeak?.map((client, i) => (
                   <div className="p-6">
                     <div className="border rounded-2xl p-4 hover:bg-white hover:bg-opacity-10 hover:delay-200">
                       <img
                         src={
-                          process.env.REACT_APP_ASSETS_URL +
-                          "/" +
-                          casestudy?.com_image
+                          process.env.REACT_APP_ASSETS_URL + "/" + client?.image
                         }
                         alt=""
                         className="relative w-10 h-10 -top-8 left-4 rounded-full"
                       />
                       <div className="text-center text-white py-2">
-                        A software development company in Dhaka. They also work
-                        related to AI, IOT, Digital Marketing services.
+                        {client?.description}
                       </div>
                       <div className="text-end text-white py-2">
-                        Md Antor Ahmed
+                        {client?.name}, {client?.designation}
                       </div>
                     </div>
                   </div>

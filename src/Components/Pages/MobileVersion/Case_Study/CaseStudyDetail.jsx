@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import Icons from "../../../Shared/Icons";
-import PhoneOuterBody from "../../../../asstes/Images/PhoneBody.svg";
-import Marble from "../../../../asstes/Images/marble.png";
-import Brand1 from "../../../../asstes/Images/brand11.png";
-import Brand2 from "../../../../asstes/Images/brand22.png";
-import Brand3 from "../../../../asstes/Images/brand33.png";
-import Brand4 from "../../../../asstes/Images/brand44.png";
-import { handleFetchCaseStudyBySlug } from "../../../Shared/services";
 import Lottie from "lottie-react";
+import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+import { Link, useParams } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
+import Icons from "../../../Shared/Icons";
+import { handleFetchCaseStudyBySlug } from "../../../Shared/services";
 
 const CaseStudyDetail = () => {
   const { slug } = useParams();

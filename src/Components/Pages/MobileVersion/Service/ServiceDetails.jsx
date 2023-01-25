@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
-import Mobile from "../../../../asstes/Images/mobile.png";
 // import Icons from "../../../Shared/Icons";
 import CountUp from "react-countup";
 // import Work2 from "../../../../asstes/Images/case-study-2.png";
@@ -20,12 +19,11 @@ import usability from "../../../../asstes/Images/useability.png";
 import visual from "../../../../asstes/Images/visual.png";
 import WebApp from "../../../../asstes/Images/WebApp.png";
 
+import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
 import { handleFetchServiceBySlug } from "../../../Shared/services";
-import Lottie from "lottie-react";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
-
 
 const ServiceDetails = () => {
   const navigate = useNavigate();
@@ -43,12 +41,12 @@ const ServiceDetails = () => {
     (async () => {
       const fetchServicedata = await handleFetchServiceBySlug(slug);
       console.log("local", fetchServicedata);
-      if(fetchServicedata.status === 200){
+      if (fetchServicedata.status === 200) {
         setTimeout(() => {
           setLoader(false);
           setService(fetchServicedata.data);
         }, 5000);
-      }else{
+      } else {
         setLoader(true);
       }
       console.log("service data", Service);
@@ -60,7 +58,7 @@ const ServiceDetails = () => {
     setCapabilities(cap_array);
   }, [Service]);
 
-/*     useEffect(() => {
+  /*     useEffect(() => {
     if (Service !== "") {
       setTimeout(() => {
         setLoader(false);
@@ -345,29 +343,32 @@ const ServiceDetails = () => {
 
         {/* People Talk About Us SLIDER SECTION */}
         <div className="text-2xl pb-5">People Talk About Us</div>
-        <div className="max-w-[350px] max-h-[350px] m-auto text-white pb-4">
-          <Slider ref={ReviewsSlider} arrows={false} {...settings}>
-            {ClientSpeak.map((details) => (
-              <div>
-                <div className="h-[350px] border rounded-2xl p-4 my-6 mx-2">
-                  <img
-                    src={
-                      process.env.REACT_APP_ASSETS_URL + "/" + details?.image
-                    }
-                    alt=""
-                    className="bg-white w-14 h-14 relative -top-10 left-4 rounded-full"
-                  />
-                  <div
-                    className="text-justify font-thin"
-                    dangerouslySetInnerHTML={{ __html: details?.description }}
-                  ></div>
-                  <div className="text-end text-white py-2">
-                    -{details?.name}
+        <div className="pb-10">
+          <div className="max-w-[350px] max-h-[350px] m-auto text-white pb-4">
+            <Slider ref={ReviewsSlider} arrows={false} {...settings}>
+              {ClientSpeak.map((details) => (
+                <div>
+                  <div className="min-h-[400px] border rounded-2xl p-4 my-6 mx-2">
+                    <img
+                      src={
+                        process.env.REACT_APP_ASSETS_URL + "/" + details?.image
+                      }
+                      alt=""
+                      className="bg-white w-14 h-14 relative -top-10 left-4 rounded-full"
+                    />
+                    <div
+                      className="text-justify font-thin"
+                      dangerouslySetInnerHTML={{ __html: details?.description }}
+                    ></div>
+                    <div className="text-end text-white py-2">
+                      -{details?.name}
+                      <br />
+                      {details?.designation}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-            {/*           <div>
+              ))}
+              {/*           <div>
             <div className="border rounded-2xl p-4 m-4">
             <img
                 src={Avatar}
@@ -382,7 +383,8 @@ const ServiceDetails = () => {
               <div className="text-end text-white py-2">Md Antor Ahmed</div>
               </div>
             </div> */}
-          </Slider>
+            </Slider>
+          </div>
         </div>
       </div>
     </>
@@ -422,8 +424,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "THE BEST SOLUTIONS SUITED TO YOUR NEEDS ",
-        tagline: "Our services are client-centered", 
-      }
+        tagline: "Our services are client-centered",
+      },
     ],
     bestService: [
       {
@@ -479,8 +481,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "USER-FRIENDLY SOLUTIONS TO DEVELOP SUPERB WEBSITES",
-        tagline: "Our web development features are intuitive and reliable", 
-      }
+        tagline: "Our web development features are intuitive and reliable",
+      },
     ],
     bestService: [
       {
@@ -536,8 +538,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "RELIABLE AND USER-FRIENDLY MOBILE APPLICATIONS",
-        tagline: "Combining Innovative and Intuitive Features", 
-      }
+        tagline: "Combining Innovative and Intuitive Features",
+      },
     ],
     bestService: [
       {
@@ -593,8 +595,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
-        tagline: "Advanced Software Development Technologies and Services", 
-      }
+        tagline: "Advanced Software Development Technologies and Services",
+      },
     ],
     bestService: [
       {
@@ -650,8 +652,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "SMART AI AND IOT SOLUTIONS DESIGNED FOR YOUR NEEDS ",
-        tagline: "Powerful AI Technologies and Innovative IoT Services", 
-      }
+        tagline: "Powerful AI Technologies and Innovative IoT Services",
+      },
     ],
     bestService: [
       {

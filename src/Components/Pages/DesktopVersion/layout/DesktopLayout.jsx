@@ -285,7 +285,7 @@ const DesktopLayout = () => {
                 : "w-0 transition-all delay-700 ease-in-out"
             } transition-all delay-700 ease-in-out absolute top-0 right-0 z-50 flex items-center font_title`}
             // message="Alert"
-            description="Are you willing to explore far?"
+            description="Enable Sound and Experience Beyond?"
             type="warning"
             action={
               <Space direction="vertical" className="ml-4 flex items-center">

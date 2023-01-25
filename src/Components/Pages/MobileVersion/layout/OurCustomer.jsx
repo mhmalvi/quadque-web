@@ -1,10 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Atr from "../../../../asstes/Images/atr.png";
-import Otobi from "../../../../asstes/Images/otobi.png";
-import Nta from "../../../../asstes/Images/nta.png";
-import ibm from "../../../../asstes/Images/ibm.png";
-import Toptrip from "../../../../asstes/Images/toptrip.png";
-import Officemate from "../../../../asstes/Images/officemate.png";
+import React, { useEffect, useState } from "react";
+// import Otobi from "../../../../asstes/Images/otobi.png";
 import "../../MobileVersion/MobileView.css";
 
 import { handleFetchClients } from "../../../Shared/services";
