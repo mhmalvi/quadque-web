@@ -165,12 +165,16 @@ const CaseStudyDetail = () => {
         </div>
 
         {/* SECTION 4 */}
-        <div className={`pb-13 ${!caseData?.agency ? "hidden" : "block" }`}>
+        <div className={`pb-13 ${!caseData?.agency ? "hidden" : "block"}`}>
           <div className="text-2xl text-center pb-13">
             Creative Digital Marketing Agency
           </div>
           <div className="flex flex-wrap justify-center gap-1">
-            <img src={caseData?.agency} alt="" className="w-[90%]" />
+            <img
+              src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.agency}
+              alt=""
+              className="w-[90%]"
+            />
             {/* <img src={Brand2} alt="" className="w-1/4" />
             <img src={Brand3} alt="" className="w-1/4" />
             <img src={Brand4} alt="" className="w-1/4" />
