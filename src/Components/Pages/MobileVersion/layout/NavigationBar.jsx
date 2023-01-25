@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import { Button, Modal } from "antd";
-import Icons from "../../../Shared/Icons";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../../../asstes/Images/bg-logo-shadow.png";
+import Icons from "../../../Shared/Icons";
 
 const App = () => {
   const [open, setOpen] = useState(false);
