@@ -1,27 +1,28 @@
 import { Modal, Tooltip } from "antd";
-import React, { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import React, { useState } from "react";
 import siteAudio from "../../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../../asstes/Images/unmute.png";
+import loaderFile from "../../../../../asstes/Lotties/loader.json";
+import useAudio from "../../../../Shared/Hooks/useAudio";
 import Icons from "../../../../Shared/Icons";
 import Navbar from "../../Navbar";
 import BlogDetails from "./BlogDetails";
-import loaderFile from "../../../../../asstes/Lotties/loader.json";
-import Lottie from "lottie-react";
 
 const BlogDetailsLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
-  const [muted, setMuted] = useState(false);
   const [loader, setLoader] = useState(true);
+  const [playing, toggle] = useAudio();
 
-  useEffect(() => {
-    if (muted) {
-      document.getElementById("iframeAudio").src = "";
-    } else {
-      document.getElementById("iframeAudio").src = siteAudio;
-    }
-  }, [muted]);
+  // useEffect(() => {
+  //   if (muted) {
+  //     document.getElementById("iframeAudio").src = "";
+  //   } else {
+  //     document.getElementById("iframeAudio").src = siteAudio;
+  //   }
+  // }, [muted]);
 
   return (
     <div className="blog_details w-full h-full">
@@ -151,15 +152,18 @@ const BlogDetailsLayout = () => {
 
         <div className="relative">
           <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
-            {muted ? (
+            {playing ? (
               <div className="w-8">
                 <Tooltip title="Unmute Sound" placement="left" color="#8F00FF">
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
-                    src={unmuteImg}
-                    onClick={() => setMuted(false)}
+                    src={muteImg}
                     alt=""
+                    onClick={() => {
+                      toggle();
+                      // setShowSoundAlert(false);
+                    }}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>
@@ -170,8 +174,11 @@ const BlogDetailsLayout = () => {
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
-                    src={muteImg}
-                    onClick={() => setMuted(true)}
+                    src={unmuteImg}
+                    onClick={() => {
+                      toggle();
+                      // setShowSoundAlert(false);
+                    }}
                     alt=""
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>

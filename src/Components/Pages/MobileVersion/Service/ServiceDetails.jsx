@@ -26,7 +26,6 @@ import { handleFetchServiceBySlug } from "../../../Shared/services";
 import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 
-
 const ServiceDetails = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
@@ -43,12 +42,12 @@ const ServiceDetails = () => {
     (async () => {
       const fetchServicedata = await handleFetchServiceBySlug(slug);
       console.log("local", fetchServicedata);
-      if(fetchServicedata.status === 200){
+      if (fetchServicedata.status === 200) {
         setTimeout(() => {
           setLoader(false);
           setService(fetchServicedata.data);
         }, 5000);
-      }else{
+      } else {
         setLoader(true);
       }
       console.log("service data", Service);
@@ -60,7 +59,7 @@ const ServiceDetails = () => {
     setCapabilities(cap_array);
   }, [Service]);
 
-/*     useEffect(() => {
+  /*     useEffect(() => {
     if (Service !== "") {
       setTimeout(() => {
         setLoader(false);
@@ -84,19 +83,25 @@ const ServiceDetails = () => {
         <title>{`Services`}</title>
         {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
       </Helmet>
-        {loader ? (
-          <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
-            <Lottie
-              className="w-1/2 mx-auto"
-              animationData={loaderFile}
-              loop={true}
-            />
+      {loader ? (
+        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+          <Lottie
+            className="w-1/2 mx-auto"
+            animationData={loaderFile}
+            loop={true}
+          />
 
-            <div className="font_title text-white animate-pulse">Loading...</div>
-          </div>
-        ) : null}
-      <div className={`w-full h-auto mt-30 text-white px-6 ${!Service ? "scale-0" : ""}`}>
-        <h1 className="font_title text-3xl font-bold pb-5">{Service?.service_name}</h1>
+          <div className="font_title text-white animate-pulse">Loading...</div>
+        </div>
+      ) : null}
+      <div
+        className={`w-full h-auto mt-30 text-white px-6 ${
+          !Service ? "scale-0" : ""
+        }`}
+      >
+        <h1 className="font_title text-3xl font-bold pb-5">
+          {Service?.service_name}
+        </h1>
         <div className="font-semibold pb-2">{Service?.service_title}</div>
         <div className="text-sm text-justify pb-2">{Service?.description}</div>
 
@@ -194,13 +199,17 @@ const ServiceDetails = () => {
         {/* BEST FOR YOU SECTION */}
 
         <div>
-          {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map((content, i) => 
-            <>
-              <div className="text-sm text-center uppercase pb-1">{content?.title}</div>
-              <div className="text-2xl text-center pb-13">
-                {content?.tagline}
-              </div>
-            </>
+          {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map(
+            (content, i) => (
+              <>
+                <div className="text-sm text-center uppercase pb-1">
+                  {content?.title}
+                </div>
+                <div className="text-2xl text-center pb-13">
+                  {content?.tagline}
+                </div>
+              </>
+            )
           )}
           {serviceDetailsContent[`${slug}`].bestService?.map((service, i) => (
             <div className="pb-10">
@@ -329,27 +338,32 @@ const ServiceDetails = () => {
 
         {/* People Talk About Us SLIDER SECTION */}
         <div className="text-2xl pb-5">People Talk About Us</div>
-        <div className="max-w-[350px] max-h-[350px] m-auto text-white pb-4">
-          <Slider ref={ReviewsSlider} arrows={false} {...settings}>
-            {ClientSpeak.map((details) => (
-              <div>
-                <div className="h-[350px] border rounded-2xl p-4 my-6 mx-2">
-                  <img
-                    src={details?.image}
-                    alt=""
-                    className="bg-white w-14 h-14 relative -top-10 left-4 rounded-full"
-                  />
-                  <div
-                    className="text-justify font-thin"
-                    dangerouslySetInnerHTML={{ __html: details?.description }}
-                  ></div>
-                  <div className="text-end text-white py-2">
-                    -{details?.name}
+        <div className="pb-10">
+          <div className="max-w-[350px] max-h-[350px] m-auto text-white pb-4">
+            <Slider ref={ReviewsSlider} arrows={false} {...settings}>
+              {ClientSpeak.map((details) => (
+                <div>
+                  <div className="min-h-[400px] border rounded-2xl p-4 my-6 mx-2">
+                    <img
+                      src={
+                        process.env.REACT_APP_ASSETS_URL + "/" + details?.image
+                      }
+                      alt=""
+                      className="bg-white w-14 h-14 relative -top-10 left-4 rounded-full"
+                    />
+                    <div
+                      className="text-justify font-thin"
+                      dangerouslySetInnerHTML={{ __html: details?.description }}
+                    ></div>
+                    <div className="text-end text-white py-2">
+                      -{details?.name}
+                      <br />
+                      {details?.designation}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-            {/*           <div>
+              ))}
+              {/*           <div>
             <div className="border rounded-2xl p-4 m-4">
             <img
                 src={Avatar}
@@ -364,7 +378,8 @@ const ServiceDetails = () => {
               <div className="text-end text-white py-2">Md Antor Ahmed</div>
               </div>
             </div> */}
-          </Slider>
+            </Slider>
+          </div>
         </div>
       </div>
     </>
@@ -404,8 +419,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "THE BEST SOLUTIONS SUITED TO YOUR NEEDS ",
-        tagline: "Our services are client-centered", 
-      }
+        tagline: "Our services are client-centered",
+      },
     ],
     bestService: [
       {
@@ -461,8 +476,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "USER-FRIENDLY SOLUTIONS TO DEVELOP SUPERB WEBSITES",
-        tagline: "Our web development features are intuitive and reliable", 
-      }
+        tagline: "Our web development features are intuitive and reliable",
+      },
     ],
     bestService: [
       {
@@ -518,8 +533,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "RELIABLE AND USER-FRIENDLY MOBILE APPLICATIONS",
-        tagline: "Combining Innovative and Intuitive Features", 
-      }
+        tagline: "Combining Innovative and Intuitive Features",
+      },
     ],
     bestService: [
       {
@@ -575,8 +590,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
-        tagline: "Advanced Software Development Technologies and Services", 
-      }
+        tagline: "Advanced Software Development Technologies and Services",
+      },
     ],
     bestService: [
       {
@@ -632,8 +647,8 @@ const serviceDetailsContent = {
     bestServiceTitle: [
       {
         title: "SMART AI AND IOT SOLUTIONS DESIGNED FOR YOUR NEEDS ",
-        tagline: "Powerful AI Technologies and Innovative IoT Services", 
-      }
+        tagline: "Powerful AI Technologies and Innovative IoT Services",
+      },
     ],
     bestService: [
       {
