@@ -2,26 +2,21 @@ import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
+import bkash from "../../../../asstes/Images/bkash.png";
 import itec from "../../../../asstes/Images/itec.png";
 import nta from "../../../../asstes/Images/nta.png";
-import bkash from "../../../../asstes/Images/bkash.png";
 import uct from "../../../../asstes/Images/uct.png";
-// import harbour from "../../../../asstes/Images/harbour.png";
-import tel from "../../../../asstes/Images/tel.png";
-import esi from "../../../../asstes/Images/esi.png";
-import blue from "../../../../asstes/Images/blue.png";
-import atr from "../../../../asstes/Images/atr.png";
-import alpha from "../../../../asstes/Images/alpha.png";
-import ibm from "../../../../asstes/Images/ibm.png";
 import aia from "../../../../asstes/Images/aia.png";
+import alpha from "../../../../asstes/Images/alpha.png";
+import atr from "../../../../asstes/Images/atr.png";
+import blue from "../../../../asstes/Images/blue.png";
+import esi from "../../../../asstes/Images/esi.png";
+import ibm from "../../../../asstes/Images/ibm.png";
+import tel from "../../../../asstes/Images/tel.png";
 import topTrip from "../../../../asstes/Images/toptrip.png";
 import us from "../../../../asstes/Images/us.png";
-
-import sp from "../../../../asstes/Images/sp.png";
-import ts from "../../../../asstes/Images/TESLA.png";
-
-import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const Cleints = () => {
   const [count, setCount] = useState(false);
