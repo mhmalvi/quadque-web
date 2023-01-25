@@ -28,7 +28,7 @@ const StartProject = () => {
   useEffect(() => {
     if (location.hash === "#start-project") {
       synth.cancel();
-      
+
       setTimeout(() => {
         setLoader(false);
         setTriggerAnimation(true);
@@ -231,13 +231,21 @@ const StartProject = () => {
                 >
                   <Fade left cascade spy={triggerAnimation}>
                     <span
-                      className={`max-w-[14px] max-h-[14px] border px-[7px] mr-2.5 ${
+                      className={`max-w-[10px] px-1 py-[2.5px] max-h-[8px] border mr-2.5 ${
                         activeSubServices.includes(subService)
-                          ? "bg-brand-color border-gray-500"
+                          ? "border-brand-color"
                           : "border-white"
                       }`}
                     >
-                      &nbsp;
+                      <span
+                        className={`max-w-[6px] max-h-[5px] px-[7px] ${
+                          activeSubServices.includes(subService)
+                            ? "bg-brand-color border-gray-500"
+                            : "border-white"
+                        }`}
+                      >
+                        &nbsp;
+                      </span>
                     </span>
                     <span className="text-sm 2xl:text-base font-normal leading-5 capitalize">
                       {subService}

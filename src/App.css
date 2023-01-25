@@ -1,6 +1,6 @@
-body {
+/* body {
   cursor: url(asstes/Images/cursor.svg), auto;
-}
+} */
 
 /* Global Fonts */
 .font_poppins {
@@ -417,10 +417,10 @@ body::-webkit-scrollbar {
   padding: 1rem 2rem 6rem 2rem;
 }
 
-.blog_details_section > img {
-  width: 90% !important;
-  /* height: 100% !important; */
-  margin: auto;
+.blog_details_section img {
+  width: 100% !important;
+  height: 100% !important;
+  margin: auto auto;
 }
 
 .blog_details_section blockquote {

@@ -54,7 +54,7 @@ const Services = () => {
       }
       setActiveService(services[i]?.service_name);
       // setLoader(true);
-    }, 10000);
+    }, 15000);
   }, [services]);
 
   // console.log("services", services);

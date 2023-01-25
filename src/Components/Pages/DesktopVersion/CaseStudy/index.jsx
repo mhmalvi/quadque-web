@@ -78,14 +78,21 @@ const CaseStudy = () => {
             </h1>
           </Fade>
           <div
-            className="lg:text-sm 2xl:text-base leading-5 text-white ml-4 font-light"
+            className="max-w-[280px] xl:max-w-[400px] text-justify lg:text-sm 2xl:text-base leading-5 text-white ml-4 font-light"
             style={{
               letterSpacing: "0.04em",
+              wordBreak: "keep-all",
             }}
           >
             <Fade left cascade spy={triggerTitleAnimation}>
-              <div>We create premium web</div>
-              <div>design, though and user</div>
+              <div className="break-keep">
+                Let’s have a look at some of our interesting case study
+                examples.
+              </div>
+              <div className="break-keep">
+                These case studies will let you better understand how we tackle
+                critical challenges to help companies grow.
+              </div>
             </Fade>
           </div>
         </div>

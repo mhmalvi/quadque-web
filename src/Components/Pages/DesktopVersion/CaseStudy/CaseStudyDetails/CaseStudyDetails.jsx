@@ -47,6 +47,15 @@ const CaseStudyDetails = ({ setLoader }) => {
       </Helmet>
 
       <div className="case_study_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
+        <div className="mb-10">
+          <Icons.GoBackArrow
+            className="w-6 font-semibold cursor-pointer"
+            onClick={() => {
+              navigate(`../#case-study`, { replace: true });
+            }}
+          />
+        </div>
+
         <h1 className="max-w-4xl mx-auto text-4xl font-bold leading-10 my-10 text-center font_title">
           {caseStudyDetails?.our_content_header}
         </h1>
@@ -126,7 +135,7 @@ const CaseStudyDetails = ({ setLoader }) => {
 
               <Tooltip
                 placement="top"
-                title={`Click to "Read". Double Click to "Stop"`}
+                title={`Click to "Listen". Double Click to "Stop"`}
                 color={"#8F00FF"}
               >
                 <button
@@ -268,10 +277,17 @@ const CaseStudyDetails = ({ setLoader }) => {
 
             <div className="w-1/2">
               <h1 className="text-3xl leading-12 font-semibold">
-                {caseStudyDetails?.title_3}
+                {/* {caseStudyDetails?.title_3} */}
+                WHO WE ARE
               </h1>
               <h4 className="mt-8 text-justify">
-                {caseStudyDetails?.description_3}
+                {/* {caseStudyDetails?.description_3} */}
+                Quadque is the best digital partner for every kind of web
+                service, software development, and digital marketing solution.
+                We are working with the world’s leading enterprises, SMEs, and
+                technology challenges. We help many businesses to increase their
+                valuations through custom software development, identity design,
+                digital marketing services, and AI & IOT implications.
               </h4>
               <div className="flex items-center pt-8">
                 <button

@@ -67,7 +67,7 @@ const ClientSpeak = () => {
 
             <div className="lg:w-[423px] 2xl:w-98 mr-9 relative">
               <h3
-                className="lg:text-sm 2xl:text-lg font-normal capitalize text-justify"
+                className="lg:text-sm 2xl:text-lg break-keep font-normal capitalize text-justify"
                 style={{
                   letterSpacing: "0.04em",
                 }}
