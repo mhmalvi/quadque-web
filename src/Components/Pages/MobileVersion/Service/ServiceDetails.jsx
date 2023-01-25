@@ -37,7 +37,7 @@ const ServiceDetails = () => {
   const [Service, setService] = useState();
   const [capabilities, setCapabilities] = useState();
   const [loader, setLoader] = useState(true);
-  //console.log(Service);
+  console.log(Service);
 
   useEffect(() => {
     (async () => {
@@ -84,19 +84,25 @@ const ServiceDetails = () => {
         <title>{`Services`}</title>
         {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
       </Helmet>
-        {loader ? (
-          <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
-            <Lottie
-              className="w-1/2 mx-auto"
-              animationData={loaderFile}
-              loop={true}
-            />
+      {loader ? (
+        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+          <Lottie
+            className="w-1/2 mx-auto"
+            animationData={loaderFile}
+            loop={true}
+          />
 
-            <div className="font_title text-white animate-pulse">Loading...</div>
-          </div>
-        ) : null}
-      <div className={`w-full h-auto mt-30 text-white px-6 ${!Service ? "scale-0" : ""}`}>
-        <h1 className="font_title text-3xl font-bold pb-5">{Service?.service_name}</h1>
+          <div className="font_title text-white animate-pulse">Loading...</div>
+        </div>
+      ) : null}
+      <div
+        className={`w-full h-auto mt-30 text-white px-6 ${
+          !Service ? "scale-0" : ""
+        }`}
+      >
+        <h1 className="font_title text-3xl font-bold pb-5">
+          {Service?.service_name}
+        </h1>
         <div className="font-semibold pb-2">{Service?.service_title}</div>
         <div className="text-sm text-justify pb-2">{Service?.description}</div>
 
@@ -109,7 +115,11 @@ const ServiceDetails = () => {
 
         <div className="py-13">
           <div>
-            <img src={Mobile} alt="" className="w-[70%] m-auto" />
+            <img
+              src={process.env.REACT_APP_ASSETS_URL + "/" + Service?.file}
+              alt=""
+              className="w-[80%] m-auto"
+            />
           </div>
         </div>
 
@@ -194,13 +204,17 @@ const ServiceDetails = () => {
         {/* BEST FOR YOU SECTION */}
 
         <div>
-          {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map((content, i) => 
-            <>
-              <div className="text-sm text-center uppercase pb-1">{content?.title}</div>
-              <div className="text-2xl text-center pb-13">
-                {content?.tagline}
-              </div>
-            </>
+          {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map(
+            (content, i) => (
+              <>
+                <div className="text-sm text-center uppercase pb-1">
+                  {content?.title}
+                </div>
+                <div className="text-2xl text-center pb-13">
+                  {content?.tagline}
+                </div>
+              </>
+            )
           )}
           {serviceDetailsContent[`${slug}`].bestService?.map((service, i) => (
             <div className="pb-10">
@@ -309,7 +323,9 @@ const ServiceDetails = () => {
                 }
               >
                 <img
-                  src={details?.com_image}
+                  src={
+                    process.env.REACT_APP_ASSETS_URL + "/" + details?.com_image
+                  }
                   alt=""
                   className="w-full rounded-2xl"
                 />
@@ -335,7 +351,9 @@ const ServiceDetails = () => {
               <div>
                 <div className="h-[350px] border rounded-2xl p-4 my-6 mx-2">
                   <img
-                    src={details?.image}
+                    src={
+                      process.env.REACT_APP_ASSETS_URL + "/" + details?.image
+                    }
                     alt=""
                     className="bg-white w-14 h-14 relative -top-10 left-4 rounded-full"
                   />
