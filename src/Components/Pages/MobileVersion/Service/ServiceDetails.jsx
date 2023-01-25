@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
-import Mobile from "../../../../asstes/Images/mobile.png";
 // import Icons from "../../../Shared/Icons";
 import CountUp from "react-countup";
 // import Work2 from "../../../../asstes/Images/case-study-2.png";
@@ -20,11 +19,11 @@ import usability from "../../../../asstes/Images/useability.png";
 import visual from "../../../../asstes/Images/visual.png";
 import WebApp from "../../../../asstes/Images/WebApp.png";
 
+import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
 import { handleFetchServiceBySlug } from "../../../Shared/services";
-import Lottie from "lottie-react";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const ServiceDetails = () => {
   const navigate = useNavigate();
@@ -36,7 +35,6 @@ const ServiceDetails = () => {
   const [Service, setService] = useState();
   const [capabilities, setCapabilities] = useState();
   const [loader, setLoader] = useState(true);
-  //console.log(Service);
 
   useEffect(() => {
     (async () => {
@@ -50,9 +48,8 @@ const ServiceDetails = () => {
       } else {
         setLoader(true);
       }
-      console.log("service data", Service);
     })();
-  }, [slug]);
+  }, [ slug]);
 
   useEffect(() => {
     const cap_array = Service?.services_capabilities_menu.split(",");
@@ -114,7 +111,11 @@ const ServiceDetails = () => {
 
         <div className="py-13">
           <div>
-            <img src={Mobile} alt="" className="w-[70%] m-auto" />
+            <img
+              src={process.env.REACT_APP_ASSETS_URL + "/" + Service?.file}
+              alt=""
+              className="w-[80%] m-auto"
+            />
           </div>
         </div>
 
@@ -318,7 +319,9 @@ const ServiceDetails = () => {
                 }
               >
                 <img
-                  src={details?.com_image}
+                  src={
+                    process.env.REACT_APP_ASSETS_URL + "/" + details?.com_image
+                  }
                   alt=""
                   className="w-full rounded-2xl"
                 />

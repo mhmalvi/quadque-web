@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
-import Icons from "../../../Shared/Icons";
-import PhoneOuterBody from "../../../../asstes/Images/PhoneBody.svg";
-import Marble from "../../../../asstes/Images/marble.png";
-import Brand1 from "../../../../asstes/Images/brand11.png";
-import Brand2 from "../../../../asstes/Images/brand22.png";
-import Brand3 from "../../../../asstes/Images/brand33.png";
-import Brand4 from "../../../../asstes/Images/brand44.png";
-import { handleFetchCaseStudyBySlug } from "../../../Shared/services";
 import Lottie from "lottie-react";
+import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+import { Link, useParams } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
+import Icons from "../../../Shared/Icons";
+import { handleFetchCaseStudyBySlug } from "../../../Shared/services";
 
 const CaseStudyDetail = () => {
   const { slug } = useParams();
@@ -165,12 +159,16 @@ const CaseStudyDetail = () => {
         </div>
 
         {/* SECTION 4 */}
-        <div className={`pb-13 ${!caseData?.agency ? "hidden" : "block" }`}>
+        <div className={`pb-13 ${!caseData?.agency ? "hidden" : "block"}`}>
           <div className="text-2xl text-center pb-13">
             Creative Digital Marketing Agency
           </div>
           <div className="flex flex-wrap justify-center gap-1">
-            <img src={caseData?.agency} alt="" className="w-[90%]" />
+            <img
+              src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.agency}
+              alt=""
+              className="w-[90%]"
+            />
             {/* <img src={Brand2} alt="" className="w-1/4" />
             <img src={Brand3} alt="" className="w-1/4" />
             <img src={Brand4} alt="" className="w-1/4" />
