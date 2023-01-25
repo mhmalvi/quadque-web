@@ -1,12 +1,13 @@
+import { Tooltip } from "antd";
+import Lottie from "lottie-react";
 import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import useBlogs from "../../../../Shared/Hooks/useBlog";
-import { handleFetchBlogBySlug } from "../../../../Shared/services";
-import Lottie from "lottie-react";
-import speakLogo from "../../../../../asstes/Lotties/speak.json";
 import { useSpeechSynthesis } from "react-speech-kit";
-import { Tooltip } from "antd";
+import speakLogo from "../../../../../asstes/Lotties/speak.json";
+import useBlogs from "../../../../Shared/Hooks/useBlog";
+import Icons from "../../../../Shared/Icons";
+import { handleFetchBlogBySlug } from "../../../../Shared/services";
 
 const BlogDetails = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -75,6 +76,15 @@ const BlogDetails = ({ setLoader }) => {
         className="blog_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font-poppins"
         ref={blogdetailsRef}
       >
+        <div className="mb-10">
+          <Icons.GoBackArrow
+            className="w-6 font-semibold cursor-pointer"
+            onClick={() => {
+              navigate(`../#blogs`, { replace: true });
+            }}
+          />
+        </div>
+
         <div>
           <h4 className="text-lg font-normal leading-4 mb-3">
             {new Date(blogDetails?.created_at).toString().slice(0, 15)}
@@ -89,7 +99,7 @@ const BlogDetails = ({ setLoader }) => {
 
           <Tooltip
             placement="top"
-            title={`Click to "Read". Double Click to "Stop"`}
+            title={`Click to "Listen". Double Click to "Stop"`}
             color={"#8F00FF"}
           >
             <button

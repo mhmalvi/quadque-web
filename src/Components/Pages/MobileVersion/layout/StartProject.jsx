@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { message } from "antd";
-import "../../MobileVersion/MobileView.css"
-import useServices from "../../../Shared/Hooks/useServices";
-import { handleSendMail } from "../../../Shared/services";
 import { Modal } from "antd";
 import Lottie from "lottie-react";
+import React, { useEffect, useState } from "react";
 import sucess from "../../../../asstes/Images/success.json";
+import useServices from "../../../Shared/Hooks/useServices";
+import { handleSendMail } from "../../../Shared/services";
+import "../../MobileVersion/MobileView.css";
 
 const StartProject = () => {
   const [Services] = useServices();

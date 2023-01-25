@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 // import Client from "../../../../asstes/Images/client.png";
 // import Case2 from "../../../../asstes/Images/case-study-2.png";
-import "../../MobileVersion/MobileView.css";
 import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
+import "../../MobileVersion/MobileView.css";
 
 import useClientSpeak from "../../../Shared/Hooks/useClientSpeak";
 
