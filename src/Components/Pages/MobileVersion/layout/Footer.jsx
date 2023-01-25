@@ -62,16 +62,16 @@ const Footer = () => {
 
       <div className="w-full flex justify-center py-5 gap-2">
         <a href="https://www.facebook.com/quadquetech/">
-          <Icons.FooterFacebook />
+          <Icons.FooterFacebook className="text-zinc-400 hover:text-brand-color" />
         </a>
         <a href="https://www.instagram.com/quadquetech/">
-          <Icons.FooterInstagram />
+          <Icons.FooterInstagram className="text-white hover:text-brand-color" />
         </a>
         <a href="https://twitter.com/QuadqueT">
-          <Icons.FooterTwitter />
+          <Icons.FooterTwitter className="text-white hover:text-brand-color" />
         </a>
         <a href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA">
-          <Icons.FooterYoutube />
+          <Icons.FooterYoutube className="text-white hover:text-brand-color" />
         </a>
       </div>
 
