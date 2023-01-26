@@ -7,6 +7,7 @@ import "../../MobileVersion/MobileView.css";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
+import Icons from "../../../Shared/Icons";
 
 import UI_UX from "../../../../asstes/Lotties/ux.json";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
@@ -74,7 +75,7 @@ const Services = () => {
         </div>
       ) : null}
       <div style={{ maxWidth: "90%", margin: "auto" }} {...PrimarySettings}>
-        <div>
+        <div className="relative">
           <Slider asNavFor={nav2} ref={slider1} arrows={false}>
             {Services?.map((details, index) => (
               <Link to={`services/${details.slug}`}>
@@ -114,25 +115,29 @@ const Services = () => {
             ))}
           </Slider>
 
-          <div className="w-3/4 m-auto flex justify-between pb-5">
-            <div className="font-semibold text-brand-color">
+          <div className="m-auto flex justify-between pb-5">
+            {/* <div className="font-semibold text-brand-color">
               <a href="#start-project">START PROJECT</a>
-            </div>
+            </div> */}
             <div
               onClick={() => slider1.current.slickPrev()}
               className="font-semibold"
             >
-              Prev
+              <Icons.RightArrow className="w-12 scale-x-[-1] " />
             </div>
             <div
               onClick={() => slider1.current.slickNext()}
               className="font-semibold"
             >
-              Next
+              <Icons.RightArrow className="w-12 " />
             </div>
           </div>
 
-          <Slider
+          <div className="text-center font-semibold text-brand-color animate-pulse">
+            <a href="#start-project">START PROJECT</a>
+          </div>
+
+          {/* <Slider
             asNavFor={nav1}
             ref={slider2}
             slidesToShow={1}
@@ -147,7 +152,7 @@ const Services = () => {
                 <span>{details.service_name}</span>
               </div>
             ))}
-          </Slider>
+          </Slider> */}
         </div>
       </div>
     </div>
