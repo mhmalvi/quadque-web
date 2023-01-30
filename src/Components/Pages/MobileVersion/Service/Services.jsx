@@ -17,10 +17,7 @@ import webDev from "../../../../asstes/Lotties/web_development.json";
 
 const Services = () => {
   const [Services] = useServices();
-  const [nav1, setNav1] = useState(null);
-  const [nav2, setNav2] = useState(null);
   const slider1 = useRef(null);
-  const slider2 = useRef(null);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -35,21 +32,16 @@ const Services = () => {
     }
   }, []);
 
-  useEffect(() => {
-    setNav1(slider1.current);
-    setNav2(slider2.current);
-  }, []);
 
   const PrimarySettings = {
-    dots: false,
-    infinite: true,
+    infinite: false,
     speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrow: false,
   };
 
-  const SecondarySettings = {
+/*   const SecondarySettings = {
     dots: true,
     infinite: true,
     speed: 200,
@@ -57,10 +49,10 @@ const Services = () => {
     arrow: false,
     className: "center",
     centerMode: true,
-  };
+  }; */
 
   return (
-    <div id="Service" className="Service w-full text-white">
+    <div id="Service" className="w-full text-white">
       {loader ? (
         <div className=" absolute w-full h-[90%] z-40 flex flex-col justify-center items-center bg-black">
           <Lottie
@@ -76,11 +68,11 @@ const Services = () => {
       ) : null}
       <div style={{ maxWidth: "90%", margin: "auto" }} {...PrimarySettings}>
         <div className="relative">
-          <Slider asNavFor={nav2} ref={slider1} arrows={false}>
+          <Slider ref={slider1} arrows={false} dots={true}>
             {Services?.map((details, index) => (
               <Link to={`services/${details.slug}`}>
                 <div key={index}>
-                  <div className="w-full h-100">
+                  <div className="w-full h-81">
                     {/* <lottie-player
                       
                       src={
@@ -100,7 +92,7 @@ const Services = () => {
                       alt={littieFilesAltTags[details?.service_name]}
                     />
                   </div>
-                  <h1 className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow">
+                  <h1 className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow pt-13">
                     {details.service_name}
                   </h1>
                   {/* <div className="m-auto text-center text-sm font-light pb-5 leading-6">
@@ -114,26 +106,26 @@ const Services = () => {
               </Link>
             ))}
           </Slider>
-
-          <div className="m-auto flex justify-between pb-5">
-            {/* <div className="font-semibold text-brand-color">
-              <a href="#start-project">START PROJECT</a>
-            </div> */}
-            <div
-              onClick={() => slider1.current.slickPrev()}
-              className="font-semibold"
-            >
-              <Icons.RightArrow className="w-12 scale-x-[-1] " />
-            </div>
-            <div
-              onClick={() => slider1.current.slickNext()}
-              className="font-semibold"
-            >
-              <Icons.RightArrow className="w-12 " />
-            </div>
+          {Services && 
+          <>
+          {/* <div className="m-auto flex justify-between pb-5"> */}
+          <div
+            onClick={() => slider1.current.slickPrev()}
+            className="arrowLeft absolute bottom-[300px] font-semibold"
+          >
+            {/* <Icons.RightArrow className="w-12 scale-x-[-1]" /> */}
           </div>
+          <div
+            onClick={() => slider1.current.slickNext()}
+            className="arrowRight absolute bottom-[300px] font-semibold"
+          >
+            {/* <Icons.RightArrow className="w-12" /> */}
+          </div>
+          {/* </div> */}
+          </>
+          }
 
-          <div className="text-center font-semibold text-brand-color animate-pulse">
+          <div className="text-center font-semibold text-brand-color animate-pulse pt-10">
             <a href="#start-project">START PROJECT</a>
           </div>
 
@@ -164,7 +156,7 @@ export default Services;
 const littieFiles = {
   "UI/UX": UI_UX,
   "AI & IoT Solutions": aIIot,
-  "Application Development": AppDev,
+  "Mobile App Development": AppDev,
   "Software Development": softDev,
   "Web Development": webDev,
 };
@@ -172,7 +164,7 @@ const littieFiles = {
 const littieFilesAltTags = {
   "UI/UX": "Ui & Ux Layout",
   "AI & IoT Solutions": "AI & IoT Solutions Layout",
-  "Application Development": "Application Development Layout",
+  "Mobile App Development": "Application Development Layout",
   "Software Development": "Software Development Layout",
   "Web Development": "Web Development Layout",
 };

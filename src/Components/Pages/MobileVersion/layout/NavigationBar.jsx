@@ -3,12 +3,24 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
 
-const App = () => {
+const NavigationBar = () => {
   const [open, setOpen] = useState(false);
   const genericHamburgerLine = `h-1 my-1 rounded-full bg-white transition ease transform duration-500 lg:hidden m-4`;
 
+  var prevScrollpos = window.pageYOffset;
+  console.log(prevScrollpos);
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("Navigation").style.top = "0";
+    } else {
+      document.getElementById("Navigation").style.top = "-70px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
-    <div className="Navigation fixed top-0 z-50">
+    <div id="Navigation" className="Navigation fixed top-0 z-50" style={{transition: "top 0.3s"}}>
       <div className="flex justify-between">
         <Link to="/">
           <div className="shrink-0 p-6">
@@ -91,4 +103,4 @@ const App = () => {
     </div>
   );
 };
-export default App;
+export default NavigationBar;

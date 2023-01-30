@@ -51,7 +51,7 @@ const StartProject = () => {
         "Magento Web Development",
         "Drupal Web Development",
       ]);
-    } else if (service_name === "Application Development") {
+    } else if (service_name === "Mobile App Development") {
       setToogleSubService([
         "Native Mobile App Development",
         "Hybrid Mobile App Development",
@@ -126,7 +126,7 @@ const StartProject = () => {
 
 
   return (
-    <div id="start-project" className="w-full text-white mt-20 mb-5">
+    <div id="start-project" className="w-full text-white pt-20 mb-5">
       
       <Modal
         style={{
@@ -245,13 +245,6 @@ const StartProject = () => {
           </button>
         </div>
       </form>
-
-      <div className="flex justify-end text-sm mx-6">
-        <p>
-          01765-276560 <br />
-          info@quadque.tech
-        </p>
-      </div>
     </div>
   );
 };

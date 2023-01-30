@@ -7,7 +7,7 @@ import Icons from "../../../Shared/Icons";
 import { message } from "antd";
 import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
-import "../MobileView.css"
+import "../MobileView.css";
 
 const BlogDetail = () => {
   const navigate = useNavigate();
@@ -18,9 +18,13 @@ const BlogDetail = () => {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     (async () => {
       const fetchBlog = await handleFetchBlogBySlug(slug);
-      console.log("fetch", fetchBlog)
+      console.log("fetch", fetchBlog);
       if (fetchBlog.status === 200) {
         setTimeout(() => {
           setLoader(false);
@@ -73,7 +77,7 @@ const BlogDetail = () => {
           <div className="font_title text-white animate-pulse">Loading...</div>
         </div>
       ) : null}
-      
+
       <div className={`w-full pt-30 ${!blogData ? "scale-0" : ""} `}>
         <img
           src={process.env.REACT_APP_ASSETS_URL + "/" + blogData?.thumbnail}
@@ -120,7 +124,9 @@ const BlogDetail = () => {
                   className="w-32"
                 >
                   <img
-                    src={process.env.REACT_APP_ASSETS_URL + "/" + post?.thumbnail}
+                    src={
+                      process.env.REACT_APP_ASSETS_URL + "/" + post?.thumbnail
+                    }
                     alt=""
                     className="w-36 h-36 rounded-lg mb-2"
                   />

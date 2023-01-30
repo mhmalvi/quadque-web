@@ -1,5 +1,5 @@
-import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
+import Lottie from "lottie-react";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
@@ -10,6 +10,10 @@ const CaseStudyDetail = () => {
   const { slug } = useParams();
   const [caseData, setCaseData] = useState();
   const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     (async () => {
