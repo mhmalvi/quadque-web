@@ -35,7 +35,6 @@ const ServiceDetails = () => {
   const [Service, setService] = useState();
   const [capabilities, setCapabilities] = useState();
   const [loader, setLoader] = useState(true);
-  console.log(Service);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -53,9 +52,8 @@ const ServiceDetails = () => {
       } else {
         setLoader(true);
       }
-      console.log("service data", Service);
     })();
-  }, [slug]);
+  }, [ slug]);
 
   useEffect(() => {
     const cap_array = Service?.services_capabilities_menu.split(",");

@@ -21,6 +21,7 @@ import useCaseStudy from "../../../../Shared/Hooks/useCaseStudy";
 import useClientSpeak from "../../../../Shared/Hooks/useClientSpeak";
 import Icons from "../../../../Shared/Icons";
 import { handleFetchServiceById } from "../../../../Shared/services";
+import Footer from "../../Footer";
 
 const ServiceDetails = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -99,7 +100,7 @@ const ServiceDetails = ({ setLoader }) => {
             <Tooltip
               placement="top"
               title={`Click to "Listen". Double Click to "Stop"`}
-              color={"#8F00FF"}
+              color={"rgba(90, 90, 90, 0.7)"}
             >
               <button
                 className="absolute -top-4 right-10"
@@ -158,7 +159,7 @@ const ServiceDetails = ({ setLoader }) => {
             <Tooltip
               placement="top"
               title={`Click to "Listen". Double Click to "Stop"`}
-              color={"#8F00FF"}
+              color={"rgba(90, 90, 90, 0.7)"}
             >
               <button
                 className="absolute top-0 right-10"
@@ -348,7 +349,7 @@ const ServiceDetails = ({ setLoader }) => {
             <Tooltip
               placement="top"
               title={`Click to "Listen". Double Click to "Stop"`}
-              color={"#8F00FF"}
+              color={"rgba(90, 90, 90, 0.7)"}
             >
               <button
                 className="absolute top-0 right-10"
@@ -391,7 +392,7 @@ const ServiceDetails = ({ setLoader }) => {
               <Tooltip
                 placement="top"
                 title={`Click to "Listen". Double Click to "Stop"`}
-                color={"#8F00FF"}
+                color={"rgba(90, 90, 90, 0.7)"}
               >
                 <button
                   className="absolute top-0 right-10"
@@ -495,6 +496,7 @@ const ServiceDetails = ({ setLoader }) => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
@@ -516,7 +518,6 @@ const clientSpeakSettings = {
   arrows: true,
   infinite: true,
   slidesToShow: 3,
-
   rows: 1,
   speed: 300,
 };

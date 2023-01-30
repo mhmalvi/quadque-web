@@ -6,7 +6,6 @@ import bkash from "../../../../asstes/Images/bkash.png";
 import itec from "../../../../asstes/Images/itec.png";
 import nta from "../../../../asstes/Images/nta.png";
 import uct from "../../../../asstes/Images/uct.png";
-// import harbour from "../../../../asstes/Images/harbour.png";
 import aia from "../../../../asstes/Images/aia.png";
 import alpha from "../../../../asstes/Images/alpha.png";
 import atr from "../../../../asstes/Images/atr.png";
@@ -16,8 +15,6 @@ import ibm from "../../../../asstes/Images/ibm.png";
 import tel from "../../../../asstes/Images/tel.png";
 import topTrip from "../../../../asstes/Images/toptrip.png";
 import us from "../../../../asstes/Images/us.png";
-
-
 import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 
@@ -105,7 +102,7 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-36 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-36 h-[100px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-[100px] flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -120,7 +117,7 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-36 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-36 h-[100px] bg-white bg-opacity-20 backdrop-blur-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -137,7 +134,7 @@ const Cleints = () => {
                   {colum12xl2?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-36 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-36 h-[100px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -152,7 +149,7 @@ const Cleints = () => {
                   {colum12xl2?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[100px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -169,7 +166,7 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[100px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -184,7 +181,7 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[100px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[100px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -206,7 +203,7 @@ const Cleints = () => {
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-[104px] flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -221,7 +218,7 @@ const Cleints = () => {
                   {colum1xl2?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -238,7 +235,7 @@ const Cleints = () => {
                   {colum1xl2?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -253,7 +250,7 @@ const Cleints = () => {
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -270,7 +267,7 @@ const Cleints = () => {
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -285,7 +282,7 @@ const Cleints = () => {
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -307,7 +304,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -322,7 +319,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -339,7 +336,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -354,7 +351,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -371,7 +368,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -386,7 +383,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block w-40 h-[104px] bg-brand-color bg-opacity-20"
+                      className="inline-block w-40 h-[104px] bg-white bg-opacity-20"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />

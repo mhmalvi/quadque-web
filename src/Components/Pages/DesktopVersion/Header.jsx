@@ -23,13 +23,13 @@ const Header = () => {
           className="w-40 text-white lg:text-4.5xl xl:text-[60px] 2xl:text-[80px] font-bold leading-10 font_title xl:leading-12 2xl:leading-[70px] font-poppins capitalize"
           steps={[
             "We",
-            1000,
+            1500,
             "We Build",
-            1000,
+            3000,
             "We Build Awesome",
-            1000,
+            4000,
             "We Build Awesome Creation",
-            1000,
+            5000,
           ]}
           loop={Infinity}
           wrapper="h1"
