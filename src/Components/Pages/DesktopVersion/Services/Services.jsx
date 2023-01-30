@@ -14,7 +14,6 @@ import useServices from "../../../Shared/Hooks/useServices";
 const Services = () => {
   const [services] = useServices();
   const location = useLocation();
-  console.log(services);
   const [activeService, setActiveService] = useState();
   const [activeServiceDetails, setActiveDetails] = useState({});
   const [triggerAnimation, setTriggerAnimation] = useState(false);
@@ -90,11 +89,11 @@ const Services = () => {
                   <Tooltip
                     placement="right"
                     title={
-                      <span className="text-brand-color font-semibold">
+                      <span className="text-white font-semibold">
                         Details On {activeService}
                       </span>
                     }
-                    color={"rgba(255, 255, 255)"}
+                    color={"rgba(90, 90, 90, 0.7)"}
                   >
                     <Link to={`services/${activeServiceDetails?.slug}`}>
                       Learn More

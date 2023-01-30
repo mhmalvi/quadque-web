@@ -100,7 +100,7 @@ const BlogDetails = ({ setLoader }) => {
           <Tooltip
             placement="top"
             title={`Click to "Listen". Double Click to "Stop"`}
-            color={"#8F00FF"}
+            color={"rgba(90, 90, 90, 0.7)"}
           >
             <button
               className="absolute top-0 right-10"

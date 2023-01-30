@@ -89,6 +89,7 @@ const About = () => {
             {/* <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mb-auto overflow-y-scroll py-1"> */}
             <div className="about_details border-gray-700 pr-12 xl:h-[40vh] 2xl:h-[50vh] w-[90%] py-1">
               <Fade right cascade spy={triggerAnimation}>
+
                 <div className="block xl:hidden">
                   {scrollingIndex === 0 ? (
                     <>
@@ -185,7 +186,6 @@ const About = () => {
                     </div>
                   ) : null}
                 </div>
-
                 <div className="hidden xl:block">
                   {scrollingIndex === 0 ? (
                     <>
@@ -279,41 +279,41 @@ const About = () => {
                   ) : null}
                 </div>
               </Fade>
-            </div>
 
-            <div className="w-36 mx-auto flex items-center justify-between">
-              <div
-                className={`cursor-pointer hover:delay-300 hover:transition-all ${
-                  scrollingIndex === 0
-                    ? "bg-brand-color w-7 h-1.5"
-                    : "bg-white w-6 h-1"
-                }`}
-                onClick={() => handleScrollAbout(0)}
-              ></div>
-              <div
-                className={`cursor-pointer hover:delay-300 hover:transition-all ${
-                  scrollingIndex === 1
-                    ? "bg-brand-color w-7 h-1.5"
-                    : "bg-white w-6 h-1"
-                }`}
-                onClick={() => handleScrollAbout(1)}
-              ></div>
-              <div
-                className={`cursor-pointer hover:delay-300 hover:transition-all ${
-                  scrollingIndex === 2
-                    ? "bg-brand-color w-7 h-1.5"
-                    : "bg-white w-6 h-1"
-                }`}
-                onClick={() => handleScrollAbout(2)}
-              ></div>
-              <div
-                className={`cursor-pointer hover:delay-300 hover:transition-all ${
-                  scrollingIndex === 3
-                    ? "bg-brand-color w-7 h-1.5"
-                    : "bg-white w-6 h-1"
-                }`}
-                onClick={() => handleScrollAbout(3)}
-              ></div>
+              <div className="w-36 ml-auto flex items-center justify-between">
+                <div
+                  className={`cursor-pointer hover:delay-300 hover:transition-all ${
+                    scrollingIndex === 0
+                      ? "bg-brand-color w-7 h-1.5"
+                      : "bg-white w-6 h-1"
+                  }`}
+                  onClick={() => handleScrollAbout(0)}
+                ></div>
+                <div
+                  className={`cursor-pointer hover:delay-300 hover:transition-all ${
+                    scrollingIndex === 1
+                      ? "bg-brand-color w-7 h-1.5"
+                      : "bg-white w-6 h-1"
+                  }`}
+                  onClick={() => handleScrollAbout(1)}
+                ></div>
+                <div
+                  className={`cursor-pointer hover:delay-300 hover:transition-all ${
+                    scrollingIndex === 2
+                      ? "bg-brand-color w-7 h-1.5"
+                      : "bg-white w-6 h-1"
+                  }`}
+                  onClick={() => handleScrollAbout(2)}
+                ></div>
+                <div
+                  className={`xl:hidden cursor-pointer hover:delay-300 hover:transition-all ${
+                    scrollingIndex === 3
+                      ? "bg-brand-color w-7 h-1.5"
+                      : "bg-white w-6 h-1"
+                  }`}
+                  onClick={() => handleScrollAbout(3)}
+                ></div>
+              </div>
             </div>
           </div>
         </div>

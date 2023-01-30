@@ -6,6 +6,7 @@ import unmuteImg from "../../../../asstes/Images/unmute.png";
 import welcomeAvatar from "../../../../asstes/Images/welcome_avatar.json";
 import useAudio from "../../../Shared/Hooks/useAudio";
 import Icons from "../../../Shared/Icons";
+import { handleLetsGoAudio } from "../../../Shared/Sounds";
 import Navbar from "../Navbar";
 import CenterLayout from "./CenterLayout";
 
@@ -119,8 +120,13 @@ const DesktopLayout = () => {
             </span>
           </div>
 
-          <div className="mb-16 -rotate-90 flex justify-center items-center">
-            <Tooltip placement="right" title="Facebook" color={"blue"}>
+          <div className="social_media mb-16 -rotate-90 flex justify-center items-center">
+            <Tooltip
+              placement="right"
+              title="Facebook"
+              color={"rgba(90, 90, 90, 0.7)"}
+              // color={"blue"}
+            >
               <a
                 href="https://www.facebook.com/quadquetech"
                 rel="noreferrer"
@@ -131,7 +137,12 @@ const DesktopLayout = () => {
               </a>
             </Tooltip>
 
-            <Tooltip placement="right" title="Instagram" color={"#F701A2"}>
+            <Tooltip
+              placement="right"
+              title="Instagram"
+              // color={"#F701A2"}
+              color={"rgba(90, 90, 90, 0.7)"}
+            >
               <a
                 href="https://www.instagram.com/quadquetech/"
                 rel="noreferrer"
@@ -142,7 +153,12 @@ const DesktopLayout = () => {
               </a>
             </Tooltip>
 
-            <Tooltip placement="right" title="Youtube" color={"#FF0000"}>
+            <Tooltip
+              placement="right"
+              title="Youtube"
+              // color={"#FF0000"}
+              color={"rgba(90, 90, 90, 0.7)"}
+            >
               <a
                 href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
                 rel="noreferrer"
@@ -153,7 +169,11 @@ const DesktopLayout = () => {
               </a>
             </Tooltip>
 
-            <Tooltip placement="right" title="Linkedin" color={"#0072b1"}>
+            <Tooltip
+              placement="right"
+              title="LinkedIn"
+              color={"rgba(90, 90, 90, 0.7)"}
+            >
               <a
                 href="https://bd.linkedin.com/company/quadque-technologies-ltd"
                 target="_blank"
@@ -180,7 +200,11 @@ const DesktopLayout = () => {
           <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
             {playing ? (
               <div className="w-8">
-                <Tooltip title="Unmute Sound" placement="left" color="#8F00FF">
+                <Tooltip
+                  title="Unmute Sound"
+                  placement="left"
+                  color={"rgba(90, 90, 90, 0.7)"}
+                >
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
@@ -196,7 +220,11 @@ const DesktopLayout = () => {
               </div>
             ) : (
               <div className="w-8">
-                <Tooltip title="Mute Sound" placement="left" color="#8F00FF">
+                <Tooltip
+                  title="Mute Sound"
+                  placement="left"
+                  color={"rgba(90, 90, 90, 0.7)"}
+                >
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
@@ -294,6 +322,7 @@ const DesktopLayout = () => {
                   onClick={() => {
                     setPlaying(true);
                     setShowSoundAlert(false);
+                    handleLetsGoAudio();
                   }}
                 >
                   Let's Go
