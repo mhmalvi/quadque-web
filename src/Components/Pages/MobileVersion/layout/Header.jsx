@@ -20,7 +20,7 @@ const Header = () => {
     <div className="w-full mt-30 home-header">
       <div className="w-2/3 text-white text-3xl font-semibold px-6">
         <Typical
-          className="w-44 h-44 font_title text-white lg:text-4.5xl xl:text-[60px] 2xl:text-[80px] font-bold leading-10 xl:leading-12 2xl:leading-[70px] font-poppins capitalize"
+          className="w-44 m-auto h-44 font_title text-white lg:text-4.5xl xl:text-[60px] 2xl:text-[80px] font-bold leading-10 xl:leading-12 2xl:leading-[70px] capitalize"
           steps={[
             "",
             1000,

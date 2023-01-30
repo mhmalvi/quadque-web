@@ -14,6 +14,10 @@ const BlogGallery = () => {
   //console.log("all blogs", allBlogs);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     setTotalPosts(allBlogs.length);
   }, [allBlogs]);
 
