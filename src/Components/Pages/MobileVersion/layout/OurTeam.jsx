@@ -6,6 +6,8 @@ import Director from "../../../../asstes/Images/director.png";
 import OM from "../../../../asstes/Images/om.png";
 import Shourav from "../../../../asstes/Images/shourav.png";
 import Atika from "../../../../asstes/Images/atika.jpeg";
+import Shova from "../../../../asstes/Images/Shova.jpeg";
+import Imtiaz from "../../../../asstes/Images/imtiaz.jpeg";
 import "../../MobileVersion/MobileView.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -65,12 +67,22 @@ const OurTeam = () => {
         <div className="w-36 pb-4 text-center">
           <img src={Atika} alt="" className="w-28 h-32 mx-auto rounded-xl" />
           <div className="font-semibold leading-7">Atika Younus</div>
-          <div className="h-14 uppercase font-thin">WORDPRESS QUEEN</div>
+          <div className="h-14 uppercase font-thin">WORDPRESS DEVELOPER</div>
         </div>
         <div className="w-36 pb-4 text-center">
           <img src={Shourav} alt="" className="w-28 h-32 mx-auto rounded-xl" />
           <div className="font-semibold leading-7">Shourav Sen Gupta</div>
           <div className="h-14 uppercase font-thin">SOFTWARE DEVELOPER</div>
+        </div>
+        <div className="w-36 pb-4 text-center">
+          <img src={Shova} alt="" className="w-28 h-32 mx-auto rounded-xl" />
+          <div className="font-semibold leading-7">Tasnim Islam</div>
+          <div className="h-14 uppercase font-thin">MARKETING EXECUTIVE</div>
+        </div>
+        <div className="w-36 pb-4 text-center">
+          <img src={Imtiaz} alt="" className="w-28 h-32 mx-auto rounded-xl" />
+          <div className="font-semibold leading-7">A M Imtiaz Mahbub</div>
+          <div className="h-14 uppercase font-thin">CONTENT WRITER</div>
         </div>
       </Slider>
       {/* </div> */}
