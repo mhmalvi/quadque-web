@@ -7,6 +7,7 @@ import sucess from "../../../../asstes/Images/success.json";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import useServices from "../../../Shared/Hooks/useServices";
 import { handleSendMail } from "../../../Shared/services";
+import { handleThankYouAudio } from "../../../Shared/Sounds";
 
 const StartProject = () => {
   const location = useLocation();
@@ -95,9 +96,6 @@ const StartProject = () => {
     }
   };
 
-  console.log("activeServices", activeServices);
-  console.log("activeSubServices", activeSubServices);
-
   const handleSendMailReq = async () => {
     setLoader(true);
     const data = {
@@ -114,6 +112,7 @@ const StartProject = () => {
     console.log(sendMail);
 
     if (sendMail === "Mail sent") {
+      handleThankYouAudio();
       setOpen(true);
       document.getElementById("Name").value = "";
       document.getElementById("Phone").value = "";
@@ -238,7 +237,7 @@ const StartProject = () => {
                       }`}
                     >
                       <span
-                        className={`max-w-[6px] max-h-[5px] px-[7px] ${
+                        className={`max-w-[6px] max-h-[5\px] px-[7px] ${
                           activeSubServices.includes(subService)
                             ? "bg-brand-color border-gray-500"
                             : "border-white"

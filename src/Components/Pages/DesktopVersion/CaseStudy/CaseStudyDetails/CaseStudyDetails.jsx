@@ -18,6 +18,7 @@ import Lottie from "lottie-react";
 import speakLogo from "../../../../../asstes/Lotties/speak.json";
 import { useSpeechSynthesis } from "react-speech-kit";
 import { Tooltip } from "antd";
+import Footer from "../../Footer";
 
 const CaseStudyDetails = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -136,7 +137,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               <Tooltip
                 placement="top"
                 title={`Click to "Listen". Double Click to "Stop"`}
-                color={"#8F00FF"}
+                color={"rgba(90, 90, 90, 0.7)"}
               >
                 <button
                   className="absolute top-0 right-10"
@@ -317,6 +318,7 @@ const CaseStudyDetails = ({ setLoader }) => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

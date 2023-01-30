@@ -108,23 +108,28 @@ const CaseStudy = () => {
                   key={post?.id}
                   title={`Learn More ${post?.com_name}`}
                   placement="top"
-                  color={"#8F00FF"}
+                  color={"rgba(90, 90, 90, 0.7)"}
                 >
                   <Link
                     to={`case-studies/${post?.slug}`}
                     key={i}
                     className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px] cursor-pointer"
                   >
-                    <img
-                      className="w-full h-full rounded-[20px] border"
-                      src={
-                        process.env.REACT_APP_ASSETS_URL + "/" + post?.com_image
-                      }
-                      alt=""
-                    />
-                    <p className="absolute h-10 w-full bottom-0 border text-center font-normal rounded-br-[20px] rounded-bl-[20px] lg:text-xs 2xl:text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
-                      {post?.com_name}
-                    </p>
+                    <div className="min-h-full min-w-full bg-white bg-opacity-30 backdrop-filter backdrop-blur-md blur-sm rounded-[20px]"></div>
+                    <div className="w-full h-full absolute top-0">
+                      <img
+                        className="w-full h-full rounded-[20px] border"
+                        src={
+                          process.env.REACT_APP_ASSETS_URL +
+                          "/" +
+                          post?.com_image
+                        }
+                        alt=""
+                      />
+                      <p className="absolute h-10 w-full bottom-0 border text-center font-normal rounded-br-[20px] rounded-bl-[20px] lg:text-xs 2xl:text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
+                        {post?.com_name}
+                      </p>
+                    </div>
                   </Link>
                 </Tooltip>
               </Flip>

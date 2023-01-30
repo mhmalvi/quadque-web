@@ -94,7 +94,11 @@ const BlogDetailsLayout = () => {
           </div>
 
           <div className="mb-16 -rotate-90 flex justify-center items-center">
-            <Tooltip placement="right" title="Facebook" color={"blue"}>
+            <Tooltip
+              placement="right"
+              title="Facebook"
+              color={"rgba(90, 90, 90, 0.7)"}
+            >
               <a
                 href="https://www.facebook.com/quadquetech"
                 rel="noreferrer"
@@ -105,7 +109,11 @@ const BlogDetailsLayout = () => {
               </a>
             </Tooltip>
 
-            <Tooltip placement="right" title="Instagram" color={"#F701A2"}>
+            <Tooltip
+              placement="right"
+              title="Instagram"
+              color={"rgba(90, 90, 90, 0.7)"}
+            >
               <a
                 href="https://www.instagram.com/quadquetech/"
                 rel="noreferrer"
@@ -116,7 +124,11 @@ const BlogDetailsLayout = () => {
               </a>
             </Tooltip>
 
-            <Tooltip placement="right" title="Youtube" color={"red"}>
+            <Tooltip
+              placement="right"
+              title="Youtube"
+              color={"rgba(90, 90, 90, 0.7)"}
+            >
               <a
                 href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
                 rel="noreferrer"
@@ -127,7 +139,11 @@ const BlogDetailsLayout = () => {
               </a>
             </Tooltip>
 
-            <Tooltip placement="right" title="Linkedin" color={"#0072b1"}>
+            <Tooltip
+              placement="right"
+              title="Linkedin"
+              color={"rgba(90, 90, 90, 0.7)"}
+            >
               <a
                 href="https://bd.linkedin.com/company/quadque-technologies-ltd"
                 target="_blank"
@@ -154,7 +170,11 @@ const BlogDetailsLayout = () => {
           <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
             {playing ? (
               <div className="w-8">
-                <Tooltip title="Unmute Sound" placement="left" color="#8F00FF">
+                <Tooltip
+                  title="Unmute Sound"
+                  placement="left"
+                  color={"rgba(90, 90, 90, 0.7)"}
+                >
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
@@ -170,7 +190,11 @@ const BlogDetailsLayout = () => {
               </div>
             ) : (
               <div className="w-8">
-                <Tooltip title="Mute Sound" placement="left" color="#8F00FF">
+                <Tooltip
+                  title="Mute Sound"
+                  placement="left"
+                  color={"rgba(90, 90, 90, 0.7)"}
+                >
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"

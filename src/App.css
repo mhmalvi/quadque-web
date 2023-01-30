@@ -464,3 +464,31 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
 }
+
+/* .ant-tooltip-inner,
+.ant-tooltip-arrow > span {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.ant-tooltip-inner {
+  border: 0.5px solid rgba(98, 98, 98, 0.551);
+} */
+
+.ant-tooltip-inner,
+.ant-tooltip-arrow > span {
+  background-color: rgba(105, 105, 105, 0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.ant-tooltip-inner {
+  border: 0.5px solid rgba(98, 98, 98, 0.551);
+}
+
+.spirit-bomb {
+  box-shadow: 0 0 20px #fff, -5px 0 10px #8f0fff, 5px 0 10px #0ff;
+}
