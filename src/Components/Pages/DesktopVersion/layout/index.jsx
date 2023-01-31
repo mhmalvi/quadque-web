@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
 import BlogDetailsLayout from "../Blogs/BlogDetails/BlogDetailsLayout";
 import CaseStudyDetailsLayout from "../CaseStudy/CaseStudyDetails/CaseStudyDetailsLayout";
+import FaqLayout from "../FAQ/FaqLayout";
 import ServiceDetailsLayout from "../Services/ServiceDetails/ServiceDetailsLayout";
 import DesktopLayout from "./DesktopLayout";
 
@@ -47,6 +48,15 @@ const Layout = () => {
           element={
             <>
               <CaseStudyDetailsLayout />
+            </>
+          }
+        />
+
+        <Route
+          path="faq"
+          element={
+            <>
+              <FaqLayout />
             </>
           }
         />
