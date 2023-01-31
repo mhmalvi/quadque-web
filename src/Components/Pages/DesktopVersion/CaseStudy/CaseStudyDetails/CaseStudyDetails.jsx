@@ -47,7 +47,7 @@ const CaseStudyDetails = ({ setLoader }) => {
         <meta name="keywords" content={caseStudyDetails?.meta_keyword} />
       </Helmet>
 
-      <div className="case_study_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
+      <div className="case_study_details min-h-full bg-black text-white py-20 px-36  h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
         <div className="mb-10">
           <Icons.GoBackArrow
             className="w-6 font-semibold cursor-pointer"
