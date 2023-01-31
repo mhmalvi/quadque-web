@@ -67,16 +67,36 @@ const CaseStudy = () => {
         className="section relative w-full min-h-full lg:pb-10 2xl:pb-12 font-poppins"
       >
         <div className="absolute top-0 lg:pt-7 2xl:py-[100px] pl-[68px] pr-[22px] text-white">
-          <Fade left cascade spy={triggerTitleAnimation}>
+          <div
+            className="text-5xl font-bold leading-10 capitalize font_title mb-8"
+            style={{
+              letterSpacing: "0.06em",
+            }}
+          >
+            <Fade left spy={triggerTitleAnimation}>
+              <div className="leading-10">Case</div>
+              <div className="ml-8 leading-10">Study</div>
+            </Fade>
+          </div>
+
+          {/* <Fade left cascade spy={triggerTitleAnimation}>
             <h1
-              className="lg:text-3xl 2xl:text-[32px] font-extrabold leading-10 text-white mb-5 font_title"
+              className="lg:text-3xl 2xl:text-4xl font-extrabold leading-10 text-white mb-5 font_title"
               style={{
                 letterSpacing: "0.2em",
               }}
             >
-              Case Study
+              Case
             </h1>
-          </Fade>
+            <h1
+              style={{
+                letterSpacing: "0.2em",
+              }}
+              className="ml-8 lg:text-3xl 2xl:text-4xl font-extrabold leading-10 text-white mb-5 font_title"
+            >
+              STUDY
+            </h1>
+          </Fade> */}
           <div
             className="max-w-[280px] xl:max-w-[400px] text-justify lg:text-sm 2xl:text-base leading-5 text-white ml-4 font-light"
             style={{

@@ -40,17 +40,34 @@ const ClientSpeak = () => {
   }, [index, clientSpeaks]);
 
   return (
-    <div className="section relative w-full min-h-full 2xl:pb-12 font-poppins text-white">
+    <div className="section relative w-full min-h-full 2xl:pb-12 font-poppins text-white overflow-hidden">
       <div className="ml-6 relative 2xl:left-14 2xl:top-8 lg:pt-7 lg:mt-9 pl-[68px] pr-[22px] text-white">
-        <Fade left cascade spy={triggerTitleAnimation}>
+        <div
+          className="text-5xl font-bold leading-10 capitalize font_title mb-8"
+          style={{
+            letterSpacing: "0.06em",
+          }}
+        >
+          <Fade left spy={triggerTitleAnimation}>
+            <img className="absolute top-0 -left-4 z-0" src={titleBg} alt="" />
+            <div className="leading-10 z-50">clients</div>
+            <div className="ml-8 leading-10">speak</div>
+          </Fade>
+        </div>
+
+        {/* <Fade left cascade spy={triggerTitleAnimation}>
           <img className="absolute top-0 -left-4 z-0" src={titleBg} alt="" />
-          <h1 className="z-50 lg:text-3xl 2xl:text-[32px] font-semibold leading-10 text-white mb-7 -mt-4 font_title">
-            Our clients speak
-          </h1>
-        </Fade>
+
+          <div className="lg:text-3xl 2xl:text-4xl font-semibold text-white mb-7 -mt-4 font_title leading-10">
+            clients
+          </div>
+          <div className="lg:text-3xl 2xl:text-4xl font-semibold text-white mb-7 -mt-4 font_title ml-8 leading-10">
+            speak
+          </div>
+        </Fade> */}
       </div>
 
-      <div className="mt-16 2xl:mt-36 flex justify-center items-center">
+      <div className="mt-16 2xl:mt-36 flex justify-center items-center overflow-hidden">
         <div className="w-full flex justify-center mx-auto">
           <Fade left cascade spy={triggerAnimation}>
             <div>
@@ -95,23 +112,23 @@ const ClientSpeak = () => {
 
               <div className="absolute bottom-0 flex items-center 2xl:mt-14 lg:mt-4">
                 <div
-                  className="cursor-pointer pr-3 py-2 opacity-80 hover:opacity-100 text-2xl"
+                  className="relative cursor-pointer pr-3 py-2 opacity-80 hover:opacity-100 text-2xl"
                   onClick={() => {
                     setIndex(index + 1);
                     setTriggerAnimation(!triggerAnimation);
                   }}
                 >
-                  Prev
+                  <div className="arrowLeft"></div>
                 </div>
-                <div className="h-0.5 w-24 bg-white mx-2.5"></div>
+                <div className="h-0.5 w-24 bg-white mx-2.5 -mt-5"></div>
                 <div
-                  className="cursor-pointer px-3 py-2 opacity-80 hover:opacity-100 text-2xl"
+                  className="relative cursor-pointer px-3 py-2 opacity-80 hover:opacity-100 text-2xl ml-4"
                   onClick={() => {
                     setIndex(index + 1);
                     setTriggerAnimation(!triggerAnimation);
                   }}
                 >
-                  Next
+                  <div className="arrowRight"></div>
                 </div>
               </div>
               {/* </Fade> */}

@@ -215,6 +215,7 @@ const StartProject = () => {
               </div>
             ))}
           </div>
+
           {services.length ? (
             <div className="mx-6">
               {subServices?.map((subService) => (
@@ -237,7 +238,7 @@ const StartProject = () => {
                       }`}
                     >
                       <span
-                        className={`max-w-[6px] max-h-[5\px] px-[7px] ${
+                        className={`max-w-[6px] max-h-[5px] px-[7px] ${
                           activeSubServices.includes(subService)
                             ? "bg-brand-color border-gray-500"
                             : "border-white"

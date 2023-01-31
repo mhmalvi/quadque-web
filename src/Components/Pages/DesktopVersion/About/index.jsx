@@ -78,18 +78,29 @@ const About = () => {
         <div className="w-[60%] min-h-full ml-1 mt-21 2xl:mt-32">
           <div className="mb-4 xl:mb-8">
             <div>
-              <Fade right cascade spy={triggerTitleAnimation}>
-                <h1 className="text-[32px] font-medium leading-[48px] font_title">
+              <div
+                className="text-5xl font-bold leading-10 capitalize font_title mb-8"
+                style={{
+                  letterSpacing: "0.06em",
+                }}
+              >
+                <Fade right cascade spy={triggerTitleAnimation}>
+                  <h1 className="text-4xl font-medium leading-[48px] font_title">
+                    About us
+                  </h1>
+                </Fade>
+              </div>
+              {/* <Fade right cascade spy={triggerTitleAnimation}>
+                <h1 className="text-4xl font-medium leading-[48px] font_title">
                   About us
                 </h1>
-              </Fade>
+              </Fade> */}
             </div>
           </div>
           <div>
             {/* <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mb-auto overflow-y-scroll py-1"> */}
             <div className="about_details border-gray-700 pr-12 xl:h-[40vh] 2xl:h-[50vh] w-[90%] py-1">
               <Fade right cascade spy={triggerAnimation}>
-
                 <div className="block xl:hidden">
                   {scrollingIndex === 0 ? (
                     <>
