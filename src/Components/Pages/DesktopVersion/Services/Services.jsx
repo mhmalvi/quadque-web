@@ -142,7 +142,7 @@ const Services = () => {
           {activeService === "UI/UX" ? (
             <Lottie animationData={UI_UX} loop={true} alt="Ui & Ux Layout" />
           ) : null}
-          {activeService === "Application Development" ? (
+          {activeService === "Mobile App Development" ? (
             <Lottie
               animationData={AppDev}
               loop={true}
@@ -166,7 +166,7 @@ const Services = () => {
         </div>
       </Fade>
 
-      <div className="w-58 text-xl font-medium leading-8 capitalize">
+      <div className="w-64 text-xl font-medium leading-8 capitalize">
         <Fade left cascade spy={triggerAnimation}>
           <div className="pt-18 mt-0.5">
             {services?.map((service, i) => (

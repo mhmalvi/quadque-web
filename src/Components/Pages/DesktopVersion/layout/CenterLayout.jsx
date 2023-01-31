@@ -15,10 +15,10 @@ import StartProject from "../StartProject";
 const anchors = [
   "landing",
   "services",
+  "about",
   "clients",
   "case-study",
   "client-speak",
-  "about",
   "blogs",
   "start-project",
   "contacts",
@@ -43,10 +43,10 @@ const CenterLayout = () => {
               </div>
               <Header />
               <Services />
+              <About />
               <Cleints />
               <CaseStudy />
               <ClientSpeak />
-              <About />
               <Blogs />
               <StartProject />
               <Footer />

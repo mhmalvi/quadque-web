@@ -681,7 +681,7 @@ const serviceDetailsContent = {
         icon: visual,
       },
       {
-        title: "mHealth and Educational Apps",
+        title: "Health and Educational Apps",
         icon: Interaction,
       },
     ],

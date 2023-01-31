@@ -42,7 +42,7 @@ const Footer = () => {
             <Fade left spy={triggerTitleAnimation}>
               <a href="tel:+01765276560">
                 <button
-                  className="spirit-bomb text-white px-18 py-3.5 text-base leading-6 font-normal mt-8 2xl:mt-14 font_title"
+                  className="spirit-bomb text-white px-12 2xl:px-18 py-2 2xl:py-3.5 text-base leading-6 font-normal mt-8 2xl:mt-14 font_title"
                   style={{
                     border: "2px solid #FFFFFF",
                     borderRadius: "30px",
@@ -59,16 +59,18 @@ const Footer = () => {
           </div>
 
           <div className="lg:mt-10 xl:mt-24 2xl:mt-32 lg:h-52 2xl:h-96">
-            <div className="grid grid-cols-6 2xl:grid-cols-5 justify-end">
-              <div className="max-w-[250px] flex flex-col justify-between col-span-2 2xl:col-span-1">
+            {/* <div className="grid grid-cols-6 2xl:grid-cols-4 justify-end"> */}
+            <div className="flex justify-between">
+              {/* <div className="max-w-[250px] flex flex-col justify-between col-span-2 2xl:col-span-1"> */}
+              <div className="w-4/12 flex flex-col justify-between col-span-2 2xl:col-span-1">
                 <Fade left cascade spy={triggerTitleAnimation}>
                   <h1
-                    className="font-light text-xl leading-6 break-all"
+                    className="max-w-[330px] font-light text-xl leading-6"
                     style={{
                       wordBreak: "keep-all",
                     }}
                   >
-                    High level experience in web design and development <br />
+                    High level experience in web design and development
                     knowledge, producing quality work.
                   </h1>
                   <div>
@@ -112,7 +114,7 @@ const Footer = () => {
                   </div>
                 </Fade>
               </div>
-              <div className="ml-9">
+              {/* <div className="ml-9">
                 <Fade left cascade spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Product</h3>
                   <div>
@@ -125,8 +127,8 @@ const Footer = () => {
                     <h4 className="text-sm font-normal mb-2.5">Integrations</h4>
                   </div>
                 </Fade>
-              </div>
-              <div className="ml-9">
+              </div> */}
+              <div className="w-2/12 ml-9">
                 <Fade left cascade spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Use Cases</h3>
                   <div>
@@ -163,7 +165,7 @@ const Footer = () => {
                 </Fade>
               </div> */}
 
-              <div className="ml-9">
+              <div className="w-2/12 ml-9">
                 <Fade left cascade spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Company</h3>
                   <div>
@@ -176,7 +178,7 @@ const Footer = () => {
                 </Fade>
               </div>
 
-              <div className="ml-9">
+              <div className="w-4/12 ml-9">
                 <Fade left cascade spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Address</h3>
                   <div>
@@ -186,6 +188,9 @@ const Footer = () => {
                           Level 1, 7 Greenfield Parade Bankstown, NSW 2200,
                           Australia.
                         </p>
+                      </div>
+                      <div className="leading-6 mb-2.5">
+                        <a href="tel:+01765276560">+01765-276560</a>
                       </div>
                       <div className="leading-6 mb-2.5">
                         <p>
