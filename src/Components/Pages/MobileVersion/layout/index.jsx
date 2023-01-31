@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import Header from "./Header";
@@ -18,6 +18,9 @@ import CaseStudyDetail from "../Case_Study/CaseStudyDetail";
 import Gallery from "../Gallery";
 
 const Layout = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <>
       <div id="stars"></div>
@@ -32,10 +35,10 @@ const Layout = () => {
               <>
                 <Header />
                 <Services />
+                <Aboutus />
                 <OurCustomer />
                 <CaseStudy />
                 <ClientSpeaks />
-                <Aboutus />
                 <OurTeam />
                 <StartProject />
               </>

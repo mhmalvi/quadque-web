@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Faq from "../../../../asstes/Images/faq.png";
 import { Collapse } from "antd";
 import "../../MobileVersion/MobileView.css";
 
 const { Panel } = Collapse;
 
-
 const FAQ = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="w-full text-white mt-20 mb-5">
       <h1 className="font_title text-3xl px-6">FAQ's</h1>
@@ -15,151 +18,172 @@ const FAQ = () => {
         Most Popular Questions
       </div>
       <div className="text-xs pb-4 px-6">
-        <Collapse defaultActiveKey={["1"]} ghost>
-          <Panel header="Will you maintain my site for me?" key="1">
+        <Collapse accordion ghost>
+          <Panel
+            header="What services does Quadque Technologies offer?"
+            key="1"
+          >
             <p className="text-white text-justify">{Answers?.ans1}</p>
           </Panel>
-          <Panel header="Will my website be mobile-friendly?" key="2">
+
+          <Panel
+            header="Can you provide customized solutions for my business?"
+            key="2"
+          >
             <p className="text-white text-justify">{Answers?.ans2}</p>
           </Panel>
+
           <Panel
-            header="How do you guarantee superior product quality?"
+            header="What industries does Quadque Technologies serve??"
             key="3"
           >
             <p className="text-white text-justify">{Answers?.ans3}</p>
           </Panel>
+
           <Panel
-            header="Can you build apps for both iOS and Android?"
+            header="Does Quadque Technologies offer IT support services?"
             key="4"
           >
             <p className="text-white text-justify">{Answers?.ans4}</p>
           </Panel>
+
           <Panel
-            header="What type of support will my business get when using your products or services?"
+            header="How can I contact Quadque Technologies for more information?"
             key="5"
           >
             <p className="text-white text-justify">{Answers?.ans5}</p>
           </Panel>
+
           <Panel
-            header="We already have designs; can you work with those?"
+            header="Does Quadque Technologies have any certifications or accreditations?"
             key="6"
           >
             <p className="text-white text-justify">{Answers?.ans6}</p>
           </Panel>
+
           <Panel
-            header="Which social media accounts can you manage for my business?"
+            header=": Does Quadque Technologies have experience working with remote teams?"
             key="7"
           >
             <p className="text-white text-justify">{Answers?.ans7}</p>
           </Panel>
+
           <Panel
-            header="Do you only design logos in identity design?"
+            header="Does Quadque Technologies offer training and development for its employees?"
             key="8"
           >
             <p className="text-white text-justify">{Answers?.ans8}</p>
           </Panel>
+
           <Panel
-            header="Who owns the final artwork?"
+            header="How does Quadque Technologies handle project management?"
             key="9"
           >
             <p className="text-white text-justify">{Answers?.ans9}</p>
           </Panel>
+
           <Panel
-            header="There are many IoT platforms on the market. Why do you think Quadque is better?"
+            header="Is Quadque Technologies involved in any community or social responsibility initiatives?"
             key="10"
           >
             <p className="text-white text-justify">{Answers?.ans10}</p>
           </Panel>
+
           <Panel
-            header="Why do I need SEO?"
+            header="Does Quadque Technologies have any certifications or accreditations?"
             key="11"
           >
             <p className="text-white text-justify">{Answers?.ans11}</p>
           </Panel>
+
           <Panel
-            header="What is Target Promotion?"
+            header="Does Quadque Technologies have experience working with remote teams?"
             key="12"
           >
             <p className="text-white text-justify">{Answers?.ans12}</p>
           </Panel>
+
           <Panel
-            header="What’s better – Email Marketing or WhatsApp Marketing?"
+            header="Does Quadque Technologies offer training and development for its employees?"
             key="13"
           >
             <p className="text-white text-justify">{Answers?.ans13}</p>
           </Panel>
+
           <Panel
-            header="Why do I need Blogs?"
+            header="How does Quadque Technologies handle project management?"
             key="14"
           >
             <p className="text-white text-justify">{Answers?.ans14}</p>
           </Panel>
+
           <Panel
-            header="What makes an exceptional Digital Marketing campaign?"
+            header="How does Quadque Technologies approach software development?"
             key="15"
           >
             <p className="text-white text-justify">{Answers?.ans15}</p>
           </Panel>
+
           <Panel
-            header="Can you help me automate my organisation’s business processes?"
+            header="Does Quadque Technologies offer website maintenance and support services?"
             key="16"
           >
             <p className="text-white text-justify">{Answers?.ans16}</p>
           </Panel>
+
           <Panel
-            header="Can Quadque assist me with setting up Chatbots?"
+            header="How does Quadque Technologies approach cloud computing solutions?"
             key="17"
           >
             <p className="text-white text-justify">{Answers?.ans17}</p>
           </Panel>
+
           <Panel
-            header="Should I try an Influencer Strategy?"
+            header="Does Quadque Technologies offer cybersecurity and data protection services?"
             key="18"
           >
             <p className="text-white text-justify">{Answers?.ans18}</p>
           </Panel>
+
           <Panel
-            header="What are the advantages of teaming up with Quadque over hiring my own software developers?"
+            header="How can Quadque Technologies help with network infrastructure and IT support?"
             key="19"
           >
             <p className="text-white text-justify">{Answers?.ans19}</p>
           </Panel>
-          <Panel
+
+          {/* <Panel
             header="Will I be able to see demo or prototype versions?"
             key="20"
           >
             <p className="text-white text-justify">{Answers?.ans20}</p>
           </Panel>
+
           <Panel
             header="I need an OVC for my campaign. Can you provide me with this service?"
             key="21"
           >
             <p className="text-white text-justify">{Answers?.ans21}</p>
           </Panel>
-          <Panel
-            header="What is a CRM software?"
-            key="22"
-          >
+
+          <Panel header="What is a CRM software?" key="22">
             <p className="text-white text-justify">{Answers?.ans22}</p>
           </Panel>
-          <Panel
-            header="What can you do about Content Marketing?"
-            key="23"
-          >
+
+          <Panel header="What can you do about Content Marketing?" key="23">
             <p className="text-white text-justify">{Answers?.ans23}</p>
           </Panel>
+
           <Panel
             header="Can you build E-commerce sites for online businesses?"
             key="24"
           >
             <p className="text-white text-justify">{Answers?.ans24}</p>
           </Panel>
-          <Panel
-            header="What is Drupal?"
-            key="25"
-          >
+
+          <Panel header="What is Drupal?" key="25">
             <p className="text-white text-justify">{Answers?.ans25}</p>
-          </Panel>
+          </Panel> */}
         </Collapse>
       </div>
     </div>
@@ -169,29 +193,51 @@ const FAQ = () => {
 export default FAQ;
 
 const Answers = {
-  ans1: "Certainly! We can help you out with proper and professional website maintenance in addition to development, as it supports achieving stabilised growth and keeping it in check.",
-  ans2: "Yes, of course! We will ensure that we develop a responsive website appealing to your visitors and deliver an optimised browsing experience on PC and mobile alike.",
-  ans3: "We evaluate the results every two weeks. We test our work and present you with the findings. We'll apply your feedback so you know that you’re getting what you’re paying for.",
-  ans4: "Yes, most of the apps that we make support both the iOS and Android mobile platforms. It’s common for people to want their applications to have cross-platform integration, so we use development frameworks such as React and React Native. This enables our apps to support both platforms.",
-  ans5: "All of our products and services come with personalised support from our amazing team. We pride ourselves on providing the best possible customer service and making sure that we are available 24/7 for your support.  ",
-  ans6: "Probably yes. We prefer to follow our own design process, if possible. This allows us to deliver the best quality and consistency, but we can be flexible with this as well.",
-  ans7: "We can manage and create content for the following social media platforms: Facebook, Twitter, Instagram, LinkedIn, Pinterest, and YouTube.  ",
-  ans8: "Not at all! We can help with every brand identity touchpoint between a client and their audience. This may include company naming, product naming, logo design, advertising, web design, signage, and many more.  ",
-  ans9: "You do. Unless there are separate contracts with third parties such as illustrators, writers, or photographers that state otherwise, all rights to the final artwork transfer to you once your project is paid in full.   ",
-  ans10: "The Quadque ecosystem includes several out-of-the-box vertical market products. Most IoT applications are not 100% custom, and therefore you can partially base them on one of those products rather than develop the solutions from scratch. This will decrease development costs and further shorten the time-to-market.  ",
-  ans11: "From locating your business through online searches to getting better rankings in Google, you will need SEO. It makes your products and services much more visible. Your website gets a lot more traffic and there are better leads as well.  ",
-  ans12: "You can promote your AD with exact customer details like phone number, email address, customer name, country, city etc. All you need to know is the proper way. So, Target Promotion isn’t only based on your customer’s location, age, and demographics.  ",
-  ans13: "Email Marketing is still the most effective option for Corporate Marketing. But for Consumer Marketing, it’s better to go for WhatsApp Marketing. WhatsApp Marketing is like one-to-one communication with your target group. So the marketing costs are very minimal here with an exact track record.  ",
-  ans14: "Whether you sell products or services, your customers will often want to know about the details of your offerings. A blog not only provides these details but also conveys a message to the customers about your expertise in the industry. As a result, your audience trusts you and your offerings.  ",
-  ans15: "It’s all about promoting your digital ADs with the best Digital Marketing experts you can have. You can develop great statics, engaging copies, crispy captions, and attractive motions. But if you cannot place these with the exact customers, you won’t be able to create any value without being a top brand.  ",
-  ans16: "We provide Software Development services for the purpose of automation. By working with us, you can implement ERP solutions like SAP software in your organisation. Your business processes like database and inventory management will be more synchronised, effective, and accurate with these systems.  ",
-  ans17: "Definitely! We can set up quality AI Chatbots in your organisation according to your specifications. Chatbots are a convenient tool for efficient customer service. In fact, you can easily communicate with a large group in the case of general queries and messages.",
-  ans18: "Studies have shown that influencers have a growing impact on customer purchase decisions. You can definitely try this trending strategy for increased brand exposure. The Quadque Digital Marketing team can help you select influencers suited to your products or services. We can build a powerful influencer campaign using the latest social media techniques and appealing content.",
-  ans19: "A strong team of software developers is certainly an asset, but the hiring process may take considerable time and effort on your part. If you work with us, you'll have a diverse team of skilled experts ready to tackle any digital challenge your company may face. This means that you'll get quality results quickly and easily.  ",
-  ans20: "Yes! We create prototypes before proceeding with any project. Through the prototype, you can get an idea of the final product. You can also provide your feedback. We can add or remove features based on your suggestions if needed.  ",
-  ans21: "Sure! We offer visualisation services like TVC and OVC, along with digital banners and even billboards. Our experienced team ensures quality aesthetics that will appeal to your customers. ",
-  ans22: "A CRM or Customer Relationship Management module is a part of ERP solutions that can automate your sales and marketing activities. Different businesses, like consumer goods companies, are using this application to track sales, conduct marketing campaigns and manage their leads. Quadque can implement customised CRM applications in your organisation depending on its size and scope.  ",
-  ans23: "Quadque offers great content marketing services. We will deeply study your products to come up with engaging captions and copies. We will make sure that the right message reaches the target group and attracts them towards your offerings.  ",
-  ans24: "Yes, we can. We focus on building a user-friendly interface with the right extensions. Our sites can integrate across every platform of your business.    ",
-  ans25: "Drupal is a popular CMS platform. Drupal can integrate with WordPress and is used for developing E-commerce sites. You can manage every page centrally using this CMS platform.",
+  ans1: "We offer a wide range of technology solutions, including custom software development, website design and development, cloud computing solutions, cybersecurity and data protection, and network infrastructure and IT support. We are dedicated to helping our clients achieve their goals through the use of cutting-edge technology and innovative thinking.",
+
+  ans2: "Absolutely! We pride ourselves on our ability to understand the unique needs of each of our clients and provide customized solutions to help them succeed. Whether you're looking to streamline your operations, improve your online presence, or protect your data, we have the expertise to help you achieve your goals.",
+
+  ans3: "We serve a diverse range of industries, including healthcare, finance, retail, manufacturing, and more. We have experience working with businesses of all sizes, from small startups to large enterprises.",
+
+  ans4: "Yes, we offer IT support services to help keep your business running smoothly. Our team of experienced professionals is available to assist with network infrastructure, software troubleshooting, and other IT-related issues",
+
+  ans5: "You can contact us by phone, email, or through our website contact form. Our team is available to answer any questions you may have and schedule a consultation to discuss your technology needs.",
+
+  ans6: "Yes, we hold various industry-standard certifications and accreditations. These include certifications in software development methodologies such as Agile and Scrum, as well as certifications in specific technologies such as AWS and Microsoft Azure.",
+
+  ans7: "Yes, we have experience working with remote teams and have implemented robust systems and processes to ensure effective communication and collaboration.",
+
+  ans8: "Yes, we believe in investing in the growth and development of our employees. We offer various training and development opportunities, both internal and external, to help our team members stay up-to-date with the latest technologies and best practices.",
+
+  ans9: "We use a combination of industry-standard project management methodologies such as Agile and Waterfall to ensure that all projects are delivered on time, within budget, and to the satisfaction of our clients. We also have a dedicated project management team to oversee the progress of each project and ensure smooth communication with our clients.",
+
+  ans10:
+    "Yes, we believe in giving back to the community and are involved in various community and social responsibility initiatives. These include mentoring local students, participating in charity events, and supporting local non-profit organizations.",
+
+  ans11:
+    "Yes, we hold various industry-standard certifications and accreditations. These include certifications in software development methodologies such as Agile and Scrum, as well as certifications in specific technologies such as AWS and Microsoft Azure",
+
+  ans12:
+    "Yes, we have experience working with remote teams and have implemented robust systems and processes to ensure effective communication and collaboration.",
+
+  ans13:
+    "Yes, we believe in investing in the growth and development of our employees. We offer various training and development opportunities, both internal and external, to help our team members stay up-to-date with the latest technologies and best practices.",
+
+  ans14:
+    "We use a combination of industry-standard project management methodologies such as Agile and Waterfall to ensure that all projects are delivered on time, within budget, and to the satisfaction of our clients. We also have a dedicated project management team to oversee the progress of each project and ensure smooth communication with our clients.",
+
+  ans15:
+    "We use a variety of software development methodologies such as Agile, Scrum and Waterfall. Our team of experienced developers follows best practices and industry standards to ensure that all software is developed to the highest quality and meets the specific needs of our clients.",
+
+  ans16:
+    "Yes, we offer website maintenance and support services to ensure that your website is always up-to-date and running smoothly. Our team can help with updates, backups, security, and troubleshooting.",
+
+  ans17:
+    "We have experience with a variety of cloud computing platforms such as AWS, Azure, and Google Cloud. Our team can help you with cloud migration, deployment, and ongoing management and support. We also provide advice on the best cloud solution for your business based on your specific requirements.",
+
+  ans18:
+    "Yes, we offer a range of cybersecurity and data protection services to help keep your business and data safe. Our team can assist with threat management, penetration testing, incident response, and compliance with industry regulations.",
+
+  ans19:
+    "Our team of experienced professionals can assist with the design, implementation, and ongoing management of your network infrastructure. We can also provide IT support services to help with software troubleshooting, network issues, and other IT-related needs",
 };

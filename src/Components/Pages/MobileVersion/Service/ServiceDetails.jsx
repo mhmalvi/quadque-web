@@ -37,6 +37,10 @@ const ServiceDetails = () => {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     (async () => {
       const fetchServicedata = await handleFetchServiceBySlug(slug);
       console.log("local", fetchServicedata);

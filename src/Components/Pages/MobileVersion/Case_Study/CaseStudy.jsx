@@ -14,10 +14,15 @@ const CaseStudy = () => {
   console.log("case studies", CaseStudies);
   const CaseSlider = useRef(null);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const settings = {
+    dots: false,
     className: "center",
     centerMode: true,
-    infinite: false,
+    infinite: true,
     centerPadding: "100px",
     slidesToShow: 1,
     speed: 300,
@@ -36,8 +41,10 @@ const CaseStudy = () => {
   }, []);
 
   return (
-    <div id="Case_Study" className="CaseStudy w-full text-white mb-30">
-      <h1 className="font_title text-3xl font-thin px-6 pb-2">Case Study</h1>
+    <div id="Case_Study" className="CaseStudy w-full text-white pt-24">
+      <h1 className="font_title text-3xl font-thin px-6 pb-5">
+        CASE <br /> &nbsp;STUDY
+      </h1>
       <div className="text-sm text-justify px-6 pb-1">
         Let’s have a look at some of our interesting case study examples. These
         case studies will let you better understand how we tackle critical
@@ -76,10 +83,25 @@ const CaseStudy = () => {
           ))}
         </Slider>
       </div>
-      <div className="flex justify-center gap-4">
-        <div onClick={() => CaseSlider.current.slickPrev()}>Prev</div>
-        <div onClick={() => CaseSlider.current.slickNext()}>Next</div>
+      <div className="relative w-9/12 mx-auto">
+        {CaseStudies && (
+          <>
+            <div
+              onClick={() => CaseSlider.current.slickPrev()}
+              className="arrowLeft font-semibold"
+            >
+              {/* <Icons.RightArrow className="w-12 scale-x-[-1]" /> */}
+            </div>
+            <div
+              onClick={() => CaseSlider.current.slickNext()}
+              className="arrowRight font-semibold"
+            >
+              {/* <Icons.RightArrow className="w-12" /> */}
+            </div>
+          </>
+        )}
       </div>
+      {/* </div> */}
     </div>
   );
 };
