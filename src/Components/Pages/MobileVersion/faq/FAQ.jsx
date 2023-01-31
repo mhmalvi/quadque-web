@@ -62,7 +62,7 @@ const FAQ = () => {
           </Panel>
 
           <Panel
-            header=": Does Quadque Technologies have experience working with remote teams?"
+            header="Does Quadque Technologies have experience working with remote teams?"
             key="7"
           >
             <p className="text-white text-justify">{Answers?.ans7}</p>

@@ -605,3 +605,17 @@ body::-webkit-scrollbar {
     transform: translate(-5px, -5px);
   }
 }
+
+.faq span .ant-collapse-header-text {
+  color: white !important;
+  z-index: 10 !important;
+  font-size: 3rem !important;
+}
+
+/* .faq span .ant-collapse-header-text {
+  color: transparent;
+  z-index: 10 !important;
+  background-image: url("./asstes/Images/atika.jpeg") !important;
+  background-repeat: no-repeat;
+  margin-top: 4px;
+} */
