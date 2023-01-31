@@ -29,11 +29,6 @@ const FAQ = ({ setLoader }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoader(false);
-    }, 2000);
-  }, [setLoader]);
 
   return (
     <>
@@ -43,7 +38,7 @@ const FAQ = ({ setLoader }) => {
         <meta name="keywords" content={"faq's"} />
       </Helmet>
 
-      <div className="case_study_details min-h-full bg-black text-white py-20 px-36 font_anurati h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
+      <div className="case_study_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
         <div
           className="text-5xl font-bold leading-10 capitalize font_title mb-8"
           style={{

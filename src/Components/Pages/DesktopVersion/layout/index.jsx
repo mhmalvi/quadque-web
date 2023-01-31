@@ -4,6 +4,7 @@ import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
 import BlogDetailsLayout from "../Blogs/BlogDetails/BlogDetailsLayout";
 import CaseStudyDetailsLayout from "../CaseStudy/CaseStudyDetails/CaseStudyDetailsLayout";
 import FaqLayout from "../FAQ/FaqLayout";
+import GalleryLayout from "../Gallery/GalleryLayout";
 import ServiceDetailsLayout from "../Services/ServiceDetails/ServiceDetailsLayout";
 import DesktopLayout from "./DesktopLayout";
 
@@ -57,6 +58,15 @@ const Layout = () => {
           element={
             <>
               <FaqLayout />
+            </>
+          }
+        />
+
+        <Route
+          path="gallery"
+          element={
+            <>
+              <GalleryLayout />
             </>
           }
         />

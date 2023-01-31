@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Office from "../../../../asstes/Images/office.png"
 import Gallery1 from "../../../../asstes/Images/gallery1.jpg"
 import Gallery2 from "../../../../asstes/Images/gallery2.jpg"
