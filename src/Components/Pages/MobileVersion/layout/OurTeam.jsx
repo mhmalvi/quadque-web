@@ -46,43 +46,59 @@ const OurTeam = () => {
       <Slider ref={TeamSlider} arrows={false} {...settings} className="">
         <div className="w-36 pb-4 text-center">
           <img src={Chairman} alt="" className="w-28 h-32 mx-auto rounded-xl" />
-          <div className="font-semibold leading-7">Mohammad AB Bijoy</div>
-          <div className="h-14 uppercase font-thin">CHAIRMAN</div>
+          <div className="text-sm font-semibold leading-7">
+            Mohammad AB Bijoy
+          </div>
+          <div className="h-14 text-xs uppercase font-thin">CHAIRMAN</div>
         </div>
         <div className="w-36 pb-4 text-center">
           <img src={Ceo} alt="" className="w-28 h-32 mx-auto rounded-xl" />
-          <div className="font-semibold leading-7">Muhammad H.M. Alvi</div>
-          <div className="h-14 uppercase font-thin">MD & CEO</div>
+          <div className="text-sm font-semibold leading-7">
+            Muhammad H.M. Alvi
+          </div>
+          <div className="h-14 text-xs uppercase font-thin">MD & CEO</div>
         </div>
         <div className="w-36 pb-4 text-center">
           <img src={Director} alt="" className="w-28 h-32 mx-auto rounded-xl" />
-          <div className="font-semibold leading-7">Nahian Eram</div>
-          <div className="h-14 uppercase font-thin">DIRECTOR</div>
+          <div className="text-sm font-semibold leading-7">Nahian Eram</div>
+          <div className="h-14 text-xs uppercase font-thin">DIRECTOR</div>
         </div>
         <div className="w-36 pb-4 text-center">
           <img src={OM} alt="" className="w-28 h-32 mx-auto rounded-xl" />
-          <div className="font-semibold leading-7">Mohammad Nishat</div>
-          <div className="h-14 uppercase font-thin">MANAGER, OPERATIONS</div>
+          <div className="text-sm font-semibold leading-7">Mohammad Nishat</div>
+          <div className="h-14 text-xs uppercase font-thin">
+            MANAGER, OPERATIONS
+          </div>
         </div>
         <div className="w-36 pb-4 text-center">
           <img src={Atika} alt="" className="w-28 h-32 mx-auto rounded-xl" />
-          <div className="font-semibold leading-7">Atika Younus</div>
-          <div className="h-14 uppercase font-thin">WORDPRESS DEVELOPER</div>
+          <div className="text-sm font-semibold leading-7">Atika Younus</div>
+          <div className="h-14 text-xs uppercase font-thin">
+            WORDPRESS DEVELOPER
+          </div>
         </div>
         <div className="w-36 pb-4 text-center">
           <img src={Shourav} alt="" className="w-28 h-32 mx-auto rounded-xl" />
-          <div className="font-semibold leading-7">Shourav Sen Gupta</div>
-          <div className="h-14 uppercase font-thin">SOFTWARE DEVELOPER</div>
+          <div className="text-sm font-semibold leading-7">
+            Shourav Sen Gupta
+          </div>
+          <div className="h-14 text-xs uppercase font-thin">
+            SOFTWARE DEVELOPER
+          </div>
         </div>
         <div className="w-36 pb-4 text-center">
           <img src={Shova} alt="" className="w-28 h-32 mx-auto rounded-xl" />
-          <div className="font-semibold leading-7">Tasnim Islam</div>
-          <div className="h-14 uppercase font-thin">MARKETING EXECUTIVE</div>
+          <div className="text-sm font-semibold leading-7">Tasnim Islam</div>
+          <div className="h-14 text-xs uppercase font-thin">
+            MARKETING EXECUTIVE
+          </div>
         </div>
         <div className="w-36 pb-4 text-center">
           <img src={Imtiaz} alt="" className="w-28 h-32 mx-auto rounded-xl" />
-          <div className="font-semibold leading-7">A M Imtiaz Mahbub</div>
-          <div className="h-14 uppercase font-thin">CONTENT WRITER</div>
+          <div className="text-sm font-semibold leading-7">
+            A M Imtiaz Mahbub
+          </div>
+          <div className="h-14 text-xs uppercase font-thin">CONTENT WRITER</div>
         </div>
       </Slider>
       {/* </div> */}

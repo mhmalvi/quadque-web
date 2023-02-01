@@ -61,11 +61,14 @@ const BlogDetail = () => {
 
   return (
     <>
+      {/* For SEO purpose */}
+      {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Blog - ${blogData?.title}`}</title>
+        <title>{`Blog - ${blogData?.title} – Quadque Tech`}</title>
         <meta name="keywords" content={blogData?.meta_keyword} />
       </Helmet>
+
       {loader ? (
         <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie

@@ -75,7 +75,7 @@ const ClientSpeaks = () => {
           ))}
         </Slider>
         <div className="relative w-9/12 mx-auto">
-          {ClientSpeak && (
+          {!loader && (
             <>
               {/* <div className="m-auto flex justify-between pb-5"> */}
               <div

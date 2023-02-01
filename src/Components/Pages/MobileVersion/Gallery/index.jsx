@@ -4,13 +4,17 @@ import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
 import Office from "../../../../asstes/Images/office.png";
 import allbum from "../../../../asstes/Images/photo_gallery.png";
+import Lottie from "lottie-react";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 
-const Gallery = ({ setLoader }) => {
+const Gallery = () => {
   const location = useLocation();
   const [activeAccordion, setactiveAccordion] = useState(0);
   // const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const synth = window.speechSynthesis;
+  const [loader, setLoader] = useState(true);
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -43,6 +47,21 @@ const Gallery = ({ setLoader }) => {
       </Helmet>
 
       <div className="gallery min-h-full bg-black text-white pb-20 h-[90vh] overflow-y-auto relative">
+        
+        {loader ? (
+          <div className="w-[calc(100%_-_0px)] h-[100%] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+            <Lottie
+              className="w-1/2 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+
+            <div className="font_title text-white animate-pulse">
+              Loading...
+            </div>
+          </div>
+        ) : null}
+
         <img src={Office} alt="" className="w-full h-96" />
         {/* <h1 className="absolute w-full flex items-end h-56 bg-gradient-to-b from-transparent to-black text-2xl text-white px-6 pb-10"> */}
         <h1 className="text-center text-white text-4xl font_title">Gallery</h1>
