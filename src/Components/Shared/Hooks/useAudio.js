@@ -5,7 +5,10 @@ const useAudio = () => {
   const [audio] = useState(new Audio(siteAudio));
   const [playing, setPlaying] = useState(false);
 
-  const toggle = () => setPlaying(!playing);
+  const toggle = () => {
+    console.log("Clicked");
+    setPlaying(!playing);
+  };
 
   useEffect(() => {
     playing ? audio.play() : audio.pause();

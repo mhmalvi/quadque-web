@@ -31,7 +31,7 @@ export const handleFetchServiceBySlug = async (slug) => {
       `${process.env?.REACT_APP_SERVICE_URL}/api/services/${slug}`
     );
     /* console.log("netwooooork", result?.data); */
-      return result?.data;
+    return result?.data;
   } catch (error) {
     console.log(error.response?.message);
     return [];
@@ -57,7 +57,7 @@ export const handleFetchCaseStudyBySlug = async (slug) => {
       `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies/${slug}`
     );
     console.log("netwooork", result?.data);
-      return result?.data;
+    return result?.data;
   } catch (error) {
     console.log(error.response?.data);
     return [];
@@ -181,6 +181,18 @@ export const handleFetchCaseStudiesDesktop = async () => {
   try {
     const result = await axios.get(
       `${process.env?.REACT_APP_SERVICE_URL}/api/case-studies-desktop`
+    );
+    return result?.data;
+  } catch (error) {
+    console.log(error.response?.data);
+    return [];
+  }
+};
+
+export const handleFetchGallery = async () => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/gallery`
     );
     return result?.data;
   } catch (error) {
