@@ -43,7 +43,7 @@ const Header = () => {
           <source src={Astro} type="video/mp4" />
         </video>
       </div>
-      <div className="flex justify-center bg-black text-white pt-10 pb-20 px-6">
+      <div className="flex justify-center bg-black text-white py-10 px-6">
         <Slide top>
           <a href="#start-project" className="font-semibold text-xl">
             START PROJECT

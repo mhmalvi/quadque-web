@@ -106,24 +106,24 @@ const Services = () => {
               </Link>
             ))}
           </Slider>
-          {Services && 
-          <>
-          {/* <div className="m-auto flex justify-between pb-5"> */}
-          <div
-            onClick={() => slider1.current.slickPrev()}
-            className="arrowLeft absolute bottom-[300px] font-semibold"
-          >
-            {/* <Icons.RightArrow className="w-12 scale-x-[-1]" /> */}
-          </div>
-          <div
-            onClick={() => slider1.current.slickNext()}
-            className="arrowRight absolute bottom-[300px] font-semibold"
-          >
-            {/* <Icons.RightArrow className="w-12" /> */}
-          </div>
-          {/* </div> */}
-          </>
-          }
+          {!loader && (
+            <>
+              {/* <div className="m-auto flex justify-between pb-5"> */}
+              <div
+                onClick={() => slider1.current.slickPrev()}
+                className="arrowLeft absolute bottom-[330px] font-semibold"
+              >
+                {/* <Icons.RightArrow className="w-12 scale-x-[-1]" /> */}
+              </div>
+              <div
+                onClick={() => slider1.current.slickNext()}
+                className="arrowRight absolute bottom-[330px] font-semibold"
+              >
+                {/* <Icons.RightArrow className="w-12" /> */}
+              </div>
+              {/* </div> */}
+            </>
+          )}
 
           <div className="text-center font-semibold text-brand-color animate-pulse pt-10">
             <a href="#start-project">START PROJECT</a>

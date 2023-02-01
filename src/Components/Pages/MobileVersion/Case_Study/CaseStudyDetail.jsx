@@ -32,9 +32,10 @@ const CaseStudyDetail = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Services`}</title>
-        {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
+        <title>{caseData?.our_content_header + ` – Quadque Tech`}</title>
+        <meta name="keywords" content={caseData?.meta_keyword} />
       </Helmet>
+
       {loader ? (
         <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie

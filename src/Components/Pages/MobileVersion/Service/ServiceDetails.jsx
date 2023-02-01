@@ -79,11 +79,21 @@ const ServiceDetails = () => {
 
   return (
     <>
+      {/* For SEO */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Services`}</title>
-        {/* <meta name="keywords" content={blogDetails?.meta_keyword} /> */}
+        <title>{serviceDetailsContent[`${slug}`]?.metaTitle}</title>
+        <meta
+          name="description"
+          content={serviceDetailsContent[`${slug}`]?.metaDescription}
+        />
+        <meta
+          name="keywords"
+          content={serviceDetailsContent[`${slug}`]?.metaKeywords}
+        />
       </Helmet>
+
+
       {loader ? (
         <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie
@@ -96,7 +106,7 @@ const ServiceDetails = () => {
         </div>
       ) : null}
       <div
-        className={`w-full h-auto mt-30 text-white px-6 ${
+        className={`w-full h-auto mt-20 text-white px-6 ${
           !Service ? "scale-0" : ""
         }`}
       >
@@ -350,7 +360,7 @@ const ServiceDetails = () => {
             <Slider ref={ReviewsSlider} arrows={false} {...settings}>
               {ClientSpeak.map((details) => (
                 <div>
-                  <div className="min-h-[400px] border rounded-2xl p-4 my-6 mx-2">
+                  <div className="bg-black shadow-md shadow-white min-h-[400px] border rounded-2xl p-4 my-6 mx-2">
                     <img
                       src={
                         process.env.REACT_APP_ASSETS_URL + "/" + details?.image
@@ -397,6 +407,13 @@ export default ServiceDetails;
 
 const serviceDetailsContent = {
   "ui-ux": {
+    metaTitle:
+      "UI & UX Services- Online IT Services for Business – Quadque Tech",
+    metaDescription:
+      "We understand that the best UI/UX solutions have the right blend of creativity and user-friendly features. Take a look at how we can help you with our UI/UX services.",
+    metaKeywords:
+      "ux ui design, ui ux, ui&ux designer, ux ui, ui ux designer, ui vs ux, difference between ui and ux, ui ux design services, ui ux design and development services",
+
     helpContent: [
       {
         title: "Usability Analyst",
@@ -454,6 +471,13 @@ const serviceDetailsContent = {
   },
 
   "web-development": {
+    metaTitle:
+      "Web Development Services- Online IT Services for Business – Quadque Tech",
+    metaDescription:
+      "Website development does not have to be too complicated. We can develop awesome website services with unique and intuitive features using various platforms.",
+    metaKeywords:
+      "web development, web development company, web development Sydney, web site development, web development agency, web design agency Australia, web design agency Bangladesh, web application development, web development services",
+
     helpContent: [
       {
         title: "Usability Analyst",
@@ -511,6 +535,13 @@ const serviceDetailsContent = {
   },
 
   "mobile-app-development": {
+    metaTitle:
+      "Mobile App Development Services- Online IT Services for Business – Quadque Tech",
+    metaDescription:
+      "Let's take a look at our innovative and powerful mobile application development services. We can develop the perfect mobile app for your business without any issues.",
+    metaKeywords:
+      "mobile app development company, mobile app developers, develop mobile apps, iphone mobile apps development company, mobile app developer, mobile app developer guide, web and mobile app development",
+
     helpContent: [
       {
         title: "Native and Hybrid Mobile App Development",
@@ -533,7 +564,7 @@ const serviceDetailsContent = {
         icon: visual,
       },
       {
-        title: "mHealth and Educational Apps",
+        title: "Health and Educational Apps",
         icon: Interaction,
       },
     ],
@@ -568,6 +599,13 @@ const serviceDetailsContent = {
   },
 
   "software-development": {
+    metaTitle:
+      "software development Services- Online IT Services for Business – Quadque Tech",
+    metaDescription:
+      "Developing problem-free software can be a challenging task. Get the best software for your organization with our software development services.",
+    metaKeywords:
+      "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
+
     helpContent: [
       {
         title: "ERP Packages",
@@ -625,6 +663,14 @@ const serviceDetailsContent = {
   },
 
   "ai-&-iot-solutions": {
+    metaTitle:
+      "AI & IoT Services- Online IT Services for Business – Quadque Tech",
+
+    metaDescription:
+      "The future of technology will be paved by Artificial Intelligence (AI) and the Internet of Things (IoT). Let us assist you with the most innovative AI and IoT solutions.",
+    metaKeywords:
+      "AI technologies artificial intelligence AI and IoT Solutions",
+
     helpContent: [
       {
         title: "AI Chatbot",
