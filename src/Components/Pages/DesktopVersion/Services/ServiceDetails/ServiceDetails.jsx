@@ -182,7 +182,7 @@ const ServiceDetails = ({ setLoader }) => {
           </div>
 
           <p
-            className="text-base leading-6 text-white font-medium text-opacity-60"
+            className="text-base leading-6 text-white font-medium text-opacity-60 text-center"
             style={{
               letterSpacing: "0.07em",
             }}
@@ -268,7 +268,7 @@ const ServiceDetails = ({ setLoader }) => {
                   </h3>
                 </div>
                 <p
-                  className="text-base leading-6 font-normal text-white text-opacity-60 text-justify mt-2.5"
+                  className="text-base leading-6 font-normal text-white text-opacity-60 text-center mt-2.5"
                   style={{
                     letterSpacing: "0.07em",
                   }}
