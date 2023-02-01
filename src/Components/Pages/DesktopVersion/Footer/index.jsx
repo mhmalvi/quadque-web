@@ -172,10 +172,12 @@ const Footer = () => {
                     <h4 className="text-sm font-normal mb-2.5">About Us</h4>
                     <h4 className="text-sm font-normal mb-2.5">Careers</h4>
                     <h4 className="text-sm font-normal mb-2.5">
+                      <Link to={"/gallery"}>Gallery</Link>
+                    </h4>
+                    <h4 className="text-sm font-normal mb-2.5">
                       <Link to={"/faq"}>FAQ's</Link>
                     </h4>
                     <h4 className="text-sm font-normal mb-2.5">Teams</h4>
-                    <h4 className="text-sm font-normal mb-2.5">Contact Us</h4>
                   </div>
                 </Fade>
               </div>

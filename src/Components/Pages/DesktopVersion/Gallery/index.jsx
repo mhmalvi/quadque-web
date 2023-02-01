@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-reveal";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Office from "../../../../asstes/Images/office.png";
 import allbum from "../../../../asstes/Images/photo_gallery.png";
+import Icons from "../../../Shared/Icons";
 
 const Gallery = ({ setLoader }) => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [activeAccordion, setactiveAccordion] = useState(0);
   // const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
@@ -18,7 +20,6 @@ const Gallery = ({ setLoader }) => {
 
       setTimeout(() => {
         setTriggerAnimation(true);
-        // setTriggerTitleAnimation(true);
       }, 800);
 
       setTimeout(() => {
@@ -33,13 +34,32 @@ const Gallery = ({ setLoader }) => {
       {/* For SEO */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Gallery - Quadque Technologies Limited</title>
-        <meta name="description" content={"gallery"} />
-        <meta name="keywords" content={"gallery"} />
+        <title>
+          Gallery - Get The Best Online IT Services for Business - Quadque
+        </title>
+        <meta
+          name="description"
+          content="Take a look at our vibrant team in action, who work hard to ensure the best possible results for your digital and IT requirements. Our achievements are possible because of them."
+        />
+        <meta
+          name="keywords"
+          content="web development services, Software Development services , web and mobile app development services , digital marketing services, ui ux design and development services, online it support services, it services online, it services online "
+        />
       </Helmet>
 
       <div className="gallery min-h-full bg-black text-white pb-20 h-[90vh] overflow-y-auto font-poppins">
-        <img src={Office} alt="" className="w-full h-96" />
+        <div className="relative">
+          <img src={Office} alt="" className="w-full h-96" />
+          <div className="absolute top-20 left-40 z-50">
+            <Icons.GoBackArrow
+              className="w-6 font-semibold cursor-pointer"
+              onClick={() => {
+                navigate(`../#contacts`, { replace: true });
+              }}
+            />
+          </div>
+        </div>
+
         {/* <h1 className="absolute w-full flex items-end h-56 bg-gradient-to-b from-transparent to-black text-2xl text-white px-6 pb-10"> */}
         <h1 className="text-center text-white text-4xl font_title">Gallery</h1>
 
@@ -59,7 +79,7 @@ const Gallery = ({ setLoader }) => {
                       <img src={allbum} className="w-6 mr-2" alt="" />
                       <h1>{image?.event}</h1>
                     </div>
-                    <div className="h-0.5 ml-8 w-full bg-white bg-opacity-60"></div>
+                    <div className="h-0.5 ml-8 w-full bg-white bg-opacity-60 my-auto"></div>
                   </div>
                   {activeAccordion === i ? (
                     <div className="flex flex-wrap justify-center items-center gap-8">
