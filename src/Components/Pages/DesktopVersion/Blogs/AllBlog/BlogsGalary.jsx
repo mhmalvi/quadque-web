@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import useBlogs from "../../../../Shared/Hooks/useBlog";
+import Icons from "../../../../Shared/Icons";
 
 const BlogsGalary = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -39,6 +40,15 @@ const BlogsGalary = ({ setLoader }) => {
         className="min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font-poppins"
         ref={blogdetailsRef}
       >
+        <div className="mb-10">
+          <Icons.GoBackArrow
+            className="w-6 font-semibold cursor-pointer"
+            onClick={() => {
+              navigate(`../#blogs`, { replace: true });
+            }}
+          />
+        </div>
+
         <div className="mx-36">
           <div className="py-11 mb-8">
             <h1 className="text-[32px]">Some Recent Interesting Posts</h1>

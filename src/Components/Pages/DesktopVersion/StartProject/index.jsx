@@ -61,7 +61,7 @@ const StartProject = () => {
         "Magento Web Development",
         "Drupal Web Development",
       ]);
-    } else if (service_name === "Application Development") {
+    } else if (service_name === "Mobile App Development") {
       setSubServices([
         "Native Mobile App Development",
         "Hybrid Mobile App Development",

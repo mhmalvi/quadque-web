@@ -2,12 +2,14 @@ import { Collapse } from "antd";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-reveal";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Faq from "../../../../asstes/Images/faq.png";
+import Icons from "../../../Shared/Icons";
 
 const { Panel } = Collapse;
 
 const FAQ = ({ setLoader }) => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
@@ -29,16 +31,33 @@ const FAQ = ({ setLoader }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
 
-
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`FAQ's – Quadque Tech`}</title>
-        <meta name="keywords" content={"faq's"} />
+        <title>
+          FAQ's - Get The Best Online IT Services for Business - Quadque
+        </title>
+        <meta
+          name="description"
+          content="Let's take a quick look at some frequently asked tech-related questions that we receive. We have answered these questions to clear the most common confusion."
+        />
+        <meta
+          name="keywords"
+          content="web development services, Software Development services , web and mobile app development services , digital marketing services, ui ux design and development services, online it support services, it services online, it services online"
+        />
       </Helmet>
 
       <div className="case_study_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
+        <div className="mb-10">
+          <Icons.GoBackArrow
+            className="w-6 font-semibold cursor-pointer"
+            onClick={() => {
+              navigate(`../#contacts`, { replace: true });
+            }}
+          />
+        </div>
+
         <div
           className="text-5xl font-bold leading-10 capitalize font_title mb-8"
           style={{
