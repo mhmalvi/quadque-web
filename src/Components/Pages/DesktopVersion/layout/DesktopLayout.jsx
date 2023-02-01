@@ -19,6 +19,8 @@ const DesktopLayout = () => {
   // const [audioFile, setAudioFile] = useState(false);
   const synth = window.speechSynthesis;
 
+  console.log(playing);
+
   useEffect(() => {
     synth.cancel();
 
@@ -27,7 +29,7 @@ const DesktopLayout = () => {
         setShowWelcome(true);
       }, 3000);
     }
-  }, [setPlaying, synth]);
+  }, [synth]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -198,7 +200,7 @@ const DesktopLayout = () => {
 
         <div className="relative">
           <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
-            {playing ? (
+            {!playing ? (
               <div className="w-8">
                 <Tooltip
                   title="Unmute Sound"

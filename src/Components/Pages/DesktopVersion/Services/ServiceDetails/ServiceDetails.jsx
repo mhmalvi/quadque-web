@@ -104,11 +104,12 @@ const ServiceDetails = ({ setLoader }) => {
             >
               <button
                 className="absolute -top-4 right-10"
-                onClick={() =>
+                onClick={() => {
+                  synth.cancel();
                   speak({
                     text: serviceDetails?.description,
-                  })
-                }
+                  });
+                }}
                 onDoubleClick={() => synth.cancel()}
               >
                 <Lottie
@@ -163,11 +164,12 @@ const ServiceDetails = ({ setLoader }) => {
             >
               <button
                 className="absolute top-0 right-10"
-                onClick={() =>
+                onClick={() => {
+                  synth.cancel();
                   speak({
                     text: serviceDetails?.identity_design_des,
-                  })
-                }
+                  });
+                }}
                 onDoubleClick={() => synth.cancel()}
               >
                 <Lottie
@@ -353,12 +355,13 @@ const ServiceDetails = ({ setLoader }) => {
             >
               <button
                 className="absolute top-0 right-10"
-                onClick={() =>
+                onClick={() => {
+                  synth.cancel();
                   speak({
                     text: document.getElementById("serviceDetails_content")
                       .innerText,
-                  })
-                }
+                  });
+                }}
                 onDoubleClick={() => synth.cancel()}
               >
                 <Lottie
@@ -396,11 +399,12 @@ const ServiceDetails = ({ setLoader }) => {
               >
                 <button
                   className="absolute top-0 right-10"
-                  onClick={() =>
+                  onClick={() => {
+                    synth.cancel();
                     speak({
                       text: serviceDetails?.service_deliver_des,
-                    })
-                  }
+                    });
+                  }}
                   onDoubleClick={() => synth.cancel()}
                 >
                   <Lottie
@@ -435,26 +439,28 @@ const ServiceDetails = ({ setLoader }) => {
                 {...settings}
               >
                 {caseStudies?.map((casestudy, i) => (
-                  <div
-                    onClick={() => {
-                      navigate(`../case-studies/${casestudy?.slug}`, {
-                        replace: true,
-                      });
-                    }}
-                    key={i}
-                    className="rounded-xl"
-                  >
-                    <img
-                      src={
-                        process.env.REACT_APP_ASSETS_URL +
-                        "/" +
-                        casestudy?.com_image
-                      }
-                      alt=""
-                      className="w-68 h-72 px-4 rounded-xl"
-                    />
-                    <div className="ml-4 text-white py-2">
-                      {casestudy?.com_name}
+                  <div className="p-4">
+                    <div
+                      onClick={() => {
+                        navigate(`../case-studies/${casestudy?.slug}`, {
+                          replace: true,
+                        });
+                      }}
+                      key={i}
+                      className="border rounded-2xl p-4 bg-gray-100 bg-opacity-20 backdrop-filter shadow-md shadow-gray-300 backdrop-blur-md hover:bg-opacity-25 hover:delay-200"
+                    >
+                      <img
+                        src={
+                          process.env.REACT_APP_ASSETS_URL +
+                          "/" +
+                          casestudy?.com_image
+                        }
+                        alt=""
+                        className="w-full px-4 rounded-xl"
+                      />
+                      <div className="ml-4 text-white py-2 text-center">
+                        {casestudy?.com_name}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -475,7 +481,7 @@ const ServiceDetails = ({ setLoader }) => {
               >
                 {clientSpeak?.map((client, i) => (
                   <div className="p-6">
-                    <div className="border rounded-2xl p-4 hover:bg-white hover:bg-opacity-10 hover:delay-200">
+                    <div className="border rounded-2xl p-4 bg-gray-100 bg-opacity-20 backdrop-filter shadow-md shadow-gray-300 backdrop-blur-md hover:bg-opacity-25 hover:delay-200">
                       <img
                         src={
                           process.env.REACT_APP_ASSETS_URL + "/" + client?.image
@@ -517,6 +523,7 @@ const clientSpeakSettings = {
   centerMode: false,
   arrows: true,
   infinite: true,
+  dots: true,
   slidesToShow: 3,
   rows: 1,
   speed: 300,
@@ -717,7 +724,7 @@ const serviceDetailsContent = {
 
   "software-development": {
     metaTitle:
-      "software development Services- Online IT Services for Business – Quadque Tech",
+      "Software development Services- Online IT Services for Business – Quadque Tech",
     metaDescription:
       "Developing problem-free software can be a challenging task. Get the best software for your organization with our software development services.",
     metaKeywords:

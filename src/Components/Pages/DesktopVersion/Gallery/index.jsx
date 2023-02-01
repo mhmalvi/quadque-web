@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Fade } from "react-reveal";
+import Fade from "react-reveal/Fade";
 import { useLocation, useNavigate } from "react-router-dom";
 import Office from "../../../../asstes/Images/office.png";
 import allbum from "../../../../asstes/Images/photo_gallery.png";
 import Icons from "../../../Shared/Icons";
+import { handleFetchGallery } from "../../../Shared/services";
 
 const Gallery = ({ setLoader }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [activeAccordion, setactiveAccordion] = useState(0);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [activeAccordion, setActiveAccordion] = useState(0);
   // const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const synth = window.speechSynthesis;
@@ -28,6 +30,18 @@ const Gallery = ({ setLoader }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
+
+  useEffect(() => {
+    (async () => {
+      const galleryImages = await handleFetchGallery();
+      if (galleryImages?.message === "success") {
+        console.log(galleryImages?.data);
+        setGalleryImages(galleryImages?.data);
+      }
+    })();
+  }, []);
+
+  console.log("activeAccordion", activeAccordion);
 
   return (
     <>
@@ -65,93 +79,49 @@ const Gallery = ({ setLoader }) => {
 
         {/* IMAGES GALLERY START */}
         <div className="mt-10 2xl:mt-20 px-28 gap-4">
-          <div className="faq w-10/12 mx-auto pb-4 px-6 mt-6">
-            <Fade left cascade spy={triggerAnimation}>
-              {Images?.map((image, i) => (
+          <Fade left cascade spy={triggerAnimation}>
+            <div className="faq w-10/12 mx-auto pb-4 px-6 mt-6">
+              {galleryImages?.map((event, i) => (
                 <div key={i}>
                   <div
                     className="flex items-center text-2xl font-semibold my-6 cursor-pointer mb-8"
                     onClick={() =>
-                      setactiveAccordion(activeAccordion === i ? null : i)
+                      setActiveAccordion(
+                        activeAccordion === event?.id ? null : event?.id
+                      )
                     }
                   >
                     <div className="whitespace-nowrap flex items-center">
                       <img src={allbum} className="w-6 mr-2" alt="" />
-                      <h1>{image?.event}</h1>
+                      <h1>{event?.album_title}</h1>
                     </div>
                     <div className="h-0.5 ml-8 w-full bg-white bg-opacity-60 my-auto"></div>
                   </div>
-                  {activeAccordion === i ? (
-                    <div className="flex flex-wrap justify-center items-center gap-8">
-                      {image?.images?.map((img, i) => (
-                        <img key={i} src={img} alt="" className="rounded-xl" />
-                      ))}
-                    </div>
-                  ) : null}
+                  <div>
+                    {activeAccordion === event?.id ? (
+                      <div
+                        className={`flex flex-wrap justify-center items-center gap-8`}
+                      >
+                        {event?.gallery_images?.map((img, index) => (
+                          <div key={index}>
+                            <img
+                              src={
+                                process.env.REACT_APP_ASSETS_URL +
+                                "/" +
+                                img?.images
+                              }
+                              alt=""
+                              className="rounded-xl"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               ))}
-
-              {/* <Collapse accordion ghost>
-                <Panel
-                  className="text-xl mb-4"
-                  header="What services does Quadque Technologies offer?"
-                  key="1"
-                >
-                  <p className="text-base font-light text-white text-opacity-95 text-justify ml-8">
-                    <div className="flex flex-wrap justify-center gap-8">
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                    </div>
-                  </p>
-                </Panel>
-
-                <Panel
-                  className="text-xl mb-4"
-                  header="Does Quadque Technologies offer IT support services?"
-                  key="4"
-                >
-                  <p className="text-base font-light text-white text-opacity-95 text-justify ml-8">
-                    <div className="flex flex-wrap justify-center gap-8">
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                    </div>
-                  </p>
-                </Panel>
-
-                <Panel
-                  className="text-xl mb-4"
-                  header="How can I contact Quadque Technologies for more information?"
-                  key="5"
-                >
-                  <p className="text-base font-light text-white text-opacity-95 text-justify ml-8">
-                    <div className="flex flex-wrap justify-center gap-8">
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-                      <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-                    </div>
-                  </p>
-                </Panel>
-              </Collapse> */}
-            </Fade>
-          </div>
-
-          {/* <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-          <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-          <img src={Gallery2} alt="" className="w-40 rounded-xl" />
-          <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-          <img src={Gallery1} alt="" className="w-40 rounded-xl" />
-          <img src={Gallery2} alt="" className="w-40 rounded-xl" /> */}
+            </div>
+          </Fade>
         </div>
       </div>
     </>
@@ -160,50 +130,50 @@ const Gallery = ({ setLoader }) => {
 
 export default Gallery;
 
-const Images = [
-  {
-    key: 0,
-    event: "Random Memories",
-    images: [
-      "https://lh3.googleusercontent.com/p/AF1QipM4PIEGDxgTmwAgDZLFqfEVgPGAtl0EytEtTsZY=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipPDn6C6wcRFQ_vBivFeBJ7TohWecpxiSf2gOpCM=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipMmNDzYrA7oFTxwsdKCxFm7QQrCW7UvOwEPqMD6=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipMDA5xEDmyyhTRDPShfOn8SrlmuW7Y8xG_WwIJ5=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipM2DxHcpjqKC4dPY9oh1xmKVjP_NUJQj3c-lr_k=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
-    ],
-  },
-  {
-    key: 1,
-    event: "QQQ Party",
-    images: [
-      "https://lh3.googleusercontent.com/p/AF1QipMmNDzYrA7oFTxwsdKCxFm7QQrCW7UvOwEPqMD6=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipPDn6C6wcRFQ_vBivFeBJ7TohWecpxiSf2gOpCM=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipM2DxHcpjqKC4dPY9oh1xmKVjP_NUJQj3c-lr_k=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipM4PIEGDxgTmwAgDZLFqfEVgPGAtl0EytEtTsZY=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipMDA5xEDmyyhTRDPShfOn8SrlmuW7Y8xG_WwIJ5=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
-    ],
-  },
-  {
-    key: 2,
-    event: "XYZ Party",
-    images: [
-      "https://lh3.googleusercontent.com/p/AF1QipM4PIEGDxgTmwAgDZLFqfEVgPGAtl0EytEtTsZY=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipPDn6C6wcRFQ_vBivFeBJ7TohWecpxiSf2gOpCM=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipMDA5xEDmyyhTRDPShfOn8SrlmuW7Y8xG_WwIJ5=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipMmNDzYrA7oFTxwsdKCxFm7QQrCW7UvOwEPqMD6=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
-      "https://lh3.googleusercontent.com/p/AF1QipM2DxHcpjqKC4dPY9oh1xmKVjP_NUJQj3c-lr_k=s680-w680-h510",
-    ],
-  },
-];
+// const Images = [
+//   {
+//     key: 0,
+//     event: "Random Memories",
+//     images: [
+//       "https://lh3.googleusercontent.com/p/AF1QipM4PIEGDxgTmwAgDZLFqfEVgPGAtl0EytEtTsZY=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipPDn6C6wcRFQ_vBivFeBJ7TohWecpxiSf2gOpCM=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipMmNDzYrA7oFTxwsdKCxFm7QQrCW7UvOwEPqMD6=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipMDA5xEDmyyhTRDPShfOn8SrlmuW7Y8xG_WwIJ5=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipM2DxHcpjqKC4dPY9oh1xmKVjP_NUJQj3c-lr_k=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
+//     ],
+//   },
+//   {
+//     key: 1,
+//     event: "QQQ Party",
+//     images: [
+//       "https://lh3.googleusercontent.com/p/AF1QipMmNDzYrA7oFTxwsdKCxFm7QQrCW7UvOwEPqMD6=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipPDn6C6wcRFQ_vBivFeBJ7TohWecpxiSf2gOpCM=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipM2DxHcpjqKC4dPY9oh1xmKVjP_NUJQj3c-lr_k=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipM4PIEGDxgTmwAgDZLFqfEVgPGAtl0EytEtTsZY=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipMDA5xEDmyyhTRDPShfOn8SrlmuW7Y8xG_WwIJ5=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
+//     ],
+//   },
+//   {
+//     key: 2,
+//     event: "XYZ Party",
+//     images: [
+//       "https://lh3.googleusercontent.com/p/AF1QipM4PIEGDxgTmwAgDZLFqfEVgPGAtl0EytEtTsZY=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipPDn6C6wcRFQ_vBivFeBJ7TohWecpxiSf2gOpCM=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipMDA5xEDmyyhTRDPShfOn8SrlmuW7Y8xG_WwIJ5=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOkGzbnDk0JOYgnkxy1HBiTKcToXcdhFHnrTevp=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipMmNDzYrA7oFTxwsdKCxFm7QQrCW7UvOwEPqMD6=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipOHV334A6WNEpaBwm9aAiyPqXu5aw6iLlZPm1Fz=s680-w680-h510",
+//       "https://lh3.googleusercontent.com/p/AF1QipM2DxHcpjqKC4dPY9oh1xmKVjP_NUJQj3c-lr_k=s680-w680-h510",
+//     ],
+//   },
+// ];

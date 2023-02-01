@@ -12,7 +12,7 @@ import Blogs from "./BlogsGalary";
 const BlogsLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -177,9 +177,11 @@ const BlogsLayout = () => {
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
-                    src={unmuteImg}
-                    onClick={() => setMuted(false)}
+                    src={muteImg}
                     alt=""
+                    onClick={() => {
+                      setMuted(false);
+                    }}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>
@@ -194,8 +196,10 @@ const BlogsLayout = () => {
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                   <img
                     className="z-50 cursor-pointer"
-                    src={muteImg}
-                    onClick={() => setMuted(true)}
+                    src={unmuteImg}
+                    onClick={() => {
+                      setMuted(true);
+                    }}
                     alt=""
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
@@ -209,9 +213,12 @@ const BlogsLayout = () => {
               <div>&nbsp;</div>
               <div>&nbsp;</div>
               <div className="mb-9 -rotate-90 flex justify-center items-center">
-                <span className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4">
+                <a
+                  href="#start-project"
+                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4"
+                >
                   start project
-                </span>
+                </a>
               </div>
             </div>
           </div>
