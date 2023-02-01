@@ -4,6 +4,7 @@ import { Pagination } from "antd";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
+import { Helmet } from "react-helmet";
 
 const BlogGallery = () => {
   const [allBlogs] = useBlogs();
@@ -39,6 +40,17 @@ const BlogGallery = () => {
 
   return (
     <>
+      {/* For SEO purpose */}
+      {/* Meta Keywords */}
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`Blog - Get The Best Online IT Services for Business - Quadque`}</title>
+        <meta
+          name="description"
+          content="Look at our informative blogs, where we discuss various interesting topics related to the IT industry, such as website development , UI/UX design and digital marketing and so on."
+        />
+      </Helmet>
+      
       {loader ? (
         <div className="w-full h-[100vh] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie
@@ -50,7 +62,7 @@ const BlogGallery = () => {
           <div className="font_title text-white animate-pulse">Loading...</div>
         </div>
       ) : null}
-      <div className="Blog w-full h-[100vh] mt-30 px-6">
+      <div className="Blog w-full h-[900px] mt-30 px-6">
         {currentPosts?.map((details) => (
           <Link to={`blog-detail/${details.slug}`}>
             <div key={details.id} className="rounded-xl mx-auto">

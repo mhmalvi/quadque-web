@@ -41,7 +41,7 @@ const CaseStudy = () => {
   }, []);
 
   return (
-    <div id="Case_Study" className="CaseStudy w-full text-white pt-24">
+    <div id="Case_Study" className="CaseStudy w-full text-white pt-20">
       <h1 className="font_title text-3xl font-thin px-6 pb-5">
         CASE <br /> &nbsp;STUDY
       </h1>
@@ -84,7 +84,7 @@ const CaseStudy = () => {
         </Slider>
       </div>
       <div className="relative w-9/12 mx-auto">
-        {CaseStudies && (
+        {!loader && (
           <>
             <div
               onClick={() => CaseSlider.current.slickPrev()}

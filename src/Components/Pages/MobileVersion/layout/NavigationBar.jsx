@@ -2,6 +2,7 @@ import { Button, Modal } from "antd";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
+import LogoWithTag from "../../../../asstes/Images/logo-tag.png";
 
 const NavigationBar = () => {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,11 @@ const NavigationBar = () => {
   };
 
   return (
-    <div id="Navigation" className="Navigation fixed top-0 z-50" style={{transition: "top 0.3s"}}>
+    <div
+      id="Navigation"
+      className="Navigation fixed top-0 z-50"
+      style={{ transition: "top 0.3s" }}
+    >
       <div className="flex justify-between">
         <Link to="/">
           <div className="shrink-0 p-6">
@@ -28,24 +33,24 @@ const NavigationBar = () => {
           </div>
         </Link>
         <Button
-          className={`${open ? "hidden" : ""}`}
+          className={`pt-2 ${open ? "translate-x-5 hidden" : ""}`}
           type="button"
           onClick={() => setOpen(true)}
         >
           {/* Hamburger Animation */}
           <div
             className={`w-4 ${genericHamburgerLine} ${
-              open ? "translate-x-3 opacity-0 duration-300" : ""
+              open ? "opacity-0 duration-300" : ""
             }`}
           />
           <div
             className={`${genericHamburgerLine} w-8 ${
-              open ? "translate-x-5 opacity-0 duration-300" : ""
+              open ? "opacity-0 duration-300" : ""
             } `}
           />
           <div
             className={`${genericHamburgerLine} w-4 opacity-100 float-right relative -top-1 ${
-              open ? "translate-x-9 opacity-0 duration-300" : ""
+              open ? "opacity-0 duration-300" : ""
             }`}
           />
         </Button>
@@ -61,10 +66,10 @@ const NavigationBar = () => {
       >
         <div className="w-full h-full flex flex-col justify-between text-center text-xl pt-24">
           <div
-            className="absolute top-14 shrink-0"
+            className="flex flex-row absolute top-14 shrink-0"
             onClick={() => setOpen(false)}
           >
-            <Icons.BrandLogoMob className="w-12 scale-x-[-1] text-white" />
+            <Icons.BrandLogoMobWithTagline className=" text-white w-32 pb-4" />
           </div>
 
           <div onClick={() => setOpen(false)}>
