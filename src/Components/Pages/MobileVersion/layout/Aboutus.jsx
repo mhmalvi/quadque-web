@@ -34,7 +34,7 @@ const Aboutus = () => {
   };
 
   return (
-    <div id="About" className="w-full text-white pt-24">
+    <div id="About" className="w-full text-white pt-20">
       <h1 className="font_title text-3xl font-thin px-6 pb-4">ABOUT US</h1>
       <div className="text-lg font-semibold text-justify px-6">
         We work with the technological challenges of the world's leading
@@ -49,16 +49,16 @@ const Aboutus = () => {
         domestic and overseas areas. Over time, Quadque has also moved into more
         advanced technologies.{" "}
       </div>
-      <div className="flex flex-wrap justify-between px-6 py-10">
-        <div className="text-3xl">
+      <div className="flex flex-wrap justify-between p-6">
+        <div className="text-3xl pb-3">
           23+
           <p className="text-lg font-thin">Active Clients</p>
         </div>
-        <div className="text-3xl">
+        <div className="text-3xl pb-3">
           150+
           <p className="text-lg font-thin">Projects Done</p>
         </div>
-        <div className="text-3xl">
+        <div className="text-3xl pb-3">
           10+
           <p className="text-lg font-thin">Team Advisors</p>
         </div>

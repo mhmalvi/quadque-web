@@ -3,6 +3,7 @@ import Astro from "../../../../asstes/Video/headerVideo.mp4";
 import { handleFetchHomeVideo } from "../../../Shared/services";
 import "../../MobileVersion/MobileView.css";
 import Typical from "react-typical";
+import { Fade, Slide } from "react-reveal";
 
 const Header = () => {
   const [video, setVideo] = useState();
@@ -42,19 +43,18 @@ const Header = () => {
           <source src={Astro} type="video/mp4" />
         </video>
       </div>
-      <div className="flex justify-center bg-black text-white pt-10 pb-20 px-6">
-        <a
-          href="#start-project"
-          className="font-semibold text-xl"
-        >
-          START PROJECT
-        </a>
+      <div className="flex justify-center bg-black text-white py-10 px-6">
+        <Slide top>
+          <a href="#start-project" className="font-semibold text-xl">
+            START PROJECT
+          </a>
         <a href="#start-project" className=" ">
           <span className="relative  flex justify-center items-center h-2 w-4 cursor-pointer ml-2">
             <span className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
           </span>
         </a>
+        </Slide>
       </div>
     </div>
   );

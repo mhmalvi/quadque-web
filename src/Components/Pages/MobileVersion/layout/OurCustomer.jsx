@@ -70,7 +70,7 @@ const OurCustomer = () => {
             />
           ))}
         </Slider>
-      {clientsImg && (
+      {!loader && (
         <>
           <div
             onClick={() => slider.current.slickPrev()}
