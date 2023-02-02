@@ -47,7 +47,7 @@ const Navbar = ({ setOpenMenus }) => {
             <img
               className={`absolute ${
                 showBgShadow === "SERVICES" ? "opacity-100" : "opacity-0"
-              } transition-opacity delay-200 top-0 right-0 lg:w-[50%] xl:w-[70%] 2xl:w-auto`}
+              } transition-opacity delay-200 -top-2 right-0 lg:w-[50%] xl:w-[70%] 2xl:w-32`}
               src={bgShadowLogo}
               alt=""
             />
@@ -55,7 +55,7 @@ const Navbar = ({ setOpenMenus }) => {
 
           <a
             href="#about"
-            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex mx-20"
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex mx-20"
             onMouseOver={() => {
               setShowBgShadow("ABOUT");
             }}
@@ -74,14 +74,14 @@ const Navbar = ({ setOpenMenus }) => {
               <img
                 className={`absolute ${
                   showBgShadow === "ABOUT" ? "opacity-100" : "opacity-0"
-                } transition-opacity delay-200 top-0 right-0 lg:w-[60%] xl:w-[70%] 2xl:w-auto`}
+                } transition-opacity delay-200 -top-2 right-0 lg:w-[60%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
                 alt=""
               />
             </div>
           </a>
           <div
-            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex"
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex"
             onMouseOver={() => {
               setShowBgShadow("PORTFOLIO");
             }}
@@ -101,7 +101,7 @@ const Navbar = ({ setOpenMenus }) => {
               <img
                 className={`absolute ${
                   showBgShadow === "PORTFOLIO" ? "opacity-100" : "opacity-0"
-                } transition-opacity delay-200 top-0 right-0 lg:w-[40%] xl:w-[70%] 2xl:w-auto`}
+                } transition-opacity delay-200 -top-2 right-0 lg:w-[40%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
                 alt=""
               />
@@ -132,7 +132,7 @@ const Navbar = ({ setOpenMenus }) => {
               <img
                 className={`absolute ${
                   showBgShadow === "BLOGS" ? "opacity-100" : "opacity-0"
-                } transition-opacity delay-200 top-0 right-0 lg:w-[65%] xl:w-[70%] 2xl:w-auto`}
+                } transition-opacity delay-200 -top-2 right-0 lg:w-[65%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
                 alt=""
               />
@@ -141,7 +141,7 @@ const Navbar = ({ setOpenMenus }) => {
 
           <a
             href="#contacts"
-            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex"
+            className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex"
             onMouseOver={() => {
               setShowBgShadow("CONTACT");
             }}
@@ -161,7 +161,7 @@ const Navbar = ({ setOpenMenus }) => {
               <img
                 className={`absolute ${
                   showBgShadow === "CONTACT" ? "opacity-100" : "opacity-0"
-                } transition-opacity delay-200 top-0 right-0 lg:w-[45%] xl:w-[70%] 2xl:w-auto`}
+                } transition-opacity delay-200 -top-2 right-0 lg:w-[45%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
                 alt=""
               />

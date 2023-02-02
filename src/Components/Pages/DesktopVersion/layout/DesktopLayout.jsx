@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
-import welcomeAvatar from "../../../../asstes/Images/welcome_avatar.json";
+import welcomeAvatar from "../../../../asstes/Lotties/welcome_avatar.json";
 import useAudio from "../../../Shared/Hooks/useAudio";
 import Icons from "../../../Shared/Icons";
 import { handleLetsGoAudio } from "../../../Shared/Sounds";
