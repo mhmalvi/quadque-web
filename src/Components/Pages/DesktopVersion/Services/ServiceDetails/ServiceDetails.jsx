@@ -1,8 +1,9 @@
-import { Tooltip } from "antd";
+import { Collapse, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import { Helmet } from "react-helmet";
+import Fade from "react-reveal/Fade";
 import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
 import { useSpeechSynthesis } from "react-speech-kit";
@@ -22,6 +23,9 @@ import useClientSpeak from "../../../../Shared/Hooks/useClientSpeak";
 import Icons from "../../../../Shared/Icons";
 import { handleFetchServiceById } from "../../../../Shared/services";
 import Footer from "../../Footer";
+import Faq from "../../../../../asstes/Images/faq.png";
+
+const { Panel } = Collapse;
 
 const ServiceDetails = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -32,6 +36,8 @@ const ServiceDetails = ({ setLoader }) => {
   const ClientsSlider = useRef(null);
   const [serviceDetails, setServiceDetails] = useState();
   const [capabilityMenus, setCapabilityMenus] = useState([]);
+  // const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
+  // const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [caseStudies] = useCaseStudy();
   const [clientSpeak] = useClientSpeak();
 
@@ -46,8 +52,6 @@ const ServiceDetails = ({ setLoader }) => {
       }
       setServiceDetails(fetchServicedata);
     })();
-
-    console.log(document.getElementById("serviceDetails_content").innerText);
   }, [setLoader, slug, synth]);
 
   const handleNavigate = (menu) => {
@@ -121,7 +125,7 @@ const ServiceDetails = ({ setLoader }) => {
             </Tooltip>
           </div>
           <p
-            className="text-base font-light leading-6 text-[#D0D4EA] mb-5"
+            className="text-base font-light leading-6 text-[#D0D4EA] mb-5 text-justify"
             style={{
               letterSpacing: "0.07em",
             }}
@@ -447,7 +451,7 @@ const ServiceDetails = ({ setLoader }) => {
                         });
                       }}
                       key={i}
-                      className="border rounded-2xl p-4 bg-gray-100 bg-opacity-20 backdrop-filter shadow-md shadow-gray-300 backdrop-blur-md hover:bg-opacity-25 hover:delay-200"
+                      className="border cursor-pointer rounded-2xl p-4 bg-gray-100 bg-opacity-20 backdrop-filter shadow-md shadow-gray-300 backdrop-blur-md hover:bg-opacity-25 hover:delay-200"
                     >
                       <img
                         src={
@@ -502,6 +506,72 @@ const ServiceDetails = ({ setLoader }) => {
             </div>
           </div>
         </div>
+
+        {/* FAQ's */}
+        <div className="case_study_details min-h-full bg-black text-white py-20 font-poppins">
+          <div
+            className="text-5xl font-bold leading-10 capitalize font_title mb-8"
+            style={{
+              letterSpacing: "0.06em",
+            }}
+          >
+            <Fade left>
+              <div className="leading-10">FAQ'S</div>
+            </Fade>
+          </div>
+
+          <div>
+            <Fade left cascade>
+              <img src={Faq} alt="faq" className="m-auto py-4" />
+              <div className="text-3xl font-semibold px-10 pb-8 leading-6 text-center">
+                Most Popular Questions
+              </div>
+            </Fade>
+          </div>
+
+          <div className="faq text-xs pb-4 mt-10">
+            <Fade left cascade>
+              <div className="grid lg:grid-cols-2 2xl:grid-cols-3 gap-4">
+                {FaqContents.map((content, i) => (
+                  <Collapse accordion ghost>
+                    <Panel
+                      className="text-xl mb-8 relative"
+                      header={content?.Q}
+                      key={i}
+                    >
+                      <div className="flex items-start">
+                        <Tooltip
+                          placement="top"
+                          title={`Click to "Listen". Double Click to "Stop"`}
+                          color={"rgba(90, 90, 90, 0.7)"}
+                        >
+                          <button
+                            onClick={() => {
+                              synth.cancel();
+                              speak({
+                                text: content?.A,
+                              });
+                            }}
+                            onDoubleClick={() => synth.cancel()}
+                          >
+                            <Lottie
+                              className="w-14"
+                              animationData={speakLogo}
+                              loop={true}
+                            />
+                          </button>
+                        </Tooltip>
+                        <p className="text-base font-light text-white text-opacity-95 text-justify ml-4">
+                          {content?.A}
+                        </p>
+                      </div>
+                    </Panel>
+                  </Collapse>
+                ))}
+              </div>
+            </Fade>
+          </div>
+        </div>
         <Footer />
       </div>
     </>
@@ -515,6 +585,7 @@ const settings = {
   arrows: true,
   infinite: true,
   slidesToShow: 3,
+  dots: true,
   rows: 1,
   speed: 300,
 };
@@ -852,264 +923,65 @@ const serviceDetailsContent = {
   },
 };
 
-// const serviceDetailsContent = {
-//   "ui-ux": {
-//     helpContent: [
-//       {
-//         title: "Usability Analyst",
-//         icon: usability,
-//       },
-//       {
-//         title: "User Research",
-//         icon: research,
-//       },
-//       {
-//         title: "Product Design",
-//         icon: product,
-//       },
-//       {
-//         title: "Web/App Design",
-//         icon: WebApp,
-//       },
-//       {
-//         title: "Visual Design",
-//         icon: visual,
-//       },
-//       {
-//         title: "Interaction Design",
-//         icon: Interaction,
-//       },
-//     ],
-
-//     bestService: [
-//       {
-//         service_image: help1,
-//         service_name: "Create A Strong Impression",
-//         des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
-//       },
-//       {
-//         service_image: help2,
-//         service_name: "Builds the Foundation",
-//         des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
-//       },
-//       {
-//         service_image: help3,
-//         service_name: "It Fosters Brand Loyalty",
-//         des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
-//       },
-//       {
-//         service_image: help4,
-//         service_name: "Rememberable",
-//         des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
-//       },
-//     ],
-//   },
-
-//   "web-development": {
-//     helpContent: [
-//       {
-//         title: "E-commerce Websites",
-//         icon: usability,
-//       },
-//       {
-//         title: "Magento Web Development",
-//         icon: research,
-//       },
-//       {
-//         title: "Custom Website Services for Enterprises",
-//         icon: product,
-//       },
-//       {
-//         title: "Webpage Design",
-//         icon: WebApp,
-//       },
-//       {
-//         title: "Drupal Web Development",
-//         icon: visual,
-//       },
-//       {
-//         title: "Java Web Development",
-//         icon: Interaction,
-//       },
-//     ],
-
-//     bestService: [
-//       {
-//         service_image: help1,
-//         service_name: "Create A Strong Impression",
-//         des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
-//       },
-//       {
-//         service_image: help2,
-//         service_name: "Builds the Foundation",
-//         des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
-//       },
-//       {
-//         service_image: help3,
-//         service_name: "It Fosters Brand Loyalty",
-//         des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
-//       },
-//       {
-//         service_image: help4,
-//         service_name: "Rememberable",
-//         des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
-//       },
-//     ],
-//   },
-
-//   "mobile-app-development": {
-//     helpContent: [
-//       {
-//         title: "Construction",
-//         icon: usability,
-//       },
-//       {
-//         title: "Mhealth",
-//         icon: research,
-//       },
-//       {
-//         title: "Retail & Ecommerce",
-//         icon: product,
-//       },
-//       {
-//         title: "Fintech",
-//         icon: WebApp,
-//       },
-//       {
-//         title: "Travel & Hospitality",
-//         icon: visual,
-//       },
-//       {
-//         title: "Insurance",
-//         icon: Interaction,
-//       },
-//     ],
-
-//     bestService: [
-//       {
-//         service_image: help1,
-//         service_name: "Boost Customer Engagement",
-//         des: "Mobile applications help companies in establishing a direct marketing channel with their customers, allowing for more direct and effective connection.",
-//       },
-//       {
-//         service_image: help2,
-//         service_name: "Improves Efficiency",
-//         des: "Mobile apps are custom-built with your business requirements, it works capable of performing a variety of duties, obviating the need for several applications.",
-//       },
-//       {
-//         service_image: help3,
-//         service_name: "Integrates With Existing Software",
-//         des: "Mobile applications can easily integrate with your existing software. It converts your valuable information very smoothly.",
-//       },
-//       {
-//         service_image: help4,
-//         service_name: "Ease in Project Management",
-//         des: "Custom applications can be added to keep track of the progress of your project and the deadlines that you have set.",
-//       },
-//     ],
-//   },
-
-//   "software-development": {
-//     helpContent: [
-//       {
-//         title: "Healthcare",
-//         icon: usability,
-//       },
-//       {
-//         title: "Insurance",
-//         icon: research,
-//       },
-//       {
-//         title: "Hospitality",
-//         icon: product,
-//       },
-//       {
-//         title: "Construction Engineering",
-//         icon: WebApp,
-//       },
-//       {
-//         title: "Legal Tech",
-//         icon: visual,
-//       },
-//       {
-//         title: "Sports",
-//         icon: Interaction,
-//       },
-//     ],
-
-//     bestService: [
-//       {
-//         service_image: help1,
-//         service_name: "Optimized Business Process",
-//         des: "Custom software development contributes to the optimization of your business operations.",
-//       },
-//       {
-//         service_image: help2,
-//         service_name: "Invention",
-//         des: "With a customized software you can choose the own development and technological process you want to utilize.",
-//       },
-//       {
-//         service_image: help3,
-//         service_name: "Reliability",
-//         des: "Success is defined by reliability. Proper software testing guarantees you have a trustworthy IT tool to expand your organization.",
-//       },
-//       {
-//         service_image: help4,
-//         service_name: "Adaptability",
-//         des: "Custom software can keep up with changing marketing trends by integrating new procedures and technology into your existing software.",
-//       },
-//     ],
-//   },
-
-//   "ai-iot-solutions": {
-//     helpContent: [
-//       {
-//         title: "Usability Analyst",
-//         icon: usability,
-//       },
-//       {
-//         title: "User Research",
-//         icon: research,
-//       },
-//       {
-//         title: "Product Design",
-//         icon: product,
-//       },
-//       {
-//         title: "Web/App Design",
-//         icon: WebApp,
-//       },
-//       {
-//         title: "Visual Design",
-//         icon: visual,
-//       },
-//       {
-//         title: "Interaction Design",
-//         icon: Interaction,
-//       },
-//     ],
-
-//     bestService: [
-//       {
-//         service_image: help1,
-//         service_name: "Create A Strong Impression",
-//         des: "A logo serves as a company's first touchpoint with consumers. If created well, it may spark the public's attention and encourage them to discover more about the company.",
-//       },
-//       {
-//         service_image: help2,
-//         service_name: "Builds the Foundation",
-//         des: "Branding is about influencing customers' emotions. It's all about the story you're attempting to tell, and your identity design sets the setting for it.",
-//       },
-//       {
-//         service_image: help3,
-//         service_name: "It Fosters Brand Loyalty",
-//         des: "As your brand expands, people will get more familiar with your identity, creating the notion that you are trustworthy and approachable.",
-//       },
-//       {
-//         service_image: help4,
-//         service_name: "Rememberable",
-//         des: "People remember your company by your attractive identity design. So, this is very important to keep your company memorable.",
-//       },
-//     ],
-//   },
-// };
+const FaqContents = [
+  {
+    Q: "What services does Quadque Technologies offer?",
+    A: "We offer a wide range of technology solutions, including custom software development, website design and development, cloud computing solutions, cybersecurity and data protection, and network infrastructure and IT support. We are dedicated to helping our clients achieve their goals through the use of cutting-edge technology and innovative thinking.",
+  },
+  {
+    Q: "Can you provide customized solutions for my business?",
+    A: "Absolutely! We pride ourselves on our ability to understand the unique needs of each of our clients and provide customized solutions to help them succeed. Whether you're looking to streamline your operations, improve your online presence, or protect your data, we have the expertise to help you achieve your goals.",
+  },
+  {
+    Q: "What industries does Quadque Technologies serve?",
+    A: "We serve a diverse range of industries, including healthcare, finance, retail, manufacturing, and more. We have experience working with businesses of all sizes, from small startups to large enterprises.",
+  },
+  {
+    Q: "Does Quadque Technologies offer IT support services?",
+    A: "Yes, we offer IT support services to help keep your business running smoothly. Our team of experienced professionals is available to assist with network infrastructure, software troubleshooting, and other IT-related issues.",
+  },
+  {
+    Q: "How can I contact Quadque Technologies for more information?",
+    A: "You can contact us by phone, email, or through our website contact form. Our team isavailable to answer any questions you may have and schedule a consultation to discussyour technology needs.",
+  },
+  {
+    Q: "Does Quadque Technologies have any certifications or accreditations?",
+    A: "Yes, we hold various industry-standard certifications and accreditations. These includecertifications in software development methodologies such as Agile and Scrum, as well ascertifications in specific technologies such as AWS and Microsoft Azure.",
+  },
+  {
+    Q: "Does Quadque Technologies have experience working with remote teams?",
+    A: "Yes, we have experience working with remote teams and have implemented robust systems and processes to ensure effective communication and collaboration.",
+  },
+  {
+    Q: "Does Quadque Technologies offer training and development for its employees?",
+    A: "Yes, we believe in investing in the growth and development of our employees. We offer various training and development opportunities, both internal and external, to help our team members stay up-to-date with the latest technologies and best practices.",
+  },
+  {
+    Q: "How does Quadque Technologies handle project management?",
+    A: "We use a combination of industry-standard project management methodologies such as Agile and Waterfall to ensure that all projects are delivered on time, within budget, and to the satisfaction of our clients. We also have a dedicated project management team to oversee the progress of each project and ensure smooth communication with our clients.",
+  },
+  {
+    Q: "Is Quadque Technologies involved in any community or social responsibility initiatives?",
+    A: "Yes, we believe in giving back to the community and are involved in various community and social responsibility initiatives. These include mentoring local students, participating in charity events, and supporting local non-profit organizations.",
+  },
+  {
+    Q: "How does Quadque Technologies approach software development?",
+    A: "We use a variety of software development methodologies such as Agile, Scrum and Waterfall. Our team of experienced developers follows best practices and industry standards to ensure that all software is developed to the highest quality and meets the specific needs of our clients.",
+  },
+  {
+    Q: "Does Quadque Technologies offer website maintenance and support services?",
+    A: "Yes, we offer website maintenance and support services to ensure that your website is always up-to-date and running smoothly. Our team can help with updates, backups, security, and troubleshooting.",
+  },
+  {
+    Q: "How does Quadque Technologies approach cloud computing solutions?",
+    A: "We have experience with a variety of cloud computing platforms such as AWS, Azure, and Google Cloud. Our team can help you with cloud migration, deployment, and ongoing management and support. We also provide advice on the best cloud solution for your business based on your specific requirements.",
+  },
+  {
+    Q: "Does Quadque Technologies offer cybersecurity and data protection services?",
+    A: "Yes, we offer a range of cybersecurity and data protection services to help keep your business and data safe. Our team can assist with threat management, penetration testing, incident response, and compliance with industry regulations.",
+  },
+  {
+    Q: "How can Quadque Technologies help with network infrastructure and IT support?",
+    A: "Our team of experienced professionals can assist with the design, implementation, and ongoing management of your network infrastructure. We can also provide IT support services to help with software troubleshooting, network issues, and other IT-related needs.",
+  },
+];

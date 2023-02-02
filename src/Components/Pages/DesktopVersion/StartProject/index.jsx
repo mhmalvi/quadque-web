@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
-import sucess from "../../../../asstes/Images/success.json";
+import success from "../../../../asstes/Lotties/success.json";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import useServices from "../../../Shared/Hooks/useServices";
 import { handleSendMail } from "../../../Shared/services";
@@ -164,7 +164,7 @@ const StartProject = () => {
 
           <Lottie
             className="absolute bottom-0"
-            animationData={sucess}
+            animationData={success}
             loop={true}
           />
         </div>
@@ -179,8 +179,8 @@ const StartProject = () => {
             }}
           >
             <Fade left spy={triggerTitleAnimation}>
-              <div className="leading-10">START</div>
-              <div className="ml-8 leading-10">PROJECT</div>
+              <div className="leading-10 uppercase mb-0.5">Let’s start</div>
+              <div className="ml-8 leading-10 uppercase">a project</div>
             </Fade>
           </div>
           <div>
@@ -297,11 +297,11 @@ const StartProject = () => {
 
               <div className="flex justify-center items-center">
                 <button
-                  className="px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4"
+                  className="spirit-bomb px-16 py-4 bg-transparent rounded-full border border-white mt-12 text-base font-semibold leading-4"
                   style={{
                     letterSpacing: "0.04em",
-                    boxShadow:
-                      "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
+                    border: "2px solid rgb(255, 255, 255)",
+                    borderRadius: "30px",
                   }}
                   onClick={handleSendMailReq}
                 >

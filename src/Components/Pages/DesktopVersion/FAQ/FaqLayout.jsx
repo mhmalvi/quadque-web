@@ -14,8 +14,8 @@ const FaqLayout = () => {
   const navigate = useNavigate();
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
-  const [muted, setMuted] = useState(false);
   const [loader, setLoader] = useState(true);
+  const [muted, setMuted] = useState(true);
 
   useEffect(() => {
     if (muted) {
@@ -232,7 +232,7 @@ const FaqLayout = () => {
 
       {/* Loader */}
       {loader ? (
-        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 left-10 bg-black backdrop-blur-md bg-opacity-80">
+        <div className="w-full min-h-screen flex flex-col justify-center items-center absolute top-0 left-20 bg-black backdrop-blur-md bg-opacity-80">
           <Lottie
             className="w-1/6 mx-auto"
             animationData={loaderFile}
