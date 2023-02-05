@@ -42,9 +42,9 @@ const ClientSpeaks = () => {
         CLIENTS
         <br /> &nbsp; SPEAK
       </div>
-      <div className="w-[calc(100%_-_30px)] h-auto m-auto text-white pb-4 relative">
+      <div className="w-[calc(100%_-_30px)] h-auto m-auto text-white relative overflow-hidden">
         {loader ? (
-          <div className="w-[calc(100%_-_0px)] h-[100%] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+          <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black bg-opacity-10 backdrop-blur-sm">
             <Lottie
               className="w-1/2 mx-auto"
               animationData={loaderFile}
@@ -59,7 +59,7 @@ const ClientSpeaks = () => {
         <Slider ref={ClientSpeakSlider} arrows={false} {...settings}>
           {ClientSpeak?.map((details) => (
             <div key={details?.id}>
-              <div className="px-3">
+              <div className="px-3 pb-6">
                 <div className="flex justify-between">
                   <div className="font-semibold">{details?.name}</div>
                   <div className="text-slate-400">{details?.designation}</div>
@@ -67,9 +67,9 @@ const ClientSpeaks = () => {
                 <img
                   src={process.env.REACT_APP_ASSETS_URL + "/" + details?.image}
                   alt=""
-                  className="w-full py-4"
+                  className="w-full py-6"
                 />
-                <div className="text-justify">{details?.description}</div>
+                <div className="text-justify pb-10">{details?.description}</div>
               </div>
             </div>
           ))}

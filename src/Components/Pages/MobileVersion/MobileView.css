@@ -2,11 +2,11 @@
   text-shadow: 7px 7px 5px rgba(168, 85, 247, 0.4);
 }
 
-.slick-active span {
-  font-size: 24px;
+#Service .slick-active span {
+  /* font-size: 24px; */
   color: white;
-  opacity: 1;
-  transition-duration: 2s;
+  /* opacity: 1;
+  transition-duration: 2s; */
 }
 
 .slick-active.slick-current {
@@ -189,6 +189,35 @@
   inset: 2px;
   background-color: #0e1538;
   border-radius: 4px;
+  z-index: -10;
+}
+
+/* service start-project button*/
+.box {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: 20px;
+  width: 600px;
+  height: 20px;
+  background: linear-gradient(#a050f0, #8f00ff);
+  transform: rotate(120deg);
+  animation: animate 5s linear infinite;
+  z-index: -20;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: black;
   z-index: -10;
 }
 
@@ -390,27 +419,27 @@
 }
 
 .spirit-bomb {
-  box-shadow: 0 0 20px #fff, -5px 0 10px #8f0fff, 5px 0 10px #0ff;
-  animation: spirit 10s infinite;
+  box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+  animation: spirit 4s ease-in-out infinite;
 }
 
 @keyframes spirit {
   0% {
-    box-shadow: 0 0 20px #fff, -5px 0 10px #8f0fff, 5px 0 10px #0ff;
+    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
   }
   25% {
-    box-shadow: 0 0 20px #fff, 5px 0 10px #8f0fff, -5px 0 10px #0ff;
+    box-shadow: 0 0 30px #fff, 5px 0 30px #8f0fff, -5px 0 30px #0ff;
   }
 
   50% {
-    box-shadow: 0 0 20px #fff, -5px 0 10px #8f0fff, 5px 0 10px #0ff;
+    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
   }
 
   75% {
-    box-shadow: 0 0 20px #fff, 5px 0 10px #8f0fff, -5px 0 10px #0ff;
+    box-shadow: 0 0 30px #fff, 5px 0 30px #8f0fff, -5px 0 30px #0ff;
   }
   100% {
-    box-shadow: 0 0 20px #fff, -5px 0 10px #8f0fff, 5px 0 10px #0ff;
+    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
   }
 }
 

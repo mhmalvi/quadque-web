@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
-import sucess from "../../../../asstes/Images/success.json";
+import sucess from "../../../../asstes/Lotties/success.json";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import useServices from "../../../Shared/Hooks/useServices";
 import { handleSendMail } from "../../../Shared/services";

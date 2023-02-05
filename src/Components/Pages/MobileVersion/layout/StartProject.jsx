@@ -1,7 +1,7 @@
 import { Modal } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
-import sucess from "../../../../asstes/Images/success.json";
+import sucess from "../../../../asstes/Lotties/success.json";
 import useServices from "../../../Shared/Hooks/useServices";
 import { handleSendMail } from "../../../Shared/services";
 import "../../MobileVersion/MobileView.css";
@@ -121,13 +121,15 @@ const StartProject = () => {
       }
     }else{
       setMsgBox(true);
+      setTimeout(() => {
+        setMsgBox(false);
+      }, 6000);
     }  
   };
 
 
   return (
     <div id="start-project" className="w-full text-white pt-20 mb-5">
-      
       <Modal
         style={{
           backgroundColor: "black !important",
@@ -151,7 +153,9 @@ const StartProject = () => {
             <p className="text-center text-xl font_title mt-4">
               We will get in touch soon.
             </p>
-            <p className="text center text-base font_title mt-2 italic">Have a Good Day.</p>
+            <p className="text center text-base font_title mt-2 italic">
+              Have a Good Day.
+            </p>
             <button
               className="px-7 py-3.5 text-base  font-medium leading-4 rounded-full bg-white text-black text-center mt-10"
               style={{
@@ -172,35 +176,50 @@ const StartProject = () => {
       </Modal>
 
       <div className="font_title text-3xl px-6 font-bold uppercase pb-8">
-        START <br /> &nbsp; PROJECT
+        LET'S START <br /> &nbsp;&nbsp;A PROJECT !
       </div>
       <div className="flex flex-wrap justify-between capitalize pb-8 px-6">
-        {Services?.map((service, i) => 
+        {Services?.map((service, i) => (
           <p
             key={i}
             onClick={() => {
               handleActiveServices(service?.service_name);
             }}
-            className={`px-5 my-3 duration-300 ${activeServices === service?.service_name ? "text-brand-color scale-105": ""}`}
+            className={`px-5 my-3 duration-300 ${
+              activeServices === service?.service_name
+                ? "text-brand-color scale-105"
+                : ""
+            }`}
           >
             {service.service_name}
           </p>
-        )}
+        ))}
       </div>
       {Services.length ? (
-        <div className="flex flex-wrap justify-between capitalize pb-8 px-10 gap-3">
-          {toogleSubService?.map((subService)=> 
-            <div onClick={() => {
-              handleActiveSubServices(subService);
-            }} className={`border rounded-full px-5 py-1 my-1 text-semibold duration-300 ${activeSubServices.includes(subService) ?  "bg-white text-black shadow scale-105" : ""}`}>
+        <div className="flex flex-wrap justify-between capitalize pb-6 px-10 gap-3">
+          {toogleSubService?.map((subService) => (
+            <div
+              onClick={() => {
+                handleActiveSubServices(subService);
+              }}
+              className={`border rounded-full px-5 py-1 my-1 text-semibold duration-300 ${
+                activeSubServices.includes(subService)
+                  ? "bg-white text-black shadow scale-105"
+                  : ""
+              }`}
+            >
               {subService}
             </div>
-          )}
+          ))}
         </div>
-      ): null }
+      ) : null}
 
       <form className="mx-6" onSubmit={handleLoginReq}>
-      {msgBox && <div className="text-red-500 animate-pulse">Must choose atleast one subcategory!</div>}
+
+          <div className={`${msgBox ? "text-red-500":"text-transparent"} animate-pulse`}>
+            Must choose atleast one subcategory!
+          </div>
+
         <div className="">
           <input
             type="text"
@@ -239,7 +258,7 @@ const StartProject = () => {
           <button
             onClick={handleSendMailReq}
             type="submit"
-            className="w-1/2 p-3 text-white font-medium bg-brand-color bg-opacity-80 hover:bg-opacity-100 rounded-full focus:outline-none"
+            className="w-1/2 p-3 text-white font-medium bg-black rounded-full border spirit-bomb my-5"
           >
             Submit
           </button>
