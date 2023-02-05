@@ -75,7 +75,7 @@ const CaseStudy = () => {
           >
             <Fade left spy={triggerTitleAnimation}>
               <div className="leading-10">Case</div>
-              <div className="ml-8 leading-10">Study</div>
+              <div className="ml-8 leading-10">Studies</div>
             </Fade>
           </div>
 

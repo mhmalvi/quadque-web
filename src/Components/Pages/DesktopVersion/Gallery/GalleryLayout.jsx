@@ -1,39 +1,38 @@
 import { Modal, Tooltip } from "antd";
 import Lottie from "lottie-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
-import useAudio from "../../../Shared/Hooks/useAudio";
 import Navbar from "../Navbar";
 import Gallery from ".";
+import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 
 const GalleryLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
-  //   const [muted, setMuted] = useState(false);
   const [loader, setLoader] = useState(true);
-  const [playing, toggle] = useAudio();
+  const [muted, setMuted] = useState(true);
 
-  //   useEffect(() => {
-  //     if (muted) {
-  //       document.getElementById("iframeAudio").src = "";
-  //     } else {
-  //       document.getElementById("iframeAudio").src = siteAudio;
-  //     }
-  //   }, [muted]);
+  useEffect(() => {
+    if (muted) {
+      document.getElementById("iframeAudio").src = "";
+    } else {
+      document.getElementById("iframeAudio").src = siteAudio;
+    }
+  }, [muted]);
 
   return (
     <div className="blog_details w-full h-full bg-black">
       {/* For website background Audio */}
-      {/* <iframe
+      <iframe
         id="iframeAudio"
         title="audio"
         src={siteAudio}
         allow="autoplay loop"
         style={{ display: "none" }}
-      /> */}
+      />
 
       <Modal
         style={{
@@ -206,7 +205,7 @@ const GalleryLayout = () => {
           </div> */}
 
           <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
-            {playing ? (
+            {muted ? (
               <div className="w-8">
                 <Tooltip
                   title="Unmute Sound"
@@ -218,7 +217,7 @@ const GalleryLayout = () => {
                     className="z-50 cursor-pointer"
                     src={muteImg}
                     alt=""
-                    onClick={toggle}
+                    onClick={() => setMuted(false)}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>
@@ -234,7 +233,7 @@ const GalleryLayout = () => {
                   <img
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
-                    onClick={toggle}
+                    onClick={() => setMuted(true)}
                     alt=""
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
