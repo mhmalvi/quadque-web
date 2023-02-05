@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import blog1 from "../../../../asstes/Images/blog1.jpg";
 import blog2 from "../../../../asstes/Images/blog2.jpg";
 import blog3 from "../../../../asstes/Images/blog3.jpg";
-import moreBlogs from "../../../../asstes/Images/moreblogs.jpg";
+// import moreBlogs from "../../../../asstes/Images/moreblogs.jpg";
 import useBlogs from "../../../Shared/Hooks/useBlog";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Lottie from "lottie-react";
@@ -162,14 +162,16 @@ const Blogs = () => {
               <div className="relative">
                 <img
                   className="max-h-[40vh] min-w-full"
-                  src={moreBlogs}
+                  src={
+                    "https://img.freepik.com/free-photo/top-view-agendas-succlent-plant_23-2148459469.jpg?w=1380&t=st=1675323286~exp=1675323886~hmac=5caa269e73ba12e0bba1079290335e024a358051780f69f758e9dfe1015bb91d"
+                  }
                   alt=""
                 />
                 <div
                   className="absolute h-full w-full top-0 flex justify-center items-center"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%)",
+                      "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.9) 100%)",
                   }}
                 >
                   <div className="flex flex-col justify-center items-center">
@@ -179,11 +181,11 @@ const Blogs = () => {
                     </h1>
                     <Link to={"/blogs"}>
                       <button
-                        className="px-16 py-3.5 bg-brand-color mt-12 text-base font-semibold leading-4"
+                        className="spirit-bomb px-16 py-3.5 bg-black mt-12 text-base font-semibold leading-4"
                         style={{
                           letterSpacing: "0.04em",
-                          boxShadow:
-                            "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
+                          border: "2px solid rgb(255, 255, 255)",
+                          borderRadius: "30px",
                         }}
                       >
                         Read More

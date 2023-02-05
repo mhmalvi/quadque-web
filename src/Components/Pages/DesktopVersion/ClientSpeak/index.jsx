@@ -82,33 +82,41 @@ const ClientSpeak = () => {
               />
             </div>
 
-            <div className="lg:w-[423px] 2xl:w-98 mr-9 relative">
-              <h3
-                className="lg:text-sm 2xl:text-lg break-keep font-normal capitalize text-justify"
-                style={{
-                  letterSpacing: "0.04em",
-                }}
-              >
-                {clientSpeaks?.[index]?.description}
-              </h3>
+            <div className="w-[423px] mr-9 relative">
+              <div className="">
+                <h3
+                  className="lg:text-sm 2xl:text-base break-keep capitalize font-light italic text-justify bg-gray-400 bg-opacity-20 backdrop-blur-md px-4 py-3 rounded-md shadow-sm shadow-slate-600 border border-gray-600"
+                  style={{
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  <span className="text-3xl m-0 italic absolute top-0.5">
+                    "
+                  </span>
+                  <span className="ml-4 pt-1">
+                    {clientSpeaks?.[index]?.description}
+                  </span>
+                  <span className="text-3xl m-0 italic absolute">"</span>
+                </h3>
 
-              <h3
-                className="mt-8 mb-2.5 text-base font-medium leading-5"
-                style={{
-                  letterSpacing: "0.04em",
-                }}
-              >
-                {clientSpeaks?.[index]?.name}
-              </h3>
+                <h3
+                  className="mt-8 mb-2.5 text-base font-medium leading-5"
+                  style={{
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  {clientSpeaks?.[index]?.name}
+                </h3>
 
-              <h4
-                className="opacity-50 text-base font-medium leading-5"
-                style={{
-                  letterSpacing: "0.04em",
-                }}
-              >
-                {clientSpeaks?.[index]?.designation}
-              </h4>
+                <h4
+                  className="opacity-50 text-base font-medium leading-5"
+                  style={{
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  {clientSpeaks?.[index]?.designation}
+                </h4>
+              </div>
 
               <div className="absolute bottom-0 flex items-center 2xl:mt-14 lg:mt-4">
                 <div
