@@ -69,7 +69,7 @@ const Gallery = () => {
         <h1 className="text-center text-white text-4xl font_title">Gallery</h1>
 
         {/* IMAGES GALLERY START */}
-        <div className="mt-10 2xl:mt-20 gap-4">
+        <div className="mt-10 2xl:mt-20">
           {loader ? (
             <div className="absolute w-[100%] h-[500px] bg-black z-40 flex justify-center items-center m-auto backdrop-blur-md">
               <div className="flex lds-dual-ring animate-pulse"> </div>
@@ -78,7 +78,7 @@ const Gallery = () => {
               </div>
             </div>
           ) : null}
-          <div className="faq w-10/12 mx-auto pb-4 px-6 mt-6">
+          <div className="faq w-10/12 mx-auto pb-4 mt-6">
             {galleryImages?.map((event, i) => (
               <div>
                 <div

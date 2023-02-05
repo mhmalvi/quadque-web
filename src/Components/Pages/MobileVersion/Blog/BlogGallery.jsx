@@ -65,16 +65,16 @@ const BlogGallery = () => {
       <div className="Blog w-full h-[900px] mt-30 px-6">
         {currentPosts?.map((details) => (
           <Link to={`blog-detail/${details.slug}`}>
-            <div key={details.id} className="rounded-xl mx-auto">
+            <div key={details.id} className="rounded-xl mx-auto relative mb-8">
               <img
                 src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
                 alt=""
-                className="w-[100%] h-[185px] m-auto"
+                className="w-[100%] h-[185px] m-auto rounded-lg"
               />
-              <div className="flex items-end h-10 relative -top-10 bg-gradient-to-b from-transparent to-black z-10 pb-2 px-2">
+              <div className="w-full flex items-end h-22 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2">
                 <div>
-                  <h1 className="text-xl text-white">{details.title}</h1>
-                  <div className="text-white text-sm">By {details.author}</div>
+                  <div className="text-xl text-white">{details.title}</div>
+                  <div className="text-white text-sm"> {details.author}</div>
                   <div className="text-white text-sm">
                     {details.created_at.split("T", 1)}
                   </div>

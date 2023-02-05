@@ -21,7 +21,7 @@ const Footer = () => {
       </div>
       <div className="flex text-lg mt-10 px-6 gap-2">
         <div className="w-1/2 flex-col font-thin leading-10">
-          <a href="/#Team">Career</a>
+          <a href="/career">Career</a>
           <Link to={`/faq`}>
             <p>FAQ's</p>
           </Link>

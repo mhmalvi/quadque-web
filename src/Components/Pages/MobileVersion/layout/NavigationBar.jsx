@@ -14,7 +14,6 @@ const NavigationBar = () => {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
       document.getElementById("Navigation").style.top = "0";
-      document.getElementById("tagline").style.bottom = "70px";
     } else {
       document.getElementById("Navigation").style.top = "-70px";
     }
@@ -29,15 +28,13 @@ const NavigationBar = () => {
     >
       <div className="flex justify-between">
         <Link to="/">
-          <div
-            className="flex shrink-0 p-6"
-          >
+          <div className="flex shrink-0 p-6">
             <Icons.BrandLogoMob
               className="w-12 scale-x-[-1] text-white"
               alt="Logo"
             />
             {/* <Icons.BrandLogoMobWithTagline className="w-32 text-white animate-pulse" /> */}
-            <div id="tagline">
+            <div id="tagline" className=" overlay pt-1">
               <img src={Tagline} alt="tagline" width={100} />
             </div>
           </div>
@@ -104,7 +101,7 @@ const NavigationBar = () => {
           </div>
 
           <div onClick={() => setOpen(false)}>
-            <Link to="#">Career</Link>
+            <Link to="career">Career</Link>
           </div>
 
           <div onClick={() => setOpen(false)}>

@@ -64,7 +64,7 @@ const Services = () => {
       className="w-full text-white relative overflow-hidden mt-3 pb-13"
     >
       {loader ? (
-        <div className=" absolute w-full h-[90%] z-40 flex flex-col justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm">
+        <div className=" absolute w-full h-[100%] z-40 flex flex-col justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm">
           <Lottie
             className="w-1/2 mx-auto"
             animationData={loaderFile}

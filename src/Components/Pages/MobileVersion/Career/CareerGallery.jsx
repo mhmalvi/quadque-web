@@ -63,26 +63,27 @@ const CareerGallery = () => {
         </div>
       ) : null}
       <div className="text-3xl text-white mt-30 px-6 pb-4">Current Job Openings</div>
-      <div className="Blog w-full h-[1000px] px-6">
+      <div className="Blog w-full h-[1100px] px-6">
         {currentPosts?.map((details) => (
-          <Link to={`blog-detail/${details.slug}`}>
-            <div key={details.id} className="rounded-xl mx-auto">
+            <div key={details.id} className="rounded-xl mx-auto pb-6 relative z-50">
               <img
                 src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
                 alt=""
                 className="w-[100%] h-[185px] m-auto rounded-lg"
               />
-              <div className="pb-2 px-2">
+              <div className="flex justify-between pb-2 px-2 gap-4">
                 <div>
                   <h1 className="text-xl text-white">{details.title}</h1>
                   <div className="text-white text-sm">
                     deadline: {details.created_at.split("T", 1)}
                   </div>
                 </div>
+              <Link to={`/career-detail`}>
+                <div className="h-8 bg-white my-2 px-4 rounded-full text-center flex items-center cursor-pointer">View</div>
+          </Link>
               </div>
               {/* <div dangerouslySetInnerHTML={{ __html: details.text }} className="text-white"></div> */}
             </div>
-          </Link>
         ))}
       </div>
       {/* PAGINATION */}
