@@ -533,3 +533,35 @@
     transform: translate(-5px, -5px);
   }
 }
+
+/* ############### */
+.overlay {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  left: 80px;
+  animation: overlay 6s infinite;
+}
+
+
+@keyframes overlay {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}

@@ -74,7 +74,7 @@ const Aboutus = () => {
           <div className="relative -top-2 w-[100%] h-2 bg-brand-color bg-opacity-25"></div>
         </div>
         <div className="flex-wrap overflow-hidden">
-          <img src={Interface} alt="" className="w-full duration-700" />
+          <img src={Interface} alt="" className="w-full duration-700 relative z-[999]" />
         </div>
         <div className="max-w-[100%] overflow-hidden">
           <div id="bar" className="h-2 bg-brand-color"></div>
