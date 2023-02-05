@@ -16,6 +16,7 @@ import BlogDetail from "../Blog/BlogDetail";
 import ServiceDetails from "../Service/ServiceDetails";
 import CaseStudyDetail from "../Case_Study/CaseStudyDetail";
 import Gallery from "../Gallery";
+import CareerGallery from "../Career/CareerGallery";
 
 const Layout = () => {
     useEffect(() => {
@@ -51,6 +52,7 @@ const Layout = () => {
           <Route path={"case-study/:slug"} element={<CaseStudyDetail />} />
           <Route path={"gallery"} element={<Gallery />} />
           <Route path={"faq"} element={<FAQ />} />
+          <Route path={"career"} element={<CareerGallery />} />
         </Routes>
         <Footer />
       </div>

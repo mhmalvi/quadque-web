@@ -43,16 +43,16 @@ const CaseStudy = () => {
   return (
     <div id="Case_Study" className="CaseStudy w-full text-white pt-20">
       <h1 className="font_title text-3xl font-thin px-6 pb-5">
-        CASE <br /> &nbsp;STUDY
+        CASE <br /> &nbsp;STUDIES
       </h1>
       <div className="text-sm text-justify px-6 pb-1">
         Let’s have a look at some of our interesting case study examples. These
         case studies will let you better understand how we tackle critical
         challenges to help companies grow.
       </div>
-      <div className="max-w-[100%] m-auto text-white">
+      <div className="max-w-[100%] m-auto text-white relative overflow-hidden">
         {loader ? (
-          <div className="w-full h-[70%] z-40 flex flex-col justify-center items-center absolute bg-black">
+          <div className="w-full h-full z-40 flex flex-col justify-center items-center absolute bg-black bg-opacity-10 backdrop-blur-sm">
             <Lottie
               className="w-1/2 mx-auto"
               animationData={loaderFile}
@@ -84,17 +84,17 @@ const CaseStudy = () => {
         </Slider>
       </div>
       <div className="relative w-9/12 mx-auto">
-        {!loader && (
+        {CaseStudies && (
           <>
             <div
               onClick={() => CaseSlider.current.slickPrev()}
-              className="arrowLeft font-semibold"
+              className="arrowLeft absolute bottom-2 font-semibold"
             >
               {/* <Icons.RightArrow className="w-12 scale-x-[-1]" /> */}
             </div>
             <div
               onClick={() => CaseSlider.current.slickNext()}
-              className="arrowRight font-semibold"
+              className="arrowRight absolute bottom-2 font-semibold"
             >
               {/* <Icons.RightArrow className="w-12" /> */}
             </div>

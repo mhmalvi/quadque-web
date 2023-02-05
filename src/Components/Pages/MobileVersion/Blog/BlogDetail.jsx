@@ -101,8 +101,8 @@ const BlogDetail = () => {
           ></div>
         </div>
         <Link to={`/blogs`}>
-          <div className="flex text-white text-justify py-2 my-5 px-6">
-            <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow" />
+          <div className="w-40 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
+            <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow whitespace-nowrap" />
             Go Back
           </div>
         </Link>

@@ -17,8 +17,16 @@ import webDev from "../../../../asstes/Lotties/web_development.json";
 
 const Services = () => {
   const [Services] = useServices();
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
   const slider1 = useRef(null);
+  const slider2 = useRef(null);
   const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    setNav1(slider1.current);
+    setNav2(slider2.current);
+  }, []);
 
   useEffect(() => {
     if (Services !== "") {
@@ -32,29 +40,31 @@ const Services = () => {
     }
   }, []);
 
-
   const PrimarySettings = {
-    infinite: false,
+    infinite: true,
     speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrow: false,
   };
 
-/*   const SecondarySettings = {
+  const SecondarySettings = {
     dots: true,
     infinite: true,
-    speed: 200,
+    speed: 700,
     slidesToScroll: 1,
     arrow: false,
-    className: "center",
-    centerMode: true,
-  }; */
+    className: "",
+    centerMode: false,
+  };
 
   return (
-    <div id="Service" className="w-full text-white">
+    <div
+      id="Service"
+      className="w-full text-white relative overflow-hidden mt-3 pb-13"
+    >
       {loader ? (
-        <div className=" absolute w-full h-[90%] z-40 flex flex-col justify-center items-center bg-black">
+        <div className=" absolute w-full h-[90%] z-40 flex flex-col justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm">
           <Lottie
             className="w-1/2 mx-auto"
             animationData={loaderFile}
@@ -68,7 +78,7 @@ const Services = () => {
       ) : null}
       <div style={{ maxWidth: "90%", margin: "auto" }} {...PrimarySettings}>
         <div className="relative">
-          <Slider ref={slider1} arrows={false} dots={true}>
+          <Slider asNavFor={nav2} ref={slider1} arrows={false}>
             {Services?.map((details, index) => (
               <Link to={`services/${details.slug}`}>
                 <div key={index}>
@@ -92,32 +102,35 @@ const Services = () => {
                       alt={littieFilesAltTags[details?.service_name]}
                     />
                   </div>
-                  <h1 className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow pt-13">
+                  {/*  <h1 className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow pt-13">
                     {details.service_name}
-                  </h1>
+                  </h1> */}
                   {/* <div className="m-auto text-center text-sm font-light pb-5 leading-6">
                     {details.description}
                   </div> */}
-                  <div
-                    dangerouslySetInnerHTML={{ __html: details.description }}
+                  {/* <div
+                    dangerouslySetInnerHTML={{ __html: details?.description }}
                     className="h-36 text-center overflow-hidden mb-5"
-                  ></div>
+                  ></div> */}
+                  <div className="h-36 text-center overflow-hidden mb-5 pt-13">
+                    {details?.description}
+                  </div>
                 </div>
               </Link>
             ))}
           </Slider>
-          {!loader && (
+          {Services && (
             <>
               {/* <div className="m-auto flex justify-between pb-5"> */}
               <div
                 onClick={() => slider1.current.slickPrev()}
-                className="arrowLeft absolute bottom-[330px] font-semibold"
+                className="arrowLeft absolute bottom-[180px] font-semibold"
               >
                 {/* <Icons.RightArrow className="w-12 scale-x-[-1]" /> */}
               </div>
               <div
                 onClick={() => slider1.current.slickNext()}
-                className="arrowRight absolute bottom-[330px] font-semibold"
+                className="arrowRight absolute bottom-[180px] font-semibold"
               >
                 {/* <Icons.RightArrow className="w-12" /> */}
               </div>
@@ -125,11 +138,7 @@ const Services = () => {
             </>
           )}
 
-          <div className="text-center font-semibold text-brand-color animate-pulse pt-10">
-            <a href="#start-project">START PROJECT</a>
-          </div>
-
-          {/* <Slider
+          <Slider
             asNavFor={nav1}
             ref={slider2}
             slidesToShow={1}
@@ -137,15 +146,18 @@ const Services = () => {
             focusOnSelect={true}
             arrows={false}
             {...SecondarySettings}
-            className="font_title text-base text-white text-opacity-25 text-center"
+            className="font_title services-shadow text-base text-white text-opacity-25 text-center"
           >
             {Services?.map((details) => (
-              <div>
+              <div className="text-2xl whitespace-nowrap">
                 <span>{details.service_name}</span>
               </div>
             ))}
-          </Slider> */}
+          </Slider>
         </div>
+{/*           <div className="text-center font-semibold text-brand-color animate-pulse pt-10">
+            <a href="#start-project">START PROJECT</a>
+          </div> */}
       </div>
     </div>
   );
