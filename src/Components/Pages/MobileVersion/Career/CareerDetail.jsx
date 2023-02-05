@@ -1,6 +1,7 @@
 import React from 'react';
 import Interface from "../../../../asstes/Images/advertise.png";
 import Icons from "../../../Shared/Icons";
+import { Link } from 'react-router-dom';
 
 const CareerDetail = () => {
   return (
@@ -136,17 +137,17 @@ const CareerDetail = () => {
           </div>
           {/* <Link to={`/`}> */}
           <div className="w-40 border bg-black text-white text-sm text-center py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
-            Apply Now
+            Apply
           </div>
           {/* </Link> */}
         </div>
 
-        {/* <Link to={`/`}> */}
+        <Link to={`/career`}>
         <div className="w-38 flex text-sm py-2 my-10 mx-auto px-6 rounded-full">
           <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow" />
           Go Back
         </div>
-        {/* </Link> */}
+        </Link>
       </div>
     </div>
   );

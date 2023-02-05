@@ -16,7 +16,7 @@ const Footer = () => {
         for every client. We offer the best quality/price ratio in the industry
         along with timely delivery of solutions.{" "}
       </div>
-      <div className="w-28 bg-black border rounded-full text-center px-4 py-2 my-5 mx-auto spirit-bomb">
+      <div className="w-1/3 bg-black border rounded-full text-center text-xs font_title px-4 py-3 my-5 mx-auto spirit-bomb whitespace-nowrap">
         <a href="tel:+8801765-276560">Let's Talk</a>
       </div>
       <div className="flex text-lg mt-10 px-6 gap-2">
