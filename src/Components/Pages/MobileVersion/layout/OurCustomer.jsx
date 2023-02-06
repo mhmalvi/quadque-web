@@ -6,6 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Icons from "../../../Shared/Icons";
 import "../../MobileVersion/MobileView.css";
+import Lottie from "lottie-react";
+import Achievement from "../../../../asstes/Lotties/achievement.json";
+import sucess from "../../../../asstes/Lotties/success.json";
 
 import { handleFetchClients } from "../../../Shared/services";
 
@@ -49,66 +52,83 @@ const OurCustomer = () => {
   }, []);
 
   return (
-    <div className="w-full text-white pt-24">
-      {loader ? (
-        <div className="absolute w-[100%] z-40 flex justify-center items-center m-auto bg-black backdrop-blur-md">
-          <div className="flex lds-dual-ring animate-pulse"> </div>
-          <div className="font_title text-white text-sm font-thin px-2">
-            Loading...
+    <div className="w-full text-white pt-24 relative">
+        {loader ? (
+          <div className="w-full z-40 flex justify-center items-center m-auto">
+            <div className="flex lds-dual-ring animate-pulse"> </div>
+            <div className="font_title text-white text-sm font-thin px-2">
+              Loading...
+            </div>
           </div>
-        </div>
-      ) : null}
-      <div className="pb-13 px-10 relative">
+        ) : null}
+      <div className="pb-20 px-10 relative">
         <Slider ref={slider} {...settings} arrows={false}>
           {clientsImg?.map((client) => (
-            <img
-              src={
-                process.env.REACT_APP_ASSETS_URL + "/" + client.client_images
-              }
-              alt=""
-              className="px-4 w-32"
-            />
+            <div className="px-1">
+              <div className="bg-white bg-opacity-10 border border-zinc-700 backdrop-filter backdrop-blur-sm rounded-md">
+                <img
+                  src={
+                    process.env.REACT_APP_ASSETS_URL +
+                    "/" +
+                    client.client_images
+                  }
+                  alt=""
+                  className="px-4 w-32 h-32"
+                />
+              </div>
+            </div>
           ))}
         </Slider>
-      {!loader && (
-        <>
-          <div
-            onClick={() => slider.current.slickPrev()}
-            className="arrowLeft absolute top-1/2 font-semibold"
-          >
-            
-          </div>
-          <div
-            onClick={() => slider.current.slickNext()}
-            className="arrowRight absolute top-1/2 font-semibold"
-          >
-            
-          </div>
-        </>
-      )}
+        {clientsImg && (
+          <>
+            <div
+              onClick={() => slider.current.slickPrev()}
+              className="arrowLeft absolute top-36 font-semibold"
+            ></div>
+            <div
+              onClick={() => slider.current.slickNext()}
+              className="arrowRight absolute top-36 font-semibold"
+            ></div>
+          </>
+        )}
       </div>
+      <div className="relative">
+        <div className="font_title text-3xl px-6 pb-5 text-center">
+          <span className="font-bold text-brand-color">100+</span> clients
+          served
+        </div>
+        <ul className="text-sm px-6 leading-6">
+          <li className="flex justify-center">
+            Leading businesses from all over the world
+          </li>
+          <li className="flex justify-center">A diverse range of industries</li>
+        </ul>
 
-      <div className="font_title text-3xl px-6 pb-5 text-center">
-        <span className="font-bold text-brand-color">100+</span> clients served
-      </div>
-      <ul className="text-sm px-6 pb-8 leading-6">
-        <li className="flex justify-center">
-          Leading businesses from all over the world
-        </li>
-        <li className="flex justify-center">A diverse range of industries</li>
-      </ul>
+        <Lottie
+          className="w-1/2 mx-auto"
+          animationData={Achievement}
+          loop={true}
+        />
+        <div className="w-full absolute bottom-0">
+          <Lottie
+            className="w-11/12 mx-auto "
+            animationData={sucess}
+            loop={true}
+          />
+        </div>
 
-      <div className="font_title text-3xl px-6 pb-5 text-center">
-        <span className="font-bold text-brand-color">150+</span> Projects
-        completed
+        <div className="font_title text-3xl px-6 pb-5 text-center">
+          <span className="font-bold text-brand-color">150+</span> Projects
+          completed
+        </div>
+        <ul className="text-sm px-6 leading-6">
+          <li className="flex justify-center">
+            Practical and easily implementable solutions
+          </li>
+          <li className="flex justify-center">High standards of performance</li>
+          <li className="flex justify-center">Excellent service quality</li>
+        </ul>
       </div>
-      <ul className="text-sm px-6 pb-8 leading-6">
-        <li className="flex justify-center">
-          Practical and easily implementable solutions
-        </li>
-        <li className="flex justify-center">High standards of performance</li>
-        <li className="flex justify-center">Excellent service quality</li>
-      </ul>
     </div>
   );
 };

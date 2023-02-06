@@ -2,7 +2,7 @@ import { Button, Modal } from "antd";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
-import LogoWithTag from "../../../../asstes/Images/logo-tag.png";
+import Tagline from "../../../../asstes/Images/mobile-tagline.png";
 
 const NavigationBar = () => {
   const [open, setOpen] = useState(false);
@@ -23,15 +23,23 @@ const NavigationBar = () => {
   return (
     <div
       id="Navigation"
-      className="Navigation fixed top-0 z-50"
+      className="Navigation fixed top-0 z-[999]"
       style={{ transition: "top 0.3s" }}
     >
       <div className="flex justify-between">
         <Link to="/">
-          <div className="shrink-0 p-6">
-            <Icons.BrandLogoMob className="w-12 scale-x-[-1] text-white" />
+          <div className="flex shrink-0 p-6">
+            <Icons.BrandLogoMob
+              className="w-12 scale-x-[-1] text-white"
+              alt="Logo"
+            />
+            {/* <Icons.BrandLogoMobWithTagline className="w-32 text-white animate-pulse" /> */}
+            <div id="tagline" className=" overlay pt-1">
+              <img src={Tagline} alt="tagline" width={100} />
+            </div>
           </div>
         </Link>
+        {/* <Icons.BrandLogoMobWithTagline className=" text-white w-32 pb-4" /> */}
         <Button
           className={`pt-2 ${open ? "translate-x-5 hidden" : ""}`}
           type="button"
@@ -69,7 +77,7 @@ const NavigationBar = () => {
             className="flex flex-row absolute top-14 shrink-0"
             onClick={() => setOpen(false)}
           >
-            <Icons.BrandLogoMobWithTagline className=" text-white w-32 pb-4" />
+            <Icons.BrandLogoMob className=" text-white w-13 scale-x-[-1] " />
           </div>
 
           <div onClick={() => setOpen(false)}>
@@ -77,7 +85,7 @@ const NavigationBar = () => {
           </div>
 
           <div onClick={() => setOpen(false)}>
-            <a href="/#Service">Service</a>
+            <a href="/#Service">Services</a>
           </div>
 
           <div onClick={() => setOpen(false)}>
@@ -85,7 +93,7 @@ const NavigationBar = () => {
           </div>
 
           <div onClick={() => setOpen(false)}>
-            <a href="/#Case_Study">Case Study</a>
+            <a href="/#Case_Study">Case Studies</a>
           </div>
 
           <div onClick={() => setOpen(false)}>
@@ -93,7 +101,7 @@ const NavigationBar = () => {
           </div>
 
           <div onClick={() => setOpen(false)}>
-            <Link to="#">Career</Link>
+            <Link to="career">Career</Link>
           </div>
 
           <div onClick={() => setOpen(false)}>

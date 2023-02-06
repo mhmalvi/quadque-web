@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import { Helmet } from "react-helmet";
 
-const BlogGallery = () => {
+const CareerGallery = () => {
   const [allBlogs] = useBlogs();
   const [totalPosts, setTotalPosts] = useState();
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,7 +50,7 @@ const BlogGallery = () => {
           content="Look at our informative blogs, where we discuss various interesting topics related to the IT industry, such as website development , UI/UX design and digital marketing and so on."
         />
       </Helmet>
-      
+
       {loader ? (
         <div className="w-full h-[100vh] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie
@@ -62,27 +62,28 @@ const BlogGallery = () => {
           <div className="font_title text-white animate-pulse">Loading...</div>
         </div>
       ) : null}
-      <div className="Blog w-full h-[900px] mt-30 px-6">
+      <div className="text-3xl text-white mt-30 px-6 pb-4">Current Job Openings</div>
+      <div className="Blog w-full h-[1100px] px-6">
         {currentPosts?.map((details) => (
-          <Link to={`blog-detail/${details.slug}`}>
-            <div key={details.id} className="rounded-xl mx-auto relative mb-8">
+            <div key={details.id} className="rounded-xl mx-auto pb-6 relative z-50">
               <img
                 src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
                 alt=""
                 className="w-[100%] h-[185px] m-auto rounded-lg"
               />
-              <div className="w-full flex items-end h-22 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2">
+              <div className="flex justify-between pb-2 px-2 gap-4">
                 <div>
-                  <div className="text-xl text-white">{details.title}</div>
-                  <div className="text-white text-sm"> {details.author}</div>
+                  <h1 className="text-xl text-white">{details.title}</h1>
                   <div className="text-white text-sm">
-                    {details.created_at.split("T", 1)}
+                    deadline: {details.created_at.split("T", 1)}
                   </div>
                 </div>
+              <Link to={`/career-detail`}>
+                <div className="h-8 bg-white my-2 px-4 rounded-full text-center flex items-center cursor-pointer">View</div>
+          </Link>
               </div>
               {/* <div dangerouslySetInnerHTML={{ __html: details.text }} className="text-white"></div> */}
             </div>
-          </Link>
         ))}
       </div>
       {/* PAGINATION */}
@@ -99,4 +100,4 @@ const BlogGallery = () => {
   );
 };
 
-export default BlogGallery;
+export default CareerGallery;

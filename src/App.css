@@ -355,7 +355,6 @@ body::-webkit-scrollbar {
 
 /* Overriding antd modal */
 .Navigation {
-  display: block;
   width: 100%;
 }
 

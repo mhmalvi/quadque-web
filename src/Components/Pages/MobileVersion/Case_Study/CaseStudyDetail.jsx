@@ -67,8 +67,8 @@ const CaseStudyDetail = () => {
           />
 
           <div className="text-sm text-center pb-5">{caseData?.summary2}</div>
-          <div className="w-32 flex justify-center mx-auto bg-[#0793FF] rounded-full text-black text-sm font-semibold px-3 py-2">
-            Contact Us
+          <div className="w-40 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
+            <a href="#Footer">Contact Us</a>
           </div>
         </div>
 
@@ -206,7 +206,7 @@ const CaseStudyDetail = () => {
         </div>
       </div> */}
         <Link to={`/`}>
-          <div className="flex text-white text-justify py-2 my-5 px-6">
+          <div className="w-40 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
             <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow" />
             Go Back
           </div>
