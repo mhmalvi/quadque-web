@@ -388,7 +388,7 @@
     transform: rotate(360deg);
   }
 }
-
+/* 
 .spirit-bomb {
   box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
   animation: spirit 4s ease-in-out infinite;
@@ -412,7 +412,34 @@
   100% {
     box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
   }
+} */
+
+.spirit-bomb {
+  box-shadow: 0 0 30px #7200ff, -5px 0 40px #4f0092;
+  animation: spirit 4s ease-in-out infinite;
+  border: 1px solid #7019bd !important;
 }
+
+@keyframes spirit {
+  0% {
+    box-shadow: 0 0 30px #8c31fa, -5px 0 40px #9a2cfa;
+  }
+  25% {
+    box-shadow: 0 0 30px #8c31fa, 5px 0 40px #9a2cfa;
+  }
+
+  50% {
+    box-shadow: 0 0 30px #8c31fa, -5px 0 40px #9a2cfa;
+  }
+
+  75% {
+    box-shadow: 0 0 30px #8c31fa, 5px 0 40px #9a2cfa;
+  }
+  100% {
+    box-shadow: 0 0 30px #8c31fa, -5px 0 40px #9a2cfa;
+  }
+}
+
 .arrowLeft,
 .arrowLeft:before {
   position: absolute;

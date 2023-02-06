@@ -126,7 +126,7 @@ const StartProject = () => {
   return (
     <div
       id="start_project"
-      className="section w-full lg:pt-6 2xl:py-8 font-poppins bg-black text-white"
+      className="section w-full lg:pt-6 2xl:py-8 font_primary bg-black text-white"
     >
       <Modal
         style={{
@@ -297,7 +297,7 @@ const StartProject = () => {
 
               <div className="flex justify-center items-center">
                 <button
-                  className="spirit-bomb px-16 py-4 bg-transparent rounded-full border border-white mt-12 text-base font-semibold leading-4"
+                  className="spirit-bomb px-16 py-4 bg-transparent rounded-full border border-white mt-12 xl:mt-16 text-base font-semibold leading-4"
                   style={{
                     letterSpacing: "0.04em",
                     border: "2px solid rgb(255, 255, 255)",
@@ -305,7 +305,7 @@ const StartProject = () => {
                   }}
                   onClick={handleSendMailReq}
                 >
-                  START PROJECT
+                  LET'S START A PROJECT
                 </button>
               </div>
             </div>

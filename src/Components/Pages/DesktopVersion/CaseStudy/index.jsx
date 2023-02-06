@@ -118,8 +118,8 @@ const CaseStudy = () => {
         </div>
 
         <div className="w-full min-h-[80vh] flex justify-end items-end pr-16">
-          <div className="lg:w-[650px] xl:w-9/12 grid lg:gap-4 2xl:gap-6 ml-auto mt-auto lg:grid-cols-4 2xl:grid-cols-4">
-            <div className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px]">
+          <div className="lg:w-[650px] xl:w-9/12 grid lg:gap-4 2xl:gap-6 ml-auto mt-auto lg:grid-cols-4 2xl:grid-cols-4 overflow-hidden">
+            <div className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-md">
               &nbsp;
             </div>
             {currentPosts?.map((post, i) => (
@@ -133,12 +133,12 @@ const CaseStudy = () => {
                   <Link
                     to={`case-studies/${post?.slug}`}
                     key={i}
-                    className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-[20px] cursor-pointer"
+                    className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-72 2xl:w-64 rounded-md cursor-pointer"
                   >
-                    <div className="min-h-full min-w-full bg-white bg-opacity-30 backdrop-filter backdrop-blur-md blur-sm rounded-[20px]"></div>
+                    <div className="min-h-full min-w-full bg-white bg-opacity-25 backdrop-filter backdrop-blur-md rounded-md"></div>
                     <div className="w-full h-full absolute top-0">
                       <img
-                        className="w-full h-full rounded-[20px] border"
+                        className="w-full h-full rounded-md border border-gray-600"
                         src={
                           process.env.REACT_APP_ASSETS_URL +
                           "/" +
@@ -146,9 +146,9 @@ const CaseStudy = () => {
                         }
                         alt=""
                       />
-                      <p className="absolute h-10 w-full bottom-0 border text-center font-normal rounded-br-[20px] rounded-bl-[20px] lg:text-xs 2xl:text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
+                      {/* <p className="absolute h-10 w-full bottom-0 border text-center font-normal rounded-br-[20px] rounded-bl-[20px] lg:text-xs 2xl:text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
                         {post?.com_name}
-                      </p>
+                      </p> */}
                     </div>
                   </Link>
                 </Tooltip>
@@ -157,24 +157,28 @@ const CaseStudy = () => {
 
             <div
               className="relative lg:h-44 lg:w-40 xl:h-50 xl:w-44 2xl:h-74
-            2xl:w-64 rounded-[20px] flex justify-center items-center"
+            2xl:w-64 rounded-md flex justify-center items-center"
             >
               {currentPage > 1 ? (
-                <Icons.RightArrow
-                  className="w-16 rotate-180 cursor-pointer text-gray-600 hover:text-gray-500"
-                  onClick={() => {
-                    setCurrentPage(currentPage - 1);
-                  }}
-                />
+                <div className="bg-gradient-to-r from-[#6359A5] to-zinc-700 rounded-full p-0.5">
+                  <Icons.AppleRightArrow
+                    className="w-10 2xl:w-14 rotate-180 cursor-pointer text-gray-400 bg-black rounded-full hover:text-gray-500"
+                    onClick={() => {
+                      setCurrentPage(currentPage - 1);
+                    }}
+                  />
+                </div>
               ) : null}
               {currentPage < Math.ceil(caseStudy?.length / 6) ? (
-                <Icons.RightArrow
-                  className="w-16 cursor-pointer mt-4 ml-4 text-gray-600 hover:text-gray-500"
-                  onClick={() => {
-                    setCurrentPage(currentPage + 1);
-                    setTriggerAnimation(!triggerAnimation);
-                  }}
-                />
+                <div className="bg-gradient-to-r from-[#6359A5] to-zinc-700 rounded-full p-0.5 ml-6">
+                  <Icons.AppleRightArrow
+                    className="w-10 2xl:w-14 cursor-pointer text-gray-400 bg-black rounded-full hover:text-gray-500"
+                    onClick={() => {
+                      setCurrentPage(currentPage + 1);
+                      setTriggerAnimation(!triggerAnimation);
+                    }}
+                  />
+                </div>
               ) : null}
             </div>
           </div>
