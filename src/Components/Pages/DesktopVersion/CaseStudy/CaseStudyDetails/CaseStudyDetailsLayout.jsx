@@ -81,7 +81,7 @@ const CaseStudyDetailsLayout = () => {
             }}
             onClick={() => setOpenMenus(true)}
           >
-            <span className="uppercase mr-auto font-semibold text-xl leading-[175%] font_poppins pr-4">
+            <span className="uppercase mr-auto font-semibold text-xl leading-[175%] font_primary pr-4">
               menu
             </span>
             <span>
@@ -108,7 +108,7 @@ const CaseStudyDetailsLayout = () => {
                 href="https://www.facebook.com/quadquetech"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-brand-color transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
               >
                 fb
               </a>
@@ -123,7 +123,7 @@ const CaseStudyDetailsLayout = () => {
                 href="https://www.instagram.com/quadquetech/"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-brand-color transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
               >
                 in
               </a>
@@ -138,7 +138,7 @@ const CaseStudyDetailsLayout = () => {
                 href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-brand-color transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
               >
                 yt
               </a>
@@ -152,7 +152,7 @@ const CaseStudyDetailsLayout = () => {
               <a
                 href="https://bd.linkedin.com/company/quadque-technologies-ltd"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-brand-color transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
                 rel="noreferrer"
               >
                 ln
@@ -217,7 +217,7 @@ const CaseStudyDetailsLayout = () => {
               <div className="mb-9 -rotate-90 flex justify-center items-center">
                 <span
                   onClick={handleNavigate}
-                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4 cursor-pointer"
+                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_primary mr-4 cursor-pointer"
                 >
                   start project
                 </span>

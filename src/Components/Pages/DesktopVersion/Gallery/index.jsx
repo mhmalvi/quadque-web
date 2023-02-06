@@ -12,7 +12,7 @@ const Gallery = ({ setLoader }) => {
   const location = useLocation();
   const [galleryImages, setGalleryImages] = useState([]);
   const [activeAccordion, setActiveAccordion] = useState(0);
-  // const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
+  const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const synth = window.speechSynthesis;
 
@@ -22,6 +22,7 @@ const Gallery = ({ setLoader }) => {
 
       setTimeout(() => {
         setTriggerAnimation(true);
+        setTriggerTitleAnimation(true);
       }, 800);
 
       setTimeout(() => {
@@ -61,7 +62,7 @@ const Gallery = ({ setLoader }) => {
         />
       </Helmet>
 
-      <div className="gallery min-h-full bg-black text-white pb-20 h-[90vh] overflow-y-auto font-poppins">
+      <div className="gallery min-h-full bg-black text-white pb-20 h-[90vh] font-poppins overflow-y-scroll">
         <div className="relative">
           <img src={Office} alt="" className="w-full h-96" />
           <div className="absolute top-20 left-40 z-50">
@@ -79,17 +80,18 @@ const Gallery = ({ setLoader }) => {
 
         {/* IMAGES GALLERY START */}
         <div className="mt-10 2xl:mt-20 px-28 gap-4">
-          <Fade left cascade spy={triggerAnimation}>
-            <div className="faq w-10/12 mx-auto pb-4 px-6 mt-6">
-              {galleryImages?.map((event, i) => (
+          <div className="faq w-10/12 mx-auto pb-4 px-6 mt-6">
+            {galleryImages?.map((event, i) => (
+              <Fade left cascade spy={triggerTitleAnimation}>
                 <div key={i}>
                   <div
                     className="flex items-center text-2xl font-semibold my-6 cursor-pointer mb-8"
-                    onClick={() =>
+                    onClick={() => {
                       setActiveAccordion(
                         activeAccordion === event?.id ? null : event?.id
-                      )
-                    }
+                      );
+                      setTriggerAnimation();
+                    }}
                   >
                     <div className="whitespace-nowrap flex items-center">
                       <img src={allbum} className="w-6 mr-2" alt="" />
@@ -103,25 +105,27 @@ const Gallery = ({ setLoader }) => {
                         className={`flex flex-wrap justify-center items-center gap-8`}
                       >
                         {event?.gallery_images?.map((img, index) => (
-                          <div key={index}>
-                            <img
-                              src={
-                                process.env.REACT_APP_ASSETS_URL +
-                                "/" +
-                                img?.images
-                              }
-                              alt=""
-                              className="rounded-xl"
-                            />
-                          </div>
+                          <Fade left cascade spy={triggerAnimation}>
+                            <div key={index}>
+                              <img
+                                src={
+                                  process.env.REACT_APP_ASSETS_URL +
+                                  "/" +
+                                  img?.images
+                                }
+                                alt=""
+                                className="rounded-xl"
+                              />
+                            </div>
+                          </Fade>
                         ))}
                       </div>
                     ) : null}
                   </div>
                 </div>
-              ))}
-            </div>
-          </Fade>
+              </Fade>
+            ))}
+          </div>
         </div>
       </div>
     </>

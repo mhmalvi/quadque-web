@@ -82,6 +82,7 @@ module.exports = {
       },
       colors: {
         "brand-color": "#8F00FF",
+        // "brand-color": "#7a45ff",
         "home-color": "#3734A9",
       },
       lineHeight: {

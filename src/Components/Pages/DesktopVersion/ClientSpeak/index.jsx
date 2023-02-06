@@ -69,8 +69,8 @@ const ClientSpeak = () => {
 
       <div className="mt-16 2xl:mt-36 flex justify-center items-center overflow-hidden">
         <div className="w-full flex justify-center mx-auto">
-          <Fade left cascade spy={triggerAnimation}>
-            <div>
+          <Fade left spy={triggerAnimation}>
+            <div className="relative">
               <img
                 className="lg:w-[250px] lg:h-[260px] 2xl:w-98 2xl:h-98 lg:mr-12 2xl:mr-16 pr-0.05"
                 src={
@@ -80,6 +80,12 @@ const ClientSpeak = () => {
                 }
                 alt=""
               />
+              <div
+                className="absolute bottom-0 h-14 w-full bg-gradient-to-t from-black to-transparent"
+                style={{
+                  borderRadius: "60% 60% 0 0",
+                }}
+              ></div>
             </div>
 
             <div className="w-[423px] mr-9 relative">
@@ -100,7 +106,7 @@ const ClientSpeak = () => {
                 </h3>
 
                 <h3
-                  className="mt-8 mb-2.5 text-base font-medium leading-5"
+                  className="mt-6 mb-2.5 text-base font-medium leading-5"
                   style={{
                     letterSpacing: "0.04em",
                   }}
@@ -108,14 +114,14 @@ const ClientSpeak = () => {
                   {clientSpeaks?.[index]?.name}
                 </h3>
 
-                <h4
+                {/* <h4
                   className="opacity-50 text-base font-medium leading-5"
                   style={{
                     letterSpacing: "0.04em",
                   }}
                 >
                   {clientSpeaks?.[index]?.designation}
-                </h4>
+                </h4> */}
               </div>
 
               <div className="absolute bottom-0 flex items-center 2xl:mt-14 lg:mt-4">
