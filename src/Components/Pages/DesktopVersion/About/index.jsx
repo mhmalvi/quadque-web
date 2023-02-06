@@ -5,6 +5,11 @@ import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
+import ourGoal from "../../../../asstes/Images/Our_Goal.gif";
+import ourMission from "../../../../asstes/Images/Our_Mission.gif";
+import ourObjective from "../../../../asstes/Images/Our_objective.gif";
+import ourVission from "../../../../asstes/Images/Our_Vission_1.gif";
+import whyChooseUs from "../../../../asstes/Images/why_choose_us.gif";
 
 const About = () => {
   const location = useLocation();
@@ -38,6 +43,7 @@ const About = () => {
   }, [location.hash]);
 
   const handleChangeBanner = (section) => {
+    console.log(banners[section]);
     setSideBanner(banners[section]);
   };
 
@@ -53,14 +59,18 @@ const About = () => {
   // };
 
   const handleScrollAbout = (indexNum) => {
-    setTriggerAnimation(!triggerAnimation);
-    setScrollingIndex(indexNum);
+    if (scrollingIndex === indexNum) {
+      return;
+    } else {
+      setTriggerAnimation(!triggerAnimation);
+      setScrollingIndex(indexNum);
+    }
   };
 
   console.log(sideBanner);
 
   return (
-    <div id="about" className="section min-h-full font-poppins">
+    <div id="about" className="section min-h-full font_primary">
       <Helmet>
         <meta charSet="utf-8" />
         <meta
@@ -72,10 +82,12 @@ const About = () => {
         <meta name="keywords" content={goals?.meta_keyword} />
       </Helmet>
 
-      <div className="w-full pr-[22px] text-white flex justify-center">
-        <img className="w-[44%] mr-16" src={sideBanner} alt="" />
+      <div className="w-full pr-[22px] text-white flex justify-center overflow-hidden">
+        <div className="w-[40%] min-h-full flex justify-center items-center">
+          <img className="w-[80%] mx-auto pr-16" src={sideBanner} alt="" />
+        </div>
 
-        <div className="w-[60%] min-h-full ml-1 mt-21 2xl:mt-32">
+        <div className="w-[60%] min-h-full ml-1 mt-14 2xl:mt-32 overflow-hidden">
           <div className="mb-4 xl:mb-8">
             <div>
               <div
@@ -99,9 +111,9 @@ const About = () => {
           </div>
           <div>
             {/* <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mb-auto overflow-y-scroll py-1"> */}
-            <div className="about_details border-gray-700 pr-12 xl:h-[40vh] 2xl:h-[50vh] w-[90%] py-1">
+            <div className="about_details border-gray-700 pr-12 xl:h-[50vh] 2xl:h-[60vh] w-[90%] py-1 overflow-hidden">
               <Fade right cascade spy={triggerAnimation}>
-                <div className="block xl:hidden">
+                <div className="block xl:hidden h-[55vh]">
                   {scrollingIndex === 0 ? (
                     <>
                       <div
@@ -114,7 +126,7 @@ const About = () => {
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
                           {goals?.our_vision}
                         </p>
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <hr className=" text-white text-opacity-30 my-4 2xl:my-12 py-0.5" />
                       </div>
 
                       <div
@@ -127,7 +139,12 @@ const About = () => {
                         <div className="mt-2.5 text-white pl-4">
                           {goals?.our_goal}
                         </div>
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
                       </div>
                     </>
                   ) : null}
@@ -146,7 +163,12 @@ const About = () => {
                           {goals?.our_objective}
                         </p>
                         {/* </Fade> */}
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
                       </div>
 
                       <div
@@ -159,7 +181,12 @@ const About = () => {
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                           {goals?.our_mission}
                         </p>
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
                       </div>
                     </div>
                   ) : null}
@@ -176,7 +203,12 @@ const About = () => {
                         {goals?.who_we_are}
                       </p>
                       {/* </Fade> */}
-                      <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                      <div
+                        className="w-full bg-gray-400 my-4 2xl:my-12"
+                        style={{
+                          height: "0.5px",
+                        }}
+                      ></div>
                     </div>
                   ) : null}
                   {scrollingIndex === 3 ? (
@@ -193,11 +225,16 @@ const About = () => {
                           __html: goals?.why_choose_us,
                         }}
                       ></p>
-                      <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                      <div
+                        className="w-full bg-gray-400 my-4 2xl:my-12"
+                        style={{
+                          height: "0.5px",
+                        }}
+                      ></div>
                     </div>
                   ) : null}
                 </div>
-                <div className="hidden xl:block">
+                <div className="hidden xl:block h-[50vh]">
                   {scrollingIndex === 0 ? (
                     <>
                       <div
@@ -210,7 +247,12 @@ const About = () => {
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                           {goals?.our_vision}
                         </p>
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
                       </div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
@@ -222,7 +264,12 @@ const About = () => {
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                           {goals?.our_mission}
                         </p>
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
                       </div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
@@ -234,7 +281,12 @@ const About = () => {
                         <div className="mt-2.5 text-white pl-4 text-justify break-keep">
                           {goals?.our_goal}
                         </div>
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
                       </div>
                     </>
                   ) : null}
@@ -252,8 +304,12 @@ const About = () => {
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                           {goals?.our_objective}
                         </p>
-                        {/* </Fade> */}
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
                       </div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
@@ -266,8 +322,12 @@ const About = () => {
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                           {goals?.who_we_are}
                         </p>
-                        {/* </Fade> */}
-                        <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
                       </div>
                     </div>
                   ) : null}
@@ -285,7 +345,12 @@ const About = () => {
                           __html: goals?.why_choose_us,
                         }}
                       ></p>
-                      <hr className="text-white my-4 2xl:my-12 py-0.5" />
+                      <div
+                        className="w-full bg-gray-400 my-4 2xl:my-12"
+                        style={{
+                          height: "0.5px",
+                        }}
+                      ></div>
                     </div>
                   ) : null}
                 </div>
@@ -293,36 +358,28 @@ const About = () => {
 
               <div className="w-36 ml-auto flex items-center justify-between">
                 <div
-                  className={`cursor-pointer hover:delay-300 hover:transition-all ${
-                    scrollingIndex === 0
-                      ? "bg-brand-color w-7 h-1.5"
-                      : "bg-white w-6 h-1"
+                  className={`cursor-pointer hover:delay-300 hover:transition-all w-8 h-3 rounded-full ${
+                    scrollingIndex === 0 ? "bg-brand-color" : "bg-white"
                   }`}
-                  onClick={() => handleScrollAbout(0)}
+                  onMouseOver={() => handleScrollAbout(0)}
                 ></div>
                 <div
-                  className={`cursor-pointer hover:delay-300 hover:transition-all ${
-                    scrollingIndex === 1
-                      ? "bg-brand-color w-7 h-1.5"
-                      : "bg-white w-6 h-1"
+                  className={`cursor-pointer hover:delay-300 hover:transition-all w-8 h-3 rounded-full ${
+                    scrollingIndex === 1 ? "bg-brand-color" : "bg-white"
                   }`}
-                  onClick={() => handleScrollAbout(1)}
+                  onMouseOver={() => handleScrollAbout(1)}
                 ></div>
                 <div
-                  className={`cursor-pointer hover:delay-300 hover:transition-all ${
-                    scrollingIndex === 2
-                      ? "bg-brand-color w-7 h-1.5"
-                      : "bg-white w-6 h-1"
+                  className={`cursor-pointer hover:delay-300 hover:transition-all w-8 h-3 rounded-full ${
+                    scrollingIndex === 2 ? "bg-brand-color" : "bg-white"
                   }`}
-                  onClick={() => handleScrollAbout(2)}
+                  onMouseOver={() => handleScrollAbout(2)}
                 ></div>
                 <div
-                  className={`xl:hidden cursor-pointer hover:delay-300 hover:transition-all ${
-                    scrollingIndex === 3
-                      ? "bg-brand-color w-7 h-1.5"
-                      : "bg-white w-6 h-1"
+                  className={`xl:hidden cursor-pointer hover:delay-300 hover:transition-all w-8 h-3 rounded-full ${
+                    scrollingIndex === 3 ? "bg-brand-color" : "bg-white"
                   }`}
-                  onClick={() => handleScrollAbout(3)}
+                  onMouseOver={() => handleScrollAbout(3)}
                 ></div>
               </div>
             </div>
@@ -351,11 +408,11 @@ const About = () => {
 export default About;
 
 const banners = [
-  "https://i.ibb.co/1L3g5pj/HD-wallpaper-dark-blue-wall-plain-color-colors-light-themes-solid-galaxy.jpg",
-  "https://i.ibb.co/KbV9LrW/3.jpg",
-  "https://i.ibb.co/gvfjbvH/HD-wallpaper-blueish-or-bluish-solid-blue-color-minimalism-colors.jpg",
-  "https://i.ibb.co/1L3g5pj/HD-wallpaper-dark-blue-wall-plain-color-colors-light-themes-solid-galaxy.jpg",
+  ourVission,
+  ourGoal,
+  ourMission,
+  ourObjective,
   "https://i.ibb.co/pwNTPMS/photo-1557683304-673a23048d34.jpg",
+  whyChooseUs,
   "https://i.ibb.co/vBfkmvw/Aurometalsaurus-Solid-Color-Background-Wallpaper-for-Mobile-Phone-600x1067.png",
-  "https://i.ibb.co/1L3g5pj/HD-wallpaper-dark-blue-wall-plain-color-colors-light-themes-solid-galaxy.jpg",
 ];

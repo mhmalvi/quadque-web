@@ -69,7 +69,7 @@ const Services = () => {
   }, [activeService, services]);
 
   return (
-    <div className="w-full lg:h-[80vh] 2xl:h-[90vh] relative text-white flex justify-between font-poppins lg:pt-[20px] 2xl:pb-[75px]">
+    <div className="w-full lg:h-[80vh] 2xl:h-[90vh] relative text-white flex justify-between font-poppins lg:pt-5 lg:pb-6 2xl:pb-[75px]">
       <div className="w-[255px] min-h-full flex flex-col justify-between">
         <div>
           <Fade left cascade spy={triggerAnimation}>
@@ -80,45 +80,39 @@ const Services = () => {
               >
                 {activeServiceDetails?.service_name}
               </h1>
-            </div>
-
-            <div className="pt-18 mt-0.5 text-justify">
-              <p>{activeServiceDetails?.short_description}</p>
-              {activeServiceDetails?.description ? (
-                <p className="text-white font-semibold mt-4 text-lg hover:text-opacity-90 cursor-pointer">
-                  <Tooltip
-                    placement="right"
-                    title={
-                      <span className="text-white font-semibold">
-                        Details On {activeService}
-                      </span>
-                    }
-                    color={"rgba(90, 90, 90, 0.7)"}
-                  >
-                    <Link to={`services/${activeServiceDetails?.slug}`}>
-                      Learn More
-                    </Link>
-                  </Tooltip>
-                </p>
-              ) : null}
+              <p className="mt-8">{activeServiceDetails?.short_description}</p>
             </div>
           </Fade>
         </div>
 
         <Fade left cascade>
-          <div>
-            <a href="#start-project">
-              <button
-                className="w-[252px] h-[46px] bg-brand-color text-[15px] font-semibold leading-4 capitalize text-white"
-                style={{
-                  letterSpacing: "0.04em",
-                  boxShadow:
-                    "rgba(255, 255, 255, 0.15) 0px 2px 4px 0px, rgba(255, 255, 255, 0.6) 0px 2px 16px 0px",
-                }}
-              >
-                START PROJECT
-              </button>
-            </a>
+          <div className="mt-auto text-justify">
+            {activeServiceDetails?.description ? (
+              <p className="text-white font-semibold mt-4 text-lg hover:text-opacity-90 cursor-pointer">
+                <Tooltip
+                  placement="right"
+                  title={
+                    <span className="text-white font-semibold">
+                      Details On {activeService}
+                    </span>
+                  }
+                  color={"rgba(90, 90, 90, 0.7)"}
+                >
+                  <Link to={`services/${activeServiceDetails?.slug}`}>
+                    <button
+                      className="spirit-bomb px-8 py-3 bg-transparent text-[15px] font-semibold leading-4 capitalize text-white"
+                      style={{
+                        letterSpacing: "0.04em",
+                        border: "2px solid rgb(255, 255, 255)",
+                        borderRadius: "30px",
+                      }}
+                    >
+                      Learn More
+                    </button>
+                  </Link>
+                </Tooltip>
+              </p>
+            ) : null}
           </div>
         </Fade>
       </div>
@@ -166,7 +160,7 @@ const Services = () => {
         </div>
       </Fade>
 
-      <div className="w-64 text-xl font-medium leading-8 capitalize">
+      <div class="w-64 min-h-full text-xl font-medium leading-8 capitalize flex flex-col justify-between">
         <Fade left cascade spy={triggerAnimation}>
           <div className="pt-18 mt-0.5">
             {services?.map((service, i) => (
@@ -182,6 +176,21 @@ const Services = () => {
                 {service?.service_name}
               </p>
             ))}
+          </div>
+
+          <div>
+            <a href="#start-project">
+              <button
+                className="spirit-bomb w-[252px] h-[46px] bg-transparent text-[15px] font-semibold leading-4 capitalize text-white"
+                style={{
+                  letterSpacing: "0.04em",
+                  border: "2px solid rgb(255, 255, 255)",
+                  borderRadius: "30px",
+                }}
+              >
+                LET'S START A PROJECT
+              </button>
+            </a>
           </div>
         </Fade>
       </div>

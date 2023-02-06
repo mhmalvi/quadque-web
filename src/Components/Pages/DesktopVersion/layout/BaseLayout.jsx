@@ -1,18 +1,20 @@
 import { Modal, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import siteAudio from "../../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../../asstes/Images/unmute.png";
 import loaderFile from "../../../../../asstes/Lotties/loader.json";
 import Icons from "../../../../Shared/Icons";
 import Navbar from "../../Navbar";
-import BlogDetails from "./BlogDetails";
+import ServiceDetails from "./ServiceDetails";
 
-const BlogDetailsLayout = () => {
+const BaseLayout = ({ component }) => {
+  const navigate = useNavigate();
   const [mouseHover, setMouseHover] = useState(false);
-  const [openMenus, setOpenMenus] = useState(false);
   const [muted, setMuted] = useState(true);
+  const [openMenus, setOpenMenus] = useState(false);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -22,6 +24,10 @@ const BlogDetailsLayout = () => {
       document.getElementById("iframeAudio").src = siteAudio;
     }
   }, [muted]);
+
+  const handleNavigate = () => {
+    navigate(`../#start-project`, { replace: true });
+  };
 
   return (
     <div className="blog_details w-full h-full">
@@ -160,7 +166,7 @@ const BlogDetailsLayout = () => {
           id="main_container"
           className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
-          <BlogDetails setLoader={setLoader} />
+          <ServiceDetails setLoader={setLoader} />
         </div>
 
         {/* Right bar */}
@@ -213,12 +219,12 @@ const BlogDetailsLayout = () => {
               <div>&nbsp;</div>
               <div>&nbsp;</div>
               <div className="mb-9 -rotate-90 flex justify-center items-center">
-                <a
-                  href="#start-project"
-                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_primary mr-4"
+                <div
+                  onClick={handleNavigate}
+                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_primary mr-4 cursor-pointer"
                 >
                   start project
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -228,8 +234,9 @@ const BlogDetailsLayout = () => {
       {/* Bottom bar */}
       <div className="absolute bottom-0 z-50 w-full h-10 bg-white"></div>
 
+      {/* Loader */}
       {loader ? (
-        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 left-10 bg-black backdrop-blur-md bg-opacity-80">
+        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 2xl:left-10 bg-black backdrop-blur-md bg-opacity-80">
           <Lottie
             className="w-1/6 mx-auto"
             animationData={loaderFile}
@@ -244,4 +251,4 @@ const BlogDetailsLayout = () => {
   );
 };
 
-export default BlogDetailsLayout;
+export default BaseLayout;

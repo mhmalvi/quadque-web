@@ -95,15 +95,17 @@ const CaseStudyDetails = ({ setLoader }) => {
 
           <div className="flex justify-center items-center pt-6">
             <button
-              className="px-7 py-3.5 text-base  font-medium leading-4 rounded-full bg-[#0793FF] text-black text-center"
+              className="spirit-bomb px-7 py-3.5 text-base font-medium leading-4 rounded-full bg-transparent text-white text-center"
               style={{
-                letterSpacing: "0.48px",
+                letterSpacing: "0.04em",
+                border: "2px solid rgb(255, 255, 255)",
+                borderRadius: "30px",
               }}
               onClick={() => {
                 navigate(`../#contacts`, { replace: true });
               }}
             >
-              Contact us
+              Contact Us
             </button>
           </div>
         </div>
@@ -292,16 +294,19 @@ const CaseStudyDetails = ({ setLoader }) => {
               </h4>
               <div className="flex items-center pt-8">
                 <button
-                  className="px-7 py-3.5 text-base  font-medium leading-4 rounded-full bg-[#0793FF] text-black text-center"
+                  className="spirit-bomb px-7 py-3.5 text-base font-medium leading-4 rounded-full bg-transparent text-white text-center"
                   style={{
-                    letterSpacing: "0.48px",
+                    letterSpacing: "0.04em",
+                    border: "2px solid rgb(255, 255, 255)",
+                    borderRadius: "30px",
                   }}
                   onClick={() => {
                     navigate(`../#contacts`, { replace: true });
                   }}
                 >
-                  Contact us
+                  Contact Us
                 </button>
+
                 <div className="flex items-center">
                   <span className="mx-11">or </span>
                   <span>
