@@ -540,28 +540,30 @@
   height: 100%;
   position: absolute;
   left: 80px;
-  animation: overlay 6s infinite;
+  animation: overlay 6s ease-in-out infinite;
 }
 
 
 @keyframes overlay {
   0% {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-35px);
+    transition-delay: 5000ms;
   }
 
   30% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(-5px);
   }
 
   80% {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(-5px);
   }
 
   100% {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-35px);
+    transition-delay: 5000ms;
   }
 }
