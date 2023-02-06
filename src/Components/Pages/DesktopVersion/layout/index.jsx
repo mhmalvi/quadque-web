@@ -63,6 +63,15 @@ const Layout = () => {
         />
 
         <Route
+          path="career"
+          element={
+            <>
+              <FaqLayout />
+            </>
+          }
+        />
+
+        <Route
           path="gallery"
           element={
             <>

@@ -3,9 +3,13 @@
 } */
 
 /* Global Fonts */
-.font_poppins {
-  font-family: "Poppins", sans-serif;
+.font_primary {
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Montserrat", sans-serif;
 }
+
+/* .font_montserrat {
+} */
 
 @font-face {
   font-family: Anurati;
@@ -489,27 +493,27 @@ body::-webkit-scrollbar {
 }
 
 .spirit-bomb {
-  box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+  box-shadow: 0 0 30px #7200ff, -5px 0 40px #4f0092;
   animation: spirit 4s ease-in-out infinite;
 }
 
 @keyframes spirit {
   0% {
-    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+    box-shadow: 0 0 30px #7200ff, -5px 0 40px #4f0092;
   }
   25% {
-    box-shadow: 0 0 30px #fff, 5px 0 30px #8f0fff, -5px 0 30px #0ff;
+    box-shadow: 0 0 30px #7200ff, 5px 0 40px #4f0092;
   }
 
   50% {
-    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+    box-shadow: 0 0 30px #7200ff, -5px 0 40px #4f0092;
   }
 
   75% {
-    box-shadow: 0 0 30px #fff, 5px 0 30px #8f0fff, -5px 0 30px #0ff;
+    box-shadow: 0 0 30px #7200ff, 5px 0 40px #4f0092;
   }
   100% {
-    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+    box-shadow: 0 0 30px #7200ff, -5px 0 40px #6359a5;
   }
 }
 

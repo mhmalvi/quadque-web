@@ -2,10 +2,18 @@
 <svg version="1.1" id="Layer_1" fill="transparent" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1971.28 1751.7" style="enable-background:new 0 0 1971.28 1751.7;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
+	.st0{
+		fill:url(#MyGradient);
+		filter: drop-shadow(15px 15px 30px #fff);
+	}
 </style>
 <rect width="1971.28" height="1751.7"/>
-<g>
+<g class="footer_logo_animation">
+	<linearGradient id="MyGradient">
+        <stop offset="5%" stop-color="#fff" />
+        <stop offset="65%" stop-color="#dec1f7" />
+        <stop offset="95%" stop-color="#b8f5f5" />
+    </linearGradient>
 	<path class="st0" d="M357.86,839.13c14.48-3.42,29.26-6.11,44.27-7.96c23.39-370.64,334.12-661.36,709.49-655.83
 		c386.89,5.71,695.91,323.97,690.2,710.84c-5.71,386.89-323.97,695.91-710.86,690.2c-110.32-1.63-214.32-28.66-306.5-75.5
 		c-9.24,11.89-19.05,23.27-29.47,34.05c100.31,52.82,214.21,83.42,335.33,85.2c411.05,6.06,749.2-322.24,755.27-733.31

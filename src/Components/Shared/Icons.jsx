@@ -14,6 +14,7 @@ import { ReactComponent as YoutubeDesktop } from "../../asstes/Icons/youtube-des
 import { ReactComponent as InstaDesktop } from "../../asstes/Icons/insta-desktop.svg";
 import { ReactComponent as TwiterDesktop } from "../../asstes/Icons/twiter-desktop.svg";
 import { ReactComponent as BluePhone } from "../../asstes/Icons/blue_phone.svg";
+import { ReactComponent as AppleRightArrow } from "../../asstes/Icons/apple_right.svg";
 
 const Icons = {
   BrandLogo,
@@ -32,6 +33,7 @@ const Icons = {
   InstaDesktop,
   TwiterDesktop,
   BluePhone,
+  AppleRightArrow,
 };
 
 export default Icons;

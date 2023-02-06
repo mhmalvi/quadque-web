@@ -105,7 +105,7 @@ const DesktopLayout = () => {
             }}
             onClick={() => setOpenMenus(true)}
           >
-            <span className="uppercase mr-auto font-semibold text-xl leading-[175%] font_poppins pr-4">
+            <span className="uppercase mr-auto font-semibold text-xl leading-[175%] font_primary pr-4">
               menu
             </span>
             <span>
@@ -133,7 +133,7 @@ const DesktopLayout = () => {
                 href="https://www.facebook.com/quadquetech"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-[blue] transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[blue] transition-colors delay-150 "
               >
                 fb
               </a>
@@ -149,7 +149,7 @@ const DesktopLayout = () => {
                 href="https://www.instagram.com/quadquetech/"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-[#F701A2] transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[#F701A2] transition-colors delay-150 "
               >
                 in
               </a>
@@ -165,7 +165,7 @@ const DesktopLayout = () => {
                 href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-[#FF0000] transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[#FF0000] transition-colors delay-150 "
               >
                 yt
               </a>
@@ -179,7 +179,7 @@ const DesktopLayout = () => {
               <a
                 href="https://bd.linkedin.com/company/quadque-technologies-ltd"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_poppins mr-4 hover:text-[#0072b1] transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[#0072b1] transition-colors delay-150 "
                 rel="noreferrer"
               >
                 ln
@@ -250,7 +250,7 @@ const DesktopLayout = () => {
               <div className="mb-9 -rotate-90 flex justify-center items-center">
                 <a
                   href="#start-project"
-                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_poppins mr-4"
+                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_primary mr-4"
                 >
                   start project
                 </a>
