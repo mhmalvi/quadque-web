@@ -21,6 +21,7 @@ const Aboutus = () => {
 
   useEffect(() => {
     document.getElementById("bar").style.width = "0%";
+    document.getElementById("bartop").style.width = "0%";
   }, []);
 
   const myFunction = () => {
@@ -31,6 +32,10 @@ const Aboutus = () => {
       (element.scrollTop / (element.scrollHeight - element.clientHeight)) *
         100 +
       "%";
+      document.getElementById("bartop").style.width =
+        (element.scrollTop / (element.scrollHeight - element.clientHeight)) *
+          100 +
+        "%";
   };
 
   return (
@@ -64,8 +69,12 @@ const Aboutus = () => {
         </div>
       </div>
       <div className="group pb-3">
+        <div className="max-w-[100%] overflow-hidden rotate-180">
+          <div id="bartop" className="h-2 bg-brand-color"></div>
+          <div className="relative -top-2 w-[100%] h-2 bg-brand-color bg-opacity-25"></div>
+        </div>
         <div className="flex-wrap overflow-hidden">
-          <img src={Interface} alt="" className="w-full duration-700" />
+          <img src={Interface} alt="" className="w-full duration-700 relative z-[999]" />
         </div>
         <div className="max-w-[100%] overflow-hidden">
           <div id="bar" className="h-2 bg-brand-color"></div>
@@ -74,46 +83,48 @@ const Aboutus = () => {
       </div>
       <div className="w-[80%] float-right h-[1px] bg-white mb-4"></div>
 
-      <div
-        id="scroll"
-        onScroll={myFunction}
-        className="w-full h-[350px] overflow-y-scroll text-justify m-auto px-6"
-      >
-        {loader ? (
-          <div className="absolute w-[90%] h-[350px] z-40 flex justify-center items-center m-auto bg-black backdrop-blur-md">
-            <div className="flex lds-dual-ring animate-pulse"> </div>
-            <div className="font_title text-white text-sm font-thin px-2">
-              Loading...
+      <div className="w-full relative overflow-hidden">
+        <div
+          id="scroll"
+          onScroll={myFunction}
+          className="w-full h-[350px] overflow-y-scroll text-justify m-auto px-6 "
+        >
+          {loader ? (
+            <div className="absolute w-[90%] h-full z-40 flex justify-center items-center m-auto bg-black">
+              <div className="flex lds-dual-ring animate-pulse"> </div>
+              <div className="font_title text-white text-sm font-thin px-2">
+                Loading...
+              </div>
             </div>
+          ) : null}
+          <div className="py-5">
+            <div className="text-2xl text-brand-color">Our Vision</div>
+            <div className="font-thin">{goals?.our_goal}</div>
           </div>
-        ) : null}
-        <div className="py-5">
-          <div className="text-2xl text-brand-color">Our Vision</div>
-          <div className="font-thin">{goals?.our_goal}</div>
-        </div>
-        <div className="py-5">
-          <div className="text-2xl text-brand-color">Our Mission</div>
-          <div className="font-thin">{goals?.our_mission}</div>
-        </div>
-        <div className="py-5">
-          <div className="text-2xl text-brand-color">Our Objective</div>
-          <div className="font-thin">{goals?.our_objective}</div>
-        </div>
-        <div className="py-5">
-          <div className="text-2xl text-brand-color">Our Vision</div>
-          <div className="font-thin">{goals?.our_vision}</div>
-        </div>
-        <div className="py-5">
-          <div className="text-2xl text-brand-color">Who We Are</div>
-          <div className="font-thin">{goals?.who_we_are}</div>
-        </div>
-        <div className="py-5">
-          <div className="text-2xl text-brand-color">Why Choose Us</div>
-          {/* <div>{goals?.why_choose_us}</div> */}
-          <div
-            className="case_editor font-thin"
-            dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}
-          ></div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color">Our Mission</div>
+            <div className="font-thin">{goals?.our_mission}</div>
+          </div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color">Our Objective</div>
+            <div className="font-thin">{goals?.our_objective}</div>
+          </div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color">Our Vision</div>
+            <div className="font-thin">{goals?.our_vision}</div>
+          </div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color">Who We Are</div>
+            <div className="font-thin">{goals?.who_we_are}</div>
+          </div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color">Why Choose Us</div>
+            {/* <div>{goals?.why_choose_us}</div> */}
+            <div
+              className="case_editor font-thin"
+              dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}
+            ></div>
+          </div>
         </div>
       </div>
       <div className="w-[80%] h-[1px] bg-white mt-4"></div>

@@ -2,11 +2,11 @@
   text-shadow: 7px 7px 5px rgba(168, 85, 247, 0.4);
 }
 
-.slick-active span {
-  font-size: 24px;
+#Service .slick-active span {
+  /* font-size: 24px; */
   color: white;
-  opacity: 1;
-  transition-duration: 2s;
+  /* opacity: 1;
+  transition-duration: 2s; */
 }
 
 .slick-active.slick-current {
@@ -189,6 +189,35 @@
   inset: 2px;
   background-color: #0e1538;
   border-radius: 4px;
+  z-index: -10;
+}
+
+/* service start-project button*/
+.box {
+  position: relative;
+  width: 50%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: 20px;
+  width: 600px;
+  height: 20px;
+  background: linear-gradient(#a050f0, #8f00ff);
+  transform: rotate(120deg);
+  animation: animate 5s linear infinite;
+  z-index: -20;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: black;
   z-index: -10;
 }
 
@@ -529,5 +558,37 @@
   100% {
     opacity: 0;
     transform: translate(-5px, -5px);
+  }
+}
+
+/* ############### */
+.overlay {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  left: 80px;
+  animation: overlay 6s infinite;
+}
+
+
+@keyframes overlay {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
   }
 }

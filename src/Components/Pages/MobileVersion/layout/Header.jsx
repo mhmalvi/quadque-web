@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Astro from "../../../../asstes/Video/headerVideo.mp4";
-import { handleFetchHomeVideo } from "../../../Shared/services";
 import "../../MobileVersion/MobileView.css";
 import Typical from "react-typical";
-import { Fade, Slide } from "react-reveal";
 
 const Header = () => {
-  const [video, setVideo] = useState();
-
   /*   useEffect(() => {
     (async () => {
       const fetchVideo = await handleFetchHomeVideo();
@@ -39,22 +35,32 @@ const Header = () => {
         />
       </div>
       <div className="pt-10">
-        <video autoPlay loop muted controls={false}>
+        <video
+          autoPlay
+          loop
+          muted
+          controls={false}
+          style={{position: "relative", zIndex: "100"}}
+        >
           <source src={Astro} type="video/mp4" />
         </video>
       </div>
-      <div className="flex justify-center bg-black text-white py-10 px-6">
-        <Slide top>
-          <a href="#start-project" className="font-semibold text-xl">
-            START PROJECT
-          </a>
-        <a href="#start-project" className=" ">
-          <span className="relative  flex justify-center items-center h-2 w-4 cursor-pointer ml-2">
-            <span className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-white opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-          </span>
+      <div className="flex justify-center bg-black text-white pt-13 pb-6 px-6">
+        {/* <Slide top> */}
+        <a
+          href="#start-project"
+          className="bg-black text-sm font-semibold spirit-bomb py-3 px-4 rounded-full border z-50"
+        >
+          Let's Start a Project
         </a>
-        </Slide>
+
+        {/* <a href="#start-project" className=" ">
+            <span className="relative  flex justify-center items-center h-2 w-4 cursor-pointer ml-2">
+              <span className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-white opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+            </span>
+          </a> */}
+        {/* </Slide> */}
       </div>
     </div>
   );

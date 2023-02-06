@@ -9,28 +9,28 @@ const Footer = () => {
     <div id="Footer" className="w-full text-white relative mt-20">
       <img src={Logo} alt="" className="absolute -top-12 right-2" />
       <div className="font_title text-3xl text-center font-thin mx-6 mb-4">
-        Have a Good Web Designe Today
+        Have a Good Web Design Today
       </div>
       <div className="text-sm text-center font-thin px-6 pb-4">
         Our philosophy is to ensure the highest product quality and satisfaction
         for every client. We offer the best quality/price ratio in the industry
         along with timely delivery of solutions.{" "}
       </div>
-      <div className="w-28 bg-black border border-white rounded-full text-center px-4 py-2 my-3 mx-auto spirit-bomb">
+      <div className="w-1/3 bg-black border rounded-full text-center text-xs font_title px-4 py-3 my-5 mx-auto spirit-bomb whitespace-nowrap">
         <a href="tel:+8801765-276560">Let's Talk</a>
       </div>
       <div className="flex text-lg mt-10 px-6 gap-2">
         <div className="w-1/2 flex-col font-thin leading-10">
-          <a href="/#Team">Team</a>
+          <a href="/career">Career</a>
           <Link to={`/faq`}>
             <p>FAQ's</p>
           </Link>
-          <a href="/#Service">Service</a>
+          <a href="/#Service">Services</a>
         </div>
         <div className="w-1/2 flex-col font-thin leading-10">
-          <a href="/#Case_Study">Case Study</a>
+          <a href="/#Case_Study">Case Studies</a>
           <Link to={`/blogs`}>
-            <p>Blog</p>
+            <p>Blogs</p>
           </Link>
           <a href="/#About">About Us</a>
         </div>
@@ -40,11 +40,12 @@ const Footer = () => {
         <div className="w-1/2 flex-col font-thin">
           <p className="font-bold">Quadque Technologies Pty Ltd</p>
           <p>LEVEL 1/7 Greenfield Parade, Bankstown NSW 2200</p>
+          <p>+61 405 899 496</p>
+          <p>info@quadque.tech</p>
         </div>
         <div className="w-1/2 flex-col font-thin">
           <p className="font-bold">Quadque Technologies Pvt Ltd</p>
           <p>Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207</p>
-
           <p>+01765-276560</p>
           <p>info@quadque.tech</p>
         </div>
