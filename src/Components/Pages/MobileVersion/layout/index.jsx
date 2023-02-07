@@ -54,7 +54,7 @@ const Layout = () => {
           <Route path={"gallery"} element={<Gallery />} />
           <Route path={"faq"} element={<FAQ />} />
           <Route path={"career"} element={<CareerGallery />} />
-          <Route path={"career-detail"} element={<CareerDetail />} />
+          <Route path={"career-detail/:id"} element={<CareerDetail />} />
         </Routes>
         <Footer />
       </div>

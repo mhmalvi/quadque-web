@@ -39,7 +39,7 @@ const Aboutus = () => {
   };
 
   return (
-    <div id="About" className="w-full text-white pt-20">
+    <div id="About" className="w-full text-white pt-20 font_primary">
       <h1 className="font_title text-3xl font-thin px-6 pb-4">ABOUT US</h1>
       <div className="text-lg font-semibold text-justify px-6">
         We work with the technological challenges of the world's leading
@@ -74,7 +74,11 @@ const Aboutus = () => {
           <div className="relative -top-2 w-[100%] h-2 bg-brand-color bg-opacity-25"></div>
         </div>
         <div className="flex-wrap overflow-hidden">
-          <img src={Interface} alt="" className="w-full duration-700 relative z-[999]" />
+          <img
+            src={Interface}
+            alt=""
+            className="w-full duration-700 relative z-50"
+          />
         </div>
         <div className="max-w-[100%] overflow-hidden">
           <div id="bar" className="h-2 bg-brand-color"></div>

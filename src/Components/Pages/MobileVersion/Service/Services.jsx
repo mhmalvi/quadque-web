@@ -61,7 +61,7 @@ const Services = () => {
   return (
     <div
       id="Service"
-      className="w-full text-white relative overflow-hidden mt-3 pb-13"
+      className="w-full text-white relative overflow-hidden mt-3 pb-13 font_primary"
     >
       {loader ? (
         <div className=" absolute w-full h-[100%] z-40 flex flex-col justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm">
@@ -155,7 +155,7 @@ const Services = () => {
             ))}
           </Slider>
         </div>
-{/*           <div className="text-center font-semibold text-brand-color animate-pulse pt-10">
+        {/*           <div className="text-center font-semibold text-brand-color animate-pulse pt-10">
             <a href="#start-project">START PROJECT</a>
           </div> */}
       </div>

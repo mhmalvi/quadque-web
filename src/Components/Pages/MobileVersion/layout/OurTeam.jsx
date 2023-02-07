@@ -29,7 +29,7 @@ const OurTeam = () => {
   };
 
   return (
-    <div id="Team" className="w-full text-white mt-18 mb-5">
+    <div id="Team" className="w-full text-white mt-18 mb-5 font_primary">
       <div className="uppercase px-6 pb-2 text-center">EXPERIENCE</div>
       <h1 className="font_title text-3xl px-6 text-center">
         Skilled Team <br /> of Creators
