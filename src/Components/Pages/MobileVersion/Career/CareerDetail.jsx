@@ -4,17 +4,19 @@ import Icons from "../../../Shared/Icons";
 import { Link, useParams } from "react-router-dom";
 import Career from "./Career.json";
 
-
 const CareerDetail = () => {
   const { id } = useParams();
   const [careerData, setCareerData] = useState();
 
   useEffect(() => {
-      const fetchCareer = Career.find((career) => career.id === id);
-      console.log("fetch", fetchCareer);
-      setCareerData(fetchCareer);
-  }, [id]);
+    window.scrollTo(0, 0);
+  }, []);
 
+  useEffect(() => {
+    const fetchCareer = Career.find((career) => career.id === id);
+    console.log("fetch", fetchCareer);
+    setCareerData(fetchCareer);
+  }, [id]);
 
   return (
     <div className="w-full text-white font_primary">
@@ -146,6 +148,6 @@ const CareerDetail = () => {
       </div>
     </div>
   );
-}
+};
 
-export default CareerDetail
+export default CareerDetail;
