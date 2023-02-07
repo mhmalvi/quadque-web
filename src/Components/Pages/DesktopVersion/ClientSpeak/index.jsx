@@ -40,7 +40,7 @@ const ClientSpeak = () => {
   }, [index, clientSpeaks]);
 
   return (
-    <div className="section relative w-full min-h-full 2xl:pb-12 font-poppins text-white overflow-hidden">
+    <div className="section relative w-full min-h-full 2xl:pb-12 font_primary text-white overflow-hidden">
       <div className="ml-6 relative 2xl:left-14 2xl:top-8 lg:pt-7 lg:mt-9 pl-[68px] pr-[22px] text-white">
         <div
           className="text-5xl font-bold leading-10 capitalize font_title mb-8"

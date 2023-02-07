@@ -73,7 +73,7 @@ const BlogDetails = ({ setLoader }) => {
       </Helmet>
 
       <div
-        className="blog_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font-poppins"
+        className="blog_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font_primary"
         ref={blogdetailsRef}
       >
         <div className="mb-10">

@@ -492,6 +492,70 @@ body::-webkit-scrollbar {
   border: 0.5px solid rgba(98, 98, 98, 0.551);
 }
 
+.card-gradient {
+  background-image: linear-gradient(#fff, rgb(143 0 255 / 0.2), transparent);
+  animation: card-gradient-animation 4s ease-in-out infinite;
+  /* background-color: 0 0 30px #fff, -2px 0 30px rgb(143 0 255 / 0.2), 2px 0 30px transparent; */
+}
+
+@keyframes card-gradient-animation {
+  0% {
+    background-image: linear-gradient(
+      #ffffff8f,
+      rgba(171, 62, 253, 0.2),
+      transparent
+    );
+  }
+  25% {
+    background-image: linear-gradient(
+      transparent,
+      #e6e5e5,
+      rgb(143 0 255 / 0.2)
+    );
+  }
+
+  50% {
+    background-image: linear-gradient(
+      #fff,
+      rgba(144, 0, 255, 0.324),
+      transparent
+    );
+  }
+
+  75% {
+    background-image: linear-gradient(#fff, rgb(143 0 255 / 0.2), transparent);
+  }
+  100% {
+    background-image: linear-gradient(#fff, rgb(143 0 255 / 0.2), transparent);
+  }
+}
+
+.spirit-bomb {
+  box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+  animation: spirit 4s ease-in-out infinite;
+}
+
+@keyframes spirit {
+  0% {
+    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+  }
+  25% {
+    box-shadow: 0 0 30px #fff, 5px 0 30px #8f0fff, -5px 0 30px #0ff;
+  }
+
+  50% {
+    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+  }
+
+  75% {
+    box-shadow: 0 0 30px #fff, 5px 0 30px #8f0fff, -5px 0 30px #0ff;
+  }
+  100% {
+    box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
+  }
+}
+
+/* 
 .spirit-bomb {
   box-shadow: 0 0 30px #7200ff, -5px 0 40px #4f0092;
   animation: spirit 4s ease-in-out infinite;
@@ -515,7 +579,7 @@ body::-webkit-scrollbar {
   100% {
     box-shadow: 0 0 30px #7200ff, -5px 0 40px #6359a5;
   }
-}
+} */
 
 .arrowLeft,
 .arrowLeft:before {
@@ -614,10 +678,43 @@ body::-webkit-scrollbar {
   font-size: 3rem !important;
 }
 
-/* .faq span .ant-collapse-header-text {
-  color: transparent;
-  z-index: 10 !important;
-  background-image: url("./asstes/Images/atika.jpeg") !important;
-  background-repeat: no-repeat;
-  margin-top: 4px;
-} */
+/* For Career Pagination */
+
+.career_desktop .ant-pagination-prev button {
+  color: #ffffff;
+}
+
+.career_desktop .ant-pagination-item a {
+  color: #ffffff;
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important;
+}
+
+.career_desktop .ant-pagination-next button {
+  color: #ffffff;
+}
+
+.career_desktop .ant-pagination .ant-pagination-item-active {
+  border: none;
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important;
+  background-color: transparent;
+  transition-duration: 0.5s;
+  animation: PaginationPulse 2s linear infinite;
+}
+
+@keyframes PaginationPulse {
+  50% {
+    opacity: 80%;
+  }
+}
+
+.career_desktop .ant-pagination .ant-pagination-item-active a {
+  color: #8f00ff;
+  transition-duration: 0.5s;
+}
+
+.career_desktop .anticon .anticon-right .anticon-left {
+  color: #8f00ff;
+  transition-duration: 0.5s;
+}

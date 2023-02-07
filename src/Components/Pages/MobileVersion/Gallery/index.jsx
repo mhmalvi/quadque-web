@@ -61,9 +61,8 @@ const Gallery = () => {
         />
       </Helmet>
 
-      <div className="gallery min-h-full bg-black text-white pb-20 h-[120vh] overflow-y-auto font-poppins">
-
-          <img src={Office} alt="" className="w-full h-96" />
+      <div className="gallery min-h-full bg-black text-white pb-20 h-[120vh] overflow-y-auto font_primary">
+        <img src={Office} alt="" className="w-full h-96" />
 
         {/* <h1 className="absolute w-full flex items-end h-56 bg-gradient-to-b from-transparent to-black text-2xl text-white px-6 pb-10"> */}
         <h1 className="text-center text-white text-4xl font_title">Gallery</h1>

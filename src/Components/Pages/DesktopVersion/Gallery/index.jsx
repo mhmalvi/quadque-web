@@ -62,7 +62,7 @@ const Gallery = ({ setLoader }) => {
         />
       </Helmet>
 
-      <div className="gallery min-h-full bg-black text-white pb-20 h-[90vh] font-poppins overflow-y-scroll">
+      <div className="gallery min-h-full bg-black text-white pb-20 h-[90vh] font_primary overflow-y-scroll">
         <div className="relative">
           <img src={Office} alt="" className="w-full h-96" />
           <div className="absolute top-20 left-40 z-50">

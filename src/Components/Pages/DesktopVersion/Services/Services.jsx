@@ -7,6 +7,7 @@ import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import softDev from "../../../../asstes/Lotties/softwware_development.json";
+import softDevs from "../../../../asstes/Lotties/software developtment.json";
 import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
 import useServices from "../../../Shared/Hooks/useServices";
@@ -69,14 +70,14 @@ const Services = () => {
   }, [activeService, services]);
 
   return (
-    <div className="w-full lg:h-[80vh] 2xl:h-[90vh] relative text-white flex justify-between font-poppins lg:pt-5 lg:pb-6 2xl:pb-[75px]">
+    <div className="w-full lg:h-[80vh] 2xl:h-[90vh] relative text-white flex justify-between font_primary lg:pt-5 lg:pb-6 2xl:pb-[75px]">
       <div className="w-[255px] min-h-full flex flex-col justify-between">
         <div>
           <Fade left cascade spy={triggerAnimation}>
             <div>
               <h1
                 id="service_name"
-                className={`uppercase font-bold lg:text-[40px] 2xl:text-[64px] font_title`}
+                className={`font-bold lg:text-[40px] 2xl:text-6xl font_title`}
               >
                 {activeServiceDetails?.service_name}
               </h1>
@@ -145,7 +146,7 @@ const Services = () => {
           ) : null}
           {activeService === "Software Development" ? (
             <Lottie
-              animationData={softDev}
+              animationData={softDevs}
               loop={true}
               alt="Software Development Layout"
             />
@@ -166,7 +167,7 @@ const Services = () => {
             {services?.map((service, i) => (
               <p
                 key={i}
-                className={`${
+                className={`whitespace-nowrap text-base 2xl:text-xl ${
                   activeService === service?.service_name
                     ? "text-brand-color transition-colors delay-200"
                     : "text-white transition-colors delay-200"
