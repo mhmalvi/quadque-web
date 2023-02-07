@@ -1,6 +1,6 @@
 import { ReactComponent as BrandLogo } from "../../asstes/Icons/brandlogo.svg";
 import { ReactComponent as RightArrow } from "../../asstes/Icons/right_arrow.svg";
-import { ReactComponent as BrandLogoMob } from "../../asstes/Icons/footer-icon.svg";
+import { ReactComponent as BrandLogoMob } from "../../asstes/Icons/navbar-logo.svg";
 import { ReactComponent as BrandLogoMobWithTagline } from "../../asstes/Icons/logo-mob-tagline.svg";
 import { ReactComponent as FooterFacebook } from "../../asstes/Icons/fb.svg";
 import { ReactComponent as FooterInstagram } from "../../asstes/Icons/insta.svg";

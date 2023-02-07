@@ -37,7 +37,7 @@ const ClientSpeaks = () => {
   }, []);
 
   return (
-    <div className="w-full text-white mt-18">
+    <div className="w-full text-white mt-18 font_primary">
       <div className="font_title text-3xl font-thin px-6 pb-10">
         CLIENTS
         <br /> &nbsp; SPEAK

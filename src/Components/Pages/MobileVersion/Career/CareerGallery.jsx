@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
-import useBlogs from "../../../Shared/Hooks/useBlog";
 import { Pagination } from "antd";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import { Helmet } from "react-helmet";
+import Career from "./Career.json";
+import Interface from "../../../../asstes/Images/advertise.png";
 
 const CareerGallery = () => {
-  const [allBlogs] = useBlogs();
+  //const [Career] = useCareer();
   const [totalPosts, setTotalPosts] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [PostsPerPage] = useState(4);
   const [loader, setLoader] = useState(true);
-  //console.log("all blogs", allBlogs);
+  console.log("all career", Career);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    setTotalPosts(allBlogs.length);
-  }, [allBlogs]);
+    setTotalPosts(Career.length);
+  }, [Career]);
 
   useEffect(() => {
     if (currentPosts !== "") {
@@ -36,7 +37,7 @@ const CareerGallery = () => {
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
-  const currentPosts = allBlogs?.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = Career?.slice(indexOfFirstPost, indexOfLastPost);
 
   return (
     <>
@@ -52,7 +53,7 @@ const CareerGallery = () => {
       </Helmet>
 
       {loader ? (
-        <div className="w-full h-[100vh] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+        <div className="w-full h-full z-50 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie
             className="w-1/2 mx-auto"
             animationData={loaderFile}
@@ -62,28 +63,36 @@ const CareerGallery = () => {
           <div className="font_title text-white animate-pulse">Loading...</div>
         </div>
       ) : null}
-      <div className="text-3xl text-white mt-30 px-6 pb-4">Current Job Openings</div>
-      <div className="Blog w-full h-[1100px] px-6">
+      <div className="text-3xl text-white mt-30 px-6 pb-4 font_primary">
+        Current Job Openings
+      </div>
+      <div className="Career w-full h-[1150px] px-6 font_primary">
         {currentPosts?.map((details) => (
-            <div key={details.id} className="rounded-xl mx-auto pb-6 relative z-50">
-              <img
-                src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
-                alt=""
-                className="w-[100%] h-[185px] m-auto rounded-lg"
-              />
-              <div className="flex justify-between pb-2 px-2 gap-4">
-                <div>
-                  <h1 className="text-xl text-white">{details.title}</h1>
-                  <div className="text-white text-sm">
-                    deadline: {details.created_at.split("T", 1)}
-                  </div>
+          <div
+            key={details.id}
+            className="rounded-xl mx-auto pb-6 relative"
+          >
+            {/* <img
+              src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
+              alt=""
+              className="w-[100%] h-[185px] m-auto rounded-lg"
+            /> */}
+            <img src={Interface} alt="" className="rounded-lg"/>
+            <div className="flex items-center justify-between pb-2 px-2 gap-4">
+              <div>
+                <h1 className="text-lg text-white pt-4">{details.position}</h1>
+                <div className="text-white text-sm italic font-thin">
+                  deadline: {details.app_deadline}
                 </div>
-              <Link to={`/career-detail`}>
-                <div className="h-8 bg-white my-2 px-4 rounded-full text-center flex items-center cursor-pointer">View</div>
-          </Link>
               </div>
-              {/* <div dangerouslySetInnerHTML={{ __html: details.text }} className="text-white"></div> */}
+              <Link to={`/career-detail/${details.id}`}>
+                <div className="h-8 bg-white my-2 px-4 rounded-full text-sm text-center flex items-center cursor-pointer">
+                  View
+                </div>
+              </Link>
             </div>
+            {/* <div dangerouslySetInnerHTML={{ __html: details.text }} className="text-white"></div> */}
+          </div>
         ))}
       </div>
       {/* PAGINATION */}

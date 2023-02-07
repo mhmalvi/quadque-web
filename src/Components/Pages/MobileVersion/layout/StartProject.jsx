@@ -129,7 +129,10 @@ const StartProject = () => {
 
 
   return (
-    <div id="start-project" className="w-full text-white pt-20 mb-5">
+    <div
+      id="start-project"
+      className="w-full text-white pt-20 mb-5 font_primary"
+    >
       <Modal
         style={{
           backgroundColor: "black !important",
@@ -215,10 +218,13 @@ const StartProject = () => {
       ) : null}
 
       <form className="mx-6" onSubmit={handleLoginReq}>
-
-          <div className={`${msgBox ? "text-red-500":"text-transparent"} animate-pulse`}>
-            Must choose atleast one subcategory!
-          </div>
+        <div
+          className={`${
+            msgBox ? "text-red-500" : "text-transparent"
+          } animate-pulse`}
+        >
+          Must choose atleast one subcategory!
+        </div>
 
         <div className="">
           <input
