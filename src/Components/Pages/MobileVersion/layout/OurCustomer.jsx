@@ -52,15 +52,15 @@ const OurCustomer = () => {
   }, []);
 
   return (
-    <div className="w-full text-white pt-24 relative">
-        {loader ? (
-          <div className="w-full z-40 flex justify-center items-center m-auto">
-            <div className="flex lds-dual-ring animate-pulse"> </div>
-            <div className="font_title text-white text-sm font-thin px-2">
-              Loading...
-            </div>
+    <div className="w-full text-white pt-24 relative font_primary">
+      {loader ? (
+        <div className="w-full z-40 flex justify-center items-center m-auto">
+          <div className="flex lds-dual-ring animate-pulse"> </div>
+          <div className="font_title text-white text-sm font-thin px-2">
+            Loading...
           </div>
-        ) : null}
+        </div>
+      ) : null}
       <div className="pb-20 px-10 relative">
         <Slider ref={slider} {...settings} arrows={false}>
           {clientsImg?.map((client) => (

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div id="Footer" className="w-full text-white relative mt-20">
+    <div id="Footer" className="w-full text-white relative mt-20 font_primary">
       <img src={Logo} alt="" className="absolute -top-12 right-2" />
       <div className="font_title text-3xl text-center font-thin mx-6 mb-4">
         Have a Good Web Design Today
@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="w-1/3 bg-black border rounded-full text-center text-xs font_title px-4 py-3 my-5 mx-auto spirit-bomb whitespace-nowrap">
         <a href="tel:+8801765-276560">Let's Talk</a>
       </div>
-      <div className="flex text-lg mt-10 px-6 gap-2">
+      <div className="flex mt-10 px-6 gap-2">
         <div className="w-1/2 flex-col font-thin leading-10">
           <a href="/career">Career</a>
           <Link to={`/faq`}>
@@ -39,15 +39,19 @@ const Footer = () => {
       <div className="flex text-sm mt-3 px-6 gap-2">
         <div className="w-1/2 flex-col font-thin">
           <p className="font-bold">Quadque Technologies Pty Ltd</p>
-          <p>LEVEL 1/7 Greenfield Parade, Bankstown NSW 2200</p>
-          <p>+61 405 899 496</p>
-          <p>info@quadque.tech</p>
+          <p className="pt-2">
+            LEVEL 1/7 Greenfield Parade, Bankstown NSW 2200
+          </p>
+          <p className="pt-1">+61 405 899 496</p>
+          <p className="pt-1">info@quadque.tech</p>
         </div>
         <div className="w-1/2 flex-col font-thin">
           <p className="font-bold">Quadque Technologies Pvt Ltd</p>
-          <p>Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207</p>
-          <p>+01765-276560</p>
-          <p>info@quadque.tech</p>
+          <p className="pt-2">
+            Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207
+          </p>
+          <p className="pt-1">+01765-276560</p>
+          <p className="pt-1">info@quadque.tech</p>
         </div>
       </div>
 

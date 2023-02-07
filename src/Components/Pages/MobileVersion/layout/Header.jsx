@@ -14,7 +14,7 @@ const Header = () => {
   }, [video]); */
 
   return (
-    <div className="w-full mt-30 home-header">
+    <div className="w-full mt-30 home-header font_primary">
       <div className="w-2/3 text-white text-3xl font-semibold px-6">
         <Typical
           className="w-44 m-auto h-44 font_title text-white lg:text-4.5xl xl:text-[60px] 2xl:text-[80px] font-bold leading-10 xl:leading-12 2xl:leading-[70px] capitalize"
@@ -34,13 +34,13 @@ const Header = () => {
           wrapper="h1"
         />
       </div>
-      <div className="pt-10">
+      <div className="">
         <video
           autoPlay
           loop
           muted
           controls={false}
-          style={{position: "relative", zIndex: "100"}}
+          style={{ position: "relative", zIndex: "100" }}
         >
           <source src={Astro} type="video/mp4" />
         </video>
@@ -49,7 +49,7 @@ const Header = () => {
         {/* <Slide top> */}
         <a
           href="#start-project"
-          className="bg-black text-sm font_primary font-semibold spirit-bomb py-3 px-4 rounded-full border z-50"
+          className="bg-black text-sm  font-semibold spirit-bomb py-3 px-4 rounded-full border z-50 uppercase"
         >
           Let's Start a Project
         </a>

@@ -93,7 +93,6 @@ const ServiceDetails = () => {
         />
       </Helmet>
 
-
       {loader ? (
         <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie
@@ -106,7 +105,7 @@ const ServiceDetails = () => {
         </div>
       ) : null}
       <div
-        className={`w-full h-auto mt-20 text-white px-6 ${
+        className={`w-full h-auto mt-20 text-white px-6 font_primary ${
           !Service ? "scale-0" : ""
         }`}
       >
@@ -134,9 +133,9 @@ const ServiceDetails = () => {
         </div>
 
         {/* IDENTITY DESIGN SERVICES SECTION */}
-        <div className="text-sm text-center uppercase pb-1">
+        {/* <div className="text-sm text-center uppercase pb-1">
           IDENTITY DESIGN SERVICES
-        </div>
+        </div> */}
         <div className="text-2xl text-center pb-3">How We Can Help?</div>
         <div
           className="Service_Identity text-white text-center pb-4"
@@ -197,7 +196,7 @@ const ServiceDetails = () => {
           <div className="w-1/2 text-brand-color text-5xl font-semibold text-center">
             {<CountUp start={0} end={Service?.project_count} duration={2} />}+
             <br />
-            <span className="text-white text-base font-thin">
+            <span className="text-white text-sm font-semibold">
               Projects Completed
             </span>{" "}
           </div>
@@ -205,7 +204,7 @@ const ServiceDetails = () => {
           <div className="w-1/2 text-brand-color text-5xl font-semibold text-center">
             {<CountUp start={0} end={Service?.happy_clients} duration={3} />}+
             <br />
-            <span className="text-white text-base font-thin">
+            <span className="text-white text-sm font-semibold">
               Happy Clients
             </span>{" "}
           </div>
