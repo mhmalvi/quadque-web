@@ -23,7 +23,7 @@ const NavigationBar = () => {
   return (
     <div
       id="Navigation"
-      className="Navigation fixed top-0 z-[999]"
+      className="Navigation fixed top-0 z-[999] font_primary"
       style={{ transition: "top 0.3s" }}
     >
       <div className="flex justify-between">
@@ -34,8 +34,13 @@ const NavigationBar = () => {
               alt="Logo"
             />
             {/* <Icons.BrandLogoMobWithTagline className="w-32 text-white animate-pulse" /> */}
-            <div id="tagline" className=" overlay pt-1">
-              <img src={Tagline} alt="tagline" width={100} />
+            <div id="tagline" className="image-wrapper shine overlay pt-1">
+              <img
+                src={Tagline}
+                alt="tagline"
+                width={100}
+                className="shrink-0"
+              />
             </div>
           </div>
         </Link>
@@ -80,35 +85,35 @@ const NavigationBar = () => {
             <Icons.BrandLogoMob className=" text-white w-13 scale-x-[-1] " />
           </div>
 
-          <div onClick={() => setOpen(false)}>
+          <div onClick={() => setOpen(false)} className="font_primary">
             <Link to="/">Home</Link>
           </div>
 
-          <div onClick={() => setOpen(false)}>
+          <div onClick={() => setOpen(false)} className="font_primary">
             <a href="/#Service">Services</a>
           </div>
 
-          <div onClick={() => setOpen(false)}>
+          <div onClick={() => setOpen(false)} className="font_primary">
             <a href="/#About">About</a>
           </div>
 
-          <div onClick={() => setOpen(false)}>
+          <div onClick={() => setOpen(false)} className="font_primary">
             <a href="/#Case_Study">Case Studies</a>
           </div>
 
-          <div onClick={() => setOpen(false)}>
+          <div onClick={() => setOpen(false)} className="font_primary">
             <Link to="/blogs">Blogs</Link>
           </div>
 
-          <div onClick={() => setOpen(false)}>
+          <div onClick={() => setOpen(false)} className="font_primary">
             <Link to="career">Career</Link>
           </div>
 
-          <div onClick={() => setOpen(false)}>
+          <div onClick={() => setOpen(false)} className="font_primary">
             <Link to="/gallery">Gallery</Link>
           </div>
 
-          <div onClick={() => setOpen(false)}>
+          <div onClick={() => setOpen(false)} className="font_primary">
             <a href="/#Footer">Contact</a>
           </div>
         </div>

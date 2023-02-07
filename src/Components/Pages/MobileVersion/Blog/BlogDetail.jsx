@@ -81,7 +81,9 @@ const BlogDetail = () => {
         </div>
       ) : null}
 
-      <div className={`w-full pt-30 ${!blogData ? "scale-0" : ""} `}>
+      <div
+        className={`w-full pt-30 font_primary ${!blogData ? "scale-0" : ""} `}
+      >
         <img
           src={process.env.REACT_APP_ASSETS_URL + "/" + blogData?.thumbnail}
           alt=""
@@ -101,8 +103,11 @@ const BlogDetail = () => {
           ></div>
         </div>
         <Link to={`/blogs`}>
-          <div className="w-40 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
-            <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow whitespace-nowrap" />
+          <div className="w-44 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
+            <Icons.GoBackArrow
+              width={20}
+              className="mx-3 go-back-arrow whitespace-nowrap"
+            />
             Go Back
           </div>
         </Link>

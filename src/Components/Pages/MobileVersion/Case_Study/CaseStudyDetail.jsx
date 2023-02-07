@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
 import { handleFetchCaseStudyBySlug } from "../../../Shared/services";
+import Marble from "../../../../asstes/Images/marble.png"
 
 const CaseStudyDetail = () => {
   const { slug } = useParams();
@@ -49,7 +50,9 @@ const CaseStudyDetail = () => {
       ) : null}
 
       <div
-        className={`w-full text-white pt-30 px-6 ${!caseData ? "scale-0" : ""}`}
+        className={`w-full text-white pt-30 px-6 font_primary ${
+          !caseData ? "scale-0" : ""
+        }`}
       >
         {/* TOP SECTION  */}
         <div>
@@ -67,7 +70,7 @@ const CaseStudyDetail = () => {
           />
 
           <div className="text-sm text-center pb-5">{caseData?.summary2}</div>
-          <div className="w-40 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
+          <div className="w-40 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
             <a href="#Footer">Contact Us</a>
           </div>
         </div>
@@ -186,27 +189,22 @@ const CaseStudyDetail = () => {
         </div>
 
         {/* BOTTOM SECTION  */}
-        {/*       <div>
+        <div>
+          <img src={Marble} alt="" className="m-auto pb-13" />
 
-        <img src={Marble} alt="" className="m-auto pb-13" />
-
-        <div className="text-sm text-center pb-5">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur sadipscing
-          elitr
-        </div>
-        <div className="flex justify-evenly">
-          <div className="w-32 bg-[#0793FF] rounded-full text-black text-sm font-semibold text-center px-3 py-2">
-            Contact Us
+          <div className="text-sm text-center pb-8">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur
+            sadipscing elitr
           </div>
-          or
-          <div className="pt-1">
-          +01765276560
+          <div className="flex justify-evenly">
+            <div className="w-40 flex justify-center border bg-black text-white py-2 mx-auto px-3 spirit-bomb rounded-full relative z-50">
+              Contact Us
+            </div>
           </div>
         </div>
-      </div> */}
         <Link to={`/`}>
-          <div className="w-40 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
+          <div className="w-44 flex justify-center  bg-black text-white py-2 my-10 mx-auto px-6 rounded-full relative z-50">
             <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow" />
             Go Back
           </div>

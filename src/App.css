@@ -1,6 +1,7 @@
-/* body {
-  cursor: url(asstes/Images/cursor.svg), auto;
-} */
+body {
+  /* cursor: url(asstes/Images/cursor.svg), auto; */
+  font-family: "Montserrat", sans-serif;
+}
 
 /* Global Fonts */
 .font_primary {

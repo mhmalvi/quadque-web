@@ -41,7 +41,10 @@ const CaseStudy = () => {
   }, []);
 
   return (
-    <div id="Case_Study" className="CaseStudy w-full text-white pt-20">
+    <div
+      id="Case_Study"
+      className="CaseStudy w-full text-white pt-20 font_primary"
+    >
       <h1 className="font_title text-3xl font-thin px-6 pb-5">
         CASE <br /> &nbsp;STUDIES
       </h1>
@@ -75,7 +78,7 @@ const CaseStudy = () => {
                   alt=""
                   className="w-full rounded-2xl bg-black"
                 />
-                <div className="caseText w-full h-10 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-center text-white py-2 overflow-hidden">
+                <div className="caseText w-full h-12 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-xs text-center text-white py-2 overflow-hidden">
                   {details?.com_name}
                 </div>
               </div>

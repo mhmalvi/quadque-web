@@ -17,6 +17,10 @@ const Gallery = () => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (location.pathname === "/gallery") {
       synth.cancel();
 
@@ -61,7 +65,7 @@ const Gallery = () => {
         />
       </Helmet>
 
-      <div className="gallery min-h-full bg-black text-white pb-20 h-[120vh] overflow-y-auto font_primary">
+      <div className="gallery min-h-full bg-black text-white pb-20 h-[120vh] overflow-y-auto">
         <img src={Office} alt="" className="w-full h-96" />
 
         {/* <h1 className="absolute w-full flex items-end h-56 bg-gradient-to-b from-transparent to-black text-2xl text-white px-6 pb-10"> */}
@@ -121,7 +125,7 @@ const Gallery = () => {
         </div>
       </div>
       <Link to={`/`}>
-        <div className="w-40 flex justify-center border text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
+        <div className="w-44 flex justify-center border text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
           <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow" />
           Go Back
         </div>

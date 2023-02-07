@@ -50,7 +50,7 @@ const BlogGallery = () => {
           content="Look at our informative blogs, where we discuss various interesting topics related to the IT industry, such as website development , UI/UX design and digital marketing and so on."
         />
       </Helmet>
-      
+
       {loader ? (
         <div className="w-full h-[100vh] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie
@@ -62,7 +62,7 @@ const BlogGallery = () => {
           <div className="font_title text-white animate-pulse">Loading...</div>
         </div>
       ) : null}
-      <div className="Blog w-full h-[900px] mt-30 px-6">
+      <div className="Blog w-full h-[900px] mt-30 px-6 font_primary">
         {currentPosts?.map((details) => (
           <Link to={`blog-detail/${details.slug}`}>
             <div key={details.id} className="rounded-xl mx-auto relative mb-8">
@@ -73,7 +73,7 @@ const BlogGallery = () => {
               />
               <div className="w-full flex items-end h-22 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2">
                 <div>
-                  <div className="text-xl text-white">{details.title}</div>
+                  <div className="text-lg text-white">{details.title}</div>
                   <div className="text-white text-sm"> {details.author}</div>
                   <div className="text-white text-sm">
                     {details.created_at.split("T", 1)}
