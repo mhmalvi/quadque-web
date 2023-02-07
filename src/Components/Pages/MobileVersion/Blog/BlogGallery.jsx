@@ -62,7 +62,7 @@ const BlogGallery = () => {
           <div className="font_title text-white animate-pulse">Loading...</div>
         </div>
       ) : null}
-      <div className="Blog w-full h-[900px] mt-30 px-6 font_primary">
+      <div className="Blog w-full min-h-[900px] mt-30 px-6 font_primary">
         {currentPosts?.map((details) => (
           <Link to={`blog-detail/${details.slug}`}>
             <div key={details.id} className="rounded-xl mx-auto relative mb-8">

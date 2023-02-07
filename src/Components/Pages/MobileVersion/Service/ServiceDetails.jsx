@@ -405,69 +405,69 @@ const ServiceDetails = () => {
 export default ServiceDetails;
 
 const serviceDetailsContent = {
-  "ui-ux": {
-    metaTitle:
-      "UI & UX Services- Online IT Services for Business – Quadque Tech",
-    metaDescription:
-      "We understand that the best UI/UX solutions have the right blend of creativity and user-friendly features. Take a look at how we can help you with our UI/UX services.",
-    metaKeywords:
-      "ux ui design, ui ux, ui&ux designer, ux ui, ui ux designer, ui vs ux, difference between ui and ux, ui ux design services, ui ux design and development services",
+  // "ui-ux": {
+  //   metaTitle:
+  //     "UI & UX Services- Online IT Services for Business – Quadque Tech",
+  //   metaDescription:
+  //     "We understand that the best UI/UX solutions have the right blend of creativity and user-friendly features. Take a look at how we can help you with our UI/UX services.",
+  //   metaKeywords:
+  //     "ux ui design, ui ux, ui&ux designer, ux ui, ui ux designer, ui vs ux, difference between ui and ux, ui ux design services, ui ux design and development services",
 
-    helpContent: [
-      {
-        title: "Usability Analyst",
-        icon: usability,
-      },
-      {
-        title: "User Research",
-        icon: research,
-      },
-      {
-        title: "Product Design",
-        icon: product,
-      },
-      {
-        title: "Web/App Design",
-        icon: WebApp,
-      },
-      {
-        title: "Visual Design",
-        icon: visual,
-      },
-      {
-        title: "Interaction Design",
-        icon: Interaction,
-      },
-    ],
-    bestServiceTitle: [
-      {
-        title: "THE BEST SOLUTIONS SUITED TO YOUR NEEDS ",
-        tagline: "Our services are client-centered",
-      },
-    ],
-    bestService: [
-      {
-        service_image: help1,
-        service_name: "Create A Strong Impression",
-        des: "Let us help you build a strong impression by designing your logo, which is the brand’s first touchpoint with customers. The right strategy will grab the attention of more customers and increase engagement with the brand.",
-      },
-      {
-        service_image: help2,
-        service_name: "Build the Foundation of Your Brand",
-        des: "Tell the story of your brand and influence your customers’ emotions proper identity design. We build a foundation of your overall brand strategy that will impact your customers and encourage them to take action.",
-      },
-      {
-        service_image: help3,
-        service_name: "Foster Brand Loyalty",
-        des: "Build a loyal base of customers by reaching a larger audience with your identity. Our goal is to make your brand trustworthy and approachable to your target audience. These factors are crucial for developing brand loyalty.",
-      },
-      {
-        service_image: help4,
-        service_name: "Be Rememberable",
-        des: "Win the hearts of your customers with an attractive identity design that will be rememberable in the long term. We understand that the right designs can help with your brand positioning and increase your brand’s popularity.",
-      },
-    ],
-  },
+  //   helpContent: [
+  //     {
+  //       title: "Usability Analyst",
+  //       icon: usability,
+  //     },
+  //     {
+  //       title: "User Research",
+  //       icon: research,
+  //     },
+  //     {
+  //       title: "Product Design",
+  //       icon: product,
+  //     },
+  //     {
+  //       title: "Web/App Design",
+  //       icon: WebApp,
+  //     },
+  //     {
+  //       title: "Visual Design",
+  //       icon: visual,
+  //     },
+  //     {
+  //       title: "Interaction Design",
+  //       icon: Interaction,
+  //     },
+  //   ],
+  //   bestServiceTitle: [
+  //     {
+  //       title: "THE BEST SOLUTIONS SUITED TO YOUR NEEDS ",
+  //       tagline: "Our services are client-centered",
+  //     },
+  //   ],
+  //   bestService: [
+  //     {
+  //       service_image: help1,
+  //       service_name: "Create A Strong Impression",
+  //       des: "Let us help you build a strong impression by designing your logo, which is the brand’s first touchpoint with customers. The right strategy will grab the attention of more customers and increase engagement with the brand.",
+  //     },
+  //     {
+  //       service_image: help2,
+  //       service_name: "Build the Foundation of Your Brand",
+  //       des: "Tell the story of your brand and influence your customers’ emotions proper identity design. We build a foundation of your overall brand strategy that will impact your customers and encourage them to take action.",
+  //     },
+  //     {
+  //       service_image: help3,
+  //       service_name: "Foster Brand Loyalty",
+  //       des: "Build a loyal base of customers by reaching a larger audience with your identity. Our goal is to make your brand trustworthy and approachable to your target audience. These factors are crucial for developing brand loyalty.",
+  //     },
+  //     {
+  //       service_image: help4,
+  //       service_name: "Be Rememberable",
+  //       des: "Win the hearts of your customers with an attractive identity design that will be rememberable in the long term. We understand that the right designs can help with your brand positioning and increase your brand’s popularity.",
+  //     },
+  //   ],
+  // },
 
   "web-development": {
     metaTitle:
@@ -599,9 +599,201 @@ const serviceDetailsContent = {
 
   "software-development": {
     metaTitle:
-      "software development Services- Online IT Services for Business – Quadque Tech",
+      "Software development Services- Online IT Services for Business – Quadque Tech",
     metaDescription:
       "Developing problem-free software can be a challenging task. Get the best software for your organization with our software development services.",
+    metaKeywords:
+      "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
+
+    helpContent: [
+      {
+        title: "ERP Packages",
+        icon: usability,
+      },
+      {
+        title: "CRM Software",
+        icon: research,
+      },
+      {
+        title: "SAP",
+        icon: product,
+      },
+      {
+        title: "HR Solutions",
+        icon: WebApp,
+      },
+      {
+        title: "Legal Tech",
+        icon: visual,
+      },
+      {
+        title: "Software for Healthcare and Education",
+        icon: Interaction,
+      },
+    ],
+    bestServiceTitle: [
+      {
+        title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
+        tagline: "Advanced Software Development Technologies and Services",
+      },
+    ],
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Highly Operational Performance",
+        des: "Core operational features like usability, functionality and security form the foundation of a good software. Our experienced team of developers focus on these features throughout the development process.",
+      },
+      {
+        service_image: help2,
+        service_name: "Adaptable Features",
+        des: "We develop user-friendly software packages that have high levels of interoperability and portability. We have an in-dept knowledge of several platforms. So we know how to make a stable and cross-functional software.",
+      },
+      {
+        service_image: help3,
+        service_name: "Post-development Maintenance",
+        des: "Our services do not end upon the completion of the development of the software. We make sure that the software does not suffer from bugs or crashes in the post-development stage.",
+      },
+      {
+        service_image: help4,
+        service_name: "Your Security is Our First Priority",
+        des: "We understand that one of the biggest issues today is the threat to data security. We take strict measures to ensure that our software has every capability and feature to protect the data from all threats.",
+      },
+    ],
+  },
+
+  "e-commerce-development": {
+    metaTitle:
+      "E-commerce Development- Online IT Services for Business – Quadque Tech",
+    metaDescription:
+      "Developing problem-free e-commerce websites can be a challenging task. Get the best e-commerce websites for your organization with our software development services.",
+    metaKeywords:
+      "e-commerce websites developer, e-commerce websites development, e-commerce websites developer salary, e-commerce websites development life cycle, e-commerce websites developers, agile e-commerce websites development, custom e-commerce websites development, e-commerce websites development company, e-commerce websites developer jobs, e-commerce websites developers perth, e-commerce app development,",
+
+    helpContent: [
+      {
+        title: "WooCommerce",
+        icon: usability,
+      },
+      {
+        title: "Shopify",
+        icon: research,
+      },
+      {
+        title: "BigCommerce",
+        icon: product,
+      },
+      {
+        title: "Magento",
+        icon: WebApp,
+      },
+      {
+        title: "Sellfy",
+        icon: visual,
+      },
+      {
+        title: "Customised",
+        icon: Interaction,
+      },
+    ],
+    bestServiceTitle: [
+      {
+        title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
+        tagline: "Advanced Software Development Technologies and Services",
+      },
+    ],
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Highly Operational Performance",
+        des: "Core operational features like usability, functionality and security form the foundation of a good software. Our experienced team of developers focus on these features throughout the development process.",
+      },
+      {
+        service_image: help2,
+        service_name: "Adaptable Features",
+        des: "We develop user-friendly software packages that have high levels of interoperability and portability. We have an in-dept knowledge of several platforms. So we know how to make a stable and cross-functional software.",
+      },
+      {
+        service_image: help3,
+        service_name: "Post-development Maintenance",
+        des: "Our services do not end upon the completion of the development of the software. We make sure that the software does not suffer from bugs or crashes in the post-development stage.",
+      },
+      {
+        service_image: help4,
+        service_name: "Your Security is Our First Priority",
+        des: "We understand that one of the biggest issues today is the threat to data security. We take strict measures to ensure that our software has every capability and feature to protect the data from all threats.",
+      },
+    ],
+  },
+
+  "cloud-computing-solutions": {
+    metaTitle:
+      "Cloud computing solutions- Online IT Services for Business – Quadque Tech",
+    metaDescription:
+      "Developing problem-free software can be a challenging task. Get the best software for your organization with our software development services.",
+    metaKeywords:
+      "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
+
+    helpContent: [
+      {
+        title: "ERP Packages",
+        icon: usability,
+      },
+      {
+        title: "CRM Software",
+        icon: research,
+      },
+      {
+        title: "SAP",
+        icon: product,
+      },
+      {
+        title: "HR Solutions",
+        icon: WebApp,
+      },
+      {
+        title: "Legal Tech",
+        icon: visual,
+      },
+      {
+        title: "Software for Healthcare and Education",
+        icon: Interaction,
+      },
+    ],
+    bestServiceTitle: [
+      {
+        title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
+        tagline: "Advanced Software Development Technologies and Services",
+      },
+    ],
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Highly Operational Performance",
+        des: "Core operational features like usability, functionality and security form the foundation of a good software. Our experienced team of developers focus on these features throughout the development process.",
+      },
+      {
+        service_image: help2,
+        service_name: "Adaptable Features",
+        des: "We develop user-friendly software packages that have high levels of interoperability and portability. We have an in-dept knowledge of several platforms. So we know how to make a stable and cross-functional software.",
+      },
+      {
+        service_image: help3,
+        service_name: "Post-development Maintenance",
+        des: "Our services do not end upon the completion of the development of the software. We make sure that the software does not suffer from bugs or crashes in the post-development stage.",
+      },
+      {
+        service_image: help4,
+        service_name: "Your Security is Our First Priority",
+        des: "We understand that one of the biggest issues today is the threat to data security. We take strict measures to ensure that our software has every capability and feature to protect the data from all threats.",
+      },
+    ],
+  },
+
+  "cybersecurity-and-data-protection": {
+    metaTitle:
+      "Cybersecurity and data protection- Online IT Services for Business – Quadque Tech",
+    metaDescription:
+      "Developing problem-free software can be a challenging task. Get the best cybersecurity and data protection for your organization with our software development services.",
     metaKeywords:
       "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
 
@@ -668,7 +860,7 @@ const serviceDetailsContent = {
     metaDescription:
       "The future of technology will be paved by Artificial Intelligence (AI) and the Internet of Things (IoT). Let us assist you with the most innovative AI and IoT solutions.",
     metaKeywords:
-      "AI technologies artificial intelligence AI and IoT Solutions",
+      "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
 
     helpContent: [
       {
@@ -698,8 +890,9 @@ const serviceDetailsContent = {
     ],
     bestServiceTitle: [
       {
-        title: "SMART AI AND IOT SOLUTIONS DESIGNED FOR YOUR NEEDS ",
-        tagline: "Powerful AI Technologies and Innovative IoT Services",
+        title: "SMART AI AND IOT SOLUTIONS DESIGNED FOR YOUR NEEDS",
+        tagline:
+          "We are always ready to provide you with comprehensive maintenance and support services to ensure your valuable time is not lost.",
       },
     ],
     bestService: [
@@ -722,6 +915,72 @@ const serviceDetailsContent = {
         service_image: help4,
         service_name: "Improve Your Organisational Performance",
         des: "One of the biggest advantages of AI and IoT solutions is that they improve the overall performance of an organisation and allow a better service. You can rely on our solutions to improve your organisational performance.",
+      },
+    ],
+  },
+
+  "maintenance-and-support": {
+    metaTitle:
+      "Maintenance and Support- Online IT Services for Business – Quadque Tech",
+
+    metaDescription:
+      "Ensuring feasibility of your software using the latest tools & concrete methodologies.",
+    metaKeywords:
+      "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,maintenance,support",
+
+    helpContent: [
+      {
+        title: "AI Chatbot",
+        icon: usability,
+      },
+      {
+        title: "AI Office Assistant",
+        icon: research,
+      },
+      {
+        title: "Smart Voice Assistant",
+        icon: product,
+      },
+      {
+        title: "IoT Based Alarm System",
+        icon: WebApp,
+      },
+      {
+        title: "Social Media Monitoring App",
+        icon: visual,
+      },
+      {
+        title: "Smart Home Controlling System",
+        icon: Interaction,
+      },
+    ],
+    bestServiceTitle: [
+      {
+        title: "MAINTENANCE AND SUPPORT FOR YOUR NEED ",
+        tagline:
+          "We are always ready to provide you with comprehensive maintenance and support services to ensure your valuable time is not lost.",
+      },
+    ],
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Scope and Resources Estimation",
+        des: "To determine the scope of the support and maintenance activities, we analyze the software’s related infrastructure, prospective new features and changes and the current and planned user pool.",
+      },
+      {
+        service_image: help2,
+        service_name: "Process Design",
+        des: "Depending on the support and maintenance activities, we define a set of KPIs to assess and optimize the process. A sample KPIs set includes: the number of changes/updates delivered, the number of changes/updates waiting in a backlog, the number of urgent changes.",
+      },
+      {
+        service_image: help3,
+        service_name: "Sourcing Model and Implementation",
+        des: "Relevant tools are chosen based on the type of software, the maintenance and support scope, the KPIs set, and other aspects. The toolset may include backup software, software for performance and security monitoring, DevOps, help desk, and more.",
+      },
+      {
+        service_image: help4,
+        service_name: "After Launch checkup",
+        des: "We schedule regular maintenance windows for the preventive maintenance activities that can cause downtimes. These time intervals should always be available, even if not used each time.",
       },
     ],
   },
