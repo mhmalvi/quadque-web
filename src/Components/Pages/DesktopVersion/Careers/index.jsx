@@ -5,6 +5,7 @@ import { Fade } from "react-reveal";
 import { Link, useNavigate } from "react-router-dom";
 import useBlogs from "../../../Shared/Hooks/useBlog";
 import Icons from "../../../Shared/Icons";
+import careerData from "../../MobileVersion/Career/Career.json";
 
 const Career = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Career = ({ setLoader }) => {
   }, []);
 
   useEffect(() => {
-    setTotalPosts(allBlogs.length);
+    setTotalPosts(careerData.length);
   }, [allBlogs]);
 
   const indexOfLastPost = currentPage * PostsPerPage;
@@ -44,7 +45,7 @@ const Career = ({ setLoader }) => {
       {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Blog - Get The Best Online IT Services for Business - Quadque`}</title>
+        <title>{`Career - Get The Best Online IT Services for Business - Quadque`}</title>
         <meta
           name="description"
           content="Look at our informative blogs, where we discuss various interesting topics related to the IT industry, such as website development , UI/UX design and digital marketing and so on."
@@ -56,7 +57,7 @@ const Career = ({ setLoader }) => {
           <Icons.GoBackArrow
             className="w-6 font-semibold cursor-pointer"
             onClick={() => {
-              navigate(`../#blogs`, { replace: true });
+              navigate(`../#contacts`, { replace: true });
             }}
           />
         </div>
@@ -65,23 +66,25 @@ const Career = ({ setLoader }) => {
         </div>
         <Fade left cascade>
           <div className="Blog w-full px-6 grid grid-cols-3 2xl:grid-cols-4 gap-8 justify-center items-stretch">
-            {currentPosts?.map((details) => (
+            {careerData?.map((details) => (
               <Link key={details.id} to={`/career-detail/${details.id}`}>
                 <div className="rounded-xl mx-auto pb-6 relative bg-white bg-opacity-20 hover:bg-opacity-25 backdrop-filter backdrop-blur-xl p-1 scale-100 transition delay-200 hover:scale-105 hover:delay-300 hover:transition">
                   <img
-                    src={
-                      process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail
-                    }
+                    // src={
+                    //   process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail
+                    // }
+                    src="https://quadque.tech/wp-content/uploads/2022/08/WhatsApp-Image-2022-08-03-at-10.16.05-AM-1024x1024.jpeg"
                     alt=""
                     className="w-[100%] h-56 m-auto rounded-lg"
                   />
                   <div className="flex justify-between pb-2 px-2 mt-4 gap-4">
                     <div>
                       <h1 className="text-lg text-white font-semibold">
-                        {details.title}
+                        {details.position}
                       </h1>
                       <div className="text-white text-sm mt-2 italic font-light">
-                        Deadline: {details.created_at.split("T", 1)}
+                        {/* Deadline: {details.created_at.split("T", 1)} */}
+                        Deadline: {details.app_deadline}
                       </div>
                     </div>
                     {/* <Link to={`/career-detail`}>
@@ -104,6 +107,7 @@ const Career = ({ setLoader }) => {
             pageSize={PostsPerPage}
             current={currentPage}
             total={totalPosts}
+            showTitle={true}
             className="text-4xl"
           />
         </div>

@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { Link, useLocation } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
+import bgBD from "../../../../asstes/Images/background_bd.jpg";
+import bgAus from "../../../../asstes/Images/background_aus.jpg";
 
 const Footer = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   // const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const [backgroundImage, setBackgroundImage] = useState("");
+
   const synth = window.speechSynthesis;
 
   useEffect(() => {
@@ -26,8 +30,33 @@ const Footer = () => {
   return (
     <div
       id="contacts"
-      className="section w-full min-h-full lg:py-6 2xl:py-8 font_primary bg-black text-white"
+      className={`section w-full min-h-full lg:py-6 2xl:py-8 font_primary text-white`}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
+      {/* {backgroundImage === "bd" && ( */}
+      {/* <img
+        src={bgBD}
+        className="min-w-full min-h-full absolute top-0  transition-all delay-500 duration-200"
+        alt=""
+      /> */}
+      {/* )} */}
+
+      {/* {backgroundImage === "aus" && ( */}
+      {/* <img
+        src={bgAus}
+        className="min-w-full min-h-full absolute top-0  transition delay-300 duration-200"
+        alt=""
+      /> */}
+      {/* )} */}
+
+      {/* <div
+        className={`${backgroundImage} min-w-full min-h-full absolute top-0 transition-all duration-200 delay-300`}
+      ></div> */}
+
       <div className="ml-21 lg:mt-10 2xl:mt-16 mr-25 pb-8">
         <div className="2xl:pt-6 2xl:pl-10">
           <div>
@@ -190,24 +219,45 @@ const Footer = () => {
                 <Fade left cascade spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Address</h3>
                   <div>
-                    <div className="text-sm font-normal">
-                      <div className="leading-6 mb-2.5">
-                        <p>
-                          Level 1, 7 Greenfield Parade Bankstown, NSW 2200,
-                          Australia.
-                        </p>
+                    <div
+                      onMouseOver={() => {
+                        setBackgroundImage(bgBD);
+                      }}
+                      onMouseOut={() => {
+                        setBackgroundImage("");
+                      }}
+                    >
+                      <div className="text-sm font-normal">
+                        <div className="leading-6 mb-2.5">
+                          <p>
+                            Level 1, 7 Greenfield Parade Bankstown, NSW 2200,
+                            Australia.
+                          </p>
+                        </div>
+                        <div className="leading-6 mb-2.5">
+                          <a href="tel:+01765276560">+61405899496</a>
+                        </div>
                       </div>
-                      <div className="leading-6 mb-2.5">
-                        <a href="tel:+01765276560">+61405899496</a>
-                      </div>
-                      <div className="leading-6 mb-2.5">
-                        <p>
-                          Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207,
-                          Bangladesh.
-                        </p>
-                      </div>
-                      <div className="leading-6 mb-2.5">
-                        <a href="tel:+01765276560">+01765-276560</a>
+                    </div>
+
+                    <div
+                      onMouseOver={() => {
+                        setBackgroundImage(bgAus);
+                      }}
+                      onMouseOut={() => {
+                        setBackgroundImage("");
+                      }}
+                    >
+                      <div className="text-sm font-normal">
+                        <div className="leading-6 mb-2.5">
+                          <p>
+                            Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207,
+                            Bangladesh.
+                          </p>
+                        </div>
+                        <div className="leading-6 mb-2.5">
+                          <a href="tel:+01765276560">+01765-276560</a>
+                        </div>
                       </div>
                     </div>
                   </div>
