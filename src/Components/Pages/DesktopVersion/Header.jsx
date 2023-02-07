@@ -20,7 +20,7 @@ const Header = () => {
         }}
       >
         <Typical
-          className="w-40 text-white lg:text-4.5xl xl:text-[60px] 2xl:text-[80px] font-bold leading-10 font_title xl:leading-12 2xl:leading-[70px] font-poppins capitalize"
+          className="w-40 text-white lg:text-4.5xl xl:text-[60px] 2xl:text-[80px] font-bold leading-10 font_title xl:leading-12 2xl:leading-[70px] font_primary capitalize"
           steps={[
             "We",
             1500,

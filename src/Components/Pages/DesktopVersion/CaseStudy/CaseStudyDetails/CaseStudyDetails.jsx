@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
-import rightImage from "../../../../../asstes/Images/caseStudyrightImg.jpg";
+import rightImage from "../../../../../asstes/Images/background.jpg";
 import Icons from "../../../../Shared/Icons";
 // import help1 from "../../../../../asstes/Images/help1.png";
 // import help2 from "../../../../../asstes/Images/help2.png";
@@ -16,6 +16,10 @@ import Icons from "../../../../Shared/Icons";
 import { handleFetchCaseStudyById } from "../../../../Shared/services";
 import Lottie from "lottie-react";
 import speakLogo from "../../../../../asstes/Lotties/speak.json";
+import testimonial from "../../../../../asstes/Lotties/testimonial.json";
+import whoWeAre from "../../../../../asstes/Lotties/who_we_are.json";
+import keyTakeaways from "../../../../../asstes/Lotties/key_takeaways.json";
+import weLearnt from "../../../../../asstes/Lotties/we_learnt.json";
 import { useSpeechSynthesis } from "react-speech-kit";
 import { Tooltip } from "antd";
 import Footer from "../../Footer";
@@ -47,7 +51,7 @@ const CaseStudyDetails = ({ setLoader }) => {
         <meta name="keywords" content={caseStudyDetails?.meta_keyword} />
       </Helmet>
 
-      <div className="case_study_details min-h-full bg-black text-white py-20 px-36  h-[90vh] overflow-y-auto font-poppins w-11/12 mx-auto">
+      <div className="case_study_details min-h-full bg-black text-white py-20 px-36  h-[90vh] overflow-y-auto font_primary w-11/12 mx-auto">
         <div className="mb-10">
           <Icons.GoBackArrow
             className="w-6 font-semibold cursor-pointer"
@@ -174,7 +178,7 @@ const CaseStudyDetails = ({ setLoader }) => {
         <div className="mt-72">
           <div className="max-w-xl mx-auto">
             <h1 className="text-center text-[40px] leading-12 font-normal">
-              Our Content:
+              Our Contents:
             </h1>
             <h1 className="text-center text-[40px] leading-12 font-normal">
               {caseStudyDetails?.our_content_header}
@@ -183,7 +187,7 @@ const CaseStudyDetails = ({ setLoader }) => {
 
           <div className="mt-40 flex items-center justify-between">
             <div className="w-1/2 mr-24">
-              <img
+              {/* <img
                 className="w-full"
                 src={
                   process.env.REACT_APP_ASSETS_URL +
@@ -191,6 +195,11 @@ const CaseStudyDetails = ({ setLoader }) => {
                   caseStudyDetails?.image_1
                 }
                 alt=""
+              /> */}
+              <Lottie
+                className="w-6/12 mx-auto"
+                animationData={testimonial}
+                loop={true}
               />
             </div>
 
@@ -214,7 +223,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               </h4>
             </div>
             <div className="w-1/2">
-              <img
+              {/* <img
                 className="w-full"
                 src={
                   process.env.REACT_APP_ASSETS_URL +
@@ -222,13 +231,18 @@ const CaseStudyDetails = ({ setLoader }) => {
                   caseStudyDetails?.image_2
                 }
                 alt=""
+              /> */}
+              <Lottie
+                className="w-9/12 mx-auto"
+                animationData={keyTakeaways}
+                loop={true}
               />
             </div>
           </div>
 
           <div className="w-full mt-40 flex items-center justify-between">
             <div className="w-1/2 mr-24">
-              <img
+              {/* <img
                 className="w-full"
                 src={
                   process.env.REACT_APP_ASSETS_URL +
@@ -236,6 +250,11 @@ const CaseStudyDetails = ({ setLoader }) => {
                   caseStudyDetails?.image_3
                 }
                 alt=""
+              /> */}
+              <Lottie
+                className="w-9/12 mx-auto"
+                animationData={weLearnt}
+                loop={true}
               />
             </div>
             <div className="w-1/2">
@@ -267,7 +286,7 @@ const CaseStudyDetails = ({ setLoader }) => {
 
           <div className="mt-40 flex items-center justify-between">
             <div className="w-1/2 mr-24">
-              <img
+              {/* <img
                 className="w-full"
                 src={
                   process.env.REACT_APP_ASSETS_URL +
@@ -275,7 +294,8 @@ const CaseStudyDetails = ({ setLoader }) => {
                   caseStudyDetails?.image_1
                 }
                 alt=""
-              />
+              /> */}
+              <Lottie className="w-9/12" animationData={whoWeAre} loop={true} />
             </div>
 
             <div className="w-1/2">
@@ -294,7 +314,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               </h4>
               <div className="flex items-center pt-8">
                 <button
-                  className="spirit-bomb px-7 py-3.5 text-base font-medium leading-4 rounded-full bg-transparent text-white text-center"
+                  className="spirit-bomb px-7 py-3.5 text-sm 2xl:text-lg font-medium leading-4 rounded-full bg-transparent text-white text-center"
                   style={{
                     letterSpacing: "0.04em",
                     border: "2px solid rgb(255, 255, 255)",
@@ -314,9 +334,9 @@ const CaseStudyDetails = ({ setLoader }) => {
                   </span>
                   <a
                     href="tel:+0123456789"
-                    className="text-lg font-medium leading-6"
+                    className="text-base 2xl:text-lg font-medium leading-6"
                   >
-                    +0 123 456-789
+                    +0123456-789
                   </a>
                 </div>
               </div>

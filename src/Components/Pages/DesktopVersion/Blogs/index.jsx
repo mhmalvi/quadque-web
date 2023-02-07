@@ -20,14 +20,14 @@ const Blogs = () => {
     setTriggerSlideBlogDetailsAnimation,
   ] = useState(false);
   const [activeblogDetails, setActiveblogDetails] = useState({});
-  const [loader, setLoader] = useState(true);
+  // const [loader, setLoader] = useState(true);
   const synth = window.speechSynthesis;
 
   useEffect(() => {
     if (location.hash === "#blogs") {
       synth.cancel();
       setTimeout(() => {
-        setLoader(false);
+        // setLoader(false);
         // setTriggerAnimation(true);
         setTriggerTitleAnimation(true);
       }, 800);
@@ -44,7 +44,7 @@ const Blogs = () => {
   return (
     <div
       id="blogs"
-      className="section w-full lg:pt-6 2xl:py-8 font-poppins bg-black overflow-hidden"
+      className="section w-full  font_primary bg-black overflow-hidden"
     >
       <div className="flex items-center text-[#EDEDED] overflow-hidden">
         <Fade left spy={triggerTitleAnimation}>
@@ -71,9 +71,9 @@ const Blogs = () => {
                 </div>
               </Fade>
             ) : (
-              <Fade left spy={triggerSlideBlogDetailsAnimation}>
+              <Fade spy={triggerSlideBlogDetailsAnimation}>
                 <div
-                  className={`w-8/12 mx-auto transition ease-in-out delay-300 h-[70vh] rounded-md cursor-pointer relative bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-500 p-4`}
+                  className={`spirit-bomb w-8/12 mx-auto transition ease-in-out delay-300 h-[70vh] rounded-md cursor-pointer relative bg-gradient-to-tr from-gray-600 ... bg-opacity-40 backdrop-filter backdrop-blur-xl border border-gray-500 p-4`}
                 >
                   <img
                     src={
@@ -116,8 +116,8 @@ const Blogs = () => {
           </div>
         </Fade>
 
-        <div className="relative w-[60%] h-[95vh] mx-4 flex justify-center items-center">
-          <div className="grid grid-cols-3 gap-4 justify-center items-center my-auto py-4">
+        <div className="relative w-[60%] min-h-full my-auto mx-4 flex justify-center items-center">
+          <div className="grid grid-cols-3 gap-4 justify-center items-center">
             {blogs.slice(0, 9).map((blog, i) => (
               <div
                 onMouseOver={() => {
@@ -148,9 +148,9 @@ const Blogs = () => {
                     <h1 className="text-base text-white mb-2 h-6 overflow-hidden">
                       {blog.title}...
                     </h1>
-                    <div className="text-white text-sm">By {blogs?.author}</div>
+                    <div className="text-white text-sm">By {blog?.author}</div>
                     <div className="text-white text-sm">
-                      {new Date(blogs?.created_at).toString().slice(0, 15)}
+                      {new Date(blog?.created_at).toString().slice(0, 15)}
                     </div>
                   </div>
                 </div>

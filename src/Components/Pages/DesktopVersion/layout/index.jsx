@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
 import BlogDetailsLayout from "../Blogs/BlogDetails/BlogDetailsLayout";
+import CareerLayout from "../Careers/CareerLayout";
 import CaseStudyDetailsLayout from "../CaseStudy/CaseStudyDetails/CaseStudyDetailsLayout";
 import FaqLayout from "../FAQ/FaqLayout";
 import GalleryLayout from "../Gallery/GalleryLayout";
@@ -66,7 +67,8 @@ const Layout = () => {
           path="career"
           element={
             <>
-              <FaqLayout />
+            <CareerLayout/>
+              {/* <BaseLayout sharedComponent={<Career />} /> */}
             </>
           }
         />

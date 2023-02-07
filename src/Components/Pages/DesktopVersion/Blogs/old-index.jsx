@@ -36,7 +36,7 @@ const OldBlogs = () => {
   return (
     <div
       id="blogs"
-      className="section w-full lg:pt-6 2xl:py-8 font-poppins bg-black"
+      className="section w-full lg:pt-6 2xl:py-8 font_primary bg-black"
     >
       <div className="flex justify-center items-center text-[#EDEDED] my-auto">
         <Fade left spy={triggerTitleAnimation}>

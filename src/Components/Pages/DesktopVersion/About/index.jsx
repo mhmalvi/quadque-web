@@ -5,17 +5,17 @@ import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
+import mainAbout from "../../../../asstes/Images/about_us_2.gif";
 import ourGoal from "../../../../asstes/Images/Our_Goal.gif";
 import ourMission from "../../../../asstes/Images/Our_Mission.gif";
 import ourObjective from "../../../../asstes/Images/Our_objective.gif";
 import ourVission from "../../../../asstes/Images/Our_Vission_1.gif";
+import whoWerAre from "../../../../asstes/Images/who_we_are.gif";
 import whyChooseUs from "../../../../asstes/Images/why_choose_us.gif";
 
 const About = () => {
   const location = useLocation();
-  const [sideBanner, setSideBanner] = useState(
-    "https://i.ibb.co/QK246nC/Image-Box.png"
-  );
+  const [sideBanner, setSideBanner] = useState(banners[0]);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [goals, setGoals] = useState();
@@ -47,17 +47,6 @@ const About = () => {
     setSideBanner(banners[section]);
   };
 
-  // const handleScrollAbout = () => {
-  //   // setTriggerTitleAnimation(!triggerTitleAnimation);
-  //   setTriggerAnimation(!triggerAnimation);
-
-  //   if (scrollingIndex > 1) {
-  //     setScrollingIndex(0);
-  //   } else {
-  //     setScrollingIndex(scrollingIndex + 1);
-  //   }
-  // };
-
   const handleScrollAbout = (indexNum) => {
     if (scrollingIndex === indexNum) {
       return;
@@ -66,8 +55,6 @@ const About = () => {
       setScrollingIndex(indexNum);
     }
   };
-
-  console.log(sideBanner);
 
   return (
     <div id="about" className="section min-h-full font_primary">
@@ -102,11 +89,6 @@ const About = () => {
                   </h1>
                 </Fade>
               </div>
-              {/* <Fade right cascade spy={triggerTitleAnimation}>
-                <h1 className="text-4xl font-medium leading-[48px] font_title">
-                  About us
-                </h1>
-              </Fade> */}
             </div>
           </div>
           <div>
@@ -118,7 +100,8 @@ const About = () => {
                     <>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(0)}
+                        onMouseOver={() => handleChangeBanner(1)}
+                        onMouseOut={() => handleChangeBanner(0)}
                       >
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Vision
@@ -132,13 +115,14 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(2)}
+                        onMouseOut={() => handleChangeBanner(0)}
                       >
-                        <div className="text-2xl font-bold leading-[100%] pl-4">
-                          Our Goal
-                        </div>
-                        <div className="mt-2.5 text-white pl-4">
-                          {goals?.our_goal}
-                        </div>
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Mission
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
+                          {goals?.our_mission}
+                        </p>
                         <div
                           className="w-full bg-gray-400 my-4 2xl:my-12"
                           style={{
@@ -154,6 +138,26 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(3)}
+                        onMouseOut={() => handleChangeBanner(0)}
+                      >
+                        <div className="text-2xl font-bold leading-[100%] pl-4">
+                          Our Goal
+                        </div>
+                        <div className="mt-2.5 text-white pl-4">
+                          {goals?.our_goal}
+                        </div>
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
+                      </div>
+
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(4)}
+                        onMouseOut={() => handleChangeBanner(0)}
                       >
                         {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
@@ -170,30 +174,13 @@ const About = () => {
                           }}
                         ></div>
                       </div>
-
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(1)}
-                      >
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                          Our Mission
-                        </h1>
-                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
-                          {goals?.our_mission}
-                        </p>
-                        <div
-                          className="w-full bg-gray-400 my-4 2xl:my-12"
-                          style={{
-                            height: "0.5px",
-                          }}
-                        ></div>
-                      </div>
                     </div>
                   ) : null}
                   {scrollingIndex === 2 ? (
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                      onMouseOver={() => handleChangeBanner(4)}
+                      onMouseOver={() => handleChangeBanner(5)}
+                      onMouseOut={() => handleChangeBanner(0)}
                     >
                       {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                       <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
@@ -214,7 +201,8 @@ const About = () => {
                   {scrollingIndex === 3 ? (
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                      onMouseOver={() => handleChangeBanner(5)}
+                      onMouseOver={() => handleChangeBanner(6)}
+                      onMouseOut={() => handleChangeBanner(0)}
                     >
                       <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                         Why Choose Us
@@ -239,7 +227,8 @@ const About = () => {
                     <>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(0)}
+                        onMouseOver={() => handleChangeBanner(1)}
+                        onMouseOut={() => handleChangeBanner(0)}
                       >
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Vision
@@ -256,7 +245,8 @@ const About = () => {
                       </div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(1)}
+                        onMouseOver={() => handleChangeBanner(2)}
+                        onMouseOut={() => handleChangeBanner(0)}
                       >
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Mission
@@ -273,7 +263,8 @@ const About = () => {
                       </div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(2)}
+                        onMouseOver={() => handleChangeBanner(3)}
+                        onMouseOut={() => handleChangeBanner(0)}
                       >
                         <div className="text-2xl font-bold leading-[100%] pl-4">
                           Our Goal
@@ -295,7 +286,8 @@ const About = () => {
                     <div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(3)}
+                        onMouseOver={() => handleChangeBanner(4)}
+                        onMouseOut={() => handleChangeBanner(0)}
                       >
                         {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
@@ -313,7 +305,8 @@ const About = () => {
                       </div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(4)}
+                        onMouseOver={() => handleChangeBanner(5)}
+                        onMouseOut={() => handleChangeBanner(0)}
                       >
                         {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
@@ -334,7 +327,8 @@ const About = () => {
                   {scrollingIndex === 2 ? (
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                      onMouseOver={() => handleChangeBanner(5)}
+                      onMouseOver={() => handleChangeBanner(6)}
+                      onMouseOut={() => handleChangeBanner(0)}
                     >
                       <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                         Why Choose Us
@@ -408,11 +402,11 @@ const About = () => {
 export default About;
 
 const banners = [
+  mainAbout,
   ourVission,
-  ourGoal,
   ourMission,
+  ourGoal,
   ourObjective,
-  "https://i.ibb.co/pwNTPMS/photo-1557683304-673a23048d34.jpg",
+  whoWerAre,
   whyChooseUs,
-  "https://i.ibb.co/vBfkmvw/Aurometalsaurus-Solid-Color-Background-Wallpaper-for-Mobile-Phone-600x1067.png",
 ];

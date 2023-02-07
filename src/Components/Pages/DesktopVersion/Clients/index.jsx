@@ -42,7 +42,7 @@ const Cleints = () => {
   console.log(location?.hash);
 
   return (
-    <div className="section h-full font-poppins overflow-hidden">
+    <div className="section h-full font_primary overflow-hidden">
       <div className="pl-10 pr-21 2xl:px-21 mr-36 2xl:mr-44 text-white flex justify-between items-start">
         <div className="absolute top-1/4 flex justify-center items-center">
           <div className="max-w-xl items-center text-justify mr-30">
@@ -71,7 +71,7 @@ const Cleints = () => {
                   wordBreak: "keep-all",
                 }}
               >
-                <ul className="list-inside font-poppins text-base">
+                <ul className="list-inside font_primary text-base">
                   <li className="list-disc py-0.5">Leading businesses</li>
                   <li className="list-disc py-0.5">From all over the world</li>
                   <li className="list-disc py-0.5">
@@ -102,17 +102,10 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[150px] h-[100px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-[100px] flex justify-center items-center">
-                        <img
-                          className="w-8/12"
-                          style={{
-                            filter: "grayscale(0.7)",
-                          }}
-                          src={client}
-                          alt=""
-                        />
+                        <img className="w-8/12" src={client} alt="" />
                       </div>
                     </div>
                   ))}
@@ -124,17 +117,10 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[150px] h-[100px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img
-                          className="w-8/12"
-                          style={{
-                            filter: "grayscale(0.7)",
-                          }}
-                          src={client}
-                          alt=""
-                        />
+                        <img className="w-8/12" src={client} alt="" />
                       </div>
                     </div>
                   ))}
@@ -148,17 +134,10 @@ const Cleints = () => {
                   {colum12xl2?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[150px] h-[100px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img
-                          className="w-8/12"
-                          style={{
-                            filter: "grayscale(0.7)",
-                          }}
-                          src={client}
-                          alt=""
-                        />
+                        <img className="w-8/12" src={client} alt="" />
                       </div>
                     </div>
                   ))}
@@ -170,17 +149,10 @@ const Cleints = () => {
                   {colum12xl2?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[150px] h-[100px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img
-                          className="w-8/12"
-                          style={{
-                            filter: "grayscale(0.7)",
-                          }}
-                          src={client}
-                          alt=""
-                        />
+                        <img className="w-8/12" src={client} alt="" />
                       </div>
                     </div>
                   ))}
@@ -194,17 +166,10 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[150px] h-[100px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img
-                          className="w-8/12"
-                          style={{
-                            filter: "grayscale(0.7)",
-                          }}
-                          src={client}
-                          alt=""
-                        />
+                        <img className="w-8/12" src={client} alt="" />
                       </div>
                     </div>
                   ))}
@@ -216,17 +181,10 @@ const Cleints = () => {
                   {colum12xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[150px] h-[100px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img
-                          className="w-8/12"
-                          style={{
-                            filter: "grayscale(0.7)",
-                          }}
-                          src={client}
-                          alt=""
-                        />
+                        <img className="w-8/12" src={client} alt="" />
                       </div>
                     </div>
                   ))}
@@ -245,7 +203,7 @@ const Cleints = () => {
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-[104px] flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -260,7 +218,7 @@ const Cleints = () => {
                   {colum1xl2?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -277,7 +235,7 @@ const Cleints = () => {
                   {colum1xl2?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -292,7 +250,7 @@ const Cleints = () => {
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -309,7 +267,7 @@ const Cleints = () => {
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -324,7 +282,7 @@ const Cleints = () => {
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -346,7 +304,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -361,7 +319,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -378,7 +336,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -393,7 +351,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -410,7 +368,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />
@@ -425,7 +383,7 @@ const Cleints = () => {
                   {colum1lg?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gray-400 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
                         <img className="w-8/12" src={client} alt="" />

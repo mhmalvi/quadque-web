@@ -37,7 +37,7 @@ const BlogsGalary = ({ setLoader }) => {
       </Helmet>
 
       <div
-        className="min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font-poppins"
+        className="min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font_primary"
         ref={blogdetailsRef}
       >
         <div className="mb-10">

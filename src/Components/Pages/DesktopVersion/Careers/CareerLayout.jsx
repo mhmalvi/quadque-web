@@ -2,6 +2,7 @@ import { Modal, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Career from ".";
 import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
@@ -9,7 +10,7 @@ import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
 import Navbar from "../Navbar";
 
-const BaseLayout = ({ sharedComponent }) => {
+const CareerLayout = () => {
   const navigate = useNavigate();
   const [mouseHover, setMouseHover] = useState(false);
   const [muted, setMuted] = useState(true);
@@ -165,7 +166,7 @@ const BaseLayout = ({ sharedComponent }) => {
           id="main_container"
           className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
-          {{ sharedComponent   }}
+          <Career setLoader={setLoader} />
         </div>
 
         {/* Right bar */}
@@ -250,4 +251,4 @@ const BaseLayout = ({ sharedComponent }) => {
   );
 };
 
-export default BaseLayout;
+export default CareerLayout;

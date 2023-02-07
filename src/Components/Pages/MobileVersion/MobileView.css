@@ -417,7 +417,8 @@
     transform: rotate(360deg);
   }
 }
-/* 
+
+
 .spirit-bomb {
   box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
   animation: spirit 4s ease-in-out infinite;
@@ -441,9 +442,9 @@
   100% {
     box-shadow: 0 0 30px #fff, -5px 0 30px #8f0fff, 5px 0 30px #0ff;
   }
-} */
+}
 
-.spirit-bomb {
+/* .spirit-bomb {
   box-shadow: 0 0 30px #7200ff, -5px 0 40px #4f0092;
   animation: spirit 4s ease-in-out infinite;
   border: 1px solid #7019bd !important;
@@ -467,7 +468,7 @@
   100% {
     box-shadow: 0 0 30px #8c31fa, -5px 0 40px #9a2cfa;
   }
-}
+} */
 
 .arrowLeft,
 .arrowLeft:before {
@@ -569,7 +570,6 @@
   left: 80px;
   animation: overlay 6s infinite;
 }
-
 
 @keyframes overlay {
   0% {

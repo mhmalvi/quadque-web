@@ -172,7 +172,9 @@ const Footer = () => {
                   </h3>
                   <div>
                     <h4 className="text-sm font-normal mb-2.5">About Us</h4>
-                    <h4 className="text-sm font-normal mb-2.5">Careers</h4>
+                    <h4 className="text-sm font-normal mb-2.5">
+                      <Link to={"/career"}>Careers</Link>
+                    </h4>
                     <h4 className="text-sm font-normal mb-2.5">
                       <Link to={"/gallery"}>Gallery</Link>
                     </h4>
