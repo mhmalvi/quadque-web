@@ -66,7 +66,7 @@ const CareerGallery = () => {
       <div className="text-3xl text-white mt-30 px-6 pb-4 font_primary">
         Current Job Openings
       </div>
-      <div className="Career w-full h-[1150px] px-6 font_primary">
+      <div className="Career w-full min-h-[900px] px-6 font_primary">
         {currentPosts?.map((details) => (
           <div
             key={details.id}
