@@ -3,13 +3,17 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { Link, useLocation } from "react-router-dom";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
 import softDev from "../../../../asstes/Lotties/softwware_development.json";
 import softDevs from "../../../../asstes/Lotties/software developtment.json";
 import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
+import eCom from "../../../../asstes/Lotties/ecommerce.json";
+import CyberSecurity from "../../../../asstes/Lotties/cyber-security.json";
+import Cloud from "../../../../asstes/Lotties/cloud-computing22.json";
+import Maintenance from "../../../../asstes/Lotties/maintanance.json";
 import useServices from "../../../Shared/Hooks/useServices";
 
 const Services = () => {
@@ -134,9 +138,9 @@ const Services = () => {
             />
           ) : null}
 
-          {activeService === "UI/UX" ? (
+          {/* {activeService === "UI/UX" ? (
             <Lottie animationData={UI_UX} loop={true} alt="Ui & Ux Layout" />
-          ) : null}
+          ) : null} */}
           {activeService === "Mobile App Development" ? (
             <Lottie
               animationData={AppDev}
@@ -156,6 +160,34 @@ const Services = () => {
               animationData={webDev}
               loop={true}
               alt="Web Development Layout"
+            />
+          ) : null}
+          {activeService === "Cyber Security & Data Protection" ? (
+            <Lottie
+              animationData={CyberSecurity}
+              loop={true}
+              alt="Cyber Security & Data Protection Layout"
+            />
+          ) : null}
+          {activeService === "E-commerce development" ? (
+            <Lottie
+              animationData={eCom}
+              loop={true}
+              alt="E-commerce development Layout"
+            />
+          ) : null}
+          {activeService === "Cloud Computing Solutions" ? (
+            <Lottie
+              animationData={Cloud}
+              loop={true}
+              alt="Cloud Computing Solutions Layout"
+            />
+          ) : null}
+          {activeService === "Maintenance and Support" ? (
+            <Lottie
+              animationData={Maintenance}
+              loop={true}
+              alt="Maintenance and Support Layout"
             />
           ) : null}
         </div>

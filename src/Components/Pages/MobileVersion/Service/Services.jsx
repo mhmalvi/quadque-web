@@ -9,11 +9,16 @@ import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
 
-import UI_UX from "../../../../asstes/Lotties/ux.json";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
 import softDev from "../../../../asstes/Lotties/softwware_development.json";
+import softDevs from "../../../../asstes/Lotties/software developtment.json";
+import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
+import eCom from "../../../../asstes/Lotties/ecommerce.json";
+import CyberSecurity from "../../../../asstes/Lotties/cyber-security.json";
+import Cloud from "../../../../asstes/Lotties/cloud-computing22.json";
+import Maintenance from "../../../../asstes/Lotties/maintanance.json";
 
 const Services = () => {
   const [Services] = useServices();
@@ -82,7 +87,7 @@ const Services = () => {
             {Services?.map((details, index) => (
               <Link to={`services/${details.slug}`}>
                 <div key={index}>
-                  <div className="w-full h-81">
+                  <div className="w-10/12 h-81 m-auto py-5">
                     {/* <lottie-player
                       
                       src={
@@ -96,22 +101,72 @@ const Services = () => {
                       loop
                       autoplay
                     ></lottie-player> */}
-                    <Lottie
-                      animationData={littieFiles[details?.service_name]}
-                      loop={true}
-                      alt={littieFilesAltTags[details?.service_name]}
-                    />
+                    {details?.service_name === "AI & IoT Solutions" ? (
+                      <Lottie
+                        animationData={aIIot}
+                        loop={true}
+                        alt="AI & IoT Solutions Layout"
+                      />
+                    ) : null}
+
+                    {/* {details?.service_name === "UI/UX" ? (
+                      <Lottie
+                        animationData={UI_UX}
+                        loop={true}
+                        alt="Ui & Ux Layout"
+                      />
+                    ) : null} */}
+                    {details?.service_name === "Mobile App Development" ? (
+                      <Lottie
+                        animationData={AppDev}
+                        loop={true}
+                        alt="Application Development Layout"
+                      />
+                    ) : null}
+                    {details?.service_name === "Software Development" ? (
+                      <Lottie
+                        animationData={softDevs}
+                        loop={true}
+                        alt="Software Development Layout"
+                      />
+                    ) : null}
+                    {details?.service_name === "Web Development" ? (
+                      <Lottie
+                        animationData={webDev}
+                        loop={true}
+                        alt="Web Development Layout"
+                      />
+                    ) : null}
+                    {details?.service_name ===
+                    "Cyber Security & Data Protection" ? (
+                      <Lottie
+                        animationData={CyberSecurity}
+                        loop={true}
+                        alt="Cyber Security & Data Protection Layout"
+                      />
+                    ) : null}
+                    {details?.service_name === "E-commerce development" ? (
+                      <Lottie
+                        animationData={eCom}
+                        loop={true}
+                        alt="E-commerce development Layout"
+                      />
+                    ) : null}
+                    {details?.service_name === "Cloud Computing Solutions" ? (
+                      <Lottie
+                        animationData={Cloud}
+                        loop={true}
+                        alt="Cloud Computing Solutions Layout"
+                      />
+                    ) : null}
+                    {details?.service_name === "Maintenance and Support" ? (
+                      <Lottie
+                        animationData={Maintenance}
+                        loop={true}
+                        alt="Maintenance and Support Layout"
+                      />
+                    ) : null}
                   </div>
-                  {/*  <h1 className="font_title m-auto text-center text-2xl font-bold pb-4 services-shadow pt-13">
-                    {details.service_name}
-                  </h1> */}
-                  {/* <div className="m-auto text-center text-sm font-light pb-5 leading-6">
-                    {details.description}
-                  </div> */}
-                  {/* <div
-                    dangerouslySetInnerHTML={{ __html: details?.description }}
-                    className="h-36 text-center overflow-hidden mb-5"
-                  ></div> */}
                   <div className="h-36 text-center overflow-hidden mb-5 pt-13">
                     {details?.description}
                   </div>
@@ -124,13 +179,13 @@ const Services = () => {
               {/* <div className="m-auto flex justify-between pb-5"> */}
               <div
                 onClick={() => slider1.current.slickPrev()}
-                className="arrowLeft absolute bottom-[180px] font-semibold"
+                className="arrowLeft absolute bottom-[200px] font-semibold"
               >
                 {/* <Icons.RightArrow className="w-12 scale-x-[-1]" /> */}
               </div>
               <div
                 onClick={() => slider1.current.slickNext()}
-                className="arrowRight absolute bottom-[180px] font-semibold"
+                className="arrowRight absolute bottom-[200px] font-semibold"
               >
                 {/* <Icons.RightArrow className="w-12" /> */}
               </div>
@@ -149,7 +204,7 @@ const Services = () => {
             className="font_title services-shadow text-base text-white text-opacity-25 text-center"
           >
             {Services?.map((details) => (
-              <div className="text-2xl whitespace-nowrap">
+              <div className="text-2xl">
                 <span>{details.service_name}</span>
               </div>
             ))}

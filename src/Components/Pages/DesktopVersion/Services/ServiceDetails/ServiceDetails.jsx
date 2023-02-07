@@ -999,6 +999,71 @@ const serviceDetailsContent = {
     metaDescription:
       "The future of technology will be paved by Artificial Intelligence (AI) and the Internet of Things (IoT). Let us assist you with the most innovative AI and IoT solutions.",
     metaKeywords:
+      "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
+
+    helpContent: [
+      {
+        title: "AI Chatbot",
+        icon: usability,
+      },
+      {
+        title: "AI Office Assistant",
+        icon: research,
+      },
+      {
+        title: "Smart Voice Assistant",
+        icon: product,
+      },
+      {
+        title: "IoT Based Alarm System",
+        icon: WebApp,
+      },
+      {
+        title: "Social Media Monitoring App",
+        icon: visual,
+      },
+      {
+        title: "Smart Home Controlling System",
+        icon: Interaction,
+      },
+    ],
+    bestServiceTitle: [
+      {
+        title: "MAINTENANCE AND SUPPORT FOR YOUR NEED ",
+        tagline: "We are always ready to provide you with comprehensive maintenance and support services to ensure your valuable time is not lost.",
+      },
+    ],
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Advanced Technology",
+        des: "AI has come a long way thanks to the hard work of scientists and researchers in the field. We incorporate the latest technological features to deliver smart and innovative AI solutions to our clients.",
+      },
+      {
+        service_image: help2,
+        service_name: "Reliable Security Measures",
+        des: "One of the most important aspects of any IoT service is data security. We rely on the most advanced and updated security measures to make sure that our clients are free from all kinds of cyber security threats.",
+      },
+      {
+        service_image: help3,
+        service_name: "From Planning to Implementation",
+        des: "Every organisation has different needs. We identify the specific requirements of every client and plan the best strategy for implementing the perfect AI and IoT solutions for that organisation.",
+      },
+      {
+        service_image: help4,
+        service_name: "Improve Your Organisational Performance",
+        des: "One of the biggest advantages of AI and IoT solutions is that they improve the overall performance of an organisation and allow a better service. You can rely on our solutions to improve your organisational performance.",
+      },
+    ],
+  },
+
+  "maintenance-and-support": {
+    metaTitle:
+      "Maintenance and Support- Online IT Services for Business – Quadque Tech",
+
+    metaDescription:
+      "Ensuring feasibility of your software using the latest tools & concrete methodologies.",
+    metaKeywords:
       "AI technologies artificial intelligence AI and IoT Solutions",
 
     helpContent: [
