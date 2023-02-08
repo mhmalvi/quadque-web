@@ -69,6 +69,7 @@ export const handleFetchClientSpeaks = async () => {
     const result = await axios.get(
       `${process.env?.REACT_APP_SERVICE_URL}/api/client-speaks`
     );
+    console.log(result);
     if (result?.status === 200) {
       return result?.data?.data;
     }

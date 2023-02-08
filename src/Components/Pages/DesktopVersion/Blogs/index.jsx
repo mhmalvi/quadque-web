@@ -51,10 +51,11 @@ const Blogs = () => {
           <div className="relative w-[40%] h-[95vh] flex justify-center items-center overflow-hidden">
             {Object?.keys(activeblogDetails).length === 0 ? (
               <Fade left spy={!triggerSlideBlogDetailsAnimation}>
-                <div className="flex flex-col justify-center items-center">
+                <div className="lg:w-8/12 xl:w-10/12 2xl:w-10/12 m-auto flex flex-col justify-center items-center">
                   <img
                     src="https://i.ibb.co/1L3g5pj/HD-wallpaper-dark-blue-wall-plain-color-colors-light-themes-solid-galaxy.jpg"
                     alt=""
+                    className="w-10/12 mx-auto"
                   />
                   <Link to={"/blogs"}>
                     <button
@@ -84,26 +85,26 @@ const Blogs = () => {
                         : blog1
                     }
                     alt=""
-                    className="m-auto w-full 2xl:h-80 rounded-md transition ease-in-out delay-300"
+                    className="m-auto w-full 2xl:h-72 rounded-md transition ease-in-out delay-300"
                   />
-                  <div className="w-full flex items-end px-10 py-10 rounded-md z-10 transition ease-in-out delay-300">
+                  <div className="w-full flex items-end px-2 2xl:px-10 pt-10 pb-6 rounded-md z-10 transition ease-in-out delay-300">
                     <div>
-                      <h1 className="text-2xl font-semibold text-white mb-6">
+                      <h1 className="text-base 2xl:text-2xl font-semibold text-white mb-2 2xl:mb-6">
                         {activeblogDetails.title}
                       </h1>
-                      <div className="text-white text-sm">
+                      <div className="text-white text-xs 2xl:text-sm">
                         By{" "}
                         <span className="font-bold italic mb-1">
                           {activeblogDetails?.author}
                         </span>
                       </div>
-                      <div className="text-white text-sm italic">
+                      <div className="text-white text-xs 2xl:text-sm italic">
                         {new Date(activeblogDetails?.created_at)
                           .toString()
                           .slice(0, 15)}
                       </div>
                       <div
-                        className="text-white text-sm mt-3"
+                        className="text-white text-xs 2xl:text-sm mt-3 h-29 overflow-hidden"
                         dangerouslySetInnerHTML={{
                           __html: activeblogDetails?.short_description,
                         }}
