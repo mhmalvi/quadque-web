@@ -14,7 +14,7 @@ const StartProject = () => {
   const [services] = useServices();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
-  const [activeServices, setActiveServices] = useState("Software Development");
+  const [activeServices, setActiveServices] = useState();
   const [activeSubServices, setActiveSubServices] = useState("");
   const [subServices, setSubServices] = useState([
     "Custom Software Development",
@@ -27,6 +27,7 @@ const StartProject = () => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
+    setActiveServices(services[0]?.service_name);
     if (location.hash === "#start-project") {
       synth.cancel();
 
@@ -37,7 +38,7 @@ const StartProject = () => {
       }, 800);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.hash]);
+  }, [services, location.hash]);
 
   useEffect(() => {
     setActiveSubServices("");
@@ -46,7 +47,7 @@ const StartProject = () => {
   const handleActiveServices = (service_name) => {
     setActiveServices(service_name);
 
-    if (service_name === "UI/UX") {
+    if (service_name.includes("UI")) {
       setSubServices([
         "UX Design",
         "User Research & Analysis",
@@ -54,32 +55,59 @@ const StartProject = () => {
         "User Experience Consulting",
         "Design Thinking",
       ]);
-    } else if (service_name === "Web Development") {
+    } else if (service_name.includes("Web")) {
       setSubServices([
         "E-Commerce Web Development",
         "Java Web Development",
         "Magento Web Development",
         "Drupal Web Development",
       ]);
-    } else if (service_name === "Mobile App Development") {
+    } else if (service_name.includes("Mobile")) {
       setSubServices([
         "Native Mobile App Development",
         "Hybrid Mobile App Development",
         "Progressive Web App Development",
       ]);
-    } else if (service_name === "Software Development") {
+    } else if (service_name.includes("Software")) {
       setSubServices([
         "Custom Software Development",
         "CRM Software Development",
         "Marketplace Software Development",
       ]);
-    } else if (service_name === "AI & IoT Solutions") {
+    } else if (service_name.includes("IoT")) {
       setSubServices([
         "Smart Voice Assistant",
         "AI Chatbot",
         "IoT Based Alarm System",
         "Smart Home Controlling System",
         "AI Office Assistant",
+      ]);
+    } else if (service_name.includes("Cyber")) {
+      setSubServices([
+        "Critical infrastructure security",
+        "Application security",
+        "Network security",
+        "Cloud security",
+        "Internet of Things (IoT) security",
+      ]);
+    } else if (service_name.includes("Maintenance")) {
+      setSubServices([
+        "Corrective Software Maintenance",
+        "Adaptive Software Maintenance",
+        "Perfective Software Maintenance",
+        "Preventive Software Maintenance",
+      ]);
+    } else if (service_name.includes("Cloud")) {
+      setSubServices([
+        "Infrastructure-as-a-Service (IaaS)",
+        "Platforms-as-a-Service (PaaS)",
+        "Software-as-a-Service (SaaS)",
+      ]);
+    } else if (service_name.includes("commerce")) {
+      setSubServices([
+        "Software-as-a-Service (SaaS)",
+        "Platform-as-a-Service (PaaS)",
+        "On-Premise platforms",
       ]);
     }
 
@@ -218,9 +246,10 @@ const StartProject = () => {
 
           {services.length ? (
             <div className="mx-6">
-              {subServices?.map((subService) => (
+              {subServices?.map((subService, i) => (
                 <div
-                  className={`mb-5 font-medium leading-6 capitalize cursor-pointer 2xl:py-1.5
+                  key={i}
+                  className={`mb-5 font-medium leading-6 uppercase cursor-pointer 2xl:py-1.5
                 ${
                   activeSubServices.includes(subService)
                     ? "text-brand-color"
@@ -247,7 +276,7 @@ const StartProject = () => {
                         &nbsp;
                       </span>
                     </span>
-                    <span className="text-sm 2xl:text-base font-normal leading-5 capitalize">
+                    <span className="text-sm 2xl:text-base font-normal leading-5 uppercase">
                       {subService}
                     </span>
                   </Fade>

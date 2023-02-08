@@ -8,14 +8,12 @@ import "../../MobileVersion/MobileView.css";
 
 const StartProject = () => {
   const [Services] = useServices();
-  const [activeServices, setActiveServices] = useState("UI/UX");
+  const [activeServices, setActiveServices] = useState();
   const [activeSubServices, setActiveSubServices] = useState("");
   const [toogleSubService, setToogleSubService] = useState([
-    "UX Design",
-    "User Research & Analysis",
-    "Customer Journey Mapping",
-    "User Experience Consulting",
-    "Design Thinking",
+    "Custom Software Development",
+    "CRM Software Development",
+    "Marketplace Software Development",
   ]);
   const [msgBox, setMsgBox] = useState(false);
   const [open, setOpen] = useState(false);
@@ -23,8 +21,8 @@ const StartProject = () => {
   /* console.log(Services); */
 
    useEffect(() => {
-    setActiveSubServices("");
-  }, [activeServices]);
+    setActiveServices(Services[0]?.service_name);
+  }, [Services]);
 
   const handleLoginReq = async (e) => {
     e.preventDefault();
@@ -36,7 +34,7 @@ const StartProject = () => {
   const handleActiveServices = (service_name) => {
     setActiveServices(service_name);
 
-    if (service_name === "UI/UX") {
+    if (service_name.includes("UI")) {
       setToogleSubService([
         "UX Design",
         "User Research & Analysis",
@@ -44,26 +42,26 @@ const StartProject = () => {
         "User Experience Consulting",
         "Design Thinking",
       ]);
-    } else if (service_name === "Web Development") {
+    } else if (service_name.includes("Web")) {
       setToogleSubService([
         "E-Commerce Web Development",
         "Java Web Development",
         "Magento Web Development",
         "Drupal Web Development",
       ]);
-    } else if (service_name === "Mobile App Development") {
+    } else if (service_name.includes("Mobile")) {
       setToogleSubService([
         "Native Mobile App Development",
         "Hybrid Mobile App Development",
         "Progressive Web App Development",
       ]);
-    } else if (service_name === "Software Development") {
+    } else if (service_name.includes("Software")) {
       setToogleSubService([
         "Custom Software Development",
         "CRM Software Development",
         "Marketplace Software Development",
       ]);
-    } else if (service_name === "AI & IoT Solutions") {
+    } else if (service_name.includes("IoT")) {
       setToogleSubService([
         "Smart Voice Assistant",
         "AI Chatbot",
@@ -71,16 +69,35 @@ const StartProject = () => {
         "Smart Home Controlling System",
         "AI Office Assistant",
       ]);
-    } 
-    /* else if (service_name === "App Development") {
+    } else if (service_name.includes("Cyber")) {
       setToogleSubService([
-        "AI Chatbot",
-        "Smart Voice Assistant",
-        "Smart Home Controlling System",
-        "IoT Based Alarm System",
-        "AI Office Assistant",
+        "Critical infrastructure security",
+        "Application security",
+        "Network security",
+        "Cloud security",
+        "Internet of Things (IoT) security",
       ]);
-    } */
+    } else if (service_name.includes("Maintenance")) {
+      setToogleSubService([
+        "Corrective Software Maintenance",
+        "Adaptive Software Maintenance",
+        "Perfective Software Maintenance",
+        "Preventive Software Maintenance",
+      ]);
+    } else if (service_name.includes("Cloud")) {
+      setToogleSubService([
+        "Infrastructure-as-a-Service (IaaS)",
+        "Platforms-as-a-Service (PaaS)",
+        "Software-as-a-Service (SaaS)",
+      ]);
+    } else if (service_name.includes("commerce")) {
+      setToogleSubService([
+        "Software-as-a-Service (SaaS)",
+        "Platform-as-a-Service (PaaS)",
+        "On-Premise platforms",
+      ]);
+    }
+
   };
 
     const handleActiveSubServices = (sub_service_name) => {
@@ -93,7 +110,7 @@ const StartProject = () => {
     }
   };
 
-  console.log("selected sub", activeSubServices);
+  //console.log("selected sub", activeSubServices);
   
   const handleSendMailReq = async () => {
     const data = {
@@ -200,8 +217,8 @@ const StartProject = () => {
       </div>
       {Services.length ? (
         <div className="flex flex-wrap justify-between capitalize pb-6 px-10 gap-3">
-          {toogleSubService?.map((subService) => (
-            <div
+          {toogleSubService?.map((subService, i) => (
+            <div key={i}
               onClick={() => {
                 handleActiveSubServices(subService);
               }}
