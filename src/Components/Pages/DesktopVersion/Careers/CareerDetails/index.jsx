@@ -34,9 +34,7 @@ const CareerDetails = ({ setLoader }) => {
 
       <div className="w-full text-white font_primary mb-16">
         <img
-          src={
-            "https://quadque.tech/wp-content/uploads/2022/08/WhatsApp-Image-2022-08-03-at-10.16.05-AM-1024x1024.jpeg"
-          }
+          src={"https://i.ibb.co/1GxDBSp/jobpost.png"}
           alt=""
           className="w-8/12 mx-auto relative"
         />

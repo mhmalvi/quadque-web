@@ -106,7 +106,7 @@ const NavigationBar = () => {
           </div>
 
           <div onClick={() => setOpen(false)} className="font_primary">
-            <Link to="career">Career</Link>
+            <Link to="career">Careers</Link>
           </div>
 
           <div onClick={() => setOpen(false)} className="font_primary">

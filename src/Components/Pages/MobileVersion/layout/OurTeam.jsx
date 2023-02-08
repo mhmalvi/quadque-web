@@ -1,13 +1,6 @@
 import React, { useRef } from "react";
 import Team from "../../../../asstes/Images/team.png";
-import Chairman from "../../../../asstes/Images/chairman.png";
-import Ceo from "../../../../asstes/Images/ceo.png";
-import Director from "../../../../asstes/Images/director.png";
-import OM from "../../../../asstes/Images/om.png";
-import Shourav from "../../../../asstes/Images/shourav.png";
-import Atika from "../../../../asstes/Images/atika.jpeg";
-import Shova from "../../../../asstes/Images/Shova.jpeg";
-import Imtiaz from "../../../../asstes/Images/imtiaz.jpeg";
+import QuadqueTeam from "../../../../asstes/Images/qqteam.jpg";
 import "../../MobileVersion/MobileView.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -42,8 +35,9 @@ const OurTeam = () => {
         achieve the business goals. We love to solve complex problems and always
         excited to turn ideas from whiteboard to reality.
       </div>
+      <img src={QuadqueTeam} alt="Quadque-Team" className="m-auto w-full" />
       {/* <div className="flex flex-wrap justify-center text-xs text-center px-6"> */}
-      <Slider ref={TeamSlider} arrows={false} {...settings} className="">
+      {/* <Slider ref={TeamSlider} arrows={false} {...settings} className="">
         <div className="w-36 pb-4 text-center">
           <img src={Chairman} alt="" className="w-28 h-32 mx-auto rounded-xl" />
           <div className="text-sm font-semibold leading-7">
@@ -100,7 +94,7 @@ const OurTeam = () => {
           </div>
           <div className="h-14 text-xs uppercase font-thin">CONTENT WRITER</div>
         </div>
-      </Slider>
+      </Slider> */}
       {/* </div> */}
     </div>
   );

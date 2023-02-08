@@ -8,10 +8,10 @@ const Footer = () => {
   return (
     <div id="Footer" className="w-full text-white relative mt-20 font_primary">
       <img src={Logo} alt="" className="absolute -top-12 right-2" />
-      <div className="font_title text-3xl text-center font-thin mx-6 mb-4">
+      <div className="font_title text-3xl text-center mx-6 mb-4">
         Have a Good Web Design Today
       </div>
-      <div className="text-sm text-center font-thin px-6 pb-4">
+      <div className="text-sm text-center px-6 pb-4">
         Our philosophy is to ensure the highest product quality and satisfaction
         for every client. We offer the best quality/price ratio in the industry
         along with timely delivery of solutions.{" "}
@@ -20,35 +20,43 @@ const Footer = () => {
         <a href="tel:+8801765-276560">Let's Talk</a>
       </div>
       <div className="flex mt-10 px-6 gap-2">
-        <div className="w-1/2 flex-col font-thin leading-10">
-          <a href="/career">Career</a>
+        <div className="w-1/2 flex-col leading-10">
+          <a href="/career" className="my-2">
+            Careers
+          </a>
           <Link to={`/faq`}>
-            <p>FAQ's</p>
+            <p className="my-2">FAQ's</p>
           </Link>
-          <a href="/#Service">Services</a>
+          <a href="/#Service" className="my-2">
+            Services
+          </a>
         </div>
-        <div className="w-1/2 flex-col font-thin leading-10">
-          <a href="/#Case_Study">Case Studies</a>
+        <div className="w-1/2 flex-col leading-10">
+          <a href="/#Case_Study" className="my-2">
+            Case Studies
+          </a>
           <Link to={`/blogs`}>
-            <p>Blogs</p>
+            <p className="my-2">Blogs</p>
           </Link>
-          <a href="/#About">About Us</a>
+          <a href="/#About" className="my-2">
+            About Us
+          </a>
         </div>
       </div>
 
-      <div className="flex text-sm mt-3 px-6 gap-2">
-        <div className="w-1/2 flex-col font-thin">
-          <p className="font-bold">Quadque Technologies Pty Ltd</p>
+      <div className="flex text-xs mt-6 px-6 gap-2">
+        <div className="w-1/2 flex-col">
+          <p className="text-sm font-bold">Quadque Technologies Pty Ltd</p>
           <p className="pt-2">
-            LEVEL 1/7 Greenfield Parade, Bankstown NSW 2200
+            LEVEL 1/7 Greenfield Parade, Bankstown NSW 2200, Australia
           </p>
           <p className="pt-1">+61 405 899 496</p>
           <p className="pt-1">info@quadque.tech</p>
         </div>
-        <div className="w-1/2 flex-col font-thin">
-          <p className="font-bold">Quadque Technologies Pvt Ltd</p>
+        <div className="w-1/2 flex-col">
+          <p className="text-sm font-bold">Quadque Technologies Pvt Ltd</p>
           <p className="pt-2">
-            Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207
+            Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207, Bangladesh
           </p>
           <p className="pt-1">+01765-276560</p>
           <p className="pt-1">info@quadque.tech</p>
