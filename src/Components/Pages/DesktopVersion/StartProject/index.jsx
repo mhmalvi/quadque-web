@@ -201,7 +201,7 @@ const StartProject = () => {
       <div className="ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8">
         <div className="flex items-center justify-between">
           <div
-            className="text-5xl font-bold leading-10 capitalize font_title"
+            className="text-4xl 2xl:text-5xl font-bold leading-10 capitalize font_title"
             style={{
               letterSpacing: "0.06em",
             }}
@@ -223,9 +223,9 @@ const StartProject = () => {
             {services?.map((service, i) => (
               <div
                 key={i}
-                className={`mb-5 text-sm 2xl:text-base font-medium leading-6 capitalize cursor-pointer transition-colors delay-200 ${
+                className={`mb-2 2xl:mb-5 text-sm 2xl:text-base font-medium leading-6 capitalize cursor-pointer transition-colors delay-200 ${
                   activeServices === service?.service_name
-                    ? "text-brand-color border-b-2 border-brand-color pb-2"
+                    ? "text-brand-color border-b-2 border-brand-color pb-1 2xl:pb-2"
                     : "text-white"
                 }`}
                 onClick={() => handleActiveServices(service?.service_name)}
@@ -276,7 +276,7 @@ const StartProject = () => {
                         &nbsp;
                       </span>
                     </span>
-                    <span className="text-sm 2xl:text-base font-normal leading-5 uppercase">
+                    <span className="text-xs 2xl:text-base font-normal leading-5 uppercase">
                       {subService}
                     </span>
                   </Fade>
@@ -326,7 +326,7 @@ const StartProject = () => {
 
               <div className="flex justify-center items-center">
                 <button
-                  className="spirit-bomb px-16 py-4 bg-transparent rounded-full border border-white mt-12 xl:mt-16 text-base font-semibold leading-4"
+                  className="spirit-bomb whitespace-nowrap px-16 py-4 bg-transparent rounded-full border border-white mt-12 xl:mt-16 text-xs 2xl:text-base font-semibold leading-4"
                   style={{
                     letterSpacing: "0.04em",
                     border: "2px solid rgb(255, 255, 255)",
