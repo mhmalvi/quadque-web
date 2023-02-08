@@ -719,3 +719,37 @@ body::-webkit-scrollbar {
   color: #8f00ff;
   transition-duration: 0.5s;
 }
+
+.footer_bd_bg {
+  background-image: url(./asstes/Images/background_bd.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 2s ease-in-out;
+}
+/* 
+.footer_bd_bg::before {
+  background-image: url(./asstes/Images/background_bd.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.footer_bd_bg::after {
+  background-image: url(./asstes/Images/background_bd.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+} */
+
+.footer_aus_bg {
+  background-image: url(./asstes/Images/background_aus.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 2s ease-in-out;
+}
