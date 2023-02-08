@@ -6,9 +6,9 @@ import { Link, useLocation } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
-import softDev from "../../../../asstes/Lotties/softwware_development.json";
+// import softDev from "../../../../asstes/Lotties/softwware_development.json";
 import softDevs from "../../../../asstes/Lotties/software developtment.json";
-import UI_UX from "../../../../asstes/Lotties/ux.json";
+// import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
 import eCom from "../../../../asstes/Lotties/ecommerce.json";
 import CyberSecurity from "../../../../asstes/Lotties/cyber-security.json";
@@ -53,7 +53,7 @@ const Services = () => {
     setInterval(() => {
       // setActiveDetails(services[i]);
       i++;
-      if (i > 4) {
+      if (i > services?.length - 1) {
         i = 0;
       }
       setActiveService(services[i]?.service_name);
@@ -130,7 +130,9 @@ const Services = () => {
           {/* "UI/UX": UI_UX, "AI & IoT Solutions": aIIot, "Application
           Development": AppDev, "Software Development": softDev, "Web
           Development": webDev, */}
-          {activeService === "AI & IoT Solutions" ? (
+
+          {/* {activeService === "AI & IoT Solutions" ? ( */}
+          {activeService?.includes("IoT") ? (
             <Lottie
               animationData={aIIot}
               loop={true}
@@ -141,49 +143,57 @@ const Services = () => {
           {/* {activeService === "UI/UX" ? (
             <Lottie animationData={UI_UX} loop={true} alt="Ui & Ux Layout" />
           ) : null} */}
-          {activeService === "Mobile App Development" ? (
+
+          {/* {activeService?.includes("Software") ? ( */}
+          {activeService?.includes("Mobile") ? (
             <Lottie
               animationData={AppDev}
               loop={true}
               alt="Application Development Layout"
             />
           ) : null}
-          {activeService === "Software Development" ? (
+          {/* {activeService === "Software Development" ? ( */}
+          {activeService?.includes("Software") ? (
             <Lottie
               animationData={softDevs}
               loop={true}
               alt="Software Development Layout"
             />
           ) : null}
-          {activeService === "Web Development" ? (
+          {/* {activeService === "Web Development" ? ( */}
+          {activeService?.includes("Web") ? (
             <Lottie
               animationData={webDev}
               loop={true}
               alt="Web Development Layout"
             />
           ) : null}
-          {activeService === "Cyber Security & Data Protection" ? (
+          {/* {activeService === "Cyber Security & Data Protection" ? ( */}
+          {activeService?.includes("Cyber") ? (
             <Lottie
               animationData={CyberSecurity}
               loop={true}
               alt="Cyber Security & Data Protection Layout"
             />
           ) : null}
-          {activeService === "E-commerce development" ? (
+          {/* {activeService === "E-commerce development" ? ( */}
+          {activeService?.includes("E-commerce") ? (
             <Lottie
               animationData={eCom}
               loop={true}
               alt="E-commerce development Layout"
             />
           ) : null}
-          {activeService === "Cloud Computing Solutions" ? (
+          {/* {activeService === "Cloud Computing Solutions" ? ( */}
+          {activeService?.includes("Cloud") ? (
             <Lottie
               animationData={Cloud}
               loop={true}
               alt="Cloud Computing Solutions Layout"
             />
           ) : null}
-          {activeService === "Maintenance and Support" ? (
+          {/* {activeService === "Maintenance and Support" ? ( */}
+          {activeService?.includes("Maintenance") ? (
             <Lottie
               animationData={Maintenance}
               loop={true}
