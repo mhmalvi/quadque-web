@@ -73,7 +73,7 @@ const Career = ({ setLoader }) => {
                     // src={
                     //   process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail
                     // }
-                    src="https://quadque.tech/wp-content/uploads/2022/08/WhatsApp-Image-2022-08-03-at-10.16.05-AM-1024x1024.jpeg"
+                    src="https://i.ibb.co/1GxDBSp/jobpost.png"
                     alt=""
                     className="w-[100%] h-56 m-auto rounded-lg"
                   />

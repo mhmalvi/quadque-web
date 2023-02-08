@@ -40,12 +40,12 @@ const Aboutus = () => {
 
   return (
     <div id="About" className="w-full text-white pt-20 font_primary">
-      <h1 className="font_title text-3xl font-thin px-6 pb-4">ABOUT US</h1>
-      <div className="text-lg font-semibold text-justify px-6">
+      <h1 className="font_title text-3xl px-6 pb-4">ABOUT US</h1>
+      <div className="text-lg font-semibold px-6">
         We work with the technological challenges of the world's leading
         enterprises and SMEs.
       </div>
-      <div className="px-6 py-3 text-justify font-thin">
+      <div className="px-6 py-3">
         Quadque Technology Pty. Limited is a leading IT solution provider
         company in Australia. Established in 2020, the Quadque team has built a
         longstanding reputation as being a highly rated Australian IT services
@@ -54,18 +54,24 @@ const Aboutus = () => {
         domestic and overseas areas. Over time, Quadque has also moved into more
         advanced technologies.{" "}
       </div>
-      <div className="flex flex-wrap justify-between p-6">
-        <div className="text-3xl pb-3">
-          23+
-          <p className="text-lg font-thin">Active Clients</p>
+      <div className="flex flex-wrap justify-evenly p-6">
+        <div className="text-3xl pb-3 px-2">
+          <span className="font-semibold">23+</span>
+          <p className="text-lg">
+            Active <br /> Clients
+          </p>
         </div>
-        <div className="text-3xl pb-3">
-          150+
-          <p className="text-lg font-thin">Projects Done</p>
+        <div className="text-3xl pb-3 px-2">
+          <span className="font-semibold">150+</span>
+          <p className="text-lg">
+            Projects <br /> Done
+          </p>
         </div>
-        <div className="text-3xl pb-3">
-          10+
-          <p className="text-lg font-thin">Team Advisors</p>
+        <div className="text-3xl pb-3 px-2">
+          <span className="font-semibold">10+</span>
+          <p className="text-lg">
+            Team <br /> Advisors
+          </p>
         </div>
       </div>
       <div className="group pb-3">
@@ -103,29 +109,29 @@ const Aboutus = () => {
           ) : null}
           <div className="py-5">
             <div className="text-2xl text-brand-color">Our Vision</div>
-            <div className="font-thin">{goals?.our_goal}</div>
+            <div>{goals?.our_goal}</div>
           </div>
           <div className="py-5">
             <div className="text-2xl text-brand-color">Our Mission</div>
-            <div className="font-thin">{goals?.our_mission}</div>
+            <div>{goals?.our_mission}</div>
           </div>
           <div className="py-5">
             <div className="text-2xl text-brand-color">Our Objective</div>
-            <div className="font-thin">{goals?.our_objective}</div>
+            <div>{goals?.our_objective}</div>
           </div>
           <div className="py-5">
             <div className="text-2xl text-brand-color">Our Vision</div>
-            <div className="font-thin">{goals?.our_vision}</div>
+            <div>{goals?.our_vision}</div>
           </div>
           <div className="py-5">
             <div className="text-2xl text-brand-color">Who We Are</div>
-            <div className="font-thin">{goals?.who_we_are}</div>
+            <div>{goals?.who_we_are}</div>
           </div>
           <div className="py-5">
             <div className="text-2xl text-brand-color">Why Choose Us</div>
             {/* <div>{goals?.why_choose_us}</div> */}
             <div
-              className="case_editor font-thin"
+              className="case_editor"
               dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}
             ></div>
           </div>

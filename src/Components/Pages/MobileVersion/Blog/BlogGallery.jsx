@@ -51,8 +51,9 @@ const BlogGallery = () => {
         />
       </Helmet>
 
+      <div className="Blog w-full min-h-[900px] mt-30 font_primary">
       {loader ? (
-        <div className="w-full h-[100vh] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+        <div className="w-full h-[900px] z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
           <Lottie
             className="w-1/2 mx-auto"
             animationData={loaderFile}
@@ -62,18 +63,17 @@ const BlogGallery = () => {
           <div className="font_title text-white animate-pulse">Loading...</div>
         </div>
       ) : null}
-      <div className="Blog w-full min-h-[900px] mt-30 px-6 font_primary">
         {currentPosts?.map((details) => (
           <Link to={`blog-detail/${details.slug}`}>
-            <div key={details.id} className="rounded-xl mx-auto relative mb-8">
+            <div key={details.id} className="rounded-xl mx-auto relative mb-8 mx-6">
               <img
                 src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
                 alt=""
                 className="w-[100%] h-[185px] m-auto rounded-lg"
               />
-              <div className="w-full flex items-end h-22 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2">
+              <div className="w-full flex items-end h-32 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2">
                 <div>
-                  <div className="text-lg text-white">{details.title}</div>
+                  <div className="text-lg text-white text-shadow">{details.title}</div>
                   <div className="text-white text-sm"> {details.author}</div>
                   <div className="text-white text-sm">
                     {details.created_at.split("T", 1)}

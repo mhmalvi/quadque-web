@@ -87,7 +87,7 @@ const Services = () => {
             {Services?.map((details, index) => (
               <Link to={`services/${details.slug}`}>
                 <div key={index}>
-                  <div className="w-10/12 h-81 m-auto py-5">
+                  <div className="w-10/12 h-81 m-auto my-10">
                     {/* <lottie-player
                       
                       src={

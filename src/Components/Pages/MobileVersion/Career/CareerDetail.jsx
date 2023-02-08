@@ -20,7 +20,11 @@ const CareerDetail = () => {
 
   return (
     <div className="w-full text-white font_primary">
-      <img src={Interface} alt="" className="w-full relative z-50" />
+      <img
+        src="https://i.ibb.co/1GxDBSp/jobpost.png"
+        alt=""
+        className="w-full relative z-50"
+      />
       <div className="px-6">
         <div className="text-xl text-center py-6">
           {/* Backend Software Developer */}
