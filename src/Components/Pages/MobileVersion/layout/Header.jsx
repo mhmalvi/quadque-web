@@ -39,7 +39,6 @@ const Header = () => {
           autoPlay
           loop
           muted
-          controls={false}
           style={{ position: "relative", zIndex: "100" }}
         >
           <source src={Astro} type="video/mp4" />
