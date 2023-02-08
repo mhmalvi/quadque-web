@@ -52,32 +52,35 @@ const CareerGallery = () => {
         />
       </Helmet>
 
-      {loader ? (
-        <div className="w-full h-full z-50 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
-          <Lottie
-            className="w-1/2 mx-auto"
-            animationData={loaderFile}
-            loop={true}
-          />
-
-          <div className="font_title text-white animate-pulse">Loading...</div>
-        </div>
-      ) : null}
       <div className="text-3xl text-white mt-30 px-6 pb-4 font_primary">
         Current Job Openings
       </div>
-      <div className="Career w-full min-h-[900px] px-6 font_primary">
+      <div className="Career w-full min-h-[900px] font_primary">
+        {loader ? (
+          <div className="w-full h-[900px] z-50 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+            <Lottie
+              className="w-1/2 mx-auto"
+              animationData={loaderFile}
+              loop={true}
+            />
+
+            <div className="font_title text-white animate-pulse">
+              Loading...
+            </div>
+          </div>
+        ) : null}
         {currentPosts?.map((details) => (
-          <div
-            key={details.id}
-            className="rounded-xl mx-auto pb-6 relative"
-          >
+          <div key={details.id} className="rounded-xl pb-6 relative mx-6">
             {/* <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
               alt=""
               className="w-[100%] h-[185px] m-auto rounded-lg"
             /> */}
-            <img src={Interface} alt="" className="rounded-lg"/>
+            <img
+              src="https://i.ibb.co/1GxDBSp/jobpost.png"
+              alt=""
+              className="rounded-lg"
+            />
             <div className="flex items-center justify-between pb-2 px-2 gap-4">
               <div>
                 <h1 className="text-lg text-white pt-4">{details.position}</h1>
