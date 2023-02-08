@@ -71,19 +71,23 @@ const Cleints = () => {
                   wordBreak: "keep-all",
                 }}
               >
-                <ul className="list-inside font_primary text-base">
-                  <li className="list-disc py-0.5">Leading businesses</li>
-                  <li className="list-disc py-0.5">From all over the world</li>
-                  <li className="list-disc py-0.5">
+                <ul className="list-inside font_primary text-basetext-left">
+                  <li className="list-disc py-0.5 text-left">
+                    Leading businesses
+                  </li>
+                  <li className="list-disc py-0.5 text-left">
+                    From all over the world
+                  </li>
+                  <li className="list-disc py-0.5 text-left">
                     A diverse range of industries
                   </li>
-                  <li className="list-disc py-0.5">
+                  <li className="list-disc py-0.5 text-left">
                     High standards of performance{" "}
                   </li>
-                  <li className="list-disc py-0.5">
+                  <li className="list-disc py-0.5 text-left">
                     Excellent service quality{" "}
                   </li>
-                  <li className="list-disc py-0.5">
+                  <li className="list-disc py-0.5 text-left">
                     Practical implementable solutions
                   </li>
                 </ul>

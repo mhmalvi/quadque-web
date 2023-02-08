@@ -267,9 +267,9 @@ const DesktopLayout = () => {
       <div
         className={`${
           showWelcome
-            ? "w-86 transition-all delay-700 ease-in-out"
-            : "hidden w-0 transition-all delay-700 ease-in-out"
-        } transition-all delay-700 ease-in-out absolute top-0 left-0 z-50 flex items-center`}
+            ? "left-0 transition-all delay-700 duration-1000 ease-in-out"
+            : "-left-96 transition-all delay-700 duration-1000 ease-in-out"
+        } transition-all delay-700 ease-in-out absolute top-0 z-50 flex items-center`}
       >
         <div className="flex items-center relative">
           <Lottie
@@ -291,12 +291,12 @@ const DesktopLayout = () => {
             <div
               className={`${
                 showWelcome
-                  ? "w-6 h-6 transition-all delay-700 ease-in-out"
+                  ? " w-6 h-6 transition-all delay-700 ease-in-out"
                   : "w-0 h-0 transition-all delay-700 ease-in-out"
               } absolute -top-3.5 -right-4 rounded-full flex justify-center items-center bg-gray-700 text-white cursor-pointer`}
               onClick={() => {
                 setShowWelcome(false);
-                localStorage.setItem("welcome", false);
+                  localStorage.setItem("welcome", false);
               }}
             >
               <span className="-mt-1">x</span>
@@ -311,8 +311,8 @@ const DesktopLayout = () => {
           <Alert
             className={`${
               showSoundAlert
-                ? "w-86 transition-all delay-700 ease-in-out"
-                : "w-0 transition-all delay-700 ease-in-out"
+                ? "w-86 transition-all delay-700 duration-700 ease-in-out"
+                : "w-0 transition-all delay-700 duration-700 ease-in-out"
             } transition-all delay-700 ease-in-out absolute top-0 right-0 z-50 flex items-center font_title`}
             // message="Alert"
             description="Enable Sound and Experience Beyond?"
