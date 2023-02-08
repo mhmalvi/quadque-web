@@ -216,13 +216,13 @@ const StartProject = () => {
         ))}
       </div>
       {Services.length ? (
-        <div className="flex flex-wrap justify-between capitalize pb-6 px-10 gap-3">
+        <div className="flex flex-wrap justify-between capitalize pb-6 px-6 gap-3">
           {toogleSubService?.map((subService, i) => (
             <div key={i}
               onClick={() => {
                 handleActiveSubServices(subService);
               }}
-              className={`border rounded-full px-5 py-1 my-1 text-semibold duration-300 ${
+              className={`text-sm border rounded-full px-5 py-2 my-1 duration-300 whitespace-nowrap ${
                 activeSubServices.includes(subService)
                   ? "bg-white text-black shadow scale-105"
                   : ""

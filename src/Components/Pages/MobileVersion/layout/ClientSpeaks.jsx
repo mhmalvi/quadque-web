@@ -17,7 +17,7 @@ const ClientSpeaks = () => {
 
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -56,37 +56,43 @@ const ClientSpeaks = () => {
             </div>
           </div>
         ) : null}
-        <Slider ref={ClientSpeakSlider} arrows={false} {...settings}>
-          {ClientSpeak?.map((details) => (
-            <div key={details?.id}>
-              <div className="px-3 pb-6">
-                <div className="flex justify-between">
-                  <div className="font-semibold">{details?.name}</div>
-                  <div className="text-slate-400">{details?.designation}</div>
+        <div className="">
+          <Slider ref={ClientSpeakSlider} arrows={false} {...settings}>
+            {ClientSpeak?.map((details) => (
+              <div key={details?.id}>
+                <div className="px-3 pb-6">
+                  <div className="flex justify-between">
+                    <div className="font-semibold">{details?.name}</div>
+                    <div className="text-slate-400">{details?.designation}</div>
+                  </div>
+                  <img
+                    src={
+                      process.env.REACT_APP_ASSETS_URL + "/" + details?.image
+                    }
+                    alt=""
+                    className="w-10/12 m-auto py-6"
+                  />
+                  <div className="text-justify pb-10">
+                    {details?.description}
+                  </div>
                 </div>
-                <img
-                  src={process.env.REACT_APP_ASSETS_URL + "/" + details?.image}
-                  alt=""
-                  className="w-full py-6"
-                />
-                <div className="text-justify pb-10">{details?.description}</div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </Slider>
+        </div>
         <div className="relative w-9/12 mx-auto">
-          {!loader && (
+          {ClientSpeak && (
             <>
               {/* <div className="m-auto flex justify-between pb-5"> */}
               <div
                 onClick={() => ClientSpeakSlider.current.slickPrev()}
-                className="arrowLeft font-semibold"
+                className="arrowLeft font-semibold absolute bottom-4"
               >
                 {/* <Icons.RightArrow className="w-12 scale-x-[-1]" /> */}
               </div>
               <div
                 onClick={() => ClientSpeakSlider.current.slickNext()}
-                className="arrowRight font-semibold"
+                className="arrowRight font-semibold absolute bottom-4"
               >
                 {/* <Icons.RightArrow className="w-12" /> */}
               </div>

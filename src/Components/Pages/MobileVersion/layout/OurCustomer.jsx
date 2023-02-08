@@ -65,7 +65,7 @@ const OurCustomer = () => {
         <Slider ref={slider} {...settings} arrows={false}>
           {clientsImg?.map((client) => (
             <div className="px-1">
-              <div className="flex justify-center items-center bg-white bg-opacity-10 border border-zinc-700 backdrop-filter backdrop-blur-sm rounded-md">
+              <div className="flex justify-center items-center bg-white bg-opacity-10 border border-zinc-700 backdrop-filter backdrop-blur-[1px] rounded-md">
                 <img
                   src={
                     process.env.REACT_APP_ASSETS_URL +
