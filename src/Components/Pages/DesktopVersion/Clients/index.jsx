@@ -62,7 +62,7 @@ const Cleints = () => {
                 </div>
               </Fade>
             </div>
-            <div className="w-68 text-justify">
+            <div className="w-68">
               <Fade
                 left
                 cascade
