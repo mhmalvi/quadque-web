@@ -4,11 +4,12 @@ import { Link, useLocation } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
 import bgBD from "../../../../asstes/Images/background_bd.jpg";
 import bgAus from "../../../../asstes/Images/background_aus.jpg";
+import { Zoom } from "react-reveal";
 
 const Footer = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
-  // const [triggerAnimation, setTriggerAnimation] = useState(false);
+  const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [backgroundImage, setBackgroundImage] = useState("");
 
   const synth = window.speechSynthesis;
@@ -31,27 +32,20 @@ const Footer = () => {
     <div
       id="contacts"
       className={`section w-full min-h-full lg:py-6 2xl:py-8 font_primary text-white`}
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`,
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundSize: "cover",
+      // }}
     >
       {/* {backgroundImage === "bd" && ( */}
-      {/* <img
-        src={bgBD}
-        className="min-w-full min-h-full absolute top-0  transition-all delay-500 duration-200"
-        alt=""
-      /> */}
-      {/* )} */}
-
-      {/* {backgroundImage === "aus" && ( */}
-      {/* <img
-        src={bgAus}
-        className="min-w-full min-h-full absolute top-0  transition delay-300 duration-200"
-        alt=""
-      /> */}
-      {/* )} */}
+      <Zoom spy={triggerAnimation}>
+        <img
+          src={backgroundImage}
+          className="min-w-full min-h-full absolute top-0  transition-all delay-500 duration-200"
+          alt=""
+        />
+      </Zoom>
 
       {/* <div
         className={`${backgroundImage} min-w-full min-h-full absolute top-0 transition-all duration-200 delay-300`}
@@ -221,10 +215,12 @@ const Footer = () => {
                   <div>
                     <div
                       onMouseOver={() => {
-                        setBackgroundImage(bgBD);
+                        setBackgroundImage(bgAus);
+                        setTriggerAnimation(!triggerAnimation);
                       }}
                       onMouseOut={() => {
                         setBackgroundImage("");
+                        // setTriggerAnimation(false);
                       }}
                     >
                       <div className="text-sm font-normal">
@@ -242,10 +238,12 @@ const Footer = () => {
 
                     <div
                       onMouseOver={() => {
-                        setBackgroundImage(bgAus);
+                        setBackgroundImage(bgBD);
+                        setTriggerAnimation(!triggerAnimation);
                       }}
                       onMouseOut={() => {
                         setBackgroundImage("");
+                        // setTriggerAnimation(false);
                       }}
                     >
                       <div className="text-sm font-normal">

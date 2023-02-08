@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Fade, Flip } from "react-reveal";
 import { Link, useLocation } from "react-router-dom";
+import Typical from "react-typical";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import Icons from "../../../Shared/Icons";
@@ -120,9 +121,17 @@ const CaseStudy = () => {
         <div className="w-64 absolute bottom-40 2xl:bottom-80 left-20">
           <Fade left spy={caseStudyName}>
             {caseStudyName !== "" && (
-              <h1 className="text-lg text-center text-white font_title p-3 rounded-md backdrop-filter backdrop-blur-xl bg-gradient-to-tr bg-opacity-20 from-brand-color/20 ...">
-                {caseStudyName}
-              </h1>
+              <Typical
+                className="text-lg text-center text-white font_title p-3 rounded-md backdrop-filter backdrop-blur-xl bg-gradient-to-tr bg-opacity-20 from-brand-color/20 ..."
+                steps={[...caseStudyName?.split(" "), caseStudyName]}
+                // steps={[]}
+                // loop={1}
+                wrapper="h1"
+              />
+
+              // <h1 className="text-lg text-center text-white font_title p-3 rounded-md backdrop-filter backdrop-blur-xl bg-gradient-to-tr bg-opacity-20 from-brand-color/20 ...">
+              //   {caseStudyName}
+              // </h1>
             )}
           </Fade>
         </div>
@@ -133,7 +142,7 @@ const CaseStudy = () => {
               &nbsp;
             </div>
             {currentPosts?.map((post, i) => (
-              <Flip left spy={triggerAnimation}>
+              <Flip spy={triggerAnimation}>
                 {/* <Tooltip
                    key={post?.id}
                    title={`Learn More ${post?.com_name}`}
@@ -152,10 +161,10 @@ const CaseStudy = () => {
                   <div className="w-full h-full absolute top-0 flex justify-center items-center border border-brand-color/30">
                     <img
                       className="w-9/12 m-auto rounded-md "
-                      // src={
-                      //   process.env.REACT_APP_ASSETS_URL + "/" + post?.com_image
-                      // }
-                      src={"https://i.ibb.co/MBM0f55/ibm-1.png"}
+                      src={
+                        process.env.REACT_APP_ASSETS_URL + "/" + post?.com_image
+                      }
+                      // src={"https://i.ibb.co/MBM0f55/ibm-1.png"}
                       alt=""
                     />
                     {/* <p className="absolute h-10 w-full bottom-0 border text-center font-normal rounded-br-[20px] rounded-bl-[20px] lg:text-xs 2xl:text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
