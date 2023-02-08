@@ -7,10 +7,10 @@ import MobileLayout from "./Components/Pages/MobileVersion/layout";
 import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    console.log = () => {};
-    console.warn = () => {};
-  }, []);
+  // useEffect(() => {
+  //   console.log = () => {};
+  //   console.warn = () => {};
+  // }, []);
 
   return (
     <>
