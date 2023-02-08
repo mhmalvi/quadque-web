@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import Team from "../../../../asstes/Images/team.png";
 import Chairman from "../../../../asstes/Images/chairman.png";
 import Ceo from "../../../../asstes/Images/ceo.png";
