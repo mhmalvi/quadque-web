@@ -104,7 +104,7 @@ const Blogs = () => {
                           .slice(0, 15)}
                       </div>
                       <div
-                        className="text-white text-xs 2xl:text-sm mt-3 h-29 overflow-hidden"
+                        className="text-white text-xs 2xl:text-sm mt-3 h-24 overflow-hidden"
                         dangerouslySetInnerHTML={{
                           __html: activeblogDetails?.short_description,
                         }}

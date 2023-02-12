@@ -231,7 +231,7 @@ const Services = () => {
                   borderRadius: "30px",
                 }}
               >
-                LET'S START A PROJECT
+                START A PROJECT
               </button>
             </a>
           </div>

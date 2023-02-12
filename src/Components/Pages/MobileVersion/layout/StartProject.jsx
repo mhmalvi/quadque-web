@@ -17,10 +17,10 @@ const StartProject = () => {
   ]);
   const [msgBox, setMsgBox] = useState(false);
   const [open, setOpen] = useState(false);
-  
+
   /* console.log(Services); */
 
-   useEffect(() => {
+  useEffect(() => {
     setActiveServices(Services[0]?.service_name);
   }, [Services]);
 
@@ -29,7 +29,6 @@ const StartProject = () => {
     /* console.log("handle data", data); */
     //alert("Your form is submitted.");
   };
-
 
   const handleActiveServices = (service_name) => {
     setActiveServices(service_name);
@@ -97,10 +96,9 @@ const StartProject = () => {
         "On-Premise platforms",
       ]);
     }
-
   };
 
-    const handleActiveSubServices = (sub_service_name) => {
+  const handleActiveSubServices = (sub_service_name) => {
     if (activeSubServices.includes(sub_service_name)) {
       setActiveSubServices(
         activeSubServices?.filter((sub) => sub !== sub_service_name)
@@ -111,7 +109,7 @@ const StartProject = () => {
   };
 
   //console.log("selected sub", activeSubServices);
-  
+
   const handleSendMailReq = async () => {
     const data = {
       name: document.getElementById("Name").value,
@@ -121,7 +119,7 @@ const StartProject = () => {
       category: activeServices,
       sub_category: activeSubServices.toString(),
     };
-    if( activeSubServices !== "" ){
+    if (activeSubServices !== "") {
       console.log("filled data", data);
       setMsgBox(false);
       const sendMail = await handleSendMail(data);
@@ -136,14 +134,13 @@ const StartProject = () => {
         document.getElementById("E-mail").value = "";
         setActiveSubServices("");
       }
-    }else{
+    } else {
       setMsgBox(true);
       setTimeout(() => {
         setMsgBox(false);
       }, 6000);
-    }  
+    }
   };
-
 
   return (
     <div
@@ -218,7 +215,8 @@ const StartProject = () => {
       {Services.length ? (
         <div className="flex flex-wrap justify-between capitalize pb-6 px-6 gap-3">
           {toogleSubService?.map((subService, i) => (
-            <div key={i}
+            <div
+              key={i}
               onClick={() => {
                 handleActiveSubServices(subService);
               }}
@@ -271,7 +269,7 @@ const StartProject = () => {
           <input
             type="text"
             name="Help"
-            placeholder="How can we help you"
+            placeholder="How can we help you?"
             id="Help"
             className="w-full bg-transparent placeholder-white text-white px-3 py-2 my-2 border-t-0 border-x-0 border-b rounded-none border-gray-300 focus:outline-none focus:border-brand-color"
           />

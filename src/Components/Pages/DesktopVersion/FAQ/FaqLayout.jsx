@@ -232,7 +232,7 @@ const FaqLayout = () => {
 
       {/* Loader */}
       {loader ? (
-        <div className="w-full min-h-screen flex flex-col justify-center items-center absolute top-0 left-20 bg-black backdrop-blur-md bg-opacity-80">
+        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 left-20 bg-black backdrop-blur-md bg-opacity-80">
           <Lottie
             className="w-1/6 mx-auto"
             animationData={loaderFile}

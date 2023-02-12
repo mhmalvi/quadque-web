@@ -150,7 +150,7 @@ const CaseStudy = () => {
                    color={"rgba(90, 90, 90, 0.7)"}
                  > */}
                 <Link
-                  to={`case-studies/${post?.slug}`}
+                  to={`case-study/${post?.slug}`}
                   key={i}
                   onMouseOver={() => setCaseStudyName(post?.com_name)}
                   onMouseOut={() => setCaseStudyName("")}

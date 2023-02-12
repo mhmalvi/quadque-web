@@ -138,7 +138,7 @@ const ServiceDetails = ({ setLoader }) => {
               borderRadius: "30px",
             }}
           >
-            LET'S START A PROJECT
+            START A PROJECT
           </button>
           {/* <button
             className="text-brand-color text-lg font-bold leading-5 capitalize"
@@ -165,7 +165,7 @@ const ServiceDetails = ({ setLoader }) => {
               IDENTITY DESIGN SERVICES
             </h5> */}
             <h3 className="text-2xl leading-6 font-medium text-center mt-8 mb-6">
-              <span>How We Can Help?</span>
+              <span>How we can help</span>
             </h3>
 
             <Tooltip
@@ -453,7 +453,7 @@ const ServiceDetails = ({ setLoader }) => {
                   <div className="p-4">
                     <div
                       onClick={() => {
-                        navigate(`../case-studies/${casestudy?.slug}`, {
+                        navigate(`../case-study/${casestudy?.slug}`, {
                           replace: true,
                         });
                       }}
@@ -481,7 +481,7 @@ const ServiceDetails = ({ setLoader }) => {
 
           <div className="mt-24 mb-10 bg-black">
             <h2 className="text-2xl leading-6 font-medium text-center mb-10 mt-2">
-              People Talk About Us
+              What our clients say about us
             </h2>
 
             <div className="w-full">
@@ -616,32 +616,60 @@ const serviceDetailsContent = {
     metaKeywords:
       "web development, web development company, web development Sydney, web site development, web development agency, web design agency Australia, web design agency Bangladesh, web application development, web development services",
 
+    // helpContent: [
+    //   {
+    //     title: "Usability Analyst",
+    //     icon: usability,
+    //   },
+    //   {
+    //     title: "Services for Enterprise",
+    //     icon: research,
+    //   },
+    //   {
+    //     title: "E-commerce App",
+    //     icon: product,
+    //   },
+    //   {
+    //     title: "Website Development",
+    //     icon: WebApp,
+    //   },
+    //   {
+    //     title: "Web Portals",
+    //     icon: visual,
+    //   },
+    //   {
+    //     title: "App Development",
+    //     icon: Interaction,
+    //   },
+    // ],
+
     helpContent: [
       {
-        title: "Usability Analyst",
+        title: "Pre-support audit",
         icon: usability,
       },
       {
-        title: "Services for Enterprise",
+        title: "Pre-support optimisation",
         icon: research,
       },
       {
-        title: "E-commerce App",
+        title: "System monitoring",
         icon: product,
       },
       {
-        title: "Website Development",
+        title: "QA services",
         icon: WebApp,
       },
       {
-        title: "Web Portals",
+        title: "Adaptive maintenance",
         icon: visual,
       },
       {
-        title: "App Development",
+        title: "Corrective maintenance",
         icon: Interaction,
       },
     ],
+
     bestServiceTitle: [
       {
         title: "USER-FRIENDLY SOLUTIONS TO DEVELOP SUPERB WEBSITES",
@@ -651,23 +679,23 @@ const serviceDetailsContent = {
     bestService: [
       {
         service_image: help1,
-        service_name: "Increase Your Online Exposure",
-        des: "A good website is essential for increasing your online exposure. Whether you are a start-up or a non-profit organisation, having a well-maintained website can have a very positive impact on your identity. We can help you to achieve this goal.",
+        service_name: "Understand the user requirement",
+        des: "The requirement of the users will change over time. We understand this important factor and provide the best maintenance solutions to give the best possible experience to the users.",
       },
       {
         service_image: help2,
-        service_name: "Make Your Brand Discoverable",
-        des: "We will develop a highly navigable and user-friendly website that will make your brand more discoverable to your audience. This is a crucial step in any branding strategy that you should not overlook.",
+        service_name: "Addressing any error or issue",
+        des: "Our team always takes necessary steps to address any performance issue or other errors that may arise. Our skilled experts can troubleshoot even the most problematic issues by using the latest solutions.",
       },
       {
         service_image: help3,
-        service_name: "Increase Your Trustworthiness",
-        des: "A website is a reliable source of information related to your business or organisation. It’s also a representation of your services and activities. So we specialise in developing very professional websites for our clients.",
+        service_name: "Effective and efficient optimisation",
+        des: "Our experts are skilled and experienced in implementing the right strategies and solutions to optimise your existing software and thus make it more efficient. We always focus on adopting the best optimisation strategy for our clients.",
       },
       {
         service_image: help4,
-        service_name: "Acquire New Customers",
-        des: "You can acquire new customers from all over the globe using a well-built website. We can provide you with excellent web development services that can play a huge role in your marketing strategy.",
+        service_name: "Changing hardware or software requirements",
+        des: "We are all aware that technology changes rapidly with time. Therefore, we stay up-to-date with the latest technological trends and tools to provide the best maintenance and support services to our clients.",
       },
     ],
   },
@@ -680,32 +708,60 @@ const serviceDetailsContent = {
     metaKeywords:
       "mobile app development company, mobile app developers, develop mobile apps, iphone mobile apps development company, mobile app developer, mobile app developer guide, web and mobile app development",
 
+    // helpContent: [
+    //   {
+    //     title: "Native and Hybrid Mobile App Development",
+    //     icon: usability,
+    //   },
+    //   {
+    //     title: "Progressive Web App Development",
+    //     icon: research,
+    //   },
+    //   {
+    //     title: "HR Apps",
+    //     icon: product,
+    //   },
+    //   {
+    //     title: "Retail and E-commerce Apps",
+    //     icon: WebApp,
+    //   },
+    //   {
+    //     title: "Fintech Apps",
+    //     icon: visual,
+    //   },
+    //   {
+    //     title: "Health and Educational Apps",
+    //     icon: Interaction,
+    //   },
+    // ],
+
     helpContent: [
       {
-        title: "Native and Hybrid Mobile App Development",
+        title: "Pre-support audit",
         icon: usability,
       },
       {
-        title: "Progressive Web App Development",
+        title: "Pre-support optimisation",
         icon: research,
       },
       {
-        title: "HR Apps",
+        title: "System monitoring",
         icon: product,
       },
       {
-        title: "Retail and E-commerce Apps",
+        title: "QA services",
         icon: WebApp,
       },
       {
-        title: "Fintech Apps",
+        title: "Adaptive maintenance",
         icon: visual,
       },
       {
-        title: "Health and Educational Apps",
+        title: "Corrective maintenance",
         icon: Interaction,
       },
     ],
+
     bestServiceTitle: [
       {
         title: "RELIABLE AND USER-FRIENDLY MOBILE APPLICATIONS",
@@ -744,32 +800,60 @@ const serviceDetailsContent = {
     metaKeywords:
       "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
 
+    // helpContent: [
+    //   {
+    //     title: "ERP Packages",
+    //     icon: usability,
+    //   },
+    //   {
+    //     title: "CRM Software",
+    //     icon: research,
+    //   },
+    //   {
+    //     title: "SAP",
+    //     icon: product,
+    //   },
+    //   {
+    //     title: "HR Solutions",
+    //     icon: WebApp,
+    //   },
+    //   {
+    //     title: "Legal Tech",
+    //     icon: visual,
+    //   },
+    //   {
+    //     title: "Software for Healthcare and Education",
+    //     icon: Interaction,
+    //   },
+    // ],
+
     helpContent: [
       {
-        title: "ERP Packages",
+        title: "Pre-support audit",
         icon: usability,
       },
       {
-        title: "CRM Software",
+        title: "Pre-support optimisation",
         icon: research,
       },
       {
-        title: "SAP",
+        title: "System monitoring",
         icon: product,
       },
       {
-        title: "HR Solutions",
+        title: "QA services",
         icon: WebApp,
       },
       {
-        title: "Legal Tech",
+        title: "Adaptive maintenance",
         icon: visual,
       },
       {
-        title: "Software for Healthcare and Education",
+        title: "Corrective maintenance",
         icon: Interaction,
       },
     ],
+
     bestServiceTitle: [
       {
         title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
@@ -808,32 +892,60 @@ const serviceDetailsContent = {
     metaKeywords:
       "e-commerce websites developer, e-commerce websites development, e-commerce websites developer salary, e-commerce websites development life cycle, e-commerce websites developers, agile e-commerce websites development, custom e-commerce websites development, e-commerce websites development company, e-commerce websites developer jobs, e-commerce websites developers perth, e-commerce app development,",
 
+    // helpContent: [
+    //   {
+    //     title: "WooCommerce",
+    //     icon: usability,
+    //   },
+    //   {
+    //     title: "Shopify",
+    //     icon: research,
+    //   },
+    //   {
+    //     title: "BigCommerce",
+    //     icon: product,
+    //   },
+    //   {
+    //     title: "Magento",
+    //     icon: WebApp,
+    //   },
+    //   {
+    //     title: "Sellfy",
+    //     icon: visual,
+    //   },
+    //   {
+    //     title: "Customised",
+    //     icon: Interaction,
+    //   },
+    // ],
+
     helpContent: [
       {
-        title: "WooCommerce",
+        title: "Pre-support audit",
         icon: usability,
       },
       {
-        title: "Shopify",
+        title: "Pre-support optimisation",
         icon: research,
       },
       {
-        title: "BigCommerce",
+        title: "System monitoring",
         icon: product,
       },
       {
-        title: "Magento",
+        title: "QA services",
         icon: WebApp,
       },
       {
-        title: "Sellfy",
+        title: "Adaptive maintenance",
         icon: visual,
       },
       {
-        title: "Customised",
+        title: "Corrective maintenance",
         icon: Interaction,
       },
     ],
+
     bestServiceTitle: [
       {
         title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
@@ -872,32 +984,60 @@ const serviceDetailsContent = {
     metaKeywords:
       "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
 
+    // helpContent: [
+    //   {
+    //     title: "ERP Packages",
+    //     icon: usability,
+    //   },
+    //   {
+    //     title: "CRM Software",
+    //     icon: research,
+    //   },
+    //   {
+    //     title: "SAP",
+    //     icon: product,
+    //   },
+    //   {
+    //     title: "HR Solutions",
+    //     icon: WebApp,
+    //   },
+    //   {
+    //     title: "Legal Tech",
+    //     icon: visual,
+    //   },
+    //   {
+    //     title: "Software for Healthcare and Education",
+    //     icon: Interaction,
+    //   },
+    // ],
+
     helpContent: [
       {
-        title: "ERP Packages",
+        title: "Pre-support audit",
         icon: usability,
       },
       {
-        title: "CRM Software",
+        title: "Pre-support optimisation",
         icon: research,
       },
       {
-        title: "SAP",
+        title: "System monitoring",
         icon: product,
       },
       {
-        title: "HR Solutions",
+        title: "QA services",
         icon: WebApp,
       },
       {
-        title: "Legal Tech",
+        title: "Adaptive maintenance",
         icon: visual,
       },
       {
-        title: "Software for Healthcare and Education",
+        title: "Corrective maintenance",
         icon: Interaction,
       },
     ],
+
     bestServiceTitle: [
       {
         title: "CUSTOMISED AND INNOVATIVE SOFTWARE SOLUTIONS",
@@ -938,27 +1078,27 @@ const serviceDetailsContent = {
 
     helpContent: [
       {
-        title: "ERP Packages",
+        title: "Pre-support audit",
         icon: usability,
       },
       {
-        title: "CRM Software",
+        title: "Pre-support optimisation",
         icon: research,
       },
       {
-        title: "SAP",
+        title: "System monitoring",
         icon: product,
       },
       {
-        title: "HR Solutions",
+        title: "QA services",
         icon: WebApp,
       },
       {
-        title: "Legal Tech",
+        title: "Adaptive maintenance",
         icon: visual,
       },
       {
-        title: "Software for Healthcare and Education",
+        title: "Corrective maintenance",
         icon: Interaction,
       },
     ],
@@ -1001,36 +1141,65 @@ const serviceDetailsContent = {
     metaKeywords:
       "software developer, software development, software developer salary, software development life cycle, software developers, agile software development, custom software development, software development company, software developer jobs, software developers perth, app development software,",
 
+    // helpContent: [
+    //   {
+    //     title: "AI Chatbot",
+    //     icon: usability,
+    //   },
+    //   {
+    //     title: "AI Office Assistant",
+    //     icon: research,
+    //   },
+    //   {
+    //     title: "Smart Voice Assistant",
+    //     icon: product,
+    //   },
+    //   {
+    //     title: "IoT Based Alarm System",
+    //     icon: WebApp,
+    //   },
+    //   {
+    //     title: "Social Media Monitoring App",
+    //     icon: visual,
+    //   },
+    //   {
+    //     title: "Smart Home Controlling System",
+    //     icon: Interaction,
+    //   },
+    // ],
+
     helpContent: [
       {
-        title: "AI Chatbot",
+        title: "Pre-support audit",
         icon: usability,
       },
       {
-        title: "AI Office Assistant",
+        title: "Pre-support optimisation",
         icon: research,
       },
       {
-        title: "Smart Voice Assistant",
+        title: "System monitoring",
         icon: product,
       },
       {
-        title: "IoT Based Alarm System",
+        title: "QA services",
         icon: WebApp,
       },
       {
-        title: "Social Media Monitoring App",
+        title: "Adaptive maintenance",
         icon: visual,
       },
       {
-        title: "Smart Home Controlling System",
+        title: "Corrective maintenance",
         icon: Interaction,
       },
     ],
+
     bestServiceTitle: [
       {
         title: "MAINTENANCE AND SUPPORT FOR YOUR NEED ",
-        tagline: "We are always ready to provide you with comprehensive maintenance and support services to ensure your valuable time is not lost.",
+        tagline:
+          "We are always ready to provide you with comprehensive maintenance and support services to ensure your valuable time is not lost.",
       },
     ],
     bestService: [
@@ -1066,32 +1235,60 @@ const serviceDetailsContent = {
     metaKeywords:
       "AI technologies artificial intelligence AI and IoT Solutions",
 
+    // helpContent: [
+    //   {
+    //     title: "AI Chatbot",
+    //     icon: usability,
+    //   },
+    //   {
+    //     title: "AI Office Assistant",
+    //     icon: research,
+    //   },
+    //   {
+    //     title: "Smart Voice Assistant",
+    //     icon: product,
+    //   },
+    //   {
+    //     title: "IoT Based Alarm System",
+    //     icon: WebApp,
+    //   },
+    //   {
+    //     title: "Social Media Monitoring App",
+    //     icon: visual,
+    //   },
+    //   {
+    //     title: "Smart Home Controlling System",
+    //     icon: Interaction,
+    //   },
+    // ],
+
     helpContent: [
       {
-        title: "AI Chatbot",
+        title: "Pre-support audit",
         icon: usability,
       },
       {
-        title: "AI Office Assistant",
+        title: "Pre-support optimisation",
         icon: research,
       },
       {
-        title: "Smart Voice Assistant",
+        title: "System monitoring",
         icon: product,
       },
       {
-        title: "IoT Based Alarm System",
+        title: "QA services",
         icon: WebApp,
       },
       {
-        title: "Social Media Monitoring App",
+        title: "Adaptive maintenance",
         icon: visual,
       },
       {
-        title: "Smart Home Controlling System",
+        title: "Corrective maintenance",
         icon: Interaction,
       },
     ],
+
     bestServiceTitle: [
       {
         title: "SMART AI AND IOT SOLUTIONS DESIGNED FOR YOUR NEEDS ",

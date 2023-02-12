@@ -39,7 +39,6 @@ const Header = () => {
           autoPlay
           loop
           muted
-          controls={false}
           style={{ position: "relative", zIndex: "100" }}
         >
           <source src={Astro} type="video/mp4" />
@@ -51,7 +50,7 @@ const Header = () => {
           href="#start-project"
           className="bg-black text-sm  font-semibold spirit-bomb py-3 px-4 rounded-full border z-50 uppercase"
         >
-          Let's Start a Project
+          START A PROJECT
         </a>
 
         {/* <a href="#start-project" className=" ">
