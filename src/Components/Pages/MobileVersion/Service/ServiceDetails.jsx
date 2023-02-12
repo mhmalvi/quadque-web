@@ -105,19 +105,19 @@ const ServiceDetails = () => {
         </div>
       ) : null}
       <div
-        className={`w-full h-auto mt-20 text-white px-6 font_primary ${
+        className={`w-full h-auto mt-24 text-white px-6 font_primary ${
           !Service ? "scale-0" : ""
         }`}
       >
-        <h1 className="font_title text-3xl font-bold pb-8">
+        <h1 className="font_title text-center text-3xl font-bold pb-8">
           {Service?.service_name}
         </h1>
-        <div className="font-semibold pb-2">{Service?.service_title}</div>
-        <div className="text-sm text-justify pb-2">{Service?.description}</div>
+        <div className="font-semibold text-center pb-2">{Service?.service_title}</div>
+        <div className="text-sm text-center pb-2">{Service?.description}</div>
 
         <div
           onClick={() => navigate(`../#start-project`, { replace: true })}
-          className="w-1/2 bg-black text-sm text-center font-semibold spirit-bomb py-3 px-4 mt-8 mb-6 rounded-full border relative z-[100] uppercase"
+          className="w-1/2 bg-black text-sm text-center font-semibold spirit-bomb py-3 px-4 mt-8 mb-6 rounded-full border relative z-[100] uppercase mx-auto"
         >
             START A PROJECT
         </div>
