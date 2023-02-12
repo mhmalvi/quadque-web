@@ -47,7 +47,7 @@ const Layout = () => {
           }
         />
         <Route
-          path="case-studies/:slug"
+          path="case-study/:slug"
           element={
             <>
               <CaseStudyDetailsLayout />

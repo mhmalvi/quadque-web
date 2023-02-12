@@ -9,7 +9,7 @@ const Footer = () => {
     <div id="Footer" className="w-full text-white relative mt-20 font_primary">
       <img src={Logo} alt="" className="absolute -top-12 right-2" />
       <div className="font_title text-3xl text-center mx-6 mb-4">
-        Have a Good Web Design Today
+        Top-notch digital solutions with the best results
       </div>
       <div className="text-sm text-center px-6 pb-4">
         Our philosophy is to ensure the highest product quality and satisfaction

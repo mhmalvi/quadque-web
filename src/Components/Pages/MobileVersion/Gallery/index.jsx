@@ -100,22 +100,27 @@ const Gallery = () => {
                 </div>
                 <div>
                   {activeAccordion === event?.id ? (
-                    <div
-                      className={`flex flex-wrap justify-center items-center gap-8`}
-                    >
-                      {event?.gallery_images?.map((img, index) => (
-                        <div>
-                          <img
-                            src={
-                              process.env.REACT_APP_ASSETS_URL +
-                              "/" +
-                              img?.images
-                            }
-                            alt=""
-                            className="rounded-xl"
-                          />
-                        </div>
-                      ))}
+                    <div>
+                      <div className="text-white text-xs mb-6 mt-2">
+                        {event?.album_caption}
+                      </div>
+                      <div
+                        className={`flex flex-wrap justify-center items-center gap-8`}
+                      >
+                        {event?.gallery_images?.map((img, index) => (
+                          <div>
+                            <img
+                              src={
+                                process.env.REACT_APP_ASSETS_URL +
+                                "/" +
+                                img?.images
+                              }
+                              alt=""
+                              className="rounded-xl"
+                            />
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ) : null}
                 </div>

@@ -53,7 +53,7 @@ const ServiceDetails = () => {
         setLoader(true);
       }
     })();
-  }, [ slug]);
+  }, [slug]);
 
   useEffect(() => {
     const cap_array = Service?.services_capabilities_menu.split(",");
@@ -136,7 +136,7 @@ const ServiceDetails = () => {
         {/* <div className="text-sm text-center uppercase pb-1">
           IDENTITY DESIGN SERVICES
         </div> */}
-        <div className="text-2xl text-center pb-3">How We Can Help?</div>
+        <div className="text-2xl text-center pb-3">How we can help</div>
         <div
           className="Service_Identity text-white text-center pb-4"
           dangerouslySetInnerHTML={{ __html: Service?.identity_design_des }}
@@ -352,8 +352,8 @@ const ServiceDetails = () => {
           </Slider>
         </div>
 
-        {/* People Talk About Us SLIDER SECTION */}
-        <div className="text-2xl pb-5">People Talk About Us</div>
+        {/* What our clients say about us SLIDER SECTION */}
+        <div className="text-2xl pb-5">What our clients say about us</div>
         <div className="pb-10">
           <div className="max-w-[350px] max-h-[350px] m-auto text-white pb-4">
             <Slider ref={ReviewsSlider} arrows={false} {...settings}>

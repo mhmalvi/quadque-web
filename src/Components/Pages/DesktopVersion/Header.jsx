@@ -14,22 +14,22 @@ const Header = () => {
       ></video>
 
       <div
-        className="absolute text-white top-[30%] lg:right-[10%] xl:right-[15%] 2xl:right-[20%]"
+        className="absolute text-white top-[30%] lg:right-[10%] xl:right-[15%] 2xl:right-[19.5%]"
         style={{
           zIndex: "9999",
         }}
       >
         <Typical
-          className="w-40 text-white lg:text-4.5xl xl:text-[60px] 2xl:text-[80px] font-bold leading-10 font_title xl:leading-12 2xl:leading-[70px] font_primary capitalize"
+          className="w-40 text-white lg:text-4.5xl xl:text-[54px] 2xl:text-[60px] font-bold leading-10 font_title xl:leading-12 2xl:leading-[70px] font_primary capitalize"
           steps={[
-            "We",
+            "Innovate",
             1500,
-            "We Build",
-            3000,
-            "We Build Awesome",
-            4000,
-            "We Build Awesome Creation",
-            5000,
+            "Innovate Connect",
+            2000,
+            "Innovate Connect Transform",
+            1500,
+            // "Innovative Solutions? We Got You!",
+            // 5000,
           ]}
           loop={Infinity}
           wrapper="h1"

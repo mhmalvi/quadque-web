@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { Link, useLocation } from "react-router-dom";
-import Icons from "../../../Shared/Icons";
-import bgBD from "../../../../asstes/Images/background_bd.jpg";
 import bgAus from "../../../../asstes/Images/background_aus.jpg";
-import { Zoom } from "react-reveal";
+import bgBD from "../../../../asstes/Images/background_bd.jpg";
+import Icons from "../../../Shared/Icons";
 
 const Footer = () => {
   const location = useLocation();
@@ -15,36 +14,33 @@ const Footer = () => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
+    console.log(window);
+
     if (location.hash === "#contacts") {
-      document.getElementById("footer_icon").classList.remove("hidden");
+      // document.getElementById("footer_icon").classList.remove("hidden");
       setTimeout(() => {
-        // setTriggerAnimation(true);
         setTriggerTitleAnimation(true);
       }, 800);
       synth.cancel();
-    } else {
-      document.getElementById("footer_icon").classList.add("hidden");
     }
+    // else {
+    //   document.getElementById("footer_icon").classList.add("hidden");
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
 
   return (
     <div
       id="contacts"
-      className={`section w-full min-h-full lg:py-6 2xl:py-8 font_primary text-white relative`}
-      // style={{
-      //   backgroundImage: `url(${backgroundImage})`,
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundSize: "cover",
-      // }}
+      className="section w-full lg:py-6 2xl:py-8 font_primary text-white relative"
+      // id="start_project"
+      // className="section w-full lg:pt-6 2xl:py-8 font_primary bg-black text-white"
     >
-      {/* {backgroundImage === "bd" && ( */}
-      <Zoom spy={triggerAnimation}>
+   {/* For Background Flag */}
+      <Fade spy={triggerAnimation}>
         <img src={backgroundImage} className="min-w-full min-h-full" alt="" />
-      </Zoom>
-      {/* <div
-        className={`${backgroundImage} min-w-full min-h-full absolute top-0 transition-all duration-200 delay-300`}
-      ></div> */}
+      </Fade>
+
       <div className="w-full min-h-full lg:py-6 2xl:py-8 absolute -top-10">
         <div className=" ml-21 lg:mt-10 2xl:mt-16 mr-25 pb-8 ">
           <div className="2xl:pt-6 2xl:pl-10">
@@ -88,8 +84,9 @@ const Footer = () => {
                         wordBreak: "keep-all",
                       }}
                     >
-                      High level experience in web design and development
-                      knowledge, producing quality work.
+                      A diverse team with years of experience in delivering
+                      high-quality web development, software development and IT
+                      services.
                     </h1>
                     <div>
                       <div className="mb-2 ml-1.5">

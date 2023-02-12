@@ -42,8 +42,6 @@ const Gallery = ({ setLoader }) => {
     })();
   }, []);
 
-  console.log("activeAccordion", activeAccordion);
-
   return (
     <>
       {/* For SEO */}
@@ -101,24 +99,31 @@ const Gallery = ({ setLoader }) => {
                   </div>
                   <div>
                     {activeAccordion === event?.id ? (
-                      <div
-                        className={`flex flex-wrap justify-center items-center gap-8`}
-                      >
-                        {event?.gallery_images?.map((img, index) => (
-                          <Fade left cascade spy={triggerAnimation}>
-                            <div key={index}>
-                              <img
-                                src={
-                                  process.env.REACT_APP_ASSETS_URL +
-                                  "/" +
-                                  img?.images
-                                }
-                                alt=""
-                                className="rounded-xl"
-                              />
-                            </div>
-                          </Fade>
-                        ))}
+                      <div>
+                        <Fade spy={triggerAnimation}>
+                          <div className="text-white mb-4 mt-2 ml-8">
+                            {event?.album_caption}
+                          </div>
+                        </Fade>
+                        <div
+                          className={`flex flex-wrap justify-center items-center gap-8 relative`}
+                        >
+                          {event?.gallery_images?.map((img, index) => (
+                            <Fade left cascade spy={triggerAnimation}>
+                              <div key={index}>
+                                <img
+                                  src={
+                                    process.env.REACT_APP_ASSETS_URL +
+                                    "/" +
+                                    img?.images
+                                  }
+                                  alt=""
+                                  className="rounded-xl"
+                                />
+                              </div>
+                            </Fade>
+                          ))}
+                        </div>
                       </div>
                     ) : null}
                   </div>

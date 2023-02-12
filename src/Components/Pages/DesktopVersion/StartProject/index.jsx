@@ -137,7 +137,6 @@ const StartProject = () => {
 
     const sendMail = await handleSendMail(data);
 
-    console.log(sendMail);
 
     if (sendMail === "Mail sent") {
       handleThankYouAudio();
@@ -319,7 +318,7 @@ const StartProject = () => {
                   className="outline-none border-none bg-transparent px-2 py-1 w-79"
                   type="text"
                   name="help"
-                  placeholder="How can we help you"
+                  placeholder="How can we help you?"
                   id="help"
                 />
               </div>
@@ -334,7 +333,7 @@ const StartProject = () => {
                   }}
                   onClick={handleSendMailReq}
                 >
-                  LET'S START A PROJECT
+                  START A PROJECT
                 </button>
               </div>
             </div>

@@ -169,6 +169,8 @@ const CaseStudyDetails = ({ setLoader }) => {
             style={{
               backgroundImage: `url(${rightImage})`,
               backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           >
             {/* <img className="ml-auto" src={rightImage} alt="" /> */}
