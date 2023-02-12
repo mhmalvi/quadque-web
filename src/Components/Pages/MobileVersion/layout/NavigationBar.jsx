@@ -85,37 +85,37 @@ const NavigationBar = () => {
             <Icons.BrandLogoMob className=" text-white w-13 scale-x-[-1] " />
           </div>
 
-          <div onClick={() => setOpen(false)} className="font_primary">
+          <div onClick={() => setOpen(false)} className="font_title">
             <Link to="/">Home</Link>
           </div>
 
-          <div onClick={() => setOpen(false)} className="font_primary">
+          <div onClick={() => setOpen(false)} className="font_title">
             <a href="/#Service">Services</a>
           </div>
 
-          <div onClick={() => setOpen(false)} className="font_primary">
+          <div onClick={() => setOpen(false)} className="font_title">
             <a href="/#About">About</a>
           </div>
 
-          <div onClick={() => setOpen(false)} className="font_primary">
+          <div onClick={() => setOpen(false)} className="font_title">
             <a href="/#Case_Study">Case Studies</a>
           </div>
 
-          <div onClick={() => setOpen(false)} className="font_primary">
+          <div onClick={() => setOpen(false)} className="font_title">
             <Link to="/blogs">Blogs</Link>
           </div>
 
-          <div onClick={() => setOpen(false)} className="font_primary">
+          <div onClick={() => setOpen(false)} className="font_title">
             <Link to="career">Careers</Link>
           </div>
 
-          <div onClick={() => setOpen(false)} className="font_primary">
+{/*           <div onClick={() => setOpen(false)} className="font_title">
             <Link to="/gallery">Gallery</Link>
           </div>
 
-          <div onClick={() => setOpen(false)} className="font_primary">
+          <div onClick={() => setOpen(false)} className="font_title">
             <a href="/#Footer">Contact</a>
-          </div>
+          </div> */}
         </div>
       </Modal>
     </div>

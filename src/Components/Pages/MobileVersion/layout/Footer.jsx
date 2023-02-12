@@ -12,9 +12,8 @@ const Footer = () => {
         Top-notch digital solutions with the best results
       </div>
       <div className="text-sm text-center px-6 pb-4">
-        Our philosophy is to ensure the highest product quality and satisfaction
-        for every client. We offer the best quality/price ratio in the industry
-        along with timely delivery of solutions.{" "}
+        A diverse team with years of experience in delivering high-quality web
+        development, software development and IT services.
       </div>
       <div className="w-1/3 bg-black border rounded-full text-center text-xs font_title px-4 py-3 my-8 mx-auto spirit-bomb whitespace-nowrap">
         <a href="tel:+8801765-276560">Let's Talk</a>
@@ -38,9 +37,9 @@ const Footer = () => {
           <Link to={`/blogs`}>
             <p className="my-2">Blogs</p>
           </Link>
-          <a href="/#About" className="my-2">
-            About Us
-          </a>
+          <Link to={`/gallery`}>
+            <p className="my-2">Gallery</p>
+          </Link>
         </div>
       </div>
 
@@ -51,7 +50,7 @@ const Footer = () => {
             LEVEL 1/7 Greenfield Parade, Bankstown NSW 2200, Australia
           </p>
           <p className="pt-1">+61 405 899 496</p>
-          <p className="pt-1">info@quadque.tech</p>
+          <p className="pt-1">hello@quadque.tech</p>
         </div>
         <div className="w-1/2 flex-col">
           <p className="text-sm font-bold">Quadque Technologies Pvt Ltd</p>

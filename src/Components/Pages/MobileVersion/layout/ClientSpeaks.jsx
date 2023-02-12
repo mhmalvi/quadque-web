@@ -63,7 +63,7 @@ const ClientSpeaks = () => {
                 <div className="px-3 pb-6">
                   <div className="flex justify-between">
                     <div className="font-semibold">{details?.name}</div>
-                    <div className="text-slate-400">{details?.designation}</div>
+                    {/* <div className="text-slate-400">{details?.designation}</div> */}
                   </div>
                   <img
                     src={
