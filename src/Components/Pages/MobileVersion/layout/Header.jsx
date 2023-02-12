@@ -21,13 +21,11 @@ const Header = () => {
           steps={[
             "",
             1000,
-            "We",
+            "Innovate",
             1000,
-            "We Build",
+            "Innovate Connect",
             1000,
-            "We Build Awesome",
-            1000,
-            "We Build Awesome Creation",
+            "Innovate Connect Transform",
             1000,
           ]}
           loop={Infinity}

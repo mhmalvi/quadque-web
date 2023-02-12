@@ -66,10 +66,10 @@ const Services = () => {
   return (
     <div
       id="Service"
-      className="w-full text-white relative overflow-hidden mt-3 pb-13 font_primary"
+      className="w-full min-h-[650px] text-white relative overflow-hidden mt-3 pb-13 font_primary"
     >
       {loader ? (
-        <div className=" absolute w-full h-[100%] z-40 flex flex-col justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm">
+        <div className=" absolute w-full h-full z-40 flex flex-col justify-center items-center bg-black bg-opacity-10 backdrop-blur-sm">
           <Lottie
             className="w-1/2 mx-auto"
             animationData={loaderFile}
@@ -138,11 +138,11 @@ const Services = () => {
                       />
                     ) : null}
                     {details?.service_name ===
-                    "Cyber Security & Data Protection" ? (
+                    "Cyber Security" ? (
                       <Lottie
                         animationData={CyberSecurity}
                         loop={true}
-                        alt="Cyber Security & Data Protection Layout"
+                        alt="Cyber Security Layout"
                       />
                     ) : null}
                     {details?.service_name === "E-commerce development" ? (
@@ -167,7 +167,7 @@ const Services = () => {
                       />
                     ) : null}
                   </div>
-                  <div className="h-36 text-center overflow-hidden mb-5 pt-13">
+                  <div className="h-29 text-center overflow-hidden mb-5 pt-13">
                     {details?.description}
                   </div>
                 </div>
@@ -219,19 +219,3 @@ const Services = () => {
 };
 
 export default Services;
-
-const littieFiles = {
-  "UI/UX": UI_UX,
-  "AI & IoT Solutions": aIIot,
-  "Mobile App Development": AppDev,
-  "Software Development": softDev,
-  "Web Development": webDev,
-};
-
-const littieFilesAltTags = {
-  "UI/UX": "Ui & Ux Layout",
-  "AI & IoT Solutions": "AI & IoT Solutions Layout",
-  "Mobile App Development": "Application Development Layout",
-  "Software Development": "Software Development Layout",
-  "Web Development": "Web Development Layout",
-};
