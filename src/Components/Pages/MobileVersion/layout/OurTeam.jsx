@@ -24,10 +24,10 @@ const OurTeam = () => {
   return (
     <div id="Team" className="w-full text-white mt-18 mb-5 font_primary">
       <div className="uppercase px-6 pb-2 text-center">EXPERIENCE</div>
-      <h1 className="font_title text-3xl px-6 text-center">
-        Skilled Team <br /> of Creators
+      <h1 className="w-2/3 m-auto font_title text-3xl px-6 text-center">
+        Skilled Team<br />of Creators
       </h1>
-      <img src={Team} alt="" className="m-auto py-4" />
+      <img src={Team} alt="" className="w-1/3 m-auto my-10" />
       <div className="text-sm px-10 pb-8 leading-6 text-center">
         We are an experienced and diverse team of software engineers, mobile
         application, Web developers, UI/UX designers, quality engineers, digital
