@@ -189,7 +189,7 @@ const CaseStudyDetail = () => {
         </div>
 
         {/* BOTTOM SECTION  */}
-        <div>
+        {/* <div>
           <img src={Marble} alt="" className="m-auto pb-13" />
 
           <div className="text-sm text-center pb-8">
@@ -202,7 +202,9 @@ const CaseStudyDetail = () => {
               Contact Us
             </div>
           </div>
-        </div>
+        </div> */}
+
+
         <Link to={`/`}>
           <div className="w-44 flex justify-center  bg-black text-white py-2 my-10 mx-auto px-6 rounded-full relative z-50">
             <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow" />
