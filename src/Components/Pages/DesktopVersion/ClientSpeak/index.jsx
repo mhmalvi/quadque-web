@@ -96,13 +96,13 @@ const ClientSpeak = () => {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  <span className="text-3xl m-0 italic absolute top-0.5">
+                  {/* <span className="text-3xl m-0 italic absolute top-0.5">
                     "
-                  </span>
-                  <span className="ml-4 pt-1">
+                  </span> */}
+                  <span className="pt-1">
                     {clientSpeaks?.[index]?.description}
                   </span>
-                  <span className="text-3xl m-0 italic absolute">"</span>
+                  {/* <span className="text-3xl m-0 italic absolute">"</span> */}
                 </h3>
 
                 <h3

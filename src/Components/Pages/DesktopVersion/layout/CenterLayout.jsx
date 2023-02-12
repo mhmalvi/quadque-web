@@ -7,7 +7,7 @@ import CaseStudy from "../CaseStudy";
 import Cleints from "../Clients";
 import ClientSpeak from "../ClientSpeak";
 import Footer from "../Footer";
-import Footer1 from "../Footer/Footer1";
+import Footer1 from "../Footer/NewFooter";
 import Header from "../Header";
 import Navbar from "../Navbar";
 import Services from "../Services";
@@ -50,7 +50,7 @@ const CenterLayout = () => {
               <ClientSpeak />
               <Blogs />
               <StartProject />
-              <Footer1 />
+              <Footer />
             </div>
           );
         }}

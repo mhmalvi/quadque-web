@@ -101,7 +101,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(1)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Vision
@@ -115,7 +115,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(2)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Mission
@@ -138,7 +138,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(3)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         <div className="text-2xl font-bold leading-[100%] pl-4">
                           Our Goal
@@ -157,7 +157,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(4)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
@@ -180,7 +180,7 @@ const About = () => {
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                       onMouseOver={() => handleChangeBanner(5)}
-                      onMouseOut={() => handleChangeBanner(0)}
+                      //onMouseOut={() => handleChangeBanner(0)}
                     >
                       {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                       <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
@@ -202,7 +202,7 @@ const About = () => {
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                       onMouseOver={() => handleChangeBanner(6)}
-                      onMouseOut={() => handleChangeBanner(0)}
+                      //onMouseOut={() => handleChangeBanner(0)}
                     >
                       <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                         Why Choose Us
@@ -228,7 +228,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(1)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Vision
@@ -246,7 +246,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(2)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Mission
@@ -264,7 +264,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(3)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         <div className="text-2xl font-bold leading-[100%] pl-4">
                           Our Goal
@@ -287,7 +287,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(4)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
@@ -306,7 +306,7 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(5)}
-                        onMouseOut={() => handleChangeBanner(0)}
+                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
@@ -328,7 +328,7 @@ const About = () => {
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                       onMouseOver={() => handleChangeBanner(6)}
-                      onMouseOut={() => handleChangeBanner(0)}
+                      //onMouseOut={() => handleChangeBanner(0)}
                     >
                       <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                         Why Choose Us
@@ -350,27 +350,27 @@ const About = () => {
                 </div>
               </Fade>
 
-              <div className="w-36 ml-auto flex items-center justify-between">
+              <div className="w-44 2xl:w-36 ml-auto flex items-center justify-between">
                 <div
-                  className={`cursor-pointer hover:delay-300 hover:transition-all w-8 h-3 rounded-full ${
+                  className={`cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 0 ? "bg-brand-color" : "bg-white"
                   }`}
                   onMouseOver={() => handleScrollAbout(0)}
                 ></div>
                 <div
-                  className={`cursor-pointer hover:delay-300 hover:transition-all w-8 h-3 rounded-full ${
+                  className={`cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 1 ? "bg-brand-color" : "bg-white"
                   }`}
                   onMouseOver={() => handleScrollAbout(1)}
                 ></div>
                 <div
-                  className={`cursor-pointer hover:delay-300 hover:transition-all w-8 h-3 rounded-full ${
+                  className={`cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 2 ? "bg-brand-color" : "bg-white"
                   }`}
                   onMouseOver={() => handleScrollAbout(2)}
                 ></div>
                 <div
-                  className={`xl:hidden cursor-pointer hover:delay-300 hover:transition-all w-8 h-3 rounded-full ${
+                  className={`xl:hidden cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 3 ? "bg-brand-color" : "bg-white"
                   }`}
                   onMouseOver={() => handleScrollAbout(3)}

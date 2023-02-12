@@ -137,7 +137,6 @@ const StartProject = () => {
 
     const sendMail = await handleSendMail(data);
 
-
     if (sendMail === "Mail sent") {
       handleThankYouAudio();
       setOpen(true);
@@ -212,7 +211,10 @@ const StartProject = () => {
           </div>
           <div>
             <Fade left spy={triggerTitleAnimation}>
-              <div>Call us +01765276560</div>
+              <div>
+                <div>Australia: +61405899496</div>
+                <div>Bangladesh: +8801765276560</div>
+              </div>
             </Fade>
           </div>
         </div>
@@ -285,10 +287,14 @@ const StartProject = () => {
           ) : null}
 
           <Fade right cascade spy={triggerAnimation}>
-            <div className="w-84">
+            <div
+              className={`w-84 ${
+                activeSubServices?.length ? "block" : "hidden"
+              }`}
+            >
               <div className="border-b border-white mb-5">
                 <input
-                  className="outline-none border-none bg-transparent px-2 py-1 w-79"
+                  className="outline-none border-none bg-transparent px-2 py-1 text-sm 2xl:text-base w-60 2xl:w-79"
                   type="text"
                   name="Name"
                   placeholder="Name"
@@ -297,7 +303,7 @@ const StartProject = () => {
               </div>
               <div className="border-b border-white mb-5">
                 <input
-                  className="outline-none border-none bg-transparent px-2 py-1 w-79"
+                  className="outline-none border-none bg-transparent px-2 py-1 text-sm 2xl:text-base w-60 2xl:w-79"
                   type="text"
                   name="Phone"
                   placeholder="Phone"
@@ -306,7 +312,7 @@ const StartProject = () => {
               </div>
               <div className="border-b border-white mb-5">
                 <input
-                  className="outline-none border-none bg-transparent px-2 py-1 w-79"
+                  className="outline-none border-none bg-transparent px-2 py-1 text-sm 2xl:text-base w-60 2xl:w-79"
                   type="text"
                   name="E-mail"
                   placeholder="E-mail"
@@ -315,7 +321,7 @@ const StartProject = () => {
               </div>
               <div className="border-b border-white mt-11">
                 <input
-                  className="outline-none border-none bg-transparent px-2 py-1 w-79"
+                  className="outline-none border-none bg-transparent px-2 py-1 text-sm 2xl:text-base w-60 2xl:w-79"
                   type="text"
                   name="help"
                   placeholder="How can we help you?"
@@ -328,7 +334,6 @@ const StartProject = () => {
                   className="spirit-bomb whitespace-nowrap px-16 py-4 bg-transparent rounded-full border border-white mt-12 xl:mt-16 text-xs 2xl:text-base font-semibold leading-4"
                   style={{
                     letterSpacing: "0.04em",
-                    border: "2px solid rgb(255, 255, 255)",
                     borderRadius: "30px",
                   }}
                   onClick={handleSendMailReq}
