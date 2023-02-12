@@ -167,7 +167,7 @@ const Services = () => {
                       />
                     ) : null}
                   </div>
-                  <div className="h-36 text-center overflow-hidden mb-5 pt-13">
+                  <div className="h-29 text-center overflow-hidden mb-5 pt-13">
                     {details?.description}
                   </div>
                 </div>
