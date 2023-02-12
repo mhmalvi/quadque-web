@@ -134,7 +134,6 @@ const ServiceDetails = ({ setLoader }) => {
             onClick={() => handleNavigate("#start-project")}
             style={{
               letterSpacing: "0.04em",
-              border: "2px solid rgb(255, 255, 255)",
               borderRadius: "30px",
             }}
           >
@@ -192,12 +191,7 @@ const ServiceDetails = ({ setLoader }) => {
             </Tooltip>
           </div>
 
-          <p
-            className="text-base leading-6 text-white font-medium text-opacity-60 text-center"
-            style={{
-              letterSpacing: "0.07em",
-            }}
-          >
+          <p className="text-base leading-6 text-white font-normal">
             {serviceDetails?.identity_design_des}
           </p>
 
@@ -206,7 +200,7 @@ const ServiceDetails = ({ setLoader }) => {
               (content, i) => (
                 <div className="flex items-center" key={i}>
                   <img className="w-5" src={content?.icon} alt="" />
-                  <span className="text-base leading-5 ml-2 text-white font-medium text-opacity-90">
+                  <span className="text-base leading-5 ml-2 text-white font-medium">
                     {content?.title}
                   </span>
                 </div>
@@ -274,12 +268,12 @@ const ServiceDetails = ({ setLoader }) => {
                     src={service?.service_image}
                     alt=""
                   />
-                  <h3 className="text-lg font-semibold leading-6 text-white text-opacity-80">
+                  <h3 className="text-lg font-semibold leading-6 text-white">
                     {service?.service_name}
                   </h3>
                 </div>
                 <p
-                  className="text-base leading-6 font-normal text-white text-opacity-60 text-center mt-2.5"
+                  className="text-base leading-6 font-light text-white text-justify mt-2.5"
                   style={{
                     letterSpacing: "0.07em",
                   }}
@@ -288,69 +282,12 @@ const ServiceDetails = ({ setLoader }) => {
                 </p>
               </div>
             ))}
-
-            {/* <div className="max-w-xs xl:max-w-sm 2xl:max-w-md mx-auto">
-              <div className="flex items-center">
-                <img className="w-19 mr-4" src={help2} alt="" />
-                <h3 className="text-lg font-semibold leading-6">
-                  Create A Strong Impression
-                </h3>
-              </div>
-              <p
-                className="text-base leading-6 font-normal text-white text-opacity-75 text-justify mt-2.5"
-                style={{
-                  letterSpacing: "0.07em",
-                }}
-              >
-                A logo serves as a company's first touchpoint with consumers. If
-                created well, it may spark the public's attention and encourage
-                them to discover more about the company.
-              </p>
-            </div>
-
-            <div className="max-w-xs xl:max-w-sm 2xl:max-w-md mx-auto">
-              <div className="flex items-center">
-                <img className="w-19 mr-4" src={help3} alt="" />
-                <h3 className="text-lg font-semibold leading-6">
-                  Create A Strong Impression
-                </h3>
-              </div>
-              <p
-                className="text-base leading-6 font-normal text-white text-opacity-75 text-justify mt-2.5"
-                style={{
-                  letterSpacing: "0.07em",
-                }}
-              >
-                A logo serves as a company's first touchpoint with consumers. If
-                created well, it may spark the public's attention and encourage
-                them to discover more about the company.
-              </p>
-            </div>
-
-            <div className="max-w-xs xl:max-w-sm 2xl:max-w-md mx-auto">
-              <div className="flex items-center">
-                <img className="w-19 mr-4" src={help4} alt="" />
-                <h3 className="text-lg font-semibold leading-6">
-                  Create A Strong Impression
-                </h3>
-              </div>
-              <p
-                className="text-base leading-6 font-normal text-white text-opacity-75 text-justify mt-2.5"
-                style={{
-                  letterSpacing: "0.07em",
-                }}
-              >
-                A logo serves as a company's first touchpoint with consumers. If
-                created well, it may spark the public's attention and encourage
-                them to discover more about the company.
-              </p>
-            </div> */}
           </div>
 
           <div className="relative">
             <div
               id="serviceDetails_content"
-              className="serviceDetails_content flex justify-center items-center flex-col my-16 text-white"
+              className="serviceDetails_content flex-col my-16 text-white"
               style={{
                 letterSpacing: "0.09em",
               }}
@@ -427,12 +364,7 @@ const ServiceDetails = ({ setLoader }) => {
               </Tooltip>
             </div>
 
-            <p
-              className="text-base leading-6 font-normal text-white text-opacity-60"
-              style={{
-                letterSpacing: "0.07em",
-              }}
-            >
+            <p className="text-base leading-6 font-normal text-white">
               {serviceDetails?.service_deliver_des}
             </p>
           </div>
@@ -1068,7 +1000,7 @@ const serviceDetailsContent = {
     ],
   },
 
-  "cybersecurity-and-data-protection": {
+  "cyber-security": {
     metaTitle:
       "Cybersecurity and data protection- Online IT Services for Business – Quadque Tech",
     metaDescription:
