@@ -93,67 +93,78 @@ const ServiceDetails = () => {
         />
       </Helmet>
 
-      {loader ? (
-        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
-          <Lottie
-            className="w-1/2 mx-auto"
-            animationData={loaderFile}
-            loop={true}
-          />
-
-          <div className="font_title text-white animate-pulse">Loading...</div>
-        </div>
-      ) : null}
       <div
-        className={`w-full h-auto mt-24 text-white px-6 font_primary ${
-          !Service ? "scale-0" : ""
+        className={`w-full mt-24 text-white px-6 font_primary ${
+          !Service ? "" : ""
         }`}
+        // className="w-full h-auto mt-24 text-white px-6 font_primary"
       >
-        <h1 className="font_title text-center text-3xl font-bold pb-8">
-          {Service?.service_name}
-        </h1>
-        <div className="font-semibold text-center pb-2">{Service?.service_title}</div>
-        <div className="text-sm text-center pb-2">{Service?.description}</div>
+        <div className="relative">
+          {loader ? (
+            <div className="w-full h-full z-[500] flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black bg-opacity-10 backdrop-blur-sm">
+              <div className="absolute top-24">
+                <Lottie
+                  className="w-1/2 mx-auto"
+                  animationData={loaderFile}
+                  loop={true}
+                />
 
-        <div
-          onClick={() => navigate(`../#start-project`, { replace: true })}
-          className="w-1/2 bg-black text-sm text-center font-semibold spirit-bomb py-3 px-4 mt-8 mb-6 rounded-full border relative z-[100] uppercase mx-auto"
-        >
-            START A PROJECT
-        </div>
+                <div className="font_title text-white animate-pulse flex justify-center">
+                  Loading...
+                </div>
+              </div>
+            </div>
+          ) : null}
 
-        <div className="py-13">
-          <div>
-            <img
-              src={process.env.REACT_APP_ASSETS_URL + "/" + Service?.file}
-              alt=""
-              className="w-[80%] m-auto"
-            />
+          <h1 className="font_title text-center text-3xl font-bold pb-8">
+            {Service?.service_name}
+          </h1>
+          <div className="font-semibold text-center pb-2">
+            {Service?.service_title}
           </div>
-        </div>
+          <div className="text-sm text-center pb-2">{Service?.description}</div>
 
-        {/* IDENTITY DESIGN SERVICES SECTION */}
-        {/* <div className="text-sm text-center uppercase pb-1">
+          <div
+            onClick={() => navigate(`../#start-project`, { replace: true })}
+            className="w-1/2 bg-black text-sm text-center font-semibold spirit-bomb py-3 px-4 mt-8 mb-6 rounded-full relative z-[100] uppercase mx-auto font_title"
+          >
+            START A PROJECT
+          </div>
+
+          <div className="py-13">
+            <div>
+              <img
+                src={process.env.REACT_APP_ASSETS_URL + "/" + Service?.file}
+                alt=""
+                className="w-[80%] m-auto"
+              />
+            </div>
+          </div>
+
+          {/* IDENTITY DESIGN SERVICES SECTION */}
+          {/* <div className="text-sm text-center uppercase pb-1">
           IDENTITY DESIGN SERVICES
         </div> */}
-        <div className="text-2xl text-center pb-3">How we can help</div>
-        <div
-          className="Service_Identity text-white text-center pb-4"
-          dangerouslySetInnerHTML={{ __html: Service?.identity_design_des }}
-        ></div>
+          <div className="text-2xl text-center pb-3">How we can help</div>
+          <div
+            className="Service_Identity text-white text-center pb-4"
+            dangerouslySetInnerHTML={{ __html: Service?.identity_design_des }}
+          ></div>
 
-        <div className="flex flex-wrap justify-between gap-5">
-          {(serviceDetailsContent[`${slug}`]?.helpContent).map((content, i) => (
-            <div className="flex items-center" key={i}>
-              <img className="w-5" src={content?.icon} alt="" />
-              <span className="text-base font-normal leading-5 ml-2">
-                {content?.title}
-              </span>
-            </div>
-          ))}
-        </div>
+          <div className="flex flex-wrap justify-between gap-5">
+            {(serviceDetailsContent[`${slug}`]?.helpContent).map(
+              (content, i) => (
+                <div className="flex items-center" key={i}>
+                  <img className="w-5" src={content?.icon} alt="" />
+                  <span className="text-base font-normal leading-5 ml-2">
+                    {content?.title}
+                  </span>
+                </div>
+              )
+            )}
+          </div>
 
-        {/*       <div className="flex justify-between  pb-13">
+          {/*       <div className="flex justify-between  pb-13">
         <div className="text-sm font-semibold">
         <span className="flex gap-1">
         <Icons.ServiceMatter className="m-auto" /> Usability Analyst
@@ -192,54 +203,55 @@ const ServiceDetails = () => {
             </div>
           </div> */}
 
-        <div className="flex py-13">
-          <div className="w-1/2 text-brand-color text-5xl font-semibold text-center">
-            {<CountUp start={0} end={Service?.project_count} duration={2} />}+
-            <br />
-            <span className="text-white text-sm font-semibold">
-              Projects Completed
-            </span>{" "}
+          <div className="flex py-13">
+            <div className="w-1/2 text-brand-color text-5xl font-semibold text-center">
+              {<CountUp start={0} end={Service?.project_count} duration={2} />}+
+              <br />
+              <span className="text-white text-sm font-semibold">
+                Projects Completed
+              </span>{" "}
+            </div>
+            <div className="bg-white w-[1px] h-14"></div>
+            <div className="w-1/2 text-brand-color text-5xl font-semibold text-center">
+              {<CountUp start={0} end={Service?.happy_clients} duration={3} />}+
+              <br />
+              <span className="text-white text-sm font-semibold">
+                Happy Clients
+              </span>{" "}
+            </div>
           </div>
-          <div className="bg-white w-[1px] h-14"></div>
-          <div className="w-1/2 text-brand-color text-5xl font-semibold text-center">
-            {<CountUp start={0} end={Service?.happy_clients} duration={3} />}+
-            <br />
-            <span className="text-white text-sm font-semibold">
-              Happy Clients
-            </span>{" "}
-          </div>
-        </div>
 
-        {/* BEST FOR YOU SECTION */}
+          {/* BEST FOR YOU SECTION */}
 
-        <div>
-          {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map(
-            (content, i) => (
-              <>
-                <div className="text-sm text-center uppercase pb-1">
-                  {content?.title}
-                </div>
-                <div className="text-2xl text-center pb-13">
-                  {content?.tagline}
-                </div>
-              </>
-            )
-          )}
-          {serviceDetailsContent[`${slug}`].bestService?.map((service, i) => (
-            <div className="pb-10">
-              <div className="flex-col pb-8">
-                <div className="flex gap-4">
-                  <img src={service?.service_image} alt="" className="w-20" />
-                  <div className="w-2/3 text-2xl flex items-end">
-                    {service?.service_name}
+          <div>
+            {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map(
+              (content, i) => (
+                <>
+                  <div className="w-2/3 mx-auto text-sm text-center uppercase pb-3">
+                    {content?.title}
+                  </div>
+                  <div className="text-2xl text-center pb-13">
+                    {content?.tagline}
+                  </div>
+                </>
+              )
+            )}
+            {serviceDetailsContent[`${slug}`].bestService?.map((service, i) => (
+              <div className="pb-10">
+                <div className="flex-col pb-8">
+                  <div className="flex gap-4">
+                    <img src={service?.service_image} alt="" className="w-20" />
+                    <div className="w-2/3 text-2xl flex items-end">
+                      {service?.service_name}
+                    </div>
+                  </div>
+                  <div className="text-sm text-justify text-[#D0D4EA] pt-5">
+                    {service?.des}
                   </div>
                 </div>
-                <div className="text-sm text-justify text-[#D0D4EA] pt-5">
-                  {service?.des}
-                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div
@@ -269,7 +281,7 @@ const ServiceDetails = () => {
         <div id="Service" className="service-capbility py-13 px-2">
           {capabilities?.map((list) => (
             <div className="box rounded-lg mb-4">
-              <div className="z-[-1] relative text-center text-xl text-white font-thin py-3">
+              <div className="z-[-1] relative text-center text-xl text-white font-thin py-3 px-1">
                 {list}
               </div>
             </div>
