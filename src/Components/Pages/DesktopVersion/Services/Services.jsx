@@ -77,11 +77,13 @@ const Services = () => {
             <div>
               <h1
                 id="service_name"
-                className={`font-bold lg:text-[40px] 2xl:text-6xl font_title`}
+                className={`font-bold lg:text-3xl 2xl:text-5xl font_title`}
               >
                 {activeServiceDetails?.service_name}
               </h1>
-              <p className="mt-8">{activeServiceDetails?.short_description}</p>
+              <p className="mt-8 text-sm 2xl:text-base">
+                {activeServiceDetails?.short_description}
+              </p>
             </div>
           </Fade>
         </div>
@@ -104,7 +106,6 @@ const Services = () => {
                       className="spirit-bomb px-8 py-3 bg-transparent text-[15px] font-semibold leading-4 capitalize text-white"
                       style={{
                         letterSpacing: "0.04em",
-                        border: "2px solid rgb(255, 255, 255)",
                         borderRadius: "30px",
                       }}
                     >
@@ -223,7 +224,6 @@ const Services = () => {
                 className="spirit-bomb w-[252px] h-[46px] bg-transparent text-[15px] font-semibold leading-4 capitalize text-white"
                 style={{
                   letterSpacing: "0.04em",
-                  border: "2px solid rgb(255, 255, 255)",
                   borderRadius: "30px",
                 }}
               >

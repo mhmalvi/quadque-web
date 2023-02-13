@@ -444,9 +444,9 @@ body::-webkit-scrollbar {
   justify-content: space-between;
 }
 
-.serviceDetails_content h5 {
+/* .serviceDetails_content h5 {
   opacity: 75%;
-}
+} */
 
 .case_study_details {
   color: white !important;

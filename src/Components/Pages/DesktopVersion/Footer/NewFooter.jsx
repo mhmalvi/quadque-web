@@ -3,7 +3,7 @@ import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
 
-const Footer1 = () => {
+const NewFooter = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
@@ -73,4 +73,4 @@ const Footer1 = () => {
   );
 };
 
-export default Footer1;
+export default NewFooter;

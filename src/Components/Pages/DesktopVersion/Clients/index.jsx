@@ -72,22 +72,22 @@ const Cleints = () => {
                 }}
               >
                 <ul className="list-inside font_primary text-basetext-left">
-                  <li className="list-disc py-0.5 text-left">
+                  <li className="list-disc py-0.5 text-left whitespace-nowrap">
                     Leading businesses
                   </li>
-                  <li className="list-disc py-0.5 text-left">
+                  <li className="list-disc py-0.5 text-left whitespace-nowrap">
                     From all over the world
                   </li>
-                  <li className="list-disc py-0.5 text-left">
+                  <li className="list-disc py-0.5 text-left whitespace-nowrap">
                     A diverse range of industries
                   </li>
-                  <li className="list-disc py-0.5 text-left">
+                  <li className="list-disc py-0.5 text-left whitespace-nowrap">
                     High standards of performance{" "}
                   </li>
-                  <li className="list-disc py-0.5 text-left">
+                  <li className="list-disc py-0.5 text-left whitespace-nowrap">
                     Excellent service quality{" "}
                   </li>
-                  <li className="list-disc py-0.5 text-left">
+                  <li className="list-disc py-0.5 text-left whitespace-nowrap">
                     Practical implementable solutions
                   </li>
                 </ul>
