@@ -184,7 +184,6 @@ const OldBlogs = () => {
                         className="spirit-bomb px-16 py-3.5 bg-black mt-12 text-base font-semibold leading-4"
                         style={{
                           letterSpacing: "0.04em",
-                          border: "2px solid rgb(255, 255, 255)",
                           borderRadius: "30px",
                         }}
                       >

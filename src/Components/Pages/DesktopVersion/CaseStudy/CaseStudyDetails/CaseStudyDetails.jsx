@@ -51,7 +51,7 @@ const CaseStudyDetails = ({ setLoader }) => {
         <meta name="keywords" content={caseStudyDetails?.meta_keyword} />
       </Helmet>
 
-      <div className="case_study_details min-h-full bg-black text-white py-20 px-36  h-[90vh] overflow-y-auto font_primary w-11/12 mx-auto">
+      <div className="case_study_details min-h-full bg-black text-white pt-20 px-36  h-[90vh] overflow-y-auto font_primary w-11/12 mx-auto">
         <div className="mb-10">
           <Icons.GoBackArrow
             className="w-6 font-semibold cursor-pointer"
@@ -102,7 +102,6 @@ const CaseStudyDetails = ({ setLoader }) => {
               className="spirit-bomb px-7 py-3.5 text-base font-medium leading-4 rounded-full bg-transparent text-white text-center"
               style={{
                 letterSpacing: "0.04em",
-                border: "2px solid rgb(255, 255, 255)",
                 borderRadius: "30px",
               }}
               onClick={() => {
@@ -319,7 +318,6 @@ const CaseStudyDetails = ({ setLoader }) => {
                   className="spirit-bomb px-7 py-3.5 text-sm 2xl:text-lg font-medium leading-4 rounded-full bg-transparent text-white text-center"
                   style={{
                     letterSpacing: "0.04em",
-                    border: "2px solid rgb(255, 255, 255)",
                     borderRadius: "30px",
                   }}
                   onClick={() => {
@@ -329,23 +327,26 @@ const CaseStudyDetails = ({ setLoader }) => {
                   Contact Us
                 </button>
 
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <span className="mx-11">or </span>
                   <span>
-                    <Icons.BluePhone className="mr-3.5" />
+                    <Icons.BluePhone className="mr-3.5 text-brand-color" />
                   </span>
                   <a
-                    href="tel:+0123456789"
+                    href="tel:+8801765276560"
                     className="text-base 2xl:text-lg font-medium leading-6"
                   >
-                    +0123456-789
+                    +8801765276560
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
-        <Footer />
+
+        <div className="-mb-20">
+          <Footer />
+        </div>
       </div>
     </>
   );

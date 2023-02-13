@@ -62,7 +62,6 @@ const Blogs = () => {
                       className="spirit-bomb px-16 py-3.5 bg-black mt-12 text-base font-semibold leading-4"
                       style={{
                         letterSpacing: "0.04em",
-                        border: "2px solid rgb(255, 255, 255)",
                         borderRadius: "30px",
                       }}
                     >
@@ -74,7 +73,7 @@ const Blogs = () => {
             ) : (
               <Fade spy={triggerSlideBlogDetailsAnimation}>
                 <div
-                  className={`spirit-bomb w-8/12 mx-auto transition ease-in-out delay-300 h-[70vh] rounded-md cursor-pointer relative bg-gradient-to-tr from-gray-600 ... bg-opacity-40 backdrop-filter backdrop-blur-xl border border-gray-500 p-4`}
+                  className={`spirit-bomb w-8/12 mx-auto transition ease-in-out delay-300 h-[70vh] my-auto rounded-[20px] cursor-pointer relative bg-gradient-to-tr from-gray-600 ... bg-opacity-40 backdrop-filter backdrop-blur-xl border border-gray-500 p-4`}
                 >
                   <img
                     src={
@@ -89,7 +88,7 @@ const Blogs = () => {
                   />
                   <div className="w-full flex items-end px-2 2xl:px-10 pt-10 pb-6 rounded-md z-10 transition ease-in-out delay-300">
                     <div>
-                      <h1 className="text-base 2xl:text-2xl font-semibold text-white mb-2 2xl:mb-6">
+                      <h1 className="text-sm 2xl:text-2xl font-semibold text-white mb-2 2xl:mb-6">
                         {activeblogDetails.title}
                       </h1>
                       <div className="text-white text-xs 2xl:text-sm">
@@ -118,45 +117,97 @@ const Blogs = () => {
         </Fade>
 
         <div className="relative w-[60%] min-h-full my-auto mx-4 flex justify-center items-center">
-          <div className="grid grid-cols-3 gap-4 justify-center items-center">
-            {blogs.slice(0, 9).map((blog, i) => (
-              <div
-                onMouseOver={() => {
-                  setActiveblogDetails(blog);
-                  setTriggerSlideBlogDetailsAnimation(
-                    !triggerSlideBlogDetailsAnimation
-                  );
-                }}
-                onMouseOut={() => {
-                  setActiveblogDetails({});
-                  setTriggerSlideBlogDetailsAnimation(false);
-                }}
-                key={i}
-                className="w-full h-full m-auto rounded-md cursor-pointer relative bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-500 p-4"
-                onClick={() => handleBlogNavigate(blog?.slug)}
-              >
-                <img
-                  src={
-                    blog?.thumbnail
-                      ? process.env.REACT_APP_ASSETS_URL + "/" + blog?.thumbnail
-                      : blog1
-                  }
-                  alt=""
-                  className="m-auto w-full 2xl:h-56 rounded-md"
-                />
-                <div className="w-full min-h-full flex items-end h-10 absolute left-0 px-10 pb-10 bottom-0 rounded-md bg-gradient-to-b from-black/30 to-black z-10">
-                  <div>
-                    <h1 className="text-base text-white mb-2 h-6 overflow-hidden">
-                      {blog.title}...
-                    </h1>
-                    <div className="text-white text-sm">By {blog?.author}</div>
-                    <div className="text-white text-sm">
-                      {new Date(blog?.created_at).toString().slice(0, 15)}
+          <div className="block 2xl:hidden ">
+            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              {blogs.slice(0, 4).map((blog, i) => (
+                <div
+                  onMouseOver={() => {
+                    setActiveblogDetails(blog);
+                    setTriggerSlideBlogDetailsAnimation(
+                      !triggerSlideBlogDetailsAnimation
+                    );
+                  }}
+                  onMouseOut={() => {
+                    setActiveblogDetails({});
+                    setTriggerSlideBlogDetailsAnimation(false);
+                  }}
+                  key={i}
+                  className="w-full h-full m-auto rounded-md cursor-pointer relative bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-500 p-4"
+                  onClick={() => handleBlogNavigate(blog?.slug)}
+                >
+                  <img
+                    src={
+                      blog?.thumbnail
+                        ? process.env.REACT_APP_ASSETS_URL +
+                          "/" +
+                          blog?.thumbnail
+                        : blog1
+                    }
+                    alt=""
+                    className="m-auto w-full 2xl:h-56 rounded-md"
+                  />
+                  <div className="w-full min-h-full flex items-end h-10 absolute left-0 px-10 pb-10 bottom-0 rounded-md bg-gradient-to-b from-black/30 to-black z-10">
+                    <div>
+                      <h1 className="text-sm 2xl:text-base text-white mb-2 h-6 overflow-hidden">
+                        {blog.title}...
+                      </h1>
+                      <div className="text-white text-xs 2xl:text-sm">
+                        By {blog?.author}
+                      </div>
+                      <div className="text-white text-xs 2xl:text-sm">
+                        {new Date(blog?.created_at).toString().slice(0, 15)}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+          <div className="hidden 2xl:block ">
+            <div className="grid grid-cols-3 gap-4 justify-center items-center">
+              {blogs.slice(0, 9).map((blog, i) => (
+                <div
+                  onMouseOver={() => {
+                    setActiveblogDetails(blog);
+                    setTriggerSlideBlogDetailsAnimation(
+                      !triggerSlideBlogDetailsAnimation
+                    );
+                  }}
+                  onMouseOut={() => {
+                    setActiveblogDetails({});
+                    setTriggerSlideBlogDetailsAnimation(false);
+                  }}
+                  key={i}
+                  className="w-full h-full m-auto rounded-md cursor-pointer relative bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-500 p-4"
+                  onClick={() => handleBlogNavigate(blog?.slug)}
+                >
+                  <img
+                    src={
+                      blog?.thumbnail
+                        ? process.env.REACT_APP_ASSETS_URL +
+                          "/" +
+                          blog?.thumbnail
+                        : blog1
+                    }
+                    alt=""
+                    className="m-auto w-full 2xl:h-56 rounded-md"
+                  />
+                  <div className="w-full min-h-full flex items-end h-10 absolute left-0 px-10 pb-10 bottom-0 rounded-md bg-gradient-to-b from-black/30 to-black z-10">
+                    <div>
+                      <h1 className="text-sm 2xl:text-base text-white mb-2 h-6 overflow-hidden">
+                        {blog.title}...
+                      </h1>
+                      <div className="text-white text-xs 2xl:text-sm">
+                        By {blog?.author}
+                      </div>
+                      <div className="text-white text-xs 2xl:text-sm">
+                        {new Date(blog?.created_at).toString().slice(0, 15)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
