@@ -130,7 +130,7 @@ const Gallery = () => {
         </div>
       </div>
       <Link to={`/`}>
-        <div className="w-44 flex justify-center text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full">
+        <div className="w-44 flex justify-center text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full font_title">
           <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow" />
           Go Back
         </div>
