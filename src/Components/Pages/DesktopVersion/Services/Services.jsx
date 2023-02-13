@@ -147,11 +147,13 @@ const Services = () => {
 
           {/* {activeService?.includes("Software") ? ( */}
           {activeService?.includes("Mobile") ? (
-            <Lottie
-              animationData={AppDev}
-              loop={true}
-              alt="Application Development Layout"
-            />
+            <Link to={`services/mobile-app-development`}>
+              <Lottie
+                animationData={AppDev}
+                loop={true}
+                alt="Application Development Layout"
+              />
+            </Link>
           ) : null}
           {/* {activeService === "Software Development" ? ( */}
           {activeService?.includes("Software") ? (

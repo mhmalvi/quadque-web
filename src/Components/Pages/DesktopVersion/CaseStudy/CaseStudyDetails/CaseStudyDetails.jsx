@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
 import rightImage from "../../../../../asstes/Images/background.jpg";
+import favicon from "../../../../../asstes/Images/logo.png";
 import Icons from "../../../../Shared/Icons";
 // import help1 from "../../../../../asstes/Images/help1.png";
 // import help2 from "../../../../../asstes/Images/help2.png";
@@ -49,6 +50,7 @@ const CaseStudyDetails = ({ setLoader }) => {
           {caseStudyDetails?.our_content_header + ` – Quadque Tech`}
         </title>
         <meta name="keywords" content={caseStudyDetails?.meta_keyword} />
+        <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
 
       <div className="case_study_details min-h-full bg-black text-white pt-20 px-36  h-[90vh] overflow-y-auto font_primary w-11/12 mx-auto">

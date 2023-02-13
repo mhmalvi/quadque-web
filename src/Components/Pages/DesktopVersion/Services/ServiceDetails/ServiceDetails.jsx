@@ -15,6 +15,7 @@ import product from "../../../../../asstes/Images/product.png";
 import research from "../../../../../asstes/Images/Research.png";
 import usability from "../../../../../asstes/Images/useability.png";
 import visual from "../../../../../asstes/Images/visual.png";
+import favicon from "../../../../../asstes/Images/logo.png";
 import WebApp from "../../../../../asstes/Images/WebApp.png";
 import speakLogo from "../../../../../asstes/Lotties/speak.json";
 import useCaseStudy from "../../../../Shared/Hooks/useCaseStudy";
@@ -76,6 +77,7 @@ const ServiceDetails = ({ setLoader }) => {
           name="keywords"
           content={serviceDetailsContent[`${slug}`]?.metaKeywords}
         />
+        <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
 
       <div className="blog_details min-h-full bg-black text-white pt-20 px-36 h-[90vh] overflow-y-auto font_primary w-11/12 mx-auto">

@@ -231,7 +231,7 @@ const StartProject = () => {
                 }`}
                 onClick={() => handleActiveServices(service?.service_name)}
               >
-                <Fade left cascade spy={triggerAnimation}>
+                <Fade left spy={triggerAnimation}>
                   <div
                     className={`${
                       activeServices === service?.service_name ? "pr-4" : null
@@ -259,7 +259,7 @@ const StartProject = () => {
                 `}
                   onClick={() => handleActiveSubServices(subService)}
                 >
-                  <Fade left cascade spy={triggerAnimation}>
+                  <Fade left spy={triggerAnimation}>
                     <span
                       className={`max-w-[10px] px-1 py-[2.5px] max-h-[8px] border mr-2.5 ${
                         activeSubServices.includes(subService)
@@ -286,7 +286,7 @@ const StartProject = () => {
             </div>
           ) : null}
 
-          <Fade right cascade spy={triggerAnimation}>
+          <Fade right spy={triggerAnimation}>
             <div
               className={`w-84 ${
                 activeSubServices?.length ? "block" : "hidden"
@@ -331,7 +331,7 @@ const StartProject = () => {
 
               <div className="flex justify-center items-center">
                 <button
-                  className="spirit-bomb whitespace-nowrap px-16 py-4 bg-transparent rounded-full border border-white mt-12 xl:mt-16 text-xs 2xl:text-base font-semibold leading-4"
+                  className="spirit-bomb whitespace-nowrap px-16 py-4 bg-transparent rounded-full mt-12 xl:mt-16 text-xs 2xl:text-base font-semibold leading-4"
                   style={{
                     letterSpacing: "0.04em",
                     borderRadius: "30px",
