@@ -37,25 +37,27 @@ const CaseStudyDetail = () => {
         <meta name="keywords" content={caseData?.meta_keyword} />
       </Helmet>
 
-      {loader ? (
-        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
-          <Lottie
-            className="w-1/2 mx-auto"
-            animationData={loaderFile}
-            loop={true}
-          />
-
-          <div className="font_title text-white animate-pulse">Loading...</div>
-        </div>
-      ) : null}
 
       <div
-        className={`w-full text-white pt-30 px-6 font_primary ${
-          !caseData ? "scale-0" : ""
-        }`}
-      >
+        className="w-full min-h-[700px] text-white pt-30 font_primary"
+        >
+        {loader ? (
+          <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
+            <div className="absolute top-32">
+              <Lottie
+                className="w-1/2 mx-auto"
+                animationData={loaderFile}
+                loop={true}
+              />
+  
+              <div className="font_title text-white animate-pulse flex justify-center">
+                Loading...
+              </div>
+            </div>
+          </div>
+        ) : null}
         {/* TOP SECTION  */}
-        <div>
+        <div className="px-6">
           <h1 className="font_title text-2xl text-center pb-3">
             {caseData?.com_name}
           </h1>
@@ -70,13 +72,13 @@ const CaseStudyDetail = () => {
           />
 
           <div className="text-sm text-center pb-5">{caseData?.summary2}</div>
-          <div className="w-40 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
+          <div className="w-40 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-10">
             <a href="#Footer">Contact Us</a>
           </div>
         </div>
 
         {/* SECTION 2 */}
-        <div className="">
+        <div className="px-6">
           <img
             src={
               process.env.REACT_APP_ASSETS_URL + "/" + caseData?.short_banner
@@ -129,7 +131,7 @@ const CaseStudyDetail = () => {
         </div>
 
         {/* SECTION 3 */}
-        <div>
+        <div className="px-6">
           <div className="text-2xl text-center">Our Content:</div>
           <div className="text-2xl text-center pb-13">
             {caseData?.our_content_header}
@@ -198,12 +200,11 @@ const CaseStudyDetail = () => {
             sadipscing elitr
           </div>
           <div className="flex justify-evenly">
-            <div className="w-40 flex justify-center border bg-black text-white py-2 mx-auto px-3 spirit-bomb rounded-full relative z-50">
+            <div className="w-40 flex justify-center bg-black text-white py-2 mx-auto px-3 spirit-bomb rounded-full relative z-50">
               Contact Us
             </div>
           </div>
         </div> */}
-
 
         <Link to={`/`}>
           <div className="w-44 flex justify-center  bg-black text-white py-2 my-10 mx-auto px-6 rounded-full relative z-50">

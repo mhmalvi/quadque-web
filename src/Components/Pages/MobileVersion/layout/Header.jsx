@@ -46,7 +46,7 @@ const Header = () => {
         {/* <Slide top> */}
         <a
           href="#start-project"
-          className="bg-black text-sm  font-semibold spirit-bomb py-3 px-4 rounded-full border z-50 uppercase"
+          className="bg-black text-sm font-semibold spirit-bomb py-3 px-4 rounded-full z-50 uppercase font_title"
         >
           START A PROJECT
         </a>
