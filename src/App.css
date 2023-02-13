@@ -448,6 +448,11 @@ body::-webkit-scrollbar {
   opacity: 75%;
 } */
 
+.serviceDetails_content img {
+  width: 90%;
+  margin: auto;
+}
+
 .case_study_details {
   color: white !important;
 }

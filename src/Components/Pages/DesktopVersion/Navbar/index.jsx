@@ -40,8 +40,8 @@ const Navbar = ({ setOpenMenus }) => {
             }}
             onClick={() => handleNavigate("#services")}
           >
-            <span className="p-0 m-0 uppercase">SERVICES</span>
-            <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+            <span className="p-0 m-0 uppercase font_title">SERVICES</span>
+            <span className="lg:text-base xl:text-lg 2xl:text-3xl mb-auto font_title">
               #01
             </span>
             <img
@@ -67,8 +67,8 @@ const Navbar = ({ setOpenMenus }) => {
               className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
               onClick={() => handleNavigate("#about")}
             >
-              <span className="p-0 m-0 uppercase">ABOUT</span>
-              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              <span className="p-0 m-0 uppercase font_title">ABOUT</span>
+              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto font_title">
                 #02
               </span>
               <img
@@ -83,7 +83,7 @@ const Navbar = ({ setOpenMenus }) => {
           <div
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex"
             onMouseOver={() => {
-              setShowBgShadow("PORTFOLIO");
+              setShowBgShadow("CASE STUDY");
             }}
             onMouseOut={() => {
               setShowBgShadow("");
@@ -94,13 +94,13 @@ const Navbar = ({ setOpenMenus }) => {
               className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
               onClick={() => handleNavigate("#case-study")}
             >
-              <span className="p-0 m-0 uppercase">PORTFOLIO</span>
-              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              <span className="p-0 m-0 uppercase font_title">CASE STUDY</span>
+              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto font_title">
                 #03
               </span>
               <img
                 className={`absolute ${
-                  showBgShadow === "PORTFOLIO" ? "opacity-100" : "opacity-0"
+                  showBgShadow === "CASE STUDY" ? "opacity-100" : "opacity-0"
                 } transition-opacity delay-200 -top-2 right-0 lg:w-[40%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
                 alt=""
@@ -125,8 +125,8 @@ const Navbar = ({ setOpenMenus }) => {
               className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
               onClick={() => setOpenMenus(false)}
             >
-              <span className="p-0 m-0 uppercase">BLOGS</span>
-              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              <span className="p-0 m-0 uppercase font_title">BLOGS</span>
+              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto font_title">
                 #04
               </span>
               <img
@@ -154,8 +154,8 @@ const Navbar = ({ setOpenMenus }) => {
               className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
               onClick={() => setOpenMenus(false)}
             >
-              <span className="p-0 m-0 uppercase">CONTACT</span>
-              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto">
+              <span className="p-0 m-0 uppercase font_title">CONTACT</span>
+              <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto font_title">
                 #05
               </span>
               <img
