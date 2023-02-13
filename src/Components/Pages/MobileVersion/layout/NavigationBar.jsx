@@ -34,7 +34,7 @@ const NavigationBar = () => {
               alt="Logo"
             />
             {/* <Icons.BrandLogoMobWithTagline className="w-32 text-white animate-pulse" /> */}
-            <div id="tagline" className="image-wrapper shine overlay pt-1">
+            <div id="tagline" className="image-wrapper shine overlay pt-1 block sm:hidden">
               <img
                 src={Tagline}
                 alt="tagline"

@@ -215,12 +215,10 @@
   position: absolute;
   left: -120px;
   top: 20px;
-  width: 600px;
+  width: 700px;
   height: 20px;
   background: linear-gradient(#a050f0, #8f00ff);
-  transform: rotate(120deg);
   /* animation: animate 5s linear infinite; */
-  z-index: -20;
 }
 
 /* .box::after {
@@ -231,14 +229,14 @@
   z-index: -10;
 } */
 
-@keyframes animate {
+/* @keyframes animate {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 .go-back-arrow {
   animation: shake 10s linear infinite;
@@ -578,10 +576,10 @@
   height: 100%;
   position: absolute;
   left: 80px;
-  animation: overlay 6s ease-in-out infinite;
+  animation: jala 6s ease-in-out infinite;
 }
 
-@keyframes overlay {
+@keyframes jala {
   0% {
     opacity: 0;
     transform: translateX(-35px);

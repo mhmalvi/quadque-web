@@ -70,7 +70,7 @@ const BlogDetail = () => {
       </Helmet>
 
       {loader ? (
-        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
+        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute">
           <Lottie
             className="w-1/2 mx-auto"
             animationData={loaderFile}
@@ -103,7 +103,7 @@ const BlogDetail = () => {
           ></div>
         </div>
         <Link to={`/blogs`}>
-          <div className="w-44 flex justify-center border bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
+          <div className="w-44 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50 font_title">
             <Icons.GoBackArrow
               width={20}
               className="mx-3 go-back-arrow whitespace-nowrap"

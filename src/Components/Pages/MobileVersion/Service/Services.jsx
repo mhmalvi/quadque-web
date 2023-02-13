@@ -118,6 +118,7 @@ const Services = () => {
                     ) : null} */}
                     {details?.service_name === "Mobile App Development" ? (
                       <Lottie
+                        className="h-81"
                         animationData={AppDev}
                         loop={true}
                         alt="Application Development Layout"
@@ -137,8 +138,7 @@ const Services = () => {
                         alt="Web Development Layout"
                       />
                     ) : null}
-                    {details?.service_name ===
-                    "Cyber Security" ? (
+                    {details?.service_name === "Cyber Security" ? (
                       <Lottie
                         animationData={CyberSecurity}
                         loop={true}
