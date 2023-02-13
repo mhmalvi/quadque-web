@@ -72,7 +72,7 @@ const CaseStudyDetail = () => {
           />
 
           <div className="text-sm text-center pb-5">{caseData?.summary2}</div>
-          <div className="w-40 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-10">
+          <div className="w-40 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-10 font_title">
             <a href="#Footer">Contact Us</a>
           </div>
         </div>
@@ -200,7 +200,7 @@ const CaseStudyDetail = () => {
             sadipscing elitr
           </div>
           <div className="flex justify-evenly">
-            <div className="w-40 flex justify-center bg-black text-white py-2 mx-auto px-3 spirit-bomb rounded-full relative z-50">
+            <div className="w-40 flex justify-center bg-black text-white py-2 mx-auto px-3 spirit-bomb rounded-full relative z-50 font_title">
               Contact Us
             </div>
           </div>
