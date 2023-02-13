@@ -52,50 +52,45 @@ const CareerGallery = () => {
         />
       </Helmet>
 
-      <div className="text-3xl text-white mt-30 px-6 pb-4 font_primary">
+      <div className="text-3xl text-white mt-30 px-6 pb-4 font_title">
         Current Job Openings
       </div>
-      <div className="Career w-full min-h-[900px] font_primary">
-        {loader ? (
-          <div className="w-full h-[900px] z-50 flex flex-col justify-center items-center m-auto absolute bg-black backdrop-blur-md">
-            <Lottie
-              className="w-1/2 mx-auto"
-              animationData={loaderFile}
-              loop={true}
-            />
+      {loader ? (
+        <div className="w-full h-[1400px] z-50 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
+          <Lottie
+            className="w-1/2 mx-auto"
+            animationData={loaderFile}
+            loop={true}
+          />
 
-            <div className="font_title text-white animate-pulse">
-              Loading...
-            </div>
-          </div>
-        ) : null}
+          <div className="font_title text-white animate-pulse">Loading...</div>
+        </div>
+      ) : null}
+      <div className="Career w-full min-h-[1400px] font_primary">
         {currentPosts?.map((details) => (
-          <div key={details.id} className="rounded-xl pb-6 relative mx-6">
-            {/* <img
-              src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
-              alt=""
-              className="w-[100%] h-[185px] m-auto rounded-lg"
-            /> */}
-            <img
-              src="https://i.ibb.co/1GxDBSp/jobpost.png"
-              alt=""
-              className="rounded-lg"
-            />
-            <div className="flex items-center justify-between pb-2 px-2 gap-4">
-              <div>
-                <h1 className="text-lg text-white pt-4">{details.position}</h1>
-                <div className="text-white text-sm italic font-thin">
-                  deadline: {details.app_deadline}
+          <Link to={`/career-detail/${details.id}`}>
+            <div key={details.id} className="rounded-xl pb-6 relative mx-6">
+              <img
+                src="https://i.ibb.co/1GxDBSp/jobpost.png"
+                alt=""
+                className="rounded-lg"
+              />
+              <div className="flex items-center justify-between pb-2 px-2 gap-4">
+                <div>
+                  <h1 className="text-lg text-white pt-4">
+                    Position: {details.position}
+                  </h1>
+                  <div className="text-white text-sm italic font-thin">
+                    deadline: {details.app_deadline}
+                  </div>
                 </div>
-              </div>
-              <Link to={`/career-detail/${details.id}`}>
-                <div className="h-8 bg-white my-2 px-4 rounded-full text-sm text-center flex items-center cursor-pointer">
+                {/* <div className="h-8 bg-white my-2 px-4 rounded-full text-sm text-center flex items-center cursor-pointer">
                   View
-                </div>
-              </Link>
+                </div> */}
+              </div>
+              {/* <div dangerouslySetInnerHTML={{ __html: details.text }} className="text-white"></div> */}
             </div>
-            {/* <div dangerouslySetInnerHTML={{ __html: details.text }} className="text-white"></div> */}
-          </div>
+          </Link>
         ))}
       </div>
       {/* PAGINATION */}

@@ -48,16 +48,12 @@ const Services = () => {
   useEffect(() => {
     let i = 1;
 
-    // setActiveService(services[0]?.service_name);
-
     setInterval(() => {
-      // setActiveDetails(services[i]);
       i++;
       if (i > services?.length - 1) {
         i = 0;
       }
       setActiveService(services[i]?.service_name);
-      // setLoader(true);
     }, 15000);
   }, [services]);
 

@@ -137,7 +137,7 @@ const CareerDetail = () => {
             {careerData?.app_deadline}
           </div>
           {/* <Link to={`/`}> */}
-          <div className="w-40 border bg-black text-white text-sm text-center py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
+          <div className="w-40 bg-black text-white text-sm text-center py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50 font_title">
             Apply
           </div>
           {/* </Link> */}
