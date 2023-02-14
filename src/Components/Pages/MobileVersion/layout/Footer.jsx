@@ -42,7 +42,7 @@ const Footer = () => {
           <a href="/#Case_Study" className="my-2">
             Case Studies
           </a>
-          <Link to={`/blogs`}>
+          <Link to={`/blog`}>
             <p className="my-2">Blogs</p>
           </Link>
           <Link to={`/gallery`}>

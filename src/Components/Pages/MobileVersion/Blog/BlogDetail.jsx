@@ -22,9 +22,10 @@ const BlogDetail = () => {
   }, []);
 
   useEffect(() => {
+    setLoader(true);
     (async () => {
       const fetchBlog = await handleFetchBlogBySlug(slug);
-      console.log("fetch", fetchBlog);
+
       if (fetchBlog.status === 200) {
         setTimeout(() => {
           setLoader(false);
@@ -33,7 +34,6 @@ const BlogDetail = () => {
       } else {
         message.error(fetchBlog.message);
       }
-      console.log("blog data", blogData);
     })();
   }, [randomBlogData, slug]);
 
@@ -71,7 +71,7 @@ const BlogDetail = () => {
       </Helmet>
 
       {loader ? (
-        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute">
+        <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute top-0 bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm">
           <Lottie
             className="w-1/2 mx-auto"
             animationData={loaderFile}
@@ -105,7 +105,7 @@ const BlogDetail = () => {
             dangerouslySetInnerHTML={{ __html: blogData?.text }}
           ></div>
         </div>
-        <Link to={`/blogs`}>
+        <Link to={`/blog`}>
           <div className="w-44 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50 font_title">
             <Icons.GoBackArrow
               width={20}
@@ -126,11 +126,12 @@ const BlogDetail = () => {
                 // <Link to={`blog/${post?.id}`}>
 
                 <div
-                  onClick={() =>
-                    navigate(`../blogs/blog-detail/${post.slug}`, {
+                  onClick={() => {
+                    navigate(`../blog/${post.slug}`, {
                       replace: true,
-                    })
-                  }
+                    });
+                    window.scrollTo(0, 0);
+                  }}
                   key={post?.id}
                   className="w-32"
                 >

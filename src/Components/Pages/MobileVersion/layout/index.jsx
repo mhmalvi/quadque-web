@@ -20,10 +20,10 @@ import CareerGallery from "../Career/CareerGallery";
 import CareerDetail from "../Career/CareerDetail";
 
 const Layout = () => {
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-    
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <div id="stars"></div>
@@ -47,8 +47,8 @@ const Layout = () => {
               </>
             }
           />
-          <Route path="/blogs" element={<BlogGallery />} />
-          <Route path={"blogs/blog-detail/:slug"} element={<BlogDetail />} />
+          <Route path="/blog" element={<BlogGallery />} />
+          <Route path={"blog/:slug"} element={<BlogDetail />} />
           <Route path={"services/:slug"} element={<ServiceDetails />} />
           <Route path={"case-study/:slug"} element={<CaseStudyDetail />} />
           <Route path={"gallery"} element={<Gallery />} />
