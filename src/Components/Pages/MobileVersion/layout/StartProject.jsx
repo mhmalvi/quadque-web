@@ -279,7 +279,7 @@ const StartProject = () => {
           <button
             onClick={handleSendMailReq}
             type="submit"
-            className="w-1/2 p-3 text-white font-medium bg-black rounded-full spirit-bomb my-5 uppercase font_title"
+            className="px-4 py-3 text-white font-medium bg-black rounded-full spirit-bomb my-5 uppercase font_title whitespace-nowrap"
           >
             Start a Project
           </button>

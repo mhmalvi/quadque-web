@@ -66,7 +66,7 @@ const BlogGallery = () => {
           </div>
         ) : null}
         {currentPosts?.map((details) => (
-          <Link to={`blog-detail/${details.slug}`}>
+          <Link to={`/blog/${details.slug}`}>
             <div key={details.id} className="rounded-xl relative mb-8 mx-6">
               <img
                 src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
