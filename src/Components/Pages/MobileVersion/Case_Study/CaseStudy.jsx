@@ -87,7 +87,7 @@ const CaseStudy = () => {
         </Slider>
       </div>
       <div className="relative w-9/12 mx-auto">
-        {CaseStudies && (
+        {CaseStudies !="" && (
           <>
             <div
               onClick={() => CaseSlider.current.slickPrev()}
