@@ -33,7 +33,7 @@ const BlogDetail = () => {
       } else {
         message.error(fetchBlog.message);
       }
-      //console.log("blog data", blogData);
+      console.log("blog data", blogData);
     })();
   }, [randomBlogData, slug]);
 
@@ -67,6 +67,7 @@ const BlogDetail = () => {
         <meta charSet="utf-8" />
         <title>{`Blog - ${blogData?.title} – Quadque Tech`}</title>
         <meta name="keywords" content={blogData?.meta_keyword} />
+        <meta name="description" content={blogData?.meta_description} />
       </Helmet>
 
       {loader ? (
@@ -91,8 +92,10 @@ const BlogDetail = () => {
         />
         <div className="flex items-end h-56 bg-gradient-to-b from-transparent to-black px-6 pb-10">
           <div className="text-2xl text-white">
-            <h1 className="font_title">{blogData?.title}</h1>
-            <div className="text-white text-sm">By {blogData?.author}</div>
+            {/* <h1 className="font_title text-shadow">{blogData?.title}</h1> */}
+            <div className="text-white font_shadow text-sm">
+              -By {blogData?.author}
+            </div>
           </div>
         </div>
         <div className="px-6">
