@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Team from "../../../../asstes/Images/team.png";
+import Team from "../../../../asstes/Images/team-vector.png";
 import QuadqueTeam from "../../../../asstes/Images/qqteam.jpg";
 import "../../MobileVersion/MobileView.css";
 import Slider from "react-slick";
@@ -27,7 +27,7 @@ const OurTeam = () => {
       <h1 className="w-2/3 m-auto font_title text-3xl px-6 text-center">
         Skilled Team<br />of Creators
       </h1>
-      <img src={Team} alt="" className="w-1/3 m-auto my-10" />
+      <img src={Team} alt="" className="w-9/12 m-auto my-5" />
       <div className="text-sm px-10 pb-8 leading-6 text-center">
         We are an experienced and diverse team of software engineers, mobile
         application, Web developers, UI/UX designers, quality engineers, digital

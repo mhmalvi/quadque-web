@@ -97,11 +97,9 @@ const OurCustomer = () => {
           <span className="font-bold text-brand-color">100+</span> clients
           served
         </div>
-        <ul className="text-sm px-6 leading-6">
-          <li className="flex justify-center">
-            Leading businesses from all over the world
-          </li>
-          <li className="flex justify-center">A diverse range of industries</li>
+        <ul className="text-center text-sm px-6 leading-6">
+          <li>Leading businesses from all over the world</li>
+          <li>A diverse range of industries</li>
         </ul>
 
         <Lottie
@@ -121,12 +119,12 @@ const OurCustomer = () => {
           <span className="font-bold text-brand-color">150+</span> Projects
           completed
         </div>
-        <ul className="text-sm px-6 leading-6">
-          <li className="flex justify-center">
+        <ul className="text-sm text-center px-6 leading-6">
+          <li>
             Practical and easily implementable solutions
           </li>
-          <li className="flex justify-center">High standards of performance</li>
-          <li className="flex justify-center">Excellent service quality</li>
+          <li>High standards of performance</li>
+          <li>Excellent service quality</li>
         </ul>
       </div>
     </div>

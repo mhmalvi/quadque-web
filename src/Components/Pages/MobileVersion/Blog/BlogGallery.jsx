@@ -53,7 +53,7 @@ const BlogGallery = () => {
 
       <div className="Blog w-full min-h-[900px] mt-30 font_primary">
         {loader ? (
-          <div className="w-full h-[900px] z-40 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-md">
+          <div className="w-full h-[900px] z-40 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
             <Lottie
               className="w-1/2 mx-auto"
               animationData={loaderFile}
@@ -67,10 +67,7 @@ const BlogGallery = () => {
         ) : null}
         {currentPosts?.map((details) => (
           <Link to={`blog-detail/${details.slug}`}>
-            <div
-              key={details.id}
-              className="rounded-xl relative mb-8 mx-6"
-            >
+            <div key={details.id} className="rounded-xl relative mb-8 mx-6">
               <img
                 src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
                 alt=""
@@ -78,7 +75,7 @@ const BlogGallery = () => {
               />
               <div className="w-full flex items-end h-32 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2">
                 <div>
-                  <div className="text-lg text-white text-shadow">
+                  <div className="text-lg text-white font_shadow">
                     {details.title}
                   </div>
                   <div className="text-white text-sm"> {details.author}</div>
