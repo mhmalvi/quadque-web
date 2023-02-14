@@ -95,101 +95,18 @@ const About = () => {
             {/* <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mb-auto overflow-y-scroll py-1"> */}
             <div className="about_details border-gray-700 pr-12 xl:h-[50vh] 2xl:h-[60vh] w-[90%] py-1 overflow-hidden">
               <Fade right cascade spy={triggerAnimation}>
-                <div className="block xl:hidden h-[55vh]">
+                <div className="h-[53vh] xl:h-[42vh] 2xl:h-[48vh]">
                   {scrollingIndex === 0 ? (
-                    <>
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(1)}
-                        //onMouseOut={() => handleChangeBanner(0)}
-                      >
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                          Our Vision
-                        </h1>
-                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
-                          {goals?.our_vision}
-                        </p>
-                        <hr className=" text-white text-opacity-30 my-4 2xl:my-12 py-0.5" />
-                      </div>
-
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(2)}
-                        //onMouseOut={() => handleChangeBanner(0)}
-                      >
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                          Our Mission
-                        </h1>
-                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
-                          {goals?.our_mission}
-                        </p>
-                        <div
-                          className="w-full bg-gray-400 my-4 2xl:my-12"
-                          style={{
-                            height: "0.5px",
-                          }}
-                        ></div>
-                      </div>
-                    </>
-                  ) : null}
-
-                  {scrollingIndex === 1 ? (
-                    <div>
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(3)}
-                        //onMouseOut={() => handleChangeBanner(0)}
-                      >
-                        <div className="text-2xl font-bold leading-[100%] pl-4">
-                          Our Goal
-                        </div>
-                        <div className="mt-2.5 text-white pl-4">
-                          {goals?.our_goal}
-                        </div>
-                        <div
-                          className="w-full bg-gray-400 my-4 2xl:my-12"
-                          style={{
-                            height: "0.5px",
-                          }}
-                        ></div>
-                      </div>
-
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(4)}
-                        //onMouseOut={() => handleChangeBanner(0)}
-                      >
-                        {/* <Fade right cascade spy={triggerTitleAnimation}> */}
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                          Our Objective
-                        </h1>
-                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
-                          {goals?.our_objective}
-                        </p>
-                        {/* </Fade> */}
-                        <div
-                          className="w-full bg-gray-400 my-4 2xl:my-12"
-                          style={{
-                            height: "0.5px",
-                          }}
-                        ></div>
-                      </div>
-                    </div>
-                  ) : null}
-                  {scrollingIndex === 2 ? (
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                       onMouseOver={() => handleChangeBanner(5)}
-                      //onMouseOut={() => handleChangeBanner(0)}
                     >
-                      {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                       <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                         Who We Are
                       </h1>
                       <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                         {goals?.who_we_are}
                       </p>
-                      {/* </Fade> */}
                       <div
                         className="w-full bg-gray-400 my-4 2xl:my-12"
                         style={{
@@ -198,7 +115,49 @@ const About = () => {
                       ></div>
                     </div>
                   ) : null}
-                  {scrollingIndex === 3 ? (
+
+                  {scrollingIndex === 1 ? (
+                    // <div>
+                    //   <div
+                    //     className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                    //     onMouseOver={() => handleChangeBanner(3)}
+                    //     //onMouseOut={() => handleChangeBanner(0)}
+                    //   >
+                    //     <div className="text-2xl font-bold leading-[100%] pl-4">
+                    //       Our Goal
+                    //     </div>
+                    //     <div className="mt-2.5 text-white pl-4">
+                    //       {goals?.our_goal}
+                    //     </div>
+                    //     <div
+                    //       className="w-full bg-gray-400 my-4 2xl:my-12"
+                    //       style={{
+                    //         height: "0.5px",
+                    //       }}
+                    //     ></div>
+                    //   </div>
+
+                    //   <div
+                    //     className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                    //     onMouseOver={() => handleChangeBanner(4)}
+                    //     //onMouseOut={() => handleChangeBanner(0)}
+                    //   >
+                    //     {/* <Fade right cascade spy={triggerTitleAnimation}> */}
+                    //     <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                    //       Our Objective
+                    //     </h1>
+                    //     <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
+                    //       {goals?.our_objective}
+                    //     </p>
+                    //     {/* </Fade> */}
+                    //     <div
+                    //       className="w-full bg-gray-400 my-4 2xl:my-12"
+                    //       style={{
+                    //         height: "0.5px",
+                    //       }}
+                    //     ></div>
+                    //   </div>
+                    // </div>
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                       onMouseOver={() => handleChangeBanner(6)}
@@ -221,28 +180,8 @@ const About = () => {
                       ></div>
                     </div>
                   ) : null}
-                </div>
-                <div className="hidden xl:block h-[50vh]">
-                  {scrollingIndex === 0 ? (
-                    <>
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(1)}
-                        //onMouseOut={() => handleChangeBanner(0)}
-                      >
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                          Our Vision
-                        </h1>
-                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
-                          {goals?.our_vision}
-                        </p>
-                        <div
-                          className="w-full bg-gray-400 my-4 2xl:my-12"
-                          style={{
-                            height: "0.5px",
-                          }}
-                        ></div>
-                      </div>
+                  {scrollingIndex === 2 ? (
+                    <div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(2)}
@@ -253,6 +192,41 @@ const About = () => {
                         </h1>
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                           {goals?.our_mission}
+                        </p>
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
+                      </div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(1)}
+                      >
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Vision
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
+                          {goals?.our_vision}
+                        </p>
+                        <hr className=" text-white text-opacity-30 my-4 2xl:my-12 py-0.5" />
+                      </div>
+                    </div>
+                  ) : null}
+                  {scrollingIndex === 3 ? (
+                    <div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(4)}
+                        //onMouseOut={() => handleChangeBanner(0)}
+                      >
+                        {/* <Fade right cascade spy={triggerTitleAnimation}> */}
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Objective
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
+                          {goals?.our_objective}
                         </p>
                         <div
                           className="w-full bg-gray-400 my-4 2xl:my-12"
@@ -279,36 +253,18 @@ const About = () => {
                           }}
                         ></div>
                       </div>
-                    </>
+                    </div>
                   ) : null}
+                </div>
 
-                  {scrollingIndex === 1 ? (
-                    <div>
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(4)}
-                        //onMouseOut={() => handleChangeBanner(0)}
-                      >
-                        {/* <Fade right cascade spy={triggerTitleAnimation}> */}
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                          Our Objective
-                        </h1>
-                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
-                          {goals?.our_objective}
-                        </p>
-                        <div
-                          className="w-full bg-gray-400 my-4 2xl:my-12"
-                          style={{
-                            height: "0.5px",
-                          }}
-                        ></div>
-                      </div>
+                {/* For Larger Screen */}
+                {/* <div className="hidden xl:block h-[50vh]">
+                  {scrollingIndex === 0 ? (
+                    <>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(5)}
-                        //onMouseOut={() => handleChangeBanner(0)}
                       >
-                        {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                         <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Who We Are
                         </h1>
@@ -322,13 +278,13 @@ const About = () => {
                           }}
                         ></div>
                       </div>
-                    </div>
+                    </>
                   ) : null}
-                  {scrollingIndex === 2 ? (
+
+                  {scrollingIndex === 1 ? (
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                       onMouseOver={() => handleChangeBanner(6)}
-                      //onMouseOut={() => handleChangeBanner(0)}
                     >
                       <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                         Why Choose Us
@@ -347,33 +303,117 @@ const About = () => {
                       ></div>
                     </div>
                   ) : null}
-                </div>
+
+                  {scrollingIndex === 2 ? (
+                    <div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(2)}
+                      >
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Mission
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
+                          {goals?.our_mission}
+                        </p>
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
+                      </div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(1)}
+                      >
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Vision
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
+                          {goals?.our_vision}
+                        </p>
+                        <hr className=" text-white text-opacity-30 my-4 2xl:my-12 py-0.5" />
+                      </div>
+                    </div>
+                  ) : null}
+                  {scrollingIndex === 3 ? (
+                    <div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(4)}
+                      >
+                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                          Our Objective
+                        </h1>
+                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
+                          {goals?.our_objective}
+                        </p>
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
+                      </div>
+                      <div
+                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                        onMouseOver={() => handleChangeBanner(3)}
+                      >
+                        <div className="text-2xl font-bold leading-[100%] pl-4">
+                          Our Goal
+                        </div>
+                        <div className="mt-2.5 text-white pl-4 text-justify break-keep">
+                          {goals?.our_goal}
+                        </div>
+                        <div
+                          className="w-full bg-gray-400 my-4 2xl:my-12"
+                          style={{
+                            height: "0.5px",
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  ) : null}
+                </div> */}
               </Fade>
 
-              <div className="w-44 2xl:w-36 ml-auto flex items-center justify-between">
+              <div className="w-48 ml-auto flex items-center justify-between">
                 <div
                   className={`cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 0 ? "bg-brand-color" : "bg-white"
                   }`}
-                  onMouseOver={() => handleScrollAbout(0)}
+                  onMouseOver={() => {
+                    handleScrollAbout(0);
+                    handleChangeBanner(5);
+                  }}
                 ></div>
                 <div
                   className={`cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 1 ? "bg-brand-color" : "bg-white"
                   }`}
-                  onMouseOver={() => handleScrollAbout(1)}
+                  onMouseOver={() => {
+                    handleScrollAbout(1);
+                    handleChangeBanner(6);
+                  }}
                 ></div>
                 <div
                   className={`cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 2 ? "bg-brand-color" : "bg-white"
                   }`}
-                  onMouseOver={() => handleScrollAbout(2)}
+                  onMouseOver={() => {
+                    handleScrollAbout(2);
+                    handleChangeBanner(2);
+                  }}
                 ></div>
                 <div
-                  className={`xl:hidden cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
+                  className={`cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 3 ? "bg-brand-color" : "bg-white"
                   }`}
-                  onMouseOver={() => handleScrollAbout(3)}
+                  onMouseOver={() => {
+                    handleScrollAbout(3);
+                    handleChangeBanner(4);
+                  }}
                 ></div>
               </div>
             </div>

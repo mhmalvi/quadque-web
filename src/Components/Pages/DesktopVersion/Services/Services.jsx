@@ -84,39 +84,38 @@ const Services = () => {
               <p className="mt-8 text-sm 2xl:text-base">
                 {activeServiceDetails?.short_description}
               </p>
+              <Fade left cascade>
+                <div className="mt-8 text-justify">
+                  {activeServiceDetails?.description ? (
+                    <p className="text-white font-semibold mt-4 text-lg hover:text-opacity-90 cursor-pointer">
+                      <Tooltip
+                        placement="right"
+                        title={
+                          <span className="text-white font-semibold">
+                            Details On {activeService}
+                          </span>
+                        }
+                        color={"rgba(90, 90, 90, 0.7)"}
+                      >
+                        <Link to={`services/${activeServiceDetails?.slug}`}>
+                          <button
+                            className="spirit-bomb px-6 py-2 bg-transparent text-xs font-semibold leading-4 capitalize text-white"
+                            style={{
+                              letterSpacing: "0.04em",
+                              borderRadius: "30px",
+                            }}
+                          >
+                            Learn More
+                          </button>
+                        </Link>
+                      </Tooltip>
+                    </p>
+                  ) : null}
+                </div>
+              </Fade>
             </div>
           </Fade>
         </div>
-
-        <Fade left cascade>
-          <div className="mt-auto text-justify">
-            {activeServiceDetails?.description ? (
-              <p className="text-white font-semibold mt-4 text-lg hover:text-opacity-90 cursor-pointer">
-                <Tooltip
-                  placement="right"
-                  title={
-                    <span className="text-white font-semibold">
-                      Details On {activeService}
-                    </span>
-                  }
-                  color={"rgba(90, 90, 90, 0.7)"}
-                >
-                  <Link to={`services/${activeServiceDetails?.slug}`}>
-                    <button
-                      className="spirit-bomb px-8 py-3 bg-transparent text-[15px] font-semibold leading-4 capitalize text-white"
-                      style={{
-                        letterSpacing: "0.04em",
-                        borderRadius: "30px",
-                      }}
-                    >
-                      Learn More
-                    </button>
-                  </Link>
-                </Tooltip>
-              </p>
-            ) : null}
-          </div>
-        </Fade>
       </div>
 
       <Fade left cascade spy={triggerAnimation}>
@@ -130,11 +129,13 @@ const Services = () => {
 
           {/* {activeService === "AI & IoT Solutions" ? ( */}
           {activeService?.includes("IoT") ? (
-            <Lottie
-              animationData={aIIot}
-              loop={true}
-              alt="AI & IoT Solutions Layout"
-            />
+            <Link to={`services/ai-&-iot-solutions`}>
+              <Lottie
+                animationData={aIIot}
+                loop={true}
+                alt="AI & IoT Solutions Layout"
+              />
+            </Link>
           ) : null}
 
           {/* {activeService === "UI/UX" ? (
@@ -153,51 +154,63 @@ const Services = () => {
           ) : null}
           {/* {activeService === "Software Development" ? ( */}
           {activeService?.includes("Software") ? (
-            <Lottie
-              animationData={softDevs}
-              loop={true}
-              alt="Software Development Layout"
-            />
+            <Link to={`services/software-development`}>
+              <Lottie
+                animationData={softDevs}
+                loop={true}
+                alt="Software Development Layout"
+              />
+            </Link>
           ) : null}
           {/* {activeService === "Web Development" ? ( */}
           {activeService?.includes("Web") ? (
-            <Lottie
-              animationData={webDev}
-              loop={true}
-              alt="Web Development Layout"
-            />
+            <Link to={`services/web-development`}>
+              <Lottie
+                animationData={webDev}
+                loop={true}
+                alt="Web Development Layout"
+              />
+            </Link>
           ) : null}
           {/* {activeService === "Cyber Security & Data Protection" ? ( */}
           {activeService?.includes("Cyber") ? (
-            <Lottie
-              animationData={CyberSecurity}
-              loop={true}
-              alt="Cyber Security & Data Protection Layout"
-            />
+            <Link to={`services/web-development`}>
+              <Lottie
+                animationData={CyberSecurity}
+                loop={true}
+                alt="Cyber Security & Data Protection Layout"
+              />
+            </Link>
           ) : null}
           {/* {activeService === "E-commerce development" ? ( */}
           {activeService?.includes("E-commerce") ? (
-            <Lottie
-              animationData={eCom}
-              loop={true}
-              alt="E-commerce development Layout"
-            />
+            <Link to={`services/e-commerce-development`}>
+              <Lottie
+                animationData={eCom}
+                loop={true}
+                alt="E-commerce development Layout"
+              />
+            </Link>
           ) : null}
           {/* {activeService === "Cloud Computing Solutions" ? ( */}
           {activeService?.includes("Cloud") ? (
-            <Lottie
-              animationData={Cloud}
-              loop={true}
-              alt="Cloud Computing Solutions Layout"
-            />
+            <Link to={`services/cloud-computing-solutions`}>
+              <Lottie
+                animationData={Cloud}
+                loop={true}
+                alt="Cloud Computing Solutions Layout"
+              />
+            </Link>
           ) : null}
           {/* {activeService === "Maintenance and Support" ? ( */}
           {activeService?.includes("Maintenance") ? (
-            <Lottie
-              animationData={Maintenance}
-              loop={true}
-              alt="Maintenance and Support Layout"
-            />
+            <Link to={`services/maintenance-and-support`}>
+              <Lottie
+                animationData={Maintenance}
+                loop={true}
+                alt="Maintenance and Support Layout"
+              />
+            </Link>
           ) : null}
         </div>
       </Fade>
