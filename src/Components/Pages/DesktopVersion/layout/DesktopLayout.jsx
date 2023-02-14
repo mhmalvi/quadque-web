@@ -1,11 +1,10 @@
 import { Alert, Modal, Space, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
+import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
-import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import welcomeAvatar from "../../../../asstes/Lotties/welcome_avatar.json";
-import useAudio from "../../../Shared/Hooks/useAudio";
 import Icons from "../../../Shared/Icons";
 import { handleLetsGoAudio } from "../../../Shared/Sounds";
 import Navbar from "../Navbar";
@@ -16,7 +15,6 @@ const DesktopLayout = () => {
   const [openMenus, setOpenMenus] = useState(false);
   const [showSoundAlert, setShowSoundAlert] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
-  const [playing, setPlaying, toggle] = useAudio();
   const [muted, setMuted] = useState(true);
   const synth = window.speechSynthesis;
 
@@ -327,7 +325,7 @@ const DesktopLayout = () => {
                 <button
                   className="w-20 px-3 py-0.5 rounded-md bg-brand-color text-white"
                   onClick={() => {
-                    setPlaying(true);
+                    setMuted(false);
                     setShowSoundAlert(false);
                     handleLetsGoAudio();
                   }}
@@ -337,7 +335,7 @@ const DesktopLayout = () => {
                 <button
                   className="w-20 px-3 py-0.5 rounded-md bg-black text-white"
                   onClick={() => {
-                    setPlaying(false);
+                    setMuted(true);
                     setShowSoundAlert(false);
                   }}
                 >

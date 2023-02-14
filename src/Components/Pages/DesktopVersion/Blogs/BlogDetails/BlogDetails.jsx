@@ -63,6 +63,8 @@ const BlogDetails = ({ setLoader }) => {
     }, 1000);
   };
 
+  console.log("blogDetails", blogDetails);
+
   return (
     <>
       {/* For SEO purpose */}
@@ -71,6 +73,7 @@ const BlogDetails = ({ setLoader }) => {
         <meta charSet="utf-8" />
         <title>{`Blog - ${blogDetails?.title} – Quadque Tech`}</title>
         <meta name="keywords" content={blogDetails?.meta_keyword} />
+        <meta name="description" content={blogDetails?.meta_description} />
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
 

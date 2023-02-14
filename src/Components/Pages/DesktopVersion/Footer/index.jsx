@@ -38,7 +38,7 @@ const Footer = () => {
     >
       {/* For Background Flag */}
       <Fade spy={triggerAnimation}>
-        <img src={backgroundImage} className="min-w-full min-h-full" alt="" />
+        <img src={backgroundImage} className="min-w-full h-[90vh]" alt="" />
       </Fade>
 
       <div className="w-full lg:py-6 absolute top-0 2xl:top-16">
@@ -267,7 +267,7 @@ const Footer = () => {
                           setBackgroundImage(bgAus);
                           setTriggerAnimation(!triggerAnimation);
                         }}
-                        onMouseOut={() => {
+                        onMouseLeave={() => {
                           setBackgroundImage("");
                         }}
                       >
@@ -301,7 +301,7 @@ const Footer = () => {
                           setBackgroundImage(bgBD);
                           setTriggerAnimation(!triggerAnimation);
                         }}
-                        onMouseOut={() => {
+                        onMouseLeave={() => {
                           setBackgroundImage("");
                           // setTriggerAnimation(false);
                         }}
