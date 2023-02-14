@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Interface from "../../../../asstes/Images/interface.png";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
+import AboutusGif from "../../../../asstes/Images/about_us_2.gif"
 
 const Aboutus = () => {
   const [goals, setGoals] = useState();
@@ -81,9 +82,9 @@ const Aboutus = () => {
         </div>
         <div className="flex-wrap overflow-hidden">
           <img
-            src={Interface}
+            src={AboutusGif}
             alt=""
-            className="w-full duration-700 relative z-50"
+            className="w-9/12 mx-auto duration-700 relative z-50"
           />
         </div>
         <div className="max-w-[100%] overflow-hidden">
@@ -108,32 +109,31 @@ const Aboutus = () => {
             </div>
           ) : null}
           <div className="py-5">
-            <div className="text-2xl text-brand-color">Our Vision</div>
-            <div>{goals?.our_goal}</div>
-          </div>
-          <div className="py-5">
-            <div className="text-2xl text-brand-color">Our Mission</div>
-            <div>{goals?.our_mission}</div>
-          </div>
-          <div className="py-5">
-            <div className="text-2xl text-brand-color">Our Objective</div>
-            <div>{goals?.our_objective}</div>
-          </div>
-          <div className="py-5">
-            <div className="text-2xl text-brand-color">Our Vision</div>
-            <div>{goals?.our_vision}</div>
-          </div>
-          <div className="py-5">
-            <div className="text-2xl text-brand-color">Who We Are</div>
+            <div className="text-2xl text-brand-color pb-2">Who We Are</div>
             <div>{goals?.who_we_are}</div>
           </div>
           <div className="py-5">
-            <div className="text-2xl text-brand-color">Why Choose Us</div>
-            {/* <div>{goals?.why_choose_us}</div> */}
+            <div className="text-2xl text-brand-color pb-2">Why Choose Us</div>
             <div
               className="case_editor"
               dangerouslySetInnerHTML={{ __html: goals?.why_choose_us }}
             ></div>
+          </div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color pb-2">Our Mission</div>
+            <div>{goals?.our_mission}</div>
+          </div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color pb-2">Our Vision</div>
+            <div>{goals?.our_vision}</div>
+          </div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color pb-2">Our Objective</div>
+            <div>{goals?.our_objective}</div>
+          </div>
+          <div className="py-5">
+            <div className="text-2xl text-brand-color pb-2">Our Goal</div>
+            <div>{goals?.our_goal}</div>
           </div>
         </div>
       </div>

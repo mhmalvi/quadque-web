@@ -11,7 +11,6 @@ import Icons from "../../../Shared/Icons";
 
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
-import softDev from "../../../../asstes/Lotties/softwware_development.json";
 import softDevs from "../../../../asstes/Lotties/software developtment.json";
 import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
@@ -62,6 +61,8 @@ const Services = () => {
     className: "",
     centerMode: false,
   };
+
+  console.log(Services);
 
   return (
     <div
@@ -167,14 +168,14 @@ const Services = () => {
                       />
                     ) : null}
                   </div>
-                  <div className="h-29 text-center overflow-hidden mb-5 pt-13">
-                    {details?.description}
+                  <div className="h-36 text-center overflow-hidden mb-5 pt-13">
+                    {details?.short_description}
                   </div>
                 </div>
               </Link>
             ))}
           </Slider>
-          {Services && (
+          {Services !=="" && (
             <>
               {/* <div className="m-auto flex justify-between pb-5"> */}
               <div

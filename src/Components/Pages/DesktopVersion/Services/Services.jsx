@@ -6,7 +6,6 @@ import { Link, useLocation } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
-// import softDev from "../../../../asstes/Lotties/softwware_development.json";
 import softDevs from "../../../../asstes/Lotties/software developtment.json";
 // import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
