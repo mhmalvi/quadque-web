@@ -91,7 +91,7 @@ const ClientSpeak = () => {
             <div className="w-[423px] mr-9 relative">
               <div className="">
                 <h3
-                  className="lg:text-sm 2xl:text-base break-keep capitalize font-light italic text-justify bg-gray-400 bg-opacity-20 backdrop-blur-md px-4 py-3 rounded-md shadow-sm shadow-slate-600 border border-gray-600"
+                  className="lg:text-sm 2xl:text-lg break-keep capitalize font-light italic bg-gray-400 bg-opacity-20 backdrop-blur-md px-4 py-3 rounded-md shadow-sm shadow-slate-600 border border-gray-600"
                   style={{
                     letterSpacing: "0.04em",
                   }}
@@ -114,14 +114,14 @@ const ClientSpeak = () => {
                   {clientSpeaks?.[index]?.name}
                 </h3>
 
-                {/* <h4
+                <h4
                   className="opacity-50 text-base font-medium leading-5"
                   style={{
                     letterSpacing: "0.04em",
                   }}
                 >
                   {clientSpeaks?.[index]?.designation}
-                </h4> */}
+                </h4>
               </div>
 
               <div className="absolute bottom-0 flex items-center 2xl:mt-14 lg:mt-4">

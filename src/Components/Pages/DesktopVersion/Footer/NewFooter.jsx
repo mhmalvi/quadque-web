@@ -29,44 +29,38 @@ const NewFooter = () => {
 
   return (
     <div
-      id="contacts"
+      id="start_project"
       className="section w-full lg:pt-6 2xl:py-8 font_primary bg-black text-white"
     >
-      <Fade spy={triggerAnimation}>
-        <img src={backgroundImage} className="min-w-full min-h-full" alt="" />
-      </Fade>
-
-      <div className="w-full min-h-full lg:py-6 2xl:py-8 absolute -top-10">
-        <div className=" ml-21 lg:mt-10 2xl:mt-16 mr-25 pb-8 ">
-          <div className="2xl:pt-6 2xl:pl-10">
-            <div>
-              <Fade left cascade spy={triggerTitleAnimation}>
-                <div className="text-4xl 2xl:text-[50px] leading-10 2xl:leading-[55px] font-semibold font_title">
-                  Have a Good Web
-                </div>
-                <div className="text-4xl 2xl:text-[50px] leading-10 2xl:leading-[55px] font-semibold font_title">
-                  Design Today
-                </div>
-              </Fade>
-              <Fade left spy={triggerTitleAnimation}>
-                <a href="tel:+01765276560">
-                  <button
-                    className="spirit-bomb text-white px-12 2xl:px-18 py-2 2xl:py-3.5 text-lg leading-6 font-bold uppercase mt-8 2xl:mt-14 font_primary"
-                    style={{
-                      border: "2px solid #FFFFFF",
-                      borderRadius: "30px",
-                    }}
-                  >
-                    Let's Talk
-                  </button>
-                </a>
-              </Fade>
-              <Icons.FooterIcon
-                id="footer_icon"
-                className="hidden absolute lg:-top-16 2xl:-top-24 lg:-right-16 2xl:-right-24 lg:w-79 lg:h-72 2xl:w-96 2xl:h-92 bg-transparent animate-slow-spin"
-              />
-            </div>
+      <div className="ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8">
+        <div className="flex items-center justify-between">
+          <div
+            className="text-4xl 2xl:text-5xl font-bold leading-10 capitalize font_title"
+            style={{
+              letterSpacing: "0.06em",
+            }}
+          >
+            <Fade left spy={triggerTitleAnimation}>
+              <div className="leading-10 uppercase mb-0.5">Let’s start</div>
+              <div className="ml-8 leading-10 uppercase">a project</div>
+            </Fade>
           </div>
+          <div>
+            <Fade left spy={triggerTitleAnimation}>
+              <div>
+                <div>Australia: +61405899496</div>
+                <div>Bangladesh: +8801765276560</div>
+              </div>
+            </Fade>
+          </div>
+        </div>
+
+        <div className="mt-15.5 flex justify-between">
+          <div></div>
+
+          <Fade right cascade spy={triggerAnimation}>
+            <div></div>
+          </Fade>
         </div>
       </div>
     </div>

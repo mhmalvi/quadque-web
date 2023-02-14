@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
+import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import welcomeAvatar from "../../../../asstes/Lotties/welcome_avatar.json";
 import useAudio from "../../../Shared/Hooks/useAudio";
 import Icons from "../../../Shared/Icons";
@@ -16,13 +17,11 @@ const DesktopLayout = () => {
   const [showSoundAlert, setShowSoundAlert] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
   const [playing, setPlaying, toggle] = useAudio();
-  // const [audioFile, setAudioFile] = useState(false);
+  const [muted, setMuted] = useState(true);
   const synth = window.speechSynthesis;
 
-  console.log(playing);
-
   useEffect(() => {
-    synth.cancel();
+    // synth.cancel();
 
     if (!localStorage.getItem("welcome")) {
       setTimeout(() => {
@@ -30,6 +29,14 @@ const DesktopLayout = () => {
       }, 3000);
     }
   }, [synth]);
+
+  useEffect(() => {
+    if (muted) {
+      document.getElementById("iframeAudio").src = "";
+    } else {
+      document.getElementById("iframeAudio").src = siteAudio;
+    }
+  }, [muted]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -44,13 +51,13 @@ const DesktopLayout = () => {
   return (
     <div className="w-full h-full">
       {/* For website background Audio */}
-      {/* <iframe
+      <iframe
         id="iframeAudio"
         title="audio"
-        src={audioFile}
+        src={siteAudio}
         allow="autoplay loop"
         style={{ display: "none" }}
-      /> */}
+      />
 
       {/* <iframe
         title="audio"
@@ -200,7 +207,7 @@ const DesktopLayout = () => {
 
         <div className="relative">
           <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
-            {!playing ? (
+            {muted ? (
               <div className="w-8">
                 <Tooltip
                   title="Unmute Sound"
@@ -213,8 +220,7 @@ const DesktopLayout = () => {
                     src={muteImg}
                     alt=""
                     onClick={() => {
-                      toggle();
-                      setShowSoundAlert(false);
+                      setMuted(false);
                     }}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
@@ -232,8 +238,7 @@ const DesktopLayout = () => {
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
                     onClick={() => {
-                      toggle();
-                      setShowSoundAlert(false);
+                      setMuted(true);
                     }}
                     alt=""
                   />

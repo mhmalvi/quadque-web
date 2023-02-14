@@ -11,10 +11,14 @@ const Footer = () => {
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [backgroundImage, setBackgroundImage] = useState("");
+  const [year, setYear] = useState("");
 
   const synth = window.speechSynthesis;
 
   useEffect(() => {
+    const date = new Date();
+    setYear(date.getFullYear());
+
     if (location.hash === "#contacts") {
       document.getElementById("footer_icon").classList.remove("hidden");
       setTimeout(() => {
@@ -37,12 +41,12 @@ const Footer = () => {
         <img src={backgroundImage} className="min-w-full min-h-full" alt="" />
       </Fade>
 
-      <div className="w-full lg:py-6 absolute 2xl:top-16">
+      <div className="w-full lg:py-6 absolute top-0 2xl:top-16">
         <div className=" ml-21 lg:mt-10 2xl:mt-16 mr-25 ">
           {/* <div className="2xl:pt-6 2xl:pl-10"> */}
           <div className="2xl:pl-10">
             <div>
-              <Fade left cascade spy={triggerTitleAnimation}>
+              <Fade left spy={triggerTitleAnimation}>
                 <div className="text-4xl 2xl:text-[48px] leading-10 2xl:leading-[55px] font-semibold font_title">
                   Top-notch digital solutions
                 </div>
@@ -55,7 +59,6 @@ const Footer = () => {
                   <button
                     className="spirit-bomb text-white px-12 2xl:px-18 py-2 2xl:py-3.5 text-lg leading-6 font-bold uppercase mt-8 2xl:mt-14 font_primary"
                     style={{
-                      border: "2px solid #FFFFFF",
                       borderRadius: "30px",
                     }}
                   >
@@ -75,7 +78,7 @@ const Footer = () => {
               <div className="flex justify-between">
                 {/* <div className="max-w-[250px] flex flex-col justify-between col-span-2 2xl:col-span-1"> */}
                 <div className="w-4/12 flex flex-col justify-between col-span-2 2xl:col-span-1">
-                  <Fade left cascade spy={triggerTitleAnimation}>
+                  <Fade left spy={triggerTitleAnimation}>
                     <h1
                       className="max-w-[330px] font-light text-sm xl:text-base leading-6"
                       style={{
@@ -87,7 +90,7 @@ const Footer = () => {
                       services.
                     </h1>
                     <div>
-                      <div className="mb-2 ml-1.5 text-xs xl:text-sm">
+                      <div className="mb-6 ml-1 text-xs xl:text-sm">
                         <h4
                           onMouseOver={() => {
                             setBackgroundImage(bgAus);
@@ -154,7 +157,7 @@ const Footer = () => {
                   </Fade>
                 </div>
                 {/* <div className="ml-9">
-                <Fade left cascade spy={triggerTitleAnimation}>
+                <Fade left  spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Product</h3>
                   <div>
                     <h4 className="text-sm font-normal mb-2.5">Product</h4>
@@ -168,38 +171,52 @@ const Footer = () => {
                 </Fade>
               </div> */}
                 <div className="w-2/12 ml-9 font_primary">
-                  <Fade left cascade spy={triggerTitleAnimation}>
+                  <Fade left spy={triggerTitleAnimation}>
                     <h3 className="text-base xl:text-lg font-medium mb-6">
                       Services
                     </h3>
                     <div>
-                      <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        Software Development
+                      <h4 className="text-xs xl:text-sm font-normal mb-2.5 whitespace-nowrap">
+                        <a href={"/services/software-development"}>
+                          Software Development
+                        </a>
                       </h4>
-                      <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        Web Development
+                      <h4 className="text-xs xl:text-sm font-normal mb-2.5 whitespace-nowrap">
+                        <a href={"/services/web-development"}>
+                          Web Development
+                        </a>
                       </h4>
-                      <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        Mobile App Development
+                      <h4 className="text-xs xl:text-sm font-normal mb-2.5 whitespace-nowrap">
+                        <a href={"/services/mobile-app-development"}>
+                          Mobile App Development
+                        </a>
                       </h4>
-                      <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        AI & IoT Solutions
+                      <h4 className="text-xs xl:text-sm font-normal mb-2.5 whitespace-nowrap">
+                        <a href={"/services/ai-&-iot-solutions"}>
+                          AI & IoT Solutions
+                        </a>
                       </h4>
-                      <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        E-Commerce Development
+                      <h4 className="text-xs xl:text-sm font-normal mb-2.5 whitespace-nowrap">
+                        <a href={"/services/e-commerce-development"}>
+                          E-Commerce Development
+                        </a>
                       </h4>
-                      <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        Cloud Computing Solutions
+                      <h4 className="text-xs xl:text-sm font-normal mb-2.5 whitespace-nowrap">
+                        <a href={"/services/cloud-computing-solutions"}>
+                          Cloud Computing Solutions
+                        </a>
                       </h4>
-                      <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        Maintenance And Support
+                      <h4 className="text-xs xl:text-sm font-normal mb-2.5 whitespace-nowrap">
+                        <a href={"/services/maintenance-and-support"}>
+                          Maintenance And Support
+                        </a>
                       </h4>
                     </div>
                   </Fade>
                 </div>
 
                 {/* <div className="ml-9">
-                <Fade left cascade spy={triggerTitleAnimation}>
+                <Fade left  spy={triggerTitleAnimation}>
                   <h3 className="text-lg font-medium mb-6">Resources</h3>
                   <div>
                     <h4 className="text-sm font-normal mb-2.5">Academy</h4>
@@ -215,32 +232,32 @@ const Footer = () => {
               </div> */}
 
                 <div className="w-2/12 ml-9 font_primary">
-                  <Fade left cascade spy={triggerTitleAnimation}>
+                  <Fade left spy={triggerTitleAnimation}>
                     <h3 className="text-base xl:text-lg font-medium mb-6 font_primary">
                       Company
                     </h3>
                     <div>
                       <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        About Us
+                        <Link to={"../#about"}>About Us</Link>
                       </h4>
                       <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        <Link to={"/career"}>Careers</Link>
+                        <a href={"/career"}>Careers</a>
                       </h4>
                       <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        <Link to={"/gallery"}>Gallery</Link>
+                        <a href={"/gallery"}>Gallery</a>
                       </h4>
                       <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        <Link to={"/faq"}>FAQ's</Link>
+                        <a href={"/faq"}>FAQ's</a>
                       </h4>
                       <h4 className="text-xs xl:text-sm font-normal mb-2.5">
-                        Teams
+                        <a href={"/blogs"}>Blogs</a>
                       </h4>
                     </div>
                   </Fade>
                 </div>
 
                 <div className="w-4/12 ml-9 font_primary">
-                  <Fade left cascade spy={triggerTitleAnimation}>
+                  <Fade left spy={triggerTitleAnimation}>
                     <h3 className="text-base xl:text-lg font-medium mb-6">
                       Address
                     </h3>
@@ -252,10 +269,9 @@ const Footer = () => {
                         }}
                         onMouseOut={() => {
                           setBackgroundImage("");
-                          // setTriggerAnimation(false);
                         }}
                       >
-                        <div className="text-xs xl:text-sm font-normal 2xl:mb-2.5">
+                        <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-2.5">
                           <div className="leading-6 mb-2">
                             <p className="flex items-start">
                               <img
@@ -290,7 +306,7 @@ const Footer = () => {
                           // setTriggerAnimation(false);
                         }}
                       >
-                        <div className="text-xs xl:text-sm font-normal 2xl:mb-2.5">
+                        <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-2.5">
                           <div className="leading-6 mb-2">
                             <p className="flex items-start">
                               <img
@@ -318,6 +334,9 @@ const Footer = () => {
                     </div>
                   </Fade>
                 </div>
+              </div>
+              <div class="flex justify-center text-xs pb-2 pt-4 2xl:pt-10">
+                Quadque©{year}, All rights reserved
               </div>
             </div>
           </div>

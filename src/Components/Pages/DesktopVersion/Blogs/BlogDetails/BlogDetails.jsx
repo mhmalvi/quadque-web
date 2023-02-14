@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useSpeechSynthesis } from "react-speech-kit";
 import speakLogo from "../../../../../asstes/Lotties/speak.json";
+import favicon from "../../../../../asstes/Images/logo.png";
 import useBlogs from "../../../../Shared/Hooks/useBlog";
 import Icons from "../../../../Shared/Icons";
 import { handleFetchBlogBySlug } from "../../../../Shared/services";
@@ -70,6 +71,7 @@ const BlogDetails = ({ setLoader }) => {
         <meta charSet="utf-8" />
         <title>{`Blog - ${blogDetails?.title} – Quadque Tech`}</title>
         <meta name="keywords" content={blogDetails?.meta_keyword} />
+        <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
 
       <div

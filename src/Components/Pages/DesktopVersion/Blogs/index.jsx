@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import blog1 from "../../../../asstes/Images/blog1.jpg";
 // import blog2 from "../../../../asstes/Images/blog2.jpg";
 // import blog3 from "../../../../asstes/Images/blog3.jpg";
-// import moreBlogs from "../../../../asstes/Images/moreblogs.jpg";
+import blogThumbnail from "../../../../asstes/Images/blogs.jpg";
 import useBlogs from "../../../Shared/Hooks/useBlog";
 // import loaderFile from "../../../../asstes/Lotties/loader.json";
 // import Lottie from "lottie-react";
@@ -36,6 +36,7 @@ const Blogs = () => {
   }, [location.hash]);
 
   const handleBlogNavigate = (blogSlug) => {
+    synth.cancel();
     navigate(`blog/${blogSlug}`);
   };
 
@@ -52,11 +53,7 @@ const Blogs = () => {
             {Object?.keys(activeblogDetails).length === 0 ? (
               <Fade left spy={!triggerSlideBlogDetailsAnimation}>
                 <div className="lg:w-8/12 xl:w-10/12 2xl:w-10/12 m-auto flex flex-col justify-center items-center">
-                  <img
-                    src="https://i.ibb.co/1L3g5pj/HD-wallpaper-dark-blue-wall-plain-color-colors-light-themes-solid-galaxy.jpg"
-                    alt=""
-                    className="w-10/12 mx-auto"
-                  />
+                  <img src={blogThumbnail} alt="" className="w-10/12 mx-auto" />
                   <Link to={"/blogs"}>
                     <button
                       className="spirit-bomb px-16 py-3.5 bg-black mt-12 text-base font-semibold leading-4"
@@ -127,7 +124,7 @@ const Blogs = () => {
                       !triggerSlideBlogDetailsAnimation
                     );
                   }}
-                  onMouseOut={() => {
+                  onMouseLeave={() => {
                     setActiveblogDetails({});
                     setTriggerSlideBlogDetailsAnimation(false);
                   }}
