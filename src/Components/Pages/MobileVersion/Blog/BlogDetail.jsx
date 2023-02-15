@@ -30,7 +30,7 @@ const BlogDetail = () => {
         setTimeout(() => {
           setLoader(false);
           setBlogData(fetchBlog?.data);
-        }, 3000);
+        }, 2000);
       } else {
         message.error(fetchBlog.message);
       }
@@ -94,7 +94,7 @@ const BlogDetail = () => {
           <div className="text-2xl text-white">
             {/* <h1 className="font_title text-shadow">{blogData?.title}</h1> */}
             <div className="text-white font_shadow text-sm">
-              -By {blogData?.author}
+              -By <span className="font-semibold ml-1">{blogData?.author}</span>
             </div>
             <div className="text-white text-sm">
               {blogData?.created_at.split("T", 1)}
