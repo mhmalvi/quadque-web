@@ -83,7 +83,7 @@ const Navbar = ({ setOpenMenus }) => {
           <div
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex"
             onMouseOver={() => {
-              setShowBgShadow("CASE STUDY");
+              setShowBgShadow("CASE STUDIES");
             }}
             onMouseOut={() => {
               setShowBgShadow("");
@@ -94,13 +94,13 @@ const Navbar = ({ setOpenMenus }) => {
               className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
               onClick={() => handleNavigate("#case-study")}
             >
-              <span className="p-0 m-0 uppercase font_title">CASE STUDY</span>
+              <span className="p-0 m-0 uppercase font_title">CASE STUDIES</span>
               <span className="lg:text-base xl:text-lg 2xl:text-3xl  mb-auto font_title">
                 #03
               </span>
               <img
                 className={`absolute ${
-                  showBgShadow === "CASE STUDY" ? "opacity-100" : "opacity-0"
+                  showBgShadow === "CASE STUDIES" ? "opacity-100" : "opacity-0"
                 } transition-opacity delay-200 -top-2 right-0 lg:w-[40%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
                 alt=""

@@ -101,7 +101,7 @@ const CaseStudyDetails = ({ setLoader }) => {
 
           <div className="flex justify-center items-center pt-6">
             <button
-              className="spirit-bomb px-7 py-3.5 text-base font-medium leading-4 rounded-full bg-transparent text-white text-center"
+              className="spirit-bomb font_title px-7 py-3.5 text-base font-medium leading-4 rounded-full bg-transparent text-white text-center"
               style={{
                 letterSpacing: "0.04em",
                 borderRadius: "30px",
@@ -317,7 +317,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               </h4>
               <div className="flex items-center pt-8">
                 <button
-                  className="spirit-bomb px-7 py-3.5 text-sm 2xl:text-lg font-medium leading-4 rounded-full bg-transparent text-white text-center"
+                  className="spirit-bomb px-7 font_title py-3.5 text-sm 2xl:text-lg font-medium leading-4 rounded-full bg-transparent text-white text-center"
                   style={{
                     letterSpacing: "0.04em",
                     borderRadius: "30px",
