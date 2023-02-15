@@ -23,16 +23,16 @@ const BlogGallery = () => {
   }, [allBlogs]);
 
   useEffect(() => {
-    if (currentPosts !== "") {
+    if (allBlogs.length > 0) {
       setTimeout(() => {
         setLoader(false);
-      }, 2000);
+      }, 100);
     } else {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [allBlogs]);
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
@@ -52,7 +52,9 @@ const BlogGallery = () => {
       </Helmet>
 
       <div className="Blog w-full mt-30 font_primary">
-        {currentPosts.length === 0 && <div className="text-white text-center">No blogs to show.</div>}
+        {allBlogs.length === 0 && (
+          <div className="text-white text-center">No blogs to show.</div>
+        )}
         {loader ? (
           <div className="w-full min-h-[100vh] z-50 flex flex-col justify-center items-center m-auto absolute top-0 bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
             <Lottie
@@ -82,7 +84,10 @@ const BlogGallery = () => {
                     {details.title}
                   </div> */}
                   <div className="w-full text-white font_shadow text-sm flex justify-end items-end text-end">
-                    By <span className="font-semibold ml-1">{details?.author}</span>
+                    By{" "}
+                    <span className="font-semibold ml-1">
+                      {details?.author}
+                    </span>
                   </div>
                   <div className="text-white text-sm">
                     {details?.created_at.split("T", 1)}

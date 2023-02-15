@@ -24,16 +24,16 @@ const CareerGallery = () => {
   }, [Career]);
 
   useEffect(() => {
-    if (currentPosts !== "") {
+    if (Career.length > 0) {
       setTimeout(() => {
         setLoader(false);
-      }, 1000);
+      }, 100);
     } else {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [Career]);
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
@@ -56,7 +56,7 @@ const CareerGallery = () => {
         Current Job Openings
       </div>
       {currentPosts.length === 0 && (
-        <div className="text-white text-center">No blogs to show.</div>
+        <div className="text-white text-center">No career posts to show.</div>
       )}
       {loader ? (
         <div className="w-full min-h-[100vh] z-50 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
