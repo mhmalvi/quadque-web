@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Interface from "../../../../asstes/Images/interface.png";
+// import Interface from "../../../../asstes/Images/interface.png";
+
+import mobileAboutCover from "../../../../asstes/Images/about_mobile.jpg";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
-import AboutusGif from "../../../../asstes/Images/about_us_2.gif"
+// import AboutusGif from "../../../../asstes/Images/who_we_are.gif";
 
 const Aboutus = () => {
   const [goals, setGoals] = useState();
@@ -33,10 +35,10 @@ const Aboutus = () => {
       (element.scrollTop / (element.scrollHeight - element.clientHeight)) *
         100 +
       "%";
-      document.getElementById("bartop").style.width =
-        (element.scrollTop / (element.scrollHeight - element.clientHeight)) *
-          100 +
-        "%";
+    document.getElementById("bartop").style.width =
+      (element.scrollTop / (element.scrollHeight - element.clientHeight)) *
+        100 +
+      "%";
   };
 
   return (
@@ -82,9 +84,9 @@ const Aboutus = () => {
         </div>
         <div className="flex-wrap overflow-hidden">
           <img
-            src={AboutusGif}
+            src={mobileAboutCover}
             alt=""
-            className="w-9/12 mx-auto duration-700 relative z-50"
+            className="w-11/12 mx-auto duration-700 relative z-50"
           />
         </div>
         <div className="max-w-[100%] overflow-hidden">

@@ -48,7 +48,9 @@ const Career = ({ setLoader }) => {
         <title>{`Career - Get The Best Online IT Services for Business - Quadque`}</title>
         <meta
           name="description"
-          content="Look at our informative blogs, where we discuss various interesting topics related to the IT industry, such as website development , UI/UX design and digital marketing and so on."
+          content="Do you have the skills to help us make a more significant impact on the IT
+industry? Want to join our team and contribute your expertise? If so, let's get
+in touch!"
         />
       </Helmet>
 

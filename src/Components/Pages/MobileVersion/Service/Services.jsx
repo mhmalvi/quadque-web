@@ -88,7 +88,7 @@ const Services = () => {
             {Services?.map((details, index) => (
               <Link to={`services/${details.slug}`}>
                 <div key={index}>
-                  <div className="w-10/12 h-81 m-auto my-10">
+                  <div className="w-10/12 h-72 m-auto my-10">
                     {/* <lottie-player
                       
                       src={
@@ -119,7 +119,7 @@ const Services = () => {
                     ) : null} */}
                     {details?.service_name === "Mobile App Development" ? (
                       <Lottie
-                        className="h-81"
+                        className="h-72"
                         animationData={AppDev}
                         loop={true}
                         alt="Application Development Layout"
