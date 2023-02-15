@@ -102,7 +102,9 @@ const BlogGallery = () => {
       {/* PAGINATION */}
       <div className="Blog flex justify-center mt-5">
         <Pagination
-          onChange={(value) => setCurrentPage(value)}
+          onChange={(value) => {
+            setCurrentPage(value); window.scrollTo(0, 0);
+          }}
           pageSize={PostsPerPage}
           current={currentPage}
           total={totalPosts}
