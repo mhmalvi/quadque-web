@@ -29,16 +29,16 @@ const CaseStudy = () => {
   };
 
   useEffect(() => {
-    if (CaseStudies !== "") {
+    if (CaseStudies.length > 0) {
       setTimeout(() => {
         setLoader(false);
-      }, 5000);
+      }, 100);
     } else {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [CaseStudies]);
 
   return (
     <div
@@ -87,7 +87,7 @@ const CaseStudy = () => {
         </Slider>
       </div>
       <div className="relative w-9/12 mx-auto">
-        {CaseStudies !="" && (
+        {CaseStudies.length > 0 && (
           <>
             <div
               onClick={() => CaseSlider.current.slickPrev()}
