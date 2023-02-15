@@ -39,7 +39,7 @@ const CaseStudyDetail = () => {
 
 
       <div
-        className="w-full min-h-[700px] text-white pt-30 font_primary"
+        className="w-full min-h-[100vh] text-white pt-30 font_primary"
         >
         {loader ? (
           <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
@@ -169,7 +169,7 @@ const CaseStudyDetail = () => {
         </div>
 
         {/* SECTION 4 */}
-        <div className={`pb-13 ${!caseData?.agency ? "hidden" : "block"}`}>
+        <div className={`pb-13 px-6 ${!caseData?.agency ? "hidden" : "block"}`}>
           <div className="text-2xl text-center pb-13">
             Creative Digital Marketing Agency
           </div>
@@ -177,7 +177,7 @@ const CaseStudyDetail = () => {
             <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.agency}
               alt=""
-              className="w-[90%]"
+              className="w-full"
             />
             {/* <img src={Brand2} alt="" className="w-1/4" />
             <img src={Brand3} alt="" className="w-1/4" />
