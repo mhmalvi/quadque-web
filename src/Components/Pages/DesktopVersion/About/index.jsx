@@ -442,7 +442,7 @@ const About = () => {
 export default About;
 
 const banners = [
-  mainAbout,
+  whoWerAre,
   ourVission,
   ourMission,
   ourGoal,
