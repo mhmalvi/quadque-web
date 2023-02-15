@@ -127,9 +127,8 @@ const ServiceDetails = ({ setLoader }) => {
             style={{
               letterSpacing: "0.07em",
             }}
-          >
-            {serviceDetails?.description}
-          </p>
+            dangerouslySetInnerHTML={{ __html: serviceDetails?.description }}
+          ></p>
 
           <button
             className="spirit-bomb w-[252px] uppercase h-[46px] bg-transparent text-[15px] mt-6 font-semibold leading-4 text-white font_title"
@@ -426,15 +425,15 @@ const ServiceDetails = ({ setLoader }) => {
               >
                 {clientSpeak?.map((client, i) => (
                   <div className="p-6">
-                    <div className="border rounded-2xl p-4 bg-gray-100 bg-opacity-20 backdrop-filter shadow-md shadow-gray-300 backdrop-blur-md hover:bg-opacity-25 hover:delay-200">
+                    <div className="min-h-[18rem] border rounded-2xl p-4 bg-gray-100 bg-opacity-20 backdrop-filter shadow-md shadow-gray-300 backdrop-blur-md hover:bg-opacity-25 hover:delay-200">
                       <img
                         src={
                           process.env.REACT_APP_ASSETS_URL + "/" + client?.image
                         }
                         alt=""
-                        className="relative w-10 h-10 -top-8 left-4 rounded-full"
+                        className="relative w-14 h-14 -top-10 border border-gray-300 left-4 rounded-full"
                       />
-                      <div className="text-center text-white py-2">
+                      <div className="text-white py-2">
                         {client?.description}
                       </div>
                       <div className="text-end text-white py-2">

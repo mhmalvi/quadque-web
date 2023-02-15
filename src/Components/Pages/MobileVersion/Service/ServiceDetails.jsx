@@ -101,7 +101,7 @@ const ServiceDetails = () => {
       >
         <div className="relative">
           {loader ? (
-            <div className="w-full h-full z-[500] flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black bg-opacity-10 backdrop-blur-sm">
+            <div className="min-w-full h-full z-[500] flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black bg-opacity-10 backdrop-blur-sm">
               <div className="absolute top-24">
                 <Lottie
                   className="w-1/2 mx-auto"
@@ -124,11 +124,13 @@ const ServiceDetails = () => {
           </div>
           <div className="text-sm text-center pb-2">{Service?.description}</div>
 
-          <div
-            onClick={() => navigate(`../#start-project`, { replace: true })}
-            className="w-1/2 bg-black text-sm text-center font-semibold spirit-bomb py-3 px-4 mt-8 mb-6 rounded-full relative z-[100] uppercase mx-auto font_title"
-          >
-            START A PROJECT
+          <div className="flex items-center justify-center">
+            <div
+              onClick={() => navigate(`../#start-project`, { replace: true })}
+              className="bg-black text-sm text-center whitespace-nowrap font-semibold spirit-bomb py-3 px-4 mt-8 mb-6 rounded-full relative z-[100] uppercase mx-auto font_title"
+            >
+              START A PROJECT
+            </div>
           </div>
 
           <div className="py-13">
