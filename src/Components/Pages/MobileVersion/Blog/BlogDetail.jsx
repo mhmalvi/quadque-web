@@ -96,6 +96,9 @@ const BlogDetail = () => {
             <div className="text-white font_shadow text-sm">
               -By {blogData?.author}
             </div>
+            <div className="text-white text-sm">
+              {blogData?.created_at.split("T", 1)}
+            </div>
           </div>
         </div>
         <div className="px-6">
