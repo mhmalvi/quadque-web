@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="w-1/2 flex-col">
           <p className="text-sm font-bold">Quadque Technologies Pty Ltd</p>
           <p className="pt-2">
-            LEVEL 1/7 Greenfield Parade, Bankstown NSW 2200, Australia
+            LEVEL 1 , 7 Greenfield Parade, Bankstown NSW 2200, Australia
           </p>
           <p className="pt-1">+61 405 899 496</p>
           <p className="pt-1">hello@quadque.tech</p>

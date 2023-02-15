@@ -18,7 +18,7 @@ const BlogDetails = ({ setLoader }) => {
   const blogdetailsRef = useRef();
   const [blogDetails, setBlogDetails] = useState();
   const [blogs] = useBlogs();
-  const { id } = useParams();
+  // const { id } = useParams();
   const [randomBlogData, setRandomBlogData] = useState([]);
   const synth = window.speechSynthesis;
 
@@ -35,10 +35,10 @@ const BlogDetails = ({ setLoader }) => {
 
   useEffect(() => {
     const NextBlogs = [];
-    let currentBlogid = id;
+    // let currentBlogid = slug;
     let i;
 
-    let currentBlogIndex = blogs?.findIndex((x) => x.id === currentBlogid);
+    let currentBlogIndex = blogs?.findIndex((x) => x.slug === slug);
     let nextBlogIndex = currentBlogIndex;
     //console.log("index", currentBlogIndex);
     for (i = 0; i < 4; i++) {
@@ -53,7 +53,7 @@ const BlogDetails = ({ setLoader }) => {
       }
       setRandomBlogData(NextBlogs);
     }
-  }, [id, blogs]);
+  }, [slug, blogs]);
 
   const handleBlogNavigation = (blogSlug) => {
     navigate(`../blog/${blogSlug}`, { replace: true });
@@ -108,7 +108,7 @@ const BlogDetails = ({ setLoader }) => {
             color={"rgba(90, 90, 90, 0.7)"}
           >
             <button
-              className="absolute top-0 right-10"
+              className="absolute -top-12 right-10"
               onClick={() =>
                 speak({
                   text: blogDetails?.text,

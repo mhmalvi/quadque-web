@@ -162,7 +162,7 @@ const Blogs = () => {
           </div>
           <div className="hidden 2xl:block ">
             <div className="grid grid-cols-3 gap-4 justify-center items-center">
-              {blogs.slice(0, 9).map((blog, i) => (
+              {blogs.slice(0, 6).map((blog, i) => (
                 <div
                   onMouseOver={() => {
                     setActiveblogDetails(blog);
