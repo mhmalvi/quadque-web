@@ -132,7 +132,7 @@ const ServiceDetails = ({ setLoader }) => {
           </p>
 
           <button
-            className="spirit-bomb w-[252px] uppercase h-[46px] bg-transparent text-[15px] mt-6 font-semibold leading-4 text-white"
+            className="spirit-bomb w-[252px] uppercase h-[46px] bg-transparent text-[15px] mt-6 font-semibold leading-4 text-white font_title"
             onClick={() => handleNavigate("#start-project")}
             style={{
               letterSpacing: "0.04em",

@@ -98,7 +98,7 @@ const Services = () => {
                       >
                         <Link to={`services/${activeServiceDetails?.slug}`}>
                           <button
-                            className="spirit-bomb px-6 py-2 bg-transparent text-xs font-semibold leading-4 capitalize text-white"
+                            className="spirit-bomb px-6 py-2 bg-transparent text-xs font-semibold leading-4 capitalize text-white font_title"
                             style={{
                               letterSpacing: "0.04em",
                               borderRadius: "30px",
@@ -235,7 +235,7 @@ const Services = () => {
           <div>
             <a href="#start-project">
               <button
-                className="spirit-bomb w-[252px] h-[46px] bg-transparent text-[15px] font-semibold leading-4 capitalize text-white"
+                className="spirit-bomb w-[252px] h-[46px] bg-transparent text-[15px] font-semibold leading-4 capitalize text-white font_title"
                 style={{
                   letterSpacing: "0.04em",
                   borderRadius: "30px",

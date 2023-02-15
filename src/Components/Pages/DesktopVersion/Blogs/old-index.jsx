@@ -181,7 +181,7 @@ const OldBlogs = () => {
                     </h1>
                     <Link to={"/blogs"}>
                       <button
-                        className="spirit-bomb px-16 py-3.5 bg-black mt-12 text-base font-semibold leading-4"
+                        className="spirit-bomb px-16 py-3.5 bg-black mt-12 text-base font-semibold leading-4 font_title"
                         style={{
                           letterSpacing: "0.04em",
                           borderRadius: "30px",

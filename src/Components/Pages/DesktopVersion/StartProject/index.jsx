@@ -331,7 +331,7 @@ const StartProject = () => {
 
               <div className="flex justify-center items-center">
                 <button
-                  className="spirit-bomb whitespace-nowrap px-16 py-4 bg-transparent rounded-full mt-12 xl:mt-16 text-xs 2xl:text-base font-semibold leading-4"
+                  className="spirit-bomb whitespace-nowrap px-16 py-4 bg-transparent rounded-full mt-12 xl:mt-16 text-xs 2xl:text-base font-semibold leading-4 font_title"
                   style={{
                     letterSpacing: "0.04em",
                     borderRadius: "30px",
