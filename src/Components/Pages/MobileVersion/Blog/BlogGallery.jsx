@@ -66,21 +66,21 @@ const BlogGallery = () => {
           </div>
         ) : null}
         {currentPosts?.map((details) => (
-          <Link to={`/blog/${details.slug}`}>
-            <div key={details.id} className="rounded-xl relative mb-8 mx-6">
+          <Link to={`/blog/${details?.slug}`}>
+            <div key={details?.id} className="rounded-xl relative mb-8 mx-6">
               <img
-                src={process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail}
+                src={process.env.REACT_APP_ASSETS_URL + "/" + details?.thumbnail}
                 alt=""
-                className="w-[100%] h-[185px] m-auto rounded-lg"
+                className="w-full h-full m-auto rounded-lg"
               />
-              <div className="w-full flex items-end h-32 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2">
+              <div className="w-full flex justify-end items-end h-32 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2 text-end">
                 <div>
-                  <div className="text-lg text-white font_shadow">
+                  {/* <div className="text-lg text-white font_shadow">
                     {details.title}
-                  </div>
-                  <div className="text-white text-sm"> {details.author}</div>
+                  </div> */}
+                  <div className="w-full text-white font_shadow text-sm flex justify-end items-end text-end">By {details?.author}</div>
                   <div className="text-white text-sm">
-                    {details.created_at.split("T", 1)}
+                    {details?.created_at.split("T", 1)}
                   </div>
                 </div>
               </div>
