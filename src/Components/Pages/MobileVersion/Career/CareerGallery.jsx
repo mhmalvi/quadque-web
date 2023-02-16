@@ -24,16 +24,16 @@ const CareerGallery = () => {
   }, [Career]);
 
   useEffect(() => {
-    if (currentPosts !== "") {
+    if (Career.length > 0) {
       setTimeout(() => {
         setLoader(false);
-      }, 3000);
+      }, 100);
     } else {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [Career]);
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
@@ -55,8 +55,11 @@ const CareerGallery = () => {
       <div className="text-3xl text-white mt-30 px-6 pb-4 font_title">
         Current Job Openings
       </div>
+      {currentPosts.length === 0 && (
+        <div className="text-white text-center">No career posts to show.</div>
+      )}
       {loader ? (
-        <div className="w-full h-[1400px] z-50 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
+        <div className="w-full min-h-[100vh] z-50 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
           <Lottie
             className="w-1/2 mx-auto"
             animationData={loaderFile}
@@ -66,7 +69,7 @@ const CareerGallery = () => {
           <div className="font_title text-white animate-pulse">Loading...</div>
         </div>
       ) : null}
-      <div className="Career w-full min-h-[1400px] font_primary">
+      <div className="Career w-full font_primary">
         {currentPosts?.map((details) => (
           <Link to={`/career-detail/${details.id}`}>
             <div key={details.id} className="rounded-xl pb-6 relative mx-6">

@@ -23,16 +23,16 @@ const BlogGallery = () => {
   }, [allBlogs]);
 
   useEffect(() => {
-    if (currentPosts !== "") {
+    if (allBlogs.length > 0) {
       setTimeout(() => {
         setLoader(false);
-      }, 3000);
+      }, 100);
     } else {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [allBlogs]);
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
@@ -51,9 +51,12 @@ const BlogGallery = () => {
         />
       </Helmet>
 
-      <div className="Blog w-full min-h-[900px] mt-30 font_primary">
+      <div className="Blog w-full mt-30 font_primary">
+        {allBlogs.length === 0 && (
+          <div className="text-white text-center">No blogs to show.</div>
+        )}
         {loader ? (
-          <div className="w-full h-[900px] z-40 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
+          <div className="w-full min-h-[100vh] z-50 flex flex-col justify-center items-center m-auto absolute top-0 bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
             <Lottie
               className="w-1/2 mx-auto"
               animationData={loaderFile}
@@ -69,7 +72,9 @@ const BlogGallery = () => {
           <Link to={`/blog/${details?.slug}`}>
             <div key={details?.id} className="rounded-xl relative mb-8 mx-6">
               <img
-                src={process.env.REACT_APP_ASSETS_URL + "/" + details?.thumbnail}
+                src={
+                  process.env.REACT_APP_ASSETS_URL + "/" + details?.thumbnail
+                }
                 alt=""
                 className="w-full h-full m-auto rounded-lg"
               />
@@ -78,7 +83,12 @@ const BlogGallery = () => {
                   {/* <div className="text-lg text-white font_shadow">
                     {details.title}
                   </div> */}
-                  <div className="w-full text-white font_shadow text-sm flex justify-end items-end text-end">By {details?.author}</div>
+                  <div className="w-full text-white font_shadow text-sm flex justify-end items-end text-end">
+                    By{" "}
+                    <span className="font-semibold ml-1">
+                      {details?.author}
+                    </span>
+                  </div>
                   <div className="text-white text-sm">
                     {details?.created_at.split("T", 1)}
                   </div>
@@ -92,7 +102,9 @@ const BlogGallery = () => {
       {/* PAGINATION */}
       <div className="Blog flex justify-center mt-5">
         <Pagination
-          onChange={(value) => setCurrentPage(value)}
+          onChange={(value) => {
+            setCurrentPage(value); window.scrollTo(0, 0);
+          }}
           pageSize={PostsPerPage}
           current={currentPage}
           total={totalPosts}

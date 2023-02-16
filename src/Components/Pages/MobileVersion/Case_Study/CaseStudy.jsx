@@ -29,16 +29,16 @@ const CaseStudy = () => {
   };
 
   useEffect(() => {
-    if (CaseStudies !== "") {
+    if (CaseStudies.length > 0) {
       setTimeout(() => {
         setLoader(false);
-      }, 5000);
+      }, 100);
     } else {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [CaseStudies]);
 
   return (
     <div
@@ -76,9 +76,9 @@ const CaseStudy = () => {
                     process.env.REACT_APP_ASSETS_URL + "/" + details?.com_image
                   }
                   alt=""
-                  className="w-full rounded-2xl bg-black"
+                  className="w-full h-auto rounded-2xl bg-black"
                 />
-                <div className="caseText w-full h-12 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-xs text-center text-white py-2 overflow-hidden">
+                <div className="caseText w-full h-12 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-xs text-center text-white py-2 px-1 overflow-hidden">
                   {details?.com_name}
                 </div>
               </div>
@@ -87,7 +87,7 @@ const CaseStudy = () => {
         </Slider>
       </div>
       <div className="relative w-9/12 mx-auto">
-        {CaseStudies !="" && (
+        {CaseStudies.length > 0 && (
           <>
             <div
               onClick={() => CaseSlider.current.slickPrev()}
