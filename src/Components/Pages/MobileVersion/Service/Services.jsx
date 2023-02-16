@@ -33,16 +33,16 @@ const Services = () => {
   }, []);
 
   useEffect(() => {
-    if (Services !== "") {
+    if (Services.length > 0) {
       setTimeout(() => {
         setLoader(false);
-      }, 5000);
+      }, 100);
     } else {
       setTimeout(() => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [Services]);
 
   const PrimarySettings = {
     infinite: true,
