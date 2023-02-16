@@ -37,10 +37,7 @@ const CaseStudyDetail = () => {
         <meta name="keywords" content={caseData?.meta_keyword} />
       </Helmet>
 
-
-      <div
-        className="w-full min-h-[100vh] text-white pt-30 font_primary"
-        >
+      <div className="w-full min-h-[100vh] text-white pt-30 font_primary">
         {loader ? (
           <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
             <div className="absolute top-32">
@@ -49,7 +46,7 @@ const CaseStudyDetail = () => {
                 animationData={loaderFile}
                 loop={true}
               />
-  
+
               <div className="font_title text-white animate-pulse flex justify-center">
                 Loading...
               </div>
@@ -132,7 +129,6 @@ const CaseStudyDetail = () => {
 
         {/* SECTION 3 */}
         <div className="px-6">
-          <div className="text-2xl text-center">Our Content:</div>
           <div className="text-2xl text-center pb-13">
             {caseData?.our_content_header}
           </div>
@@ -141,7 +137,7 @@ const CaseStudyDetail = () => {
             <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_1}
               alt=""
-              className="w-2/3 m-auto pb-13"
+              className="w-full m-auto pb-13"
             />
             <div className="text-lg font-semibold">{caseData?.title_1}</div>
             <div className="text-base py-3">{caseData?.description_1}</div>
@@ -151,7 +147,7 @@ const CaseStudyDetail = () => {
             <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_2}
               alt=""
-              className="w-2/3 m-auto pb-13"
+              className="w-full m-auto pb-13"
             />
             <div className="text-lg font-semibold">{caseData?.title_2}</div>
             <div className="text-base py-3">{caseData?.description_2}</div>
@@ -161,7 +157,7 @@ const CaseStudyDetail = () => {
             <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_3}
               alt=""
-              className="w-2/3 m-auto pb-13"
+              className="w-full m-auto pb-13"
             />
             <div className="text-lg font-semibold">{caseData?.title_3}</div>
             <div className="text-base py-3">{caseData?.description_3}</div>
