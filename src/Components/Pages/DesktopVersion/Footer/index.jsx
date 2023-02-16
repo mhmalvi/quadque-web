@@ -262,15 +262,7 @@ const Footer = () => {
                       Address
                     </h3>
                     <div>
-                      <div
-                        onMouseOver={() => {
-                          setBackgroundImage(bgAus);
-                          setTriggerAnimation(!triggerAnimation);
-                        }}
-                        onMouseLeave={() => {
-                          setBackgroundImage("");
-                        }}
-                      >
+                      <div className="relative">
                         <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-2.5">
                           <div className="leading-6 mb-2">
                             <p className="flex items-start">
@@ -294,18 +286,19 @@ const Footer = () => {
                             </span>
                           </div>
                         </div>
+                        <div
+                          className="min-h-full min-w-full absolute top-0 left-0 right-0 bottom-0 bg-transparent z-50"
+                          onMouseOver={() => {
+                            setBackgroundImage(bgAus);
+                            setTriggerAnimation(!triggerAnimation);
+                          }}
+                          onMouseLeave={() => {
+                            setBackgroundImage("");
+                          }}
+                        ></div>
                       </div>
 
-                      <div
-                        onMouseOver={() => {
-                          setBackgroundImage(bgBD);
-                          setTriggerAnimation(!triggerAnimation);
-                        }}
-                        onMouseLeave={() => {
-                          setBackgroundImage("");
-                          // setTriggerAnimation(false);
-                        }}
-                      >
+                      <div className="relative">
                         <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-2.5">
                           <div className="leading-6 mb-2">
                             <p className="flex items-start">
@@ -330,6 +323,16 @@ const Footer = () => {
                             </span>
                           </div>
                         </div>
+                        <div
+                          className="min-h-full min-w-full absolute top-0 left-0 right-0 bottom-0 bg-transparent z-50"
+                          onMouseOver={() => {
+                            setBackgroundImage(bgBD);
+                            setTriggerAnimation(!triggerAnimation);
+                          }}
+                          onMouseLeave={() => {
+                            setBackgroundImage("");
+                          }}
+                        ></div>
                       </div>
                     </div>
                   </Fade>
