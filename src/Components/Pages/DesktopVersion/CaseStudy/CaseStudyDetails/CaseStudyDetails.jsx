@@ -180,9 +180,9 @@ const CaseStudyDetails = ({ setLoader }) => {
 
         <div className="mt-72">
           <div className="max-w-xl mx-auto">
-            <h1 className="text-center text-[40px] leading-12 font-normal">
+            {/* <h1 className="text-center text-[40px] leading-12 font-normal">
               Our Contents:
-            </h1>
+            </h1> */}
             <h1 className="text-center text-[40px] leading-12 font-normal">
               {caseStudyDetails?.our_content_header}
             </h1>
