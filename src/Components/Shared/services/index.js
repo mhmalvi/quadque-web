@@ -8,7 +8,7 @@ export const handleFetchHomeVideo = async () => {
     return result?.data?.data;
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -21,7 +21,7 @@ export const handleFetchServices = async () => {
       return result?.data?.data;
     }
   } catch (error) {
-    return [];
+    return error.response;
   }
 };
 
@@ -30,11 +30,11 @@ export const handleFetchServiceBySlug = async (slug) => {
     const result = await axios.get(
       `${process.env?.REACT_APP_SERVICE_URL}/api/services/${slug}`
     );
-    /* console.log("netwooooork", result?.data); */
+    console.log("netwooooork", result?.data);
     return result?.data;
   } catch (error) {
-    console.log(error.response?.message);
-    return [];
+    console.log(error);
+    return error?.response;
   }
 };
 
@@ -47,7 +47,7 @@ export const handleFetchCaseStudies = async () => {
       return result?.data?.data;
     }
   } catch (error) {
-    return [];
+    return error?.response;
   }
 };
 
@@ -60,7 +60,7 @@ export const handleFetchCaseStudyBySlug = async (slug) => {
     return result?.data;
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -74,7 +74,7 @@ export const handleFetchClientSpeaks = async () => {
       return result?.data?.data;
     }
   } catch (error) {
-    return [];
+    return error?.response;
   }
 };
 
@@ -88,7 +88,7 @@ export const handleFetchBlogs = async () => {
     }
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -100,7 +100,7 @@ export const handleFetchBlogBySlug = async (slug) => {
     return result?.data;
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -114,7 +114,7 @@ export const handleFetchCompanyGoals = async (id) => {
     }
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -129,7 +129,7 @@ export const handleFetchClients = async () => {
     }
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -146,7 +146,7 @@ export const handleSendMail = async (data) => {
     }
   } catch (error) {
     console.log("error", error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -160,7 +160,7 @@ export const handleFetchCaseStudyById = async (slug) => {
     }
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -174,7 +174,7 @@ export const handleFetchServiceById = async (slug) => {
     }
   } catch (error) {
     console.log(error.response?.message);
-    return [];
+    return error?.response;
   }
 };
 
@@ -186,7 +186,7 @@ export const handleFetchCaseStudiesDesktop = async () => {
     return result?.data;
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
 
@@ -198,6 +198,6 @@ export const handleFetchGallery = async () => {
     return result?.data;
   } catch (error) {
     console.log(error.response?.data);
-    return [];
+    return error?.response;
   }
 };
