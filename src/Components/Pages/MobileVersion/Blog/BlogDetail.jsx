@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import Lottie from "lottie-react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { handleFetchBlogBySlug } from "../../../Shared/services";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 import useBlogs from "../../../Shared/Hooks/useBlog";
 import Icons from "../../../Shared/Icons";
-import { message } from "antd";
-import Lottie from "lottie-react";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import { handleFetchBlogBySlug } from "../../../Shared/services";
 import "../MobileView.css";
 
 const BlogDetail = () => {
@@ -32,7 +31,7 @@ const BlogDetail = () => {
           setBlogData(fetchBlog?.data);
         }, 2000);
       } else {
-        message.error(fetchBlog.message);
+        navigate("/404");
       }
     })();
   }, [randomBlogData, slug]);

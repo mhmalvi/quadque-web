@@ -34,11 +34,15 @@ const CaseStudyDetails = ({ setLoader }) => {
 
   useEffect(() => {
     (async () => {
-      const fetchServicedata = await handleFetchCaseStudyById(slug);
-      if (fetchServicedata) {
+      const fetchCaseStudyData = await handleFetchCaseStudyById(slug);
+      if (fetchCaseStudyData?.status === 424) {
+        setLoader(false);
+        navigate("404");
+      }
+      if (fetchCaseStudyData) {
         setLoader(false);
       }
-      setCaseStudyDetails(fetchServicedata);
+      setCaseStudyDetails(fetchCaseStudyData);
     })();
   }, [setLoader, slug]);
 
