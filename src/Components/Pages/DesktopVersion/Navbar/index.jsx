@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import bgShadowLogo from "../../../../asstes/Images/bg-logo-shadow.png";
 import brandLogo from "../../../../asstes/Images/brand_logo.png";
+import astronaut from "../../../../asstes/Images/navbar_astronaut.png";
 
 const Navbar = ({ setOpenMenus }) => {
   const navigate = useNavigate();
@@ -171,7 +172,7 @@ const Navbar = ({ setOpenMenus }) => {
       </div>
 
       <div className="relative lg:mt-28 2xl:mt-36 flex justify-center items-center">
-        <div className="ticker_service">
+        <div className="ticker_service relative">
           <p
             className="lg:text-8xl xl:text-9xl 2xl:text-[11rem] italic"
             style={{
@@ -180,6 +181,13 @@ const Navbar = ({ setOpenMenus }) => {
           >
             {showBgShadow}
           </p>
+          {showBgShadow ? (
+            <img
+              className="w-24 absolute -top-14 left-0"
+              src={astronaut}
+              alt=""
+            />
+          ) : null}
         </div>
       </div>
     </div>

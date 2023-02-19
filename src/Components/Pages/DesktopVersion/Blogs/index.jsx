@@ -164,16 +164,6 @@ const Blogs = () => {
             <div className="grid grid-cols-3 gap-4 justify-center items-center">
               {blogs.slice(0, 6).map((blog, i) => (
                 <div
-                  onMouseOver={() => {
-                    setActiveblogDetails(blog);
-                    setTriggerSlideBlogDetailsAnimation(
-                      !triggerSlideBlogDetailsAnimation
-                    );
-                  }}
-                  onMouseOut={() => {
-                    setActiveblogDetails({});
-                    setTriggerSlideBlogDetailsAnimation(false);
-                  }}
                   key={i}
                   className="w-full h-full m-auto rounded-md cursor-pointer relative bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-500 p-4"
                   onClick={() => handleBlogNavigate(blog?.slug)}
@@ -202,6 +192,19 @@ const Blogs = () => {
                       </div>
                     </div>
                   </div>
+                  <div
+                    className="min-h-full min-w-full absolute top-0 left-0 right-0 bottom-0 bg-transparent z-50"
+                    onMouseOver={() => {
+                      setActiveblogDetails(blog);
+                      setTriggerSlideBlogDetailsAnimation(
+                        !triggerSlideBlogDetailsAnimation
+                      );
+                    }}
+                    onMouseOut={() => {
+                      setActiveblogDetails({});
+                      setTriggerSlideBlogDetailsAnimation(false);
+                    }}
+                  ></div>
                 </div>
               ))}
             </div>

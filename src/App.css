@@ -422,9 +422,9 @@ body::-webkit-scrollbar {
 }
 
 .blog_details_section img {
-    width: 90% !important;
-    height: 100% !important;
-    margin: auto auto;
+  width: 90% !important;
+  height: 100% !important;
+  margin: auto auto;
 }
 
 .blog_details_section blockquote {
