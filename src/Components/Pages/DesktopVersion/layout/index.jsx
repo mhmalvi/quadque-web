@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Sitemap from "../../Sitemap/Sitemap";
 import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
 import BlogDetailsLayout from "../Blogs/BlogDetails/BlogDetailsLayout";
 import CareerDetailsLayout from "../Careers/CareerDetails/CareerDetailsLayout";
@@ -87,6 +88,15 @@ const Layout = () => {
           element={
             <>
               <GalleryLayout />
+            </>
+          }
+        />
+
+        <Route
+          path="sitemap"
+          element={
+            <>
+              <Sitemap />
             </>
           }
         />
