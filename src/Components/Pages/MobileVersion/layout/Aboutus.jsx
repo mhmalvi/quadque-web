@@ -85,7 +85,6 @@ const Aboutus = () => {
         <div className="flex-wrap overflow-hidden">
           <img
             src={mobileAboutCover}
-            // src="https://i.ibb.co/BBrbZzF/3d-illustration-teleportation-astronaut-another-planet.jpg"
             alt=""
             className="w-11/12 mx-auto duration-700 relative z-50"
           />

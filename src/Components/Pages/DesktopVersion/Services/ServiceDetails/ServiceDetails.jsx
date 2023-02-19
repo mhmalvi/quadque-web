@@ -42,6 +42,11 @@ const ServiceDetails = ({ setLoader }) => {
     synth.cancel();
     (async () => {
       const fetchServicedata = await handleFetchServiceById(slug);
+      // console.log("fetchhhh", fetchServicedata);
+      if (fetchServicedata?.status === 424) {
+        setLoader(false);
+        navigate("404");
+      }
       if (fetchServicedata) {
         setTimeout(() => {
           setLoader(false);
@@ -197,7 +202,7 @@ const ServiceDetails = ({ setLoader }) => {
           </p>
 
           <div className="2xl:w-8/12 mx-auto mt-12 grid grid-cols-3 gap-8">
-            {(serviceDetailsContent[`${slug}`]?.helpContent).map(
+            {(serviceDetailsContent[`${slug}`]?.helpContent)?.map(
               (content, i) => (
                 <div className="flex items-center" key={i}>
                   <img className="w-5" src={content?.icon} alt="" />
@@ -243,7 +248,7 @@ const ServiceDetails = ({ setLoader }) => {
           </div>
 
           <div className="mt-20 mb-16">
-            {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map(
+            {(serviceDetailsContent[`${slug}`]?.bestServiceTitle)?.map(
               (content, i) => (
                 <>
                   <div className="text-2xl font-semibold text-center uppercase mb-5">
@@ -258,7 +263,7 @@ const ServiceDetails = ({ setLoader }) => {
           </div>
 
           <div className="grid grid-cols-2 gap-8 justify-center items-center">
-            {serviceDetailsContent[`${slug}`].bestService?.map((service, i) => (
+            {serviceDetailsContent[`${slug}`]?.bestService?.map((service, i) => (
               <div
                 key={i}
                 className="max-w-xs xl:max-w-sm 2xl:max-w-md mx-auto"

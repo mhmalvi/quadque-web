@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
 import { handleFetchCaseStudyBySlug } from "../../../Shared/services";
-import Marble from "../../../../asstes/Images/marble.png"
 
 const CaseStudyDetail = () => {
+  const navigate = useNavigate();
   const { slug } = useParams();
   const [caseData, setCaseData] = useState();
   const [loader, setLoader] = useState(true);
@@ -25,6 +25,8 @@ const CaseStudyDetail = () => {
           setLoader(false);
           setCaseData(fetchCaseStudy.data);
         }, 5000);
+      } else {
+        navigate("/404");
       }
     })();
   }, [slug]);

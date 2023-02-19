@@ -51,6 +51,7 @@ const ServiceDetails = () => {
         }, 5000);
       } else {
         setLoader(true);
+        navigate("404");
       }
     })();
   }, [slug]);
@@ -154,7 +155,7 @@ const ServiceDetails = () => {
           ></div>
 
           <div className="flex flex-wrap justify-between gap-5">
-            {(serviceDetailsContent[`${slug}`]?.helpContent).map(
+            {(serviceDetailsContent[`${slug}`]?.helpContent)?.map(
               (content, i) => (
                 <div className="flex items-center" key={i}>
                   <img className="w-5" src={content?.icon} alt="" />
@@ -226,7 +227,7 @@ const ServiceDetails = () => {
           {/* BEST FOR YOU SECTION */}
 
           <div>
-            {(serviceDetailsContent[`${slug}`]?.bestServiceTitle).map(
+            {(serviceDetailsContent[`${slug}`]?.bestServiceTitle)?.map(
               (content, i) => (
                 <>
                   <div className="w-2/3 mx-auto text-sm text-center uppercase pb-3">
@@ -238,7 +239,7 @@ const ServiceDetails = () => {
                 </>
               )
             )}
-            {serviceDetailsContent[`${slug}`].bestService?.map((service, i) => (
+            {serviceDetailsContent[`${slug}`]?.bestService?.map((service, i) => (
               <div className="pb-10">
                 <div className="flex-col pb-8">
                   <div className="flex gap-4">
@@ -371,7 +372,7 @@ const ServiceDetails = () => {
         <div className="pb-10">
           <div className="max-w-[350px] max-h-[350px] m-auto text-white pb-4">
             <Slider ref={ReviewsSlider} arrows={false} {...settings}>
-              {ClientSpeak.map((details) => (
+              {ClientSpeak?.map((details) => (
                 <div>
                   <div className="bg-black shadow-md shadow-white min-h-[400px] border rounded-2xl p-4 my-6 mx-2">
                     <img

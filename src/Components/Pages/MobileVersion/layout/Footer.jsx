@@ -53,17 +53,17 @@ const Footer = () => {
 
       <div className="flex text-xs mt-6 px-6 gap-2">
         <div className="w-1/2 flex-col">
-          <p className="text-sm font-bold">Quadque Technologies Pty Ltd</p>
+          <p className="text-sm font-bold">Quadque Technologies Pty Limited</p>
           <p className="pt-2">
-            LEVEL 1 , 7 Greenfield Parade, Bankstown NSW 2200, Australia
+            Level 1, 7 Greenfield Parade, Bankstown NSW 2200, Australia
           </p>
           <p className="pt-1">+61 405 899 496</p>
           <p className="pt-1">hello@quadque.tech</p>
         </div>
         <div className="w-1/2 flex-col">
-          <p className="text-sm font-bold">Quadque Technologies Pvt Ltd</p>
+          <p className="text-sm font-bold">Quadque Technologies Private Limited</p>
           <p className="pt-2">
-            Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207, Bangladesh
+            Level 7, 8/C, F.R Tower, Panthapath, Dhaka 1207, Bangladesh
           </p>
           <p className="pt-1">+8801765-276560</p>
           <p className="pt-1">info@quadque.tech</p>
@@ -86,7 +86,7 @@ const Footer = () => {
       </div>
 
       <div id="demo" className="flex justify-center text-xs pb-2">
-        © Quadque Technologies {year}, All rights reserved.
+        © {year} Quadque Technologies, All rights reserved.
       </div>
     </div>
   );

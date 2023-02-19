@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Interface from "../../../../asstes/Images/advertise.png";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
-import { Link, useParams } from "react-router-dom";
 import Career from "./Career.json";
 
 const CareerDetail = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [careerData, setCareerData] = useState();
 
@@ -13,9 +13,13 @@ const CareerDetail = () => {
   }, []);
 
   useEffect(() => {
-    const fetchCareer = Career.find((career) => career.id === id);
-    console.log("fetch", fetchCareer);
-    setCareerData(fetchCareer);
+    if (Career.find((career) => career.id === id)) {
+      const fetchCareer = Career.find((career) => career.id === id);
+      console.log("fetch", fetchCareer);
+      setCareerData(fetchCareer);
+    } else {
+      navigate("/404");
+    }
   }, [id]);
 
   return (
@@ -32,7 +36,7 @@ const CareerDetail = () => {
         </div>
 
         <div className="pb-5">
-          <p className="text-sm text-zinc-400">Summary:</p> <br />
+          <p className="text-lg text-zinc-400">Summary:</p>
           <p className="text-sm">
             {" "}
             {/* Quadque Tech Limited is looking for an experienced, well-connected
@@ -45,7 +49,7 @@ const CareerDetail = () => {
         </div>
 
         <div className="pb-5">
-          <p className="text-sm text-zinc-400">Job Responsibility:</p> <br />
+          <p className="text-lg text-zinc-400">Job Responsibility:</p>
           <ul className="list-disc text-justify pl-6">
             {careerData?.responsibility?.map((resp) => (
               <li className="text-sm py-1">{resp}</li>
@@ -72,8 +76,7 @@ const CareerDetail = () => {
         </div>
 
         <div className="pb-5">
-          <p className="text-sm text-zinc-400">Educational Requirements:</p>{" "}
-          <br />
+          <p className="text-lg text-zinc-400">Educational Requirements:</p>{" "}
           <ul className="list-disc text-justify pl-6">
             {careerData?.edu_requirement?.map((resp) => (
               <li className="text-sm py-1">{resp}</li>
@@ -82,17 +85,16 @@ const CareerDetail = () => {
         </div>
 
         <div className="pb-5">
-          <p className="text-sm text-zinc-400">Salary:</p> <br />
+          <p className="text-lg text-zinc-400">Salary:</p>
           <ul className="list-disc text-justify pl-6">
             <li className=" text-sm py-1">{careerData?.salary}</li>
           </ul>
         </div>
 
         <div className="pb-5">
-          <p className="text-sm text-zinc-400">
+          <p className="text-lg text-zinc-400">
             Compensation & Other Benefits:
           </p>{" "}
-          <br />
           <ul className="list-disc text-justify pl-6">
             {careerData?.additional?.map((resp) => (
               <li className="text-sm py-1">{resp}</li>
