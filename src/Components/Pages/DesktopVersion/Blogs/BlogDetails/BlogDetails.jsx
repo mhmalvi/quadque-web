@@ -26,6 +26,10 @@ const BlogDetails = ({ setLoader }) => {
     (async () => {
       const blogDetails = await handleFetchBlogBySlug(slug);
       // console.log("blogDetails", blogDetails);
+      if (blogDetails?.status === 424) {
+        setLoader(false);
+        navigate("404");
+      }
       if (blogDetails?.status === 200) {
         setBlogDetails(blogDetails?.data);
         setLoader(false);

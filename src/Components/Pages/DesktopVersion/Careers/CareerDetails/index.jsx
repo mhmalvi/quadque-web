@@ -10,13 +10,18 @@ const CareerDetails = ({ setLoader }) => {
   const [careerData, setCareerData] = useState();
 
   useEffect(() => {
-    const fetchCareer = Career.find((career) => career.id === id);
-
-    if (fetchCareer) {
-      setTimeout(() => {
-        setLoader(false);
-      }, 1000);
-      setCareerData(fetchCareer);
+    if (Career.find((career) => career.id === id)) {
+      
+      const fetchCareer = Career.find((career) => career.id === id);
+      
+      if (fetchCareer) {
+        setTimeout(() => {
+          setLoader(false);
+        }, 1000);
+        setCareerData(fetchCareer);
+      }
+    } else {
+      navigate("404");
     }
   }, [id, setLoader]);
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import Header from "./Header";
 import Services from "../Service/Services";
@@ -18,6 +18,7 @@ import CaseStudyDetail from "../Case_Study/CaseStudyDetail";
 import Gallery from "../Gallery";
 import CareerGallery from "../Career/CareerGallery";
 import CareerDetail from "../Career/CareerDetail";
+import NotFound from "../NotFound"
 
 const Layout = () => {
   useEffect(() => {
@@ -55,6 +56,8 @@ const Layout = () => {
           <Route path={"faq"} element={<FAQ />} />
           <Route path={"career"} element={<CareerGallery />} />
           <Route path={"career-detail/:id"} element={<CareerDetail />} />
+          <Route path={"404"} element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
         <Footer />
       </div>
