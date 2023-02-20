@@ -453,8 +453,10 @@ body::-webkit-scrollbar {
   margin: auto;
 }
 
-.case_study_details {
-  color: white !important;
+.case_study_details,
+.case_study_details p> span {
+  /* color: white !important; */
+  color: black !important;
 }
 
 .case_study_details > h1 {

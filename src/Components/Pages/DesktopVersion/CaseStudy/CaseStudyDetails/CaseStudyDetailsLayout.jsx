@@ -14,7 +14,7 @@ const CaseStudyDetailsLayout = () => {
   const navigate = useNavigate();
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {

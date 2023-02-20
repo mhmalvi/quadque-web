@@ -6,7 +6,7 @@ import bgAus from "../../../../asstes/Images/background_aus.jpg";
 import bgBD from "../../../../asstes/Images/background_bd.jpg";
 import Icons from "../../../Shared/Icons";
 
-const Footer = () => {
+const FooterWhite = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
@@ -34,12 +34,12 @@ const Footer = () => {
   return (
     <div
       id="contacts"
-      className="section w-full lg:py-6 2xl:py-0 font_primary text-white relative"
+      className="section w-full lg:py-6 2xl:py-0 font_primary text-black relative"
     >
       {/* For Background Flag */}
-      <Fade spy={triggerAnimation}>
+      {/* <Fade spy={triggerAnimation}>
         <img src={backgroundImage} className="min-w-full h-[90vh]" alt="" />
-      </Fade>
+      </Fade> */}
 
       <div className="w-full lg:py-6 absolute top-0 2xl:top-16">
         <div className=" ml-21 lg:mt-10 2xl:mt-16 mr-25 ">
@@ -57,7 +57,7 @@ const Footer = () => {
               <Fade left spy={triggerTitleAnimation}>
                 <a href="tel:+01765276560">
                   <button
-                    className="spirit-bomb text-white px-12 2xl:px-18 py-2 2xl:py-3.5 text-lg leading-6 font-bold uppercase mt-8 2xl:mt-14 font_primary"
+                    className="spirit-bomb text-black px-12 2xl:px-18 py-2 2xl:py-3.5 text-lg leading-6 font-bold uppercase mt-8 2xl:mt-14 font_primary"
                     style={{
                       borderRadius: "30px",
                     }}
@@ -128,14 +128,14 @@ const Footer = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Icons.FacebookDesktop />
+                          <Icons.FacebookDesktop className="text-black" />
                         </a>
                         <a
                           href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Icons.YoutubeDesktop className="mx-4" />
+                          <Icons.YoutubeDesktop className="mx-4 text-black" />
                         </a>
 
                         <a
@@ -143,14 +143,14 @@ const Footer = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Icons.InstaDesktop className="mr-4" />
+                          <Icons.InstaDesktop className="mr-4 text-black" />
                         </a>
                         <a
                           href="https://twitter.com/QuadqueT"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Icons.TwiterDesktop />
+                          <Icons.TwiterDesktop className="text-black" />
                         </a>
                       </div>
                     </div>
@@ -350,4 +350,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterWhite;
