@@ -38,10 +38,11 @@ const CaseStudyDetail = () => {
         <title>{caseData?.our_content_header + ` – Quadque Tech`}</title>
         <meta name="keywords" content={caseData?.meta_keyword} />
       </Helmet>
+      <div className="w-full h-[5.75rem] bg-black absolute top-0"></div>
 
-      <div className="w-full min-h-[100vh] text-white pt-30 font_primary">
+      <div className="w-full min-h-[100vh] bg-[#e6e6e6] text-black pt-30 font_primary">
         {loader ? (
-          <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute bg-gradient-to-b from-black via-transparent to-black backdrop-blur-sm">
+          <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute ">
             <div className="absolute top-32">
               <Lottie
                 className="w-1/2 mx-auto"
@@ -49,7 +50,7 @@ const CaseStudyDetail = () => {
                 loop={true}
               />
 
-              <div className="font_title text-white animate-pulse flex justify-center">
+              <div className="font_title text-black animate-pulse flex justify-center">
                 Loading...
               </div>
             </div>
@@ -71,7 +72,7 @@ const CaseStudyDetail = () => {
           />
 
           <div className="text-sm text-center pb-5">{caseData?.summary2}</div>
-          <div className="w-40 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-10 font_title">
+          <div className={`w-40 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-10 font_title ${!loader ? "block" : "hidden"}`}>
             <a href="#Footer">Contact Us</a>
           </div>
         </div>
@@ -87,7 +88,7 @@ const CaseStudyDetail = () => {
           />
           <div className="text-2xl pt-13 pb-3">
             <div
-              className="case_editor"
+              className="case_editor text-black"
               dangerouslySetInnerHTML={{ __html: caseData?.content }}
             ></div>
           </div>
@@ -205,8 +206,11 @@ const CaseStudyDetail = () => {
         </div> */}
 
         <Link to={`/`}>
-          <div className="w-44 flex justify-center  bg-black text-white py-2 my-10 mx-auto px-6 rounded-full relative z-50">
-            <Icons.GoBackArrow width={20} className="mx-3 go-back-arrow" />
+          <div className="flex justify-center text-black py-2 my-10 mx-auto px-6 pb-10 rounded-full relative z-50">
+            <Icons.GoBackArrow
+              width={20}
+              className="mx-3 go-back-arrow text-black"
+            />
             Go Back
           </div>
         </Link>
