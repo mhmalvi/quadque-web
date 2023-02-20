@@ -27,8 +27,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link rel="canonical" href="https://www.quadque.tech" />
+
     <script>
-      window.location.href = "https://www.quadque.tech";
+      if (!window.location.host.startsWith("www")) {
+        window.location =
+          window.location.protocol +
+          "//" +
+          "www." +
+          window.location.host +
+          window.location.pathname;
+      }
     </script>
 
     <link

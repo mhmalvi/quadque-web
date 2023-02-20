@@ -1,4 +1,4 @@
 User-agent:https://www.quadque.tech/
 Disallow:http://latest-server.quadque.tech/
 Disallow:https://server-quadquetech.quadque.digital/
-sitemap:
+sitemap:https://www.quadque.tech/sitemap.xml

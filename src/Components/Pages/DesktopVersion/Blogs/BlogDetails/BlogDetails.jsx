@@ -75,19 +75,19 @@ const BlogDetails = ({ setLoader }) => {
       {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Blog - ${blogDetails?.title} – Quadque Tech`}</title>
+        <title>{`${blogDetails?.title} – Quadque Tech`}</title>
         <meta name="keywords" content={blogDetails?.meta_keyword} />
         <meta name="description" content={blogDetails?.meta_description} />
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
 
       <div
-        className="blog_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font_primary"
+        className="blog_details min-h-full bg-[#F5F5F5] text-black py-20 px-36 h-[90vh] overflow-y-auto font_primary"
         ref={blogdetailsRef}
       >
         <div className="mb-10">
           <Icons.GoBackArrow
-            className="w-6 font-semibold cursor-pointer"
+            className="w-6 font-semibold cursor-pointer text-black"
             onClick={() => {
               navigate(`../#blogs`, { replace: true });
             }}
@@ -95,14 +95,14 @@ const BlogDetails = ({ setLoader }) => {
         </div>
 
         <div>
-          <h4 className="text-lg font-normal leading-4 mb-3">
+          <h4 className="text-lg font-normal leading-4 mb-3 text-black">
             {new Date(blogDetails?.created_at).toString().slice(0, 15)}
           </h4>
         </div>
 
         <div className="relative">
           <div
-            className="text-white blog_details_section"
+            className="blog_details_section text-black"
             dangerouslySetInnerHTML={{ __html: blogDetails?.text }}
           ></div>
 

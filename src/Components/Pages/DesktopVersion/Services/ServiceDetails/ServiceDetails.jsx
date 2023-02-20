@@ -1,4 +1,4 @@
-import { Collapse, Tooltip } from "antd";
+import { Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
@@ -11,11 +11,11 @@ import help2 from "../../../../../asstes/Images/help2.png";
 import help3 from "../../../../../asstes/Images/help3.png";
 import help4 from "../../../../../asstes/Images/help4.png";
 import Interaction from "../../../../../asstes/Images/Interaction.png";
+import favicon from "../../../../../asstes/Images/logo.png";
 import product from "../../../../../asstes/Images/product.png";
 import research from "../../../../../asstes/Images/Research.png";
 import usability from "../../../../../asstes/Images/useability.png";
 import visual from "../../../../../asstes/Images/visual.png";
-import favicon from "../../../../../asstes/Images/logo.png";
 import WebApp from "../../../../../asstes/Images/WebApp.png";
 import speakLogo from "../../../../../asstes/Lotties/speak.json";
 import useCaseStudy from "../../../../Shared/Hooks/useCaseStudy";
@@ -54,7 +54,7 @@ const ServiceDetails = ({ setLoader }) => {
       }
       setServiceDetails(fetchServicedata);
     })();
-  }, [setLoader, slug, synth]);
+  }, [navigate, setLoader, slug, synth]);
 
   const handleNavigate = (menu) => {
     if (!window.location.hash.includes("#")) {
@@ -202,7 +202,7 @@ const ServiceDetails = ({ setLoader }) => {
           </p>
 
           <div className="2xl:w-8/12 mx-auto mt-12 grid grid-cols-3 gap-8">
-            {(serviceDetailsContent[`${slug}`]?.helpContent)?.map(
+            {serviceDetailsContent[`${slug}`]?.helpContent?.map(
               (content, i) => (
                 <div className="flex items-center" key={i}>
                   <img className="w-5" src={content?.icon} alt="" />
@@ -248,7 +248,7 @@ const ServiceDetails = ({ setLoader }) => {
           </div>
 
           <div className="mt-20 mb-16">
-            {(serviceDetailsContent[`${slug}`]?.bestServiceTitle)?.map(
+            {serviceDetailsContent[`${slug}`]?.bestServiceTitle?.map(
               (content, i) => (
                 <>
                   <div className="text-2xl font-semibold text-center uppercase mb-5">
@@ -263,31 +263,33 @@ const ServiceDetails = ({ setLoader }) => {
           </div>
 
           <div className="grid grid-cols-2 gap-8 justify-center items-center">
-            {serviceDetailsContent[`${slug}`]?.bestService?.map((service, i) => (
-              <div
-                key={i}
-                className="max-w-xs xl:max-w-sm 2xl:max-w-md mx-auto"
-              >
-                <div className="flex items-center">
-                  <img
-                    className="w-19 mr-4"
-                    src={service?.service_image}
-                    alt=""
-                  />
-                  <h3 className="text-lg font-semibold leading-6 text-white">
-                    {service?.service_name}
-                  </h3>
-                </div>
-                <p
-                  className="text-base leading-6 font-light text-white text-justify mt-2.5"
-                  style={{
-                    letterSpacing: "0.07em",
-                  }}
+            {serviceDetailsContent[`${slug}`]?.bestService?.map(
+              (service, i) => (
+                <div
+                  key={i}
+                  className="max-w-xs xl:max-w-sm 2xl:max-w-md mx-auto"
                 >
-                  {service?.des}
-                </p>
-              </div>
-            ))}
+                  <div className="flex items-center">
+                    <img
+                      className="w-19 mr-4"
+                      src={service?.service_image}
+                      alt=""
+                    />
+                    <h3 className="text-lg font-semibold leading-6 text-white">
+                      {service?.service_name}
+                    </h3>
+                  </div>
+                  <p
+                    className="text-base leading-6 font-light text-white text-justify mt-2.5"
+                    style={{
+                      letterSpacing: "0.07em",
+                    }}
+                  >
+                    {service?.des}
+                  </p>
+                </div>
+              )
+            )}
           </div>
 
           <div className="relative">
