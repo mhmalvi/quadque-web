@@ -82,28 +82,29 @@ const BlogDetail = () => {
       ) : null}
 
       <div
-        className={`w-full pt-30 font_primary ${!blogData ? "scale-0" : ""} `}
+        className={`w-full pt-20 font_primary bg-[#e6e6e6] ${
+          !blogData ? "scale-0" : ""
+        } `}
       >
+        <div className="w-full h-[5.75rem] bg-black absolute top-0"></div>
         <img
           src={process.env.REACT_APP_ASSETS_URL + "/" + blogData?.thumbnail}
           alt=""
-          className="absolute top-0 z-[-10] w-full h-81"
+          className="w-full"
         />
-        <div className="flex items-end h-56 bg-gradient-to-b from-transparent to-black px-6 pb-10">
-          <div className="text-2xl text-white">
+        <div className="px-6 pb-10 text-black">
+          <div className="text-2xl">
             {/* <h1 className="font_title text-shadow">{blogData?.title}</h1> */}
-            <div className="text-white font_shadow text-sm">
+            <div className="text-sm">
               -By <span className="font-semibold ml-1">{blogData?.author}</span>
             </div>
-            <div className="text-white text-sm">
-              {blogData?.created_at.split("T", 1)}
-            </div>
+            <div className="text-sm">{blogData?.created_at.split("T", 1)}</div>
           </div>
         </div>
         <div className="px-6">
           {/* <div className="bestforyou text-white pt-2" dangerouslySetInnerHTML={{ __html: blogData?.text }}></div> */}
           <div
-            className="BlogDetail text-white pt-2"
+            className="BlogDetail text-black pt-2"
             dangerouslySetInnerHTML={{ __html: blogData?.text }}
           ></div>
         </div>
@@ -135,7 +136,7 @@ const BlogDetail = () => {
                     window.scrollTo(0, 0);
                   }}
                   key={post?.id}
-                  className="w-32"
+                  className="w-32 pb-5"
                 >
                   <img
                     src={
@@ -144,8 +145,8 @@ const BlogDetail = () => {
                     alt=""
                     className="w-36 h-36 rounded-lg mb-2"
                   />
-                  <div className="text-white">{post?.title}</div>
-                  <div className=" text-white text-xs">
+                  <div className="text-black leading-5">{post?.title}</div>
+                  <div className=" text-black text-xs">
                     {post?.created_at.split("T", 1)}
                   </div>
                 </div>
