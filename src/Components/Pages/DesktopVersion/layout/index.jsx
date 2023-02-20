@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
+import Sitemap from "../../Sitemap/Sitemap";
 import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
 import BlogDetailsLayout from "../Blogs/BlogDetails/BlogDetailsLayout";
 import CareerDetailsLayout from "../Careers/CareerDetails/CareerDetailsLayout";
@@ -9,7 +10,7 @@ import FaqLayout from "../FAQ/FaqLayout";
 import GalleryLayout from "../Gallery/GalleryLayout";
 import ServiceDetailsLayout from "../Services/ServiceDetails/ServiceDetailsLayout";
 import DesktopLayout from "./DesktopLayout";
-import NotFound from "../NotFound"
+import NotFound from "../NotFound";
 
 const Layout = () => {
   return (
@@ -91,8 +92,17 @@ const Layout = () => {
             </>
           }
         />
-      <Route path={"404"} element={<NotFound />} />
-      <Route path="*" element={<Navigate to="/404" replace />} />
+
+        <Route
+          path="sitemap"
+          element={
+            <>
+              <Sitemap />
+            </>
+          }
+        />
+        <Route path={"404"} element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
     </div>
   );
