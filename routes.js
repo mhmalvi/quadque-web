@@ -1,0 +1,27 @@
+import React from "react";
+import { Route } from "react-router";
+
+export default (
+  <Route>
+    <Route path="/#landing" />
+    <Route path="/#services" />
+    <Route path="/services/:slug" />
+    <Route path="/#about" />
+    <Route path="/#clients" />
+    <Route path="/#case-study" />
+    <Route path="/#client-speak" />
+    <Route path="/#blogs" />
+    <Route path="/#start-project" />
+    <Route path="/#contacts" />
+    <Route path="/services" />
+    <Route path="/case-study" />
+    <Route path="/case-study/:slug" />
+    <Route path="/blog" />
+    <Route path="/blog/:slug" />
+    <Route path="/career" />
+    <Route path="/career-detail/:id" />
+    <Route path="/faq" />
+    <Route path="/blogs" />
+    <Route path="/gallery" />
+  </Route>
+);
