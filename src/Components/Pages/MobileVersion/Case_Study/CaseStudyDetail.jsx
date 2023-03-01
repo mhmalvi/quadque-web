@@ -29,7 +29,7 @@ const CaseStudyDetail = () => {
         navigate("/404");
       }
     })();
-  }, [slug]);
+  }, [navigate, slug]);
   console.log("case data", caseData);
   return (
     <>
@@ -38,9 +38,9 @@ const CaseStudyDetail = () => {
         <title>{caseData?.our_content_header + ` – Quadque Tech`}</title>
         <meta name="keywords" content={caseData?.meta_keyword} />
       </Helmet>
-      <div className="w-full h-[5.75rem] bg-black absolute top-0"></div>
+      {/* <div className="w-full h-[5.75rem] bg-black absolute top-0"></div> */}
 
-      <div className="w-full min-h-[100vh] bg-[#e6e6e6] text-black pt-30 font_primary">
+      <div className="w-full min-h-[100vh] bg-black text-white pt-30 font_primary">
         {loader ? (
           <div className="w-full h-full z-40 flex flex-col justify-center items-center m-auto absolute ">
             <div className="absolute top-32">
@@ -50,7 +50,7 @@ const CaseStudyDetail = () => {
                 loop={true}
               />
 
-              <div className="font_title text-black animate-pulse flex justify-center">
+              <div className="font_title text-white animate-pulse flex justify-center">
                 Loading...
               </div>
             </div>
@@ -58,10 +58,12 @@ const CaseStudyDetail = () => {
         ) : null}
         {/* TOP SECTION  */}
         <div className="px-6">
-          <h1 className="font_title text-2xl text-center pb-3">
+          <h1 className="font_title text-2xl text-center pb-3 text-white">
             {caseData?.com_name}
           </h1>
-          <div className="text-sm text-center">{caseData?.summary1}</div>
+          <div className="text-sm text-center text-white">
+            {caseData?.summary1}
+          </div>
 
           <img
             src={
@@ -71,8 +73,14 @@ const CaseStudyDetail = () => {
             className="m-auto py-13"
           />
 
-          <div className="text-sm text-center pb-5">{caseData?.summary2}</div>
-          <div className={`w-40 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-10 font_title ${!loader ? "block" : "hidden"}`}>
+          <div className="text-sm text-center pb-5 text-white">
+            {caseData?.summary2}
+          </div>
+          <div
+            className={`w-40 flex justify-center bg-black text-white py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-10 font_title ${
+              !loader ? "block" : "hidden"
+            }`}
+          >
             <a href="#Footer">Contact Us</a>
           </div>
         </div>
@@ -86,9 +94,9 @@ const CaseStudyDetail = () => {
             alt=""
             className="m-auto pt-13"
           />
-          <div className="text-2xl pt-13 pb-3">
+          <div className="case_editor text-2xl pt-13 pb-3">
             <div
-              className="case_editor text-black"
+              className="case_editor text-white"
               dangerouslySetInnerHTML={{ __html: caseData?.content }}
             ></div>
           </div>
@@ -132,7 +140,7 @@ const CaseStudyDetail = () => {
 
         {/* SECTION 3 */}
         <div className="px-6">
-          <div className="text-2xl text-center pb-13">
+          <div className="text-2xl text-center pb-13 text-white">
             {caseData?.our_content_header}
           </div>
           {/* sub-section 1 */}
@@ -142,8 +150,12 @@ const CaseStudyDetail = () => {
               alt=""
               className="w-full m-auto pb-13"
             />
-            <div className="text-lg font-semibold">{caseData?.title_1}</div>
-            <div className="text-base py-3">{caseData?.description_1}</div>
+            <div className="text-lg font-semibold text-white">
+              {caseData?.title_1}
+            </div>
+            <div className="text-base py-3 text-white">
+              {caseData?.description_1}
+            </div>
           </div>
           {/* sub-section 2 */}
           <div className="flex-col pb-13">
@@ -152,8 +164,12 @@ const CaseStudyDetail = () => {
               alt=""
               className="w-full m-auto pb-13"
             />
-            <div className="text-lg font-semibold">{caseData?.title_2}</div>
-            <div className="text-base py-3">{caseData?.description_2}</div>
+            <div className="text-lg font-semibold text-white">
+              {caseData?.title_2}
+            </div>
+            <div className="text-base py-3 text-white">
+              {caseData?.description_2}
+            </div>
           </div>
           {/* sub-section 3 */}
           <div className="flex-col pb-13">
@@ -162,14 +178,18 @@ const CaseStudyDetail = () => {
               alt=""
               className="w-full m-auto pb-13"
             />
-            <div className="text-lg font-semibold">{caseData?.title_3}</div>
-            <div className="text-base py-3">{caseData?.description_3}</div>
+            <div className="text-lg font-semibold text-white">
+              {caseData?.title_3}
+            </div>
+            <div className="text-base py-3 text-white">
+              {caseData?.description_3}
+            </div>
           </div>
         </div>
 
         {/* SECTION 4 */}
         <div className={`pb-13 px-6 ${!caseData?.agency ? "hidden" : "block"}`}>
-          <div className="text-2xl text-center pb-13">
+          <div className="text-2xl text-center pb-13 text-white">
             Creative Digital Marketing Agency
           </div>
           <div className="flex flex-wrap justify-center gap-1">
@@ -206,10 +226,10 @@ const CaseStudyDetail = () => {
         </div> */}
 
         <Link to={`/`}>
-          <div className="flex justify-center text-black py-2 my-10 mx-auto px-6 pb-10 rounded-full relative z-50">
+          <div className="flex justify-center text-white py-2 mt-10 mx-auto px-6 pb-10 rounded-full relative z-50">
             <Icons.GoBackArrow
               width={20}
-              className="mx-3 go-back-arrow text-black"
+              className="mx-3 go-back-arrow text-white"
             />
             Go Back
           </div>

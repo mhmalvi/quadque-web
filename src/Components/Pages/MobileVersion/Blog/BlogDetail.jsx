@@ -64,7 +64,7 @@ const BlogDetail = () => {
       {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Blog - ${blogData?.title} – Quadque Tech`}</title>
+        <title>{`${blogData?.title} – Quadque Tech`}</title>
         <meta name="keywords" content={blogData?.meta_keyword} />
         <meta name="description" content={blogData?.meta_description} />
       </Helmet>
@@ -82,17 +82,17 @@ const BlogDetail = () => {
       ) : null}
 
       <div
-        className={`w-full pt-20 font_primary bg-[#e6e6e6] ${
+        className={`w-full pt-20 font_primary bg-black ${
           !blogData ? "scale-0" : ""
         } `}
       >
-        <div className="w-full h-[5.75rem] bg-black absolute top-0"></div>
+        {/* <div className="w-full h-[5.75rem] bg-black absolute top-0"></div> */}
         <img
           src={process.env.REACT_APP_ASSETS_URL + "/" + blogData?.thumbnail}
           alt=""
           className="w-full"
         />
-        <div className="px-6 pb-10 text-black">
+        <div className="px-6 pb-10 text-white">
           <div className="text-2xl">
             {/* <h1 className="font_title text-shadow">{blogData?.title}</h1> */}
             <div className="text-sm">
@@ -104,7 +104,7 @@ const BlogDetail = () => {
         <div className="px-6">
           {/* <div className="bestforyou text-white pt-2" dangerouslySetInnerHTML={{ __html: blogData?.text }}></div> */}
           <div
-            className="BlogDetail text-black pt-2"
+            className="BlogDetail text-white pt-2"
             dangerouslySetInnerHTML={{ __html: blogData?.text }}
           ></div>
         </div>
@@ -145,8 +145,8 @@ const BlogDetail = () => {
                     alt=""
                     className="w-36 h-36 rounded-lg mb-2"
                   />
-                  <div className="text-black leading-5">{post?.title}</div>
-                  <div className=" text-black text-xs">
+                  <div className="text-white leading-5">{post?.title}</div>
+                  <div className=" text-white text-xs">
                     {post?.created_at.split("T", 1)}
                   </div>
                 </div>

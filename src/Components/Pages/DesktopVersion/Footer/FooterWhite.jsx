@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 import address from "../../../../asstes/Images/address.png";
-import bgAus from "../../../../asstes/Images/background_aus.jpg";
-import bgBD from "../../../../asstes/Images/background_bd.jpg";
+// import bgAus from "../../../../asstes/Images/background_aus.jpg";
+// import bgBD from "../../../../asstes/Images/background_bd.jpg";
 import Icons from "../../../Shared/Icons";
 
 const FooterWhite = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
-  const [triggerAnimation, setTriggerAnimation] = useState(false);
-  const [backgroundImage, setBackgroundImage] = useState("");
+  // const [triggerAnimation, setTriggerAnimation] = useState(false);
+  // const [backgroundImage, setBackgroundImage] = useState("");
   const [year, setYear] = useState("");
 
   const synth = window.speechSynthesis;
@@ -57,7 +57,7 @@ const FooterWhite = () => {
               <Fade left spy={triggerTitleAnimation}>
                 <a href="tel:+01765276560">
                   <button
-                    className="spirit-bomb text-black px-12 2xl:px-18 py-2 2xl:py-3.5 text-lg leading-6 font-bold uppercase mt-8 2xl:mt-14 font_primary"
+                    className="spirit-bomb bg-black text-white px-12 2xl:px-18 py-2 2xl:py-3.5 text-lg leading-6 font-bold uppercase mt-8 2xl:mt-14 font_primary"
                     style={{
                       borderRadius: "30px",
                     }}
@@ -92,28 +92,26 @@ const FooterWhite = () => {
                     <div>
                       <div className="mb-6 ml-1 text-xs xl:text-sm">
                         <h4
-                          onMouseOver={() => {
-                            setBackgroundImage(bgAus);
-                            setTriggerAnimation(!triggerAnimation);
-                          }}
-                          onMouseOut={() => {
-                            setBackgroundImage("");
-                            // setTriggerAnimation(false);
-                          }}
+                        // onMouseOver={() => {
+                        //   setBackgroundImage(bgAus);
+                        //   setTriggerAnimation(!triggerAnimation);
+                        // }}
+                        // onMouseOut={() => {
+                        //   setBackgroundImage("");
+                        // }}
                         >
                           <span>Australia: </span>
                           <a href="mailto:">hello@quadque.tech</a>
                         </h4>
 
                         <h4
-                          onMouseOver={() => {
-                            setBackgroundImage(bgBD);
-                            setTriggerAnimation(!triggerAnimation);
-                          }}
-                          onMouseOut={() => {
-                            setBackgroundImage("");
-                            // setTriggerAnimation(false);
-                          }}
+                        // onMouseOver={() => {
+                        //   setBackgroundImage(bgBD);
+                        //   setTriggerAnimation(!triggerAnimation);
+                        // }}
+                        // onMouseOut={() => {
+                        //   setBackgroundImage("");
+                        // }}
                         >
                           <span>Bangladesh: </span>
                           <a href="mailto:info@quadque.tech">
@@ -287,7 +285,7 @@ const FooterWhite = () => {
                             </span>
                           </div>
                         </div>
-                        <div
+                        {/* <div
                           className="min-h-full min-w-full absolute top-0 left-0 right-0 bottom-0 bg-transparent z-50"
                           onMouseOver={() => {
                             setBackgroundImage(bgAus);
@@ -296,7 +294,7 @@ const FooterWhite = () => {
                           onMouseLeave={() => {
                             setBackgroundImage("");
                           }}
-                        ></div>
+                        ></div> */}
                       </div>
 
                       <div className="relative">
@@ -324,7 +322,7 @@ const FooterWhite = () => {
                             </span>
                           </div>
                         </div>
-                        <div
+                        {/* <div
                           className="min-h-full min-w-full absolute top-0 left-0 right-0 bottom-0 bg-transparent z-50"
                           onMouseOver={() => {
                             setBackgroundImage(bgBD);
@@ -333,7 +331,7 @@ const FooterWhite = () => {
                           onMouseLeave={() => {
                             setBackgroundImage("");
                           }}
-                        ></div>
+                        ></div> */}
                       </div>
                     </div>
                   </Fade>

@@ -3,7 +3,7 @@
 <url> <loc>https://www.quadque.tech/</loc> </url>
 <url> <loc>https://www.quadque.tech#landing</loc> </url>
 <url> <loc>https://www.quadque.tech#services</loc> </url>
-<url> <loc>https://www.quadque.tech/services/:slug</loc> </url>
+<!-- <url> <loc>https://www.quadque.tech/services/:slug</loc> </url> -->
 <url> <loc>https://www.quadque.tech#about</loc> </url>
 <url> <loc>https://www.quadque.tech#clients</loc> </url>
 <url> <loc>https://www.quadque.tech#case-study</loc> </url>
@@ -13,11 +13,11 @@
 <url> <loc>https://www.quadque.tech#contacts</loc> </url>
 <url> <loc>https://www.quadque.tech/services</loc> </url>
 <url> <loc>https://www.quadque.tech/case-study</loc> </url>
-<url> <loc>https://www.quadque.tech/case-study/:slug</loc> </url>
+<!-- <url> <loc>https://www.quadque.tech/case-study/:slug</loc> </url> -->
 <url> <loc>https://www.quadque.tech/blog</loc> </url>
-<url> <loc>https://www.quadque.tech/blog/:slug</loc> </url>
+<!-- <url> <loc>https://www.quadque.tech/blog/:slug</loc> </url> -->
 <url> <loc>https://www.quadque.tech/career</loc> </url>
-<url> <loc>https://www.quadque.tech/career-detail/:id</loc> </url>
+<!-- <url> <loc>https://www.quadque.tech/career-detail/:id</loc> </url> -->
 <url> <loc>https://www.quadque.tech/faq</loc> </url>
 <url> <loc>https://www.quadque.tech/blogs</loc> </url>
 <url> <loc>https://www.quadque.tech/gallery</loc> </url>

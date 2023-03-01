@@ -14,16 +14,16 @@ import Icons from "../../../../Shared/Icons";
 // import usability from "../../../../../asstes/Images/useability.png";
 // import visual from "../../../../../asstes/Images/visual.png";
 // import WebApp from "../../../../../asstes/Images/WebApp.png";
-import { Tooltip } from "antd";
+import { handleFetchCaseStudyById } from "../../../../Shared/services";
 import Lottie from "lottie-react";
-import { useSpeechSynthesis } from "react-speech-kit";
-import keyTakeaways from "../../../../../asstes/Lotties/key_takeaways.json";
 import speakLogo from "../../../../../asstes/Lotties/speak.json";
 import testimonial from "../../../../../asstes/Lotties/testimonial.json";
-import weLearnt from "../../../../../asstes/Lotties/we_learnt.json";
 import whoWeAre from "../../../../../asstes/Lotties/who_we_are.json";
-import { handleFetchCaseStudyById } from "../../../../Shared/services";
-import FooterWhite from "../../Footer/FooterWhite";
+import keyTakeaways from "../../../../../asstes/Lotties/key_takeaways.json";
+import weLearnt from "../../../../../asstes/Lotties/we_learnt.json";
+import { useSpeechSynthesis } from "react-speech-kit";
+import { Tooltip } from "antd";
+import Footer from "../../Footer";
 
 const CaseStudyDetails = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -57,7 +57,7 @@ const CaseStudyDetails = ({ setLoader }) => {
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
 
-      <div className="case_study_details min-h-full text-black bg-[#F5F5F5] pt-20 px-36 h-[90vh] overflow-y-auto font_primary w-11/12 mx-auto">
+      <div className="case_study_details min-h-full bg-black text-white pt-20 px-36  h-[90vh] overflow-y-auto font_primary w-11/12 mx-auto">
         <div className="mb-10">
           <Icons.GoBackArrow
             className="w-6 font-semibold cursor-pointer"
@@ -67,13 +67,12 @@ const CaseStudyDetails = ({ setLoader }) => {
           />
         </div>
 
-        <h1 className="max-w-4xl mx-auto text-4xl font-bold leading-10 my-10 text-center font_title text-black">
+        <h1 className="max-w-4xl mx-auto text-4xl font-bold leading-10 my-10 text-center font_title">
           {caseStudyDetails?.our_content_header}
         </h1>
         <div>
           <p
-            // className="w-[468px] mx-auto text-base font-light leading-6 text-[#D0D4EA] mb-5 text-center"
-            className="w-[468px] mx-auto text-base font-light leading-6 text-black mb-5 text-center"
+            className="w-[468px] mx-auto text-base font-light leading-6 text-[#D0D4EA] mb-5 text-center"
             style={{
               letterSpacing: "0.07em",
             }}
@@ -96,8 +95,7 @@ const CaseStudyDetails = ({ setLoader }) => {
 
         <div className="my-12">
           <p
-            // className="w-[468px] mx-auto text-base font-light leading-6 text-[#D0D4EA] mb-5 text-center"
-            className="w-[468px] mx-auto text-base font-light leading-6 text-black mb-5 text-center"
+            className="w-[468px] mx-auto text-base font-light leading-6 text-[#D0D4EA] mb-5 text-center"
             style={{
               letterSpacing: "0.07em",
             }}
@@ -107,7 +105,7 @@ const CaseStudyDetails = ({ setLoader }) => {
 
           <div className="flex justify-center items-center pt-6">
             <button
-              className="spirit-bomb font_title px-7 py-3.5 text-base font-medium leading-4 rounded-full bg-transparent text-black text-center"
+              className="spirit-bomb font_title px-7 py-3.5 text-base font-medium leading-4 rounded-full bg-transparent text-white text-center"
               style={{
                 letterSpacing: "0.04em",
                 borderRadius: "30px",
@@ -128,7 +126,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               Creative Digital Marketing Creative Digital Marketing Agency
             </h2>
             <p
-              className="text-base leading-6 font-normal text-black text-opacity-75"
+              className="text-base leading-6 font-normal text-white text-opacity-75"
               style={{
                 letterSpacing: "0.07em",
               }}
@@ -143,7 +141,7 @@ const CaseStudyDetails = ({ setLoader }) => {
 
             <div className="relative">
               <div
-                className="mr-10 text-black"
+                className="mr-10"
                 dangerouslySetInnerHTML={{ __html: caseStudyDetails?.content }}
               ></div>
 
@@ -189,7 +187,7 @@ const CaseStudyDetails = ({ setLoader }) => {
             {/* <h1 className="text-center text-[40px] leading-12 font-normal">
               Our Contents:
             </h1> */}
-            <h1 className="text-center text-[40px] leading-12 text-black font-semibold">
+            <h1 className="text-center text-[40px] leading-12 font-normal">
               {caseStudyDetails?.our_content_header}
             </h1>
           </div>
@@ -212,7 +210,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               />
             </div>
 
-            <div className="w-1/2 text-black">
+            <div className="w-1/2">
               <h1 className="text-3xl leading-12 font-semibold">
                 {caseStudyDetails?.title_1}
               </h1>
@@ -222,7 +220,7 @@ const CaseStudyDetails = ({ setLoader }) => {
             </div>
           </div>
 
-          <div className="mt-40 flex items-center justify-between text-black">
+          <div className="mt-40 flex items-center justify-between">
             <div className="w-1/2 mr-24">
               <h1 className="text-3xl leading-12 font-semibold">
                 {caseStudyDetails?.title_2}
@@ -266,7 +264,7 @@ const CaseStudyDetails = ({ setLoader }) => {
                 loop={true}
               />
             </div>
-            <div className="w-1/2 text-black">
+            <div className="w-1/2">
               <h1 className="text-3xl leading-12 font-semibold">
                 {caseStudyDetails?.title_3}
               </h1>
@@ -307,7 +305,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               <Lottie className="w-9/12" animationData={whoWeAre} loop={true} />
             </div>
 
-            <div className="w-1/2 text-black">
+            <div className="w-1/2">
               <h1 className="text-3xl leading-12 font-semibold">
                 {/* {caseStudyDetails?.title_3} */}
                 WHO WE ARE
@@ -323,7 +321,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               </h4>
               <div className="flex items-center pt-8">
                 <button
-                  className="spirit-bomb px-7 font_title py-3.5 text-sm 2xl:text-lg font-medium leading-4 rounded-full bg-transparent text-black text-center"
+                  className="spirit-bomb px-7 font_title py-3.5 text-sm 2xl:text-lg font-medium leading-4 rounded-full bg-transparent text-white text-center"
                   style={{
                     letterSpacing: "0.04em",
                     borderRadius: "30px",
@@ -352,8 +350,8 @@ const CaseStudyDetails = ({ setLoader }) => {
           </div>
         </div>
 
-        <div className="-mb-20 bg-[#F5F5F5]">
-          <FooterWhite />
+        <div className="-mb-20">
+          <Footer />
         </div>
       </div>
     </>

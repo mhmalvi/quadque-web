@@ -1,9 +1,7 @@
-import React from "react";
-import Icons from "../../../Shared/Icons";
-import Logo from "../../../../asstes/Images/company-footer-logo.png";
-import "../../MobileVersion/MobileView.css";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import Icons from "../../../Shared/Icons";
+import "../../MobileVersion/MobileView.css";
 
 const FooterWhite = () => {
   const [year, setYear] = useState("");
@@ -14,8 +12,11 @@ const FooterWhite = () => {
   }, []);
 
   return (
-    <div id="Footer" className="w-full text-black relative mt-20 font_primary">
-      <img src={Logo} alt="" className="absolute -top-12 right-2" />
+    <div
+      id="Footer"
+      className="w-full text-black bg-[#F5F5F5] relative pt-20 font_primary"
+    >
+      {/* <img src={Logo} alt="" className="absolute -top-12 right-2" /> */}
       <div className="font_title text-3xl text-center mx-6 mb-4">
         Top-notch digital solutions with the best results
       </div>
@@ -24,7 +25,9 @@ const FooterWhite = () => {
         development, software development and IT services.
       </div>
       <div className="w-1/3 bg-black rounded-full text-center text-xs font_title px-4 py-3 my-8 mx-auto spirit-bomb whitespace-nowrap">
-        <a href="tel:+8801765-276560">Let's Talk</a>
+        <a className="text-white" href="tel:+8801765-276560">
+          Let's Talk
+        </a>
       </div>
       <div className="flex mt-10 px-6 gap-2">
         <div className="w-1/2 flex-col leading-10">
