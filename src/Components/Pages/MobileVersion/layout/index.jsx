@@ -18,7 +18,9 @@ import CaseStudyDetail from "../Case_Study/CaseStudyDetail";
 import Gallery from "../Gallery";
 import CareerGallery from "../Career/CareerGallery";
 import CareerDetail from "../Career/CareerDetail";
-import NotFound from "../NotFound"
+import NotFound from "../NotFound";
+// import FooterWhite from "./FooterWhite";
+// import NavigationBarBlack from "./NavigationBarBlack";
 
 const Layout = () => {
   useEffect(() => {
@@ -48,15 +50,79 @@ const Layout = () => {
               </>
             }
           />
-          <Route path="/blog" element={<BlogGallery />} />
-          <Route path={"blog/:slug"} element={<BlogDetail />} />
-          <Route path={"services/:slug"} element={<ServiceDetails />} />
-          <Route path={"case-study/:slug"} element={<CaseStudyDetail />} />
-          <Route path={"gallery"} element={<Gallery />} />
-          <Route path={"faq"} element={<FAQ />} />
-          <Route path={"career"} element={<CareerGallery />} />
-          <Route path={"career-detail/:id"} element={<CareerDetail />} />
-          <Route path={"404"} element={<NotFound />} />
+          <Route
+            path="/blog"
+            element={
+              <>
+                <BlogGallery />
+              </>
+            }
+          />
+          <Route
+            path={"blog/:slug"}
+            element={
+              <>
+                <BlogDetail />
+              </>
+            }
+          />
+          <Route
+            path={"services/:slug"}
+            element={
+              <>
+                <ServiceDetails />
+              </>
+            }
+          />
+          <Route
+            path={"case-study/:slug"}
+            element={
+              <>
+                <CaseStudyDetail />
+              </>
+            }
+          />
+          <Route
+            path={"gallery"}
+            element={
+              <>
+                <Gallery />
+              </>
+            }
+          />
+          <Route
+            path={"faq"}
+            element={
+              <>
+                <FAQ />
+              </>
+            }
+          />
+          <Route
+            path={"career"}
+            element={
+              <>
+                <CareerGallery />
+              </>
+            }
+          />
+          <Route
+            path={"career-detail/:id"}
+            element={
+              <>
+                <CareerDetail />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path={"404"}
+            element={
+              <>
+                <NotFound />
+              </>
+            }
+          />
           <Route path="*" element={<Navigate to="/404" replace />} />
         </Routes>
         <Footer />

@@ -35,7 +35,7 @@ const BlogDetails = ({ setLoader }) => {
         setLoader(false);
       }
     })();
-  }, [location, setLoader, slug, synth]);
+  }, [location, navigate, setLoader, slug, synth]);
 
   useEffect(() => {
     const NextBlogs = [];
@@ -68,26 +68,78 @@ const BlogDetails = ({ setLoader }) => {
   };
 
   console.log("blogDetails", blogDetails);
+  console.log("location", location);
+  console.log("window", window);
 
   return (
     <>
       {/* For SEO purpose */}
       {/* Meta Keywords */}
+
       <Helmet>
         <meta charSet="utf-8" />
         <title>{`${blogDetails?.title} – Quadque Tech`}</title>
+        <meta name="title" content={blogDetails?.title} />
         <meta name="keywords" content={blogDetails?.meta_keyword} />
         <meta name="description" content={blogDetails?.meta_description} />
+        <meta property="og:title" content={blogDetails?.title} />
+        <meta
+          name="og:description"
+          property="og:description"
+          content={blogDetails?.meta_description}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content={
+            process.env.REACT_APP_ASSETS_URL + "/" + blogDetails?.thumbnail
+          }
+        />
+        <meta
+          property="og:image:url"
+          content={
+            process.env.REACT_APP_ASSETS_URL + "/" + blogDetails?.thumbnail
+          }
+        />
+        <meta
+          property="og:url"
+          content={window.location.host + window.location.pathname}
+        />
+        <meta property="og:site_name" content="Quadque Technologies Ltd." />
+
+        <meta
+          name="twitter:card"
+          property="twitter:card"
+          content={"summary_large_image"}
+        />
+        <meta
+          property="twitter:image:src"
+          content={
+            process.env.REACT_APP_ASSETS_URL + "/" + blogDetails?.thumbnail
+          }
+        />
+
+        <meta property="twitter:title" content={blogDetails?.title} />
+        <meta
+          name="twitter:image:alt"
+          property="twitter:image:alt"
+          content="Blog Thumbnail"
+        />
+        <meta
+          property="twitter:url"
+          content={window.location.host + window.location.pathname}
+        />
+        <meta name="twitter:site" property="twitter:site" content="@QuadqueT" />
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
 
       <div
-        className="blog_details min-h-full bg-[#F5F5F5] text-black py-20 px-36 h-[90vh] overflow-y-auto font_primary"
+        className="blog_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font_primary"
         ref={blogdetailsRef}
       >
         <div className="mb-10">
           <Icons.GoBackArrow
-            className="w-6 font-semibold cursor-pointer text-black"
+            className="w-6 font-semibold cursor-pointer text-white"
             onClick={() => {
               navigate(`../#blogs`, { replace: true });
             }}
@@ -95,14 +147,14 @@ const BlogDetails = ({ setLoader }) => {
         </div>
 
         <div>
-          <h4 className="text-lg font-normal leading-4 mb-3 text-black">
+          <h4 className="text-lg font-normal leading-4 mb-3 text-white">
             {new Date(blogDetails?.created_at).toString().slice(0, 15)}
           </h4>
         </div>
 
         <div className="relative">
           <div
-            className="blog_details_section text-black"
+            className="blog_details_section"
             dangerouslySetInnerHTML={{ __html: blogDetails?.text }}
           ></div>
 

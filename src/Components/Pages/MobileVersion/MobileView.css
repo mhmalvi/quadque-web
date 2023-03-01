@@ -126,7 +126,7 @@
 .BlogDetail span {
   width: 100% !important;
   height: auto !important;
-  color: black;
+  color: white !important;
 }
 
 .BlogDetail img {
@@ -165,7 +165,7 @@
 
 .BlogDetail p {
   font-size: 14px !important;
-  color: black !important;
+  color: white !important;
 }
 
 .BlogDetail blockquote {
