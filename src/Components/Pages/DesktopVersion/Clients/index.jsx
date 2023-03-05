@@ -2,20 +2,39 @@ import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
-import bkash from "../../../../asstes/Images/bkash.png";
-import itec from "../../../../asstes/Images/itec.png";
-import nta from "../../../../asstes/Images/nta.png";
-import uct from "../../../../asstes/Images/uct.png";
-import aia from "../../../../asstes/Images/aia.png";
-import alpha from "../../../../asstes/Images/alpha.png";
-import atr from "../../../../asstes/Images/atr.png";
-import blue from "../../../../asstes/Images/blue.png";
-import esi from "../../../../asstes/Images/esi.png";
-import ibm from "../../../../asstes/Images/ibm.png";
-import tel from "../../../../asstes/Images/tel.png";
-import topTrip from "../../../../asstes/Images/toptrip.png";
-import us from "../../../../asstes/Images/us.png";
+
+import logo from "../../../../asstes/Images/ClientLogos/6.png";
+import Aestheticars_logo from "../../../../asstes/Images/ClientLogos/Aestheticars_logo.png";
+import agro from "../../../../asstes/Images/ClientLogos/agro.png";
+import aia from "../../../../asstes/Images/ClientLogos/aia.png";
+import alpha from "../../../../asstes/Images/ClientLogos/ALPHA.png";
+import bright from "../../../../asstes/Images/ClientLogos/BRIGHT.png";
+import clenovative from "../../../../asstes/Images/ClientLogos/clenovative.png";
+import dt from "../../../../asstes/Images/ClientLogos/dt.png";
+import Epiker from "../../../../asstes/Images/ClientLogos/Epiker.png";
+import esg from "../../../../asstes/Images/ClientLogos/esg.png";
+import esi from "../../../../asstes/Images/ClientLogos/ESI_Logo.png";
+import gb from "../../../../asstes/Images/ClientLogos/gb.png";
+import harbour from "../../../../asstes/Images/ClientLogos/Harbour.png";
+import ibm from "../../../../asstes/Images/ClientLogos/IBM-LOGO.png";
 import Lottie from "lottie-react";
+import itec from "../../../../asstes/Images/ClientLogos/ITEC.png";
+import just_for_mom from "../../../../asstes/Images/ClientLogos/just_for_mom.png";
+import momola from "../../../../asstes/Images/ClientLogos/Momola.png";
+import nta from "../../../../asstes/Images/ClientLogos/NTA.png";
+import Officemate from "../../../../asstes/Images/ClientLogos/Officemate.png";
+import otobi from "../../../../asstes/Images/ClientLogos/otobi.png";
+import paper from "../../../../asstes/Images/ClientLogos/paper.png";
+import sa from "../../../../asstes/Images/ClientLogos/SA.png";
+import Tanaz from "../../../../asstes/Images/ClientLogos/Tanaz.png";
+import Thermottle from "../../../../asstes/Images/ClientLogos/Thermottle.png";
+import Top_Trip_Logo from "../../../../asstes/Images/ClientLogos/Top_Trip_Logo.png";
+import Trade_Trade_US_Log from "../../../../asstes/Images/ClientLogos/Trade_Trade_US_Log.png";
+import trastec from "../../../../asstes/Images/ClientLogos/trastec.png";
+import uct from "../../../../asstes/Images/ClientLogos/UCT.png";
+import usbangla from "../../../../asstes/Images/ClientLogos/usbangla.png";
+import Zaker_Dairy from "../../../../asstes/Images/ClientLogos/Zaker_Dairy.png";
+import zdsl from "../../../../asstes/Images/ClientLogos/zdsl.png";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const Cleints = () => {
@@ -430,73 +449,83 @@ const Cleints = () => {
 export default Cleints;
 
 const colum12xl = [
-  itec,
-  nta,
-  bkash,
-  uct,
-  tel,
-  blue,
-  atr,
-  alpha,
-  ibm,
+  logo,
+  Aestheticars_logo,
+  agro,
   aia,
-  topTrip,
-  us,
+  alpha,
+  bright,
+  clenovative,
   itec,
-  nta,
-  tel,
+  dt,
+  Epiker,
+  esg,
+  itec,
+  gb,
+  harbour,
+  ibm,
 ];
 
 const colum12xl2 = [
-  alpha,
-  ibm,
-  aia,
-  topTrip,
-  us,
   itec,
+  just_for_mom,
+  momola,
   nta,
-  tel,
-  alpha,
-  ibm,
-  aia,
-  topTrip,
-  us,
-  itec,
-  nta,
+  Officemate,
+  otobi,
+  paper,
+  sa,
+  Tanaz,
+  Thermottle,
+  Top_Trip_Logo,
+  Trade_Trade_US_Log,
+  trastec,
+  uct,
+  usbangla,
 ];
 // const colum12xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp];
 const colum1xl = [
   itec,
   nta,
-  bkash,
+  paper,
   uct,
-  tel,
-  blue,
-  atr,
+  Zaker_Dairy,
+  zdsl,
+  Thermottle,
   alpha,
   ibm,
   aia,
-  topTrip,
-  us,
+  Trade_Trade_US_Log,
+  usbangla,
 ];
 
 const colum1xl2 = [
   aia,
-  topTrip,
-  us,
+  Zaker_Dairy,
+  zdsl,
   itec,
   nta,
-  tel,
-  atr,
+  itec,
+  usbangla,
   alpha,
   ibm,
   aia,
-  topTrip,
-  us,
+  Trade_Trade_US_Log,
+  Thermottle,
 ];
 // const colum1xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp];
 
-const colum1lg = [itec, nta, bkash, uct, tel, esi, blue, atr, alpha];
+const colum1lg = [
+  itec,
+  nta,
+  Thermottle,
+  uct,
+  Zaker_Dairy,
+  esi,
+  Trade_Trade_US_Log,
+  aia,
+  alpha,
+];
 
 // const colum1lg = [ms, ts, sp, ms, ts, sp, ms, ts, sp];
 

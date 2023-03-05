@@ -9,6 +9,7 @@ import favicon from "../../../../../asstes/Images/logo.png";
 import useBlogs from "../../../../Shared/Hooks/useBlog";
 import Icons from "../../../../Shared/Icons";
 import { handleFetchBlogBySlug } from "../../../../Shared/services";
+import { FacebookShareCount } from "react-share";
 
 const BlogDetails = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -78,7 +79,7 @@ const BlogDetails = ({ setLoader }) => {
 
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`${blogDetails?.title} – Quadque Tech`}</title>
+        {/* <title>{`${blogDetails?.title}`}</title> */}
         <meta name="title" content={blogDetails?.title} />
         <meta name="keywords" content={blogDetails?.meta_keyword} />
         <meta name="description" content={blogDetails?.meta_description} />
@@ -151,6 +152,15 @@ const BlogDetails = ({ setLoader }) => {
             {new Date(blogDetails?.created_at).toString().slice(0, 15)}
           </h4>
         </div>
+
+        {/* <div className="w-20 h-20 bg-blue-500">
+          <FacebookShareCount
+            title={`${blogDetails?.title}`}
+            url={
+              "https://www.quadque.tech/blog/06-ways-businesses-can-leverage-technology-and-digital"
+            }
+          />
+        </div> */}
 
         <div className="relative">
           <div
