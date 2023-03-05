@@ -73,7 +73,7 @@ const OurCustomer = () => {
                     client.client_images
                   }
                   alt=""
-                  className="px-4 w-32 h-32"
+                  className="w-10/12 p-2"
                 />
               </div>
             </div>
@@ -120,9 +120,7 @@ const OurCustomer = () => {
           completed
         </div>
         <ul className="text-sm text-center px-6 leading-6">
-          <li>
-            Practical and easily implementable solutions
-          </li>
+          <li>Practical and easily implementable solutions</li>
           <li>High standards of performance</li>
           <li>Excellent service quality</li>
         </ul>
