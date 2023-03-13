@@ -9,6 +9,8 @@ import favicon from "../../../../../asstes/Images/logo.png";
 import useBlogs from "../../../../Shared/Hooks/useBlog";
 import Icons from "../../../../Shared/Icons";
 import { handleFetchBlogBySlug } from "../../../../Shared/services";
+import { FacebookShareButton } from "react-share";
+import { FaFacebook } from "react-icons/fa";
 
 const BlogDetails = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -67,10 +69,6 @@ const BlogDetails = ({ setLoader }) => {
     }, 1000);
   };
 
-  console.log("blogDetails", blogDetails);
-  console.log("location", location);
-  console.log("window", window);
-
   return (
     <>
       {/* For SEO purpose */}
@@ -78,7 +76,7 @@ const BlogDetails = ({ setLoader }) => {
 
       {/* <Helmet prioritizeSeoTags>
         <meta charSet="utf-8" />
-        <title>{`${blogDetails?.title} – Quadque Tech`}</title>
+        <title>{`${blogDetails?.title}`}</title>
         <meta name="title" content={blogDetails?.title} />
         <meta name="keywords" content={blogDetails?.meta_keyword} />
         <meta name="description" content={blogDetails?.meta_description} />
@@ -188,6 +186,31 @@ const BlogDetails = ({ setLoader }) => {
             {new Date(blogDetails?.created_at).toString().slice(0, 15)}
           </h4>
         </div>
+
+        {/* <div>
+          <FacebookShareButton
+            url={`https://www.quadque.tech/blog/${blogDetails?.slug}`}
+            quote={blogDetails?.title}
+            openGraph={{
+              url: `https://www.quadque.tech/blog/${blogDetails?.slug}`,
+              title: blogDetails?.title,
+              description: blogDetails?.meta_description,
+              images: [
+                {
+                  url:
+                    process.env.REACT_APP_ASSETS_URL +
+                    "/" +
+                    blogDetails?.thumbnail,
+                  width: 1200,
+                  height: 630,
+                  alt: "Blog",
+                },
+              ],
+            }}
+          >
+            <FaFacebook size={32} round />
+          </FacebookShareButton>
+        </div> */}
 
         <div className="relative">
           <div

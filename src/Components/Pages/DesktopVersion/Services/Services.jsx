@@ -13,6 +13,7 @@ import eCom from "../../../../asstes/Lotties/ecommerce.json";
 import CyberSecurity from "../../../../asstes/Lotties/cyber-security.json";
 import Cloud from "../../../../asstes/Lotties/cloud-computing22.json";
 import Maintenance from "../../../../asstes/Lotties/maintanance.json";
+import sapErp from "../../../../asstes/Lotties/sap_erp.json";
 import useServices from "../../../Shared/Hooks/useServices";
 
 const Services = () => {
@@ -201,6 +202,7 @@ const Services = () => {
               />
             </Link>
           ) : null}
+
           {/* {activeService === "Maintenance and Support" ? ( */}
           {activeService?.includes("Maintenance") ? (
             <Link to={`services/maintenance-and-support`}>
@@ -211,6 +213,17 @@ const Services = () => {
               />
             </Link>
           ) : null}
+
+          {activeService?.includes("ERP") ? (
+            <Link to={`services/sap-and-erp-solutions`}>
+              <Lottie
+                animationData={sapErp}
+                loop={true}
+                alt="SAP & ERP Solutions"
+              />
+            </Link>
+          ) : null}
+          
         </div>
       </Fade>
 

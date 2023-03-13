@@ -1175,33 +1175,6 @@ const serviceDetailsContent = {
     metaKeywords:
       "AI technologies artificial intelligence AI and IoT Solutions",
 
-    // helpContent: [
-    //   {
-    //     title: "AI Chatbot",
-    //     icon: usability,
-    //   },
-    //   {
-    //     title: "AI Office Assistant",
-    //     icon: research,
-    //   },
-    //   {
-    //     title: "Smart Voice Assistant",
-    //     icon: product,
-    //   },
-    //   {
-    //     title: "IoT Based Alarm System",
-    //     icon: WebApp,
-    //   },
-    //   {
-    //     title: "Social Media Monitoring App",
-    //     icon: visual,
-    //   },
-    //   {
-    //     title: "Smart Home Controlling System",
-    //     icon: Interaction,
-    //   },
-    // ],
-
     helpContent: [
       {
         title: "Pre-support audit",
@@ -1231,8 +1204,9 @@ const serviceDetailsContent = {
 
     bestServiceTitle: [
       {
-        title: "SMART AI AND IOT SOLUTIONS DESIGNED FOR YOUR NEEDS ",
-        tagline: "Powerful AI Technologies and Innovative IoT Services",
+        title: "EXPERT CARE FOR YOUR SOFTWARE, WHENEVER YOU NEED IT",
+        tagline:
+          "Keeping Your Software Running Smoothly, So You Can Focus on Running Your Business",
       },
     ],
     bestService: [
@@ -1255,6 +1229,73 @@ const serviceDetailsContent = {
         service_image: help4,
         service_name: "Improve Your Organisational Performance",
         des: "One of the biggest advantages of AI and IoT solutions is that they improve the overall performance of an organisation and allow a better service. You can rely on our solutions to improve your organisational performance.",
+      },
+    ],
+  },
+
+  "sap-and-erp-solutions": {
+    metaTitle:
+      "SAP and ERP Solutions- Online IT Services for Business – Quadque Tech",
+    metaDescription:
+      "Ensuring feasibility of your software using the latest tools & concrete methodologies.",
+    metaKeywords: "Software solutions, ERP Solutions, ERP, ERP maintanance",
+
+    helpContent: [
+      {
+        title: "Implementation Services",
+        icon: usability,
+      },
+      {
+        title: "Customisation Services",
+        icon: research,
+      },
+      {
+        title: "System monitoring",
+        icon: product,
+      },
+      {
+        title: "QA services",
+        icon: WebApp,
+      },
+      {
+        title: "Maintenance and Support Services",
+        icon: visual,
+      },
+      {
+        title: "Consulting Services",
+        icon: Interaction,
+      },
+    ],
+
+    bestServiceTitle: [
+      {
+        title:
+          "TRANSFORM YOUR BUSINESS WITH OUR POWERFUL ERP AND SAP SOLUTIONS.",
+        tagline:
+          "Experience The Next Level Of Efficiency And Automation With Our Erp And Sap Systems",
+      },
+    ],
+
+    bestService: [
+      {
+        service_image: help1,
+        service_name: "Needs Analysis",
+        des: "This involves identifying the specific business processes that need to be automated and integrated into the ERP system, as well as the requirements for reporting, analytics, and user access.",
+      },
+      {
+        service_image: help2,
+        service_name: "Planning and Design",
+        des: "Based on the needs analysis, a project plan is created that outlines the implementation or upgrade process, including timelines, milestones, and resource requirements. The ERP system is then configured and customized to meet the organization's specific needs.",
+      },
+      {
+        service_image: help3,
+        service_name: "Implementation:",
+        des: "The ERP system is installed and configured, and data is migrated from legacy systems to the new system. The system is then tested and validated to ensure that it meets the organization's requirements.",
+      },
+      {
+        service_image: help4,
+        service_name: "Maintenance and Support",
+        des: "Once the ERP system is up and running, ongoing maintenance and support services are provided to ensure that the system remains up-to-date and running smoothly. This includes software updates, bug fixes, technical support, and help desk services.",
       },
     ],
   },
