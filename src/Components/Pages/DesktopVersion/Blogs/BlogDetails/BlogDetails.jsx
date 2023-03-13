@@ -74,7 +74,7 @@ const BlogDetails = ({ setLoader }) => {
       {/* For SEO purpose */}
       {/* Meta Keywords */}
 
-      <Helmet>
+      {/* <Helmet prioritizeSeoTags>
         <meta charSet="utf-8" />
         <title>{`${blogDetails?.title}`}</title>
         <meta name="title" content={blogDetails?.title} />
@@ -129,7 +129,44 @@ const BlogDetails = ({ setLoader }) => {
         />
         <meta name="twitter:site" property="twitter:site" content="@QuadqueT" />
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
-      </Helmet>
+      </Helmet> */}
+
+      <Helmet
+        title={`${blogDetails?.title} – Quadque Tech`}
+        meta={[
+          { name: "author", content: "Fishii.shop" },
+
+          { name: "twitter:site", content: "Fishii.shop" },
+          { name: "twitter:creator", content: "Fishii.shop" },
+          { name: "twitter:title", content: blogDetails?.title },
+          {
+            name: "twitter:image",
+            content:
+              process.env.REACT_APP_ASSETS_URL + "/" + blogDetails?.thumbnail,
+          },
+
+          { property: "og:title", content: blogDetails?.title },
+          { property: "og:site_name", content: "Fishii.shop" },
+          { property: "og:type", content: "website" },
+          {
+            property: "og:url",
+            content: "https://www.quadque.tech/blog/" + blogDetails?.slug,
+          },
+          {
+            property: "og:description",
+            content: blogDetails?.meta_description,
+          },
+          {
+            property: "og:image",
+            content:
+              process.env.REACT_APP_ASSETS_URL + "/" + blogDetails?.thumbnail,
+          },
+          { property: "og:site_name", content: "Quadque Technologies Ltd." },
+
+          { name: "viewport", content: "width=device-width, maximum-scale=1" },
+          { name: "apple-itunes-app", content: "app-id=1125423676" },
+        ]}
+      />
 
       <div
         className="blog_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font_primary"
