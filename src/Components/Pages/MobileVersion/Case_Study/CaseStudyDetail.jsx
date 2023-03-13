@@ -19,7 +19,7 @@ const CaseStudyDetail = () => {
   useEffect(() => {
     (async () => {
       const fetchCaseStudy = await handleFetchCaseStudyBySlug(slug);
-      console.log("fetch", fetchCaseStudy);
+      // console.log("fetch", fetchCaseStudy);
       if (fetchCaseStudy.status === 200) {
         setTimeout(() => {
           setLoader(false);
@@ -29,8 +29,8 @@ const CaseStudyDetail = () => {
         navigate("/404");
       }
     })();
-  }, [navigate, slug]);
-  console.log("case data", caseData);
+  }, [slug]);
+  // console.log("case data", caseData);
   return (
     <>
       <Helmet>

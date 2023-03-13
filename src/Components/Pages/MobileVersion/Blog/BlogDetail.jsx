@@ -43,20 +43,17 @@ const BlogDetail = () => {
 
     let currentBlogIndex = allBlogs?.findIndex((x) => x.id === currentBlogid);
     let nextBlogIndex = currentBlogIndex;
-    //console.log("index", currentBlogIndex);
     for (i = 0; i < 4; i++) {
       if (nextBlogIndex < allBlogs.length - 1) {
         nextBlogIndex++;
-        //console.log("index", nextBlogIndex);
         NextBlogs.push(allBlogs[nextBlogIndex]);
-        //console.log("Array", NextBlogs);
       } else {
         nextBlogIndex = 0;
         NextBlogs.push(allBlogs[nextBlogIndex]);
       }
       setRandomBlogData(NextBlogs);
     }
-  }, [slug, allBlogs]);
+  }, [allBlogs]);
 
   return (
     <>

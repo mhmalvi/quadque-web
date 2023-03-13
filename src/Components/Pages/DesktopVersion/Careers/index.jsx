@@ -75,9 +75,9 @@ in touch!"
                     // src={
                     //   process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail
                     // }
-                    src="https://i.ibb.co/1GxDBSp/jobpost.png"
+                    src={details.thumbnail}
                     alt="Job Thumbnail"
-                    className="w-[100%] h-56 m-auto rounded-lg"
+                    className="w-full h-60 m-auto rounded-lg"
                   />
                   <div className="flex justify-between pb-2 px-2 mt-4 gap-4 h-14">
                     <div>
