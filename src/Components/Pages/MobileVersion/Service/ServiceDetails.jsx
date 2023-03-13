@@ -138,7 +138,7 @@ const ServiceDetails = () => {
             <div>
               <img
                 src={process.env.REACT_APP_ASSETS_URL + "/" + Service?.file}
-                alt=""
+                alt="Service Img"
                 className="w-[80%] m-auto"
               />
             </div>
@@ -155,10 +155,10 @@ const ServiceDetails = () => {
           ></div>
 
           <div className="flex flex-wrap justify-between gap-5">
-            {(serviceDetailsContent[`${slug}`]?.helpContent)?.map(
+            {serviceDetailsContent[`${slug}`]?.helpContent?.map(
               (content, i) => (
                 <div className="flex items-center" key={i}>
-                  <img className="w-5" src={content?.icon} alt="" />
+                  <img className="w-5" src={content?.icon} alt="Content Icon" />
                   <span className="text-base font-normal leading-5 ml-2">
                     {content?.title}
                   </span>
@@ -227,7 +227,7 @@ const ServiceDetails = () => {
           {/* BEST FOR YOU SECTION */}
 
           <div>
-            {(serviceDetailsContent[`${slug}`]?.bestServiceTitle)?.map(
+            {serviceDetailsContent[`${slug}`]?.bestServiceTitle?.map(
               (content, i) => (
                 <>
                   <div className="w-2/3 mx-auto text-sm text-center uppercase pb-3">
@@ -239,21 +239,27 @@ const ServiceDetails = () => {
                 </>
               )
             )}
-            {serviceDetailsContent[`${slug}`]?.bestService?.map((service, i) => (
-              <div className="pb-10">
-                <div className="flex-col pb-8">
-                  <div className="flex gap-4">
-                    <img src={service?.service_image} alt="" className="w-20" />
-                    <div className="w-2/3 text-2xl flex items-end">
-                      {service?.service_name}
+            {serviceDetailsContent[`${slug}`]?.bestService?.map(
+              (service, i) => (
+                <div className="pb-10">
+                  <div className="flex-col pb-8">
+                    <div className="flex gap-4">
+                      <img
+                        src={service?.service_image}
+                        alt="Service Img"
+                        className="w-20"
+                      />
+                      <div className="w-2/3 text-2xl flex items-end">
+                        {service?.service_name}
+                      </div>
+                    </div>
+                    <div className="text-sm text-justify text-[#D0D4EA] pt-5">
+                      {service?.des}
                     </div>
                   </div>
-                  <div className="text-sm text-justify text-[#D0D4EA] pt-5">
-                    {service?.des}
-                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
 
@@ -350,7 +356,7 @@ const ServiceDetails = () => {
                   src={
                     process.env.REACT_APP_ASSETS_URL + "/" + details?.com_image
                   }
-                  alt=""
+                  alt="Company"
                   className="w-full rounded-2xl"
                 />
                 <div className="text-center text-white py-2">
@@ -379,7 +385,7 @@ const ServiceDetails = () => {
                       src={
                         process.env.REACT_APP_ASSETS_URL + "/" + details?.image
                       }
-                      alt=""
+                      alt="Client"
                       className="bg-white w-14 h-14 relative -top-10 left-4 rounded-full"
                     />
                     <div

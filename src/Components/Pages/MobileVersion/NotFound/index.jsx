@@ -6,7 +6,7 @@ const NotFound = () => {
     <div className="text-white pt-30">
       <div className="text-5xl text-center font_title">404</div>
       <div className="text-xl text-center font_title">Page not found</div>
-      <img src={Astro404} alt="" className="w-7/12 m-auto py-10" />
+      <img src={Astro404} alt="Astro404" className="w-7/12 m-auto py-10" />
       <div className="flex items-center justify-center">
         <a
           href="/"

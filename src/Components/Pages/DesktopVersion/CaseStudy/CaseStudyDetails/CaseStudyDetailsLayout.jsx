@@ -184,7 +184,7 @@ const CaseStudyDetailsLayout = () => {
                   <img
                     className="z-50 cursor-pointer"
                     src={muteImg}
-                    alt=""
+                    alt="Mute"
                     onClick={() => setMuted(false)}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
@@ -202,7 +202,7 @@ const CaseStudyDetailsLayout = () => {
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
                     onClick={() => setMuted(true)}
-                    alt=""
+                    alt="Unmute"
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>

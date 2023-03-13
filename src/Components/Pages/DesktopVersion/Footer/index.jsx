@@ -37,9 +37,15 @@ const Footer = () => {
       className="section w-full lg:py-6 2xl:py-0 font_primary text-white relative"
     >
       {/* For Background Flag */}
-      <Fade spy={triggerAnimation}>
-        <img src={backgroundImage} className="min-w-full h-[90vh]" alt="" />
-      </Fade>
+      {backgroundImage ? (
+        <Fade spy={triggerAnimation}>
+          <img
+            src={backgroundImage}
+            className="min-w-full h-[90vh]"
+            alt="Background"
+          />
+        </Fade>
+      ) : null}
 
       <div className="w-full lg:py-6 absolute top-0 2xl:top-16">
         <div className=" ml-21 lg:mt-10 2xl:mt-16 mr-25 ">
@@ -270,7 +276,7 @@ const Footer = () => {
                               <img
                                 className="w-6 mr-2.5"
                                 src={address}
-                                alt=""
+                                alt="Address"
                               />
                               <span>
                                 Level 1, 7 Greenfield Parade Bankstown, NSW
@@ -306,7 +312,7 @@ const Footer = () => {
                               <img
                                 className="w-6 mr-2.5"
                                 src={address}
-                                alt=""
+                                alt="Address"
                               />
                               <span>
                                 Level -7, 8/C, F.R Tower, Panthapath, Dhaka

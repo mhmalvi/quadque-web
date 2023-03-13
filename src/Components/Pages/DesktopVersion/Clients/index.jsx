@@ -128,7 +128,7 @@ const Cleints = () => {
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-[100px] flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -143,7 +143,7 @@ const Cleints = () => {
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -160,7 +160,7 @@ const Cleints = () => {
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -175,7 +175,7 @@ const Cleints = () => {
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -192,7 +192,7 @@ const Cleints = () => {
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -207,7 +207,7 @@ const Cleints = () => {
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -229,7 +229,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-[104px] flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -244,7 +244,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -261,7 +261,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -276,7 +276,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -293,7 +293,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -308,7 +308,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -330,7 +330,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -345,7 +345,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -362,7 +362,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -377,7 +377,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -394,7 +394,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}
@@ -409,7 +409,7 @@ const Cleints = () => {
                       className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-full flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="" />
+                        <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
                   ))}

@@ -25,7 +25,11 @@ const Navbar = ({ setOpenMenus }) => {
   return (
     <div className="custom_modal_container bg-black bg-opacity-100 backdrop-blur-sm py-10 px-16">
       <div className="mb-[5%]">
-        <img className="lg:w-[12%] 2xl:w-auto" src={brandLogo} alt="" />
+        <img
+          className="lg:w-[12%] 2xl:w-auto"
+          src={brandLogo}
+          alt="Brand Logo"
+        />
       </div>
 
       <div className="flex flex-col justify-center items-center">
@@ -50,7 +54,7 @@ const Navbar = ({ setOpenMenus }) => {
                 showBgShadow === "SERVICES" ? "opacity-100" : "opacity-0"
               } transition-opacity delay-200 -top-2 right-0 lg:w-[50%] xl:w-[70%] 2xl:w-32`}
               src={bgShadowLogo}
-              alt=""
+              alt="Background Shadow Logo"
             />
           </a>
 
@@ -77,7 +81,7 @@ const Navbar = ({ setOpenMenus }) => {
                   showBgShadow === "ABOUT" ? "opacity-100" : "opacity-0"
                 } transition-opacity delay-200 -top-2 right-0 lg:w-[60%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
-                alt=""
+                alt="Background Shadow Logo"
               />
             </div>
           </a>
@@ -104,7 +108,7 @@ const Navbar = ({ setOpenMenus }) => {
                   showBgShadow === "CASE STUDIES" ? "opacity-100" : "opacity-0"
                 } transition-opacity delay-200 -top-2 right-0 lg:w-[40%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
-                alt=""
+                alt="Background Shadow Logo"
               />
             </a>
           </div>
@@ -135,7 +139,7 @@ const Navbar = ({ setOpenMenus }) => {
                   showBgShadow === "BLOGS" ? "opacity-100" : "opacity-0"
                 } transition-opacity delay-200 -top-2 right-0 lg:w-[65%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
-                alt=""
+                alt="Background Shadow Logo"
               />
             </div>
           </a>
@@ -164,7 +168,7 @@ const Navbar = ({ setOpenMenus }) => {
                   showBgShadow === "CONTACT" ? "opacity-100" : "opacity-0"
                 } transition-opacity delay-200 -top-2 right-0 lg:w-[45%] xl:w-[70%] 2xl:w-32`}
                 src={bgShadowLogo}
-                alt=""
+                alt="Background Shadow Logo"
               />
             </div>
           </a>
@@ -185,7 +189,7 @@ const Navbar = ({ setOpenMenus }) => {
             <img
               className="w-24 absolute -top-14 left-0"
               src={astronaut}
-              alt=""
+              alt="Baby Astronaut"
             />
           ) : null}
         </div>

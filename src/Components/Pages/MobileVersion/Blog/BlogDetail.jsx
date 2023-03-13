@@ -89,7 +89,7 @@ const BlogDetail = () => {
         {/* <div className="w-full h-[5.75rem] bg-black absolute top-0"></div> */}
         <img
           src={process.env.REACT_APP_ASSETS_URL + "/" + blogData?.thumbnail}
-          alt=""
+          alt="Thumbnail"
           className="w-full"
         />
         <div className="px-6 pb-10 text-white">
@@ -142,7 +142,7 @@ const BlogDetail = () => {
                     src={
                       process.env.REACT_APP_ASSETS_URL + "/" + post?.thumbnail
                     }
-                    alt=""
+                    alt="Thumbnail"
                     className="w-36 h-36 rounded-lg mb-2"
                   />
                   <div className="text-white leading-5">{post?.title}</div>

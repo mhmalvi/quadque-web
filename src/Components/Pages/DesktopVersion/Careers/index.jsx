@@ -76,24 +76,20 @@ in touch!"
                     //   process.env.REACT_APP_ASSETS_URL + "/" + details.thumbnail
                     // }
                     src="https://i.ibb.co/1GxDBSp/jobpost.png"
-                    alt=""
+                    alt="Job Thumbnail"
                     className="w-[100%] h-56 m-auto rounded-lg"
                   />
-                  <div className="flex justify-between pb-2 px-2 mt-4 gap-4">
+                  <div className="flex justify-between pb-2 px-2 mt-4 gap-4 h-14">
                     <div>
                       <h1 className="text-lg text-white font-semibold">
                         {details.position}
                       </h1>
-                      <div className="text-white text-sm mt-2 italic font-light">
-                        {/* Deadline: {details.created_at.split("T", 1)} */}
-                        Deadline: {details.app_deadline}
-                      </div>
+                      {details.app_deadline ? (
+                        <div className="text-white text-sm italic font-thin">
+                          deadline: {details.app_deadline}
+                        </div>
+                      ) : null}
                     </div>
-                    {/* <Link to={`/career-detail`}>
-                  <div className="h-8 bg-brand-color text-white my-2 px-4 rounded-full text-center flex items-center cursor-pointer">
-                    View
-                  </div>
-                </Link> */}
                   </div>
                   {/* <div dangerouslySetInnerHTML={{ __html: details.text }} className="text-white"></div> */}
                 </div>

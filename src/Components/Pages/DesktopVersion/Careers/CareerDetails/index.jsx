@@ -11,9 +11,8 @@ const CareerDetails = ({ setLoader }) => {
 
   useEffect(() => {
     if (Career.find((career) => career.id === id)) {
-      
       const fetchCareer = Career.find((career) => career.id === id);
-      
+
       if (fetchCareer) {
         setTimeout(() => {
           setLoader(false);
@@ -39,8 +38,8 @@ const CareerDetails = ({ setLoader }) => {
 
       <div className="w-full text-white font_primary mb-16">
         <img
-          src={"https://i.ibb.co/1GxDBSp/jobpost.png"}
-          alt=""
+          src={careerData?.thumbnail}
+          alt="Job Thumbnail"
           className="w-8/12 mx-auto relative"
         />
         <div className="px-6">
@@ -48,10 +47,12 @@ const CareerDetails = ({ setLoader }) => {
             {careerData?.position}
           </div>
 
-          <div className="pb-8">
-            <p className="text-lg text-zinc-400">Summary:</p> <br />
-            <p className="text-lg">{careerData?.summary}</p>
-          </div>
+          {careerData?.summary ? (
+            <div className="pb-8">
+              <p className="text-lg text-zinc-400">Summary:</p> <br />
+              <p className="text-lg">{careerData?.summary}</p>
+            </div>
+          ) : null}
 
           <div className="pb-8">
             <p className="text-lg text-zinc-400">Job Responsibility:</p> <br />
@@ -62,15 +63,17 @@ const CareerDetails = ({ setLoader }) => {
             </ul>
           </div>
 
-          <div className="pb-8">
-            <p className="text-lg text-zinc-400">Educational Requirements:</p>{" "}
-            <br />
-            <ul className="list-disc text-justify pl-6">
-              {careerData?.edu_requirement?.map((resp) => (
-                <li className="text-lg py-1">{resp}</li>
-              ))}
-            </ul>
-          </div>
+          {careerData?.edu_requirement?.length ? (
+            <div className="pb-8">
+              <p className="text-lg text-zinc-400">Educational Requirements:</p>{" "}
+              <br />
+              <ul className="list-disc text-justify pl-6">
+                {careerData?.edu_requirement?.map((resp) => (
+                  <li className="text-lg py-1">{resp}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
 
           <div className="pb-8">
             <p className="text-lg text-zinc-400">Salary:</p> <br />
@@ -117,19 +120,31 @@ const CareerDetails = ({ setLoader }) => {
               <div className="h-0.5 bg-zinc-700 mt-2"></div>
             </div>
 
-            <div className="pt-2">
-              <span className=" text-zinc-400">Experience:</span> <br />{" "}
-              {careerData?.experience_req}
-              <div className="h-0.5 bg-zinc-700 mt-2"></div>
-            </div>
+            {careerData?.experience_req ? (
+              <div className="pt-2">
+                <span className=" text-zinc-400">Experience:</span> <br />{" "}
+                {careerData?.experience_req}
+                <div className="h-0.5 bg-zinc-700 mt-2"></div>
+              </div>
+            ) : null}
 
-            <div className="pt-2">
-              <span className=" text-zinc-400">Application Deadline:</span>{" "}
-              <br /> {careerData?.app_deadline}
-            </div>
+            {careerData?.app_deadline ? (
+              <div className="pt-2">
+                <span className=" text-zinc-400">Application Deadline:</span>{" "}
+                <br /> {careerData?.app_deadline}
+              </div>
+            ) : null}
             {/* <Link to={`/`}> */}
-            <div className="w-40 border cursor-pointer bg-black text-white text-lg text-center py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
-              Apply
+            <div className="flex justify-center items-center">
+              <a
+                href={careerData?.appying_url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div className="w-40 border cursor-pointer bg-black text-white text-lg text-center py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
+                  Apply
+                </div>
+              </a>
             </div>
             {/* </Link> */}
           </div>

@@ -89,7 +89,7 @@ const CaseStudyDetails = ({ setLoader }) => {
               "/" +
               caseStudyDetails?.group_images
             }
-            alt=""
+            alt="Group Images"
           />
         </div>
 

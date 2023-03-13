@@ -20,13 +20,13 @@ const CareerDetail = () => {
     } else {
       navigate("/404");
     }
-  }, [id]);
+  }, [id, navigate]);
 
   return (
     <div className="w-full text-white font_primary">
       <img
-        src="https://i.ibb.co/1GxDBSp/jobpost.png"
-        alt=""
+        src={careerData?.thumbnail}
+        alt="Job Thumbnail"
         className="w-full relative z-50"
       />
       <div className="px-6">
@@ -35,18 +35,12 @@ const CareerDetail = () => {
           {careerData?.position}
         </div>
 
-        <div className="pb-5">
-          <p className="text-lg text-zinc-400">Summary:</p>
-          <p className="text-sm">
-            {" "}
-            {/* Quadque Tech Limited is looking for an experienced, well-connected
-            and organized Project Manager-IT to join our Panthapath office and
-            take the company to the next level! Education Hub supports future
-            leaders from Bangladesh in their quest to study at the best global
-            institutes. Our team guide students at every step of the way. */}
-            {careerData?.summary}
-          </p>
-        </div>
+        {careerData?.summary ? (
+          <div className="pb-5">
+            <p className="text-lg text-zinc-400">Summary:</p>
+            <p className="text-sm">{careerData?.summary}</p>
+          </div>
+        ) : null}
 
         <div className="pb-5">
           <p className="text-lg text-zinc-400">Job Responsibility:</p>
@@ -75,14 +69,16 @@ const CareerDetail = () => {
           {/* <div> {careerData?.responsibility}</div> */}
         </div>
 
-        <div className="pb-5">
-          <p className="text-lg text-zinc-400">Educational Requirements:</p>{" "}
-          <ul className="list-disc text-justify pl-6">
-            {careerData?.edu_requirement?.map((resp) => (
-              <li className="text-sm py-1">{resp}</li>
-            ))}
-          </ul>
-        </div>
+        {careerData?.edu_requirement?.length ? (
+          <div className="pb-5">
+            <p className="text-lg text-zinc-400">Educational Requirements:</p>{" "}
+            <ul className="list-disc text-justify pl-6">
+              {careerData?.edu_requirement?.map((resp) => (
+                <li className="text-sm py-1">{resp}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
 
         <div className="pb-5">
           <p className="text-lg text-zinc-400">Salary:</p>
@@ -128,21 +124,28 @@ const CareerDetail = () => {
             <div className="h-0.5 bg-zinc-700 mt-2"></div>
           </div>
 
-          <div className="pt-2">
-            <span className=" text-zinc-400">Experience:</span> <br />{" "}
-            {careerData?.experience_req}
-            <div className="h-0.5 bg-zinc-700 mt-2"></div>
-          </div>
+          {careerData?.experience_req ? (
+            <div className="pt-2">
+              <span className=" text-zinc-400">Experience:</span> <br />{" "}
+              {careerData?.experience_req}
+              <div className="h-0.5 bg-zinc-700 mt-2"></div>
+            </div>
+          ) : null}
 
-          <div className="pt-2">
-            <span className=" text-zinc-400">Application Deadline:</span> <br />{" "}
-            {careerData?.app_deadline}
+          {careerData?.app_deadline ? (
+            <div className="pt-2">
+              <span className=" text-zinc-400">Application Deadline:</span>{" "}
+              <br /> {careerData?.app_deadline}
+            </div>
+          ) : null}
+
+          <div className="flex justify-center items-center">
+            <a href={careerData?.appying_url} target="_blank" rel="noreferrer">
+              <div className="w-40 border cursor-pointer bg-black text-white text-lg text-center py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50">
+                Apply
+              </div>
+            </a>
           </div>
-          {/* <Link to={`/`}> */}
-          <div className="w-40 bg-black text-white text-sm text-center py-2 my-10 mx-auto px-6 spirit-bomb rounded-full relative z-50 font_title">
-            Apply
-          </div>
-          {/* </Link> */}
         </div>
 
         <Link to={`/career`}>

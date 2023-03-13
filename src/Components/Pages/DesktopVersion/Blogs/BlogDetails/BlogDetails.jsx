@@ -234,7 +234,7 @@ const BlogDetails = ({ setLoader }) => {
                     src={
                       process.env.REACT_APP_ASSETS_URL + "/" + blog?.thumbnail
                     }
-                    alt=""
+                    alt="Thumbnail"
                   />
                 </div>
               </div>

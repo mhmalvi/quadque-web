@@ -111,7 +111,6 @@ const Layout = () => {
             element={
               <>
                 <CareerDetail />
-                <Footer />
               </>
             }
           />

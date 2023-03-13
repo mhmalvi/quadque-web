@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <div id="Footer" className="w-full text-white relative mt-20 font_primary">
-      <img src={Logo} alt="" className="absolute -top-12 right-2" />
+      <img src={Logo} alt="Logo" className="absolute -top-12 right-2" />
       <div className="font_title text-3xl text-center mx-6 mb-4">
         Top-notch digital solutions with the best results
       </div>
@@ -61,7 +61,9 @@ const Footer = () => {
           <p className="pt-1">hello@quadque.tech</p>
         </div>
         <div className="w-1/2 flex-col">
-          <p className="text-sm font-bold">Quadque Technologies Private Limited</p>
+          <p className="text-sm font-bold">
+            Quadque Technologies Private Limited
+          </p>
           <p className="pt-2">
             Level 7, 8/C, F.R Tower, Panthapath, Dhaka 1207, Bangladesh
           </p>

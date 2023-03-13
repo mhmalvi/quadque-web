@@ -34,7 +34,7 @@ const ClientSpeaks = () => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [ClientSpeak]);
 
   return (
     <div className="w-full text-white mt-18 font_primary">
@@ -69,7 +69,7 @@ const ClientSpeaks = () => {
                     src={
                       process.env.REACT_APP_ASSETS_URL + "/" + details?.image
                     }
-                    alt=""
+                    alt="Client"
                     className="w-10/12 m-auto py-6"
                   />
                   <div className="text-justify pb-10">

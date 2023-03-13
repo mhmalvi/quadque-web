@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import blog1 from "../../../../asstes/Images/blog1.jpg";
 import blog2 from "../../../../asstes/Images/blog2.jpg";
 import blog3 from "../../../../asstes/Images/blog3.jpg";
+import blogBg from "../../../../asstes/Images/blogBg.jpg";
 // import moreBlogs from "../../../../asstes/Images/moreblogs.jpg";
 import useBlogs from "../../../Shared/Hooks/useBlog";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
@@ -53,7 +54,7 @@ const OldBlogs = () => {
                     blogs?.[0]?.thumbnail
                   : blog1
               }
-              alt=""
+              alt="Blog"
             />
             <div
               className="absolute h-full w-full top-0 flex items-end"
@@ -75,7 +76,7 @@ const OldBlogs = () => {
                 <img
                   className="w-16 h-16 2xl:w-23 2xl:h-22 rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmelM84pSWNL1yisAVEAfud_SJB7r4bnFm1w&usqp=CAU"
-                  alt=""
+                  alt="Avatar"
                 />
                 <div className="ml-8">
                   <div className="text-[22px] font-normal leading-8">
@@ -111,7 +112,7 @@ const OldBlogs = () => {
                             blogs?.[1]?.thumbnail
                           : blog2
                       }
-                      alt=""
+                      alt="Blog2"
                     />
                     <div
                       className="absolute h-full w-full top-0 flex items-end"
@@ -141,7 +142,7 @@ const OldBlogs = () => {
                             blogs?.[2]?.thumbnail
                           : blog3
                       }
-                      alt=""
+                      alt="blog3"
                     />
                     <div
                       className="absolute h-full w-full top-0 flex items-end"
@@ -162,10 +163,8 @@ const OldBlogs = () => {
               <div className="relative">
                 <img
                   className="max-h-[40vh] min-w-full"
-                  src={
-                    "https://img.freepik.com/free-photo/top-view-agendas-succlent-plant_23-2148459469.jpg?w=1380&t=st=1675323286~exp=1675323886~hmac=5caa269e73ba12e0bba1079290335e024a358051780f69f758e9dfe1015bb91d"
-                  }
-                  alt=""
+                  src={blogBg}
+                  alt="Blog Background"
                 />
                 <div
                   className="absolute h-full w-full top-0 flex justify-center items-center"

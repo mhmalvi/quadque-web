@@ -75,7 +75,7 @@ const BlogGallery = () => {
                 src={
                   process.env.REACT_APP_ASSETS_URL + "/" + details?.thumbnail
                 }
-                alt=""
+                alt="Thumbnail"
                 className="w-full h-full m-auto rounded-lg"
               />
               <div className="w-full flex justify-end items-end h-32 absolute bottom-0 bg-gradient-to-b from-transparent to-black z-10 px-2 text-end">
@@ -103,7 +103,8 @@ const BlogGallery = () => {
       <div className="Blog flex justify-center mt-5">
         <Pagination
           onChange={(value) => {
-            setCurrentPage(value); window.scrollTo(0, 0);
+            setCurrentPage(value);
+            window.scrollTo(0, 0);
           }}
           pageSize={PostsPerPage}
           current={currentPage}
