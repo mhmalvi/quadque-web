@@ -61,22 +61,12 @@ const ServiceDetails = () => {
     setCapabilities(cap_array);
   }, [Service]);
 
-  /*     useEffect(() => {
-    if (Service !== "") {
-      setTimeout(() => {
-        setLoader(false);
-      }, 5000);
-    }
-  }, []); */
-
   const settings = {
     centerMode: false,
     infinite: true,
     slidesToShow: 1,
     speed: 300,
   };
-
-  //console.log(capabilities);
 
   return (
     <>
