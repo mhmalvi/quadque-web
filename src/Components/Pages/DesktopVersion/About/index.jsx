@@ -95,7 +95,7 @@ const About = () => {
             {/* <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mb-auto overflow-y-scroll py-1"> */}
             <div className="about_details border-gray-700 pr-12 xl:h-[50vh] 2xl:h-[60vh] w-[90%] py-1 overflow-hidden">
               <Fade right cascade spy={triggerAnimation}>
-                <div className="h-[53vh] xl:h-[42vh] 2xl:h-[48vh]">
+                <div className="h-[53vh] xl:h-[46vh] 2xl:h-[48vh]">
                   {scrollingIndex === 0 ? (
                     <div
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"

@@ -2,46 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- <meta
+    <!-- <meta property="og:title" content="{{og_title}}" />
+    <meta property="og:description" content="{{og_description}}" /> -->
+    <meta
       property="og:title"
       content="Quadque Technology Limited - Best Online IT Services in Australia"
-    /> -->
-    <!-- <meta
+    />
+    <meta
+      property="og:description"
+      content="Check out our case studies to see how we help businesses with our digital services. These case studies can help you to understand our approach."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://quadque.tech/logo.png" />
+
+    <meta
       name="keywords"
       content="web development services, Software Development services , web and mobile app development services , digital marketing services, ui ux design and development services, online it support services, it services online, it services online"
-    /> -->
+    />
+
+    <meta
+      name="description"
+      content="Check out our case studies to see how we help businesses with our digital services. These case studies can help you to understand our approach."
+    />
+
     <link rel="icon" href="./logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <!-- <meta id="title" name="title" content="Quadque Technology Limited - Best Online IT Services in Australia" />
-    <meta id="keywords" name="keywords" content="web development services, Software Development services , web and mobile app development services , digital marketing services, ui ux design and development services, online it support services, it services online, it services online" /> -->
-    <!-- <meta name="description" content="this is description" /> -->
-    <!-- <meta id="ogtitle" name="ogtitle" property="og:title" content="Quadque Technology Limited - Best Online IT Services in Australia" />
-    <meta id="ogkeywords" name="og:keywords"
-      content="web development services, Software Development services , web and mobile app development services , digital marketing services, ui ux design and development services, online it support services, it services online, it services online" /> -->
-    <!-- <meta name="description" content="Web site created using create-react-app" /> -->
-    
-    <!-- <meta property="og:type" content="website" />
-    <meta id="ogimage" name="ogimage" property="og:image" content="https://quadque.tech/logo.png" />
-    <meta id="ogimag_url" property="og:image:url" content="https://quadque.tech/logo.png" />
-    <meta id="ogurl" property="og:url" content="https://www.quadque.tech/" />
-    <meta id="ogsite_name"property="og:site_name" content="Quadque Technologies Ltd." />
-    
-    <meta id="ogtwitter_card" name="twitter:card" property="twitter:card" content="https://quadque.tech/logo.png" />
-    <meta id="ogtwitter_image_src" property="twitter:image:src" content="https://quadque.tech/logo.png" />
-    
-    <meta id="ogtwitter_title" property="twitter:title" content="Quadque Technologies Ltd." />
-    <meta id="ogtwitter_image_alt" name="twitter:image:alt" property="twitter:image:alt" content="Blog Thumbnail" />
-    <meta id="ogtwitter_url" property="twitter:url" content="https://www.quadque.tech/" />
-    <meta id="ogtwitter_site" name="twitter:site" property="twitter:site" content="@QuadqueT" /> -->
-    <link rel="shortcut icon" href={favicon} type="image/x-icon" />
     <link rel="apple-touch-icon" href="./logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     <!-- <link rel="canonical" href="https://www.quadque.tech" /> -->
-
     <script>
       if (!window.location.host.startsWith("www")) {
         window.location =
@@ -59,7 +51,6 @@
     />
 
     <!-- Font Montserrat -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -94,26 +85,40 @@
         }
       }
     </script>
-    <!-- 
-      "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Level -7, 8/C, F.R Tower, Panthapath, Dhaka 1207, Bangladesh.",
-          "addressLocality": "Dhaka, Bangladesh",
-          "postalCode": "1207",
-          "addressCountry": "Bangladesh"
-        },
-        "openingHours": "Mo, Tu, We, Th, Su 08:00-17:30",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+8801765276560"
-        } -->
-
+   
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- <title>
+
+    <title>
       Quadque Technology Limited - Best Online IT Services in Australia
-    </title> -->
+    </title>
+    <meta name="description" content="{{description}}" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-NPFKH3L");
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NPFKH3L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
   </body>
 </html>
