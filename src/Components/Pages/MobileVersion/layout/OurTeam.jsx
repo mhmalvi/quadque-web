@@ -25,9 +25,11 @@ const OurTeam = () => {
     <div id="Team" className="w-full text-white mt-18 mb-5 font_primary">
       <div className="uppercase px-6 pb-2 text-center">EXPERIENCE</div>
       <h1 className="w-2/3 m-auto font_title text-3xl px-6 text-center">
-        Skilled Team<br />of Creators
+        Skilled Team
+        <br />
+        of Creators
       </h1>
-      <img src={Team} alt="" className="w-9/12 m-auto my-5" />
+      <img src={Team} alt="Team" className="w-9/12 m-auto my-5" />
       <div className="text-sm px-10 pb-8 leading-6 text-center">
         We are an experienced and diverse team of software engineers, mobile
         application, Web developers, UI/UX designers, quality engineers, digital

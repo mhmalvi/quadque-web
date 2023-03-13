@@ -69,7 +69,7 @@ const CaseStudyDetail = () => {
             src={
               process.env.REACT_APP_ASSETS_URL + "/" + caseData?.group_images
             }
-            alt=""
+            alt="Group img"
             className="m-auto py-13"
           />
 
@@ -91,7 +91,7 @@ const CaseStudyDetail = () => {
             src={
               process.env.REACT_APP_ASSETS_URL + "/" + caseData?.short_banner
             }
-            alt=""
+            alt="Short Banner"
             className="m-auto pt-13"
           />
           <div className="case_editor text-2xl pt-13 pb-3">
@@ -147,7 +147,7 @@ const CaseStudyDetail = () => {
           <div className="flex-col pb-13">
             <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_1}
-              alt=""
+              alt="Casestudy img"
               className="w-full m-auto pb-13"
             />
             <div className="text-lg font-semibold text-white">
@@ -161,7 +161,7 @@ const CaseStudyDetail = () => {
           <div className="flex-col pb-13">
             <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_2}
-              alt=""
+              alt="Casestudy cover"
               className="w-full m-auto pb-13"
             />
             <div className="text-lg font-semibold text-white">
@@ -175,7 +175,7 @@ const CaseStudyDetail = () => {
           <div className="flex-col pb-13">
             <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.image_3}
-              alt=""
+              alt="CaseData"
               className="w-full m-auto pb-13"
             />
             <div className="text-lg font-semibold text-white">
@@ -195,7 +195,7 @@ const CaseStudyDetail = () => {
           <div className="flex flex-wrap justify-center gap-1">
             <img
               src={process.env.REACT_APP_ASSETS_URL + "/" + caseData?.agency}
-              alt=""
+              alt="Casestudy Agencies img"
               className="w-full"
             />
             {/* <img src={Brand2} alt="" className="w-1/4" />

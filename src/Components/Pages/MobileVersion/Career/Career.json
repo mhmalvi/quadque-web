@@ -1,83 +1,140 @@
 [
-    {
-      "id": "1",
-      "position" : "Content Writer",
-      "summary" : "Quadque Tech Limited is looking for an experienced, well-connected and organized Project Manager-IT to join our Panthapath office and take the company to the next level! Education Hub supports future leaders from Bangladesh in their quest to study at the best global institutes. Our team guide students at every step of the way.",
-      "responsibility": ["Installs and configures computer hardware, software solutions, operating systems, and applications.","Ability to think out the box and when under pressure.","Deliver a CRM training session to our new team mates or associates in a constructive manner.","Researching, Planning and executing SEO task in collaboration with Marketing Team.","Maintain our hosting and domains and update them where necessary.", "Improve existing apps, website, CRM and database system."],
-      "edu_requirement": ["Bachelor in Business or Science from any reputed university","IELTS minimum Band: 7"],
-      "salary": "20000 BDT to 30000 BDT [Based on Updated Technological Knowledge Apply Method]",
-      "additional": ["Yearly Festival Bonus","Yearly Salary Review.","Additional Reward - Based on Company Policy"],
-      "published_on": "01/01/2023",
-      "vacancy": "2",
-      "employment_status": "Full Time",
-      "office_time": "8AM - 5:30 PM",
-      "office_days": "Sunday - Thursday",
-      "experience_req": "1 year",
-      "app_deadline": "22/01/2023"
-    },
-    {
-      "id": "2",
-      "position" : "Backend Developer (Laravel)",
-      "summary" : "Quadque Tech Limited is looking for an experienced, well-connected and organized Project Manager-IT to join our Panthapath office and take the company to the next level! Education Hub supports future leaders from Bangladesh in their quest to study at the best global institutes. Our team guide students at every step of the way.",
-      "responsibility": ["Installs and configures computer hardware, software solutions, operating systems, and applications.","Ability to think out the box and when under pressure.","Deliver a CRM training session to our new team mates or associates in a constructive manner.","Researching, Planning and executing SEO task in collaboration with Marketing Team.","Maintain our hosting and domains and update them where necessary.", "Improve existing apps, website, CRM and database system."],
-      "edu_requirement": ["Bachelor or Masters in Computer Science Engineering from any reputed university"],
-      "salary": "40000 BDT to 60000 BDT [Based on Updated Technological Knowledge Apply Method]",
-      "additional": ["Yearly Festival Bonus","Yearly Salary Review.","Additional Reward - Based on Company Policy"],
-      "published_on": "01/01/2023",
-      "vacancy": "1-3",
-      "employment_status": "Full Time",
-      "office_time": "8AM - 5:30 PM",
-      "office_days": "Sunday - Thursday",
-      "experience_req": "1 year",
-      "app_deadline": "22/01/2023"
-    },
-    {
-      "id": "3",
-      "position" : "Frontend Developer (VueJs)",
-      "summary" : "Quadque Tech Limited is looking for an experienced, well-connected and organized Project Manager-IT to join our Panthapath office and take the company to the next level! Education Hub supports future leaders from Bangladesh in their quest to study at the best global institutes. Our team guide students at every step of the way.",
-      "responsibility": ["Installs and configures computer hardware, software solutions, operating systems, and applications.","Ability to think out the box and when under pressure.","Deliver a CRM training session to our new team mates or associates in a constructive manner.","Researching, Planning and executing SEO task in collaboration with Marketing Team.","Maintain our hosting and domains and update them where necessary.", "Improve existing apps, website, CRM and database system."],
-      "edu_requirement": ["Bachelor or Masters in Computer Science Engineering from any reputed university"],
-      "salary": "40000 BDT to 60000 BDT [Based on Updated Technological Knowledge Apply Method]",
-      "additional": ["Yearly Festival Bonus","Yearly Salary Review.","Additional Reward - Based on Company Policy"],
-      "published_on": "01/01/2023",
-      "vacancy": "2",
-      "employment_status": "Full Time",
-      "office_time": "8AM - 5:30 PM",
-      "office_days": "Sunday - Thursday",
-      "experience_req": "1 year",
-      "app_deadline": "22/01/2023"
-    },
-    {
-      "id": "4",
-      "position" : "Visualizer",
-      "summary" : "Quadque Tech Limited is looking for an experienced, well-connected and organized Project Manager-IT to join our Panthapath office and take the company to the next level! Education Hub supports future leaders from Bangladesh in their quest to study at the best global institutes. Our team guide students at every step of the way.",
-      "responsibility": ["Installs and configures computer hardware, software solutions, operating systems, and applications.","Ability to think out the box and when under pressure.","Deliver a CRM training session to our new team mates or associates in a constructive manner.","Researching, Planning and executing SEO task in collaboration with Marketing Team.","Maintain our hosting and domains and update them where necessary.", "Improve existing apps, website, CRM and database system."],
-      "edu_requirement": ["Bachelor or Masters in Computer Science Engineering from any reputed university"],
-      "salary": "40000 BDT to 60000 BDT [Based on Updated Technological Knowledge Apply Method]",
-      "additional": ["Yearly Festival Bonus","Yearly Salary Review.","Additional Reward - Based on Company Policy"],
-      "published_on": "01/01/2023",
-      "vacancy": "2",
-      "employment_status": "Full Time",
-      "office_time": "8AM - 5:30 PM",
-      "office_days": "Sunday - Thursday",
-      "experience_req": "1 year",
-      "app_deadline": "22/01/2023"
-    },
-    {
-      "id": "5",
-      "position" : "Marketing Executive",
-      "summary" : "Quadque Tech Limited is looking for an experienced, well-connected and organized Project Manager-IT to join our Panthapath office and take the company to the next level! Education Hub supports future leaders from Bangladesh in their quest to study at the best global institutes. Our team guide students at every step of the way.",
-      "responsibility": ["Installs and configures computer hardware, software solutions, operating systems, and applications.","Ability to think out the box and when under pressure.","Deliver a CRM training session to our new team mates or associates in a constructive manner.","Researching, Planning and executing SEO task in collaboration with Marketing Team.","Maintain our hosting and domains and update them where necessary.", "Improve existing apps, website, CRM and database system."],
-      "edu_requirement": ["Bachelor or Masters in Business Administration from any reputed university","IELTS minimum Band: 7"],
-      "salary": "40000 BDT to 60000 BDT [Based on Updated Technological Knowledge Apply Method]",
-      "additional": ["Yearly Festival Bonus","Yearly Salary Review.","Additional Reward - Based on Company Policy"],
-      "published_on": "01/01/2023",
-      "vacancy": "6",
-      "employment_status": "Full Time",
-      "office_time": "8AM - 5:30 PM",
-      "office_days": "Sunday - Thursday",
-      "experience_req": "1 year",
-      "app_deadline": "22/01/2023"
-    }
-  ]
-  
+  {
+    "id": "1",
+    "position": "Intern (Copy Writer/Content Creator)",
+    "summary": null,
+    "thumbnail": "https://i.ibb.co/zQc3nt1/Intern-hiring-v8.jpg",
+    "responsibility": [
+      "Work closely with the supervisor or team leader, and complete all allocated tasks.",
+      "Preparing contents for social media Channels (both Bangla and English).",
+      "Producing catchy, interesting and attractive copy captions on the given topic.",
+      "Monitoring the success rate of the contents.",
+      "Developing and executing content strategies that match with the brand voice and tone.",
+      "Writing top-notch contents in both Bangla and English language.",
+      "Being in touch with the other departments and assisting them with contents."
+    ],
+    "requirements": [
+      "Fresh Graduates (Flexibility in academic degrees for the exceptional candidates)",
+      "Proficiency in MS Office",
+      "Writing fluency in Bangla and English",
+      "Working under pressure and meeting deadlines",
+      "Candidates proficient in using ChatGPT effectively will have higher chances",
+      "Pitch deck and ppt development is a must",
+      "Knowledge about Canva / Envato will be a plus"
+    ],
+
+    "edu_requirement": null,
+    "salary": "Honorarium 6000-8000 BDT",
+    "additional": [
+      "Yearly Festival Bonus",
+      "Yearly Salary Review.",
+      "Weekly 2 Holiday",
+      "Lunch (partially subsidized)",
+      "Unlimited tea /coffee",
+      "Friendly working environment",
+      "Work with an exciting team and products",
+      "Excellent growth and learning opportunities"
+    ],
+    "published_on": "13/03/2023",
+    "vacancy": "1",
+    "employment_status": "Full-Time Paid Internship",
+    "office_time": "8 AM - 5:30 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": null,
+    "app_deadline": null,
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSfIp1Kss6ItPoudCj64jsAehyrGwXWPzbg5toIIBdyqDyrMiA/viewform?usp=pp_url"
+  },
+  {
+    "id": "2",
+    "position": "Intern (Digital Marketing/Social Media Manager)",
+    "summary": null,
+    "thumbnail": "https://i.ibb.co/zQc3nt1/Intern-hiring-v8.jpg",
+    "responsibility": [
+      "Work closely with the supervisor or team leader and complete all allocated tasks.",
+      "Analyze and know the clients and the company very well",
+      "Collect requirements for the posts on Social Media Channels",
+      "Publish those content on Social Media Channels (all channel across)",
+      "Before publishing check all the materials if any error or mistake",
+      "Plan, maintain and manage Calander for International Events or Occasions",
+      "Plan campaign idea for those events or occasions"
+    ],
+    "requirements": [
+      "Fresh Graduates (Flexibility in academic degrees for the exceptional candidates)",
+      "Proficiency in MS Office",
+      "Writing fluency in Bangla and English",
+      "Working under pressure and meeting deadlines",
+      "Candidates proficient in using ChatGPT effectively will have higher chances.",
+      "Pitch deck and ppt development is a must",
+      "Knowledge about Canva / Envato will be a plus."
+    ],
+
+    "edu_requirement": null,
+    "salary": "Honorarium 6000-8000 BDT",
+    "additional": [
+      "Yearly Festival Bonus",
+      "Yearly Salary Review.",
+      "Weekly 2 Holiday",
+      "Lunch (partially subsidized)",
+      "Unlimited tea /coffee",
+      "Friendly working environment",
+      "Work with an exciting team and products",
+      "Excellent growth and learning opportunities"
+    ],
+    "published_on": "13/03/2023",
+    "vacancy": "1",
+    "employment_status": "Full-Time Paid Internship",
+    "office_time": "8 AM - 5:30 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": null,
+    "app_deadline": null,
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSfIp1Kss6ItPoudCj64jsAehyrGwXWPzbg5toIIBdyqDyrMiA/viewform?usp=pp_url"
+  },
+  {
+    "id": "3",
+    "position": "Intern (Business Development)",
+    "summary": null,
+    "thumbnail": "https://i.ibb.co/zQc3nt1/Intern-hiring-v8.jpg",
+    "responsibility": [
+      "Work closely with the supervisor or team leader and complete all allocated tasks",
+      "Doing Market research and finding the opportunities for the company",
+      "Updating and maintaining documents for the company",
+      "Regular market visits, establishing relationships, and generating leads",
+      "Making presentation and pitch deck",
+      "Making reports on a weekly or monthly basis and presenting them to the team lead"
+    ],
+    "requirements": [
+      "Fresh BBA graduates and the 4th year students seeking internship opportunities",
+      "Fluent in English",
+      "Proficiency in MS Office",
+      "Top-notch presentation skills",
+      "Working under pressure and meeting deadlines",
+      "Candidates proficient in using ChatGPT effectively will have higher chances",
+      "Pitch deck and ppt development is a must",
+      "Knowledge about Canva / Envato will be a plus"
+    ],
+
+    "edu_requirement": null,
+    "salary": "Honorarium 6000-8000 BDT",
+    "additional": [
+      "Yearly Festival Bonus",
+      "Yearly Salary Review.",
+      "Weekly 2 Holiday",
+      "Lunch (partially subsidized)",
+      "Unlimited tea /coffee",
+      "Friendly working environment",
+      "Work with an exciting team and products",
+      "Excellent growth and learning opportunities"
+    ],
+    "published_on": "13/03/2023",
+    "vacancy": "1",
+    "employment_status": "Full-Time Paid Internship",
+    "office_time": "8 AM - 5:30 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": null,
+    "app_deadline": null,
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSfIp1Kss6ItPoudCj64jsAehyrGwXWPzbg5toIIBdyqDyrMiA/viewform?usp=pp_url"
+  }
+]

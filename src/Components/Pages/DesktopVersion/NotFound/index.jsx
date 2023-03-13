@@ -167,7 +167,7 @@ const NotFound = () => {
           <div className="text-white min-h-full pt-24 bg-black">
             <div className="text-8xl text-center font_title">404</div>
             <div className="text-xl text-center font_title">Page not found</div>
-            <img src={Astro404} alt="" className="w-1/4 m-auto py-6" />
+            <img src={Astro404} alt="Astro404" className="w-1/4 m-auto py-6" />
             {/* <div className="text-xl text-center font_primary">Oops! Are you lost in space?</div> */}
             <div className="flex items-center justify-center">
               <a
@@ -195,7 +195,7 @@ const NotFound = () => {
                   <img
                     className="z-50 cursor-pointer"
                     src={muteImg}
-                    alt=""
+                    alt="Mute"
                     onClick={() => setMuted(false)}
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
@@ -213,7 +213,7 @@ const NotFound = () => {
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
                     onClick={() => setMuted(true)}
-                    alt=""
+                    alt="Unmute"
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>

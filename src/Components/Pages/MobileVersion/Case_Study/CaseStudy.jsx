@@ -75,7 +75,7 @@ const CaseStudy = () => {
                   src={
                     process.env.REACT_APP_ASSETS_URL + "/" + details?.com_image
                   }
-                  alt=""
+                  alt="Company"
                   className="w-full h-auto rounded-2xl bg-black"
                 />
                 <div className="caseText w-full h-12 bg-white bg-opacity-20 backdrop:filter backdrop-blur-sm rounded-bl-lg rounded-br-lg text-xs text-center text-white py-2 px-1 overflow-hidden">

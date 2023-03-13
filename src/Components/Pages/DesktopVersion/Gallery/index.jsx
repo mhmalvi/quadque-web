@@ -62,7 +62,7 @@ const Gallery = ({ setLoader }) => {
 
       <div className="gallery min-h-full bg-black text-white pb-20 h-[90vh] font_primary overflow-y-scroll">
         <div className="relative">
-          <img src={Office} alt="" className="w-full h-96" />
+          <img src={Office} alt="Office" className="w-full h-96" />
           <div className="absolute top-20 left-40 z-50">
             <Icons.GoBackArrow
               className="w-6 font-semibold cursor-pointer"
@@ -92,7 +92,7 @@ const Gallery = ({ setLoader }) => {
                     }}
                   >
                     <div className="whitespace-nowrap flex items-center">
-                      <img src={allbum} className="w-6 mr-2" alt="" />
+                      <img src={allbum} className="w-6 mr-2" alt="allbum" />
                       <h1>{event?.album_title}</h1>
                     </div>
                     <div className="h-0.5 ml-8 w-full bg-white bg-opacity-60 my-auto"></div>
@@ -117,7 +117,7 @@ const Gallery = ({ setLoader }) => {
                                     "/" +
                                     img?.images
                                   }
-                                  alt=""
+                                  alt="Img"
                                   className="rounded-xl"
                                 />
                               </div>

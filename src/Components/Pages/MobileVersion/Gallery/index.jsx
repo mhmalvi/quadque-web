@@ -66,7 +66,7 @@ const Gallery = () => {
       </Helmet>
 
       <div className="gallery min-h-full bg-black text-white pb-20 h-[120vh] overflow-y-auto">
-        <img src={Office} alt="" className="w-full h-96" />
+        <img src={Office} alt="Office" className="w-full h-96" />
 
         {/* <h1 className="absolute w-full flex items-end h-56 bg-gradient-to-b from-transparent to-black text-2xl text-white px-6 pb-10"> */}
         <h1 className="text-center text-white text-4xl font_title">Gallery</h1>
@@ -93,7 +93,7 @@ const Gallery = () => {
                   }
                 >
                   <div className="whitespace-nowrap flex items-center">
-                    <img src={allbum} className="w-6 mr-2" alt="" />
+                    <img src={allbum} className="w-6 mr-2" alt="allbum" />
                     <h1>{event?.album_title}</h1>
                   </div>
                   <div className="h-0.5 ml-8 w-full bg-white bg-opacity-60 my-auto"></div>
@@ -115,7 +115,7 @@ const Gallery = () => {
                                 "/" +
                                 img?.images
                               }
-                              alt=""
+                              alt="Gallery Images"
                               className="rounded-xl"
                             />
                           </div>

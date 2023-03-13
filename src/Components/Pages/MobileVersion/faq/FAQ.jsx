@@ -13,7 +13,7 @@ const FAQ = () => {
   return (
     <div className="w-full text-white mt-20 mb-5 font_primary">
       <h1 className="font_title text-3xl px-6">FAQ's</h1>
-      <img src={Faq} alt="" className="m-auto py-4" />
+      <img src={Faq} alt="Faq" className="m-auto py-4" />
       <div className="text-2xl px-10 pb-8 leading-6 text-center">
         Most Popular Questions
       </div>

@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import { Helmet } from "react-helmet";
 import Career from "./Career.json";
-import Interface from "../../../../asstes/Images/advertise.png";
+// import Interface from "../../../../asstes/Images/advertise.png";
 
 const CareerGallery = () => {
   //const [Career] = useCareer();
@@ -21,7 +21,7 @@ const CareerGallery = () => {
 
   useEffect(() => {
     setTotalPosts(Career.length);
-  }, [Career]);
+  }, []);
 
   useEffect(() => {
     if (Career.length > 0) {
@@ -33,7 +33,7 @@ const CareerGallery = () => {
         setLoader(false);
       }, 5000);
     }
-  }, [Career]);
+  }, []);
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
@@ -74,8 +74,8 @@ const CareerGallery = () => {
           <Link to={`/career-detail/${details.id}`}>
             <div key={details.id} className="rounded-xl pb-6 relative mx-6">
               <img
-                src="https://i.ibb.co/1GxDBSp/jobpost.png"
-                alt=""
+                src={details.thumbnail}
+                alt="Job Thumbnail"
                 className="rounded-lg"
               />
               <div className="flex items-center justify-between pb-2 px-2 gap-4">
@@ -83,9 +83,11 @@ const CareerGallery = () => {
                   <h1 className="text-lg text-white pt-4">
                     Position: {details.position}
                   </h1>
-                  <div className="text-white text-sm italic font-thin">
-                    deadline: {details.app_deadline}
-                  </div>
+                  {details.app_deadline ? (
+                    <div className="text-white text-sm italic font-thin">
+                      deadline: {details.app_deadline}
+                    </div>
+                  ) : null}
                 </div>
                 {/* <div className="h-8 bg-white my-2 px-4 rounded-full text-sm text-center flex items-center cursor-pointer">
                   View

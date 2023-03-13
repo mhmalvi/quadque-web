@@ -72,7 +72,7 @@ const OurCustomer = () => {
                     "/" +
                     client.client_images
                   }
-                  alt=""
+                  alt="Client"
                   className="w-10/12 p-2"
                 />
               </div>

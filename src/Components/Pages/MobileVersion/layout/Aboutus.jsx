@@ -85,7 +85,7 @@ const Aboutus = () => {
         <div className="flex-wrap overflow-hidden">
           <img
             src={mobileAboutCover}
-            alt=""
+            alt="About Cover"
             className="w-11/12 mx-auto duration-700 relative z-50"
           />
         </div>

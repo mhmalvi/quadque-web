@@ -268,7 +268,7 @@ const FooterWhite = () => {
                               <img
                                 className="w-6 mr-2.5"
                                 src={address}
-                                alt=""
+                                alt="Address"
                               />
                               <span>
                                 Level 1, 7 Greenfield Parade Bankstown, NSW
@@ -304,7 +304,7 @@ const FooterWhite = () => {
                               <img
                                 className="w-6 mr-2.5"
                                 src={address}
-                                alt=""
+                                alt="Address"
                               />
                               <span>
                                 Level -7, 8/C, F.R Tower, Panthapath, Dhaka

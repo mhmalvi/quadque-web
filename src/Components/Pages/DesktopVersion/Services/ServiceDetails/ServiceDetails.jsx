@@ -160,7 +160,7 @@ const ServiceDetails = ({ setLoader }) => {
           <img
             width={"70%"}
             src={process.env.REACT_APP_ASSETS_URL + "/" + serviceDetails?.file}
-            alt=""
+            alt="Service img"
           />
         </div>
 
@@ -205,7 +205,7 @@ const ServiceDetails = ({ setLoader }) => {
             {serviceDetailsContent[`${slug}`]?.helpContent?.map(
               (content, i) => (
                 <div className="flex items-center" key={i}>
-                  <img className="w-5" src={content?.icon} alt="" />
+                  <img className="w-5" src={content?.icon} alt="Content Icon" />
                   <span className="text-base leading-5 ml-2 text-white font-medium">
                     {content?.title}
                   </span>
@@ -273,7 +273,7 @@ const ServiceDetails = ({ setLoader }) => {
                     <img
                       className="w-19 mr-4"
                       src={service?.service_image}
-                      alt=""
+                      alt="Service Img"
                     />
                     <h3 className="text-lg font-semibold leading-6 text-white">
                       {service?.service_name}
@@ -406,7 +406,7 @@ const ServiceDetails = ({ setLoader }) => {
                           "/" +
                           casestudy?.com_image
                         }
-                        alt=""
+                        alt="Company"
                         className="w-full px-4 rounded-xl"
                       />
                       <div className="ml-4 text-white py-2 text-center">
@@ -437,7 +437,7 @@ const ServiceDetails = ({ setLoader }) => {
                         src={
                           process.env.REACT_APP_ASSETS_URL + "/" + client?.image
                         }
-                        alt=""
+                        alt="Client"
                         className="relative w-14 h-14 -top-10 border border-gray-300 left-4 rounded-full"
                       />
                       <div className="text-white py-2">

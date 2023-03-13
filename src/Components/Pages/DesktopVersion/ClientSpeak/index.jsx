@@ -49,7 +49,11 @@ const ClientSpeak = () => {
           }}
         >
           <Fade left spy={triggerTitleAnimation}>
-            <img className="absolute top-0 -left-4 z-0" src={titleBg} alt="" />
+            <img
+              className="absolute top-0 -left-4 z-0"
+              src={titleBg}
+              alt="Title Background"
+            />
             <div className="leading-10 z-50">clients</div>
             <div className="ml-8 leading-10">speak</div>
           </Fade>
@@ -78,7 +82,7 @@ const ClientSpeak = () => {
                   "/" +
                   clientSpeaks?.[index]?.image
                 }
-                alt=""
+                alt="Clients img"
               />
               <div
                 className="absolute bottom-0 h-14 w-full bg-gradient-to-t from-black to-transparent"

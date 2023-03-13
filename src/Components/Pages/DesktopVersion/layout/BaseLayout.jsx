@@ -165,7 +165,7 @@ const BaseLayout = ({ sharedComponent }) => {
           id="main_container"
           className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
-          {{ sharedComponent   }}
+          {{ sharedComponent }}
         </div>
 
         {/* Right bar */}
@@ -183,7 +183,7 @@ const BaseLayout = ({ sharedComponent }) => {
                   <img
                     className="z-50 cursor-pointer"
                     src={muteImg}
-                    alt=""
+                    alt="Mute"
                     onClick={() => {
                       setMuted(false);
                     }}
@@ -205,7 +205,7 @@ const BaseLayout = ({ sharedComponent }) => {
                     onClick={() => {
                       setMuted(true);
                     }}
-                    alt=""
+                    alt="Unmute"
                   />
                   <h1 className="text-xl font-bold">&nbsp;</h1>
                 </Tooltip>

@@ -165,7 +165,7 @@ const CaseStudy = () => {
                         process.env.REACT_APP_ASSETS_URL + "/" + post?.com_image
                       }
                       // src={"https://i.ibb.co/MBM0f55/ibm-1.png"}
-                      alt=""
+                      alt="Company"
                     />
                     {/* <p className="absolute h-10 w-full bottom-0 border text-center font-normal rounded-br-[20px] rounded-bl-[20px] lg:text-xs 2xl:text-sm leading-5 pt-2 text-white bg-gray-700 bg-opacity-60 backdrop-blur-sm">
                         {post?.com_name}
