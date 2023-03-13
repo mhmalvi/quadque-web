@@ -45,7 +45,7 @@ const Gallery = () => {
     })();
   }, []);
 
-  console.log("activeAccordion", activeAccordion);
+  // console.log("activeAccordion", activeAccordion);
 
   return (
     <>
