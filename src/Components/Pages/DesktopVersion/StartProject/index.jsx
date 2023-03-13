@@ -109,6 +109,14 @@ const StartProject = () => {
         "Platform-as-a-Service (PaaS)",
         "On-Premise platforms",
       ]);
+    } else if (service_name.includes("ERP")) {
+      setSubServices([
+        "Financial Management",
+        "Supply Chain Management",
+        "Human Resource Management",
+        "Production and Manufacturing",
+        "Analytics and Business Intelligence",
+      ]);
     }
 
     setTriggerAnimation(!triggerAnimation);
