@@ -17,6 +17,7 @@ import webDev from "../../../../asstes/Lotties/web_development.json";
 import eCom from "../../../../asstes/Lotties/ecommerce.json";
 import CyberSecurity from "../../../../asstes/Lotties/cyber-security.json";
 import Cloud from "../../../../asstes/Lotties/cloud-computing22.json";
+import sapErp from "../../../../asstes/Lotties/sap_erp.json";
 import Maintenance from "../../../../asstes/Lotties/maintanance.json";
 
 const Services = () => {
@@ -167,6 +168,13 @@ const Services = () => {
                         alt="Maintenance and Support Layout"
                       />
                     ) : null}
+                    {details?.service_name === "SAP and ERP Solutions" ? (
+                      <Lottie
+                        animationData={sapErp}
+                        loop={true}
+                        alt="SAP and ERP Solutions"
+                      />
+                    ) : null}
                   </div>
                   <div className="h-36 text-center overflow-hidden mb-5 pt-13">
                     {details?.short_description}
@@ -175,7 +183,7 @@ const Services = () => {
               </Link>
             ))}
           </Slider>
-          {Services !=="" && (
+          {Services !== "" && (
             <>
               {/* <div className="m-auto flex justify-between pb-5"> */}
               <div
