@@ -5,7 +5,7 @@ import Career from "./Career.json";
 
 const CareerDetail = () => {
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { slug } = useParams();
   const [careerData, setCareerData] = useState();
 
   useEffect(() => {
@@ -13,14 +13,14 @@ const CareerDetail = () => {
   }, []);
 
   useEffect(() => {
-    if (Career.find((career) => career.id === id)) {
-      const fetchCareer = Career.find((career) => career.id === id);
+    if (Career.find((career) => career.slug === slug)) {
+      const fetchCareer = Career.find((career) => career.slug === slug);
       console.log("fetch", fetchCareer);
       setCareerData(fetchCareer);
     } else {
       navigate("/404");
     }
-  }, [id, navigate]);
+  }, [slug, navigate]);
 
   return (
     <div className="w-full text-white font_primary">

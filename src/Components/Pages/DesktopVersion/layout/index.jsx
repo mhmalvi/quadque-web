@@ -76,7 +76,7 @@ const Layout = () => {
         />
 
         <Route
-          path="career-detail/:id"
+          path="career-detail/:slug"
           element={
             <>
               <CareerDetailsLayout />
