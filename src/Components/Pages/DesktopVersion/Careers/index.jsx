@@ -69,7 +69,7 @@ in touch!"
         <Fade left cascade>
           <div className="Blog w-full px-6 grid grid-cols-3 2xl:grid-cols-4 gap-8 justify-center items-stretch">
             {careerData?.map((details) => (
-              <Link key={details.id} to={`/career-detail/${details.id}`}>
+              <Link key={details.id} to={`/career-detail/${details.slug}`}>
                 <div className="rounded-xl mx-auto pb-6 relative bg-white bg-opacity-20 hover:bg-opacity-25 backdrop-filter backdrop-blur-xl p-1 scale-100 transition delay-200 hover:scale-105 hover:delay-300 hover:transition">
                   <img
                     // src={

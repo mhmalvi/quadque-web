@@ -5,13 +5,13 @@ import Career from "../../../MobileVersion/Career/Career.json";
 import Footer from "../../Footer";
 
 const CareerDetails = ({ setLoader }) => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
   const [careerData, setCareerData] = useState();
 
   useEffect(() => {
-    if (Career.find((career) => career.id === id)) {
-      const fetchCareer = Career.find((career) => career.id === id);
+    if (Career.find((career) => career.slug === slug)) {
+      const fetchCareer = Career.find((career) => career.slug === slug);
 
       if (fetchCareer) {
         setTimeout(() => {
@@ -22,7 +22,7 @@ const CareerDetails = ({ setLoader }) => {
     } else {
       navigate("404");
     }
-  }, [id, setLoader]);
+  }, [slug, setLoader]);
 
   return (
     <div className="min-h-full bg-black text-white pt-20 px-36 h-[90vh] overflow-y-auto font_primary">

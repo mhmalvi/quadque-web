@@ -14,7 +14,7 @@ const Footer = () => {
 }, [])
 
   return (
-    <div id="Footer" className="w-full text-white relative mt-20 font_primary">
+    <div id="Footer" className="w-full text-white relative mt-24 font_primary">
       <img src={Logo} alt="Logo" className="absolute -top-12 right-2" />
       <div className="font_title text-3xl text-center mx-6 mb-4">
         Top-notch digital solutions with the best results
