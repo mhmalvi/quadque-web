@@ -37,15 +37,21 @@ const Footer = () => {
       className="section w-full lg:py-6 2xl:py-0 font_primary text-white relative"
     >
       {/* For Background Flag */}
-      {backgroundImage ? (
-        <Fade spy={triggerAnimation}>
-          <img
-            src={backgroundImage}
-            className="min-w-full h-[90vh]"
-            alt="Background"
-          />
-        </Fade>
-      ) : null}
+      {/* <div>  */}
+      <Fade spy={triggerAnimation}>
+        {/* {backgroundImage !== "" ? ( */}
+        <img
+          src={backgroundImage}
+          className={`min-w-full h-[90vh] ${
+            backgroundImage ? "block" : "hidden"
+          }`}
+          alt="Background"
+        />
+        {/* ) : ( */}
+        {/* <div>&nbsp;</div> */}
+        {/* )} */}
+      </Fade>
+      {/* </div> */}
 
       <div className="w-full lg:py-6 absolute top-0 2xl:top-16">
         <div className=" ml-21 lg:mt-10 2xl:mt-16 mr-25 ">
