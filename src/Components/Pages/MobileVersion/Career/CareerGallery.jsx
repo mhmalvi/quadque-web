@@ -71,7 +71,7 @@ const CareerGallery = () => {
       ) : null}
       <div className="Career w-full font_primary">
         {currentPosts?.map((details) => (
-          <Link to={`/career-detail/${details.slug}`}>
+          <Link to={`/career/${details.slug}`}>
             <div key={details.id} className="rounded-xl pb-6 relative mx-6">
               <img
                 src={details.thumbnail}
