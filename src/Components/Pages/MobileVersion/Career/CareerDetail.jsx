@@ -48,25 +48,16 @@ const CareerDetail = () => {
             {careerData?.responsibility?.map((resp) => (
               <li className="text-sm py-1">{resp}</li>
             ))}
-            {/* <li className="text-sm py-1">
-              Ability to 'think out the box' and when under pressure
-            </li>
-            <li className="text-sm py-1">
-              Deliver a CRM training session to our new team mates or associates
-              in a constructive manner.
-            </li>
-            <li className="text-sm py-1">
-              Researching, Planning and executing SEO task in collaboration with
-              Marketing Team.
-            </li>
-            <li className="text-sm py-1">
-              Maintain our hosting and domains and update them where necessary.
-            </li>
-            <li className="text-sm py-1">
-              Improve existing apps, website, CRM and database system.
-            </li> */}
           </ul>
-          {/* <div> {careerData?.responsibility}</div> */}
+        </div>
+
+        <div className="pb-5">
+          <p className="text-lg text-zinc-400">Job Requirements:</p>
+          <ul className="list-disc text-justify pl-6">
+            {careerData?.requirements?.map((requirement) => (
+              <li className="text-sm py-1">{requirement}</li>
+            ))}
+          </ul>
         </div>
 
         {careerData?.edu_requirement?.length ? (
@@ -138,6 +129,14 @@ const CareerDetail = () => {
               <br /> {careerData?.app_deadline}
             </div>
           ) : null}
+
+          <div className="text-xs font-light italic py-4">
+            <span className="font-semibold text-red-500 text-base mr-1">*</span>
+            <span>
+              Only shortlisted candidates will be contacted for the next step of
+              the selection process. Thank you!
+            </span>
+          </div>
 
           <div className="flex justify-center items-center">
             <a href={careerData?.appying_url} target="_blank" rel="noreferrer">

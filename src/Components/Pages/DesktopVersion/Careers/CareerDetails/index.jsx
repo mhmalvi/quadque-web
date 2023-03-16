@@ -22,7 +22,7 @@ const CareerDetails = ({ setLoader }) => {
     } else {
       navigate("404");
     }
-  }, [slug, setLoader]);
+  }, [slug, setLoader, navigate]);
 
   return (
     <div className="min-h-full bg-black text-white pt-20 px-36 h-[90vh] overflow-y-auto font_primary">
@@ -59,6 +59,15 @@ const CareerDetails = ({ setLoader }) => {
             <ul className="list-disc text-justify pl-6">
               {careerData?.responsibility?.map((resp) => (
                 <li className="text-lg py-1">{resp}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="pb-8">
+            <p className="text-lg text-zinc-400">Job Requirements:</p> <br />
+            <ul className="list-disc text-justify pl-6">
+              {careerData?.requirements?.map((requirement) => (
+                <li className="text-lg py-1">{requirement}</li>
               ))}
             </ul>
           </div>
@@ -134,7 +143,14 @@ const CareerDetails = ({ setLoader }) => {
                 <br /> {careerData?.app_deadline}
               </div>
             ) : null}
-            {/* <Link to={`/`}> */}
+
+            <div className="text-sm font-light italic py-4">
+              <span className="font-semibold text-red-500 text-lg mr-1">*</span>
+              <span>
+                Only shortlisted candidates will be contacted for the next step
+                of the selection process. Thank you!
+              </span>
+            </div>
             <div className="flex justify-center items-center">
               <a
                 href={careerData?.appying_url}
@@ -146,6 +162,7 @@ const CareerDetails = ({ setLoader }) => {
                 </div>
               </a>
             </div>
+
             {/* </Link> */}
           </div>
         </div>
