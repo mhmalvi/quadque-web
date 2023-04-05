@@ -91,7 +91,7 @@ const Footer = () => {
                 {/* <div className="max-w-[250px] flex flex-col justify-between col-span-2 2xl:col-span-1"> */}
                 <div className="w-4/12 flex flex-col justify-between col-span-2 2xl:col-span-1">
                   <Fade left spy={triggerTitleAnimation}>
-                    <h1
+                    <div
                       className="max-w-[330px] font-light text-sm xl:text-base leading-6"
                       style={{
                         wordBreak: "keep-all",
@@ -100,7 +100,7 @@ const Footer = () => {
                       A diverse team with years of experience in delivering
                       high-quality web development, software development and IT
                       services.
-                    </h1>
+                    </div>
                     <div>
                       <div className="mb-6 ml-1 text-xs xl:text-sm">
                         <h4
@@ -204,7 +204,7 @@ const Footer = () => {
                         </a>
                       </h4>
                       <h4 className="text-xs xl:text-sm font-normal mb-2.5 whitespace-nowrap">
-                        <a href={"/services/ai-&-iot-solutions"}>
+                        <a href={"/services/ai-iot-solutions"}>
                           AI & IoT Solutions
                         </a>
                       </h4>

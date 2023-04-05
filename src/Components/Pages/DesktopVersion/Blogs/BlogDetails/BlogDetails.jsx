@@ -4,13 +4,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useSpeechSynthesis } from "react-speech-kit";
-import speakLogo from "../../../../../asstes/Lotties/speak.json";
 import favicon from "../../../../../asstes/Images/logo.png";
+import speakLogo from "../../../../../asstes/Lotties/speak.json";
 import useBlogs from "../../../../Shared/Hooks/useBlog";
 import Icons from "../../../../Shared/Icons";
 import { handleFetchBlogBySlug } from "../../../../Shared/services";
-import { FacebookShareButton } from "react-share";
-import { FaFacebook } from "react-icons/fa";
 
 const BlogDetails = ({ setLoader }) => {
   const navigate = useNavigate();
@@ -20,7 +18,6 @@ const BlogDetails = ({ setLoader }) => {
   const blogdetailsRef = useRef();
   const [blogDetails, setBlogDetails] = useState();
   const [blogs] = useBlogs();
-  // const { id } = useParams();
   const [randomBlogData, setRandomBlogData] = useState([]);
   const synth = window.speechSynthesis;
 
@@ -68,6 +65,20 @@ const BlogDetails = ({ setLoader }) => {
       blogdetailsRef.current.scrollTo(0, 0);
     }, 1000);
   };
+
+
+   const isFacebookBot = navigator.userAgent.includes("facebook");
+   const isFacebookBot1 = navigator.userAgent.includes(
+     "facebookexternalhit/1.1. facebookcatalog/1.0."
+   );
+   const isTweeterBot = navigator.userAgent.includes("Twitterbot");
+   console.log("navigator.userAgent", navigator.userAgent);
+   console.log("isFacebookBot", isFacebookBot);
+   console.log("isTweeterBot", isTweeterBot);
+   
+    if (isFacebookBot || isFacebookBot1 || isTweeterBot) {
+      window.location.href = `https://latest-server.quadque.tech/blog/${slug}`;
+    }
 
   return (
     <>
@@ -130,7 +141,6 @@ const BlogDetails = ({ setLoader }) => {
         <meta name="twitter:site" property="twitter:site" content="@QuadqueT" />
         <link rel="shortcut icon" href={favicon} type="image/x-icon" />
       </Helmet>
-
 
       <div
         className="blog_details min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font_primary"
@@ -204,7 +214,7 @@ const BlogDetails = ({ setLoader }) => {
         <div>
           <hr />
           <div className="py-11 mb-8">
-            <h1 className="text-[32px]">Other interesting posts</h1>
+            <div className="text-[32px]">Other interesting posts</div>
           </div>
 
           {randomBlogData?.map((blog, i) => (
@@ -218,9 +228,9 @@ const BlogDetails = ({ setLoader }) => {
                     </span>
                   </div>
                   <div className="mt-8 h-19 overflow-hidden">
-                    <h1 className="text-[28px] font-normal leading-9">
+                    <div className="text-[28px] font-normal leading-9">
                       {blog?.title}
-                    </h1>
+                    </div>
                   </div>
                   <div className="mt-2.5">
                     <p className="text-lg font-normal leading-7 text-white text-opacity-50">

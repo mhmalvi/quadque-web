@@ -169,14 +169,14 @@ const Sitemap = () => {
           className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
           <div className="min-h-full bg-black text-white pb-20 h-[90vh] font_primary overflow-y-scroll px-40 py-20">
-            <h1 className="text-2xl text-white font-semibold mb-10">
+            <div className="text-2xl text-white font-semibold mb-10">
               Site Map
-            </h1>
+            </div>
 
             <div className="w-full xl:w-10/12 2xl:w-9/12 mx-auto grid grid-cols-4 gap-6 justify-center">
               {/* Home */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Home</h1>
+                <div className="text-xl font-semibold mb-4">Home</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#landing`}>Home</Link>
@@ -186,7 +186,7 @@ const Sitemap = () => {
 
               {/* Services */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Services</h1>
+                <div className="text-xl font-semibold mb-4">Services</div>
                 <ul>
                   {services?.map((service, i) => (
                     <li className="list-disc whitespace-nowrap">
@@ -200,7 +200,7 @@ const Sitemap = () => {
 
               {/* About */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">About</h1>
+                <div className="text-xl font-semibold mb-4">About</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#about`}>About</Link>
@@ -210,7 +210,7 @@ const Sitemap = () => {
 
               {/* Clients */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Clients</h1>
+                <div className="text-xl font-semibold mb-4">Clients</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#clients`}>Clients</Link>
@@ -220,7 +220,7 @@ const Sitemap = () => {
 
               {/* Case Study */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Case Study</h1>
+                <div className="text-xl font-semibold mb-4">Case Study</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#case-study`}>Case Study</Link>
@@ -230,7 +230,7 @@ const Sitemap = () => {
 
               {/* Client Speak */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Client Speak</h1>
+                <div className="text-xl font-semibold mb-4">Client Speak</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#client-speak`}>Client Speak</Link>
@@ -240,7 +240,7 @@ const Sitemap = () => {
 
               {/* Blogs */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Blogs</h1>
+                <div className="text-xl font-semibold mb-4">Blogs</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#blogs`}>Blogs</Link>
@@ -250,7 +250,7 @@ const Sitemap = () => {
 
               {/* Start Project */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Start Project</h1>
+                <div className="text-xl font-semibold mb-4">Start Project</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#start-project`}>Start Project</Link>
@@ -260,7 +260,7 @@ const Sitemap = () => {
 
               {/* Contacts */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Contacts</h1>
+                <div className="text-xl font-semibold mb-4">Contacts</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#contacts`}>Contacts</Link>
@@ -270,7 +270,7 @@ const Sitemap = () => {
 
               {/* gallery */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Gallery</h1>
+                <div className="text-xl font-semibold mb-4">Gallery</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#gallery`}>Gallery</Link>
@@ -280,7 +280,7 @@ const Sitemap = () => {
 
               {/* Career */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">Career</h1>
+                <div className="text-xl font-semibold mb-4">Career</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#career`}>Career</Link>
@@ -290,7 +290,7 @@ const Sitemap = () => {
 
               {/* FAQ */}
               <div className="mb-10">
-                <h1 className="text-xl font-semibold mb-4">FAQ</h1>
+                <div className="text-xl font-semibold mb-4">FAQ</div>
                 <ul>
                   <li className="list-disc">
                     <Link to={`../#faq`}>FAQ</Link>
@@ -312,14 +312,14 @@ const Sitemap = () => {
                   placement="left"
                   color={"rgba(90, 90, 90, 0.7)"}
                 >
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                   <img
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
                     onClick={() => setMuted(false)}
                     alt=""
                   />
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                 </Tooltip>
               </div>
             ) : (
@@ -329,14 +329,14 @@ const Sitemap = () => {
                   placement="left"
                   color={"rgba(90, 90, 90, 0.7)"}
                 >
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                   <img
                     className="z-50 cursor-pointer"
                     src={muteImg}
                     onClick={() => setMuted(true)}
                     alt=""
                   />
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                 </Tooltip>
               </div>
             )}
@@ -350,14 +350,14 @@ const Sitemap = () => {
                   placement="left"
                   color={"rgba(90, 90, 90, 0.7)"}
                 >
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                   <img
                     className="z-50 cursor-pointer"
                     src={muteImg}
                     alt="Mute"
                     onClick={() => setMuted(false)}
                   />
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                 </Tooltip>
               </div>
             ) : (
@@ -367,14 +367,14 @@ const Sitemap = () => {
                   placement="left"
                   color={"rgba(90, 90, 90, 0.7)"}
                 >
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                   <img
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
                     onClick={() => setMuted(true)}
                     alt="Unmute"
                   />
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                 </Tooltip>
               </div>
             )}
@@ -404,9 +404,9 @@ const Sitemap = () => {
             animationData={loaderFile}
             loop={true}
           />
-          <h1 className="font_title text-3xl font-semibold text-white">
+          <div className="font_title text-3xl font-semibold text-white">
             Loading...
-          </h1>
+          </div>
         </div>
       ) : null}
     </div>

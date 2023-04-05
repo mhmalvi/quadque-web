@@ -5,13 +5,14 @@ import blog1 from "../../../../asstes/Images/blog1.jpg";
 // import blog2 from "../../../../asstes/Images/blog2.jpg";
 // import blog3 from "../../../../asstes/Images/blog3.jpg";
 import blogThumbnail from "../../../../asstes/Images/blogs.jpg";
-import useBlogs from "../../../Shared/Hooks/useBlog";
+import { handleFetchBlogs } from "../../../Shared/services";
+// import useBlogs from "../../../Shared/Hooks/useBlog";
 // import loaderFile from "../../../../asstes/Lotties/loader.json";
 // import Lottie from "lottie-react";
 // import Slider from "react-slick";
 
 const Blogs = () => {
-  const [blogs] = useBlogs();
+  // const [blogs] = useBlogs();
   const navigate = useNavigate();
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
@@ -21,16 +22,22 @@ const Blogs = () => {
   ] = useState(false);
   const [activeblogDetails, setActiveblogDetails] = useState({});
   // const [loader, setLoader] = useState(true);
+  const [blogs, setBlogs] = useState([]);
   const synth = window.speechSynthesis;
 
   useEffect(() => {
     if (location.hash === "#blogs") {
       synth.cancel();
       setTimeout(() => {
-        // setLoader(false);
-        // setTriggerAnimation(true);
         setTriggerTitleAnimation(true);
       }, 800);
+
+      (async () => {
+        const response = await handleFetchBlogs();
+        if (response) {
+          setBlogs(response?.slice(0, 4));
+        }
+      })();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
@@ -89,9 +96,9 @@ const Blogs = () => {
                   />
                   <div className="w-full flex items-end px-2 2xl:px-10 pt-10 pb-6 rounded-md z-10 transition ease-in-out delay-300">
                     <div>
-                      <h1 className="text-sm 2xl:text-2xl font-semibold text-white mb-2 2xl:mb-6">
+                      <div className="text-sm 2xl:text-2xl font-semibold text-white mb-2 2xl:mb-6">
                         {activeblogDetails.title}
-                      </h1>
+                      </div>
                       <div className="text-white text-xs 2xl:text-sm">
                         By{" "}
                         <span className="font-bold italic mb-1">
@@ -149,9 +156,9 @@ const Blogs = () => {
                   />
                   <div className="w-full min-h-full flex items-end h-10 absolute left-0 px-10 pb-10 bottom-0 rounded-md bg-gradient-to-b from-black/30 to-black z-10">
                     <div>
-                      <h1 className="text-sm 2xl:text-base text-white mb-2 h-6 overflow-hidden">
+                      <div className="text-sm 2xl:text-base text-white mb-2 h-6 overflow-hidden">
                         {blog.title}...
-                      </h1>
+                      </div>
                       <div className="text-white text-xs 2xl:text-sm">
                         By {blog?.author}
                       </div>
@@ -165,8 +172,8 @@ const Blogs = () => {
             </div>
           </div>
           <div className="hidden 2xl:block ">
-            <div className="grid grid-cols-3 gap-4 justify-center items-center">
-              {blogs.slice(0, 6).map((blog, i) => (
+            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              {blogs?.map((blog, i) => (
                 <div
                   key={i}
                   className="w-full h-full m-auto rounded-md cursor-pointer relative bg-white bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-500 p-4"
@@ -185,9 +192,9 @@ const Blogs = () => {
                   />
                   <div className="w-full min-h-full flex items-end h-10 absolute left-0 px-10 pb-10 bottom-0 rounded-md bg-gradient-to-b from-black/30 to-black z-10">
                     <div>
-                      <h1 className="text-sm 2xl:text-base text-white mb-2 h-6 overflow-hidden">
+                      <div className="text-sm 2xl:text-base text-white mb-2 h-6 overflow-hidden">
                         {blog.title}...
-                      </h1>
+                      </div>
                       <div className="text-white text-xs 2xl:text-sm">
                         By {blog?.author}
                       </div>

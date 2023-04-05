@@ -67,11 +67,11 @@ const OldBlogs = () => {
             </div>
 
             <div div className="absolute bottom-20 2xl:bottom-16 ml-18 mr-25">
-              <h1 className="text-[32px] font-semibold leading-12">
+              <div className="text-[32px] font-semibold leading-12">
                 {/* This title doesn’t make any sense but still, i’ve to write
                 something. */}
                 {blogs?.[0]?.title}
-              </h1>
+              </div>
               <div className="flex items-center mt-2.5">
                 <img
                   className="w-16 h-16 2xl:w-23 2xl:h-22 rounded-full"
@@ -121,9 +121,9 @@ const OldBlogs = () => {
                           "linear-gradient(180deg, rgba(255, 255, 255, 0) -81.76%, rgba(0, 0, 0, 0.5) 18.24%)",
                       }}
                     >
-                      <h1 className=" text-base font-semibold leading-6 mb-5 ml-6 mr-18">
+                      <div className=" text-base font-semibold leading-6 mb-5 ml-6 mr-18">
                         {blogs?.[1]?.title}
-                      </h1>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -151,9 +151,9 @@ const OldBlogs = () => {
                           "linear-gradient(180deg, rgba(255, 255, 255, 0) -51.55%, rgba(0, 0, 0, 0.5) 48.45%)",
                       }}
                     >
-                      <h1 className=" text-base font-semibold leading-6 mb-5 ml-6 mr-18">
+                      <div className=" text-base font-semibold leading-6 mb-5 ml-6 mr-18">
                         {blogs?.[2]?.title}
-                      </h1>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -174,10 +174,10 @@ const OldBlogs = () => {
                   }}
                 >
                   <div className="flex flex-col justify-center items-center">
-                    <h1 className=" text-base font-semibold leading-6 mx-12 text-center">
+                    <div className=" text-base font-semibold leading-6 mx-12 text-center">
                       This title doesn’t make any sense but still, i’ve to write
                       something.
-                    </h1>
+                    </div>
                     <Link to={"/blogs"}>
                       <button
                         className="spirit-bomb px-16 py-3.5 bg-black mt-12 text-base font-semibold leading-4 font_title"
@@ -204,9 +204,9 @@ const OldBlogs = () => {
               animationData={loaderFile}
               loop={true}
             />
-            <h1 className="font_title text-3xl font-semibold text-white">
+            <div className="font_title text-3xl font-semibold text-white">
               Loading...
-            </h1>
+            </div>
           </div>
         ) : null}
       </div>

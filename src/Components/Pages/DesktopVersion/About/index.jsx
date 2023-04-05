@@ -5,7 +5,7 @@ import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
-import mainAbout from "../../../../asstes/Images/about_us_2.gif";
+// import mainAbout from "../../../../asstes/Images/about_us_2.gif";
 import ourGoal from "../../../../asstes/Images/Our_Goal.gif";
 import ourMission from "../../../../asstes/Images/Our_Mission.gif";
 import ourObjective from "../../../../asstes/Images/Our_objective.gif";
@@ -24,11 +24,13 @@ const About = () => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
-    (async () => {
-      const fetchAbout = await handleFetchCompanyGoals("1");
-      setGoals(fetchAbout);
-    })();
-  }, []);
+    if (location.hash === "#about") {
+      (async () => {
+        const fetchAbout = await handleFetchCompanyGoals("1");
+        setGoals(fetchAbout);
+      })();
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     if (location.hash === "#about") {
@@ -71,7 +73,7 @@ const About = () => {
 
       <div className="w-full pr-[22px] text-white flex justify-center overflow-hidden">
         <div className="w-[40%] min-h-full flex justify-center items-center">
-          <img className="w-[80%] mx-auto pr-16" src={sideBanner} alt="" />
+          <img className="w-[80%] mx-auto pr-16" src={whoWerAre} alt="" />
         </div>
 
         <div className="w-[60%] min-h-full ml-1 mt-14 2xl:mt-32 overflow-hidden">
@@ -84,9 +86,9 @@ const About = () => {
                 }}
               >
                 <Fade right cascade spy={triggerTitleAnimation}>
-                  <h1 className="text-4xl font-medium leading-[48px] font_title">
+                  <div className="text-4xl font-medium leading-[48px] font_title">
                     About us
-                  </h1>
+                  </div>
                 </Fade>
               </div>
             </div>
@@ -101,9 +103,9 @@ const About = () => {
                       className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                       onMouseOver={() => handleChangeBanner(5)}
                     >
-                      <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                      <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                         Who We Are
-                      </h1>
+                      </div>
                       <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                         {goals?.who_we_are}
                       </p>
@@ -163,9 +165,9 @@ const About = () => {
                       onMouseOver={() => handleChangeBanner(6)}
                       //onMouseOut={() => handleChangeBanner(0)}
                     >
-                      <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                      <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                         Why Choose Us
-                      </h1>
+                      </div>
                       <p
                         className="text-white text-sm 2xl:text-base pl-4 mt-2.5 text-justify break-keep"
                         dangerouslySetInnerHTML={{
@@ -187,9 +189,9 @@ const About = () => {
                         onMouseOver={() => handleChangeBanner(2)}
                         //onMouseOut={() => handleChangeBanner(0)}
                       >
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                        <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Mission
-                        </h1>
+                        </div>
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                           {goals?.our_mission}
                         </p>
@@ -204,9 +206,9 @@ const About = () => {
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(1)}
                       >
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                        <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Vision
-                        </h1>
+                        </div>
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
                           {goals?.our_vision}
                         </p>
@@ -222,9 +224,9 @@ const About = () => {
                         //onMouseOut={() => handleChangeBanner(0)}
                       >
                         {/* <Fade right cascade spy={triggerTitleAnimation}> */}
-                        <h1 className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
+                        <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Objective
-                        </h1>
+                        </div>
                         <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
                           {goals?.our_objective}
                         </p>
@@ -429,9 +431,9 @@ const About = () => {
               animationData={loaderFile}
               loop={true}
             />
-            <h1 className="font_title text-3xl font-semibold text-white">
+            <div className="font_title text-3xl font-semibold text-white">
               Loading...
-            </h1>
+            </div>
           </div>
         ) : null}
       </div>

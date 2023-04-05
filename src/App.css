@@ -427,6 +427,10 @@ body::-webkit-scrollbar {
   margin: auto auto;
 } */
 
+.blog_details_section a {
+  color: #ac4ef5 !important;
+}
+
 .blog_details_section blockquote {
   font-size: 18px !important;
   font-weight: 600 !important;

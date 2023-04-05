@@ -7,8 +7,6 @@ import CaseStudy from "../CaseStudy";
 import Cleints from "../Clients";
 import ClientSpeak from "../ClientSpeak";
 import Footer from "../Footer";
-import NewFooter from "../Footer/NewFooter";
-import Footer1 from "../Footer/NewFooter";
 import Header from "../Header";
 import Navbar from "../Navbar";
 import Services from "../Services";

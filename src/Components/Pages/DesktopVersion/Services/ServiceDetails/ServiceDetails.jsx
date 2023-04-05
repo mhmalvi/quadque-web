@@ -1072,7 +1072,7 @@ const serviceDetailsContent = {
     ],
   },
 
-  "ai-&-iot-solutions": {
+  "ai-iot-solutions": {
     metaTitle:
       "AI & IoT Services- Online IT Services for Business – Quadque Tech",
 
@@ -1233,7 +1233,7 @@ const serviceDetailsContent = {
     ],
   },
 
-  "sap-and-erp-solutions": {
+  "sap-erp-solutions": {
     metaTitle:
       "SAP and ERP Solutions- Online IT Services for Business – Quadque Tech",
     metaDescription:

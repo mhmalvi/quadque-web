@@ -178,9 +178,9 @@ const StartProject = () => {
           onClick={() => setOpen(false)}
         >
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-4xl 2xl:text-5xl font_title lowercase">
+            <div className="text-4xl 2xl:text-5xl font_title lowercase">
               Thank You for Relying on Us
-            </h1>
+            </div>
             <p className="text-xl font_title mt-4">
               We will get in touch soon.
             </p>
@@ -362,9 +362,9 @@ const StartProject = () => {
               animationData={loaderFile}
               loop={true}
             />
-            <h1 className="font_title text-3xl font-semibold text-white">
+            <div className="font_title text-3xl font-semibold text-white">
               Loading...
-            </h1>
+            </div>
           </div>
         ) : null}
       </div>

@@ -107,9 +107,9 @@ const ServiceDetails = () => {
             </div>
           ) : null}
 
-          <h1 className="font_title text-center text-3xl font-bold pb-8">
+          <div className="font_title text-center text-3xl font-bold pb-8">
             {Service?.service_name}
-          </h1>
+          </div>
           <div className="font-semibold text-center pb-2">
             {Service?.service_title}
           </div>
@@ -864,7 +864,7 @@ const serviceDetailsContent = {
     ],
   },
 
-  "ai-&-iot-solutions": {
+  "ai-iot-solutions": {
     metaTitle:
       "AI & IoT Services- Online IT Services for Business – Quadque Tech",
 
@@ -996,7 +996,7 @@ const serviceDetailsContent = {
     ],
   },
 
-  "sap-and-erp-solutions": {
+  "sap-erp-solutions": {
     metaTitle:
       "SAP and ERP Solutions- Online IT Services for Business – Quadque Tech",
     metaDescription:

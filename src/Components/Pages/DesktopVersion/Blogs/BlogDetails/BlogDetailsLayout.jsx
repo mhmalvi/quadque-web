@@ -2,7 +2,12 @@ import { Modal, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 // import { Helmet } from "react-helmet";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  redirect,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 // import { useSpeechSynthesis } from "react-speech-kit";
 import siteAudio from "../../../../../asstes/Audio/site_audio.mp3";
 import favicon from "../../../../../asstes/Images/logo.png";
@@ -20,12 +25,14 @@ const BlogDetailsLayout = () => {
   const [openMenus, setOpenMenus] = useState(false);
   const [muted, setMuted] = useState(true);
   const [loader, setLoader] = useState(true);
-    const navigate = useNavigate();
-    const location = useLocation();
-    const { slug } = useParams();
-    const [blogDetails, setBlogDetails] = useState();
-    const { id } = useParams();
-    const synth = window.speechSynthesis;
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { slug } = useParams();
+  // const [blogDetails, setBlogDetails] = useState();
+
+  const synth = window.speechSynthesis;
+
+  console.log("slug", slug);
 
   useEffect(() => {
     /* (async () => {
@@ -41,14 +48,25 @@ const BlogDetailsLayout = () => {
       }
     })(); */
 
+    const isFacebookBot = navigator.userAgent.includes("facebook");
+    const isFacebookBot1 = navigator.userAgent.includes(
+      "facebookexternalhit/1.1. facebookcatalog/1.0."
+    );
+    const isTweeterBot = navigator.userAgent.includes("Twitterbot");
+    console.log("navigator.userAgent", navigator.userAgent);
+    console.log("isFacebookBot", isFacebookBot);
+    console.log("isTweeterBot", isTweeterBot);
+
+    if (isFacebookBot || isFacebookBot1 || isTweeterBot) {
+      window.location.href = `https://latest-server.quadque.tech/blog/${slug}`;
+    }
+
     if (muted) {
       document.getElementById("iframeAudio").src = "";
     } else {
       document.getElementById("iframeAudio").src = siteAudio;
     }
   }, [muted, location, navigate, setLoader, slug, synth]);
-
-  console.log("matikata tag:", blogDetails?.thumbnail);
 
   return (
     <>
@@ -259,16 +277,16 @@ const BlogDetailsLayout = () => {
                     placement="left"
                     color={"rgba(90, 90, 90, 0.7)"}
                   >
-                    <h1 className="text-xl font-bold">&nbsp;</h1>
+                    <div className="text-xl font-bold">&nbsp;</div>
                     <img
                       className="z-50 cursor-pointer"
                       src={muteImg}
-                      alt=""
+                      alt="mute logo"
                       onClick={() => {
                         setMuted(false);
                       }}
                     />
-                    <h1 className="text-xl font-bold">&nbsp;</h1>
+                    <div className="text-xl font-bold">&nbsp;</div>
                   </Tooltip>
                 </div>
               ) : (
@@ -278,16 +296,16 @@ const BlogDetailsLayout = () => {
                     placement="left"
                     color={"rgba(90, 90, 90, 0.7)"}
                   >
-                    <h1 className="text-xl font-bold">&nbsp;</h1>
+                    <div className="text-xl font-bold">&nbsp;</div>
                     <img
                       className="z-50 cursor-pointer"
                       src={unmuteImg}
                       onClick={() => {
                         setMuted(true);
                       }}
-                      alt=""
+                      alt="unmute logo"
                     />
-                    <h1 className="text-xl font-bold">&nbsp;</h1>
+                    <div className="text-xl font-bold">&nbsp;</div>
                   </Tooltip>
                 </div>
               )}
@@ -320,9 +338,9 @@ const BlogDetailsLayout = () => {
               animationData={loaderFile}
               loop={true}
             />
-            <h1 className="font_title text-3xl font-semibold text-white">
+            <div className="font_title text-3xl font-semibold text-white">
               Loading...
-            </h1>
+            </div>
           </div>
         ) : null}
       </div>

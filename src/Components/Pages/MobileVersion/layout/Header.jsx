@@ -1,5 +1,6 @@
 import React from "react";
-import Astro from "../../../../asstes/Video/headerVideo.mp4";
+// import Astro from "../../../../asstes/Video/headerVideo.mp4";
+import headerImage from "../../../../asstes/Images/header_img.jpg";
 import "../../MobileVersion/MobileView.css";
 import Typical from "react-typical";
 
@@ -33,14 +34,16 @@ const Header = () => {
         />
       </div>
       <div className="">
-        <video
+        <img className="w-full" alt="Header_Image" src={headerImage} />
+
+        {/* <video
           autoPlay
           loop
           muted
           style={{ position: "relative", zIndex: "100" }}
         >
           <source src={Astro} type="video/mp4" />
-        </video>
+        </video> */}
       </div>
       <div className="flex justify-center bg-black text-white pt-13 pb-6 px-6">
         {/* <Slide top> */}

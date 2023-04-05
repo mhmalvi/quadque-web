@@ -187,9 +187,9 @@ const CaseStudyDetails = ({ setLoader }) => {
             {/* <h1 className="text-center text-[40px] leading-12 font-normal">
               Our Contents:
             </h1> */}
-            <h1 className="text-center text-[40px] leading-12 font-normal">
+            <div className="text-center text-[40px] leading-12 font-normal">
               {caseStudyDetails?.our_content_header}
-            </h1>
+            </div>
           </div>
 
           <div className="mt-40 flex items-center justify-between">
@@ -211,9 +211,9 @@ const CaseStudyDetails = ({ setLoader }) => {
             </div>
 
             <div className="w-1/2">
-              <h1 className="text-3xl leading-12 font-semibold">
+              <div className="text-3xl leading-12 font-semibold">
                 {caseStudyDetails?.title_1}
-              </h1>
+              </div>
               <h4 className="mt-8 ml-10 text-justify">
                 {caseStudyDetails?.description_1}
               </h4>
@@ -222,9 +222,9 @@ const CaseStudyDetails = ({ setLoader }) => {
 
           <div className="mt-40 flex items-center justify-between">
             <div className="w-1/2 mr-24">
-              <h1 className="text-3xl leading-12 font-semibold">
+              <div className="text-3xl leading-12 font-semibold">
                 {caseStudyDetails?.title_2}
-              </h1>
+              </div>
               <h4 className="mt-8 ml-10 text-justify">
                 {caseStudyDetails?.description_2}
               </h4>
@@ -265,9 +265,9 @@ const CaseStudyDetails = ({ setLoader }) => {
               />
             </div>
             <div className="w-1/2">
-              <h1 className="text-3xl leading-12 font-semibold">
+              <div className="text-3xl leading-12 font-semibold">
                 {caseStudyDetails?.title_3}
-              </h1>
+              </div>
               <h4 className="mt-8 ml-10 text-justify">
                 {caseStudyDetails?.description_3}
               </h4>
@@ -276,9 +276,9 @@ const CaseStudyDetails = ({ setLoader }) => {
         </div>
 
         <div className="mt-44 pb-20">
-          <h1 className="text-3xl font-normal my-18">
+          <div className="text-3xl font-normal my-18">
             Creative Digital Marketing Agencies
-          </h1>
+          </div>
           <div className="">
             <img
               className="w-10/12 mx-auto"
@@ -306,10 +306,10 @@ const CaseStudyDetails = ({ setLoader }) => {
             </div>
 
             <div className="w-1/2">
-              <h1 className="text-3xl leading-12 font-semibold">
+              <div className="text-3xl leading-12 font-semibold">
                 {/* {caseStudyDetails?.title_3} */}
                 WHO WE ARE
-              </h1>
+              </div>
               <h4 className="mt-8 text-justify">
                 {/* {caseStudyDetails?.description_3} */}
                 Quadque is the best digital partner for every kind of web

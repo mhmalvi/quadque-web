@@ -81,9 +81,9 @@ in touch!"
                   />
                   <div className="flex justify-between pb-2 px-2 mt-4 gap-4 h-14">
                     <div>
-                      <h1 className="text-lg text-white font-semibold">
+                      <div className="text-lg text-white font-semibold">
                         {details.position}
-                      </h1>
+                      </div>
                       {details.app_deadline ? (
                         <div className="text-white text-sm italic font-thin">
                           deadline: {details.app_deadline}

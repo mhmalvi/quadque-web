@@ -9,6 +9,8 @@ const BlogsGalary = ({ setLoader }) => {
   const blogdetailsRef = useRef();
   const [blogs] = useBlogs();
 
+  console.log(blogs);
+
   useEffect(() => {
     if (blogs?.length) {
       setLoader(false);
@@ -55,7 +57,12 @@ const BlogsGalary = ({ setLoader }) => {
           </div>
 
           {blogs?.map((blog, i) => (
-            <div key={i} onClick={() => handleBlogNavigation(blog?.slug)}>
+            <a
+              href={`${window.location.origin}/blog/${blog?.slug}`}
+              target="_blank"
+              rel="noreferrer"
+              key={i}
+            >
               <div className="flex justify-between items-center my-4 cursor-pointer">
                 <div className="lg:max-w-md xl:max-w-xl 2xl:max-w-4xl">
                   <div className="text-sm font-normal leading-4">
@@ -65,9 +72,9 @@ const BlogsGalary = ({ setLoader }) => {
                     </span>
                   </div>
                   <div className="mt-8 h-19 overflow-hidden">
-                    <h1 className="text-[28px] font-normal leading-9">
+                    <h2 className="text-[28px] font-normal leading-9">
                       {blog?.title}
-                    </h1>
+                    </h2>
                   </div>
                   <div className="mt-2.5">
                     <p className="text-lg font-normal leading-7 text-white text-opacity-50">
@@ -87,7 +94,7 @@ const BlogsGalary = ({ setLoader }) => {
                 </div>
               </div>
               <div className="h-0.5 w-full bg-gray-500 bg-opacity-10" />
-            </div>
+            </a>
           ))}
         </div>
       </div>

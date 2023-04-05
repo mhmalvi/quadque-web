@@ -24,12 +24,12 @@ const ClientSpeak = () => {
         setTriggerAnimation(true);
         setTriggerTitleAnimation(true);
       }, 800);
-    }
 
-    (async () => {
-      const clientSpeaks = await handleFetchClientSpeaks();
-      if (clientSpeaks) setClientSpeaks(clientSpeaks);
-    })();
+      (async () => {
+        const clientSpeaks = await handleFetchClientSpeaks();
+        if (clientSpeaks) setClientSpeaks(clientSpeaks);
+      })();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
 
@@ -163,9 +163,9 @@ const ClientSpeak = () => {
               animationData={loaderFile}
               loop={true}
             />
-            <h1 className="font_title text-3xl font-semibold text-white">
+            <div className="font_title text-3xl font-semibold text-white">
               Loading...
-            </h1>
+            </div>
           </div>
         ) : null}
       </div>
