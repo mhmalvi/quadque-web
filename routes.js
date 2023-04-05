@@ -14,6 +14,15 @@ export default (
     <Route path="/#start-project" />
     <Route path="/#contacts" />
     <Route path="/services" />
+    <Route path="/services/software-development" />
+    <Route path="/services/web-development" />
+    <Route path="/services/mobile-app-development" />
+    <Route path="/services/ai-iot-solutions" />
+    <Route path="/services/e-commerce-development" />
+    <Route path="/services/cloud-computing-solutions" />
+    <Route path="/services/maintenance-and-support" />
+    <Route path="/services/cyber-security" />
+    <Route path="/services/sap-erp-solutions" />
     <Route path="/case-study" />
     <Route path="/case-study/:slug" />
     <Route path="/blog" />

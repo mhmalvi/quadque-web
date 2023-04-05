@@ -68,16 +68,16 @@ const Cleints = () => {
             <div className="text-2xl 2xl:text-5xl font-semibold mb-5 font_title">
               <Fade left cascade spy={triggerAnimation}>
                 <div className="flex items-center">
-                  <h1 className="whitespace-nowrap">More than</h1>
+                  <div className="whitespace-nowrap">More than</div>
                   <span className="mr-2 text-brand-color ml-6">
                     {count ? <CountUp start={0} end={100} duration={6} /> : 0}
                   </span>
                 </div>
                 <div>
-                  <h1>valuable</h1>
+                  <span>valuable</span>
                 </div>
                 <div>
-                  <h1>Clients</h1>
+                  <span>Clients</span>
                 </div>
               </Fade>
             </div>
@@ -436,9 +436,9 @@ const Cleints = () => {
               animationData={loaderFile}
               loop={true}
             />
-            <h1 className="font_title text-3xl font-semibold text-white">
+            <div className="font_title text-3xl font-semibold text-white">
               Loading...
-            </h1>
+            </div>
           </div>
         ) : null}
       </div>

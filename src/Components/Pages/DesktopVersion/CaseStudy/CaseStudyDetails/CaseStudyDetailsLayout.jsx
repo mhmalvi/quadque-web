@@ -180,14 +180,14 @@ const CaseStudyDetailsLayout = () => {
                   placement="left"
                   color={"rgba(90, 90, 90, 0.7)"}
                 >
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                   <img
                     className="z-50 cursor-pointer"
                     src={muteImg}
                     alt="Mute"
                     onClick={() => setMuted(false)}
                   />
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                 </Tooltip>
               </div>
             ) : (
@@ -197,14 +197,14 @@ const CaseStudyDetailsLayout = () => {
                   placement="left"
                   color={"rgba(90, 90, 90, 0.7)"}
                 >
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                   <img
                     className="z-50 cursor-pointer"
                     src={unmuteImg}
                     onClick={() => setMuted(true)}
                     alt="Unmute"
                   />
-                  <h1 className="text-xl font-bold">&nbsp;</h1>
+                  <div className="text-xl font-bold">&nbsp;</div>
                 </Tooltip>
               </div>
             )}
@@ -238,9 +238,9 @@ const CaseStudyDetailsLayout = () => {
             animationData={loaderFile}
             loop={true}
           />
-          <h1 className="font_title text-3xl font-semibold text-white">
+          <div className="font_title text-3xl font-semibold text-white">
             Loading...
-          </h1>
+          </div>
         </div>
       ) : null}
     </div>

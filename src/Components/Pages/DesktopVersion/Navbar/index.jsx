@@ -116,7 +116,7 @@ const Navbar = ({ setOpenMenus }) => {
 
         <div className="flex mt-20">
           <a
-            href="#blogs"
+            href="/blogs"
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex mr-20"
             onMouseOver={() => {
               setShowBgShadow("BLOGS");
@@ -124,7 +124,7 @@ const Navbar = ({ setOpenMenus }) => {
             onMouseOut={() => {
               setShowBgShadow("");
             }}
-            onClick={() => handleNavigate("#blogs")}
+            onClick={() => handleNavigate("blogs")}
           >
             <div
               className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px] flex text-white hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"

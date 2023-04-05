@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Sitemap from "../../Sitemap/Sitemap";
+import SitemapBuilder from "../../Sitemap/SitemapBuilder";
 import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
 import BlogDetailsLayout from "../Blogs/BlogDetails/BlogDetailsLayout";
 import CareerDetailsLayout from "../Careers/CareerDetails/CareerDetailsLayout";
@@ -16,91 +17,17 @@ const Layout = () => {
   return (
     <div>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <DesktopLayout />
-            </>
-          }
-        />
-        <Route
-          path="blogs"
-          element={
-            <>
-              <BlogsLayout />
-            </>
-          }
-        />
-        <Route
-          path="blog/:slug"
-          element={
-            <>
-              <BlogDetailsLayout />
-            </>
-          }
-        />
-        <Route
-          path="services/:slug"
-          element={
-            <>
-              <ServiceDetailsLayout />
-            </>
-          }
-        />
-        <Route
-          path="case-study/:slug"
-          element={
-            <>
-              <CaseStudyDetailsLayout />
-            </>
-          }
-        />
-
-        <Route
-          path="faq"
-          element={
-            <>
-              <FaqLayout />
-            </>
-          }
-        />
-
-        <Route
-          path="career"
-          element={
-            <>
-              <CareerLayout />
-            </>
-          }
-        />
-
-        <Route
-          path="career/:slug"
-          element={
-            <>
-              <CareerDetailsLayout />
-            </>
-          }
-        />
-
-        <Route
-          path="gallery"
-          element={
-            <>
-              <GalleryLayout />
-            </>
-          }
-        />
-
-        <Route
-          path="sitemap"
-          element={
-            <>
-              <Sitemap />
-            </>
-          }
-        />
+        <Route path="/" element={<DesktopLayout />} />
+        <Route path="blogs" element={<BlogsLayout />} />
+        <Route path="blog/:slug" element={<BlogDetailsLayout />} />
+        <Route path="services/:slug" element={<ServiceDetailsLayout />} />
+        <Route path="case-study/:slug" element={<CaseStudyDetailsLayout />} />
+        <Route path="faq" element={<FaqLayout />} />
+        <Route path="career" element={<CareerLayout />} />
+        <Route path="career/:slug" element={<CareerDetailsLayout />} />
+        <Route path="gallery" element={<GalleryLayout />} />
+        <Route path="sitemap" element={<Sitemap />} />
+        <Route path="build-sitemap" element={<SitemapBuilder />} />
         <Route path={"404"} element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>

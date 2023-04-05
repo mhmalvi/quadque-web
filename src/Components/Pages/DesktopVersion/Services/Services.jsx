@@ -4,26 +4,39 @@ import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { Link, useLocation } from "react-router-dom";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
+// import UI_UX from "../../../../asstes/Lotties/ux.json";
 import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
 import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
 import softDevs from "../../../../asstes/Lotties/software developtment.json";
-// import UI_UX from "../../../../asstes/Lotties/ux.json";
 import webDev from "../../../../asstes/Lotties/web_development.json";
 import eCom from "../../../../asstes/Lotties/ecommerce.json";
 import CyberSecurity from "../../../../asstes/Lotties/cyber-security.json";
 import Cloud from "../../../../asstes/Lotties/cloud-computing22.json";
 import Maintenance from "../../../../asstes/Lotties/maintanance.json";
-import sapErp from "../../../../asstes/Lotties/sap_erp.json";
-import useServices from "../../../Shared/Hooks/useServices";
+import sapErp from "../../../../asstes/Lotties/ERP.json";
+// import useServices from "../../../Shared/Hooks/useServices";
+import { handleFetchServices } from "../../../Shared/services";
 
 const Services = () => {
-  const [services] = useServices();
+  // const [services] = useServices();
   const location = useLocation();
+  const [services, setServices] = useState([]);
   const [activeService, setActiveService] = useState();
   const [activeServiceDetails, setActiveDetails] = useState({});
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [loader, setLoader] = useState(true);
   const synth = window.speechSynthesis;
+
+  useEffect(() => {
+    if (location.hash === "#services") {
+      (async () => {
+        const response = await handleFetchServices();
+        if (response) {
+          setServices(response);
+        }
+      })();
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     setActiveService(services[0]?.service_name);
@@ -45,17 +58,17 @@ const Services = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash, services]);
 
-  useEffect(() => {
-    let i = 1;
+  // useEffect(() => {
+  //   let i = 1;
 
-    setInterval(() => {
-      i++;
-      if (i > services?.length - 1) {
-        i = 0;
-      }
-      setActiveService(services[i]?.service_name);
-    }, 15000);
-  }, [services]);
+  //   setInterval(() => {
+  //     i++;
+  //     if (i > services?.length - 1) {
+  //       i = 0;
+  //     }
+  //     setActiveService(services[i]?.service_name);
+  //   }, 15000);
+  // }, [services]);
 
   // console.log("services", services);
 
@@ -123,13 +136,8 @@ const Services = () => {
           className="min-h-full w-8/12 flex justify-center items-center"
           style={{ maxWidth: "45%" }}
         >
-          {/* "UI/UX": UI_UX, "AI & IoT Solutions": aIIot, "Application
-          Development": AppDev, "Software Development": softDev, "Web
-          Development": webDev, */}
-
-          {/* {activeService === "AI & IoT Solutions" ? ( */}
           {activeService?.includes("IoT") ? (
-            <Link to={`services/ai-&-iot-solutions`}>
+            <Link to={`services/ai-iot-solutions`}>
               <Lottie
                 animationData={aIIot}
                 loop={true}
@@ -138,11 +146,6 @@ const Services = () => {
             </Link>
           ) : null}
 
-          {/* {activeService === "UI/UX" ? (
-            <Lottie animationData={UI_UX} loop={true} alt="Ui & Ux Layout" />
-          ) : null} */}
-
-          {/* {activeService?.includes("Software") ? ( */}
           {activeService?.includes("Mobile") ? (
             <Link to={`services/mobile-app-development`}>
               <Lottie
@@ -152,7 +155,7 @@ const Services = () => {
               />
             </Link>
           ) : null}
-          {/* {activeService === "Software Development" ? ( */}
+
           {activeService?.includes("Software") ? (
             <Link to={`services/software-development`}>
               <Lottie
@@ -162,7 +165,7 @@ const Services = () => {
               />
             </Link>
           ) : null}
-          {/* {activeService === "Web Development" ? ( */}
+
           {activeService?.includes("Web") ? (
             <Link to={`services/web-development`}>
               <Lottie
@@ -172,9 +175,9 @@ const Services = () => {
               />
             </Link>
           ) : null}
-          {/* {activeService === "Cyber Security & Data Protection" ? ( */}
+
           {activeService?.includes("Cyber") ? (
-            <Link to={`services/web-development`}>
+            <Link to={`services/cyber-security`}>
               <Lottie
                 animationData={CyberSecurity}
                 loop={true}
@@ -182,7 +185,7 @@ const Services = () => {
               />
             </Link>
           ) : null}
-          {/* {activeService === "E-commerce development" ? ( */}
+
           {activeService?.includes("E-commerce") ? (
             <Link to={`services/e-commerce-development`}>
               <Lottie
@@ -192,7 +195,7 @@ const Services = () => {
               />
             </Link>
           ) : null}
-          {/* {activeService === "Cloud Computing Solutions" ? ( */}
+
           {activeService?.includes("Cloud") ? (
             <Link to={`services/cloud-computing-solutions`}>
               <Lottie
@@ -203,7 +206,6 @@ const Services = () => {
             </Link>
           ) : null}
 
-          {/* {activeService === "Maintenance and Support" ? ( */}
           {activeService?.includes("Maintenance") ? (
             <Link to={`services/maintenance-and-support`}>
               <Lottie
@@ -215,7 +217,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("ERP") ? (
-            <Link to={`services/sap-and-erp-solutions`}>
+            <Link to={`services/sap-erp-solutions`}>
               <Lottie
                 animationData={sapErp}
                 loop={true}
@@ -223,7 +225,6 @@ const Services = () => {
               />
             </Link>
           ) : null}
-          
         </div>
       </Fade>
 
@@ -269,9 +270,9 @@ const Services = () => {
               animationData={loaderFile}
               loop={true}
             />
-            <h1 className="font_title text-3xl font-semibold text-white">
+            <div className="font_title text-3xl font-semibold text-white">
               Loading...
-            </h1>
+            </div>
           </div>
         ) : null}
       </div>

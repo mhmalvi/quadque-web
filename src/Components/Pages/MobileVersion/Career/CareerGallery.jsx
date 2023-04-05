@@ -80,9 +80,9 @@ const CareerGallery = () => {
               />
               <div className="flex items-center justify-between pb-2 px-2 gap-4">
                 <div>
-                  <h1 className="text-lg text-white pt-4">
+                  <div className="text-lg text-white pt-4">
                     Position: {details.position}
-                  </h1>
+                  </div>
                   {details.app_deadline ? (
                     <div className="text-white text-sm italic font-thin">
                       deadline: {details.app_deadline}

@@ -5,19 +5,33 @@ import { Fade, Flip } from "react-reveal";
 import { Link, useLocation } from "react-router-dom";
 import Typical from "react-typical";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
-import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
+// import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import Icons from "../../../Shared/Icons";
+import { handleFetchCaseStudies } from "../../../Shared/services";
 
 const CaseStudy = () => {
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [caseStudyName, setCaseStudyName] = useState("");
-  const [caseStudy] = useCaseStudy();
+  // const [caseStudy] = useCaseStudy();
   const [loader, setLoader] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
   const synth = window.speechSynthesis;
+
+  const [caseStudy, setCaseStudy] = useState([]);
+
+  useEffect(() => {
+    if (location.hash === "#case-study") {
+      (async () => {
+        const response = await handleFetchCaseStudies();
+        if (response) {
+          setCaseStudy(response);
+        }
+      })();
+    }
+  }, [location.hash]);
 
   useEffect(() => {
     if (location.hash === "#case-study") {
@@ -220,9 +234,9 @@ const CaseStudy = () => {
                 animationData={loaderFile}
                 loop={true}
               />
-              <h1 className="font_title text-3xl font-semibold text-white">
+              <div className="font_title text-3xl font-semibold text-white">
                 Loading...
-              </h1>
+              </div>
             </div>
           ) : null}
         </div>
