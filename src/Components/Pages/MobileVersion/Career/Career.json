@@ -1,5 +1,191 @@
 [
   {
+    "id": "7",
+    "slug": "seo-trainee",
+    "position": "SEO (Trainee)",
+    "summary": null,
+    "thumbnail": "https://i.ibb.co/6XsgsZW/Trainee-hiring-v5.jpg",
+    "responsibility": [
+      "Assist our SEO team in developing SEO strategies to boost our clients’ web traffic",
+      "Research and analyze SEO trends and news to find areas for improvement and new ranking opportunities for our company/client",
+      "Conduct keyword research",
+      "SEO-friendly content",
+      "Monitor SEO campaign development, rankings, and traffic to create in-depth performance reports",
+      "Assist in the development of internal marketing materials when necessary",
+      "Evaluate and report on KPIs",
+      "Stay up to date with the SEO and web development trends",
+      "Improve metadata and fix broken links in published articles"
+    ],
+    "requirements": [
+      "Fresh Graduates (Flexibility in academic degrees for the exceptional candidates)",
+      "Creative thinking and open minded",
+      "Discipline, independent and show initiative",
+      "Eager to learn",
+      "Working under pressure and meeting deadlines"
+    ],
+
+    "edu_requirement": null,
+    "salary": "Honorarium 6000-8000 BDT",
+    "additional": [
+      "Weekly 2 Holiday",
+      "Lunch (partially subsidized)",
+      "Unlimited tea /coffee",
+      "Friendly working environment",
+      "Work with an exciting team and products",
+      "Opportunity to be our permanent member after successfully completion of the training period"
+    ],
+
+    "published_on": "05/04/2023",
+    "vacancy": "2",
+    "employment_status": "Trainee",
+    "office_time": "8 AM - 5:30 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": null,
+    "app_deadline": "18/04/2023",
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSdncKeXSDo3eFei1q8W5aXWgYi73W0mIQbfywkEQzTnfm_Ebw/viewform?usp=pp_url"
+  },
+
+  {
+    "id": "4",
+    "slug": "graphics-designer-trainee",
+    "position": "Graphics designer (Trainee)",
+    "summary": null,
+    "thumbnail": "https://i.ibb.co/KwY0cVF/Whats-App-Image-2023-04-05-at-13-24-45.jpg",
+    "responsibility": [
+      "Assisting senior designers to create logos, flyers, and other marketing materials with Adobe Photoshop and Illustrator",
+      "Assist and come up with creative ideas",
+      "Ensuring that all designs adhere to brand guidelines and standards",
+      "Improve your work and skills with feedback from other designers and senior team members",
+      "Assisting in the production of multimedia content such as videos and animations using Canva",
+      "Create videos, posters in Canva"
+    ],
+    "requirements": [
+      "Fresh Graduates (Flexibility in academic degrees for the exceptional candidates)",
+      "Creative thinking and open minded",
+      "Discipline, independent and show initiative",
+      "Eager to learn",
+      "Working under pressure and meeting deadlines",
+      "Candidates proficient in using ChatGPT effectively will have higher chances",
+      "Experience with design software (such as Adobe Photoshop and Illustrator) is a must",
+      "Experience in Canva will be a plus"
+    ],
+
+    "edu_requirement": null,
+    "salary": "Honorarium 6000-8000 BDT",
+    "additional": [
+      "Weekly 2 Holiday",
+      "Lunch (partially subsidized)",
+      "Unlimited tea /coffee",
+      "Friendly working environment",
+      "Work with an exciting team and products",
+      "Opportunity to be our permanent member after successfully completion of the training period"
+    ],
+
+    "published_on": "05/04/2023",
+    "vacancy": "2",
+    "employment_status": "Trainee",
+    "office_time": "8 AM - 5:30 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": null,
+    "app_deadline": "18/04/2023",
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSdncKeXSDo3eFei1q8W5aXWgYi73W0mIQbfywkEQzTnfm_Ebw/viewform?usp=pp_url"
+  },
+
+  {
+    "id": "5",
+    "slug": "frontend-developer-trainee",
+    "position": "Frontend Developer (Trainee)",
+    "summary": null,
+    "thumbnail": "https://i.ibb.co/KwY0cVF/Whats-App-Image-2023-04-05-at-13-24-45.jpg",
+    "responsibility": [
+      "Assist and develop responsive and engaging web apps with web designers and back-end developers",
+      "Use HTML, CSS, and JavaScript to assist and write code that is clean and well-documented",
+      "Code reviews and team discussions ensure high-quality, scalable code",
+      "Optimize site for maximum speed and scalability",
+      "Ensure that all user input is validated before submitting to back-end",
+      "Keep up-to-date with trends in web development and integrate them into ongoing projects"
+    ],
+
+    "requirements": [
+      "Fresh Graduates (Flexibility in academic degrees for the exceptional candidates)",
+      "Highly passionate on coding",
+      "Working knowledge in JavaScript",
+      "Self-driven, proactive, and out of the box thinker",
+      "Working under pressure and meeting deadlines",
+      "Highly responsible, self-disciplined, self-managed, and self-motivated",
+      "Candidates proficient in using ChatGPT effectively will have higher chances"
+    ],
+
+    "edu_requirement": null,
+    "salary": "Honorarium 6000-8000 BDT",
+    "additional": [
+      "Weekly 2 Holiday",
+      "Lunch (partially subsidized)",
+      "Unlimited tea /coffee",
+      "Friendly working environment",
+      "Work with an exciting team and products",
+      "Opportunity to be our permanent member after successfully completion of the training period"
+    ],
+
+    "published_on": "05/04/2023",
+    "vacancy": "2",
+    "employment_status": "Trainee",
+    "office_time": "8 AM - 5:30 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": null,
+    "app_deadline": "18/04/2023",
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSdncKeXSDo3eFei1q8W5aXWgYi73W0mIQbfywkEQzTnfm_Ebw/viewform?usp=pp_url"
+  },
+
+  {
+    "id": "6",
+    "slug": "backend-developer-trainee",
+    "position": "Backend Developer (Trainee)",
+    "summary": null,
+    "thumbnail": "https://i.ibb.co/KwY0cVF/Whats-App-Image-2023-04-05-at-13-24-45.jpg",
+    "responsibility": [
+      "Assist and build, test, and maintain PHP-based web applications alongside the development team",
+      "Assist and write PHP code that is clean, efficient, and secure",
+      "Interact with SQL databases",
+      "Understand business flow and collaborate to fulfill requirements",
+      "Contributing ideas and experience to new development solutions",
+      "Keep up to date with latest web and technologies, trends and programming techniques"
+    ],
+
+    "requirements": [
+      "Fresh Graduates (Flexibility in academic degrees for the exceptional candidates)",
+      "Highly passionate on coding",
+      "Working knowledge in PHP ",
+      "Working under pressure and meeting deadlines",
+      "Strong motivation and organizational skills",
+      "Candidates proficient in using ChatGPT effectively will have higher chances"
+    ],
+
+    "edu_requirement": null,
+    "salary": "Honorarium 6000-8000 BDT",
+    "additional": [
+      "Weekly 2 Holiday",
+      "Lunch (partially subsidized)",
+      "Unlimited tea /coffee",
+      "Friendly working environment",
+      "Work with an exciting team and products",
+      "Opportunity to be our permanent member after successfully completion of the training period"
+    ],
+
+    "published_on": "05/04/2023",
+    "vacancy": "2",
+    "employment_status": "Trainee",
+    "office_time": "8 AM - 5:30 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": null,
+    "app_deadline": "18/04/2023",
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSdncKeXSDo3eFei1q8W5aXWgYi73W0mIQbfywkEQzTnfm_Ebw/viewform?usp=pp_url"
+  },
+  {
     "id": "1",
     "slug": "copy-writer-content-creator",
     "position": "Intern (Copy Writer/Content Creator)",
