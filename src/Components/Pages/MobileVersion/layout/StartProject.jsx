@@ -203,7 +203,7 @@ const StartProject = () => {
       <div className="font_title text-3xl px-6 font-bold uppercase pb-8">
         LET'S START <br /> &nbsp;&nbsp;A PROJECT !
       </div>
-      <div className="flex flex-wrap justify-between capitalize pb-8 px-6">
+      <div className="flex flex-col justify-between capitalize pb-8 px-6">
         {Services?.map((service, i) => (
           <p
             key={i}
