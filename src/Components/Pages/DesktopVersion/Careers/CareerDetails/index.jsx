@@ -3,26 +3,39 @@ import { useNavigate, useParams } from "react-router-dom";
 import Icons from "../../../../Shared/Icons";
 import Career from "../../../MobileVersion/Career/Career.json";
 import Footer from "../../Footer";
+import { handleFetchCareerPosts } from "../../../../Shared/services";
 
 const CareerDetails = ({ setLoader }) => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const [careerData, setCareerData] = useState();
+  const [careerPosts, setCareerPosts] = useState();
+  const [careerDetails, setCareerDetails] = useState();
 
   useEffect(() => {
-    if (Career.find((career) => career.slug === slug)) {
-      const fetchCareer = Career.find((career) => career.slug === slug);
+    (async () => {
+      const careerResp = await handleFetchCareerPosts();
+      console.log("careerResp", careerResp);
+      if (careerResp?.status === 200) {
+        setCareerPosts(careerResp?.data);
+      } else {
+        setCareerPosts(Career);
+      }
+    })();
+  }, []);
+  console.log("careerPosts", careerPosts);
+
+  useEffect(() => {
+    if (careerPosts?.find((career) => career.slug === slug)) {
+      const fetchCareer = careerPosts?.find((career) => career.slug === slug);
 
       if (fetchCareer) {
         setTimeout(() => {
           setLoader(false);
         }, 1000);
-        setCareerData(fetchCareer);
+        setCareerDetails(fetchCareer);
       }
-    } else {
-      navigate("404");
     }
-  }, [slug, setLoader, navigate]);
+  }, [careerPosts, navigate, setLoader, slug]);
 
   return (
     <div className="min-h-full bg-black text-white pt-20 px-36 h-[90vh] overflow-y-auto font_primary">
@@ -38,26 +51,26 @@ const CareerDetails = ({ setLoader }) => {
 
       <div className="w-full text-white font_primary mb-16">
         <img
-          src={careerData?.thumbnail}
+          src={careerDetails?.thumbnail}
           alt="Job Thumbnail"
           className="w-8/12 mx-auto relative"
         />
         <div className="px-6">
           <div className="text-3xl font-semibold text-center pb-6 pt-20 font_title">
-            {careerData?.position}
+            {careerDetails?.position}
           </div>
 
-          {careerData?.summary ? (
+          {careerDetails?.summary ? (
             <div className="pb-8">
               <p className="text-lg text-zinc-400">Summary:</p> <br />
-              <p className="text-lg">{careerData?.summary}</p>
+              <p className="text-lg">{careerDetails?.summary}</p>
             </div>
           ) : null}
 
           <div className="pb-8">
             <p className="text-lg text-zinc-400">Job Responsibility:</p> <br />
             <ul className="list-disc text-justify pl-6">
-              {careerData?.responsibility?.map((resp, i) => (
+              {careerDetails?.responsibility?.map((resp, i) => (
                 <li key={i} className="text-lg py-1">
                   {resp}
                 </li>
@@ -65,11 +78,11 @@ const CareerDetails = ({ setLoader }) => {
             </ul>
           </div>
 
-          {careerData?.requirements?.length ? (
+          {careerDetails?.requirements?.length ? (
             <div className="pb-8">
               <p className="text-lg text-zinc-400">Job Requirements:</p> <br />
               <ul className="list-disc text-justify pl-6">
-                {careerData?.requirements?.map((requirement, i) => (
+                {careerDetails?.requirements?.map((requirement, i) => (
                   <li key={i} className="text-lg py-1">
                     {requirement}
                   </li>
@@ -78,12 +91,12 @@ const CareerDetails = ({ setLoader }) => {
             </div>
           ) : null}
 
-          {careerData?.edu_requirement?.length ? (
+          {careerDetails?.edu_requirement?.length ? (
             <div className="pb-8">
               <p className="text-lg text-zinc-400">Educational Requirements:</p>{" "}
               <br />
               <ul className="list-disc text-justify pl-6">
-                {careerData?.edu_requirement?.map((resp, i) => (
+                {careerDetails?.edu_requirement?.map((resp, i) => (
                   <li key={i} className="text-lg py-1">
                     {resp}
                   </li>
@@ -95,7 +108,7 @@ const CareerDetails = ({ setLoader }) => {
           <div className="pb-8">
             <p className="text-lg text-zinc-400">Salary:</p> <br />
             <ul className="list-disc text-justify pl-6">
-              <li className=" text-lg py-1">{careerData?.salary}</li>
+              <li className=" text-lg py-1">{careerDetails?.salary}</li>
             </ul>
           </div>
 
@@ -105,7 +118,7 @@ const CareerDetails = ({ setLoader }) => {
             </p>{" "}
             <br />
             <ul className="list-disc text-justify pl-6">
-              {careerData?.additional?.map((resp, i) => (
+              {careerDetails?.additional?.map((resp, i) => (
                 <li key={i} className="text-lg py-1">
                   {resp}
                 </li>
@@ -116,41 +129,41 @@ const CareerDetails = ({ setLoader }) => {
           <div className="bg-white bg-opacity-10 border border-zinc-700 backdrop-filter backdrop-blur-sm rounded-md p-3 text-lg">
             <div className="pt-0">
               <span className=" text-zinc-400"> Published on:</span> <br />{" "}
-              {careerData?.published_on}
+              {careerDetails?.published_on}
               <div className="h-0.5 bg-zinc-700 mt-2"></div>
             </div>
 
             <div className="pt-2">
               <span className=" text-zinc-400">Vacancy:</span> <br />{" "}
-              {careerData?.vacancy}
+              {careerDetails?.vacancy}
               <div className="h-0.5 bg-zinc-700 mt-2"></div>
             </div>
 
             <div className="pt-2">
               <span className=" text-zinc-400">Employment Status:</span> <br />{" "}
-              {careerData?.employment_status}
+              {careerDetails?.employment_status}
               <div className="h-0.5 bg-zinc-700 mt-2"></div>
             </div>
 
             <div className="pt-2">
               <span className=" text-zinc-400">Office Time:</span> <br />{" "}
-              {careerData?.office_time}
-              <br /> {careerData?.office_days}
+              {careerDetails?.office_time}
+              <br /> {careerDetails?.office_days}
               <div className="h-0.5 bg-zinc-700 mt-2"></div>
             </div>
 
-            {careerData?.experience_req ? (
+            {careerDetails?.experience_req ? (
               <div className="pt-2">
                 <span className=" text-zinc-400">Experience:</span> <br />{" "}
-                {careerData?.experience_req}
+                {careerDetails?.experience_req}
                 <div className="h-0.5 bg-zinc-700 mt-2"></div>
               </div>
             ) : null}
 
-            {careerData?.app_deadline ? (
+            {careerDetails?.app_deadline ? (
               <div className="pt-2">
                 <span className=" text-zinc-400">Application Deadline:</span>{" "}
-                <br /> {careerData?.app_deadline}
+                <br /> {careerDetails?.app_deadline}
               </div>
             ) : null}
 
@@ -163,7 +176,7 @@ const CareerDetails = ({ setLoader }) => {
             </div>
             <div className="flex justify-center items-center">
               <a
-                href={careerData?.appying_url}
+                href={careerDetails?.appying_url}
                 target="_blank"
                 rel="noreferrer"
               >

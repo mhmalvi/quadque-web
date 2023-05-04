@@ -2,24 +2,33 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
 import Career from "./Career.json";
+import { handleFetchCareerPosts } from "../../../Shared/services";
 
 const CareerDetail = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
   const [careerData, setCareerData] = useState();
+  const [careerPosts, setCareerPosts] = useState();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    (async () => {
+      const careerResp = await handleFetchCareerPosts();
+      if (careerResp?.status === 200) {
+        setCareerPosts(careerResp?.data);
+      } else {
+        setCareerPosts(Career);
+      }
+    })();
   }, []);
 
   useEffect(() => {
-    if (Career.find((career) => career.slug === slug)) {
-      const fetchCareer = Career.find((career) => career.slug === slug);
+    if (careerPosts?.find((career) => career.slug === slug)) {
+      const fetchCareer = careerPosts?.find((career) => career.slug === slug);
       setCareerData(fetchCareer);
-    } else {
-      navigate("/404");
     }
-  }, [slug, navigate]);
+  }, [slug, navigate, careerPosts]);
 
   return (
     <div className="w-full text-white font_primary">

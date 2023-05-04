@@ -5,27 +5,40 @@ import { Fade } from "react-reveal";
 import { Link, useNavigate } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
 import careerData from "../../MobileVersion/Career/Career.json";
+import { handleFetchCareerPosts } from "../../../Shared/services";
 
 const Career = ({ setLoader }) => {
   const navigate = useNavigate();
-  const [totalPosts, setTotalPosts] = useState();
+  // const [totalPosts, setTotalPosts] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [PostsPerPage] = useState(8);
   const [careerPosts, setCareerPosts] = useState([]);
+  const [allCareerPost, setAllCareerPost] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    setTotalPosts(careerData.length);
+    (async () => {
+      const careerResp = await handleFetchCareerPosts();
+      if (careerResp?.status === 200) {
+        setAllCareerPost(careerResp?.data);
+      } else {
+        setAllCareerPost(careerData);
+        // setTotalPosts(careerData.length);
+      }
+    })();
   }, []);
 
-  const indexOfLastPost = currentPage * PostsPerPage;
-  const indexOfFirstPost = indexOfLastPost - PostsPerPage;
-  const currentPosts = careerData?.slice(indexOfFirstPost, indexOfLastPost);
-
   useEffect(() => {
+    const indexOfLastPost = currentPage * PostsPerPage;
+    const indexOfFirstPost = indexOfLastPost - PostsPerPage;
+    const currentPosts = allCareerPost?.slice(
+      indexOfFirstPost,
+      indexOfLastPost
+    );
+
     if (currentPosts !== "") {
       setTimeout(() => {
         setLoader(false);
@@ -42,7 +55,7 @@ const Career = ({ setLoader }) => {
         .reverse()
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPage, setLoader]);
+  }, [currentPage, setLoader, allCareerPost]);
 
   console.log(careerPosts);
 
@@ -109,7 +122,7 @@ const Career = ({ setLoader }) => {
             onChange={(value) => setCurrentPage(value)}
             pageSize={PostsPerPage}
             current={currentPage}
-            total={totalPosts}
+            total={allCareerPost?.length}
             showTitle={true}
             className="text-4xl"
           />
