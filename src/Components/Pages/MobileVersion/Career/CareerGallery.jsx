@@ -5,26 +5,32 @@ import Lottie from "lottie-react";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import { Helmet } from "react-helmet";
 import Career from "./Career.json";
-// import Interface from "../../../../asstes/Images/advertise.png";
+import { handleFetchCareerPosts } from "../../../Shared/services";
+
 
 const CareerGallery = () => {
-  //const [Career] = useCareer();
-  const [totalPosts, setTotalPosts] = useState();
+  const [allCareerPosts, setAllCareerPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [PostsPerPage] = useState(4);
   const [loader, setLoader] = useState(true);
-  console.log("all career", Career);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    setTotalPosts(Career.length);
+    (async () => {
+      const careerResp = await handleFetchCareerPosts();
+      if (careerResp?.status === 200) {
+        setAllCareerPosts(careerResp?.data);
+      } else {
+        setAllCareerPosts(Career);
+      }
+    })();
   }, []);
 
   useEffect(() => {
-    if (Career.length > 0) {
+    if (allCareerPosts.length > 0) {
       setTimeout(() => {
         setLoader(false);
       }, 100);
@@ -33,11 +39,12 @@ const CareerGallery = () => {
         setLoader(false);
       }, 5000);
     }
-  }, []);
+  }, [allCareerPosts]);
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
-  const currentPosts = Career?.slice(indexOfFirstPost, indexOfLastPost)
+  const currentPosts = allCareerPosts
+    ?.slice(indexOfFirstPost, indexOfLastPost)
     ?.sort((a, b) => (parseInt(a.id) > parseInt(b.id) ? 1 : -1))
     .reverse();
 
@@ -107,7 +114,7 @@ const CareerGallery = () => {
           onChange={(value) => setCurrentPage(value)}
           pageSize={PostsPerPage}
           current={currentPage}
-          total={totalPosts}
+          total={allCareerPosts?.length}
           className="text-xl"
         />
       </div>

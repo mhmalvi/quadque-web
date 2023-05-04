@@ -205,9 +205,9 @@ export const handleFetchGallery = async () => {
 export const handleFetchCareerPosts = async () => {
   try {
     const result = await axios.get(
-      `https://raw.githubusercontent.com/QuadQue/Quadque-Tech-Client/main/src/Components/Pages/MobileVersion/Career/Career.json?token=GHSAT0AAAAAABYNDQSPS7WWIZ6BPFLQ2PISZCTD4PA`
+      `https://api.npoint.io/803fb7bb194a84a26edf`
     );
-    return result?.data;
+    return result;
   } catch (error) {
     console.log(error.response?.data);
     return error?.response;
