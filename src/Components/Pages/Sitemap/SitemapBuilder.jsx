@@ -3,53 +3,116 @@ import React, { useEffect, useState } from "react";
 import useBlogs from "../../Shared/Hooks/useBlog";
 import useCaseStudy from "../../Shared/Hooks/useCaseStudy";
 import useServices from "../../Shared/Hooks/useServices";
+import careerData from "../../Pages/MobileVersion/Career/Career.json";
 
 const SitemapBuilder = () => {
   const [blogs] = useBlogs();
   const [caseStudy] = useCaseStudy();
   const [services] = useServices();
   const [data, setData] = useState("");
+  const date = new Date();
 
   useEffect(() => {
     let sitemapData = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://www.quadque.tech/</loc> </url>
-<url> <loc>https://www.quadque.tech#landing</loc> </url>
-<url> <loc>https://www.quadque.tech#services</loc> </url>
-<url> <loc>https://www.quadque.tech/services/:slug</loc> </url>
-<url> <loc>https://www.quadque.tech#about</loc> </url>
-<url> <loc>https://www.quadque.tech#clients</loc> </url>
-<url> <loc>https://www.quadque.tech#case-study</loc> </url>
-<url> <loc>https://www.quadque.tech#client-speak</loc> </url>
-<url> <loc>https://www.quadque.tech#blogs</loc> </url>
-<url> <loc>https://www.quadque.tech#start-project</loc> </url>
-<url> <loc>https://www.quadque.tech#contacts</loc> </url>
-<url> <loc>https://www.quadque.tech/services</loc> </url>
-<url> <loc>https://www.quadque.tech/case-study</loc> </url>
-<url> <loc>https://www.quadque.tech/career</loc> </url>
-<url> <loc>https://www.quadque.tech/faq</loc> </url>
-<url> <loc>https://www.quadque.tech/blogs</loc> </url>
-<url> <loc>https://www.quadque.tech/gallery</loc> </url>`;
+<url>
+<loc>https://www.quadque.tech/</loc>
+<priority>1.0</priority>
+<changefreq>always</changefreq>
+</url>
+<url> <loc>https://www.quadque.tech/services</loc>
+<lastmod>${date.getFullYear()}-${
+      date.getMonth() + 1 < 10
+        ? "0" + (date.getMonth() + 1)
+        : date.getMonth() + 1
+    }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
+</url>
+<url> <loc>https://www.quadque.tech/career</loc>
+<lastmod>${date.getFullYear()}-${
+      date.getMonth() + 1 < 10
+        ? "0" + (date.getMonth() + 1)
+        : date.getMonth() + 1
+    }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
+</url>
+<url> <loc>https://www.quadque.tech/faq</loc>
+<lastmod>${date.getFullYear()}-${
+      date.getMonth() + 1 < 10
+        ? "0" + (date.getMonth() + 1)
+        : date.getMonth() + 1
+    }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
+</url>
+<url> <loc>https://www.quadque.tech/blogs</loc>
+<lastmod>${date.getFullYear()}-${
+      date.getMonth() + 1 < 10
+        ? "0" + (date.getMonth() + 1)
+        : date.getMonth() + 1
+    }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
+</url>
+<url> <loc>https://www.quadque.tech/gallery</loc>
+<lastmod>${date.getFullYear()}-${
+      date.getMonth() + 1 < 10
+        ? "0" + (date.getMonth() + 1)
+        : date.getMonth() + 1
+    }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
+</url>`;
 
     blogs?.forEach((blog) => {
       sitemapData =
         sitemapData +
-        `\n<url> <loc>https://www.quadque.tech/blog/${blog?.slug}</loc> </url>`;
+        `\n<url> <loc>https://www.quadque.tech/blog/${blog?.slug}</loc>
+        <lastmod>${date.getFullYear()}-${
+          date.getMonth() + 1 < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1
+        }-${
+          date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
+        }</lastmod>
+        </url>`;
     });
 
     caseStudy?.forEach((study) => {
       sitemapData =
         sitemapData +
-        `\n<url> <loc>https://www.quadque.tech/case-study/${study?.slug}</loc> </url>`;
+        `\n<url> <loc>https://www.quadque.tech/case-study/${study?.slug}</loc>
+        <lastmod>${date.getFullYear()}-${
+          date.getMonth() + 1 < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1
+        }-${
+          date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
+        }</lastmod></url>`;
     });
 
     services?.forEach((service) => {
       sitemapData =
         sitemapData +
-        `\n<url> <loc>https://www.quadque.tech/services/${service?.slug}</loc> </url>`;
+        `\n<url> <loc>https://www.quadque.tech/services/${service?.slug}</loc>
+        <lastmod>${date.getFullYear()}-${
+          date.getMonth() + 1 < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1
+        }-${
+          date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
+        }</lastmod>
+        </url>`;
+    });
+
+    careerData?.forEach((career) => {
+      sitemapData =
+        sitemapData +
+        `\n<url> <loc>https://www.quadque.tech/career/${career?.slug}</loc>
+        <lastmod>${date.getFullYear()}-${
+          date.getMonth() + 1 < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1
+        }-${
+          date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
+        }</lastmod>
+        </url>`;
     });
 
     setData(sitemapData + "\n</urlset>");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blogs, caseStudy, services]);
 
   const handleClick = () => {

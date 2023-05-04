@@ -17,7 +17,7 @@ import sapErp from "../../../../asstes/Lotties/ERP.json";
 // import useServices from "../../../Shared/Hooks/useServices";
 import { handleFetchServices } from "../../../Shared/services";
 
-const Services = () => {
+const AllService = () => {
   // const [services] = useServices();
   const location = useLocation();
   const [services, setServices] = useState([]);
@@ -28,7 +28,7 @@ const Services = () => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
-    if (location.hash === "#services") {
+    if (location.hash === "#services" || location.pathname === "/services") {
       (async () => {
         const response = await handleFetchServices();
         if (response) {
@@ -36,11 +36,11 @@ const Services = () => {
         }
       })();
     }
-  }, [location.hash]);
+  }, [location]);
 
   useEffect(() => {
     setActiveService(services[0]?.service_name);
-    if (location.hash === "#services") {
+    if (location.hash === "#services" || location.pathname === "/services") {
       synth.cancel();
 
       setTimeout(() => {
@@ -56,7 +56,7 @@ const Services = () => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.hash, services]);
+  }, [location, services]);
 
   // useEffect(() => {
   //   let i = 1;
@@ -110,7 +110,7 @@ const Services = () => {
                         }
                         color={"rgba(90, 90, 90, 0.7)"}
                       >
-                        <Link to={`services/${activeServiceDetails?.slug}`}>
+                        <Link to={`../services/${activeServiceDetails?.slug}`}>
                           <button
                             className="spirit-bomb px-6 py-2 bg-transparent text-xs font-semibold leading-4 capitalize text-white font_title"
                             style={{
@@ -137,7 +137,7 @@ const Services = () => {
           style={{ maxWidth: "45%" }}
         >
           {activeService?.includes("IoT") ? (
-            <Link to={`services/ai-iot-solutions`}>
+            <Link to={`../services/ai-iot-solutions`}>
               <Lottie
                 animationData={aIIot}
                 loop={true}
@@ -147,7 +147,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("Mobile") ? (
-            <Link to={`services/mobile-app-development`}>
+            <Link to={`../services/mobile-app-development`}>
               <Lottie
                 animationData={AppDev}
                 loop={true}
@@ -157,7 +157,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("Software") ? (
-            <Link to={`services/software-development`}>
+            <Link to={`../services/software-development`}>
               <Lottie
                 animationData={softDevs}
                 loop={true}
@@ -167,7 +167,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("Web") ? (
-            <Link to={`services/web-development`}>
+            <Link to={`../services/web-development`}>
               <Lottie
                 animationData={webDev}
                 loop={true}
@@ -177,7 +177,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("Cyber") ? (
-            <Link to={`services/cyber-security`}>
+            <Link to={`../services/cyber-security`}>
               <Lottie
                 animationData={CyberSecurity}
                 loop={true}
@@ -187,7 +187,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("E-commerce") ? (
-            <Link to={`services/e-commerce-development`}>
+            <Link to={`../services/e-commerce-development`}>
               <Lottie
                 animationData={eCom}
                 loop={true}
@@ -197,7 +197,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("Cloud") ? (
-            <Link to={`services/cloud-computing-solutions`}>
+            <Link to={`../services/cloud-computing-solutions`}>
               <Lottie
                 animationData={Cloud}
                 loop={true}
@@ -207,7 +207,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("Maintenance") ? (
-            <Link to={`services/maintenance-and-support`}>
+            <Link to={`../services/maintenance-and-support`}>
               <Lottie
                 animationData={Maintenance}
                 loop={true}
@@ -217,7 +217,7 @@ const Services = () => {
           ) : null}
 
           {activeService?.includes("ERP") ? (
-            <Link to={`services/sap-erp-solutions`}>
+            <Link to={`../services/sap-erp-solutions`}>
               <Lottie
                 animationData={sapErp}
                 loop={true}
@@ -228,7 +228,7 @@ const Services = () => {
         </div>
       </Fade>
 
-      <div class="w-64 min-h-full text-xl font-medium leading-8 capitalize flex flex-col justify-between">
+      <div className="w-64 min-h-full text-xl font-medium leading-8 capitalize flex flex-col justify-between">
         <Fade left cascade spy={triggerAnimation}>
           <div className="pt-18 mt-0.5">
             {services?.map((service, i) => (
@@ -247,7 +247,13 @@ const Services = () => {
           </div>
 
           <div>
-            <a href="#start-project">
+            <a
+              href={
+                location.pathname === "/services"
+                  ? "/#start-project"
+                  : "#start-project"
+              }
+            >
               <button
                 className="spirit-bomb w-[252px] h-[46px] bg-transparent text-[15px] font-semibold leading-4 capitalize text-white font_title"
                 style={{
@@ -280,7 +286,7 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default AllService;
 
 // const littieFiles = {
 //   "UI/UX": UI_UX,

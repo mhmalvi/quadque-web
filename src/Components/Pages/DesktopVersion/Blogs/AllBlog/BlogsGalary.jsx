@@ -17,13 +17,13 @@ const BlogsGalary = ({ setLoader }) => {
     }
   }, [blogs, setLoader]);
 
-  const handleBlogNavigation = (blogSlug) => {
-    navigate(`../blog/${blogSlug}`, { replace: true });
+  // const handleBlogNavigation = (blogSlug) => {
+  //   navigate(`../blog/${blogSlug}`, { replace: true });
 
-    setTimeout(() => {
-      blogdetailsRef.current.scrollTo(0, 0);
-    }, 1000);
-  };
+  //   setTimeout(() => {
+  //     blogdetailsRef.current.scrollTo(0, 0);
+  //   }, 1000);
+  // };
 
   return (
     <>

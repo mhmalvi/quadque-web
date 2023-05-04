@@ -15,7 +15,6 @@ const CareerDetail = () => {
   useEffect(() => {
     if (Career.find((career) => career.slug === slug)) {
       const fetchCareer = Career.find((career) => career.slug === slug);
-      console.log("fetch", fetchCareer);
       setCareerData(fetchCareer);
     } else {
       navigate("/404");
@@ -51,14 +50,16 @@ const CareerDetail = () => {
           </ul>
         </div>
 
-        <div className="pb-5">
-          <p className="text-lg text-zinc-400">Job Requirements:</p>
-          <ul className="list-disc text-justify pl-6">
-            {careerData?.requirements?.map((requirement) => (
-              <li className="text-sm py-1">{requirement}</li>
-            ))}
-          </ul>
-        </div>
+        {careerData?.requirements?.length ? (
+          <div className="pb-5">
+            <p className="text-lg text-zinc-400">Job Requirements:</p>
+            <ul className="list-disc text-justify pl-6">
+              {careerData?.requirements?.map((requirement) => (
+                <li className="text-sm py-1">{requirement}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
 
         {careerData?.edu_requirement?.length ? (
           <div className="pb-5">

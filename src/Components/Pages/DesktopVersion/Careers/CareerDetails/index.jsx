@@ -57,28 +57,36 @@ const CareerDetails = ({ setLoader }) => {
           <div className="pb-8">
             <p className="text-lg text-zinc-400">Job Responsibility:</p> <br />
             <ul className="list-disc text-justify pl-6">
-              {careerData?.responsibility?.map((resp) => (
-                <li className="text-lg py-1">{resp}</li>
+              {careerData?.responsibility?.map((resp, i) => (
+                <li key={i} className="text-lg py-1">
+                  {resp}
+                </li>
               ))}
             </ul>
           </div>
 
-          <div className="pb-8">
-            <p className="text-lg text-zinc-400">Job Requirements:</p> <br />
-            <ul className="list-disc text-justify pl-6">
-              {careerData?.requirements?.map((requirement) => (
-                <li className="text-lg py-1">{requirement}</li>
-              ))}
-            </ul>
-          </div>
+          {careerData?.requirements?.length ? (
+            <div className="pb-8">
+              <p className="text-lg text-zinc-400">Job Requirements:</p> <br />
+              <ul className="list-disc text-justify pl-6">
+                {careerData?.requirements?.map((requirement, i) => (
+                  <li key={i} className="text-lg py-1">
+                    {requirement}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
 
           {careerData?.edu_requirement?.length ? (
             <div className="pb-8">
               <p className="text-lg text-zinc-400">Educational Requirements:</p>{" "}
               <br />
               <ul className="list-disc text-justify pl-6">
-                {careerData?.edu_requirement?.map((resp) => (
-                  <li className="text-lg py-1">{resp}</li>
+                {careerData?.edu_requirement?.map((resp, i) => (
+                  <li key={i} className="text-lg py-1">
+                    {resp}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -97,8 +105,10 @@ const CareerDetails = ({ setLoader }) => {
             </p>{" "}
             <br />
             <ul className="list-disc text-justify pl-6">
-              {careerData?.additional?.map((resp) => (
-                <li className="text-lg py-1">{resp}</li>
+              {careerData?.additional?.map((resp, i) => (
+                <li key={i} className="text-lg py-1">
+                  {resp}
+                </li>
               ))}
             </ul>
           </div>

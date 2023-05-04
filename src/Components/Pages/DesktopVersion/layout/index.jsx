@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Sitemap from "../../Sitemap/Sitemap";
 import SitemapBuilder from "../../Sitemap/SitemapBuilder";
 import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
@@ -9,15 +9,17 @@ import CareerLayout from "../Careers/CareerLayout";
 import CaseStudyDetailsLayout from "../CaseStudy/CaseStudyDetails/CaseStudyDetailsLayout";
 import FaqLayout from "../FAQ/FaqLayout";
 import GalleryLayout from "../Gallery/GalleryLayout";
+import NotFound from "../NotFound";
 import ServiceDetailsLayout from "../Services/ServiceDetails/ServiceDetailsLayout";
 import DesktopLayout from "./DesktopLayout";
-import NotFound from "../NotFound";
+import ServicesLayout from "../Services/ServicesLayout";
 
 const Layout = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<DesktopLayout />} />
+        <Route path="services" element={<ServicesLayout />} />
         <Route path="blogs" element={<BlogsLayout />} />
         <Route path="blog/:slug" element={<BlogDetailsLayout />} />
         <Route path="services/:slug" element={<ServiceDetailsLayout />} />

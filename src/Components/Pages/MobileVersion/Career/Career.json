@@ -1,5 +1,103 @@
 [
   {
+    "id": "9",
+    "slug": "full-stack-developer",
+    "position": "Full Stack Developer (PHP)",
+    "summary": "As a Full Stack Developer at Quadque Technologies Limited, you'll be responsible for designing, developing and maintaining web applications, software, and systems that cover both the front-end and back-end of a project. You'll need to have a strong understanding of various programming languages (PHP/Laravel and  Vue.js / React.js is must), frameworks, and tools required to develop a complete web application. Your responsibilities will include managing databases, server-side scripting, front-end development, testing and debugging, and deploying the final product. As a Full Stack Developer at Quadque Technologies Limited, you'll be expected to work with different technologies and platforms to deliver a seamless user experience while having a good understanding of both the client-side and server-side of web development.",
+    "thumbnail": "https://i.ibb.co/xDZGsHM/Full-Stack-Developer-PHP.jpg",
+    "responsibility": [
+      "Candidates must have Solid experience in Raw PHP, Laravel, Vue.js, React.js, MySQL, JavaScript, HTML and CSS.",
+      "Develop back-end programing and logic in PHP(Laravel).",
+      "Integration of user-facing elements developed by front-end developers.",
+      "Build efficient, testable, and reusable PHP modules.",
+      "Solve complex performance problems and architectural challenges.",
+      "Integration of data storage solutions.",
+      "Help with code reviews and sharing your expertise with other developers.",
+      "Fix bugs, troubleshoot, and resolve problems of existing or current projects."
+    ],
+    "requirements": [
+      "Strong knowledge of PHP web frameworks.",
+      "Understanding the fully synchronous behavior of PHP.",
+      "Basic understanding of front-end technologies, such as JavaScript, HTML5, and CSS3.",
+      "Knowledge of object-oriented PHP programming.",
+      "Strong knowledge of the common PHP or web server exploits and their solutions.",
+      "Team working .",
+      "Proficient in English (oral & written).",
+      "Good troubleshooting skills.",
+      "Continuous learner.",
+      "Proactive.",
+      "Possesses a sense of ownership.",
+      "Interest in the work being done.",
+      "Must have previous and proven experience.",
+      "Job Related Skills Requirements.",
+      "Core Php/Laravel Knowledge.",
+      "Proven working experience with PHP Laravel framework and Integration with API."
+    ],
+    "edu_requirement": [
+      "B.Sc. / M.Sc. in Computer Science, Information System, or related field from any reputed public or private university."
+    ],
+    "salary": "35,000 BDT – 50,000 BDT",
+    "additional": [
+      "Weekly 2 Holidays.",
+      "Unlimited tea /coffee.",
+      "Yearly salary review.",
+      "Yearly 2 festival bonuses.",
+      "Friendly working environment.",
+      "Work with an exciting team and products.",
+      "Excellent growth and learning opportunities."
+    ],
+
+    "published_on": "30/04/2023",
+    "vacancy": "1",
+    "employment_status": "Full Time",
+    "office_time": "8 AM - 5 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": "3-6 Years  ## Do not Apply if you are a fresher## ## Do not Apply if you do not have enough time to read or enough understanding of the job responsibilities##",
+    "app_deadline": "25/05/2023",
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSc0chMBn_iSN8WWA2NV3iGNHKOk_ugleoXQs5RRHCyFfLNOvg/viewform?usp=pp_url"
+  },
+
+  {
+    "id": "8",
+    "slug": "senior-visualizer",
+    "position": "Senior Visualizer (Urgent Recruitment)",
+    "summary": "QuadQue Technologies Ltd. is looking for a sharp, talented, and dedicated Senior Visualizer to enhance our client's online presence along with brand value with eye-catching and professional designs. We need someone with extraordinary touch with photoshop and image manipulations. Also advance level of Video/Motion expertise.",
+    "thumbnail": "https://i.ibb.co/71TmM93/Whats-App-Image-2023-04-30-at-16-32-06.jpg",
+    "responsibility": [
+      "Analyze the content and ideas appropriate visual representation for the same.",
+      "Will be responsible for creating production/design guidelines and standard and ensure those being followed diligently.",
+      "Will be responsible for visualizing & designing screens based on approved look & feel and design guidelines standards.",
+      "Expert in visualisation and conceptualization.",
+      "Expert in Adobe Photoshop, Illustrator and other graphic tools and image manipulations.",
+      "Advance video production."
+    ],
+    "requirements": [],
+    "edu_requirement": [
+      "Graduation from Fine Arts (preferably from Graphics Design) also skilled candidates from any other discipline are encouraged to apply. ** Freshers are not allowed to apply for this position."
+    ],
+    "salary": "30,000 BDT - 50,000 BDT (Depending on the skill sets)",
+    "additional": [
+      "Weekly 2 Holidays.",
+      "Unlimited tea /coffee.",
+      "Yearly salary review.",
+      "Yearly 2 festival bonuses.",
+      "Friendly working environment.",
+      "Work with an exciting team and products.",
+      "Excellent growth and learning opportunities."
+    ],
+
+    "published_on": "30/04/2023",
+    "vacancy": "1",
+    "employment_status": "Full Time",
+    "office_time": "8 AM - 5 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": "4-8 years of industry experience. It can be relaxed for exceptional candidates. ## Do not Apply if you are a fresher##",
+    "app_deadline": "15/05/2023",
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSezFxCqV4kiICz05SHtkjt2YuE1Qnynh2ucuMkqzzea3SSZyQ/viewform?usp=pp_url"
+  },
+  {
     "id": "7",
     "slug": "seo-trainee",
     "position": "SEO (Trainee)",
@@ -38,7 +136,7 @@
     "published_on": "05/04/2023",
     "vacancy": "2",
     "employment_status": "Trainee",
-    "office_time": "8 AM - 5:30 PM",
+    "office_time": "8 AM - 5 PM",
     "location": "Dhaka, Bangladesh (Offshore Branch)",
     "office_days": "Sunday - Thursday (5 days a week)",
     "experience_req": null,
@@ -85,7 +183,7 @@
     "published_on": "05/04/2023",
     "vacancy": "2",
     "employment_status": "Trainee",
-    "office_time": "8 AM - 5:30 PM",
+    "office_time": "8 AM - 5 PM",
     "location": "Dhaka, Bangladesh (Offshore Branch)",
     "office_days": "Sunday - Thursday (5 days a week)",
     "experience_req": null,
@@ -132,7 +230,7 @@
     "published_on": "05/04/2023",
     "vacancy": "2",
     "employment_status": "Trainee",
-    "office_time": "8 AM - 5:30 PM",
+    "office_time": "8 AM - 5 PM",
     "location": "Dhaka, Bangladesh (Offshore Branch)",
     "office_days": "Sunday - Thursday (5 days a week)",
     "experience_req": null,
@@ -178,7 +276,52 @@
     "published_on": "05/04/2023",
     "vacancy": "2",
     "employment_status": "Trainee",
-    "office_time": "8 AM - 5:30 PM",
+    "office_time": "8 AM - 5 PM",
+    "location": "Dhaka, Bangladesh (Offshore Branch)",
+    "office_days": "Sunday - Thursday (5 days a week)",
+    "experience_req": null,
+    "app_deadline": "27/04/2023",
+    "appying_url": "https://docs.google.com/forms/d/e/1FAIpQLSdncKeXSDo3eFei1q8W5aXWgYi73W0mIQbfywkEQzTnfm_Ebw/viewform?usp=pp_url"
+  },
+  {
+    "id": "6",
+    "slug": "backend-developer-trainee",
+    "position": "Backend Developer (Trainee)",
+    "summary": null,
+    "thumbnail": "https://i.ibb.co/KwY0cVF/Whats-App-Image-2023-04-05-at-13-24-45.jpg",
+    "responsibility": [
+      "Assist and build, test, and maintain PHP-based web applications alongside the development team",
+      "Assist and write PHP code that is clean, efficient, and secure",
+      "Interact with SQL databases",
+      "Understand business flow and collaborate to fulfill requirements",
+      "Contributing ideas and experience to new development solutions",
+      "Keep up to date with latest web and technologies, trends and programming techniques"
+    ],
+
+    "requirements": [
+      "Fresh Graduates (Flexibility in academic degrees for the exceptional candidates)",
+      "Highly passionate on coding",
+      "Working knowledge in PHP ",
+      "Working under pressure and meeting deadlines",
+      "Strong motivation and organizational skills",
+      "Candidates proficient in using ChatGPT effectively will have higher chances"
+    ],
+
+    "edu_requirement": null,
+    "salary": "Honorarium 6000-8000 BDT",
+    "additional": [
+      "Weekly 2 Holiday",
+      "Lunch (partially subsidized)",
+      "Unlimited tea /coffee",
+      "Friendly working environment",
+      "Work with an exciting team and products",
+      "Opportunity to be our permanent member after successfully completion of the training period"
+    ],
+
+    "published_on": "05/04/2023",
+    "vacancy": "2",
+    "employment_status": "Trainee",
+    "office_time": "8 AM - 5 PM",
     "location": "Dhaka, Bangladesh (Offshore Branch)",
     "office_days": "Sunday - Thursday (5 days a week)",
     "experience_req": null,

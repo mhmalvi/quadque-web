@@ -1,6 +1,7 @@
 import { Alert, Modal, Space, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
+import Services from ".";
 import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
@@ -8,9 +9,9 @@ import welcomeAvatar from "../../../../asstes/Lotties/welcome_avatar.json";
 import Icons from "../../../Shared/Icons";
 import { handleLetsGoAudio } from "../../../Shared/Sounds";
 import Navbar from "../Navbar";
-import CenterLayout from "./CenterLayout";
+import AllService from "./AllService";
 
-const DesktopLayout = () => {
+const ServicesLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
   const [openMenus, setOpenMenus] = useState(false);
   const [showSoundAlert, setShowSoundAlert] = useState(false);
@@ -41,8 +42,6 @@ const DesktopLayout = () => {
       setShowSoundAlert(true);
     }, 3000);
 
-    document.getElementById("main_container").style.height =
-      "calc(100vh - 80px)";
     document.getElementById("main_container").style.backgroundColor = "#000000";
   }, []);
 
@@ -56,6 +55,7 @@ const DesktopLayout = () => {
         allow="autoplay loop"
         style={{ display: "none" }}
       />
+
       <Modal
         style={{
           backgroundColor: "black !important",
@@ -183,9 +183,11 @@ const DesktopLayout = () => {
         {/* Middle Main container */}
         <div
           id="main_container"
-          className="bg-green-100 main_container w-full h-screen my-auto shadow-md"
+          className="bg-green-100  w-full h-screen my-auto shadow-md"
         >
-          <CenterLayout />
+          <div className="w-10/12 mx-auto my-16">
+            <AllService />
+          </div>
         </div>
 
         {/* Right bar */}
@@ -337,4 +339,4 @@ const DesktopLayout = () => {
   );
 };
 
-export default DesktopLayout;
+export default ServicesLayout;
