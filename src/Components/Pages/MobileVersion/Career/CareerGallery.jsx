@@ -37,7 +37,9 @@ const CareerGallery = () => {
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
-  const currentPosts = Career?.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = Career?.slice(indexOfFirstPost, indexOfLastPost)
+    ?.sort((a, b) => (parseInt(a.id) > parseInt(b.id) ? 1 : -1))
+    .reverse();
 
   return (
     <>
@@ -45,10 +47,10 @@ const CareerGallery = () => {
       {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{`Blog - Get The Best Online IT Services for Business - Quadque`}</title>
+        <title>{`Career - Get The Best Online IT Services for Business - Quadque`}</title>
         <meta
           name="description"
-          content="Look at our informative blogs, where we discuss various interesting topics related to the IT industry, such as website development , UI/UX design and digital marketing and so on."
+          content="Do you have the skills to help us make a more significant impact on the IT industry? Want to join our team and contribute your expertise? If so, let's get in touch!"
         />
       </Helmet>
 
@@ -70,8 +72,8 @@ const CareerGallery = () => {
         </div>
       ) : null}
       <div className="Career w-full font_primary">
-        {currentPosts?.map((details) => (
-          <Link to={`/career/${details.slug}`}>
+        {currentPosts?.map((details, i) => (
+          <Link key={i} to={`/career/${details.slug}`}>
             <div key={details.id} className="rounded-xl pb-6 relative mx-6">
               <img
                 src={details.thumbnail}
@@ -81,7 +83,8 @@ const CareerGallery = () => {
               <div className="flex items-center justify-between pb-2 px-2 gap-4">
                 <div>
                   <div className="text-lg text-white pt-4">
-                    Position: {details.position}
+                    {/* Position: {details.position} */}
+                    {details.position}
                   </div>
                   {details.app_deadline ? (
                     <div className="text-white text-sm italic font-thin">

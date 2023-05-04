@@ -38,18 +38,14 @@ const BlogDetails = ({ setLoader }) => {
 
   useEffect(() => {
     const NextBlogs = [];
-    // let currentBlogid = slug;
     let i;
 
     let currentBlogIndex = blogs?.findIndex((x) => x.slug === slug);
     let nextBlogIndex = currentBlogIndex;
-    //console.log("index", currentBlogIndex);
     for (i = 0; i < 4; i++) {
       if (nextBlogIndex < blogs.length - 1) {
         nextBlogIndex++;
-        //console.log("index", nextBlogIndex);
         NextBlogs.push(blogs[nextBlogIndex]);
-        //console.log("Array", NextBlogs);
       } else {
         nextBlogIndex = 0;
         NextBlogs.push(blogs[nextBlogIndex]);
@@ -66,19 +62,18 @@ const BlogDetails = ({ setLoader }) => {
     }, 1000);
   };
 
+  const isFacebookBot = navigator.userAgent.includes("facebook");
+  const isFacebookBot1 = navigator.userAgent.includes(
+    "facebookexternalhit/1.1. facebookcatalog/1.0."
+  );
+  const isTweeterBot = navigator.userAgent.includes("Twitterbot");
+  console.log("navigator.userAgent", navigator.userAgent);
+  console.log("isFacebookBot", isFacebookBot);
+  console.log("isTweeterBot", isTweeterBot);
 
-   const isFacebookBot = navigator.userAgent.includes("facebook");
-   const isFacebookBot1 = navigator.userAgent.includes(
-     "facebookexternalhit/1.1. facebookcatalog/1.0."
-   );
-   const isTweeterBot = navigator.userAgent.includes("Twitterbot");
-   console.log("navigator.userAgent", navigator.userAgent);
-   console.log("isFacebookBot", isFacebookBot);
-   console.log("isTweeterBot", isTweeterBot);
-   
-    if (isFacebookBot || isFacebookBot1 || isTweeterBot) {
-      window.location.href = `https://latest-server.quadque.tech/blog/${slug}`;
-    }
+  if (isFacebookBot || isFacebookBot1 || isTweeterBot) {
+    window.location.href = `https://latest-server.quadque.tech/blog/${slug}`;
+  }
 
   return (
     <>

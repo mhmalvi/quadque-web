@@ -1,5 +1,5 @@
 import React from "react";
-import AllService from "./Services";
+import AllService from "./AllService";
 
 const Services = ({ loader, setLoader }) => {
   return (

@@ -3,17 +3,15 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-reveal";
 import { Link, useNavigate } from "react-router-dom";
-import useBlogs from "../../../Shared/Hooks/useBlog";
 import Icons from "../../../Shared/Icons";
 import careerData from "../../MobileVersion/Career/Career.json";
 
 const Career = ({ setLoader }) => {
   const navigate = useNavigate();
-  const [allBlogs] = useBlogs();
   const [totalPosts, setTotalPosts] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [PostsPerPage] = useState(8);
-  // const [loader, setLoader] = useState(true);
+  const [careerPosts, setCareerPosts] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,11 +19,11 @@ const Career = ({ setLoader }) => {
 
   useEffect(() => {
     setTotalPosts(careerData.length);
-  }, [allBlogs]);
+  }, []);
 
   const indexOfLastPost = currentPage * PostsPerPage;
   const indexOfFirstPost = indexOfLastPost - PostsPerPage;
-  const currentPosts = allBlogs?.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = careerData?.slice(indexOfFirstPost, indexOfLastPost);
 
   useEffect(() => {
     if (currentPosts !== "") {
@@ -37,7 +35,16 @@ const Career = ({ setLoader }) => {
         setLoader(false);
       }, 3000);
     }
-  }, [currentPosts, setLoader]);
+
+    setCareerPosts(
+      currentPosts
+        ?.sort((a, b) => (parseInt(a.id) > parseInt(b.id) ? 1 : -1))
+        .reverse()
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, setLoader]);
+
+  console.log(careerPosts);
 
   return (
     <>
@@ -48,9 +55,7 @@ const Career = ({ setLoader }) => {
         <title>{`Career - Get The Best Online IT Services for Business - Quadque`}</title>
         <meta
           name="description"
-          content="Do you have the skills to help us make a more significant impact on the IT
-industry? Want to join our team and contribute your expertise? If so, let's get
-in touch!"
+          content="Do you have the skills to help us make a more significant impact on the IT industry? Want to join our team and contribute your expertise? If so, let's get in touch!"
         />
       </Helmet>
 
@@ -68,8 +73,8 @@ in touch!"
         </div>
         <Fade left cascade>
           <div className="Blog w-full px-6 grid grid-cols-3 2xl:grid-cols-4 gap-8 justify-center items-stretch">
-            {careerData?.map((details) => (
-              <Link key={details.id} to={`/career/${details.slug}`}>
+            {careerPosts?.map((details, i) => (
+              <Link key={i} to={`/career/${details.slug}`}>
                 <div className="rounded-xl mx-auto pb-6 relative bg-white bg-opacity-20 hover:bg-opacity-25 backdrop-filter backdrop-blur-xl p-1 scale-100 transition delay-200 hover:scale-105 hover:delay-300 hover:transition">
                   <img
                     // src={

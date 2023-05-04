@@ -4,7 +4,6 @@ import "./index.css";
 import { Breakpoint, BreakpointProvider } from "react-socks";
 import DesktopLayout from "./Components/Pages/DesktopVersion/layout";
 import MobileLayout from "./Components/Pages/MobileVersion/layout";
-import { useEffect } from "react";
 
 function App() {
   // useEffect(() => {
