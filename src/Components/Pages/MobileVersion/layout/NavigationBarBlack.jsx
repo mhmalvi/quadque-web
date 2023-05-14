@@ -109,7 +109,7 @@ const NavigationBarBlack = () => {
           </div>
 
           <div onClick={() => setOpen(false)} className="font_title">
-            <Link to="career">Careers</Link>
+            <Link to="career">Career</Link>
           </div>
 
           {/*           <div onClick={() => setOpen(false)} className="font_title">

@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Footer = () => {
-  const[year, setYear] = useState("");
+  const [year, setYear] = useState("");
 
   useEffect(() => {
     const d = new Date();
     setYear(d.getFullYear());
-}, [])
+  }, []);
 
   return (
     <div id="Footer" className="w-full text-white relative mt-24 font_primary">
@@ -29,7 +29,7 @@ const Footer = () => {
       <div className="flex mt-10 px-6 gap-2">
         <div className="w-1/2 flex-col leading-10">
           <a href="/career" className="my-2">
-            Careers
+            Career
           </a>
           <Link to={`/faq`}>
             <p className="my-2">FAQ's</p>

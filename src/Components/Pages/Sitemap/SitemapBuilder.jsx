@@ -21,6 +21,7 @@ const SitemapBuilder = () => {
 <changefreq>always</changefreq>
 </url>
 <url> <loc>https://www.quadque.tech/services</loc>
+<priority>0.7</priority>
 <lastmod>${date.getFullYear()}-${
       date.getMonth() + 1 < 10
         ? "0" + (date.getMonth() + 1)
@@ -28,6 +29,7 @@ const SitemapBuilder = () => {
     }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
 </url>
 <url> <loc>https://www.quadque.tech/career</loc>
+<priority>0.7</priority>
 <lastmod>${date.getFullYear()}-${
       date.getMonth() + 1 < 10
         ? "0" + (date.getMonth() + 1)
@@ -35,6 +37,7 @@ const SitemapBuilder = () => {
     }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
 </url>
 <url> <loc>https://www.quadque.tech/faq</loc>
+<priority>0.3</priority>
 <lastmod>${date.getFullYear()}-${
       date.getMonth() + 1 < 10
         ? "0" + (date.getMonth() + 1)
@@ -42,6 +45,7 @@ const SitemapBuilder = () => {
     }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
 </url>
 <url> <loc>https://www.quadque.tech/blogs</loc>
+<priority>0.7</priority>
 <lastmod>${date.getFullYear()}-${
       date.getMonth() + 1 < 10
         ? "0" + (date.getMonth() + 1)
@@ -49,6 +53,7 @@ const SitemapBuilder = () => {
     }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
 </url>
 <url> <loc>https://www.quadque.tech/gallery</loc>
+<priority>0.2</priority>
 <lastmod>${date.getFullYear()}-${
       date.getMonth() + 1 < 10
         ? "0" + (date.getMonth() + 1)
@@ -60,6 +65,7 @@ const SitemapBuilder = () => {
       sitemapData =
         sitemapData +
         `\n<url> <loc>https://www.quadque.tech/blog/${blog?.slug}</loc>
+        <priority>0.7</priority>
         <lastmod>${date.getFullYear()}-${
           date.getMonth() + 1 < 10
             ? "0" + (date.getMonth() + 1)
@@ -74,6 +80,7 @@ const SitemapBuilder = () => {
       sitemapData =
         sitemapData +
         `\n<url> <loc>https://www.quadque.tech/case-study/${study?.slug}</loc>
+        <priority>0.7</priority>
         <lastmod>${date.getFullYear()}-${
           date.getMonth() + 1 < 10
             ? "0" + (date.getMonth() + 1)
@@ -87,6 +94,7 @@ const SitemapBuilder = () => {
       sitemapData =
         sitemapData +
         `\n<url> <loc>https://www.quadque.tech/services/${service?.slug}</loc>
+        <priority>0.7</priority>
         <lastmod>${date.getFullYear()}-${
           date.getMonth() + 1 < 10
             ? "0" + (date.getMonth() + 1)
@@ -101,6 +109,7 @@ const SitemapBuilder = () => {
       sitemapData =
         sitemapData +
         `\n<url> <loc>https://www.quadque.tech/career/${career?.slug}</loc>
+        <priority>0.7</priority>
         <lastmod>${date.getFullYear()}-${
           date.getMonth() + 1 < 10
             ? "0" + (date.getMonth() + 1)
@@ -112,7 +121,7 @@ const SitemapBuilder = () => {
     });
 
     setData(sitemapData + "\n</urlset>");
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blogs, caseStudy, services]);
 
   const handleClick = () => {

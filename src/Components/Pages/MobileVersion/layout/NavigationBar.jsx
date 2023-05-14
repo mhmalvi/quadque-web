@@ -34,7 +34,10 @@ const NavigationBar = () => {
               alt="Logo"
             />
             {/* <Icons.BrandLogoMobWithTagline className="w-32 text-white animate-pulse" /> */}
-            <div id="tagline" className="image-wrapper shine overlay pt-1 block sm:hidden">
+            <div
+              id="tagline"
+              className="image-wrapper shine overlay pt-1 block sm:hidden"
+            >
               <img
                 src={Tagline}
                 alt="tagline"
@@ -106,10 +109,10 @@ const NavigationBar = () => {
           </div>
 
           <div onClick={() => setOpen(false)} className="font_title">
-            <Link to="career">Careers</Link>
+            <Link to="career">Career</Link>
           </div>
 
-{/*           <div onClick={() => setOpen(false)} className="font_title">
+          {/*           <div onClick={() => setOpen(false)} className="font_title">
             <Link to="/gallery">Gallery</Link>
           </div>
 
