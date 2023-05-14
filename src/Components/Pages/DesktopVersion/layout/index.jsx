@@ -4,8 +4,6 @@ import Sitemap from "../../Sitemap/Sitemap";
 import SitemapBuilder from "../../Sitemap/SitemapBuilder";
 import BlogsLayout from "../Blogs/AllBlog/BlogsLayout";
 import BlogDetailsLayout from "../Blogs/BlogDetails/BlogDetailsLayout";
-import CareerDetailsLayout from "../Careers/CareerDetails/CareerDetailsLayout";
-import CareerLayout from "../Careers/CareerLayout";
 import CaseStudyDetailsLayout from "../CaseStudy/CaseStudyDetails/CaseStudyDetailsLayout";
 import FaqLayout from "../FAQ/FaqLayout";
 import GalleryLayout from "../Gallery/GalleryLayout";
@@ -13,6 +11,9 @@ import NotFound from "../NotFound";
 import ServiceDetailsLayout from "../Services/ServiceDetails/ServiceDetailsLayout";
 import DesktopLayout from "./DesktopLayout";
 import ServicesLayout from "../Services/ServicesLayout";
+import RedirectToSitemapIndex from "../../Sitemap/RedirectToSitemapIndex";
+import CareerDetailsLayout from "../Careers/CareerDetails/CareerDetailsLayout";
+import CareerLayout from "../Careers/CareerLayout";
 
 const Layout = () => {
   return (
@@ -30,6 +31,7 @@ const Layout = () => {
         <Route path="gallery" element={<GalleryLayout />} />
         <Route path="sitemap" element={<Sitemap />} />
         <Route path="build-sitemap" element={<SitemapBuilder />} />
+        <Route path="sitemap.xml" element={<RedirectToSitemapIndex />} />
         <Route path={"404"} element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
