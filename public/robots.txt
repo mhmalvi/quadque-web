@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: https://server-quadquetech.quadque.digital/
 sitemap: https://www.quadque.tech/sitemap_index.xml
