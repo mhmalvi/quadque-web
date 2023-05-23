@@ -14,6 +14,7 @@ import ServicesLayout from "../Services/ServicesLayout";
 import RedirectToSitemapIndex from "../../Sitemap/RedirectToSitemapIndex";
 import CareerDetailsLayout from "../Careers/CareerDetails/CareerDetailsLayout";
 import CareerLayout from "../Careers/CareerLayout";
+import ProductsLayout from "../Products/ProductsLayout";
 
 const Layout = () => {
   return (
@@ -27,6 +28,7 @@ const Layout = () => {
         <Route path="case-study/:slug" element={<CaseStudyDetailsLayout />} />
         <Route path="faq" element={<FaqLayout />} />
         <Route path="career" element={<CareerLayout />} />
+        <Route path="products" element={<ProductsLayout />} />
         <Route path="career/:slug" element={<CareerDetailsLayout />} />
         <Route path="gallery" element={<GalleryLayout />} />
         <Route path="sitemap" element={<Sitemap />} />

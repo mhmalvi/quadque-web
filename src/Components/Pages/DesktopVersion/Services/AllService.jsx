@@ -84,7 +84,7 @@ const AllService = () => {
 
   return (
     <div className="w-full lg:h-[80vh] 2xl:h-[90vh] relative text-white flex justify-between font_primary lg:pt-5 lg:pb-6 2xl:pb-[75px]">
-      <div className="w-[255px] min-h-full flex flex-col justify-between">
+      <div className="w-[255px] min-h-full pt-18">
         <div>
           <Fade left cascade spy={triggerAnimation}>
             <div>

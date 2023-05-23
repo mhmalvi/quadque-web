@@ -19,6 +19,7 @@ import Gallery from "../Gallery";
 import CareerGallery from "../Career/CareerGallery";
 import CareerDetail from "../Career/CareerDetail";
 import NotFound from "../NotFound";
+import ProductGallery from "../ProductGallery";
 // import FooterWhite from "./FooterWhite";
 // import NavigationBarBlack from "./NavigationBarBlack";
 
@@ -103,6 +104,14 @@ const Layout = () => {
             element={
               <>
                 <CareerGallery />
+              </>
+            }
+          />
+          <Route
+            path={"products"}
+            element={
+              <>
+                <ProductGallery />
               </>
             }
           />
