@@ -2,13 +2,13 @@ import { Modal, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Products from ".";
 import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
 import Navbar from "../Navbar";
-import Products from ".";
 
 const ProductsLayout = () => {
   const navigate = useNavigate();
