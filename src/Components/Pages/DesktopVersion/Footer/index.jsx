@@ -164,6 +164,20 @@ const Footer = () => {
                         >
                           <Icons.TwiterDesktop />
                         </a>
+                        <a
+                          href="https://www.linkedin.com/company/quadque-technologies-ltd/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Icons.FooterLinkedin className="w-4 ml-4" />
+                        </a>
+                        <a
+                          href="https://www.tiktok.com/@quadque"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Icons.FooterTiktok className="w-4 ml-3.5" />
+                        </a>
                       </div>
                     </div>
                   </Fade>
@@ -254,6 +268,9 @@ const Footer = () => {
                         <a href={"../#about"}>About Us</a>
                       </h4>
                       <h4 className="text-xs xl:text-sm font-normal mb-2.5">
+                        <a href={"/products"}>Products</a>
+                      </h4>
+                      <h4 className="text-xs xl:text-sm font-normal mb-2.5">
                         <a href={"/career"}>Career</a>
                       </h4>
                       <h4 className="text-xs xl:text-sm font-normal mb-2.5">
@@ -272,10 +289,10 @@ const Footer = () => {
                 <div className="w-4/12 ml-9 font_primary">
                   <Fade left spy={triggerTitleAnimation}>
                     <h3 className="text-base xl:text-lg font-medium mb-6">
-                      Address
+                      Find Us
                     </h3>
                     <div>
-                      <div className="relative">
+                      <div className="relative ">
                         <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-2.5">
                           <div className="leading-6 mb-2">
                             <p className="flex items-start">
@@ -290,7 +307,7 @@ const Footer = () => {
                               </span>
                             </p>
                           </div>
-                          <div className="leading-6 flex items-start">
+                          <div className="leading-6 flex items-start pt-2">
                             <span>
                               <Icons.BluePhone className="mr-2.5 text-brand-color" />
                             </span>
@@ -313,7 +330,7 @@ const Footer = () => {
 
                       <div className="relative">
                         <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-2.5">
-                          <div className="leading-6 mb-2">
+                          <div className="leading-6 mb-2 py-2">
                             <p className="flex items-start">
                               <img
                                 className="w-6 mr-2.5"
@@ -351,8 +368,9 @@ const Footer = () => {
                   </Fade>
                 </div>
               </div>
-              <div className="flex justify-center text-xs pb-2 pt-4 2xl:pt-10">
-                Quadque©{year}, All rights reserved
+              <div className="flex justify-end text-xs pb-2 pt-4 2xl:pt-10">
+                © 2020 - {year} | Quadque Technologies Private Limited |
+                Imagination {">"} Knowledge | All rights reserved
               </div>
             </div>
           </div>

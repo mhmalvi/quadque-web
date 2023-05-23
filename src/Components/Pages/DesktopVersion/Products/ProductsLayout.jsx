@@ -1,32 +1,21 @@
-import { Alert, Modal, Space, Tooltip } from "antd";
+import { Modal, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
-import welcomeAvatar from "../../../../asstes/Lotties/welcome_avatar.json";
+import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
-import { handleLetsGoAudio } from "../../../Shared/Sounds";
 import Navbar from "../Navbar";
-import CenterLayout from "./CenterLayout";
+import Products from ".";
 
-const DesktopLayout = () => {
+const ProductsLayout = () => {
+  const navigate = useNavigate();
   const [mouseHover, setMouseHover] = useState(false);
-  const [openMenus, setOpenMenus] = useState(false);
-  const [showSoundAlert, setShowSoundAlert] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(false);
   const [muted, setMuted] = useState(true);
-  const synth = window.speechSynthesis;
-
-  useEffect(() => {
-    // synth.cancel();
-
-    if (!localStorage.getItem("welcome")) {
-      setTimeout(() => {
-        setShowWelcome(true);
-      }, 3000);
-    }
-  }, [synth]);
+  const [openMenus, setOpenMenus] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     if (muted) {
@@ -36,18 +25,12 @@ const DesktopLayout = () => {
     }
   }, [muted]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowSoundAlert(true);
-    }, 3000);
-
-    document.getElementById("main_container").style.height =
-      "calc(100vh - 80px)";
-    document.getElementById("main_container").style.backgroundColor = "#000000";
-  }, []);
+  const handleNavigate = () => {
+    navigate(`../#start-project`, { replace: true });
+  };
 
   return (
-    <div className="w-full h-full">
+    <div className="blog_details w-full h-full">
       {/* For website background Audio */}
       <iframe
         id="iframeAudio"
@@ -56,6 +39,7 @@ const DesktopLayout = () => {
         allow="autoplay loop"
         style={{ display: "none" }}
       />
+
       <Modal
         style={{
           backgroundColor: "black !important",
@@ -83,7 +67,7 @@ const DesktopLayout = () => {
       <div className="relative flex justify-center bg-white">
         {/* Left bar */}
         <div className="w-[100px] min-h-full py-10 z-50 absolute left-0 flex flex-col justify-between left_bar bg-white">
-          <a href="/" alt="Quadque Technologies Limited Logo">
+          <a href="/">
             <Icons.BrandLogo className="mx-auto" />
           </a>
 
@@ -114,18 +98,17 @@ const DesktopLayout = () => {
             </span>
           </div>
 
-          <div className="social_media mb-28 -rotate-90 flex justify-center items-center">
+          <div className="mb-16 -rotate-90 flex justify-center items-center">
             <Tooltip
               placement="right"
               title="Facebook"
               color={"rgba(90, 90, 90, 0.7)"}
-              // color={"blue"}
             >
               <a
                 href="https://www.facebook.com/quadquetech"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[blue] transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
               >
                 fb
               </a>
@@ -133,31 +116,14 @@ const DesktopLayout = () => {
 
             <Tooltip
               placement="right"
-              title="Youtube"
-              // color={"#FF0000"}
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
-                rel="noreferrer"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[#FF0000] transition-colors delay-150 "
-              >
-                yt
-              </a>
-            </Tooltip>
-
-            <Tooltip
-              placement="right"
               title="Instagram"
-              // color={"#F701A2"}
               color={"rgba(90, 90, 90, 0.7)"}
             >
               <a
                 href="https://www.instagram.com/quadquetech/"
                 rel="noreferrer"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[#F701A2] transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
               >
                 in
               </a>
@@ -165,46 +131,31 @@ const DesktopLayout = () => {
 
             <Tooltip
               placement="right"
-              title="LinkedIn"
+              title="Youtube"
               color={"rgba(90, 90, 90, 0.7)"}
             >
               <a
-                href="https://twitter.com/QuadqueT"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[#00acee] transition-colors delay-150 "
+                href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
                 rel="noreferrer"
+                target="_blank"
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
               >
-                tw
+                yt
               </a>
             </Tooltip>
 
             <Tooltip
               placement="right"
-              title="LinkedIn"
+              title="Linkedin"
               color={"rgba(90, 90, 90, 0.7)"}
             >
               <a
                 href="https://bd.linkedin.com/company/quadque-technologies-ltd"
                 target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[#0072b1] transition-colors delay-150 "
+                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
                 rel="noreferrer"
               >
                 ln
-              </a>
-            </Tooltip>
-
-            <Tooltip
-              placement="right"
-              title="Tiktok"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://www.tiktok.com/@quadque"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-[#ff0050] transition-colors delay-150 "
-                rel="noreferrer"
-              >
-                tk
               </a>
             </Tooltip>
           </div>
@@ -213,9 +164,9 @@ const DesktopLayout = () => {
         {/* Middle Main container */}
         <div
           id="main_container"
-          className="bg-green-100 main_container w-full h-screen my-auto shadow-md"
+          className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
-          <CenterLayout />
+          <Products setLoader={setLoader} />
         </div>
 
         {/* Right bar */}
@@ -268,12 +219,12 @@ const DesktopLayout = () => {
               <div>&nbsp;</div>
               <div>&nbsp;</div>
               <div className="mb-9 -rotate-90 flex justify-center items-center">
-                <a
-                  href="#start-project"
-                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_primary mr-4"
+                <div
+                  onClick={handleNavigate}
+                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_primary mr-4 cursor-pointer"
                 >
                   start project
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -283,88 +234,21 @@ const DesktopLayout = () => {
       {/* Bottom bar */}
       <div className="absolute bottom-0 z-50 w-full h-10 bg-white"></div>
 
-      {/* Welcome Message */}
-      <div
-        className={`${
-          showWelcome
-            ? "left-0 transition-all delay-700 duration-1000 ease-in-out"
-            : "-left-96 transition-all delay-700 duration-1000 ease-in-out"
-        } transition-all delay-700 ease-in-out absolute top-0 z-50 flex items-center`}
-      >
-        <div className="flex items-center relative">
+      {/* Loader */}
+      {loader ? (
+        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 2xl:left-10 bg-black backdrop-blur-md bg-opacity-80">
           <Lottie
-            className="w-36 mx-auto"
-            animationData={welcomeAvatar}
+            className="w-1/6 mx-auto"
+            animationData={loaderFile}
             loop={true}
           />
-
-          <div className="relative">
-            <div className="flex items-center">
-              <div className="bg-white w-4 h-4 rotate-45 rounded-sm">
-                &nbsp;
-              </div>
-              <span className="bg-white px-4 py-2.5 -ml-2.5 font-semibold font_title rounded-md shadow-md">
-                Hi There, Welcome
-              </span>
-            </div>
-
-            <div
-              className={`${
-                showWelcome
-                  ? " w-6 h-6 transition-all delay-700 ease-in-out"
-                  : "w-0 h-0 transition-all delay-700 ease-in-out"
-              } absolute -top-3.5 -right-4 rounded-full flex justify-center items-center bg-gray-700 text-white cursor-pointer`}
-              onClick={() => {
-                setShowWelcome(false);
-                localStorage.setItem("welcome", false);
-              }}
-            >
-              <span className="-mt-1">x</span>
-            </div>
+          <div className="font_title text-3xl font-semibold text-white">
+            Loading...
           </div>
-        </div>
-      </div>
-
-      {/* Sound Permisson */}
-      {showSoundAlert ? (
-        <div className="absolute top-16 right-32">
-          <Alert
-            className={`${
-              showSoundAlert
-                ? "w-96 transition-all delay-700 duration-700 ease-in-out"
-                : "w-0 transition-all delay-700 duration-700 ease-in-out"
-            } transition-all delay-700 ease-in-out absolute top-0 right-0 z-50 flex items-center font_title`}
-            // message="Alert"
-            description="Enable sound for a more immersive experience?"
-            type="warning"
-            action={
-              <Space direction="vertical" className="ml-4 flex items-center">
-                <button
-                  className="w-20 px-3 py-0.5 rounded-md bg-brand-color text-white"
-                  onClick={() => {
-                    setMuted(false);
-                    setShowSoundAlert(false);
-                    handleLetsGoAudio();
-                  }}
-                >
-                  Let's Go
-                </button>
-                <button
-                  className="w-20 px-3 py-0.5 rounded-md bg-black text-white"
-                  onClick={() => {
-                    setMuted(true);
-                    setShowSoundAlert(false);
-                  }}
-                >
-                  No
-                </button>
-              </Space>
-            }
-          />
         </div>
       ) : null}
     </div>
   );
 };
 
-export default DesktopLayout;
+export default ProductsLayout;

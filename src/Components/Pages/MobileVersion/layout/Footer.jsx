@@ -37,6 +37,9 @@ const Footer = () => {
           <a href="/#Service" className="my-2">
             Services
           </a>
+          <Link to={`/products`}>
+            <p className="my-2">Products</p>
+          </Link>
         </div>
         <div className="w-1/2 flex-col leading-10">
           <a href="/#Case_Study" className="my-2">
@@ -87,8 +90,12 @@ const Footer = () => {
         </a>
       </div>
 
-      <div id="demo" className="flex justify-center text-xs pb-2">
-        © {year} Quadque Technologies, All rights reserved.
+      <div
+        id="demo"
+        className="flex justify-center items-center mx-4 text-center text-xs pb-4"
+      >
+        © 2020 - {year} | Quadque Technologies Private Limited | Imagination{" "}
+        {">"} Knowledge | All rights reserved
       </div>
     </div>
   );
