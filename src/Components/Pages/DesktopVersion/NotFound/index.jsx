@@ -1,13 +1,13 @@
 import { Modal, Tooltip } from "antd";
-import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
+import Astro404 from "../../../../asstes/Images/404.png";
 import muteImg from "../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../asstes/Images/unmute.png";
 import Icons from "../../../Shared/Icons";
+import SocialLinks from "../../../Shared/SocialLinks";
 import Navbar from "../Navbar";
-import Astro404 from "../../../../asstes/Images/404.png"
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -96,67 +96,7 @@ const NotFound = () => {
             </span>
           </div>
 
-          <div className="mb-16 -rotate-90 flex justify-center items-center">
-            <Tooltip
-              placement="right"
-              title="Facebook"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://www.facebook.com/quadquetech"
-                rel="noreferrer"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-              >
-                fb
-              </a>
-            </Tooltip>
-
-            <Tooltip
-              placement="right"
-              title="Instagram"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://www.instagram.com/quadquetech/"
-                rel="noreferrer"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-              >
-                in
-              </a>
-            </Tooltip>
-
-            <Tooltip
-              placement="right"
-              title="Youtube"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
-                rel="noreferrer"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-              >
-                yt
-              </a>
-            </Tooltip>
-
-            <Tooltip
-              placement="right"
-              title="Linkedin"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://bd.linkedin.com/company/quadque-technologies-ltd"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-                rel="noreferrer"
-              >
-                ln
-              </a>
-            </Tooltip>
-          </div>
+          <SocialLinks />
         </div>
 
         {/* Middle Main container */}

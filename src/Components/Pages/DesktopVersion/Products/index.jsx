@@ -19,7 +19,12 @@ const Products = ({ setLoader }) => {
         <title>{`Products - Get The Best Online IT Services for Business - Quadque`}</title>
       </Helmet>
 
-      <div className="min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font_primary">
+      <div
+        className="min-h-full bg-black text-white py-20 px-36 h-[90vh] overflow-y-auto font_primary"
+        style={{
+          scrollbarWidth: "0px",
+        }}
+      >
         <div className="text-3xl text-white mt-10 px-6 pb-14 font_title">
           Our Products
         </div>
