@@ -1,6 +1,7 @@
 body {
   /* cursor: url(asstes/Images/cursor.svg), auto; */
   font-family: "Montserrat", sans-serif;
+  scrollbar-width: none;
 }
 
 /* Global Fonts */
@@ -70,6 +71,10 @@ body {
 }
 
 body::-webkit-scrollbar {
+  display: none;
+}
+
+*::-webkit-scrollbar {
   display: none;
 }
 

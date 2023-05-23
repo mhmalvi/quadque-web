@@ -2,15 +2,9 @@ import { Modal, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 // import { Helmet } from "react-helmet";
-import {
-  redirect,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 // import { useSpeechSynthesis } from "react-speech-kit";
 import siteAudio from "../../../../../asstes/Audio/site_audio.mp3";
-import favicon from "../../../../../asstes/Images/logo.png";
 import muteImg from "../../../../../asstes/Images/mute.png";
 import unmuteImg from "../../../../../asstes/Images/unmute.png";
 import loaderFile from "../../../../../asstes/Lotties/loader.json";
@@ -19,6 +13,7 @@ import Icons from "../../../../Shared/Icons";
 // import { handleFetchBlogBySlug } from "../../../../Shared/services";
 import Navbar from "../../Navbar";
 import BlogDetails from "./BlogDetails";
+import SocialLinks from "../../../../Shared/SocialLinks";
 
 const BlogDetailsLayout = () => {
   const [mouseHover, setMouseHover] = useState(false);
@@ -47,19 +42,6 @@ const BlogDetailsLayout = () => {
         setLoader(false);
       }
     })(); */
-
-    const isFacebookBot = navigator.userAgent.includes("facebook");
-    const isFacebookBot1 = navigator.userAgent.includes(
-      "facebookexternalhit/1.1. facebookcatalog/1.0."
-    );
-    const isTweeterBot = navigator.userAgent.includes("Twitterbot");
-    console.log("navigator.userAgent", navigator.userAgent);
-    console.log("isFacebookBot", isFacebookBot);
-    console.log("isTweeterBot", isTweeterBot);
-
-    if (isFacebookBot || isFacebookBot1 || isTweeterBot) {
-      window.location.href = `https://latest-server.quadque.tech/blog/${slug}`;
-    }
 
     if (muted) {
       document.getElementById("iframeAudio").src = "";
@@ -195,67 +177,7 @@ const BlogDetailsLayout = () => {
               </span>
             </div>
 
-            <div className="mb-16 -rotate-90 flex justify-center items-center">
-              <Tooltip
-                placement="right"
-                title="Facebook"
-                color={"rgba(90, 90, 90, 0.7)"}
-              >
-                <a
-                  href="https://www.facebook.com/quadquetech"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-                >
-                  fb
-                </a>
-              </Tooltip>
-
-              <Tooltip
-                placement="right"
-                title="Instagram"
-                color={"rgba(90, 90, 90, 0.7)"}
-              >
-                <a
-                  href="https://www.instagram.com/quadquetech/"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-                >
-                  in
-                </a>
-              </Tooltip>
-
-              <Tooltip
-                placement="right"
-                title="Youtube"
-                color={"rgba(90, 90, 90, 0.7)"}
-              >
-                <a
-                  href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
-                  rel="noreferrer"
-                  target="_blank"
-                  className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-                >
-                  yt
-                </a>
-              </Tooltip>
-
-              <Tooltip
-                placement="right"
-                title="Linkedin"
-                color={"rgba(90, 90, 90, 0.7)"}
-              >
-                <a
-                  href="https://bd.linkedin.com/company/quadque-technologies-ltd"
-                  target="_blank"
-                  className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-                  rel="noreferrer"
-                >
-                  ln
-                </a>
-              </Tooltip>
-            </div>
+            <SocialLinks />
           </div>
 
           {/* Middle Main container */}
