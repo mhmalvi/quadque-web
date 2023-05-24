@@ -19,6 +19,7 @@ import { ReactComponent as BluePhone } from "../../asstes/Icons/blue_phone.svg";
 import { ReactComponent as AppleRightArrow } from "../../asstes/Icons/apple_right.svg";
 import { ReactComponent as Location } from "../../asstes/Icons/location.svg";
 import { ReactComponent as Mailbox } from "../../asstes/Icons/email.svg";
+import { ReactComponent as Basis } from "../../asstes/Icons/basis.svg";
 
 const Icons = {
   BrandLogo,
@@ -42,6 +43,7 @@ const Icons = {
   FooterTiktok,
   Location,
   Mailbox,
+  Basis,
 };
 
 export default Icons;
