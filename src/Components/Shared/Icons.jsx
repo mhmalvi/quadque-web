@@ -17,6 +17,8 @@ import { ReactComponent as InstaDesktop } from "../../asstes/Icons/insta-desktop
 import { ReactComponent as TwiterDesktop } from "../../asstes/Icons/twiter-desktop.svg";
 import { ReactComponent as BluePhone } from "../../asstes/Icons/blue_phone.svg";
 import { ReactComponent as AppleRightArrow } from "../../asstes/Icons/apple_right.svg";
+import { ReactComponent as Location } from "../../asstes/Icons/location.svg";
+import { ReactComponent as Mailbox } from "../../asstes/Icons/email.svg";
 
 const Icons = {
   BrandLogo,
@@ -38,6 +40,8 @@ const Icons = {
   AppleRightArrow,
   FooterLinkedin,
   FooterTiktok,
+  Location,
+  Mailbox,
 };
 
 export default Icons;

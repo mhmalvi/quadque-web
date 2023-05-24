@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
-
-import logo from "../../../../asstes/Images/ClientLogos/6.png";
+import Lottie from "lottie-react";
+import logo_six from "../../../../asstes/Images/ClientLogos/6.png";
 import Aestheticars_logo from "../../../../asstes/Images/ClientLogos/Aestheticars_logo.png";
 import agro from "../../../../asstes/Images/ClientLogos/agro.png";
+import atr from "../../../../asstes/Images/ClientLogos/atr.png";
 import aia from "../../../../asstes/Images/ClientLogos/aia.png";
 import alpha from "../../../../asstes/Images/ClientLogos/ALPHA.png";
 import bright from "../../../../asstes/Images/ClientLogos/BRIGHT.png";
@@ -17,7 +18,6 @@ import esi from "../../../../asstes/Images/ClientLogos/ESI_Logo.png";
 import gb from "../../../../asstes/Images/ClientLogos/gb.png";
 import harbour from "../../../../asstes/Images/ClientLogos/Harbour.png";
 import ibm from "../../../../asstes/Images/ClientLogos/IBM-LOGO.png";
-import Lottie from "lottie-react";
 import itec from "../../../../asstes/Images/ClientLogos/ITEC.png";
 import just_for_mom from "../../../../asstes/Images/ClientLogos/just_for_mom.png";
 import momola from "../../../../asstes/Images/ClientLogos/Momola.png";
@@ -35,6 +35,9 @@ import uct from "../../../../asstes/Images/ClientLogos/UCT.png";
 import usbangla from "../../../../asstes/Images/ClientLogos/usbangla.png";
 import Zaker_Dairy from "../../../../asstes/Images/ClientLogos/Zaker_Dairy.png";
 import zdsl from "../../../../asstes/Images/ClientLogos/zdsl.png";
+import uniqloAlpha from "../../../../asstes/Images/ClientLogos/uniqlo_alpha.png";
+import crush from "../../../../asstes/Images/ClientLogos/Crush.png";
+import drobbo from "../../../../asstes/Images/ClientLogos/drobbo.png";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 
 const Cleints = () => {
@@ -57,8 +60,6 @@ const Cleints = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location?.hash]);
-
-  console.log(location?.hash);
 
   return (
     <div className="section h-full font_primary overflow-hidden">
@@ -128,7 +129,11 @@ const Cleints = () => {
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
                     >
                       <div className="w-full h-[100px] flex justify-center items-center">
-                        <img className="w-8/12" src={client} alt="Clinet" />
+                        <img
+                          className="w-8/12 client_img"
+                          src={client}
+                          alt="Clinet"
+                        />
                       </div>
                     </div>
                   ))}
@@ -169,7 +174,7 @@ const Cleints = () => {
               </p>
               <p className="marquee-reverse marquee-reverse-2">
                 <span>
-                  {colum12xl2?.map((client, i) => (
+                  {colum32xl?.map((client, i) => (
                     <div
                       key={i}
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
@@ -186,7 +191,7 @@ const Cleints = () => {
             <div className="ml-40 pl-[24px]">
               <p className="marquee">
                 <span>
-                  {colum12xl?.map((client, i) => (
+                  {colum12xl2?.map((client, i) => (
                     <div
                       key={i}
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
@@ -201,7 +206,7 @@ const Cleints = () => {
               </p>
               <p className="marquee marquee2">
                 <span>
-                  {colum12xl?.map((client, i) => (
+                  {colum32xl?.map((client, i) => (
                     <div
                       key={i}
                       className="inline-block max-w-[150px] h-[100px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
@@ -449,25 +454,25 @@ const Cleints = () => {
 export default Cleints;
 
 const colum12xl = [
-  logo,
+  itec,
+  logo_six,
   Aestheticars_logo,
   agro,
   aia,
   alpha,
   bright,
   clenovative,
-  itec,
   dt,
   Epiker,
   esg,
-  itec,
+  Zaker_Dairy,
   gb,
   harbour,
   ibm,
 ];
 
 const colum12xl2 = [
-  itec,
+  atr,
   just_for_mom,
   momola,
   nta,
@@ -483,6 +488,25 @@ const colum12xl2 = [
   uct,
   usbangla,
 ];
+
+const colum32xl = [
+  uniqloAlpha,
+  logo_six,
+  Aestheticars_logo,
+  agro,
+  aia,
+  alpha,
+  crush,
+  clenovative,
+  dt,
+  Epiker,
+  esg,
+  drobbo,
+  gb,
+  trastec,
+  ibm,
+];
+
 // const colum12xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp];
 const colum1xl = [
   itec,

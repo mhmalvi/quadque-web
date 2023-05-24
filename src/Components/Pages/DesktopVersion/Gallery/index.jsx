@@ -110,7 +110,7 @@ const Gallery = ({ setLoader }) => {
                         >
                           {event?.gallery_images?.map((img, index) => (
                             <Fade left cascade spy={triggerAnimation}>
-                              <div key={index}>
+                              <div className="w-1/3" key={index}>
                                 <img
                                   src={
                                     process.env.REACT_APP_ASSETS_URL +

@@ -1,25 +1,25 @@
-import React, { useRef } from "react";
-import Team from "../../../../asstes/Images/team-vector.png";
+import React from "react";
+// import Team from "../../../../asstes/Images/team-vector.png";
 import QuadqueTeam from "../../../../asstes/Images/qqteam.jpg";
 import "../../MobileVersion/MobileView.css";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 const OurTeam = () => {
-  const TeamSlider = useRef(null);
+  // const TeamSlider = useRef(null);
 
-  const settings = {
-    dots: true,
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    slidesToShow: 1,
-    centerPadding: "0px",
-    speed: 500,
-    rows: 2,
-    slidesPerRow: 2,
-  };
+  // const settings = {
+  //   dots: true,
+  //   className: "center",
+  //   centerMode: true,
+  //   infinite: true,
+  //   slidesToShow: 1,
+  //   centerPadding: "0px",
+  //   speed: 500,
+  //   rows: 2,
+  //   slidesPerRow: 2,
+  // };
 
   return (
     <div id="Team" className="w-full text-white mt-18 mb-5 font_primary">
@@ -29,7 +29,7 @@ const OurTeam = () => {
         <br />
         of Creators
       </h1>
-      <img src={Team} alt="Team" className="w-9/12 m-auto my-5" />
+      {/* <img src={Team} alt="Team" className="w-9/12 m-auto my-5" /> */}
       <div className="text-sm px-10 pb-8 leading-6 text-center">
         We are an experienced and diverse team of software engineers, mobile
         application, Web developers, UI/UX designers, quality engineers, digital
