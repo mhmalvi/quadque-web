@@ -102,7 +102,9 @@ const Footer = () => {
                     </div>
                     <div>
                       <div className="mb-6 ml-1 text-xs xl:text-sm">
-                        <h4
+                        <Icons.Basis className="w-52" />
+
+                        {/* <h4
                           onMouseOver={() => {
                             setBackgroundImage(bgAus);
                             setTriggerAnimation(!triggerAnimation);
@@ -115,7 +117,6 @@ const Footer = () => {
                           <span>Australia: </span>
                           <a href="mailto:">hello@quadque.tech</a>
                         </h4>
-
                         <h4
                           onMouseOver={() => {
                             setBackgroundImage(bgBD);
@@ -130,7 +131,7 @@ const Footer = () => {
                           <a href="mailto:info@quadque.tech">
                             info@quadque.tech
                           </a>
-                        </h4>
+                        </h4> */}
                       </div>
                       <div className="flex items-center">
                         <a
