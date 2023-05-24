@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
-import address from "../../../../asstes/Images/address.png";
 import bgAus from "../../../../asstes/Images/background_aus.jpg";
 import bgBD from "../../../../asstes/Images/background_bd.jpg";
 import Icons from "../../../Shared/Icons";
@@ -292,31 +291,48 @@ const Footer = () => {
                       Find Us
                     </h3>
                     <div>
-                      <div className="relative ">
-                        <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-2.5">
-                          <div className="leading-6 mb-2">
+                      <div
+                        className="relative"
+                        onMouseOver={() => {
+                          setBackgroundImage(bgAus);
+                          setTriggerAnimation(!triggerAnimation);
+                        }}
+                        onMouseLeave={() => {
+                          setBackgroundImage("");
+                        }}
+                      >
+                        <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-3">
+                          <div className="leading-6">
                             <p className="flex items-start">
-                              <img
-                                className="w-6 mr-2.5"
-                                src={address}
-                                alt="Address"
-                              />
+                              <Icons.Location className="w-5 text-brand-color mr-2.5" />
                               <span>
                                 Level 1, 7 Greenfield Parade Bankstown, NSW
                                 2200, Australia.
                               </span>
                             </p>
                           </div>
-                          <div className="leading-6 flex items-start pt-2">
-                            <span>
-                              <Icons.BluePhone className="mr-2.5 text-brand-color" />
-                            </span>
-                            <span>
-                              <a href="tel:+61405899496">+61405899496</a>
-                            </span>
+
+                          <div className="flex items-center pt-2">
+                            <div className="flex items-center">
+                              <span className="mr-2.5">
+                                <Icons.Mailbox className="w-5 text-brand-color" />
+                              </span>
+                              <a href="mailto:hello@quadque.tech">
+                                hello@quadque.tech
+                              </a>
+                            </div>
+                            <div className="mx-3 my-auto">|</div>
+                            <div className="flex items-center">
+                              <span>
+                                <Icons.BluePhone className="w-4 mr-2.5 text-brand-color" />
+                              </span>
+                              <span>
+                                <a href="tel:+61405899496">+61405899496</a>
+                              </span>
+                            </div>
                           </div>
                         </div>
-                        <div
+                        {/* <div
                           className="min-h-full min-w-full absolute top-0 left-0 right-0 bottom-0 bg-transparent z-50"
                           onMouseOver={() => {
                             setBackgroundImage(bgAus);
@@ -325,44 +341,53 @@ const Footer = () => {
                           onMouseLeave={() => {
                             setBackgroundImage("");
                           }}
-                        ></div>
+                        ></div> */}
                       </div>
 
-                      <div className="relative">
+                      <div
+                        className="relative pt-2"
+                        onMouseOver={() => {
+                          setBackgroundImage(bgBD);
+                          setTriggerAnimation(!triggerAnimation);
+                        }}
+                        onMouseLeave={() => {
+                          setBackgroundImage("");
+                        }}
+                      >
                         <div className="text-xs xl:text-sm font-normal mb-2 2xl:mb-2.5">
-                          <div className="leading-6 mb-2 py-2">
+                          <div className="leading-6 mt-2">
                             <p className="flex items-start">
-                              <img
-                                className="w-6 mr-2.5"
-                                src={address}
-                                alt="Address"
-                              />
+                              <Icons.Location className="w-5 text-brand-color mr-2.5" />
                               <span>
                                 Level -7, 8/C, F.R Tower, Panthapath, Dhaka
                                 1207, Bangladesh.
                               </span>
                             </p>
                           </div>
-
-                          <div className="leading-6 flex items-center">
-                            <span>
-                              <Icons.BluePhone className="mr-2.5 text-brand-color" />
-                            </span>
-                            <span>
-                              <a href="tel:+8801765276560">+8801765276560</a>
-                            </span>
+                          <div className="flex items-center pt-2">
+                            <div className="flex items-center">
+                              <span className="mr-2.5">
+                                <Icons.Mailbox className="w-5 text-brand-color" />
+                              </span>
+                              <a href="mailto:info@quadque.tech">
+                                info@quadque.tech
+                              </a>
+                            </div>
+                            <div className="mx-3 my-auto">|</div>
+                            <div className="flex items-center">
+                              <span>
+                                <Icons.BluePhone className="w-4 mr-2.5 text-brand-color" />
+                              </span>
+                              <span>
+                                <a href="tel:+8801765276560">+8801765276560</a>
+                              </span>
+                            </div>
                           </div>
                         </div>
-                        <div
+                        {/* <div
                           className="min-h-full min-w-full absolute top-0 left-0 right-0 bottom-0 bg-transparent z-50"
-                          onMouseOver={() => {
-                            setBackgroundImage(bgBD);
-                            setTriggerAnimation(!triggerAnimation);
-                          }}
-                          onMouseLeave={() => {
-                            setBackgroundImage("");
-                          }}
-                        ></div>
+                          
+                        ></div> */}
                       </div>
                     </div>
                   </Fade>
