@@ -134,6 +134,7 @@ const Footer = () => {
                             <div className="font-semibold text-4xl flex items-center">
                               <Icons.Viewers className="w-10 mr-2 text-brand-color" />
                               <CountUp
+                                className="font_title"
                                 start={0}
                                 end={viewerCount}
                                 duration={3}
