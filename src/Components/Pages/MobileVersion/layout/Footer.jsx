@@ -53,7 +53,13 @@ const Footer = () => {
           </div>
           <div className="font-semibold text-4xl flex items-center">
             {/* <Icons.Viewers className="w-10 mr-2 text-brand-color" /> */}
-            <CountUp start={0} end={viewerCount} duration={3} />+
+            <CountUp
+              className="font_title"
+              start={0}
+              end={viewerCount}
+              duration={3}
+            />
+            +
           </div>
         </div>
       </div>

@@ -71,12 +71,12 @@ const About = () => {
         <meta name="keywords" content={goals?.meta_keyword} />
       </Helmet>
 
-      <div className="w-full pr-[22px] text-white flex justify-center overflow-hidden">
-        <div className="w-[40%] min-h-full flex justify-center items-center">
+      <div className="w-full px-[22px] text-white flex justify-center overflow-hidden">
+        {/* <div className="w-[40%] min-h-full flex justify-center items-center">
           <img className="w-[80%] mx-auto pr-16" src={whoWerAre} alt="" />
-        </div>
+        </div> */}
 
-        <div className="w-[60%] min-h-full ml-1 mt-14 2xl:mt-32 overflow-hidden">
+        <div className="min-w-full min-h-full ml-8 mr-4 mt-14 2xl:mt-20 overflow-hidden">
           <div className="mb-4 xl:mb-8">
             <div>
               <div
@@ -94,8 +94,8 @@ const About = () => {
             </div>
           </div>
           <div>
-            {/* <div className="about_details border-r-2 border-gray-700 pr-12 w-[90%] lg:max-h-[70vh] 2xl:max-h-[75vh] mb-auto overflow-y-scroll py-1"> */}
-            <div className="about_details border-gray-700 pr-12 xl:h-[50vh] 2xl:h-[60vh] w-[90%] py-1 overflow-hidden">
+            {/* <div className="about_details border-gray-700 pr-12 xl:h-[50vh] 2xl:h-[60vh] w-[90%] py-1 overflow-hidden"> */}
+            <div className="about_details border-gray-700 pr-12 xl:h-[50vh] 2xl:h-[60vh] min-w-full py-1 overflow-hidden">
               <Fade right cascade spy={triggerAnimation}>
                 <div className="h-[53vh] xl:h-[46vh] 2xl:h-[48vh]">
                   {scrollingIndex === 0 ? (
@@ -174,56 +174,137 @@ const About = () => {
                           __html: goals?.why_choose_us,
                         }}
                       ></p>
-                      <div
+                      {/* <div
                         className="w-full bg-gray-400 my-4 2xl:my-12"
                         style={{
                           height: "0.5px",
                         }}
-                      ></div>
+                      ></div> */}
                     </div>
                   ) : null}
                   {scrollingIndex === 2 ? (
-                    <div>
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(2)}
-                        //onMouseOut={() => handleChangeBanner(0)}
-                      >
-                        <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                          Our Mission
+                    <div className="grid grid-cols-4 gap-14 items-center justify-center">
+                      <Fade right cascade spy={triggerAnimation}>
+                        <div>
+                          <div>
+                            <img
+                              className="w-[90%] mx-auto mb-6"
+                              src={ourMission}
+                              alt=""
+                            />
+                          </div>
+                          <div
+                            className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                            onMouseOver={() => handleChangeBanner(2)}
+                            //onMouseOut={() => handleChangeBanner(0)}
+                          >
+                            <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4 text-center pb-2">
+                              Mission
+                            </div>
+                            <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-center break-keep">
+                              {goals?.our_mission}
+                            </p>
+                            {/* <div
+                            className="w-full bg-gray-400 my-4 2xl:my-8"
+                            style={{
+                              height: "0.5px",
+                            }}
+                          ></div> */}
+                          </div>
                         </div>
-                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep">
-                          {goals?.our_mission}
-                        </p>
-                        <div
-                          className="w-full bg-gray-400 my-4 2xl:my-12"
-                          style={{
-                            height: "0.5px",
-                          }}
-                        ></div>
-                      </div>
-                      <div
-                        className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
-                        onMouseOver={() => handleChangeBanner(1)}
-                      >
-                        <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                          Our Vision
+
+                        <div>
+                          <div>
+                            <img
+                              className="w-[90%] mx-auto mb-6"
+                              src={ourVission}
+                              alt=""
+                            />
+                          </div>
+                          <div
+                            className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                            onMouseOver={() => handleChangeBanner(1)}
+                          >
+                            <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4 text-center pb-2">
+                              Vision
+                            </div>
+                            <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-center">
+                              {goals?.our_vision}
+                            </p>
+                            {/* <div
+                            className="w-full bg-gray-400 my-4 2xl:my-12"
+                            style={{
+                              height: "0.5px",
+                            }}
+                          ></div> */}
+                          </div>
                         </div>
-                        <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4">
-                          {goals?.our_vision}
-                        </p>
-                        <hr className=" text-white text-opacity-30 my-4 2xl:my-12 py-0.5" />
-                      </div>
+
+                        <div>
+                          <div>
+                            <img
+                              className="w-[90%] mx-auto mb-6"
+                              src={ourObjective}
+                              alt=""
+                            />
+                          </div>
+                          <div
+                            className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                            onMouseOver={() => handleChangeBanner(4)}
+                            //onMouseOut={() => handleChangeBanner(0)}
+                          >
+                            {/* <Fade right cascade spy={triggerTitleAnimation}> */}
+                            <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4 text-center pb-2">
+                              Objective
+                            </div>
+                            <p className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-center break-keep">
+                              {goals?.our_objective}
+                            </p>
+                            {/* <div
+                            className="w-full bg-gray-400 my-4 2xl:my-12"
+                            style={{
+                              height: "0.5px",
+                            }}
+                          ></div> */}
+                          </div>
+                        </div>
+
+                        <div>
+                          <div>
+                            <img
+                              className="w-[90%] mx-auto mb-6"
+                              src={ourGoal}
+                              alt=""
+                            />
+                          </div>
+                          <div
+                            className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
+                            onMouseOver={() => handleChangeBanner(3)}
+                          >
+                            <div className="text-2xl font-bold leading-[100%] pl-4 text-center pb-2">
+                              Goal
+                            </div>
+                            <div className="mt-2.5 text-white pl-4 text-center break-keep">
+                              {goals?.our_goal}
+                            </div>
+                            {/* <div
+                            className="w-full bg-gray-400 my-4 2xl:my-12"
+                            style={{
+                              height: "0.5px",
+                            }}
+                          ></div> */}
+                          </div>
+                        </div>
+                      </Fade>
                     </div>
                   ) : null}
-                  {scrollingIndex === 3 ? (
+
+                  {/* {scrollingIndex === 3 ? (
                     <div>
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(4)}
-                        //onMouseOut={() => handleChangeBanner(0)}
                       >
-                        {/* <Fade right cascade spy={triggerTitleAnimation}> */}
                         <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
                           Our Objective
                         </div>
@@ -240,7 +321,6 @@ const About = () => {
                       <div
                         className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer"
                         onMouseOver={() => handleChangeBanner(3)}
-                        //onMouseOut={() => handleChangeBanner(0)}
                       >
                         <div className="text-2xl font-bold leading-[100%] pl-4">
                           Our Goal
@@ -256,7 +336,7 @@ const About = () => {
                         ></div>
                       </div>
                     </div>
-                  ) : null}
+                  ) : null} */}
                 </div>
 
                 {/* For Larger Screen */}
@@ -380,7 +460,7 @@ const About = () => {
                 </div> */}
               </Fade>
 
-              <div className="w-48 ml-auto flex items-center justify-between">
+              <div className="w-48 mt-24 ml-auto flex items-center justify-between">
                 <div
                   className={`cursor-pointer hover:delay-300 hover:transition-all w-10 h-4 rounded-full ${
                     scrollingIndex === 0 ? "bg-brand-color" : "bg-white"
