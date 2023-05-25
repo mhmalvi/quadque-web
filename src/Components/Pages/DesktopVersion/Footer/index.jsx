@@ -3,7 +3,10 @@ import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
 import bgAus from "../../../../asstes/Images/background_aus.jpg";
 import bgBD from "../../../../asstes/Images/background_bd.jpg";
+import basisLogo from "../../../../asstes/Images/basis_logo.png";
 import Icons from "../../../Shared/Icons";
+import { handleFetchViewerCount } from "../../../Shared/services";
+import CountUp from "react-countup";
 
 const Footer = () => {
   const location = useLocation();
@@ -11,8 +14,20 @@ const Footer = () => {
   const [triggerAnimation, setTriggerAnimation] = useState(false);
   const [backgroundImage, setBackgroundImage] = useState("");
   const [year, setYear] = useState("");
+  const [viewerCount, setViewerCount] = useState(0);
 
   const synth = window.speechSynthesis;
+
+  useEffect(() => {
+    (async () => {
+      const counts = await handleFetchViewerCount();
+      console.log("counts", counts);
+
+      if (counts?.status === 200) {
+        setViewerCount(counts?.data?.[0]?.counter);
+      }
+    })();
+  }, []);
 
   useEffect(() => {
     const date = new Date();
@@ -102,7 +117,31 @@ const Footer = () => {
                     </div>
                     <div>
                       <div className="mb-6 ml-1 text-xs xl:text-sm">
-                        <Icons.Basis className="w-52" />
+                        {/* <Icons.Basis className="w-52" /> */}
+                        <div className="flex items-stretch">
+                          <div>
+                            <img
+                              src={basisLogo}
+                              className="mx-auto w-36 my-4"
+                              alt=""
+                            />
+                          </div>
+
+                          <div className="pl-6 ml-6 border-l-2 border-gray-400 flex flex-col justify-center items-center my-4">
+                            <div className="text-white font-semibold font_primary">
+                              Total Visitors
+                            </div>
+                            <div className="font-semibold text-4xl flex items-center">
+                              <Icons.Viewers className="w-10 mr-2 text-brand-color" />
+                              <CountUp
+                                start={0}
+                                end={viewerCount}
+                                duration={3}
+                              />
+                              +
+                            </div>
+                          </div>
+                        </div>
 
                         {/* <h4
                           onMouseOver={() => {

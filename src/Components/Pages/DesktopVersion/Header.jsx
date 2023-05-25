@@ -1,19 +1,19 @@
 import React from "react";
 import Typical from "react-typical";
-// import headerVideo from "../../../asstes/Video/headerVideo.mp4";
-import headerImage from "../../../asstes/Images/header_img.jpg";
+import headerVideo from "../../../asstes/Video/headerVideo.mp4";
+// import headerImage from "../../../asstes/Images/header_img.jpg";
 
 const Header = () => {
   return (
     <div className="section overflow-hidden relative bg-black">
-      <img className="h-[100%] w-full" alt="Header_Image" src={headerImage} />
-      {/* <video
+      {/* <img className="h-[100%] w-full" alt="Header_Image" src={headerImage} /> */}
+      <video
         className="h-[100%] w-full"
         src={headerVideo}
         loop={"loop"}
         muted
         autoPlay
-      ></video> */}
+      ></video>
 
       <div
         className="absolute text-white top-[30%] lg:right-[10%] xl:right-[15%] 2xl:right-[19.5%]"

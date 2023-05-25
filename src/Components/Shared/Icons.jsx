@@ -20,6 +20,7 @@ import { ReactComponent as AppleRightArrow } from "../../asstes/Icons/apple_righ
 import { ReactComponent as Location } from "../../asstes/Icons/location.svg";
 import { ReactComponent as Mailbox } from "../../asstes/Icons/email.svg";
 import { ReactComponent as Basis } from "../../asstes/Icons/basis.svg";
+import { ReactComponent as Viewers } from "../../asstes/Icons/viewer.svg";
 
 const Icons = {
   BrandLogo,
@@ -44,6 +45,7 @@ const Icons = {
   Location,
   Mailbox,
   Basis,
+  Viewers,
 };
 
 export default Icons;

@@ -250,14 +250,14 @@ const ServiceDetails = ({ setLoader }) => {
           <div className="mt-20 mb-16">
             {serviceDetailsContent[`${slug}`]?.bestServiceTitle?.map(
               (content, i) => (
-                <>
+                <div key={i}>
                   <div className="text-2xl font-semibold text-center uppercase mb-5">
                     {content?.title}
                   </div>
                   <div className="text-xl font-normal text-center pb-13">
                     {content?.tagline}
                   </div>
-                </>
+                </div>
               )
             )}
           </div>
