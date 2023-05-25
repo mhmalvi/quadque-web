@@ -204,10 +204,32 @@ export const handleFetchGallery = async () => {
 
 export const handleFetchCareerPosts = async () => {
   try {
-    const result = await axios.get(
-      `https://api.npoint.io/803fb7bb194a84a26edf`
+    const result = await axios.get(`${process.env?.REACT_APP_JOBS_URL}`);
+    return result;
+  } catch (error) {
+    console.log(error.response?.data);
+    return error?.response;
+  }
+};
+
+export const handleAddViewerCount = async () => {
+  try {
+    const result = await axios.post(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/counter`
     );
     return result;
+  } catch (error) {
+    console.log(error.response?.data);
+    return error?.response;
+  }
+};
+
+export const handleFetchViewerCount = async () => {
+  try {
+    const result = await axios.get(
+      `${process.env?.REACT_APP_SERVICE_URL}/api/get-counter`
+    );
+    return result.data;
   } catch (error) {
     console.log(error.response?.data);
     return error?.response;

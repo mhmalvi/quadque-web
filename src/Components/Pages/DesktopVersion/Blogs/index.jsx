@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import blog1 from "../../../../asstes/Images/blog1.jpg";
 // import blog2 from "../../../../asstes/Images/blog2.jpg";
 // import blog3 from "../../../../asstes/Images/blog3.jpg";
 import blogThumbnail from "../../../../asstes/Images/blogs.jpg";
@@ -85,13 +84,11 @@ const Blogs = () => {
                 >
                   <img
                     src={
+                      process.env.REACT_APP_ASSETS_URL +
+                      "/" +
                       activeblogDetails?.thumbnail
-                        ? process.env.REACT_APP_ASSETS_URL +
-                          "/" +
-                          activeblogDetails?.thumbnail
-                        : blog1
                     }
-                    alt="Blog"
+                    alt="Blog Thumbnail"
                     className="m-auto w-full 2xl:h-72 rounded-md transition ease-in-out delay-300"
                   />
                   <div className="w-full flex items-end px-2 2xl:px-10 pt-10 pb-6 rounded-md z-10 transition ease-in-out delay-300">
@@ -145,11 +142,7 @@ const Blogs = () => {
                 >
                   <img
                     src={
-                      blog?.thumbnail
-                        ? process.env.REACT_APP_ASSETS_URL +
-                          "/" +
-                          blog?.thumbnail
-                        : blog1
+                      process.env.REACT_APP_ASSETS_URL + "/" + blog?.thumbnail
                     }
                     alt="Blog1"
                     className="m-auto w-full 2xl:h-56 rounded-md"
@@ -181,11 +174,7 @@ const Blogs = () => {
                 >
                   <img
                     src={
-                      blog?.thumbnail
-                        ? process.env.REACT_APP_ASSETS_URL +
-                          "/" +
-                          blog?.thumbnail
-                        : blog1
+                      process.env.REACT_APP_ASSETS_URL + "/" + blog?.thumbnail
                     }
                     alt="Blog2"
                     className="m-auto w-full 2xl:h-56 rounded-md"

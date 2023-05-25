@@ -4,12 +4,21 @@ import "./index.css";
 import { Breakpoint, BreakpointProvider } from "react-socks";
 import DesktopLayout from "./Components/Pages/DesktopVersion/layout";
 import MobileLayout from "./Components/Pages/MobileVersion/layout";
+import { useEffect } from "react";
+import { handleAddViewerCount } from "./Components/Shared/services";
 
 function App() {
   // useEffect(() => {
   //   console.log = () => {};
   //   console.warn = () => {};
   // }, []);
+
+  useEffect(() => {
+    (async () => {
+      const counterResp = await handleAddViewerCount();
+      console.log("counterResp", counterResp?.data?.data?.counter);
+    })();
+  }, []);
 
   return (
     <>
