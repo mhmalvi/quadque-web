@@ -159,7 +159,8 @@ const StartProject = () => {
 
   return (
     <div
-      id="start_project"
+      id="start-project"
+      name="start-project"
       className="section w-full lg:pt-6 2xl:py-8 font_primary bg-black text-white"
     >
       <Modal
@@ -227,7 +228,7 @@ const StartProject = () => {
           </div>
         </div>
 
-        <div className="mt-15.5 flex justify-between">
+        <div className="mt-15.5 flex justify-between overflow-hidden">
           <div>
             {services?.map((service, i) => (
               <div

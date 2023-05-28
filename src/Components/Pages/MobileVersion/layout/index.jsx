@@ -116,6 +116,14 @@ const Layout = () => {
             }
           />
           <Route
+            path={"products"}
+            element={
+              <>
+                <ProductGallery />
+              </>
+            }
+          />
+          <Route
             path={"career/:slug"}
             element={
               <>

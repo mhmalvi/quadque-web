@@ -168,11 +168,11 @@ const Services = () => {
                         alt="Maintenance and Support Layout"
                       />
                     ) : null}
-                    {details?.service_name === "SAP and ERP Solutions" ? (
+                    {details?.service_name === "SAP ERP Solutions" ? (
                       <Lottie
                         animationData={sapErp}
                         loop={true}
-                        alt="SAP and ERP Solutions"
+                        alt="SAP ERP Solutions"
                       />
                     ) : null}
                   </div>

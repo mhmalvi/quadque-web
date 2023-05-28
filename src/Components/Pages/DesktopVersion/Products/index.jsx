@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../Footer";
+import { Link } from "react-router-dom";
 
 const Products = ({ setLoader }) => {
   useEffect(() => {
@@ -31,12 +32,15 @@ const Products = ({ setLoader }) => {
 
         <div className="min-h-full">
           <div className="flex justify-center items-center gap-6">
-            <div className="cursor-pointer w-60 px-4 py-6 border border-brand-color/30 bg-gradient-to-tr from-brand-color/30 to-transparent">
-              <a
+            <Link
+              to={"/products/queleadscrm"}
+              className="cursor-pointer w-60 px-4 py-6 border border-brand-color/30 bg-gradient-to-tr from-brand-color/30 to-transparent"
+            >
+              <div
                 className="flex flex-col justify-center items-center gap-4"
-                href="https://www.queleadscrm.com"
-                target="_blank"
-                rel="noreferrer"
+                // href="https://www.queleadscrm.com"
+                // target="_blank"
+                // rel="noreferrer"
               >
                 <img
                   className="w-3/4 m-auto rounded-md"
@@ -44,10 +48,10 @@ const Products = ({ setLoader }) => {
                   alt="Company"
                 />
                 <div className="font_poppins text-lg font-semibold">
-                  QueLeadsCRM
+                  QueleadsCRM
                 </div>
-              </a>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
 

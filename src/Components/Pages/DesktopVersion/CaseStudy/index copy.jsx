@@ -64,9 +64,9 @@ const CaseStudy = () => {
 
   return (
     <div
-      id="case-study"
-      name="case-study"
-      className="section w-full min-h-full lg:pb-10 font_primary overflow-hidden"
+      id="case_study_section"
+      name="case_study_section"
+      className="section w-full min-h-full lg:pb-10  font_primary"
     >
       {/* For SEO */}
       <Helmet>
@@ -81,8 +81,8 @@ const CaseStudy = () => {
         />
       </Helmet>
 
-      <div className="relative w-full min-h-full lg:pb-10 2xl:pb-12 font_primary overflow-hidden">
-        <div className="absolute top-0 lg:pt-7 2xl:py-[100px] pl-[68px] pr-[22px] text-white overflow-hidden">
+      <div>
+        <div className="absolute top-0 lg:pt-7 2xl:py-[100px] pl-[68px] pr-[22px] text-white">
           <div
             className="text-5xl font-bold leading-10 capitalize font_title mb-8"
             style={{
@@ -114,7 +114,7 @@ const CaseStudy = () => {
             </h1>
           </Fade> */}
           <div
-            className="max-w-[280px] xl:max-w-[400px] text-justify lg:text-sm 2xl:text-base leading-5 text-white ml-4 font-light overflow-hidden"
+            className="max-w-[280px] xl:max-w-[400px] text-justify lg:text-sm 2xl:text-base leading-5 text-white ml-4 font-light"
             style={{
               letterSpacing: "0.04em",
               wordBreak: "keep-all",
@@ -151,7 +151,7 @@ const CaseStudy = () => {
           </Fade>
         </div>
 
-        <div className="w-full min-h-[80vh] flex justify-end items-end pr-16 overflow-hidden">
+        <div className="w-full min-h-[80vh] flex justify-end items-end pr-16">
           <div className="lg:w-[650px] xl:w-9/12 grid lg:gap-4 2xl:gap-6 ml-auto mt-auto lg:grid-cols-4 2xl:grid-cols-4 overflow-hidden">
             <div className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-74 2xl:w-64 rounded-md">
               &nbsp;
@@ -163,11 +163,12 @@ const CaseStudy = () => {
                   key={i}
                   onMouseOver={() => setCaseStudyName(post?.com_name)}
                   onMouseOut={() => setCaseStudyName("")}
-                  className="lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-72 2xl:w-64 rounded-md cursor-pointer "
+                  className="relative lg:h-44 lg:w-38 xl:h-50 xl:w-44 2xl:h-72 2xl:w-64 rounded-md cursor-pointer "
                 >
-                  <div className="w-full h-full flex justify-center items-center border border-brand-color/30 bg-gradient-to-tr bg-opacity-20 from-brand-color/20 ... rounded-md backdrop-blur-md backdrop-filter">
+                  <div className="min-h-full min-w-full backdrop-filter backdrop-blur-xl bg-gradient-to-tr bg-opacity-20 from-brand-color/20 ... rounded-md"></div>
+                  <div className="w-full h-full absolute top-0 flex justify-center items-center border border-brand-color/30">
                     <img
-                      className="w-9/12 m-auto rounded-md"
+                      className="w-9/12 m-auto rounded-md "
                       src={
                         process.env.REACT_APP_ASSETS_URL + "/" + post?.com_image
                       }

@@ -39,18 +39,24 @@ const ClientSpeak = () => {
     }
   }, [index, clientSpeaks]);
 
+  console.log("clientSpeaks", clientSpeaks);
+
   return (
-    <div className="section relative w-full min-h-full 2xl:pb-12 font_primary text-white overflow-hidden">
-      <div className="ml-6 relative 2xl:left-14 2xl:top-8 lg:pt-7 lg:mt-9 pl-[68px] pr-[22px] text-white">
+    <div
+      id="client-speak"
+      name="client-speak"
+      className="section relative w-full min-h-full 2xl:pb-12 font_primary text-white overflow-x-hidden"
+    >
+      <div className="ml-6 lg:pt-7 lg:mt-9 2xl:ml-14 2xl:mt-14 pl-[68px] pr-[22px] text-white">
         <div
-          className="text-5xl font-bold leading-10 capitalize font_title mb-8"
+          className="relative text-5xl font-bold leading-10 capitalize font_title mb-8"
           style={{
             letterSpacing: "0.06em",
           }}
         >
           <Fade left spy={triggerTitleAnimation}>
             <img
-              className="absolute top-0 -left-4 z-0"
+              className="absolute -top-6 -left-14 z-0"
               src={titleBg}
               alt="Title Background"
             />
@@ -71,12 +77,12 @@ const ClientSpeak = () => {
         </Fade> */}
       </div>
 
-      <div className="mt-16 2xl:mt-36 flex justify-center items-center overflow-hidden">
-        <div className="w-full flex justify-center mx-auto">
+      <div className="w-full mt-16 2xl:mt-36 flex justify-center items-center overflow-hidden">
+        <div className="w-10/12 flex justify-center overflow-hidden">
           <Fade left spy={triggerAnimation}>
-            <div className="relative">
+            <div className="relative overflow-hidden">
               <img
-                className="lg:w-[250px] lg:h-[260px] 2xl:w-98 2xl:h-98 lg:mr-12 2xl:mr-16 pr-0.05"
+                className="lg:w-[250px] lg:h-[260px] 2xl:w-98 2xl:h-98 lg:mr-12 2xl:mr-16 pr-0.5"
                 src={
                   process.env.REACT_APP_ASSETS_URL +
                   "/" +
