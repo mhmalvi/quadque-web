@@ -8,13 +8,17 @@ import unmuteImg from "../../../../asstes/Images/unmute.png";
 import loaderFile from "../../../../asstes/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
 import Navbar from "../Navbar";
+import SocialLinks from "../../../Shared/SocialLinks";
 
-const BaseLayout = ({ sharedComponent }) => {
+const BaseLayout = ({ children }) => {
   const navigate = useNavigate();
   const [mouseHover, setMouseHover] = useState(false);
   const [muted, setMuted] = useState(true);
   const [openMenus, setOpenMenus] = useState(false);
-  const [loader, setLoader] = useState(true);
+
+  const { loader, setLoader } = children?.props;
+
+  console.log("children", children);
 
   useEffect(() => {
     if (muted) {
@@ -97,67 +101,7 @@ const BaseLayout = ({ sharedComponent }) => {
             </span>
           </div>
 
-          <div className="mb-16 -rotate-90 flex justify-center items-center">
-            <Tooltip
-              placement="right"
-              title="Facebook"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://www.facebook.com/quadquetech"
-                rel="noreferrer"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-              >
-                fb
-              </a>
-            </Tooltip>
-
-            <Tooltip
-              placement="right"
-              title="Instagram"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://www.instagram.com/quadquetech/"
-                rel="noreferrer"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-              >
-                in
-              </a>
-            </Tooltip>
-
-            <Tooltip
-              placement="right"
-              title="Youtube"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
-                rel="noreferrer"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-              >
-                yt
-              </a>
-            </Tooltip>
-
-            <Tooltip
-              placement="right"
-              title="Linkedin"
-              color={"rgba(90, 90, 90, 0.7)"}
-            >
-              <a
-                href="https://bd.linkedin.com/company/quadque-technologies-ltd"
-                target="_blank"
-                className="uppercase font-semibold text-xl leading-[175%] font_primary mr-4 hover:text-brand-color transition-colors delay-150 "
-                rel="noreferrer"
-              >
-                ln
-              </a>
-            </Tooltip>
-          </div>
+          <SocialLinks />
         </div>
 
         {/* Middle Main container */}
@@ -165,7 +109,9 @@ const BaseLayout = ({ sharedComponent }) => {
           id="main_container"
           className="blog_details bg-green-100 main_container w-full h-screen my-auto shadow-md"
         >
-          {{ sharedComponent }}
+          {React.Children.map(children, (child) => {
+            return React.cloneElement(child, { loader, setLoader });
+          })}
         </div>
 
         {/* Right bar */}
@@ -235,7 +181,7 @@ const BaseLayout = ({ sharedComponent }) => {
 
       {/* Loader */}
       {loader ? (
-        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 2xl:left-10 bg-black backdrop-blur-md bg-opacity-80">
+        <div className="w-11/12 min-h-screen flex flex-col justify-center items-center absolute top-0 2xl:left-15 bg-black backdrop-blur-md bg-opacity-80">
           <Lottie
             className="w-1/6 mx-auto"
             animationData={loaderFile}

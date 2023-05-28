@@ -16,6 +16,7 @@ const anchors = [
   "landing",
   "services",
   "about",
+  "who-we-are",
   "clients",
   "case-study",
   "client-speak",
@@ -26,10 +27,10 @@ const anchors = [
 
 const CenterLayout = () => {
   return (
-    <div className="center_layout_container">
+    <div className="center_layout_container bg-black">
       <ReactFullpage
         anchors={anchors}
-        scrollingSpeed={1700}
+        scrollingSpeed={2000}
         easing={"ease-out"}
         navigation
         // navigationTooltips={anchors}

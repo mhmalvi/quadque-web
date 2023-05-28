@@ -121,24 +121,6 @@ const CaseStudyDetails = ({ setLoader }) => {
 
         <div className="flex justify-between items-stretch mt-52">
           <div className="w-1/2 mt-24 pb-16">
-            {/* <h2 className="text-2xl leading-6 font-medium mb-10 mt-2">
-              {caseStudyDetails?.service_deliver_title}
-              Creative Digital Marketing Creative Digital Marketing Agency
-            </h2>
-            <p
-              className="text-base leading-6 font-normal text-white text-opacity-75"
-              style={{
-                letterSpacing: "0.07em",
-              }}
-            >
-              {caseStudyDetails?.service_deliver_des}
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor Lorem ipsum dolor sit amet consetetur
-              sadipscing elitr Lorem ipsum dolor sit amet, consetetur sadipscing
-              elitr, sed diam nonumy eirmod tempor Lorem ipsum dolor sit amet
-              consetetur sadipscing elitr
-            </p> */}
-
             <div className="relative">
               <div
                 className="mr-10"
@@ -151,7 +133,7 @@ const CaseStudyDetails = ({ setLoader }) => {
                 color={"rgba(90, 90, 90, 0.7)"}
               >
                 <button
-                  className="absolute top-0 right-10"
+                  className="absolute top-0 right-0"
                   onClick={() =>
                     speak({
                       text: caseStudyDetails?.content,
@@ -350,7 +332,7 @@ const CaseStudyDetails = ({ setLoader }) => {
           </div>
         </div>
 
-        <div className="-mb-20">
+        <div className="w-full -mb-20">
           <Footer />
         </div>
       </div>

@@ -48,7 +48,8 @@ const Footer = () => {
   return (
     <div
       id="contacts"
-      className="section w-full lg:py-6 2xl:py-0 font_primary text-white relative"
+      name="contacts"
+      className="section w-full lg:py-6 2xl:py-0 ml-5 font_primary text-white relative overflow-hidden"
     >
       {/* For Background Flag */}
       {/* <div>  */}
@@ -118,28 +119,26 @@ const Footer = () => {
                     <div>
                       <div className="mb-6 ml-1 text-xs xl:text-sm">
                         {/* <Icons.Basis className="w-52" /> */}
-                        <div className="flex items-stretch">
-                          <div>
-                            <img
-                              src={basisLogo}
-                              className="mx-auto w-36 my-4"
-                              alt=""
-                            />
+                        <div className="w-full flex items-stretch ">
+                          <div className="w-5/12">
+                            <img src={basisLogo} className="my-4" alt="" />
                           </div>
 
-                          <div className="pl-6 ml-6 border-l-2 border-gray-400 flex flex-col justify-center items-center my-4">
-                            <div className="text-white font-semibold font_primary">
+                          <div className="w-7/12 pl-6 ml-6 border-l-2 border-gray-400 flex flex-col justify-center items-center my-4">
+                            <div className="text-white whitespace-nowrap xl:text-sm 2xl:text-base font-semibold font_primary">
                               Total Visitors
                             </div>
-                            <div className="font-semibold text-4xl flex items-center">
-                              <Icons.Viewers className="w-10 mr-2 text-brand-color" />
-                              <CountUp
-                                className="font_title"
-                                start={0}
-                                end={viewerCount}
-                                duration={3}
-                              />
-                              +
+                            <div className="min-w-full relative font-semibold xl:text-xl 2xl:text-3.5xl flex items-center">
+                              <Icons.Viewers className="w-5 xl:w-8 2xl:w-10 mr-auto text-brand-color" />
+                              <div className="absolute left-10 2xl:left-12">
+                                <CountUp
+                                  className="font_title"
+                                  start={0}
+                                  end={viewerCount}
+                                  duration={3}
+                                />
+                                +
+                              </div>
                             </div>
                           </div>
                         </div>
