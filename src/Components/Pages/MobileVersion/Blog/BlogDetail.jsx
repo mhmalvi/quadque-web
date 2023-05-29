@@ -17,6 +17,10 @@ const BlogDetail = () => {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
+    window.location.href = `${process.env.REACT_APP_APP_CLIENT_URL}/blogs/${slug}`;
+  }, [slug]);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

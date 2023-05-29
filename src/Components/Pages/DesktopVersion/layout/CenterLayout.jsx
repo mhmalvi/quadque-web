@@ -26,11 +26,12 @@ const anchors = [
 ];
 
 const CenterLayout = () => {
+  // This the main landing page of Desktop
   return (
     <div className="center_layout_container bg-black">
       <ReactFullpage
         anchors={anchors}
-        scrollingSpeed={2000}
+        scrollingSpeed={1900}
         easing={"ease-out"}
         navigation
         // navigationTooltips={anchors}

@@ -23,6 +23,10 @@ const CareerDetail = () => {
     })();
   }, []);
 
+   useEffect(() => {
+     window.location.href = `${process.env.REACT_APP_APP_CLIENT_URL}/career/${slug}`;
+   }, [slug]);
+
   useEffect(() => {
     if (careerPosts?.find((career) => career.slug === slug)) {
       const fetchCareer = careerPosts?.find((career) => career.slug === slug);

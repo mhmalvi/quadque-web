@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Career from ".";
 // import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
 // import muteImg from "../../../../asstes/Images/mute.png";
@@ -27,6 +27,10 @@ const CareerLayout = () => {
   // const handleNavigate = () => {
   //   navigate(`../#start-project`, { replace: true });
   // };
+
+  useEffect(() => {
+    window.location.href = `${process.env.REACT_APP_APP_CLIENT_URL}/career`;
+  }, []);
 
   return (
     <BaseLayout>

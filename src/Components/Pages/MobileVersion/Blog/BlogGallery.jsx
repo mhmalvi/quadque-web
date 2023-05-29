@@ -14,6 +14,11 @@ const BlogGallery = () => {
   const [loader, setLoader] = useState(true);
   //console.log("all blogs", allBlogs);
 
+
+   useEffect(() => {
+     window.location.href = `${process.env.REACT_APP_APP_CLIENT_URL}/blogs`;
+   }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

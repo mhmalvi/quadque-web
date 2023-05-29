@@ -22,6 +22,10 @@ const BlogDetails = ({ setLoader }) => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
+    window.location.href = `https://app.quadque.tech/blogs/${slug}`;
+  }, [slug]);
+
+  useEffect(() => {
     (async () => {
       const blogDetails = await handleFetchBlogBySlug(slug);
       // console.log("blogDetails", blogDetails);

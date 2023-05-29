@@ -11,6 +11,7 @@ import React, { useState } from "react";
 // import SocialLinks from "../../../../Shared/SocialLinks";
 import BaseLayout from "../../layout/BaseLayout";
 import BlogsGalary from "./BlogsGalary";
+import { useEffect } from "react";
 
 const BlogsLayout = () => {
   // const [mouseHover, setMouseHover] = useState(false);
@@ -18,13 +19,9 @@ const BlogsLayout = () => {
   // const [muted, setMuted] = useState(true);
   const [loader, setLoader] = useState(true);
 
-  // useEffect(() => {
-  //   if (muted) {
-  //     document.getElementById("iframeAudio").src = "";
-  //   } else {
-  //     document.getElementById("iframeAudio").src = siteAudio;
-  //   }
-  // }, [muted]);
+  useEffect(() => {
+    window.location.href = `https://app.quadque.tech/blogs`;
+  }, []);
 
   return (
     <BaseLayout>

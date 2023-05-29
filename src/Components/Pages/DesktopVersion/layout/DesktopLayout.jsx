@@ -1,24 +1,24 @@
-import { Alert, Modal, Space, Tooltip } from "antd";
-import Lottie from "lottie-react";
-import React, { useEffect, useState } from "react";
-import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
-import muteImg from "../../../../asstes/Images/mute.png";
-import unmuteImg from "../../../../asstes/Images/unmute.png";
-import welcomeAvatar from "../../../../asstes/Lotties/welcome_avatar.json";
-import Icons from "../../../Shared/Icons";
-import { handleLetsGoAudio } from "../../../Shared/Sounds";
-import Navbar from "../Navbar";
-import CenterLayout from "./CenterLayout";
-import SocialLinks from "../../../Shared/SocialLinks";
+import React from "react";
+// import { Alert, Modal, Space, Tooltip } from "antd";
+// import Lottie from "lottie-react";
+// import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
+// import muteImg from "../../../../asstes/Images/mute.png";
+// import unmuteImg from "../../../../asstes/Images/unmute.png";
+// import welcomeAvatar from "../../../../asstes/Lotties/welcome_avatar.json";
+// import Icons from "../../../Shared/Icons";
+// import { handleLetsGoAudio } from "../../../Shared/Sounds";
+// import Navbar from "../Navbar";
+// import SocialLinks from "../../../Shared/SocialLinks";
 import BaseLayout from "./BaseLayout";
+import CenterLayout from "./CenterLayout";
 
 const DesktopLayout = () => {
-  const [mouseHover, setMouseHover] = useState(false);
-  const [openMenus, setOpenMenus] = useState(false);
-  const [showSoundAlert, setShowSoundAlert] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(false);
-  const [muted, setMuted] = useState(true);
-  const synth = window.speechSynthesis;
+  // const [mouseHover, setMouseHover] = useState(false);
+  // const [openMenus, setOpenMenus] = useState(false);
+  // const [showSoundAlert, setShowSoundAlert] = useState(false);
+  // const [showWelcome, setShowWelcome] = useState(false);
+  // const [muted, setMuted] = useState(true);
+  // const synth = window.speechSynthesis;
 
   // useEffect(() => {
   //   // synth.cancel();
