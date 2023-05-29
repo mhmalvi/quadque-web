@@ -11,6 +11,11 @@ const CareerDetails = ({ setLoader }) => {
   const [careerPosts, setCareerPosts] = useState();
   const [careerDetails, setCareerDetails] = useState();
 
+
+  useEffect(() => {
+    window.location.href = `${process.env.REACT_APP_APP_CLIENT_URL}/career/${slug}`;
+  }, [slug]);
+
   useEffect(() => {
     (async () => {
       const careerResp = await handleFetchCareerPosts();

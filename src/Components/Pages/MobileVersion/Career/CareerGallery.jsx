@@ -7,7 +7,6 @@ import { Helmet } from "react-helmet";
 import Career from "./Career.json";
 import { handleFetchCareerPosts } from "../../../Shared/services";
 
-
 const CareerGallery = () => {
   const [allCareerPosts, setAllCareerPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,6 +15,10 @@ const CareerGallery = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    window.location.href = `${process.env.REACT_APP_APP_CLIENT_URL}/career`;
   }, []);
 
   useEffect(() => {

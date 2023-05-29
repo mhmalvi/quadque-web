@@ -145,7 +145,7 @@ const Navbar = ({ setOpenMenus }) => {
           </a>
 
           <a
-            href="/blogs"
+            href={`/blogs`}
             className="relative font-semibold lg:text-[28px] xl:text-[36px] 2xl:text-[50px]  flex mr-20"
             onMouseOver={() => {
               setShowBgShadow("BLOGS");

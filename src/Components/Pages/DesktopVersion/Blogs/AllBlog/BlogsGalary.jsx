@@ -11,6 +11,8 @@ const BlogsGalary = ({ setLoader }) => {
 
   console.log(blogs);
 
+  
+
   useEffect(() => {
     if (blogs?.length) {
       setLoader(false);
@@ -63,7 +65,7 @@ const BlogsGalary = ({ setLoader }) => {
               rel="noreferrer"
               key={i}
             >
-              <div className="flex justify-between items-center my-4 cursor-pointer">
+              <div className="flex justify-between items-center my-7 cursor-pointer">
                 <div className="lg:max-w-md xl:max-w-xl 2xl:max-w-4xl">
                   <div className="text-sm font-normal leading-4">
                     <span className="uppercase">Weekly updates</span>{" "}
@@ -93,7 +95,7 @@ const BlogsGalary = ({ setLoader }) => {
                   />
                 </div>
               </div>
-              <div className="h-0.5 w-full bg-gray-500 bg-opacity-10" />
+              <div className="h-0.5 w-full bg-gray-300 bg-opacity-80" />
             </a>
           ))}
         </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 // import blog2 from "../../../../asstes/Images/blog2.jpg";
 // import blog3 from "../../../../asstes/Images/blog3.jpg";
 import blogThumbnail from "../../../../asstes/Images/blogs.jpg";
@@ -12,7 +12,6 @@ import { handleFetchBlogs } from "../../../Shared/services";
 
 const Blogs = () => {
   // const [blogs] = useBlogs();
-  const navigate = useNavigate();
   const location = useLocation();
   const [triggerTitleAnimation, setTriggerTitleAnimation] = useState(false);
   const [
@@ -43,10 +42,11 @@ const Blogs = () => {
 
   const handleBlogNavigate = (blogSlug) => {
     synth.cancel();
-    navigate(`blog/${blogSlug}`);
+    // navigate(`https://app.quadque.tech/blogs/${blogSlug}`, {
+    //   replace: true,
+    // });
+    window.location.href = `https://app.quadque.tech/blogs/${blogSlug}`;
   };
-
-  console.log(activeblogDetails);
 
   return (
     <div
@@ -64,7 +64,7 @@ const Blogs = () => {
                     alt="Blog Thumbnail"
                     className="w-10/12 mx-auto"
                   />
-                  <Link to={"/blogs"}>
+                  <a href={`${process.env.REACT_APP_APP_CLIENT_URL}/blogs`}>
                     <button
                       className="spirit-bomb px-16 py-3.5 bg-black mt-12 text-base font-semibold leading-4 font_title"
                       style={{
@@ -74,7 +74,7 @@ const Blogs = () => {
                     >
                       Read More
                     </button>
-                  </Link>
+                  </a>
                 </div>
               </Fade>
             ) : (
