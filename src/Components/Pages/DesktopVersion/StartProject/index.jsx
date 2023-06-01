@@ -163,7 +163,7 @@ const StartProject = () => {
     <div
       id="start-project"
       name="start-project"
-      className="section w-full lg:pt-6 2xl:py-8 font_primary bg-black text-white"
+      className="section w-full min-h-full h-[90vh] lg:pt-6 2xl:py-8 font_primary bg-black text-white"
     >
       <Modal
         style={{
@@ -207,7 +207,7 @@ const StartProject = () => {
         </div>
       </Modal>
 
-      <div className="ml-21 lg:mt-6 2xl:mt-16 mr-25 pb-8">
+      <div className="ml-21 lg:mt-6 xl:mt-12 2xl:mt-16 mr-25 pb-8">
         <div className="flex items-center justify-between">
           <div
             className="text-4xl 2xl:text-5xl font-bold leading-10 capitalize font_title"
@@ -230,7 +230,7 @@ const StartProject = () => {
           </div>
         </div>
 
-        <div className="mt-15.5 flex justify-between overflow-hidden">
+        <div className="min-h-full pt-10 mt-15.5 flex justify-between overflow-auto">
           <div>
             {services?.map((service, i) => (
               <div

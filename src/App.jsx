@@ -8,10 +8,13 @@ import { useEffect } from "react";
 import { handleAddViewerCount } from "./Components/Shared/services";
 
 function App() {
-  // useEffect(() => {
-  //   console.log = () => {};
-  //   console.warn = () => {};
-  // }, []);
+  useEffect(() => {
+    if (process.env.REACT_APP_PRODUCTION_MODE) {
+      console.log = () => {};
+      console.warn = () => {};
+      console.error = () => {};
+    }
+  }, []);
 
   useEffect(() => {
     (async () => {

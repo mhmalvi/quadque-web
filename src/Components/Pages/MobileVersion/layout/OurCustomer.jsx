@@ -1,21 +1,19 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import Otobi from "../../../../assets/Images/otobi.png";
-import "../../MobileVersion/MobileView.css";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Icons from "../../../Shared/Icons";
-import "../../MobileVersion/MobileView.css";
 import Lottie from "lottie-react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import Achievement from "../../../../assets/Lotties/achievement.json";
 import sucess from "../../../../assets/Lotties/success.json";
+import "../../MobileVersion/MobileView.css";
 
 import { handleFetchClients } from "../../../Shared/services";
 
 const OurCustomer = () => {
   const [clientsImg, setClientsImg] = useState([]);
   const [loader, setLoader] = useState(true);
-  const [nav, setNav] = useState(null);
+  // const [nav, setNav] = useState(null);
   const slider = useRef(null);
 
   useEffect(() => {
@@ -47,9 +45,9 @@ const OurCustomer = () => {
     slidesPerRow: 2,
   };
 
-  useEffect(() => {
-    setNav(slider.current);
-  }, []);
+  // useEffect(() => {
+  //   setNav(slider.current);
+  // }, []);
 
   return (
     <div className="w-full text-white pt-24 relative font_primary">

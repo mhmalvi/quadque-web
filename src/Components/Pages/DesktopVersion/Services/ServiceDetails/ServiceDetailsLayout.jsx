@@ -71,7 +71,7 @@ const ServiceDetailsLayout = () => {
 
     //   <div className="relative flex justify-center bg-white">
     //     {/* Left bar */}
-    //     <div className="w-[100px] min-h-full py-10 z-50 absolute left-0 flex flex-col justify-between left_bar bg-white">
+    //     <div className="w-[100px] min-h-full py-10 z-50 absolute left-0 flex flex-col justify-between side_bar bg-white">
     //       <a href="/">
     //         <Icons.BrandLogo className="mx-auto" />
     //       </a>
@@ -160,7 +160,7 @@ const ServiceDetailsLayout = () => {
     //       </div>
 
     //       <div className="bg-white absolute right-0 h-full">
-    //         <div className="w-[100px] flex flex-col justify-between left_bar">
+    //         <div className="w-[100px] flex flex-col justify-between side_bar">
     //           <div>&nbsp;</div>
     //           <div>&nbsp;</div>
     //           <div className="mb-9 -rotate-90 flex justify-center items-center">
