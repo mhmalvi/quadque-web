@@ -43,10 +43,12 @@ const StartProject = () => {
       ]);
     } else if (service_name.includes("Web")) {
       setToogleSubService([
-        "E-Commerce Web Development",
-        "Java Web Development",
-        "Magento Web Development",
-        "Drupal Web Development",
+        "Website Design and Development",
+        "Wiki or Knowledge Websites",
+        "Custom Web Application Development",
+        "CMS Development",
+        "Web Portal Development",
+        "API Development & Integration",
       ]);
     } else if (service_name.includes("Mobile")) {
       setToogleSubService([

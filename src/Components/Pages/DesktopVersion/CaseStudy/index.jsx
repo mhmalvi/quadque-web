@@ -66,7 +66,7 @@ const CaseStudy = () => {
     <div
       id="case-study"
       name="case-study"
-      className="section w-full min-h-full lg:pb-10 font_primary overflow-hidden"
+      className="section w-full min-h-full lg:py-10 font_primary overflow-hidden"
     >
       {/* For SEO */}
       <Helmet>
