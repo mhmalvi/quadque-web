@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import products from "../../DesktopVersion/Products/productData.json";
+import { Link } from "react-router-dom";
 
 const ProductGallery = () => {
   useEffect(() => {
@@ -20,24 +22,27 @@ const ProductGallery = () => {
           Our Products
         </div>
 
-        <div className="flex justify-center items-center gap-6">
-          <div className="cursor-pointer w-52 px-4 py-6 border border-brand-color/30 bg-gradient-to-tr from-brand-color/30 to-transparent">
-            <a
-              className="flex flex-col justify-center items-center gap-4"
-              href="https://www.queleadscrm.com"
-              target="_blank"
-              rel="noreferrer"
+        <div className="w-11/12 grid grid-cols-1 items-center justify-center gap-6 mx-auto">
+          {products?.map((product, i) => (
+            <div
+              key={i}
+              className="mx-auto cursor-pointer w-52 px-4 py-6 border border-brand-color/30 bg-gradient-to-tr from-brand-color/30 to-transparent"
             >
-              <img
-                className="w-3/4 m-auto rounded-md"
-                src="https://i.ibb.co/NtJj0py/Screenshot-1-removebg-preview.png"
-                alt="Company"
-              />
-              <div className="font_poppins text-lg font-semibold">
-                QueLeadsCRM
-              </div>
-            </a>
-          </div>
+              <Link
+                className="flex flex-col justify-center items-center gap-4"
+                to={`../products/${product?.slug}`}
+              >
+                <img
+                  className="w-3/4 m-auto rounded-md"
+                  src={product?.logo}
+                  alt="Company"
+                />
+                <div className="font_poppins text-lg font-semibold">
+                  {product?.name}
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </>

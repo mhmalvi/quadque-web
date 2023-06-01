@@ -10,8 +10,6 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-/* .font_montserrat {
-} */
 
 @font-face {
   font-family: Anurati;
@@ -778,4 +776,14 @@ body::-webkit-scrollbar {
 Iframe {
   width: 80%;
   margin: auto;
+}
+
+.product_faq .ant-collapse-header-text {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff !important;
+  z-index: 0;
+}
+
+.product_faq .ant-collapse-expand-icon {
+  z-index: 0;
 }

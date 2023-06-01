@@ -85,9 +85,7 @@ const ServiceDetails = () => {
       </Helmet>
 
       <div
-        className={`w-full mt-24 text-white px-6 font_primary ${
-          !Service ? "" : ""
-        }`}
+        className={`w-full mt-24 text-white px-6 font_primary`}
         // className="w-full h-auto mt-24 text-white px-6 font_primary"
       >
         <div className="relative">

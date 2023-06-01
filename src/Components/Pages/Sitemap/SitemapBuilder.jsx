@@ -28,7 +28,7 @@ const SitemapBuilder = () => {
         : date.getMonth() + 1
     }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
 </url>
-<url> <loc>https://www.quadque.tech/career</loc>
+<url> <loc>https://app.quadque.tech/career</loc>
 <priority>0.7</priority>
 <lastmod>${date.getFullYear()}-${
       date.getMonth() + 1 < 10
@@ -44,7 +44,7 @@ const SitemapBuilder = () => {
         : date.getMonth() + 1
     }-${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}</lastmod>
 </url>
-<url> <loc>https://www.quadque.tech/blogs</loc>
+<url> <loc>https://app.quadque.tech/blogs</loc>
 <priority>0.7</priority>
 <lastmod>${date.getFullYear()}-${
       date.getMonth() + 1 < 10
@@ -64,7 +64,7 @@ const SitemapBuilder = () => {
     blogs?.forEach((blog) => {
       sitemapData =
         sitemapData +
-        `\n<url> <loc>https://www.quadque.tech/blog/${blog?.slug}</loc>
+        `\n<url> <loc>https://app.quadque.tech/blogs/${blog?.slug}</loc>
         <priority>0.7</priority>
         <lastmod>${date.getFullYear()}-${
           date.getMonth() + 1 < 10
@@ -108,7 +108,7 @@ const SitemapBuilder = () => {
     careerData?.forEach((career) => {
       sitemapData =
         sitemapData +
-        `\n<url> <loc>https://www.quadque.tech/career/${career?.slug}</loc>
+        `\n<url> <loc>https://app.quadque.tech/career/${career?.slug}</loc>
         <priority>0.7</priority>
         <lastmod>${date.getFullYear()}-${
           date.getMonth() + 1 < 10

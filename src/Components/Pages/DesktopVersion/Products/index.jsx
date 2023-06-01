@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../Footer";
+import products from "./productData.json";
 import { Link } from "react-router-dom";
 
 const Products = ({ setLoader }) => {
@@ -32,26 +33,25 @@ const Products = ({ setLoader }) => {
 
         <div className="min-h-full">
           <div className="flex justify-center items-center gap-6">
-            <Link
-              to={"/products/queleadscrm"}
-              className="cursor-pointer w-60 px-4 py-6 border border-brand-color/30 bg-gradient-to-tr from-brand-color/30 to-transparent"
-            >
-              <div
-                className="flex flex-col justify-center items-center gap-4"
-                // href="https://www.queleadscrm.com"
-                // target="_blank"
-                // rel="noreferrer"
+            {products.map((product, i) => (
+              <Link
+                to={`/products/${product?.slug}`}
+                className="relative cursor-pointer w-60 h-64 px-4 py-6 border border-brand-color/30 bg-gradient-to-tr from-brand-color/30 to-transparent"
               >
-                <img
-                  className="w-3/4 m-auto rounded-md"
-                  src="https://i.ibb.co/NtJj0py/Screenshot-1-removebg-preview.png"
-                  alt="Company"
-                />
-                <div className="font_poppins text-lg font-semibold">
-                  QueleadsCRM
+                <div className="flex flex-col justify-center items-center">
+                  <div>
+                    <img
+                      className="w-3/4 m-auto rounded-md"
+                      src={product?.logo}
+                      alt="Company"
+                    />
+                  </div>
+                  <div className="font_poppins text-lg font-semibold absolute bottom-5">
+                    {product?.name}
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </div>
 

@@ -1,0 +1,209 @@
+[
+  {
+    "name": "Queleads CRM",
+    "slug": "queleadscrm",
+    "logo": "https://i.ibb.co/NtJj0py/Screenshot-1-removebg-preview.png",
+    "title": "Harness The Power Of Your Customer Data",
+    "short_des": "Queleads CRM is a customer relationship management system that's smart, powerful, and adaptive. Whether you're a small business or a large corporation, Queleads CRM empowers you to effectively manage your customer relationships and boost your team's productivity.",
+    "cover_img": "https://queleadscrm.com/static/media/Dashboard2.4001e5e938d3739f55af.png",
+    "key_features": [
+      "Contact Management",
+      "Sales Automation",
+      "Marketing Automation",
+      "Customer Service & Support",
+      "Analytics & Reporting",
+      "Integrations"
+    ],
+    "key_features_des": "Queleads CRM is designed to streamline your customer management process, bringing together your sales, marketing, and customer service teams on a unified platform. With our intelligent analytics and intuitive interface, you're equipped to make data-driven decisions and provide a personalized customer experience like never before.",
+    "pricing": [
+      {
+        "plan": "Starter",
+        "price": "$19/user/month"
+      },
+      {
+        "plan": "Professional",
+        "price": "$49/user/month"
+      },
+      {
+        "plan": "Enterprise",
+        "price": "$99/user/month"
+      }
+    ],
+    "active_users": 236,
+    "customer_testimonials": [
+      {
+        "customer_details": "Jane Smith, CEO at TechX",
+        "content": "We've been using Queleads CRM for a year now, and it has totally transformed how we manage our customer relationships. Highly recommended!"
+      },
+      {
+        "customer_details": "Md. AB Bijoy, CEO at ITEC",
+        "content": "Switching to Queleads CRM was the best decision we have made for our business. Our customer relationships are getting smoother!"
+      },
+      {
+        "customer_details": "Team NTA",
+        "content": "Queleads CRM has simplified our customer management and improved our sales conversion rates. It's a very usefull tool for RTO business!"
+      }
+    ],
+    "features_and_capabilities": [
+      {
+        "title": "Sales Automation",
+        "des": "From tracking leads to closing deals, automate your sales process to make your sales team more efficient and productive."
+      },
+      {
+        "title": "Contact Management",
+        "des": "Keep your contact information organized and easily accessible, with detailed histories of all past interactions."
+      },
+      {
+        "title": "Marketing Automation",
+        "des": "Execute and monitor your marketing campaigns right from the Queleads CRM platform. Make your marketing efforts more precise and targeted."
+      },
+      {
+        "title": "Customer Service & Support",
+        "des": "Manage customer queries and concerns effectively with our integrated ticketing system. Ensure your customers always have a pleasant experience."
+      },
+      {
+        "title": "Analytics & Reporting",
+        "des": "Get insightful reports on your sales performance and customer trends. Make informed decisions with the power of data."
+      },
+      {
+        "title": "Integrations",
+        "des": "Connect Queleads CRM with your favorite tools and apps for a seamless workflow."
+      }
+    ],
+
+    "features_and_capabilities_des": "Queleads CRM is a comprehensive software solution designed to streamline and automate various aspects of the sales process. It offers features and functionalities that enhance the efficiency and productivity of sales teams. The system includes sales automation capabilities, allowing businesses to track leads and automate tasks throughout the sales cycle, leading to increased efficiency. Contact management features enable users to organize and access contact information easily, along with detailed histories of past interactions.",
+
+    "capabilities_avatar": "https://i.ibb.co/zJyCsND/CRM-Software-Capabilities-Infographic.jpg",
+
+    "benefits": [
+      {
+        "title": "Streamline Customer Interactions",
+        "des": "One of Queleads CRM's greatest benefits is the ability to consolidate all your customer interactions in one place. This makes it easier to manage relationships, track customer history, and ensures no detail gets lost in the shuffle."
+      },
+      {
+        "title": "Improve Sales Performance",
+        "des": "By using Queleads CRM, your sales team can effectively manage and nurture leads, forecast sales more accurately, and close deals faster. The system can identify high-quality leads and prioritize them for your team."
+      },
+      {
+        "title": "Enhance Marketing Efforts",
+        "des": "Our CRM allows for targeted marketing campaigns based on customer data. You can create segments, run A/B tests, and track the performance of your campaigns all within the CRM, leading to more effective marketing and higher ROI."
+      },
+      {
+        "title": "Boost Customer Service",
+        "des": "With all customer information and interactions in one place, your customer service team can provide more personalized, efficient service. This leads to increased customer satisfaction and loyalty."
+      }
+    ],
+
+    "benifits_avatar": "https://i.ibb.co/0VXbt5L/benifits-removebg.png",
+    "benifits_des": "<div>Queleads CRM offers a range of benefits to streamline customer interactions and improve overall business performance. The software consolidates all customer interactions in one place, making it easier to manage relationships, track customer history, and prevent any details from being overlooked.</div> <div>The CRM system enables sales teams to effectively manage and nurture leads, forecast sales more accurately, and close deals faster. It identifies high-quality leads and prioritizes them for the sales team, enhancing sales performance.</div>",
+
+    "system_requirements": "Queleads CRM is a cloud-based system, meaning you can access it anytime, anywhere. All you need is a stable internet connection. It's compatible with all modern web browsers. ",
+
+    "faqs": [
+      {
+        "title": "Get Started with Queleads CRM",
+        "des": "Ready to take your customer relationship management to the next level? Start your free trial today!"
+      },
+      {
+        "title": "Need Help?",
+        "des": "Our support team is available 24/7. Contact us at support@queleadscrm.com or call us at 1-800-123-4567."
+      }
+    ],
+    "faqs_des": "Find answers to common questions about Queleads CRM here."
+  },
+
+  {
+    "name": "SAP ERP Solutions",
+    "slug": "sap-erp",
+    "logo": "https://i.ibb.co/HHbBdK2/Screenshot-1-removebg-preview-1.png",
+    "title": "We pride ourselves on delivering our SAP and ERP solutions",
+    "short_des": "Our SAP and ERP solutions are designed to help businesses streamline their operations, reduce costs, and increase productivity. With our deep expertise and knowledge of the software, we can provide you with a solution that will give you a competitive edge in your industry.",
+    "cover_img": "https://qqtech-server.quadque.digital/public/assets/services/1678018658.png",
+    "key_features": [
+      "Implementation Services",
+      "Customisation Services",
+      "System Monitoring",
+      "QA Services",
+      "Maintenance and Support Services",
+      "Consulting Services"
+    ],
+    "key_features_des": "We tailor SAP ERP solutions to your unique business needs since we have a thorough understanding of the SAP ERP industries and industry experience. We are constantly developing new technology and incorporating it into your SAP ERP platform. We are aware of the subtleties involved in delivering an effective ERP. Our consultative approach ensures that our clients install SAP ERP successfully.",
+    "pricing": null,
+    "active_users": 121,
+    "customer_testimonials": [
+      {
+        "customer_details": "Team ATR",
+        "content": "The ERP system has streamlined our processes and improved efficiency. Highly recommended!"
+      },
+      {
+        "customer_details": "Team AIA",
+        "content": "With the ERP service, we have gained better control over our inventory and reduced costs. Impressive!"
+      },
+      {
+        "customer_details": "Team NTA",
+        "content": "Using SAP has transformed our business operations. It's user-friendly and has improved our efficiency significantly. Highly recommend!"
+      },
+      {
+        "customer_details": "Team UCT",
+        "content": "SAP's robust reporting and analytics capabilities have given us invaluable insights into our business. It's a game-changer for decision-making!"
+      }
+    ],
+    "features_and_capabilities": [
+      {
+        "title": "Needs Analysis",
+        "des": "This involves identifying the specific business processes that need to be automated and integrated into the ERP system, as well as the requirements for reporting, analytics, and user access."
+      },
+      {
+        "title": "Planning and Design",
+        "des": "Based on the needs analysis, a project plan is created that outlines the implementation or upgrade process, including timelines, milestones, and resource requirements. "
+      },
+      {
+        "title": "Implementation",
+        "des": "The ERP system is installed and configured, and data is migrated from legacy systems to the new system. The system is then tested and validated to ensure that it meets the organization's requirements."
+      },
+      {
+        "title": "Maintenance and Support",
+        "des": "Once the ERP system is up and running, ongoing maintenance and support services are provided to ensure that the system remains up-to-date and running smoothly."
+      }
+    ],
+    "features_and_capabilities_des": "SAP ERP software is renowned for its comprehensive set of features and capabilities that enable businesses to optimize their operations. It encompasses modules that cover various aspects of a company's functioning, including finance, procurement, inventory management, sales and distribution, human resources, and more. The finance module provides robust financial management tools, such as general ledger, accounts payable and receivable, and asset management. The procurement module offers streamlined procurement processes, supplier management, and contract management. With the inventory management module, businesses can efficiently track and manage inventory levels, reducing costs and avoiding stockouts. SAP-certified resources, 24x7 dedicated support, a team of professionals, strong technical skills, esteems clients in Australia, and vast industry experience.",
+    "capabilities_avatar": "https://i.ibb.co/XzwmJt0/download.png",
+    "benefits": [
+      {
+        "title": "Management & Administration",
+        "des": ""
+      },
+      {
+        "title": "Accounting & Financials",
+        "des": ""
+      },
+      {
+        "title": "Inventory & Distribution",
+        "des": ""
+      },
+      {
+        "title": "Production & MRP",
+        "des": ""
+      },
+      {
+        "title": "Project & Resource management",
+        "des": ""
+      },
+      {
+        "title": "Sales & Service",
+        "des": ""
+      },
+      {
+        "title": "Purchasing & Operations",
+        "des": ""
+      }
+    ],
+
+    "benifits_avatar": null,
+
+    "system_requirements": "Queleads CRM is a cloud-based system, meaning you can access it anytime, anywhere. All you need is a stable internet connection. It's compatible with all modern web browsers. ",
+
+    "faqs": [],
+    "faqs_des": "Find answers to common questions about Queleads CRM here."
+  }
+]

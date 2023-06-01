@@ -28,14 +28,14 @@ const AllService = () => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
-    if (location.hash === "#services" || location.pathname === "/services") {
-      (async () => {
-        const response = await handleFetchServices();
-        if (response) {
-          setServices(response);
-        }
-      })();
-    }
+    // if (location.hash === "#services" || location.pathname === "/services") {
+    (async () => {
+      const response = await handleFetchServices();
+      if (response) {
+        setServices(response);
+      }
+    })();
+    // }
   }, [location]);
 
   useEffect(() => {
@@ -81,6 +81,8 @@ const AllService = () => {
       setLoader(false);
     }, 500);
   }, [activeService, services]);
+
+  console.log("services", services);
 
   return (
     <div className="w-full lg:h-[80vh] 2xl:h-[90vh] relative text-white flex justify-between font_primary lg:pt-5 lg:pb-6 2xl:pb-[75px]">
@@ -132,6 +134,7 @@ const AllService = () => {
       </div>
 
       <Fade left cascade spy={triggerAnimation}>
+        {/* For the Lottie file of the center */}
         <div
           className="min-h-full w-8/12 flex justify-center items-center"
           style={{ maxWidth: "45%" }}
