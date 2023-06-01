@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Faq from "../../../../asstes/Images/faq.png";
+import Faq from "../../../../assets/Images/faq.png";
 import { Collapse } from "antd";
 import "../../MobileVersion/MobileView.css";
 

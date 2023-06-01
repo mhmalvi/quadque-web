@@ -1,10 +1,10 @@
 import { Alert, Modal, Space, Tooltip } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
-import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
-import muteImg from "../../../../asstes/Images/mute.png";
-import unmuteImg from "../../../../asstes/Images/unmute.png";
-import welcomeAvatar from "../../../../asstes/Lotties/welcome_avatar.json";
+import siteAudio from "../../../../assets/Audio/site_audio.mp3";
+import muteImg from "../../../../assets/Images/mute.png";
+import unmuteImg from "../../../../assets/Images/unmute.png";
+import welcomeAvatar from "../../../../assets/Lotties/welcome_avatar.json";
 import Icons from "../../../Shared/Icons";
 import SocialLinks from "../../../Shared/SocialLinks";
 import { handleLetsGoAudio } from "../../../Shared/Sounds";

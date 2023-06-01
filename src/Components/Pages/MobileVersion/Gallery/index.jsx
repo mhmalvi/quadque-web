@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Office from "../../../../asstes/Images/office.png";
-import allbum from "../../../../asstes/Images/photo_gallery.png";
+import Office from "../../../../assets/Images/office.png";
+import allbum from "../../../../assets/Images/photo_gallery.png";
 import Icons from "../../../Shared/Icons";
 import { handleFetchGallery } from "../../../Shared/services";
 

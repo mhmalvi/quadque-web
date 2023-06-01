@@ -2,7 +2,7 @@ import { Button, Modal } from "antd";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icons from "../../../Shared/Icons";
-import Tagline from "../../../../asstes/Images/mobile-tagline.png";
+import Tagline from "../../../../assets/Images/mobile-tagline.png";
 
 const NavigationBarBlack = () => {
   const [open, setOpen] = useState(false);

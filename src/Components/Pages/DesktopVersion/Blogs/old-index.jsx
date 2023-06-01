@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import blog1 from "../../../../asstes/Images/blog1.jpg";
-import blog2 from "../../../../asstes/Images/blog2.jpg";
-import blog3 from "../../../../asstes/Images/blog3.jpg";
-import blogBg from "../../../../asstes/Images/blogBg.jpg";
-// import moreBlogs from "../../../../asstes/Images/moreblogs.jpg";
+import blog1 from "../../../../assets/Images/blog1.jpg";
+import blog2 from "../../../../assets/Images/blog2.jpg";
+import blog3 from "../../../../assets/Images/blog3.jpg";
+import blogBg from "../../../../assets/Images/blogBg.jpg";
+// import moreBlogs from "../../../../assets/Images/moreblogs.jpg";
 import useBlogs from "../../../Shared/Hooks/useBlog";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import Lottie from "lottie-react";
 
 const OldBlogs = () => {

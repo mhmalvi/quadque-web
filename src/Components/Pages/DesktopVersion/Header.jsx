@@ -1,7 +1,7 @@
 import React from "react";
 import Typical from "react-typical";
-import headerVideo from "../../../asstes/Video/headerVideo.mp4";
-// import headerImage from "../../../asstes/Images/header_img.jpg";
+import headerVideo from "../../../assets/Video/headerVideo.mp4";
+// import headerImage from "../../../assets/Images/header_img.jpg";
 
 const Header = () => {
   return (

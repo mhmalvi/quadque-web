@@ -1,7 +1,7 @@
 import { Modal } from "antd";
 import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
-import sucess from "../../../../asstes/Lotties/success.json";
+import sucess from "../../../../assets/Lotties/success.json";
 import useServices from "../../../Shared/Hooks/useServices";
 import { handleSendMail } from "../../../Shared/services";
 import "../../MobileVersion/MobileView.css";

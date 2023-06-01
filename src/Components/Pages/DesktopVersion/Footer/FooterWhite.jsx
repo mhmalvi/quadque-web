@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
-import address from "../../../../asstes/Images/address.png";
-// import bgAus from "../../../../asstes/Images/background_aus.jpg";
-// import bgBD from "../../../../asstes/Images/background_bd.jpg";
+import address from "../../../../assets/Images/address.png";
+// import bgAus from "../../../../assets/Images/background_aus.jpg";
+// import bgBD from "../../../../assets/Images/background_bd.jpg";
 import Icons from "../../../Shared/Icons";
 
 const FooterWhite = () => {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
-import bgAus from "../../../../asstes/Images/background_aus.jpg";
-import bgBD from "../../../../asstes/Images/background_bd.jpg";
-import basisLogo from "../../../../asstes/Images/basis_logo.png";
+import bgAus from "../../../../assets/Images/background_aus.jpg";
+import bgBD from "../../../../assets/Images/background_bd.jpg";
+import basisLogo from "../../../../assets/Images/basis_logo.png";
 import Icons from "../../../Shared/Icons";
 import { handleFetchViewerCount } from "../../../Shared/services";
 import CountUp from "react-countup";

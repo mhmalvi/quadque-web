@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-// import Otobi from "../../../../asstes/Images/otobi.png";
+// import Otobi from "../../../../assets/Images/otobi.png";
 import "../../MobileVersion/MobileView.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,8 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Icons from "../../../Shared/Icons";
 import "../../MobileVersion/MobileView.css";
 import Lottie from "lottie-react";
-import Achievement from "../../../../asstes/Lotties/achievement.json";
-import sucess from "../../../../asstes/Lotties/success.json";
+import Achievement from "../../../../assets/Lotties/achievement.json";
+import sucess from "../../../../assets/Lotties/success.json";
 
 import { handleFetchClients } from "../../../Shared/services";
 
