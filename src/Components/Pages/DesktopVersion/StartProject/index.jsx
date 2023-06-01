@@ -60,7 +60,7 @@ const StartProject = () => {
         "Website Design and Development",
         "Wiki or Knowledge Websites",
         "Custom Web Application Development",
-        "Content Management System (CMS) Development",
+        "CMS Development",
         "Web Portal Development",
         "API Development & Integration",
       ]);
