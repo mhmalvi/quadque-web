@@ -1,24 +1,22 @@
-import React, { useState, useRef, useEffect } from "react";
+import Lottie from "lottie-react";
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import useServices from "../../../Shared/Hooks/useServices";
 import "../../MobileVersion/MobileView.css";
-import { Link } from "react-router-dom";
-import Lottie from "lottie-react";
-import loaderFile from "../../../../assets/Lotties/loader.json";
-import Icons from "../../../Shared/Icons";
 
 import aIIot from "../../../../assets/Lotties/ai_and_ito.json";
 import AppDev from "../../../../assets/Lotties/applicatiopn_development.json";
-import softDevs from "../../../../assets/Lotties/software developtment.json";
-import UI_UX from "../../../../assets/Lotties/ux.json";
-import webDev from "../../../../assets/Lotties/web_development.json";
-import eCom from "../../../../assets/Lotties/ecommerce.json";
-import CyberSecurity from "../../../../assets/Lotties/cyber-security.json";
 import Cloud from "../../../../assets/Lotties/cloud-computing22.json";
-import sapErp from "../../../../assets/Lotties/sap_erp.json";
+import CyberSecurity from "../../../../assets/Lotties/cyber-security.json";
+import eCom from "../../../../assets/Lotties/ecommerce.json";
 import Maintenance from "../../../../assets/Lotties/maintanance.json";
+import sapErp from "../../../../assets/Lotties/sap_erp.json";
+import softDevs from "../../../../assets/Lotties/software developtment.json";
+import webDev from "../../../../assets/Lotties/web_development.json";
 
 const Services = () => {
   const [Services] = useServices();

@@ -67,9 +67,9 @@ const BaseLayout = ({ children }) => {
       <div className="absolute top-0 z-50 w-full h-10 bg-white"></div>
       {/* <div className="w-full h-10 bg-white"></div> */}
 
-      <div className="relative flex justify-center bg-white">
+      <div className="relative flex bg-white">
         {/* Left bar */}
-        <div className="w-[100px] min-h-full py-10 z-50 absolute left-0 flex flex-col justify-between left_bar bg-white">
+        <div className="w-[100px] min-h-full py-10 z-50 absolute left-0 flex flex-col justify-between side_bar bg-white">
           <a href="/">
             <Icons.BrandLogo className="mx-auto" />
           </a>
@@ -116,59 +116,61 @@ const BaseLayout = ({ children }) => {
 
         {/* Right bar */}
 
-        <div className="relative">
-          <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
-            {muted ? (
-              <div className="w-8">
-                <Tooltip
-                  title="Unmute Sound"
-                  placement="left"
-                  color={"rgba(90, 90, 90, 0.7)"}
-                >
-                  <div className="text-xl font-bold">&nbsp;</div>
-                  <img
-                    className="z-50 cursor-pointer"
-                    src={muteImg}
-                    alt="Mute"
-                    onClick={() => {
-                      setMuted(false);
-                    }}
-                  />
-                  <div className="text-xl font-bold">&nbsp;</div>
-                </Tooltip>
-              </div>
-            ) : (
-              <div className="w-8">
-                <Tooltip
-                  title="Mute Sound"
-                  placement="left"
-                  color={"rgba(90, 90, 90, 0.7)"}
-                >
-                  <div className="text-xl font-bold">&nbsp;</div>
-                  <img
-                    className="z-50 cursor-pointer"
-                    src={unmuteImg}
-                    onClick={() => {
-                      setMuted(true);
-                    }}
-                    alt="Unmute"
-                  />
-                  <div className="text-xl font-bold">&nbsp;</div>
-                </Tooltip>
-              </div>
-            )}
-          </div>
+        <div className="absolute w-[100px] right-0">
+          <div className="relative w-[100px]">
+            <div className="absolute top-3 right-10 text-lg font-bold text-black z-50">
+              {muted ? (
+                <div className="w-8">
+                  <Tooltip
+                    title="Unmute Sound"
+                    placement="left"
+                    color={"rgba(90, 90, 90, 0.7)"}
+                  >
+                    <div className="text-xl font-bold">&nbsp;</div>
+                    <img
+                      className="z-50 cursor-pointer"
+                      src={muteImg}
+                      alt="Mute"
+                      onClick={() => {
+                        setMuted(false);
+                      }}
+                    />
+                    <div className="text-xl font-bold">&nbsp;</div>
+                  </Tooltip>
+                </div>
+              ) : (
+                <div className="w-8">
+                  <Tooltip
+                    title="Mute Sound"
+                    placement="left"
+                    color={"rgba(90, 90, 90, 0.7)"}
+                  >
+                    <div className="text-xl font-bold">&nbsp;</div>
+                    <img
+                      className="z-50 cursor-pointer"
+                      src={unmuteImg}
+                      onClick={() => {
+                        setMuted(true);
+                      }}
+                      alt="Unmute"
+                    />
+                    <div className="text-xl font-bold">&nbsp;</div>
+                  </Tooltip>
+                </div>
+              )}
+            </div>
 
-          <div className="bg-white absolute right-0 h-full">
-            <div className="w-[100px] flex flex-col justify-between left_bar">
-              <div>&nbsp;</div>
-              <div>&nbsp;</div>
-              <div className="mb-9 -rotate-90 flex justify-center items-center">
-                <div
-                  onClick={handleNavigate}
-                  className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_primary mr-4 cursor-pointer"
-                >
-                  start project
+            <div className="bg-white h-[100vh]">
+              <div className="w-[100px] flex flex-col justify-between side_bar">
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div className="mb-9 -rotate-90 flex justify-center items-center">
+                  <div
+                    onClick={handleNavigate}
+                    className="uppercase whitespace-nowrap font-semibold text-xl leading-[175%] font_primary mr-4 cursor-pointer"
+                  >
+                    start project
+                  </div>
                 </div>
               </div>
             </div>

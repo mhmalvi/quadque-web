@@ -228,7 +228,7 @@ const data = `<?xml version="1.0" encoding="UTF-8"?>
 hii
 </urlset>`;
 
-fs.writeFile("example.txt", data, (err) => {
+fs.writeFile("example.xml", data, (err) => {
   if (err) throw err;
   console.log("File has been saved!");
 });

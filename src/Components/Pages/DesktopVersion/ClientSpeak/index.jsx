@@ -45,7 +45,7 @@ const ClientSpeak = () => {
     <div
       id="client-speak"
       name="client-speak"
-      className="section relative w-full min-h-full 2xl:pb-12 font_primary text-white overflow-x-hidden"
+      className="section relative w-full min-h-full xl:pt-14 2xl:pt-2 2xl:pb-12 font_primary text-white overflow-x-hidden"
     >
       <div className="ml-6 lg:pt-7 lg:mt-9 2xl:ml-14 2xl:mt-14 pl-[68px] pr-[22px] text-white">
         <div
