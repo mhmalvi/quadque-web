@@ -1,6 +1,6 @@
 import React from "react";
-// import Astro from "../../../../asstes/Video/headerVideo.mp4";
-import headerImage from "../../../../asstes/Images/header_img.jpg";
+// import Astro from "../../../../assets/Video/headerVideo.mp4";
+import headerImage from "../../../../assets/Images/header_img.jpg";
 import "../../MobileVersion/MobileView.css";
 import Typical from "react-typical";
 

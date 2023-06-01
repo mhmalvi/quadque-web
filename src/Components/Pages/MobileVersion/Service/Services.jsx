@@ -6,19 +6,19 @@ import useServices from "../../../Shared/Hooks/useServices";
 import "../../MobileVersion/MobileView.css";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
 
-import aIIot from "../../../../asstes/Lotties/ai_and_ito.json";
-import AppDev from "../../../../asstes/Lotties/applicatiopn_development.json";
-import softDevs from "../../../../asstes/Lotties/software developtment.json";
-import UI_UX from "../../../../asstes/Lotties/ux.json";
-import webDev from "../../../../asstes/Lotties/web_development.json";
-import eCom from "../../../../asstes/Lotties/ecommerce.json";
-import CyberSecurity from "../../../../asstes/Lotties/cyber-security.json";
-import Cloud from "../../../../asstes/Lotties/cloud-computing22.json";
-import sapErp from "../../../../asstes/Lotties/sap_erp.json";
-import Maintenance from "../../../../asstes/Lotties/maintanance.json";
+import aIIot from "../../../../assets/Lotties/ai_and_ito.json";
+import AppDev from "../../../../assets/Lotties/applicatiopn_development.json";
+import softDevs from "../../../../assets/Lotties/software developtment.json";
+import UI_UX from "../../../../assets/Lotties/ux.json";
+import webDev from "../../../../assets/Lotties/web_development.json";
+import eCom from "../../../../assets/Lotties/ecommerce.json";
+import CyberSecurity from "../../../../assets/Lotties/cyber-security.json";
+import Cloud from "../../../../assets/Lotties/cloud-computing22.json";
+import sapErp from "../../../../assets/Lotties/sap_erp.json";
+import Maintenance from "../../../../assets/Lotties/maintanance.json";
 
 const Services = () => {
   const [Services] = useServices();

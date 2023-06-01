@@ -3,15 +3,15 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
-// import mainAbout from "../../../../asstes/Images/about_us_2.gif";
-import ourGoal from "../../../../asstes/Images/Our_Goal.gif";
-import ourMission from "../../../../asstes/Images/Our_Mission.gif";
-import ourObjective from "../../../../asstes/Images/Our_objective.gif";
-import ourVission from "../../../../asstes/Images/Our_Vission_1.gif";
-import whoWerAre from "../../../../asstes/Images/who_we_are.gif";
-import whyChooseUs from "../../../../asstes/Images/why_choose_us.gif";
+// import mainAbout from "../../../../assets/Images/about_us_2.gif";
+import ourGoal from "../../../../assets/Images/Our_Goal.gif";
+import ourMission from "../../../../assets/Images/Our_Mission.gif";
+import ourObjective from "../../../../assets/Images/Our_objective.gif";
+import ourVission from "../../../../assets/Images/Our_Vission_1.gif";
+import whoWerAre from "../../../../assets/Images/who_we_are.gif";
+import whyChooseUs from "../../../../assets/Images/why_choose_us.gif";
 
 const About = () => {
   const location = useLocation();

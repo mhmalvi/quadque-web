@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { Fade, Flip } from "react-reveal";
 import { Link, useLocation } from "react-router-dom";
 import Typical from "react-typical";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 // import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import Icons from "../../../Shared/Icons";
 import { handleFetchCaseStudies } from "../../../Shared/services";

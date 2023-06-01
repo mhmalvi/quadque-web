@@ -3,8 +3,8 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { Fade } from "react-reveal";
 import { useLocation } from "react-router-dom";
-import success from "../../../../asstes/Lotties/success.json";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import success from "../../../../assets/Lotties/success.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import useServices from "../../../Shared/Hooks/useServices";
 import { handleSendMail } from "../../../Shared/services";
 import { handleThankYouAudio } from "../../../Shared/Sounds";
@@ -57,10 +57,12 @@ const StartProject = () => {
       ]);
     } else if (service_name.includes("Web")) {
       setSubServices([
-        "E-Commerce Web Development",
-        "Java Web Development",
-        "Magento Web Development",
-        "Drupal Web Development",
+        "Website Design and Development",
+        "Wiki or Knowledge Websites",
+        "Custom Web Application Development",
+        "Content Management System (CMS) Development",
+        "Web Portal Development",
+        "API Development & Integration",
       ]);
     } else if (service_name.includes("Mobile")) {
       setSubServices([

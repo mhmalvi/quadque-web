@@ -3,7 +3,7 @@ import useBlogs from "../../../Shared/Hooks/useBlog";
 import { Pagination } from "antd";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import { Helmet } from "react-helmet";
 
 const BlogGallery = () => {
@@ -14,10 +14,9 @@ const BlogGallery = () => {
   const [loader, setLoader] = useState(true);
   //console.log("all blogs", allBlogs);
 
-
-   useEffect(() => {
-     window.location.href = `${process.env.REACT_APP_APP_CLIENT_URL}/blogs`;
-   }, []);
+  useEffect(() => {
+    window.location.href = `${process.env.REACT_APP_APP_CLIENT_URL}/blogs`;
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);

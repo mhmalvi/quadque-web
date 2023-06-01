@@ -1,10 +1,10 @@
 import { Modal, Tooltip } from "antd";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
-import Astro404 from "../../../../asstes/Images/404.png";
-import muteImg from "../../../../asstes/Images/mute.png";
-import unmuteImg from "../../../../asstes/Images/unmute.png";
+import siteAudio from "../../../../assets/Audio/site_audio.mp3";
+import Astro404 from "../../../../assets/Images/404.png";
+import muteImg from "../../../../assets/Images/mute.png";
+import unmuteImg from "../../../../assets/Images/unmute.png";
 import Icons from "../../../Shared/Icons";
 import SocialLinks from "../../../Shared/SocialLinks";
 import Navbar from "../Navbar";

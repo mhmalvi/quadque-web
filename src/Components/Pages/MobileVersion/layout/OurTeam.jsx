@@ -1,6 +1,6 @@
 import React from "react";
-// import Team from "../../../../asstes/Images/team-vector.png";
-import QuadqueTeam from "../../../../asstes/Images/qqteam.jpg";
+// import Team from "../../../../assets/Images/team-vector.png";
+import QuadqueTeam from "../../../../assets/Images/qqteam.jpg";
 import "../../MobileVersion/MobileView.css";
 // import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";

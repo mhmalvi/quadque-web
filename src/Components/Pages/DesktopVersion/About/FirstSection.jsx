@@ -2,11 +2,11 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
-import ourGoal from "../../../../asstes/Images/Our_Goal.gif";
-import ourMission from "../../../../asstes/Images/Our_Mission.gif";
-import ourVission from "../../../../asstes/Images/Our_Vission_1.gif";
-import ourObjective from "../../../../asstes/Images/Our_objective.gif";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import ourGoal from "../../../../assets/Images/Our_Goal.gif";
+import ourMission from "../../../../assets/Images/Our_Mission.gif";
+import ourVission from "../../../../assets/Images/Our_Vission_1.gif";
+import ourObjective from "../../../../assets/Images/Our_objective.gif";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import { useLocation } from "react-router-dom";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
 

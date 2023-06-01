@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Pagination } from "antd";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import { Helmet } from "react-helmet";
 import Career from "./Career.json";
 import { handleFetchCareerPosts } from "../../../Shared/services";

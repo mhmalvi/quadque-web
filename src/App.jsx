@@ -1,6 +1,6 @@
 import "./App.css";
 import "./index.css";
-// import welcomeAvatar from "./asstes/Images/welcome_avatar.gif";
+// import welcomeAvatar from "./assets/Images/welcome_avatar.gif";
 import { Breakpoint, BreakpointProvider } from "react-socks";
 import DesktopLayout from "./Components/Pages/DesktopVersion/layout";
 import MobileLayout from "./Components/Pages/MobileVersion/layout";

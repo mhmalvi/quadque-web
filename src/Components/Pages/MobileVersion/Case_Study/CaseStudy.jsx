@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import useCaseStudy from "../../../Shared/Hooks/useCaseStudy";
 import "../../MobileVersion/MobileView.css";
 import Lottie from "lottie-react";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 
 const CaseStudy = () => {
   const [CaseStudies] = useCaseStudy();

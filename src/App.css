@@ -1,5 +1,5 @@
 body {
-  /* cursor: url(asstes/Images/cursor.svg), auto; */
+  /* cursor: url(assets/Images/cursor.svg), auto; */
   font-family: "Montserrat", sans-serif;
   scrollbar-width: none;
 }
@@ -10,25 +10,24 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-
 @font-face {
   font-family: Anurati;
-  src: url(asstes/Fonts/Anurati-Regular.otf);
+  src: url(assets/Fonts/Anurati-Regular.otf);
 }
 
 @font-face {
   font-family: Dune;
-  src: url(asstes/Fonts/Dune_Rise.otf);
+  src: url(assets/Fonts/Dune_Rise.otf);
 }
 
 @font-face {
   font-family: Aquire;
-  src: url(asstes/Fonts/AquireBold-8Ma60.otf);
+  src: url(assets/Fonts/AquireBold-8Ma60.otf);
 }
 
 @font-face {
   font-family: AstroSpace;
-  src: url(asstes/Fonts/AstroSpace-0Wl3o.otf);
+  src: url(assets/Fonts/AstroSpace-0Wl3o.otf);
 }
 
 .font_title {
@@ -422,7 +421,7 @@ body::-webkit-scrollbar {
 .ant-collapse-expand-icon {
   color: transparent;
   z-index: -1;
-  background-image: url("./asstes/Images/faq-icon.png");
+  background-image: url("./assets/Images/faq-icon.png");
   background-repeat: no-repeat;
   margin-top: 4px;
 }
@@ -740,7 +739,7 @@ body::-webkit-scrollbar {
 }
 
 .footer_bd_bg {
-  background-image: url(./asstes/Images/background_bd.jpg);
+  background-image: url(./assets/Images/background_bd.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -748,7 +747,7 @@ body::-webkit-scrollbar {
 }
 /* 
 .footer_bd_bg::before {
-  background-image: url(./asstes/Images/background_bd.jpg);
+  background-image: url(./assets/Images/background_bd.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -757,7 +756,7 @@ body::-webkit-scrollbar {
 }
 
 .footer_bd_bg::after {
-  background-image: url(./asstes/Images/background_bd.jpg);
+  background-image: url(./assets/Images/background_bd.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -766,7 +765,7 @@ body::-webkit-scrollbar {
 } */
 
 .footer_aus_bg {
-  background-image: url(./asstes/Images/background_aus.jpg);
+  background-image: url(./assets/Images/background_aus.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -1,5 +1,5 @@
-import React from 'react';
-import Astro404 from "../../../../asstes/Images/404.png"
+import React from "react";
+import Astro404 from "../../../../assets/Images/404.png";
 
 const NotFound = () => {
   return (
@@ -17,6 +17,6 @@ const NotFound = () => {
       </div>
     </div>
   );
-}
+};
 
 export default NotFound;

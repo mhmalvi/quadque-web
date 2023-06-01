@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import Interface from "../../../../asstes/Images/interface.png";
+// import Interface from "../../../../assets/Images/interface.png";
 
-import mobileAboutCover from "../../../../asstes/Images/about_mobile.jpg";
+import mobileAboutCover from "../../../../assets/Images/about_mobile.jpg";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
-// import AboutusGif from "../../../../asstes/Images/who_we_are.gif";
+// import AboutusGif from "../../../../assets/Images/who_we_are.gif";
 
 const Aboutus = () => {
   const [goals, setGoals] = useState();

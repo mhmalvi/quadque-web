@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Fade } from "react-reveal";
 import { useLocation, useNavigate } from "react-router-dom";
-import Faq from "../../../../asstes/Images/faq.png";
+import Faq from "../../../../assets/Images/faq.png";
 import Icons from "../../../Shared/Icons";
 import { Tooltip } from "antd";
 import Lottie from "lottie-react";
 import { useSpeechSynthesis } from "react-speech-kit";
-import speakLogo from "../../../../asstes/Lotties/speak.json";
+import speakLogo from "../../../../assets/Lotties/speak.json";
 
 const { Panel } = Collapse;
 

@@ -2,9 +2,9 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Fade from "react-reveal/Fade";
-import whoWerAre from "../../../../asstes/Images/who_we_are.gif";
-import whyChooseUs from "../../../../asstes/Images/why_choose_us.gif";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import whoWerAre from "../../../../assets/Images/who_we_are.gif";
+import whyChooseUs from "../../../../assets/Images/why_choose_us.gif";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import { useLocation } from "react-router-dom";
 import { handleFetchCompanyGoals } from "../../../Shared/services";
 

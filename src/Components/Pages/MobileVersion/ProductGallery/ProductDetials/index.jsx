@@ -5,8 +5,8 @@ import CountUp from "react-countup";
 import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
 import Slider from "react-slick";
-import favicon from "../../../../../asstes/Images/logo.png";
-import loaderFile from "../../../../../asstes/Lotties/loader.json";
+import favicon from "../../../../../assets/Images/logo.png";
+import loaderFile from "../../../../../assets/Lotties/loader.json";
 import Icons from "../../../../Shared/Icons";
 import products from "../../../DesktopVersion/Products/productData.json";
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import siteAudio from "../../../asstes/Audio/site_audio.mp3";
+import siteAudio from "../../../assets/Audio/site_audio.mp3";
 
 const useAudio = () => {
   const [audio] = useState(new Audio(siteAudio));

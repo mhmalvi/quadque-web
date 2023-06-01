@@ -1,5 +1,5 @@
-import letsGo from "../../../asstes/Audio/lets-go.wav";
-import thankYou from "../../../asstes/Audio/Thank_You.wav";
+import letsGo from "../../../assets/Audio/lets-go.wav";
+import thankYou from "../../../assets/Audio/Thank_You.wav";
 
 const letsGoAudio = new Audio(letsGo);
 export const handleLetsGoAudio = () => {

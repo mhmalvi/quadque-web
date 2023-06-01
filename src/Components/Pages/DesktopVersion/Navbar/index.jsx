@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import bgShadowLogo from "../../../../asstes/Images/bg-logo-shadow.png";
-import brandLogo from "../../../../asstes/Images/brand_logo.png";
-import astronaut from "../../../../asstes/Images/navbar_astronaut.png";
+import bgShadowLogo from "../../../../assets/Images/bg-logo-shadow.png";
+import brandLogo from "../../../../assets/Images/brand_logo.png";
+import astronaut from "../../../../assets/Images/navbar_astronaut.png";
 
 const Navbar = ({ setOpenMenus }) => {
   const navigate = useNavigate();

@@ -2,7 +2,7 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import Icons from "../../../Shared/Icons";
 import { handleFetchCaseStudyBySlug } from "../../../Shared/services";
 

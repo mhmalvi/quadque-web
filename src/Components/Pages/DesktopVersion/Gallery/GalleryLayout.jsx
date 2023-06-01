@@ -3,12 +3,12 @@ import Gallery from ".";
 import BaseLayout from "../layout/BaseLayout";
 // import { Modal, Tooltip } from "antd";
 // import Lottie from "lottie-react";
-// import muteImg from "../../../../asstes/Images/mute.png";
-// import unmuteImg from "../../../../asstes/Images/unmute.png";
-// import loaderFile from "../../../../asstes/Lotties/loader.json";
+// import muteImg from "../../../../assets/Images/mute.png";
+// import unmuteImg from "../../../../assets/Images/unmute.png";
+// import loaderFile from "../../../../assets/Lotties/loader.json";
 // import Icons from "../../../Shared/Icons";
 // import Navbar from "../Navbar";
-// import siteAudio from "../../../../asstes/Audio/site_audio.mp3";
+// import siteAudio from "../../../../assets/Audio/site_audio.mp3";
 // import SocialLinks from "../../../Shared/SocialLinks";
 
 const GalleryLayout = () => {

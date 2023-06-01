@@ -1,7 +1,7 @@
 import React from "react";
 import Icons from "../../../Shared/Icons";
-import Logo from "../../../../asstes/Images/company-footer-logo.png";
-import basisLogo from "../../../../asstes/Images/basis_logo.png";
+import Logo from "../../../../assets/Images/company-footer-logo.png";
+import basisLogo from "../../../../assets/Images/basis_logo.png";
 import "../../MobileVersion/MobileView.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";

@@ -2,8 +2,8 @@ import Lottie from "lottie-react";
 import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { useLocation } from "react-router-dom";
-import titleBg from "../../../../asstes/Images/client_speak.png";
-import loaderFile from "../../../../asstes/Lotties/loader.json";
+import titleBg from "../../../../assets/Images/client_speak.png";
+import loaderFile from "../../../../assets/Lotties/loader.json";
 import { handleFetchClientSpeaks } from "../../../Shared/services";
 
 const ClientSpeak = () => {
