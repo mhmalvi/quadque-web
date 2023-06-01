@@ -81,7 +81,7 @@ const CaseStudy = () => {
         />
       </Helmet>
 
-      <div className="relative w-full min-h-full lg:pb-10 2xl:pb-12 font_primary overflow-hidden">
+      <div className="relative w-full min-h-full pt-6 lg:pb-10 2xl:pb-12 font_primary overflow-hidden">
         <div className="absolute top-0 lg:pt-7 2xl:py-[100px] pl-[68px] pr-[22px] text-white overflow-hidden">
           <div
             className="text-5xl font-bold leading-10 capitalize font_title mb-8"
@@ -211,7 +211,7 @@ const CaseStudy = () => {
           </div>
         </div>
 
-        <a href="#start-project" className="absolute top-8 right-8">
+        <a href="#start-project" className="absolute top-16 right-8">
           <span className="relative  flex justify-center items-center h-4 w-4 cursor-pointer">
             <span className="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex rounded-full h-4 w-4 bg-white"></span>

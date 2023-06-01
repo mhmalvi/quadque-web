@@ -20,8 +20,7 @@ import CareerGallery from "../Career/CareerGallery";
 import CareerDetail from "../Career/CareerDetail";
 import NotFound from "../NotFound";
 import ProductGallery from "../ProductGallery";
-// import FooterWhite from "./FooterWhite";
-// import NavigationBarBlack from "./NavigationBarBlack";
+import ProductDetails from "../ProductGallery/ProductDetials";
 
 const Layout = () => {
   useEffect(() => {
@@ -116,10 +115,10 @@ const Layout = () => {
             }
           />
           <Route
-            path={"products"}
+            path={"products/:slug"}
             element={
               <>
-                <ProductGallery />
+                <ProductDetails />
               </>
             }
           />
