@@ -47,7 +47,7 @@ const FooterWhite = () => {
           style={{ border: "1px solid red" }}
         >
           {/* <div className="2xl:pt-6 2xl:pl-10"> */}
-          <div className="2xl:pl-10">
+          <div className="2xl:pl-10" style={{ marginLeft: "-40px" }}>
             <div>
               <Fade left spy={triggerTitleAnimation}>
                 <div className="text-4xl 2xl:text-[48px] leading-10 2xl:leading-[55px] font-semibold font_title">
