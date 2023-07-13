@@ -99,7 +99,7 @@ const SecondSection = ({
                         </div>
                         <div className="hover:text-brand-color hover:transition-colors hover:delay-200 cursor-pointer">
                           <div className="text-xl 2xl:text-2xl font-bold leading-[100%] pl-4">
-                            Why Choose Use
+                            Why Choose Us
                           </div>
                           <p
                             className="mt-2.5 text-white text-sm 2xl:text-base pl-4 text-justify break-keep"

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router";
-
+import Career from "./src/Components/Pages/DesktopVersion/Careers/index";
 export default (
   <Route>
     <Route path="/#landing" />
@@ -27,7 +27,7 @@ export default (
     <Route path="/case-study/:slug" />
     <Route path="/blog" />
     <Route path="/blog/:slug" />
-    <Route path="/career" />
+    <Route path="/career" element={<Career />} />
     <Route path="/career-detail/:id" />
     <Route path="/faq" />
     <Route path="/blogs" />
