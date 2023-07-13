@@ -71,7 +71,7 @@ const Footer = () => {
       <div className="w-full lg:py-6 absolute top-0 2xl:top-16">
         <div className=" ml-21 lg:mt-10 2xl:mt-16 mr-25 ">
           {/* <div className="2xl:pt-6 2xl:pl-10"> */}
-          <div className="2xl:pl-10">
+          <div className="2xl:pl-10" style={{ marginLeft: "-25px" }}>
             <div>
               <Fade left spy={triggerTitleAnimation}>
                 <div className="text-4xl 2xl:text-[48px] leading-10 2xl:leading-[55px] font-semibold font_title">

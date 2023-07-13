@@ -20,15 +20,16 @@ const Career = ({ setLoader }) => {
   }, []);
 
   useEffect(() => {
-    (async () => {
-      const careerResp = await handleFetchCareerPosts();
-      if (careerResp?.status === 200) {
-        setAllCareerPost(careerResp?.data);
-      } else {
-        setAllCareerPost(careerData);
-        // setTotalPosts(careerData.length);
-      }
-    })();
+    // (async () => {
+    //   const careerResp = await handleFetchCareerPosts();
+    //   if (careerResp?.status === 200) {
+    //     setAllCareerPost(careerResp?.data);
+    //   } else {
+    //     setAllCareerPost(careerData);
+    //     // setTotalPosts(careerData.length);
+    //   }
+    // })();
+    setAllCareerPost(careerData);
   }, []);
 
   useEffect(() => {

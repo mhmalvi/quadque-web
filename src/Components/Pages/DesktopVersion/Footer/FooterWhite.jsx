@@ -41,8 +41,11 @@ const FooterWhite = () => {
         <img src={backgroundImage} className="min-w-full h-[90vh]" alt="" />
       </Fade> */}
 
-      <div className="w-full lg:py-6 absolute top-0 2xl:top-16">
-        <div className=" ml-21 lg:mt-10 2xl:mt-16 mr-25 ">
+      <div className="w-full lg:py-6 absolute top-0 2xl:top-16 ">
+        <div
+          className="ml-21 lg:mt-10 2xl:mt-16 mr-25 border border-red-600"
+          style={{ border: "1px solid red" }}
+        >
           {/* <div className="2xl:pt-6 2xl:pl-10"> */}
           <div className="2xl:pl-10">
             <div>
