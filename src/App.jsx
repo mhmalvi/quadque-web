@@ -10,7 +10,7 @@ import { handleAddViewerCount } from "./Components/Shared/services";
 function App() {
   useEffect(() => {
     if (process.env.REACT_APP_PRODUCTION_MODE) {
-      console.log = () => {};
+      // console.log = () => {};
       console.warn = () => {};
       console.error = () => {};
     }

@@ -38,6 +38,7 @@ const ServiceDetails = ({ setLoader }) => {
   const [caseStudies] = useCaseStudy();
   const [clientSpeak] = useClientSpeak();
 
+  console.log("the slug is: ", slug);
   useEffect(() => {
     synth.cancel();
     (async () => {

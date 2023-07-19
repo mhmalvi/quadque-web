@@ -11,6 +11,7 @@ import Icons from "../../../../Shared/Icons";
 import Footer from "../../Footer";
 import Slider from "react-slick";
 import products from "../productData.json";
+import { handleFetchServiceById } from "../../../../Shared/services";
 
 const { Panel } = Collapse;
 
@@ -21,6 +22,8 @@ const ProductDetails = ({ setLoader }) => {
   const ClientsSlider = useRef();
   const { slug } = useParams();
   const [productDetails, setProductDetails] = useState();
+  const [serviceDetails, setServiceDetails] = useState();
+  const [capabilityMenus, setCapabilityMenus] = useState([]);
 
   const handleNavigate = (menu) => {
     if (!window.location.hash.includes("#")) {
@@ -35,6 +38,27 @@ const ProductDetails = ({ setLoader }) => {
       setLoader(false);
     }, 2000);
   }, [setLoader, slug]);
+  useEffect(() => {
+    synth.cancel();
+    (async () => {
+      // const fetchServicedata = await handleFetchServiceById(slug);
+      const fetchServicedata = await handleFetchServiceById("web-development");
+      // console.log("fetchhhh", fetchServicedata);
+      if (fetchServicedata?.status === 424) {
+        setLoader(false);
+        navigate("404");
+      }
+      if (fetchServicedata) {
+        setTimeout(() => {
+          setLoader(false);
+        }, 1500);
+      }
+      setServiceDetails(fetchServicedata);
+    })();
+  }, [navigate, setLoader, slug, synth]);
+  useEffect(() => {
+    setCapabilityMenus(serviceDetails?.services_capabilities_menu?.split(","));
+  }, [serviceDetails]);
 
   return (
     <>
@@ -189,6 +213,58 @@ const ProductDetails = ({ setLoader }) => {
                 </div>
               ))}
             </div>
+
+            {/* Why choose us and capability section */}
+            <div className="relative">
+              <div
+                id="serviceDetails_content"
+                className="serviceDetails_content flex-col my-16 text-white"
+                style={{
+                  letterSpacing: "0.09em",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: serviceDetails?.content,
+                }}
+              ></div>
+
+              <Tooltip
+                placement="top"
+                title={`Click to "Listen". Double Click to "Stop"`}
+                color={"rgba(90, 90, 90, 0.7)"}
+              >
+                <button
+                  className="absolute top-0 right-10"
+                  onClick={() => {
+                    synth.cancel();
+                    speak({
+                      text: document.getElementById("serviceDetails_content")
+                        .innerText,
+                    });
+                  }}
+                  onDoubleClick={() => synth.cancel()}
+                >
+                  <Lottie
+                    className="w-14"
+                    animationData={speakLogo}
+                    loop={true}
+                  />
+                </button>
+              </Tooltip>
+            </div>
+
+            <div>
+              <div className="flex flex-wrap gap-3">
+                {capabilityMenus?.map((menu, i) => (
+                  <div
+                    key={i}
+                    className="py-2 px-4 bg-[#A855F7] bg-opacity-30 border border-gray-700 rounded-md"
+                  >
+                    {menu}
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Section End */}
 
             <div className="mt-32">
               <div className="flex items-center justify-center pb-13">
