@@ -215,7 +215,7 @@ const ProductDetails = ({ setLoader }) => {
             </div>
 
             {/* Why choose us and capability section */}
-            <div className="relative">
+            {/* <div className="relative">
               <div
                 id="serviceDetails_content"
                 className="serviceDetails_content flex-col my-16 text-white"
@@ -263,7 +263,7 @@ const ProductDetails = ({ setLoader }) => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
             {/* Section End */}
 
             <div className="mt-32">
