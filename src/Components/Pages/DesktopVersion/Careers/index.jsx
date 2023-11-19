@@ -66,6 +66,7 @@ const Career = ({ setLoader }) => {
       {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
+        <meta name="robots" content="no index" />
         <title>{`Career - Get The Best Online IT Services for Business - Quadque`}</title>
         <meta
           name="description"

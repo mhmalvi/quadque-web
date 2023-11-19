@@ -53,7 +53,7 @@ const Aboutus = () => {
         company in Australia. Established in 2020, the Quadque team has built a
         longstanding reputation as being a highly rated Australian IT services
         company. Quadque is involved in designing, developing, implementing, and
-        maintaining business application software and digital services for
+        maintaining business application software and IT services for
         domestic and overseas areas. Over time, Quadque has also moved into more
         advanced technologies.{" "}
       </div>
