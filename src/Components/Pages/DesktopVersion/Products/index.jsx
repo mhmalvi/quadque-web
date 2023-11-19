@@ -18,6 +18,7 @@ const Products = ({ setLoader }) => {
       {/* Meta Keywords */}
       <Helmet>
         <meta charSet="utf-8" />
+        <meta name="robots" content="no index" />
         <title>{`Products - Get The Best Online IT Services for Business - Quadque`}</title>
       </Helmet>
 
