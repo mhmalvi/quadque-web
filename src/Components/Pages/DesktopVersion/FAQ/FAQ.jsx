@@ -41,6 +41,7 @@ const FAQ = ({ setLoader }) => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
+        <meta name="robots" content="no index" />
         <title>
           FAQ's - Get The Best Online IT Services for Business - Quadque
         </title>
