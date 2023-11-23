@@ -120,26 +120,26 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <Icons.FacebookDesktop /> */}
-          <img
+          <Icons.FacebookDesktop />
+          {/* <img
             className="w-[27px] mx-auto"
             src={require("../../../../assets/Icons/facebook-desktop.png")}
             alt=""
             srcset=""
-          />
+          /> */}
         </a>
         <a
           href="https://www.youtube.com/channel/UCXbnZTYKk6q82Hbux3ffILA"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <Icons.YoutubeDesktop className="mx-4" /> */}
-          <img
+          <Icons.YoutubeDesktop className="mx-4" />
+          {/* <img
             className="w-[27px] mx-auto"
             src={require("../../../../assets/Icons/youtube-desktop.png")}
             alt=""
             srcset=""
-          />
+          /> */}
         </a>
 
         <a
@@ -147,52 +147,52 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <Icons.InstaDesktop className="mr-4" /> */}
-          <img
+          <Icons.InstaDesktop className="mr-4" />
+          {/* <img
             className="w-[27px] mx-auto"
             src={require("../../../../assets/Icons/insta-desktop.png")}
             alt=""
             srcset=""
-          />
+          /> */}
         </a>
         <a
           href="https://twitter.com/QuadqueT"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <Icons.TwiterDesktop /> */}
-          <img
+          <Icons.TwiterDesktop />
+          {/* <img
             className="w-[27px] mx-auto"
             src={require("../../../../assets/Icons/twitter-desktop.png")}
             alt=""
             srcset=""
-          />
+          /> */}
         </a>
         <a
           href="https://www.linkedin.com/company/quadque-technologies-ltd/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <Icons.FooterLinkedin className="w-4 ml-4" /> */}
-          <img
+          <Icons.FooterLinkedin className="w-4 ml-4" />
+          {/* <img
             className="w-[27px] mx-auto"
             src={require("../../../../assets/Icons/linkedin.png")}
             alt=""
             srcset=""
-          />
+          /> */}
         </a>
         <a
           href="https://www.tiktok.com/@quadque"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <Icons.FooterTiktok className="w-4 ml-3.5" /> */}
-          <img
+          <Icons.FooterTiktok className="w-4 ml-3.5" />
+          {/* <img
             className="w-[27px] mx-auto"
             src={require("../../../../assets/Icons/tiktok.png")}
             alt=""
             srcset=""
-          />
+          /> */}
         </a>
       </div>
 
