@@ -189,7 +189,7 @@ const Cleints = () => {
               </p>
             </div>
             <div className="ml-40 pl-[24px]">
-              <p className="marquee">
+              {/* <p className="marquee">
                 <span>
                   {colum12xl2?.map((client, i) => (
                     <div
@@ -203,7 +203,7 @@ const Cleints = () => {
                   ))}
                   &nbsp;
                 </span>
-              </p>
+              </p> */}
               <p className="marquee marquee2">
                 <span>
                   {colum32xl?.map((client, i) => (
@@ -223,17 +223,17 @@ const Cleints = () => {
           </div>
         </div>
 
-        <div className="ml-auto hidden lg:hidden xl:block 2xl:hidden">
+        <div className="ml-auto hidden lg:block xl:block 2xl:block">
           <div className="flex items-center mb-4">
             <div>
-              <p className="marquee">
-                <span>
+              <p className="marquee mb-10 ">
+                <span className="my-5">
                   {colum1xl?.map((client, i) => (
                     <div
                       key={i}
-                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md"
+                      className="inline-block max-w-[160px] h-[104px] bg-gradient-to-br from-gray-900 to-gray-600 bg-opacity-30 backdrop-filter backdrop-blur-md border border-gray-500 border-opacity-50 rounded-md "
                     >
-                      <div className="w-full h-[104px] flex justify-center items-center">
+                      <div className="w-full h-[104px] flex  justify-center items-center">
                         <img className="w-8/12" src={client} alt="Clinet" />
                       </div>
                     </div>
@@ -241,7 +241,7 @@ const Cleints = () => {
                   &nbsp;
                 </span>
               </p>
-              <p className="marquee marquee2">
+              {/* <p className="marquee marquee2">
                 <span>
                   {colum1xl2?.map((client, i) => (
                     <div
@@ -255,10 +255,10 @@ const Cleints = () => {
                   ))}
                   &nbsp;
                 </span>
-              </p>
+              </p> */}
             </div>
             <div className="ml-40 pl-[24px] middle_column">
-              <p className="marquee-reverse">
+              {/* <p className="marquee-reverse">
                 <span>
                   {colum1xl2?.map((client, i) => (
                     <div
@@ -272,7 +272,7 @@ const Cleints = () => {
                   ))}
                   &nbsp;
                 </span>
-              </p>
+              </p> */}
               <p className="marquee-reverse marquee-reverse-2">
                 <span>
                   {colum1xl?.map((client, i) => (
@@ -521,22 +521,26 @@ const colum1xl = [
   aia,
   Trade_Trade_US_Log,
   usbangla,
+  Aestheticars_logo,
+  harbour,
+  trastec,
+  crush,
+  clenovative,
+  dt,
+  Epiker,
+  esg,
+  drobbo,
+  gb,
+  logo_six,
+  uniqloAlpha,
+  Tanaz,
+  Top_Trip_Logo,
+  sa,
+  otobi,
+  paper,
 ];
 
-const colum1xl2 = [
-  aia,
-  Zaker_Dairy,
-  zdsl,
-  itec,
-  nta,
-  itec,
-  usbangla,
-  alpha,
-  ibm,
-  aia,
-  Trade_Trade_US_Log,
-  Thermottle,
-];
+const colum1xl2 = [nta, usbangla, alpha, ibm];
 // const colum1xl = [ms, ts, sp, ms, ts, sp, ms, ts, sp, ms, ts, sp];
 
 const colum1lg = [
