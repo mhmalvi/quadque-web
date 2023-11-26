@@ -11,7 +11,7 @@ const About = () => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
-    if (location.hash === "#about") {
+    if (location === "about") {
       synth.cancel();
       setTimeout(() => {
         setLoader(false);
@@ -20,7 +20,7 @@ const About = () => {
       }, 800);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.hash]);
+  }, [location]);
 
   return (
     <>

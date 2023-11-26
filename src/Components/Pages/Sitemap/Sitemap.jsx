@@ -179,7 +179,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Home</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#landing`}>Home</Link>
+                    <Link to={`../landing`}>Home</Link>
                   </li>
                 </ul>
               </div>
@@ -203,7 +203,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">About</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#about`}>About</Link>
+                    <Link to={`../about`}>About</Link>
                   </li>
                 </ul>
               </div>
@@ -213,7 +213,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Clients</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#clients`}>Clients</Link>
+                    <Link to={`../clients`}>Clients</Link>
                   </li>
                 </ul>
               </div>
@@ -223,7 +223,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Case Study</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#case-study`}>Case Study</Link>
+                    <Link to={`../case-study`}>Case Study</Link>
                   </li>
                 </ul>
               </div>
@@ -233,7 +233,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Client Speak</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#client-speak`}>Client Speak</Link>
+                    <Link to={`../client-speak`}>Client Speak</Link>
                   </li>
                 </ul>
               </div>
@@ -243,7 +243,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Blogs</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#blogs`}>Blogs</Link>
+                    <Link to={`../blogs`}>Blogs</Link>
                   </li>
                 </ul>
               </div>
@@ -253,7 +253,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Start Project</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#start-project`}>Start Project</Link>
+                    <Link to={`../start-project`}>Start Project</Link>
                   </li>
                 </ul>
               </div>
@@ -263,7 +263,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Contacts</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#contacts`}>Contacts</Link>
+                    <Link to={`../contacts`}>Contacts</Link>
                   </li>
                 </ul>
               </div>
@@ -273,7 +273,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Gallery</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#gallery`}>Gallery</Link>
+                    <Link to={`../gallery`}>Gallery</Link>
                   </li>
                 </ul>
               </div>
@@ -283,7 +283,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">Career</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#career`}>Career</Link>
+                    <Link to={`../career`}>Career</Link>
                   </li>
                 </ul>
               </div>
@@ -293,7 +293,7 @@ const Sitemap = () => {
                 <div className="text-xl font-semibold mb-4">FAQ</div>
                 <ul>
                   <li className="list-disc">
-                    <Link to={`../#faq`}>FAQ</Link>
+                    <Link to={`../faq`}>FAQ</Link>
                   </li>
                 </ul>
               </div>

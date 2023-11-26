@@ -31,7 +31,7 @@ const data = `<?xml version="1.0" encoding="UTF-8"?>
 }</lastmod>
 </url>
 <url>
-<loc>https://www.quadque.tech#about</loc>
+<loc>https://www.quadque.techabout</loc>
 <lastmod>${date.getFullYear()}-${
   date.getMonth() < 10 ? "0" + date.getMonth() + 1 : date.getMonth() + 1
 }-${
