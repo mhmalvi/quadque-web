@@ -28,7 +28,7 @@ const SecondSection = ({
         }
       })();
     }
-  }, [location.hash, setLoader]);
+  }, [location, setLoader]);
 
   return (
     <div
