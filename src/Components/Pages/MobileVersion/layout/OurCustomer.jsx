@@ -120,7 +120,7 @@ const OurCustomer = () => {
         <ul className="text-sm text-center px-6 leading-6">
           <li>Practical and easily implementable solutions</li>
           <li>High standards of performance</li>
-          <li>Excellent service quality</li>
+          <li>excellent service quality</li>
         </ul>
       </div>
     </div>

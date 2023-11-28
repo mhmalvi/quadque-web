@@ -20,6 +20,7 @@ const FirstSection = ({
   const [goals, setGoals] = useState();
 
   useEffect(() => {
+    console.log('location',location);
     if (location.hash === "#about") {
       (async () => {
         const fetchAbout = await handleFetchCompanyGoals("1");
