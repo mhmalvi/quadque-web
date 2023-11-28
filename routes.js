@@ -4,7 +4,7 @@ import Career from "./src/Components/Pages/DesktopVersion/Careers/index";
 export default (
   <Route>
     <Route path="/#landing" />
-    <Route path="/#services" />
+    <Route path="/services" />
     <Route path="/services/:slug" />
     <Route path="/#about" />
     <Route path="/#clients" />

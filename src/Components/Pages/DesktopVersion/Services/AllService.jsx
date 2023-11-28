@@ -39,6 +39,7 @@ const AllService = () => {
   }, [location]);
 
   useEffect(() => {
+    console.log(location);
     setActiveService(services[0]?.service_name);
     if (location.hash === "#services" || location.pathname === "/services") {
       synth.cancel();

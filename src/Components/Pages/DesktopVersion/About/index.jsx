@@ -11,6 +11,7 @@ const About = () => {
   const synth = window.speechSynthesis;
 
   useEffect(() => {
+    console.log(location);
     if (location === "about") {
       synth.cancel();
       setTimeout(() => {

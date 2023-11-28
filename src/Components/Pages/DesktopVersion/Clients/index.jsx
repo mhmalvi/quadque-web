@@ -105,7 +105,7 @@ const Cleints = () => {
                     High standards of performance{" "}
                   </li>
                   <li className="list-disc py-0.5 text-left whitespace-nowrap">
-                    Excellent service quality{" "}
+                    excellent service quality{" "}
                   </li>
                   <li className="list-disc py-0.5 text-left whitespace-nowrap">
                     Practical implementable solutions
