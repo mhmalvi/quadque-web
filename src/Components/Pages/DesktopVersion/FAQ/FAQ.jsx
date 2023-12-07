@@ -36,12 +36,11 @@ const FAQ = ({ setLoader }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.hash]);
-
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <meta name="robots" content="no index" />
+        <meta name="robots" content="noindex, nofollow" />
         <title>
           FAQ's - Get The Best Online IT Services for Business - Quadque
         </title>
