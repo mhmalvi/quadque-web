@@ -32,7 +32,7 @@ const NotFound = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <meta name="robots" content="no index" />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <div className="blog_details w-full h-full">
         {/* For website background Audio */}
