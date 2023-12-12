@@ -404,7 +404,7 @@ const Footer = () => {
                                 <Icons.BluePhone className="w-4 mr-2.5 text-brand-color" />
                               </span>
                               <span>
-                                <a href="tel:+61405899496">+61405899496</a>
+                                <a href="tel:+611300813316">+611300813316</a>
                               </span>
                             </div>
                           </div>
