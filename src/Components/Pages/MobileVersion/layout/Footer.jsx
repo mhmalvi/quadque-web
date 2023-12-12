@@ -98,7 +98,7 @@ const Footer = () => {
           <p className="pt-2">
             Level 1, 7 Greenfield Parade, Bankstown NSW 2200, Australia
           </p>
-          <p className="pt-1">+61 405 899 496</p>
+          <p className="pt-1">+611300813316</p>
           <p className="pt-1">hello@quadque.tech</p>
         </div>
         <div className="w-1/2 flex-col">
