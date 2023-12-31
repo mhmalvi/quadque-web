@@ -118,10 +118,10 @@ const Cleints = () => {
           </div>
         </div>
 
-        <div className="ml-auto hidden lg:hidden xl:hidden 2xl:block">
+        <div className=" hidden lg:hidden xl:hidden 2xl:block">
           <div className="flex items-center mb-4">
             <div>
-              <p className="marquee">
+              {/* <p className="marquee">
                 <span>
                   {colum12xl?.map((client, i) => (
                     <div
@@ -139,8 +139,8 @@ const Cleints = () => {
                   ))}
                   &nbsp;
                 </span>
-              </p>
-              <p className="marquee marquee2">
+              </p> */}
+              {/* <p className="marquee marquee2">
                 <span>
                   {colum12xl?.map((client, i) => (
                     <div
@@ -154,10 +154,10 @@ const Cleints = () => {
                   ))}
                   &nbsp;
                 </span>
-              </p>
+              </p> */}
             </div>
             <div className="ml-40 pl-5 middle_column">
-              <p className="marquee-reverse">
+              {/* <p className="marquee-reverse">
                 <span>
                   {colum12xl2?.map((client, i) => (
                     <div
@@ -171,7 +171,7 @@ const Cleints = () => {
                   ))}
                   &nbsp;
                 </span>
-              </p>
+              </p> */}
               {/* <p className="marquee-reverse marquee-reverse-2">
                 <span>
                   {colum32xl?.map((client, i) => (
@@ -224,7 +224,7 @@ const Cleints = () => {
         </div>
 
         <div className="ml-auto hidden lg:block xl:block 2xl:block">
-          <div className="flex items-center mb-4">
+          <div  className="flex items-center mb-4">
             <div>
               <p className="marquee mb-10 ">
                 <span className="my-5">
