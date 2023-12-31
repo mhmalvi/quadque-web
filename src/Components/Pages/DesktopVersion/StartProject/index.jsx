@@ -223,7 +223,8 @@ const StartProject = () => {
           <div>
             <Fade left spy={triggerTitleAnimation}>
               <div>
-                <div>Australia: +61405899496</div>
+                {/* <div>Australia: +61405899496</div> */}
+                <div>Australia: +611300813316</div>
                 <div>Bangladesh: +8801765276560</div>
               </div>
             </Fade>

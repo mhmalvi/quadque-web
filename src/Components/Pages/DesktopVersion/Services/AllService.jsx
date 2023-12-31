@@ -14,6 +14,12 @@ import CyberSecurity from "../../../../assets/Lotties/cyber-security.json";
 import Cloud from "../../../../assets/Lotties/cloud-computing22.json";
 import Maintenance from "../../../../assets/Lotties/maintanance.json";
 import sapErp from "../../../../assets/Lotties/ERP.json";
+import Onsite from "../../../../assets/Lotties/Onsite.jpg";
+import Ignite from "../../../../assets/Lotties/ignite.jpg";
+import Fortify from "../../../../assets/Lotties/Fortify.jpg";
+import Power from "../../../../assets/Lotties/Power.jpg";
+import Elevate from "../../../../assets/Lotties/Elevate.jpg";
+import Optimize from "../../../../assets/Lotties/Optimize.jpg";
 // import useServices from "../../../Shared/Hooks/useServices";
 import { handleFetchServices } from "../../../Shared/services";
 
@@ -229,16 +235,63 @@ const AllService = () => {
               />
             </Link>
           ) : null}
+
+          {activeService?.includes("Onsite") ? (
+            <Link
+              to={`../services/onsite-and-offsite-it-support-(l1,-l2-and-l3-support)`}
+            >
+              <img src={Onsite} alt="" />
+            </Link>
+          ) : null}
+
+          {activeService?.includes("Ignite") ? (
+            <Link
+              to={`../services/ignite-operational-efficiency-with-quadque's-data-center-management-solutions`}
+            >
+              <img src={Ignite} alt="" />
+            </Link>
+          ) : null}
+
+          {activeService?.includes("Fortify") ? (
+            <Link
+              to={`../services/fortify-your-digital-fortress-with-quadque's-security-software-management`}
+            >
+              <img src={Fortify} alt="" />
+            </Link>
+          ) : null}
+
+          {activeService?.includes("Power") ? (
+            <Link
+              to={`../services/power-your-connectivity-with-quadque's-isp-management-solutions`}
+            >
+              <img src={Power} alt="" />
+            </Link>
+          ) : null}
+          {activeService?.includes("Elevate") ? (
+            <Link
+              to={`../services/elevate-your-team-with-quadque's-it-recruitment-solutions`}
+            >
+              <img src={Elevate} alt="" />
+            </Link>
+          ) : null}
+
+          {activeService?.includes("Optimize") ? (
+            <Link
+              to={`../services/optimize-your-tech-investments-with-quadque's-it-procurement-solutions`}
+            >
+              <img src={Optimize} alt="" />
+            </Link>
+          ) : null}
         </div>
       </Fade>
 
-      <div className="w-64 min-h-full text-xl font-medium leading-8 capitalize flex flex-col justify-between">
+      <div className="w-37  text-xl font-medium leading-8 capitalize flex flex-col justify-between">
         <Fade left cascade spy={triggerAnimation}>
-          <div className="pt-18 mt-0.5">
+          <div className="pt-18 mt-0.5 overlow-x-auto">
             {services?.map((service, i) => (
               <p
                 key={i}
-                className={`whitespace-nowrap text-base 2xl:text-xl ${
+                className={`whitespace-nowrap text-base 2xl:text-sm ${
                   activeService === service?.service_name
                     ? "text-brand-color transition-colors delay-200"
                     : "text-white transition-colors delay-200"

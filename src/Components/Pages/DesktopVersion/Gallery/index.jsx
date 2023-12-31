@@ -47,6 +47,7 @@ const Gallery = ({ setLoader }) => {
       {/* For SEO */}
       <Helmet>
         <meta charSet="utf-8" />
+        <meta name="robots" content="no index" />
         <title>
           Gallery - Get The Best Online IT Services for Business - Quadque
         </title>
