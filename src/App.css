@@ -261,9 +261,9 @@ body::-webkit-scrollbar {
   animation: marquee 14s linear infinite;
 }
 
-.marquee2 span {
+/* .marquee2 span {
   animation-delay: 7s;
-}
+} */
 
 .marquee-reverse {
   margin: 0 auto;
@@ -282,9 +282,9 @@ body::-webkit-scrollbar {
   animation: marquee-reverse 14s linear infinite;
 }
 
-.marquee-reverse-2 span {
+/* .marquee-reverse-2 span {
   animation-delay: 7s;
-}
+} */
 
 .about_details::-webkit-scrollbar {
   width: 10px;
@@ -305,19 +305,19 @@ body::-webkit-scrollbar {
 
 @keyframes marquee {
   0% {
-    transform: translateY(0);
+    transform: translateY(-30%);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(-82%);
   }
 }
 
 @keyframes marquee-reverse {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-70%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translateY(-32%);
   }
 }
 
@@ -331,18 +331,6 @@ body::-webkit-scrollbar {
     transform: translateX(100%);
   }
 }
-
-/* @keyframes ticker_animation {
-  0% {
-    transform: translateX(100%);
-  }
-  50% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-} */
 
 @keyframes App-logo-spin {
   from {
