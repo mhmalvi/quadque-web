@@ -80,7 +80,8 @@ const AllService = () => {
   // console.log("services", services);
 
   useEffect(() => {
-    setActiveDetails(
+    console.log('activeService',activeService);
+    setActiveDetails(      
       services?.find((service) => service.service_name === activeService)
     );
 
@@ -166,7 +167,7 @@ const AllService = () => {
             </Link>
           ) : null}
 
-          {activeService?.includes("Software") ? (
+          {activeService?.includes("Software Development") ? (
             <Link to={`../services/software-development`}>
               <Lottie
                 animationData={softDevs}
@@ -244,41 +245,31 @@ const AllService = () => {
             </Link>
           ) : null}
 
-          {activeService?.includes("Ignite") ? (
-            <Link
-              to={`../services/ignite-operational-efficiency-with-quadque's-data-center-management-solutions`}
-            >
+          {activeService?.includes("Data Center Management Solutions") ? (
+            <Link to={`../services/data-center-management-solutions`}>
               <img src={Ignite} alt="" />
             </Link>
           ) : null}
 
-          {activeService?.includes("Fortress") ? (
-            <Link
-              to={`../services/fortify-your-digital-fortress-with-quadque's-security-software-management`}
-            >
+          {activeService?.includes("Security Software Management") ? (
+            <Link to={`../services/security-software-management`}>
               <img src={Fortress} alt="" />
             </Link>
           ) : null}
 
-          {activeService?.includes("Power") ? (
-            <Link
-              to={`../services/power-your-connectivity-with-quadque's-isp-management-solutions`}
-            >
+          {activeService?.includes("ISP Management Solutions") ? (
+            <Link to={`../services/isp-management-solutions`}>
               <img src={Power} alt="" />
             </Link>
           ) : null}
-          {activeService?.includes("Elevate") ? (
-            <Link
-              to={`../services/elevate-your-team-with-quadque's-it-recruitment-solutions`}
-            >
+          {activeService?.includes("Recruitment") ? (
+            <Link to={`../services/it-recruitment-solutions`}>
               <img src={Elevate} alt="" />
             </Link>
           ) : null}
 
-          {activeService?.includes("Optimize") ? (
-            <Link
-              to={`../services/optimize-your-tech-investments-with-quadque's-it-procurement-solutions`}
-            >
+          {activeService?.includes("Procurement") ? (
+            <Link to={`../services/it-procurement-solutions`}>
               <img src={Optimize} alt="" />
             </Link>
           ) : null}
