@@ -14,12 +14,12 @@ import CyberSecurity from "../../../../assets/Lotties/cyber-security.json";
 import Cloud from "../../../../assets/Lotties/cloud-computing22.json";
 import Maintenance from "../../../../assets/Lotties/maintanance.json";
 import sapErp from "../../../../assets/Lotties/ERP.json";
-import Onsite from "../../../../assets/Lotties/Onsite.jpg";
-import Ignite from "../../../../assets/Lotties/ignite.jpg";
-import Fortify from "../../../../assets/Lotties/Fortify.jpg";
-import Power from "../../../../assets/Lotties/Power.jpg";
-import Elevate from "../../../../assets/Lotties/Elevate.jpg";
-import Optimize from "../../../../assets/Lotties/Optimize.jpg";
+import Onsite from "../../../../assets/Lotties/Onsite.png";
+import Ignite from "../../../../assets/Lotties/Ignite.png";
+import Fortress from "../../../../assets/Lotties/Fortify.png";
+import Power from "../../../../assets/Lotties/Power.png";
+import Elevate from "../../../../assets/Lotties/Elevate.png";
+import Optimize from "../../../../assets/Lotties/Optimize.png";
 // import useServices from "../../../Shared/Hooks/useServices";
 import { handleFetchServices } from "../../../Shared/services";
 
@@ -252,11 +252,11 @@ const AllService = () => {
             </Link>
           ) : null}
 
-          {activeService?.includes("Fortify") ? (
+          {activeService?.includes("Fortress") ? (
             <Link
               to={`../services/fortify-your-digital-fortress-with-quadque's-security-software-management`}
             >
-              <img src={Fortify} alt="" />
+              <img src={Fortress} alt="" />
             </Link>
           ) : null}
 
